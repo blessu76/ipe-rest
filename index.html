@@ -12,6 +12,14 @@
 <meta name="theme-color" content="#0D1117">
 <link rel="canonical" id="canonical" href="https://ipe.rest/">
 
+<!-- ===== PWA (설치형 앱) ===== -->
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="apple-touch-icon" href="/icon-180.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="ipe()">
+
 <!-- hreflang (client-side i18n via ?lang=) -->
 <link rel="alternate" hreflang="x-default" href="https://ipe.rest/">
 <link rel="alternate" hreflang="ko" href="https://ipe.rest/?lang=ko">
@@ -456,6 +464,15 @@
     window.gtag('config', GA_MEASUREMENT_ID);
   }
 })();
+</script>
+
+<!-- ===== PWA service worker 등록 ===== -->
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('/sw.js').catch(function () {});
+  });
+}
 </script>
 
 <!-- ===== i18n + ambient visuals ===== -->

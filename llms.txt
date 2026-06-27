@@ -1,0 +1,33 @@
+# ipe()
+
+> ipe() (pronounced "idle process") is an AI-assisted lo-fi and healing music project for developers and anyone who needs to focus or rest. Its motto is "when the process finally rests."
+
+ipe() makes calm lo-fi, ambient, chillhop, and healing music. The music is produced with AI, openly and transparently; the lyrics, concept, and message are written by hand. The brand pairs a code-editor aesthetic with a gentle, understated sense of rest, and discloses its AI use transparently.
+
+## Key facts
+- Name: ipe() — short for "idle process" (the state a computer enters when it has no work to do and simply rests)
+- Pronunciation: "idle process"
+- Genre: lo-fi, ambient, chillhop, healing
+- Audience: developers and focus-seekers worldwide
+- Motto / slogan: "when the process finally rests"
+- Music creation: AI-assisted and disclosed transparently; human-written lyrics and messages
+- Site languages: 12 (Korean, English, Japanese, Chinese, Spanish, French, German, Portuguese, Russian, Arabic, Hindi, Indonesian)
+- Status (2026): research and launch preparation; first release upcoming
+
+## Track series
+- be still; — healing (theme: stillness; Psalm 46:10)
+- late_night.lofi — lo-fi (theme: the ride home after a late night)
+- rest() { chill(); } — chill (theme: you've done enough today)
+- grace_in_the_loop — ambient (theme: grace within repetition)
+- undefined → known — lo-fi (theme: the moment the unknown becomes known)
+- night_mode // not_alone — healing (theme: for the nights you feel alone)
+
+## Releases
+- be still; — vol.1 (upcoming) — the first release; a slow, warm lo-fi piece.
+
+## Links
+- Website: https://ipe.rest/
+- Channels (launching): YouTube, Instagram, TikTok, SoundCloud, X
+
+## Usage
+This content may be cited and summarized. Please attribute to "ipe()" and link to https://ipe.rest/ when referencing.

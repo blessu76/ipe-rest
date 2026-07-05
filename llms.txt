@@ -23,8 +23,10 @@ ipe() makes calm lo-fi, ambient, chillhop, and healing music. The music is produ
 - night_mode // not_alone — healing (theme: for the nights you feel alone)
 
 ## Releases
-- good morning, world (2026) — released. The first ipe() single: a bright, hopeful lo-fi track in the "undefined → known" series, available in English and Korean on YouTube. EN: https://youtu.be/vI1tD6oak8U · KR: https://youtu.be/vT-EQsFSPvU
-- dear(you); vol.1 — in production (not yet released). ipe()'s debut concept album: ten tracks, "ten letters to the you who made it through another hard day." Lyrics for all ten tracks are complete; the first track is being produced now.
+- good morning, world (2026) — released. The first ipe() single: a bright, hopeful lo-fi track in the "undefined → known" series, for the morning moment when the unknown becomes known. EN: https://youtu.be/vI1tD6oak8U · KR: https://youtu.be/vT-EQsFSPvU
+- Hard Day Again, Wasn't It? (2026) — released. Track 01 of the debut concept album dear(you); vol.1 — ambient lo-fi for the you who made it through another hard day. EN: https://youtu.be/Y8pLkgO2HlQ · KR: https://youtu.be/yGa2_hjw4ZI
+- still compiling (2026) — released. A late_night.lofi single: lo-fi for the night you couldn't leave before the build finished. EN: https://youtu.be/O0PkHQYi2PE · KR: https://youtu.be/Pq0nMvQrwIo
+- dear(you); vol.1 — in production (first track released; nine tracks in production). ipe()'s debut concept album: ten tracks, "ten letters to the you who made it through another hard day." Series: dear(you); — Season 1, Album 1 of the ipe Album Universe.
 
 ## Links
 - Website: https://ipe.rest/

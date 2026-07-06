@@ -1,4 +1,5 @@
 # ipe() — robots.txt
+# last updated: 2026-07-06
 # 일반 검색엔진: 전체 허용
 User-agent: *
 Allow: /

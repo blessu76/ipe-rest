@@ -1,0 +1,21 @@
+{
+  "_meta": {
+    "note": "Single source of truth for ipe.rest/go/{track_code} redirects. Edit THIS file, then regenerate the static pages with: infra/scripts/build_go_redirects.py (do not hand-edit generated index.html files). Source of song data: studio/lyrics/INDEX.md (released songs). Decision 0052 축2 / ANALYTICS_SCHEMA §7.",
+    "ga4_id": "G-XG4BH800J0",
+    "default_lang": "en"
+  },
+  "tracks": {
+    "N-001":   { "en": "https://youtu.be/O0PkHQYi2PE", "ko": "https://youtu.be/Pq0nMvQrwIo", "title": "still compiling" },
+    "U-001":   { "en": "https://youtu.be/vI1tD6oak8U", "ko": "https://youtu.be/vT-EQsFSPvU", "title": "good morning, world" },
+    "S1A1.01": { "en": "https://youtu.be/Y8pLkgO2HlQ", "ko": "https://youtu.be/yGa2_hjw4ZI", "title": "Hard Day Again, Wasn't It?" },
+    "S1A1.02": { "en": "https://youtu.be/DFUnye2GXd0", "ko": "https://youtu.be/Fm745fgmLys", "title": "It's Okay, Take Your Time." },
+    "S1A1.03": { "en": "https://youtu.be/rXwAwZ2cu2g", "ko": "https://youtu.be/tAzst5cWLKI", "title": "I Was Scared, Too." },
+    "S1A1.04": { "en": "https://youtu.be/rOjN7tVcsrI", "ko": "https://youtu.be/DvJaI5CXbPA", "title": "You're Still Shining." },
+    "S1A1.05": { "en": "https://youtu.be/N7FVtphBmBg", "ko": "https://youtu.be/69KIWxjPXf0", "title": "It's Okay to Rest a While." },
+    "S1A1.06": { "en": "https://youtu.be/-ubb0jO9j6A", "ko": "https://youtu.be/nvsak4qaAW0", "title": "You're Not Alone." },
+    "S1A1.07": { "en": "https://youtu.be/jQswl5-uS-c", "ko": "https://youtu.be/0h9GckgYRRA", "title": "I'm Glad You're Here." },
+    "S1A1.08": { "en": "https://youtu.be/2xBFso_4jRs", "ko": "https://youtu.be/3ts9rZXnJJg", "title": "You Were Enough Today." },
+    "S1A1.09": { "en": "https://youtu.be/81XXhmbA_JY", "ko": "https://youtu.be/QsghUul4Hak", "title": "Let's Smile a Little Tomorrow." },
+    "S1A1.10": { "en": "https://youtu.be/lvyLfiBzMLg", "ko": "https://youtu.be/I_3pxFG_1Ug", "title": "You Did So Well Today." }
+  }
+}

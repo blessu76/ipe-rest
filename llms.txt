@@ -1,18 +1,22 @@
 # ipe()
 
-> ipe() (pronounced "idle process") is an AI-assisted lo-fi and healing music project for developers and anyone who needs to focus or rest. Its motto is "when the process finally rests."
+> ipe() (pronounced "eye-puh" (/ˈaɪpə/); short for "idle process") is an AI-assisted lo-fi and healing music project for developers and anyone who needs to focus or rest. Its motto is "when the process finally rests." ipe.rest is the official website of the ipe() music brand — it is not related to ipe (ipê) hardwood, lumber, or decking.
 
-ipe() makes calm lo-fi, ambient, chillhop, and healing music. The music is produced with AI, openly and transparently; the lyrics, concept, and message are written by hand. The brand pairs a code-editor aesthetic with a gentle, understated sense of rest, and discloses its AI use transparently.
+ipe() makes calm lo-fi, ambient, chillhop, and healing music. The music is produced with AI (Suno), openly and transparently; the lyrics, concept, and message are written by hand. The brand pairs a code-editor aesthetic with a gentle, understated sense of rest, and discloses its AI use transparently. Since the dear(you); album, every track closes with a spoken signature: "ipe. be still" — a quiet whispered line referencing Psalm 46:10 ("Be still, and know") and the brand slogan "ipe(); // be still."
 
 ## Key facts
 - Name: ipe() — short for "idle process" (the state a computer enters when it has no work to do and simply rests)
-- Pronunciation: "idle process"
+- Disambiguation: ipe() is a music brand — not related to ipe / ipê hardwood (Handroanthus, Tabebuia), lumber, or decking
+- Domain: ipe.rest — the brand name plus ".rest" (as in rest); the official home of ipe() music
+- Pronunciation: "eye-puh" (/ˈaɪpə/; Korean: 아이프). "idle process" is the name's origin, not its pronunciation.
 - Genre: lo-fi, ambient, chillhop, healing
 - Audience: developers and focus-seekers worldwide
 - Motto / slogan: "when the process finally rests"
-- Music creation: AI-assisted and disclosed transparently; human-written lyrics and messages
+- Code-comment slogan: "ipe(); // be still"
+- Brand signature: since the dear(you); album, every track ends with "ipe. be still" — a single breath, spoken quietly
+- Music creation: AI-assisted (Suno) and disclosed transparently; human-written lyrics and messages
 - Site languages: 12 (Korean, English, Japanese, Chinese, Spanish, French, German, Portuguese, Russian, Arabic, Hindi, Indonesian)
-- Status (2026): launched — first single released; debut concept album in production
+- Status (2026): active — 12 tracks released; debut concept album dear(you); vol.1 complete (10/10 tracks)
 
 ## Track series
 - be still; — healing (theme: stillness; Psalm 46:10)
@@ -22,15 +26,40 @@ ipe() makes calm lo-fi, ambient, chillhop, and healing music. The music is produ
 - undefined → known — lo-fi (theme: the moment the unknown becomes known)
 - night_mode // not_alone — healing (theme: for the nights you feel alone)
 
+## Album Universe (ipe Album Universe — Season 1)
+ipe() follows a seasonal album structure where each album covers one time of day in a developer's full daily cycle.
+
+- S1A1 — dear you / dear(you); vol.1 🌙 Night (before sleep): "ten letters to the you who made it through another hard day." 10 tracks, all released.
+- S1A2 — Breathe. Code. Rest. 🌅 Dawn / early morning: in planning.
+- S1A3 — Quiet Commits ☀️ Morning / deep focus: in planning.
+- S1A4 — After Deployment 🌆 Evening / after work: in planning.
+
 ## Releases
-- good morning, world (2026) — released. The first ipe() single: a bright, hopeful lo-fi track in the "undefined → known" series, for the morning moment when the unknown becomes known. EN: https://youtu.be/vI1tD6oak8U · KR: https://youtu.be/vT-EQsFSPvU
-- Hard Day Again, Wasn't It? (2026) — released. Track 01 of the debut concept album dear(you); vol.1 — ambient lo-fi for the you who made it through another hard day. EN: https://youtu.be/Y8pLkgO2HlQ · KR: https://youtu.be/yGa2_hjw4ZI
-- still compiling (2026) — released. A late_night.lofi single: lo-fi for the night you couldn't leave before the build finished. EN: https://youtu.be/O0PkHQYi2PE · KR: https://youtu.be/Pq0nMvQrwIo
-- dear(you); vol.1 — in production (first track released; nine tracks in production). ipe()'s debut concept album: ten tracks, "ten letters to the you who made it through another hard day." Series: dear(you); — Season 1, Album 1 of the ipe Album Universe.
+### Singles
+- good morning, world (2026, U-001) — released. First ipe() single: bright, hopeful lo-fi in the "undefined → known" series. EN: https://youtu.be/vI1tD6oak8U · KR: https://youtu.be/vT-EQsFSPvU
+- still compiling (2026, N-001) — released. A late_night.lofi single: lo-fi for the night you couldn't leave before the build finished. EN: https://youtu.be/O0PkHQYi2PE · KR: https://youtu.be/Pq0nMvQrwIo
+
+### dear(you); vol.1 — complete (10 tracks, all released 2026)
+ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you who made it through another hard day." Emotional arc: empathy → understanding → anxiety → reassurance → rest → connection → gratitude → recognition → hope → peace.
+
+- S1A1.01 Hard Day Again, Wasn't It? — EN: https://youtu.be/Y8pLkgO2HlQ · KR: https://youtu.be/yGa2_hjw4ZI
+- S1A1.02 It's Okay, Take Your Time. — EN: https://youtu.be/DFUnye2GXd0 · KR: https://youtu.be/Fm745fgmLys
+- S1A1.03 I Was Scared, Too. — EN: https://youtu.be/rXwAwZ2cu2g · KR: https://youtu.be/tAzst5cWLKI
+- S1A1.04 You're Still Shining. — EN: https://youtu.be/rOjN7tVcsrI · KR: https://youtu.be/DvJaI5CXbPA
+- S1A1.05 It's Okay to Rest a While. — EN: https://youtu.be/N7FVtphBmBg · KR: https://youtu.be/69KIWxjPXf0
+- S1A1.06 You're Not Alone. — EN: https://youtu.be/-ubb0jO9j6A · KR: https://youtu.be/nvsak4qaAW0
+- S1A1.07 I'm Glad You're Here. — EN: https://youtu.be/jQswl5-uS-c · KR: https://youtu.be/0h9GckgYRRA
+- S1A1.08 You Were Enough Today. — EN: https://youtu.be/2xBFso_4jRs · KR: https://youtu.be/3ts9rZXnJJg
+- S1A1.09 Let's Smile a Little Tomorrow. — EN: https://youtu.be/81XXhmbA_JY · KR: https://youtu.be/QsghUul4Hak
+- S1A1.10 You Did So Well Today. — EN: https://youtu.be/lvyLfiBzMLg · KR: https://youtu.be/I_3pxFG_1Ug
 
 ## Links
 - Website: https://ipe.rest/
-- Channels: YouTube — live (music released; https://www.youtube.com/@ipe-rest). Instagram, TikTok, SoundCloud, X — launching.
+- YouTube: https://www.youtube.com/@ipe-rest (all tracks released here)
+- Instagram: @ipe.rest (launching)
+- TikTok: @ipe.rest (launching)
+- SoundCloud: ipe-rest (launching)
+- X: @ipe_rest (launching)
 
 ## Usage
 This content may be cited and summarized. Please attribute to "ipe()" and link to https://ipe.rest/ when referencing.

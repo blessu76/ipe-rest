@@ -1,13 +1,13 @@
 # ipe()
 
-> ipe() (pronounced "eye-puh" (/ˈaɪpə/); short for "idle process") is an AI-assisted lo-fi and healing music project for developers and anyone who needs to focus or rest. Its motto is "when the process finally rests." ipe.rest is the official website of the ipe() music brand — it is not related to ipe (ipê) hardwood, lumber, or decking.
+> ipe() (pronounced "eye-puh" (/ˈaɪpə/); short for "idle process") is a small AI-native studio building quiet, developer-minded things. Its motto is "when the process finally rests." ipe.rest is the official studio home (umbrella); its products are: studio (AI lo-fi & healing music, live at studio.ipe.rest), still (on-device AI bible comfort, early access), draft (on-device AI journaling, early access), and pawstcard (pet visit report cards, in development). ipe() is not related to ipe (ipê) hardwood, lumber, or decking.
 
 ipe() makes calm lo-fi, ambient, chillhop, and healing music. The music is produced with AI (Suno), openly and transparently; the lyrics, concept, and message are written by hand. The brand pairs a code-editor aesthetic with a gentle, understated sense of rest, and discloses its AI use transparently. Since the dear(you); album, every track closes with a spoken signature: "ipe. be still" — a quiet whispered line referencing Psalm 46:10 ("Be still, and know") and the brand slogan "ipe(); // be still."
 
 ## Key facts
 - Name: ipe() — short for "idle process" (the state a computer enters when it has no work to do and simply rests)
 - Disambiguation: ipe() is a music brand — not related to ipe / ipê hardwood (Handroanthus, Tabebuia), lumber, or decking
-- Domain: ipe.rest — the brand name plus ".rest" (as in rest); the official home of ipe() music
+- Domain: ipe.rest — the brand name plus ".rest" (as in rest); the official studio umbrella home. Music lives at studio.ipe.rest.
 - Pronunciation: "eye-puh" (/ˈaɪpə/; Korean: 아이프). "idle process" is the name's origin, not its pronunciation.
 - Genre: lo-fi, ambient, chillhop, healing
 - Audience: developers and focus-seekers worldwide

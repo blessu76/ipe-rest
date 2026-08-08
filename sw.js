@@ -1,10 +1,11 @@
 // ipe() service worker — installable PWA + offline fallback
-const CACHE = 'ipe-v3';
+const CACHE = 'ipe-v15';
 const CORE = [
   '/', '/index.html',
   '/manifest.webmanifest',
   '/icon-192.png', '/icon-512.png', '/icon-180.png',
-  '/og-image.png'
+  '/og-image.png',
+  '/fonts/lora-400.woff2', '/fonts/inter-400.woff2'
 ];
 
 self.addEventListener('install', (e) => {

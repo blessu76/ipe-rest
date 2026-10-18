@@ -1,62 +1,44 @@
 <!DOCTYPE html>
+<!--
+  TODO (placeholders to fill before launch): none
+  TODO: Studio-notes list (3 items, dates and copy) is a mockup placeholder: replace with real notes from Quill. Note pages (/notes/...) do not exist yet, so the items are not linked.
+  TODO: Product card links point to the existing sub-sites (idle/still/draft/pawstcard .ipe.rest) as on the previous home page.
+  Generated from the ipe.rest design mockup v1 (Grace) + Quill copy v1. See rooms note 'ipe.rest 구현 v1 결과'.
+-->
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title id="doc-title">ipe() — quiet things for busy minds · when the process finally rests</title>
-
-<!-- ===== SEO ===== -->
-<meta name="description" id="meta-desc" content="ipe() (short for idle process) is a small AI-native studio building quiet, developer-minded things: AI lo-fi music (idle), on-device AI bible comfort (still), on-device AI journaling (draft), and pet visit reports (pawstcard). Not related to ipe / ipê hardwood, lumber, or decking. when the process finally rests.">
+<title>ipe() — quiet things for busy minds · when the process finally rests</title>
+<meta name="description" content="ipe() is a small independent studio in Seoul that makes quiet lo-fi music and private, on-device apps: idle (AI lo-fi music), still (on-device bible comfort), draft (on-device journaling) and pawstcard (pet visit reports). Not related to ipe / ipê hardwood.">
 <meta name="author" content="ipe()">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#fbfaf4">
-<link rel="canonical" id="canonical" href="https://ipe.rest/">
-
-<!-- ===== PWA ===== -->
+<link rel="canonical" href="https://ipe.rest/">
+<link rel="alternate" hreflang="x-default" href="https://ipe.rest/">
+<link rel="alternate" hreflang="en" href="https://ipe.rest/">
+<link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/">
 <link rel="manifest" href="/manifest.webmanifest">
 <link rel="apple-touch-icon" href="/icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="ipe()">
-
-<!-- ===== Self-hosted fonts (OFL, no third-party requests) — preload critical above-the-fold ===== -->
-<link rel="preload" href="/fonts/lora-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
-
-<!-- hreflang (client-side i18n via ?lang=) -->
-<link rel="alternate" hreflang="x-default" href="https://ipe.rest/">
-<link rel="alternate" hreflang="ko" href="https://ipe.rest/?lang=ko">
-<link rel="alternate" hreflang="en" href="https://ipe.rest/?lang=en">
-<link rel="alternate" hreflang="ja" href="https://ipe.rest/?lang=ja">
-<link rel="alternate" hreflang="zh" href="https://ipe.rest/?lang=zh">
-<link rel="alternate" hreflang="es" href="https://ipe.rest/?lang=es">
-<link rel="alternate" hreflang="fr" href="https://ipe.rest/?lang=fr">
-<link rel="alternate" hreflang="de" href="https://ipe.rest/?lang=de">
-<link rel="alternate" hreflang="pt" href="https://ipe.rest/?lang=pt">
-<link rel="alternate" hreflang="ru" href="https://ipe.rest/?lang=ru">
-<link rel="alternate" hreflang="ar" href="https://ipe.rest/?lang=ar">
-<link rel="alternate" hreflang="hi" href="https://ipe.rest/?lang=hi">
-<link rel="alternate" hreflang="id" href="https://ipe.rest/?lang=id">
-
-<!-- Open Graph -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ipe()">
-<meta property="og:title" id="og-title" content="ipe() — quiet things for busy minds">
-<meta property="og:description" id="og-desc" content="A small AI-native studio for quiet, developer-minded things. idle · still · draft · pawstcard.">
-<meta property="og:url" id="og-url" content="https://ipe.rest/">
+<meta property="og:title" content="ipe() — quiet things for busy minds">
+<meta property="og:description" content="A small independent studio in Seoul for quiet lo-fi music and private apps. idle · still · draft · pawstcard.">
+<meta property="og:url" content="https://ipe.rest/">
 <meta property="og:image" content="https://ipe.rest/og-image.png">
-<meta property="og:locale" id="og-locale" content="en_US">
+<meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ko_KR">
-<meta property="og:locale:alternate" content="ja_JP">
-
-<!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ipe() — a small studio for quiet, developer-minded things">
-<meta name="twitter:description" content="A small AI-native studio for quiet, developer-minded things. idle · still · draft · pawstcard.">
+<meta name="twitter:title" content="ipe() — quiet things for busy minds">
+<meta name="twitter:description" content="A small independent studio in Seoul for quiet lo-fi music and private apps. idle · still · draft · pawstcard.">
 <meta name="twitter:image" content="https://ipe.rest/og-image.png">
-
-<!-- ===== GEO / structured data — Organization umbrella + WebSite ===== -->
+<link rel="preload" href="/fonts/lora-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -93,7 +75,7 @@
   "@type": "WebSite",
   "name": "ipe()",
   "url": "https://ipe.rest/",
-  "inLanguage": ["en","ko","ja","zh","es","fr","de","pt","ru","ar","hi","id"],
+  "inLanguage": ["en","ko"],
   "publisher": { "@type": "Organization", "name": "ipe()", "url": "https://ipe.rest/" }
 }
 </script>
@@ -109,244 +91,212 @@
   ]
 }
 </script>
-
-<style>
-/* ============ Self-hosted web fonts (OFL) — Latin subset only; non-Latin (CJK/AR/HI/RU) falls to system stack ============ */
-@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/inter-400.woff2") format("woff2");}
-@font-face{font-family:"Lora";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/lora-400.woff2") format("woff2");}
-@font-face{font-family:"Lora";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/lora-700.woff2") format("woff2");}
-@font-face{font-family:"Lora";font-style:italic;font-weight:400;font-display:swap;src:url("/fonts/lora-400-italic.woff2") format("woff2");}
-@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/jbmono-400.woff2") format("woff2");}
-@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/jbmono-600.woff2") format("woff2");}
-
-/* ============ ipe() umbrella — LIGHT / WARM DAYLIGHT (Direction: light-concept) ============
-   Warm paper stock · serif display · calm sun horizon · four quiet products. */
-:root{--ink:#22302b;--muted:#68736d;--paper:#fbfaf4;--line:rgba(34,48,43,.16);
-  --serif:"Lora",Georgia,"Times New Roman",serif;
-  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI","Noto Sans",Arial,sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
-a{color:inherit;text-decoration:none}
-select{font:inherit}
-::selection{background:#f7d87c;color:var(--ink)}
-img,svg{max-width:100%}
-.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
-.ltr{direction:ltr;unicode-bidi:isolate}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
-
-/* topbar */
-.topbar{height:84px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 4vw;border-bottom:1px solid var(--line);position:absolute;z-index:10;width:100%}
-.logo{font:700 25px/1 var(--serif);letter-spacing:-.04em}
-.logo span{color:#c9a84c}
-.topbar nav{display:flex;gap:36px;font:600 11px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.12em;justify-self:center}
-.topbar nav a{position:relative}
-.topbar nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--ink);transition:right .25s}
-.topbar nav a:hover:after,.topbar nav a:focus-visible:after{right:0}
-.language{justify-self:end;display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:99px;padding:8px 11px;font:600 11px var(--mono)}
-.language:hover{border-color:#71877a}
-.language svg{width:13px;height:13px;color:var(--muted);flex:none}
-.language select{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:var(--ink);outline:0;cursor:pointer;padding-right:2px}
-[dir="rtl"] .topbar{direction:rtl}
-
-/* hero */
-.hero{min-height:780px;display:grid;grid-template-columns:57% 43%;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero-copy{padding:180px 7vw 110px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
-.eyebrow{margin:0 0 28px;display:flex;align-items:center;gap:11px;color:#607067;font:600 10px/1.3 var(--mono);letter-spacing:.13em;text-transform:uppercase}
-.eyebrow span:first-child{display:block;width:28px;height:1px;background:currentColor;flex:none}
-.hero h1,.section-heading h2{margin:0;font:400 clamp(52px,7vw,108px)/.92 var(--serif);letter-spacing:-.055em}
-.hero h1 em,.section-heading h2 em{color:#71877a;font-weight:400;font-style:italic}
-.intro{max-width:590px;margin:40px 0;color:var(--muted);font:400 17px/1.8 var(--sans)}
-.round-link{display:inline-flex;gap:28px;align-items:center;border:1px solid var(--ink);border-radius:99px;padding:15px 18px 15px 22px;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;transition:.25s}
-.round-link .arw{font-size:17px}
-.round-link:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
-.hero-art{position:relative;min-height:740px;background:#dfe9dd;overflow:hidden;border-left:1px solid var(--line)}
-[dir="rtl"] .hero-art{border-left:0;border-right:1px solid var(--line)}
-.sun-disc{position:absolute;z-index:3;width:min(25vw,350px);aspect-ratio:1;border-radius:50%;background:#f6c94f;left:50%;top:27%;transform:translateX(-50%);box-shadow:0 20px 90px rgba(226,158,27,.2);display:grid;place-items:center}
-.sun-disc span{color:rgba(59,59,40,.58);font:600 9px/1.5 var(--mono);letter-spacing:.2em;text-align:center;text-transform:uppercase}
-.orbit{position:absolute;border:1px solid rgba(72,95,80,.2);border-radius:50%;aspect-ratio:1;left:50%;top:47%;transform:translate(-50%,-50%)}
-.orbit-one{width:82%}.orbit-two{width:115%}
-.horizon{position:absolute;z-index:4;inset:61% -10% 0;background:#a5bea9;border-radius:50% 50% 0 0/12% 12% 0 0;box-shadow:inset 0 1px rgba(255,255,255,.65)}
-.art-note{position:absolute;z-index:5;bottom:7%;left:9%;margin:0;color:rgba(37,56,44,.65);font:10px/1.7 var(--mono);letter-spacing:.08em}
-[dir="rtl"] .art-note{left:auto;right:9%;direction:ltr;text-align:left}
-
-/* manifesto */
-.manifesto{min-height:210px;display:grid;grid-template-columns:1fr 5fr 1.5fr;align-items:center;gap:30px;padding:50px 7vw;border-bottom:1px solid var(--line)}
-.code-mark{font:11px var(--mono);color:#8a928d}
-.manifesto>p{margin:0;font:400 clamp(28px,3.1vw,48px)/1.2 var(--serif)}
-.manifesto>p strong{color:#77907d;font-weight:400;font-style:italic}
-.manifesto .manifesto-side{font:600 9px/1.8 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#7a847e}
-
-/* things */
-.things{padding:130px 7vw 150px}
-.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:70px}
-.section-heading h2{font-size:clamp(40px,5.1vw,76px)}
-.section-heading>p{margin:0 0 7px;max-width:320px;color:var(--muted);font:13px/1.7 var(--mono)}
-.product-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-[dir="rtl"] .product-grid{border-left:0;border-right:1px solid var(--line)}
-.product{min-height:520px;padding:24px;display:flex;flex-direction:column;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:transform .3s,box-shadow .3s;color:inherit}
-[dir="rtl"] .product{border-right:0;border-left:1px solid var(--line)}
-.product:hover,.product:focus-visible{transform:translateY(-8px);box-shadow:0 18px 50px rgba(48,62,53,.1);z-index:2}
-.product.sun{background:#f7e6a5}.product.sage{background:#dce8db}.product.blue{background:#dfe9ea}.product.peach{background:#f2ddd1}
-.product.disabled{cursor:default}
-.product.disabled:hover,.product.disabled:focus-visible{transform:none;box-shadow:none}
-.product-top{display:flex;justify-content:space-between;align-items:center;font:10px var(--mono);text-transform:uppercase;letter-spacing:.09em}
-.status{display:flex;align-items:center;gap:6px;padding:6px 8px;border:1px solid rgba(36,49,43,.18);border-radius:99px}
-.status i{width:5px;height:5px;border-radius:50%;background:#5d7e61;flex:none}
-.product-mark{height:170px;display:grid;place-items:center;color:rgba(42,58,49,.55);font:300 67px/1 var(--serif)}
-.product-kind{margin:0 0 8px;font:600 9px var(--mono);text-transform:uppercase;letter-spacing:.12em;color:rgba(42,57,49,.65)}
-.product h3{margin:0 0 18px;font:400 38px/1 var(--serif);letter-spacing:-.04em}
-.product-description{margin:0;color:rgba(42,57,49,.75);font:13px/1.65 var(--sans)}
-.product .act{margin-top:auto;padding-top:26px;border-top:1px solid rgba(42,57,49,.17);display:flex;justify-content:space-between;font:600 10px var(--mono);text-transform:uppercase;letter-spacing:.08em}
-
-/* studio note */
-.note{display:grid;grid-template-columns:1fr 2fr;gap:10vw;padding:130px 7vw;background:#ece8dc;border-top:1px solid var(--line)}
-.note-label{display:flex;flex-direction:column;justify-content:space-between;gap:20px;font:10px var(--mono);color:#7b837e;text-transform:uppercase;letter-spacing:.1em}
-.note-copy{max-width:780px}
-.note-copy p{margin:0 0 35px;color:#56615b;font:400 17px/1.8 var(--sans)}
-.note-copy .dropcap{color:var(--ink);font:400 clamp(30px,3vw,46px)/1.35 var(--serif);letter-spacing:-.025em}
-.note-copy blockquote{margin:65px 0 0;font:italic 25px var(--serif);color:#71877a}
-
-/* footer */
-footer{background:#24312b;color:#f4f1e7;padding:56px 7vw 32px}
-.footer-callout{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-.footer-callout p{margin:0;color:#aab6af;font:10px var(--mono);letter-spacing:.15em;text-transform:uppercase}
-.footer-callout h2{margin:40px 0;font:400 clamp(38px,5.5vw,80px)/1 var(--serif);letter-spacing:-.06em}
-.footer-callout h2 span{color:#c9a84c}
-.footer-bottom{padding-top:28px;border-top:1px solid rgba(255,255,255,.18);display:grid;grid-template-columns:1fr auto 1fr;gap:30px;font:9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#acb6b0}
-.footer-bottom>p{margin:0}
-.footer-bottom>a.totop{justify-self:end}
-.socials{display:flex;gap:22px;justify-self:center}
-.socials a:hover,.footer-bottom>a:hover{color:#fff}
-
-@media(max-width:1000px){.product-grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr 42%}.sun-disc{width:28vw}}
-@media(max-width:720px){
-  .topbar{height:68px;padding:0 22px;grid-template-columns:1fr auto}
-  .topbar nav{display:none}
-  .hero{display:flex;flex-direction:column;min-height:auto}
-  .hero-copy{padding:120px 24px 70px;min-height:600px}
-  .hero h1{font-size:clamp(48px,15vw,82px)}
-  .intro{font-size:15px;line-height:1.7;margin:32px 0}
-  .hero-art{min-height:440px;border-left:0;border-top:1px solid var(--line)}
-  [dir="rtl"] .hero-art{border-right:0;border-top:1px solid var(--line)}
-  .sun-disc{width:58vw;max-width:270px}
-  .manifesto{grid-template-columns:1fr;gap:22px;padding:60px 24px}
-  .manifesto .manifesto-side{padding-top:18px;border-top:1px solid var(--line)}
-  .things{padding:90px 24px 100px}
-  .section-heading{display:block;margin-bottom:45px}
-  .section-heading h2{font-size:44px}
-  .section-heading>p{margin-top:30px}
-  .product-grid{grid-template-columns:1fr}
-  .product{min-height:auto;padding-bottom:34px}
-  .product-mark{height:120px;font-size:54px}
-  .note{grid-template-columns:1fr;gap:44px;padding:90px 24px}
-  .note-label{flex-direction:row;justify-content:space-between}
-  .note-copy .dropcap{font-size:30px}
-  footer{padding:80px 24px 30px}
-  .footer-callout{min-height:130px}
-  .footer-callout h2{font-size:40px}
-  .footer-callout h2 span{display:inline}
-  .footer-bottom{grid-template-columns:1fr auto;gap:16px}
-  .socials{grid-row:1;grid-column:1/-1;flex-wrap:wrap;justify-self:start;padding-bottom:18px}
-  .footer-bottom>a.totop{grid-column:2}
-}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
-</style>
+<link rel="stylesheet" href="/site.css?v=20261018">
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "fc0a8475fd6c49299c632d6023a40a3a"}'></script>
 <!-- End Cloudflare Web Analytics -->
+<script src="/site.js?v=20261018" defer></script>
 </head>
 <body>
 
-<a class="sr-only" href="#things">Skip to content</a>
-
-<header class="topbar" id="top">
-  <a class="logo ltr" href="#top" aria-label="ipe home">ipe<span>()</span></a>
-  <nav aria-label="Primary">
-    <a href="#things" data-i18n="nav_things">things we make</a>
-    <a href="#note" data-i18n="nav_note">studio note</a>
-  </nav>
-  <label class="language" title="Language / 언어">
-    <span class="sr-only">Language</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
-    <select class="lang" id="lang" aria-label="Language / 언어">
-      <option value="en">EN</option>
-      <option value="ko">KO</option>
-      <option value="ja">JA</option>
-      <option value="zh">ZH</option>
-      <option value="es">ES</option>
-      <option value="fr">FR</option>
-      <option value="de">DE</option>
-      <option value="pt">PT</option>
-      <option value="ru">RU</option>
-      <option value="ar">AR</option>
-      <option value="hi">HI</option>
-      <option value="id">ID</option>
-    </select>
-  </label>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="hdr wrap">
+    <a class="logo ltr" href="/" aria-label="ipe() — home">ipe<span>()</span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/#things">Things</a>
+      <a href="/#notes">Notes</a>
+      <a href="/about/">About</a>
+      <a href="/privacy/">Privacy</a>
+      <a href="/terms/">Terms</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+    <div class="hdr-right">
+      <label class="language" title="Language / 언어">
+        <span class="sr-only">Language</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
+        <select class="lang" aria-label="Language / 언어" data-en="/" data-ko="/ko/">
+          <option value="en" selected>EN</option><option value="ko">KO</option>
+        </select>
+      </label>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="drawer" aria-label="Open menu"><span class="bars"></span></button>
+    </div>
+  </div>
 </header>
+<div class="scrim" aria-hidden="true"></div>
+<aside class="drawer" id="drawer" aria-label="Site menu" aria-hidden="true" inert>
+  <div class="drawer-top">
+    <a class="logo ltr" href="/" aria-label="ipe() — home">ipe<span>()</span></a>
+    <button class="drawer-close" type="button" aria-label="close">close <span aria-hidden="true">✕</span></button>
+  </div>
+  <nav class="drawer-group" aria-label="Studio">
+    <h2>// studio</h2>
+    <ul>
+      <li><a href="/#things">Things we make <span aria-hidden="true">↗</span></a></li>
+      <li><a href="/#notes">Studio notes <span aria-hidden="true">↗</span></a></li>
+      <li><a href="/about/">About <span aria-hidden="true">↗</span></a></li>
+      <li><a href="/contact/">Contact <span aria-hidden="true">↗</span></a></li>
+    </ul>
+  </nav>
+  <nav class="drawer-group small" aria-label="Policies">
+    <h2>// policies</h2>
+    <ul>
+      <li><a href="/privacy/">Privacy Policy <span aria-hidden="true">↗</span></a></li>
+      <li><a href="/terms/">Terms of Use <span aria-hidden="true">↗</span></a></li>
+      <li><a href="/sitemap.xml">Sitemap <span aria-hidden="true">↗</span></a></li>
+    </ul>
+  </nav>
+  <p class="drawer-foot ltr">ipe(); // be still<br>© 2026 ipe()</p>
+</aside>
 
-<main>
-  <section class="hero">
+<main id="main">
+  <section class="hero" aria-labelledby="h1">
     <div class="hero-copy">
-      <p class="eyebrow"><span></span><span data-i18n="eyebrow_studio">a small AI-native studio · seoul</span></p>
-      <h1 data-i18n="hero_h1">Quiet things<br>for <em>busy minds.</em></h1>
-      <p class="intro" data-i18n="hero_intro">Music to breathe with. Private tools that think on your device. Small things made for the moment the work is finally done.</p>
-      <a class="round-link" href="#things"><span data-i18n="hero_explore">explore the studio</span> <span class="arw" aria-hidden="true">↓</span></a>
+      <p class="eyebrow ltr"><i></i><span>// a small AI-native studio · seoul</span></p>
+      <h1 id="h1">Quiet things<br>for <em>busy minds.</em></h1>
+      <p class="alt" lang="ko">고요한 것들, 분주한 마음을 위해</p>
+      <p class="purpose">ipe() is a small independent studio in Seoul that makes quiet lo-fi music and private, on-device apps.</p>
+      <a class="btn" href="#things"><span>explore the studio</span> <span class="arw" aria-hidden="true">↓</span></a>
     </div>
     <div class="hero-art" role="img" aria-label="A warm sun resting over a calm horizon">
-      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+      <div class="orbit one"></div><div class="orbit two"></div>
       <div class="sun-disc"><span>rest<br>mode</span></div><div class="horizon"></div>
-      <p class="art-note ltr" data-i18n="art_note">// when the process<br>&nbsp;&nbsp;&nbsp;finally rests</p>
+      <p class="art-note ltr">// when the process<br>&nbsp;&nbsp;&nbsp;finally rests</p>
+    </div>
+  </section>
+
+  <section class="facts" aria-label="Studio at a glance">
+    <div class="wrap">
+      <ul>
+        <li><span>studio</span><b>Independent</b></li><li><span>based in</span><b>Seoul, Korea</b></li><li><span>founded</span><b>2026</b></li><li><span>making</span><b>4 products</b></li>
+      </ul>
     </div>
   </section>
 
   <section class="manifesto" aria-label="Studio philosophy">
-    <span class="code-mark ltr">// 00</span>
-    <p data-i18n="manifesto_main">We believe technology can ask for <strong>less</strong> of you.</p>
-    <p class="manifesto-side" data-i18n="manifesto_side">calm by design<br>private by default</p>
-  </section>
-
-  <section class="things" id="things">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow"><span></span><span data-i18n="things_eyebrow">things we make</span></p>
-        <h2 data-i18n="things_h2">Four ways to<br><em>find a little quiet.</em></h2>
+    <div class="wrap">
+      <div class="grid">
+        <span class="code-mark ltr" aria-hidden="true">// 00</span>
+        <div>
+          <p class="line">We believe technology can ask for <strong>less</strong> of you.</p>
+          <div class="cols">
+            <p>Music to breathe with. Private tools that think on your device. Small things made for the moment the work is finally done.</p>
+            <p>ipe() is short for <em>idle process</em>. We are a small independent studio in Seoul, and everything you find here is written, composed and built by us. <a href="/about/" style="border-bottom:1px solid var(--ipe-sage-text)">Read more about the studio</a>.</p>
+          </div>
+        </div>
+        <p class="side">calm by design<br>private by default</p>
       </div>
-      <p data-i18n="things_sub">Each one begins with the same question:<br>could this feel a little more human?</p>
     </div>
-    <div class="product-grid" id="product-grid"><!-- rendered by JS from PRODUCTS --></div>
   </section>
 
-  <section class="note" id="note">
-    <div class="note-label">
-      <p class="eyebrow"><span></span><span data-i18n="note_eyebrow">studio note</span></p>
-      <span class="ltr" data-i18n="note_place">Seoul · 2026</span>
+  <section class="things" id="things" aria-labelledby="things-h">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow ltr"><i></i><span>// things we make</span></p>
+          <h2 id="things-h">Four ways to<br><em>find a little quiet.</em></h2>
+        </div>
+        <p>Each one begins with the same question:<br>could this feel a little more human?</p>
+      </div>
+      <div class="product-grid">
+        <a class="product sun" href="https://idle.ipe.rest" target="_blank" rel="noopener" aria-label="idle() — music for focus & rest">
+          <div class="p-top"><span class="ltr">01</span><span class="status live"><i></i>live</span></div>
+          <div class="p-mark" aria-hidden="true">♪</div>
+          <p class="p-kind">music for focus & rest</p>
+          <h3 class="ltr">idle()</h3>
+          <p class="p-desc">Lo-fi and healing music for the space between one task and the next.</p>
+          <p class="p-meta ltr">YouTube · idle.ipe.rest</p>
+          <div class="p-act"><span>listen now</span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="product sage" href="https://still.ipe.rest" target="_blank" rel="noopener" aria-label="still() — quiet biblical comfort">
+          <div class="p-top"><span class="ltr">02</span><span class="status early"><i></i>early access</span></div>
+          <div class="p-mark" aria-hidden="true">○</div>
+          <p class="p-kind">quiet biblical comfort</p>
+          <h3 class="ltr">still()</h3>
+          <p class="p-desc">Private, on-device reflections for days when you need a quieter voice.</p>
+          <p class="p-meta ltr">iOS · Android</p>
+          <div class="p-act"><span>learn more</span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="product blue" href="https://draft.ipe.rest" target="_blank" rel="noopener" aria-label="draft() — your day, gently written">
+          <div class="p-top"><span class="ltr">03</span><span class="status early"><i></i>early access</span></div>
+          <div class="p-mark" aria-hidden="true">✎</div>
+          <p class="p-kind">your day, gently written</p>
+          <h3 class="ltr">draft()</h3>
+          <p class="p-desc">A few honest words become a story—on your device, in your own voice.</p>
+          <p class="p-meta ltr">iOS · Android</p>
+          <div class="p-act"><span>learn more</span><span aria-hidden="true">↗</span></div>
+        </a>
+        <a class="product peach" href="https://pawstcard.ipe.rest" target="_blank" rel="noopener" aria-label="pawstcard — a note from your pet">
+          <div class="p-top"><span class="ltr">04</span><span class="status dev"><i></i>in development</span></div>
+          <div class="p-mark" aria-hidden="true">◇</div>
+          <p class="p-kind">a note from your pet</p>
+          <h3 class="ltr">pawstcard</h3>
+          <p class="p-desc">Warm, useful visit reports that feel like a postcard sent home by your pet.</p>
+          <p class="p-meta ltr">Web · for sitters</p>
+          <div class="p-act"><span>learn more</span><span aria-hidden="true">↗</span></div>
+        </a>
+      </div>
     </div>
-    <div class="note-copy">
-      <p class="dropcap" data-i18n="note_dropcap">The name <strong>ipe</strong> comes from <em>idle process</em>—the state a processor enters when it finally has nothing left to do, and simply rests.</p>
-      <p data-i18n="note_body">We make for that moment. No noisy dashboards. No cloud listening in. Just a little space for a tired mind to exhale.</p>
-      <blockquote class="ltr" data-i18n="note_quote">“be still, and know”</blockquote>
+  </section>
+
+  <section class="notes" id="notes" aria-labelledby="notes-h">
+    <div class="wrap">
+      <div class="note-intro">
+        <div class="note-label">
+          <p class="eyebrow ltr" style="margin:0"><i></i><span>// studio note</span></p>
+          <span class="place ltr">Seoul · 2026</span>
+        </div>
+        <div class="note-copy">
+          <h2 id="notes-h" class="sr-only">Studio note</h2>
+          <p class="lead">The name <strong>ipe</strong> comes from <em>idle process</em>—the state a processor enters when it finally has nothing left to do, and simply rests.</p>
+          <p>We make for that moment. No noisy dashboards. No cloud listening in. Just a little space for a tired mind to exhale.</p>
+          <blockquote class="ltr">“be still, and know”</blockquote>
+        </div>
+      </div>
+      <div class="note-list-head"><h3>Latest from the studio</h3></div>
+      <ul class="note-list">
+        <li class="plain"><time datetime="2026-10-12">2026-10-12</time><h4>Why we named a studio after an idle process</h4><p>A processor with nothing left to do is not broken. It is resting. That small idea became a name, a sound and a way of making things.</p></li>
+        <li class="plain"><time datetime="2026-09-28">2026-09-28</time><h4>Lo-fi that does not ask for your attention</h4><p>How we shape the tracks on idle(): slow tempo, soft edges, and a rule that nothing should ever interrupt the work you are doing.</p></li>
+        <li class="plain"><time datetime="2026-09-05">2026-09-05</time><h4>What “on-device” means for a journal</h4><p>Your words stay on your phone. A plain-language look at what that promise includes, and what it does not.</p></li>
+      </ul>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="footer-callout">
-    <p data-i18n="footer_callout">you can stop scrolling now.</p>
-    <h2 class="ltr">ipe<span>()</span></h2>
-  </div>
-  <div class="footer-bottom">
-    <p class="ltr">© 2026 ipe() · idle · still · draft · pawstcard</p>
-    <div class="socials ltr">
-      <a href="https://www.youtube.com/@ipe-rest" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://www.instagram.com/ipe.rest" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.tiktok.com/@ipe.rest" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://soundcloud.com/ipe-rest" target="_blank" rel="noopener">SoundCloud</a>
-      <a href="https://x.com/ipe_rest" target="_blank" rel="noopener">X</a>
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="f-grid">
+      <div class="f-brand">
+        <a class="mark ltr" href="/" aria-label="ipe() — home">ipe<span>()</span></a>
+        <p class="line ltr">ipe(); // be still</p>
+        <p>A small independent studio in Seoul, making quiet music and private apps since 2026.</p>
+      </div>
+      <nav class="f-col" aria-label="Studio links">
+        <h2>Studio</h2>
+        <ul>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </nav>
+      <nav class="f-col" aria-label="Legal">
+        <h2>Legal</h2>
+        <ul>
+          <li><a href="/privacy/">Privacy Policy</a></li>
+          <li><a href="/terms/">Terms of Use</a></li>
+        </ul>
+      </nav>
     </div>
-    <a class="totop" href="#top" data-i18n="back_top">back to top ↑</a>
+    <div class="f-bottom">
+      <p class="ltr">© 2026 ipe(). All rights reserved.</p>
+      <div class="socials ltr">
+        <a href="https://www.youtube.com/@ipe-rest" target="_blank" rel="noopener">YouTube</a>
+        <a href="https://www.instagram.com/ipe.rest" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.tiktok.com/@ipe.rest" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://soundcloud.com/ipe-rest" target="_blank" rel="noopener">SoundCloud</a>
+        <a href="https://x.com/ipe_rest" target="_blank" rel="noopener">X</a>
+      </div>
+    </div>
   </div>
 </footer>
 
@@ -373,548 +323,6 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.register('/sw.js').catch(function () {});
   });
 }
-</script>
-
-<!-- ===== Products (data-driven; extend by adding to this array) ===== -->
-<script>
-window.PRODUCTS = [
-  { no: "01", name: "idle()",    kind_key: "p1_kind", desc_key: "p1_desc", act_key: "p1_action", status: "live",  status_key: "status_live",  href: "https://idle.ipe.rest", external: true,  tone: "sun",   mark: "♪" },
-  { no: "02", name: "still()",   kind_key: "p2_kind", desc_key: "p2_desc", act_key: "p2_action", status: "early", status_key: "status_early", href: "https://still.ipe.rest", external: true, tone: "sage",  mark: "○" },
-  { no: "03", name: "draft()",   kind_key: "p3_kind", desc_key: "p3_desc", act_key: "p3_action", status: "early", status_key: "status_early", href: "https://draft.ipe.rest", external: true, tone: "blue",  mark: "✎" },
-  { no: "04", name: "pawstcard", kind_key: "p4_kind", desc_key: "p4_desc", act_key: "p4_action", status: "dev",   status_key: "status_dev",   href: "https://pawstcard.ipe.rest", external: true, tone: "peach", mark: "◇" }
-];
-</script>
-
-<!-- ===== i18n ===== -->
-<script>
-(function () {
-  var DEFAULT_LANG = 'en';
-  var RTL = ['ar'];
-  var LOCALE = { ko:'ko_KR', en:'en_US', ja:'ja_JP', zh:'zh_CN', es:'es_ES', fr:'fr_FR', de:'de_DE', pt:'pt_BR', ru:'ru_RU', ar:'ar_AR', hi:'hi_IN', id:'id_ID' };
-
-  var I18N = {
-    en: {
-      meta_title: "ipe() — quiet things for busy minds · when the process finally rests",
-      meta_desc: "ipe() (short for idle process) is a small AI-native studio building quiet, developer-minded things: AI lo-fi music (idle), on-device AI bible comfort (still), on-device AI journaling (draft), and pet visit reports (pawstcard). Not related to ipe / ipê hardwood. when the process finally rests.",
-      nav_things: "things we make", nav_note: "studio note",
-      eyebrow_studio: "a small AI-native studio · seoul",
-      hero_h1: "Quiet things<br>for <em>busy minds.</em>",
-      hero_intro: "Music to breathe with. Private tools that think on your device. Small things made for the moment the work is finally done.",
-      hero_explore: "explore the studio",
-      art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
-      manifesto_main: "We believe technology can ask for <strong>less</strong> of you.",
-      manifesto_side: "calm by design<br>private by default",
-      things_eyebrow: "things we make",
-      things_h2: "Four ways to<br><em>find a little quiet.</em>",
-      things_sub: "Each one begins with the same question:<br>could this feel a little more human?",
-      p1_kind: "music for focus & rest", p1_desc: "Lo-fi and healing music for the space between one task and the next.", p1_action: "listen now",
-      p2_kind: "quiet biblical comfort", p2_desc: "Private, on-device reflections for days when you need a quieter voice.", p2_action: "learn more",
-      p3_kind: "your day, gently written", p3_desc: "A few honest words become a story—on your device, in your own voice.", p3_action: "learn more",
-      p4_kind: "a note from your pet", p4_desc: "Warm, useful visit reports that feel like a postcard sent home by your pet.", p4_action: "learn more",
-      status_live: "live", status_early: "early access", status_dev: "in development",
-      note_eyebrow: "studio note", note_place: "Seoul · 2026",
-      note_dropcap: "The name <strong>ipe</strong> comes from <em>idle process</em>—the state a processor enters when it finally has nothing left to do, and simply rests.",
-      note_body: "We make for that moment. No noisy dashboards. No cloud listening in. Just a little space for a tired mind to exhale.",
-      note_quote: "“be still, and know”",
-      footer_callout: "you can stop scrolling now.",
-      back_top: "back to top ↑"
-    },
-    ko: {
-      meta_title: "ipe() — 분주한 마음을 위한 고요한 것들 · when the process finally rests",
-      meta_desc: "ipe()(idle process의 줄임말)는 개발자 감성의 조용한 것들을 만드는 작은 AI-native 스튜디오입니다: AI 로파이 음악(idle), 온디바이스 AI 성경 위로(still), 온디바이스 AI 저널링(draft), 반려동물 방문 리포트(pawstcard). ipê 원목과는 무관합니다.",
-      nav_things: "우리가 만드는 것들",
-      nav_note: "스튜디오 노트",
-      eyebrow_studio: "작은 AI 네이티브 스튜디오 · 서울",
-      hero_h1: "고요한 것들,<br><em>분주한 마음을</em> 위해",
-      hero_intro: "함께 숨 쉬는 음악. 당신의 기기 안에서 생각하는 프라이빗한 도구들. 일이 마침내 끝난 그 순간을 위한 작은 것들.",
-      hero_explore: "스튜디오 둘러보기",
-      art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
-      manifesto_main: "기술은 당신에게 <strong>더 적은 것</strong>을 요구할 수 있다고 믿습니다.",
-      manifesto_side: "설계부터 고요하게<br>기본값은 프라이버시",
-      things_eyebrow: "우리가 만드는 것들",
-      things_h2: "작은 고요를<br><em>찾는 네 가지 방법.</em>",
-      things_sub: "모두 같은 질문에서 시작합니다:<br>조금 더 사람다울 순 없을까?",
-      p1_kind: "집중과 쉼을 위한 음악",
-      p1_desc: "하나의 일과 다음 일 사이, 그 여백을 위한 로파이와 힐링 음악.",
-      p1_action: "지금 듣기",
-      p2_kind: "고요한 성경적 위로",
-      p2_desc: "더 잔잔한 목소리가 필요한 날을 위한, 기기 안에서 이루어지는 프라이빗한 묵상.",
-      p2_action: "자세히 보기",
-      p3_kind: "당신의 하루, 다정하게 적히다",
-      p3_desc: "몇 마디 솔직한 말이 이야기가 됩니다—당신의 기기에서, 당신의 목소리로.",
-      p3_action: "자세히 보기",
-      p4_kind: "반려동물이 보내는 한 통",
-      p4_desc: "반려동물이 집으로 부친 엽서 같은, 따뜻하고 쓸모 있는 방문 리포트.",
-      p4_action: "자세히 보기",
-      status_live: "발매됨",
-      status_early: "얼리 액세스",
-      status_dev: "개발 중",
-      note_eyebrow: "스튜디오 노트",
-      note_place: "서울 · 2026",
-      note_dropcap: "<strong>ipe</strong>라는 이름은 <em>idle process</em>에서 왔습니다—프로세서가 마침내 할 일이 하나도 남지 않았을 때 들어가는 상태, 그저 쉬는 상태.",
-      note_body: "우리는 바로 그 순간을 위해 만듭니다. 시끄러운 대시보드도 없이. 엿듣는 클라우드도 없이. 지친 마음이 숨을 내쉴 작은 자리 하나만.",
-      note_quote: "“be still, and know”",
-      footer_callout: "이제 스크롤을 멈춰도 괜찮아요.",
-      back_top: "맨 위로 ↑"
-    },
-    ja: {
-      meta_title: "ipe() — 忙しい心のための、静かなもの · when the process finally rests",
-      meta_desc: "ipe()（idle processの略）は、エンジニア感覚の静かなものをつくる小さなAI-nativeスタジオです：AIローファイ音楽（idle）、オンデバイスAI聖書の慰め（still）、オンデバイスAIジャーナリング（draft）、ペット訪問レポート（pawstcard）。ipê材とは無関係です。",
-      nav_things: "私たちがつくるもの",
-      nav_note: "スタジオノート",
-      eyebrow_studio: "小さなAIネイティブ・スタジオ · ソウル",
-      hero_h1: "静かなものを<br><em>忙しい心へ。</em>",
-      hero_intro: "ともに呼吸する音楽。あなたのデバイスの中で考えるプライベートな道具。仕事がようやく終わったその瞬間のための、小さなもの。",
-      hero_explore: "スタジオを見る",
-      art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
-      manifesto_main: "テクノロジーはあなたに<strong>もっと少なく</strong>を求められると、私たちは信じています。",
-      manifesto_side: "設計から静かに<br>初期値はプライバシー",
-      things_eyebrow: "私たちがつくるもの",
-      things_h2: "小さな静けさを<br><em>見つける四つの方法。</em>",
-      things_sub: "どれも同じ問いから始まります：<br>もう少し人間らしくできないだろうか？",
-      p1_kind: "集中と休息のための音楽",
-      p1_desc: "ひとつの仕事と次の仕事のあいだ、その余白のためのローファイとヒーリング音楽。",
-      p1_action: "いま聴く",
-      p2_kind: "静かな聖書の慰め",
-      p2_desc: "もっと穏やかな声がほしい日のための、デバイス内で完結するプライベートな黙想。",
-      p2_action: "詳しく見る",
-      p3_kind: "あなたの一日を、やさしく綴る",
-      p3_desc: "いくつかの正直な言葉が物語になる—あなたのデバイスで、あなた自身の声で。",
-      p3_action: "詳しく見る",
-      p4_kind: "ペットからの一通",
-      p4_desc: "ペットが家へ送った絵はがきのような、あたたかく役に立つ訪問レポート。",
-      p4_action: "詳しく見る",
-      status_live: "配信中",
-      status_early: "アーリーアクセス",
-      status_dev: "開発中",
-      note_eyebrow: "スタジオノート",
-      note_place: "ソウル · 2026",
-      note_dropcap: "<strong>ipe</strong>という名は <em>idle process</em> に由来します—プロセッサがついにすべきことをすべて終え、ただ休むその状態のことです。",
-      note_body: "私たちはその瞬間のためにつくります。騒がしいダッシュボードもなく。聞き耳を立てるクラウドもなく。疲れた心が息をつける、小さな余白だけを。",
-      note_quote: "“be still, and know”",
-      footer_callout: "もうスクロールを止めていいのです。",
-      back_top: "トップへ ↑"
-    },
-    zh: {
-      meta_title: "ipe() — 献给忙碌心灵的安静之物 · when the process finally rests",
-      meta_desc: "ipe()（idle process 的缩写）是一间小小的 AI-native 工作室，打造带着开发者气质的安静之物：AI Lo-Fi 音乐（idle）、端上 AI 圣经安慰（still）、端上 AI 手记（draft）、宠物到访报告（pawstcard）。与 ipê 硬木无关。",
-      nav_things: "我们做的东西",
-      nav_note: "工作室手记",
-      eyebrow_studio: "一间小小的 AI 原生工作室 · 首尔",
-      hero_h1: "安静的事物<br>献给<em>忙碌的心。</em>",
-      hero_intro: "可以一起呼吸的音乐。在你的设备上思考的私密工具。为工作终于完成的那一刻而做的小小之物。",
-      hero_explore: "走进工作室",
-      art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
-      manifesto_main: "我们相信，科技可以向你索取得<strong>更少</strong>。",
-      manifesto_side: "以安静为设计<br>以隐私为默认",
-      things_eyebrow: "我们做的东西",
-      things_h2: "四种方式<br><em>寻回一点安静。</em>",
-      things_sub: "每一件都始于同一个问题：<br>它能不能，更有人情味一点？",
-      p1_kind: "为专注与休息而作的音乐",
-      p1_desc: "为一件事与下一件事之间的空隙而作的 Lo-fi 与疗愈音乐。",
-      p1_action: "现在聆听",
-      p2_kind: "安静的圣经慰藉",
-      p2_desc: "在你需要更轻声的日子里，于设备本地进行的私密默想。",
-      p2_action: "了解更多",
-      p3_kind: "你的一天，被温柔写下",
-      p3_desc: "几句真诚的话，化作一个故事——在你的设备上，用你自己的声音。",
-      p3_action: "了解更多",
-      p4_kind: "来自宠物的一封信",
-      p4_desc: "温暖而实用的探访报告，像宠物从家里寄来的一张明信片。",
-      p4_action: "了解更多",
-      status_live: "已上线",
-      status_early: "抢先体验",
-      status_dev: "开发中",
-      note_eyebrow: "工作室手记",
-      note_place: "首尔 · 2026",
-      note_dropcap: "<strong>ipe</strong> 这个名字来自 <em>idle process</em>——处理器终于无事可做、只是安歇时所进入的那种状态。",
-      note_body: "我们正是为那一刻而做。没有喧闹的仪表盘。没有偷听的云端。只留一点点空间，让疲惫的心呼出一口气。",
-      note_quote: "“be still, and know”",
-      footer_callout: "现在，你可以停下滚动了。",
-      back_top: "回到顶部 ↑"
-    },
-    es: {
-      meta_title: "ipe() — cosas silenciosas para mentes ocupadas · when the process finally rests",
-      meta_desc: "ipe() (abreviatura de idle process) es un pequeño estudio AI-native que crea cosas tranquilas con espíritu de desarrollador: música AI lo-fi (idle), consuelo bíblico con IA en el dispositivo (still), diario con IA en el dispositivo (draft) e informes de visitas de mascotas (pawstcard). Sin relación con la madera ipê.",
-      nav_things: "lo que hacemos",
-      nav_note: "nota del estudio",
-      eyebrow_studio: "un pequeño estudio AI-native · seúl",
-      hero_h1: "Cosas silenciosas<br>para <em>mentes ocupadas.</em>",
-      hero_intro: "Música para respirar. Herramientas privadas que piensan en tu dispositivo. Pequeñas cosas hechas para el momento en que el trabajo por fin termina.",
-      hero_explore: "explorar el estudio",
-      art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
-      manifesto_main: "Creemos que la tecnología puede pedirte <strong>menos</strong>.",
-      manifesto_side: "serena por diseño<br>privada por defecto",
-      things_eyebrow: "lo que hacemos",
-      things_h2: "Cuatro maneras de<br><em>encontrar un poco de calma.</em>",
-      things_sub: "Cada una empieza con la misma pregunta:<br>¿podría sentirse un poco más humano?",
-      p1_kind: "música para concentrarse y descansar",
-      p1_desc: "Música lo-fi y sanadora para el espacio entre una tarea y la siguiente.",
-      p1_action: "escuchar ahora",
-      p2_kind: "consuelo bíblico y silencioso",
-      p2_desc: "Reflexiones privadas, en tu dispositivo, para los días en que necesitas una voz más serena.",
-      p2_action: "saber más",
-      p3_kind: "tu día, escrito con ternura",
-      p3_desc: "Unas pocas palabras honestas se vuelven historia—en tu dispositivo, con tu propia voz.",
-      p3_action: "saber más",
-      p4_kind: "una nota de tu mascota",
-      p4_desc: "Informes de visita cálidos y útiles, como una postal que tu mascota envía a casa.",
-      p4_action: "saber más",
-      status_live: "en vivo",
-      status_early: "acceso anticipado",
-      status_dev: "en desarrollo",
-      note_eyebrow: "nota del estudio",
-      note_place: "Seúl · 2026",
-      note_dropcap: "El nombre <strong>ipe</strong> viene de <em>idle process</em>—el estado en que entra un procesador cuando por fin no le queda nada que hacer, y simplemente descansa.",
-      note_body: "Hacemos para ese momento. Sin paneles ruidosos. Sin una nube que escucha. Solo un poco de espacio para que una mente cansada exhale.",
-      note_quote: "“be still, and know”",
-      footer_callout: "ya puedes dejar de deslizar.",
-      back_top: "volver arriba ↑"
-    },
-    fr: {
-      meta_title: "ipe() — des choses paisibles pour les esprits pressés · when the process finally rests",
-      meta_desc: "ipe() (abréviation de idle process) est un petit studio AI-native qui crée des choses paisibles à l'esprit développeur : musique AI lo-fi (idle), réconfort biblique par IA sur l'appareil (still), journal par IA sur l'appareil (draft) et comptes rendus de visite pour animaux (pawstcard). Sans lien avec le bois ipê.",
-      nav_things: "ce que nous créons",
-      nav_note: "note du studio",
-      eyebrow_studio: "un petit studio AI-native · séoul",
-      hero_h1: "Des choses paisibles<br>pour les <em>esprits pressés.</em>",
-      hero_intro: "De la musique pour respirer. Des outils privés qui pensent sur votre appareil. De petites choses faites pour l'instant où le travail est enfin terminé.",
-      hero_explore: "explorer le studio",
-      art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
-      manifesto_main: "Nous croyons que la technologie peut exiger <strong>moins</strong> de vous.",
-      manifesto_side: "sereine par conception<br>privée par défaut",
-      things_eyebrow: "ce que nous créons",
-      things_h2: "Quatre façons de<br><em>retrouver un peu de calme.</em>",
-      things_sub: "Chacune commence par la même question :<br>cela pourrait-il être un peu plus humain ?",
-      p1_kind: "de la musique pour se concentrer et se reposer",
-      p1_desc: "De la musique lo-fi et apaisante pour l'espace entre une tâche et la suivante.",
-      p1_action: "écouter maintenant",
-      p2_kind: "un réconfort biblique et paisible",
-      p2_desc: "Des méditations privées, sur votre appareil, pour les jours où vous avez besoin d'une voix plus douce.",
-      p2_action: "en savoir plus",
-      p3_kind: "votre journée, écrite avec douceur",
-      p3_desc: "Quelques mots sincères deviennent un récit—sur votre appareil, avec votre propre voix.",
-      p3_action: "en savoir plus",
-      p4_kind: "un mot de votre animal",
-      p4_desc: "Des comptes rendus de visite chaleureux et utiles, comme une carte postale envoyée par votre animal.",
-      p4_action: "en savoir plus",
-      status_live: "en ligne",
-      status_early: "accès anticipé",
-      status_dev: "en développement",
-      note_eyebrow: "note du studio",
-      note_place: "Séoul · 2026",
-      note_dropcap: "Le nom <strong>ipe</strong> vient de <em>idle process</em>—l'état dans lequel entre un processeur quand il n'a enfin plus rien à faire, et se repose simplement.",
-      note_body: "Nous créons pour cet instant. Pas de tableaux de bord bruyants. Pas de cloud à l'écoute. Juste un peu d'espace pour qu'un esprit fatigué puisse souffler.",
-      note_quote: "“be still, and know”",
-      footer_callout: "vous pouvez arrêter de faire défiler maintenant.",
-      back_top: "haut de page ↑"
-    },
-    de: {
-      meta_title: "ipe() — stille Dinge für ruhelose Köpfe · when the process finally rests",
-      meta_desc: "ipe() (kurz für idle process) ist ein kleines AI-natives Studio für stille, entwicklernahe Dinge: AI-Lo-Fi-Musik (idle), On-Device-KI-Bibeltrost (still), On-Device-KI-Journaling (draft) und Haustier-Besuchsberichte (pawstcard). Kein Bezug zu ipê-Holz.",
-      nav_things: "was wir machen",
-      nav_note: "Studio-Notiz",
-      eyebrow_studio: "ein kleines AI-native Studio · seoul",
-      hero_h1: "Stille Dinge<br>für <em>ruhelose Köpfe.</em>",
-      hero_intro: "Musik zum Durchatmen. Private Werkzeuge, die auf deinem Gerät denken. Kleine Dinge für den Moment, in dem die Arbeit endlich getan ist.",
-      hero_explore: "das Studio entdecken",
-      art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
-      manifesto_main: "Wir glauben, dass Technik <strong>weniger</strong> von dir verlangen kann.",
-      manifesto_side: "ruhig von Grund auf<br>privat als Standard",
-      things_eyebrow: "was wir machen",
-      things_h2: "Vier Wege,<br><em>ein wenig Ruhe zu finden.</em>",
-      things_sub: "Jeder beginnt mit derselben Frage:<br>ließe sich das ein wenig menschlicher anfühlen?",
-      p1_kind: "Musik für Fokus & Ruhe",
-      p1_desc: "Lo-Fi- und Healing-Musik für den Raum zwischen einer Aufgabe und der nächsten.",
-      p1_action: "jetzt hören",
-      p2_kind: "stiller biblischer Trost",
-      p2_desc: "Private Betrachtungen auf deinem Gerät, für Tage, an denen du eine leisere Stimme brauchst.",
-      p2_action: "mehr erfahren",
-      p3_kind: "dein Tag, sanft aufgeschrieben",
-      p3_desc: "Ein paar ehrliche Worte werden zu einer Geschichte—auf deinem Gerät, in deiner eigenen Stimme.",
-      p3_action: "mehr erfahren",
-      p4_kind: "ein Gruß von deinem Haustier",
-      p4_desc: "Warme, hilfreiche Besuchsberichte, die sich anfühlen wie eine Postkarte deines Haustiers nach Hause.",
-      p4_action: "mehr erfahren",
-      status_live: "live",
-      status_early: "früher Zugang",
-      status_dev: "in Entwicklung",
-      note_eyebrow: "Studio-Notiz",
-      note_place: "Seoul · 2026",
-      note_dropcap: "Der Name <strong>ipe</strong> kommt von <em>idle process</em>—dem Zustand, in den ein Prozessor eintritt, wenn er endlich nichts mehr zu tun hat und einfach ruht.",
-      note_body: "Wir machen für genau diesen Moment. Keine lauten Dashboards. Keine Cloud, die mithört. Nur ein wenig Raum, damit ein müder Geist ausatmen kann.",
-      note_quote: "“be still, and know”",
-      footer_callout: "du darfst jetzt aufhören zu scrollen.",
-      back_top: "nach oben ↑"
-    },
-    pt: {
-      meta_title: "ipe() — coisas silenciosas para mentes ocupadas · when the process finally rests",
-      meta_desc: "ipe() (abreviação de idle process) é um pequeno estúdio AI-native que cria coisas silenciosas com alma de desenvolvedor: música AI lo-fi (idle), conforto bíblico com IA no dispositivo (still), diário com IA no dispositivo (draft) e relatórios de visita de pets (pawstcard). Sem relação com a madeira ipê.",
-      nav_things: "o que fazemos",
-      nav_note: "nota do estúdio",
-      eyebrow_studio: "um pequeno estúdio AI-native · seul",
-      hero_h1: "Coisas silenciosas<br>para <em>mentes ocupadas.</em>",
-      hero_intro: "Música para respirar. Ferramentas privadas que pensam no seu dispositivo. Pequenas coisas feitas para o momento em que o trabalho enfim termina.",
-      hero_explore: "explorar o estúdio",
-      art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
-      manifesto_main: "Acreditamos que a tecnologia pode pedir <strong>menos</strong> de você.",
-      manifesto_side: "serena por concepção<br>privada por padrão",
-      things_eyebrow: "o que fazemos",
-      things_h2: "Quatro formas de<br><em>encontrar um pouco de calma.</em>",
-      things_sub: "Cada uma começa com a mesma pergunta:<br>será que isto pode ser um pouco mais humano?",
-      p1_kind: "música para foco e descanso",
-      p1_desc: "Música lo-fi e relaxante para o espaço entre uma tarefa e a seguinte.",
-      p1_action: "ouvir agora",
-      p2_kind: "conforto bíblico e silencioso",
-      p2_desc: "Reflexões privadas, no seu dispositivo, para os dias em que você precisa de uma voz mais suave.",
-      p2_action: "saiba mais",
-      p3_kind: "o seu dia, escrito com carinho",
-      p3_desc: "Algumas palavras sinceras viram uma história—no seu dispositivo, com a sua própria voz.",
-      p3_action: "saiba mais",
-      p4_kind: "um recado do seu pet",
-      p4_desc: "Relatórios de visita calorosos e úteis, como um cartão-postal enviado para casa pelo seu pet.",
-      p4_action: "saiba mais",
-      status_live: "no ar",
-      status_early: "acesso antecipado",
-      status_dev: "em desenvolvimento",
-      note_eyebrow: "nota do estúdio",
-      note_place: "Seul · 2026",
-      note_dropcap: "O nome <strong>ipe</strong> vem de <em>idle process</em>—o estado em que um processador entra quando finalmente não tem mais nada a fazer, e simplesmente descansa.",
-      note_body: "Criamos para esse momento. Sem painéis barulhentos. Sem uma nuvem a escutar. Apenas um pouco de espaço para uma mente cansada respirar.",
-      note_quote: "“be still, and know”",
-      footer_callout: "você já pode parar de rolar.",
-      back_top: "voltar ao topo ↑"
-    },
-    ru: {
-      meta_title: "ipe() — тихие вещи для беспокойных умов · when the process finally rests",
-      meta_desc: "ipe() (сокращение от idle process) — маленькая AI-native студия тихих вещей с духом разработчика: AI lo-fi музыка (idle), библейское утешение с ИИ на устройстве (still), дневник с ИИ на устройстве (draft) и отчёты о визитах к питомцам (pawstcard). Не связано с древесиной ипе.",
-      nav_things: "что мы создаём",
-      nav_note: "заметка студии",
-      eyebrow_studio: "маленькая AI-native студия · сеул",
-      hero_h1: "Тихие вещи<br>для <em>беспокойных умов.</em>",
-      hero_intro: "Музыка, с которой дышится. Приватные инструменты, что думают на вашем устройстве. Маленькие вещи для того мига, когда работа наконец сделана.",
-      hero_explore: "заглянуть в студию",
-      art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
-      manifesto_main: "Мы верим, что технологии могут просить у вас <strong>меньше</strong>.",
-      manifesto_side: "спокойствие по замыслу<br>приватность по умолчанию",
-      things_eyebrow: "что мы создаём",
-      things_h2: "Четыре способа<br><em>найти немного тишины.</em>",
-      things_sub: "Каждый начинается с одного вопроса:<br>а может ли это быть чуть человечнее?",
-      p1_kind: "музыка для сосредоточенности и отдыха",
-      p1_desc: "Lo-fi и исцеляющая музыка для промежутка между одним делом и следующим.",
-      p1_action: "слушать сейчас",
-      p2_kind: "тихое библейское утешение",
-      p2_desc: "Приватные размышления на вашем устройстве — для дней, когда нужен голос потише.",
-      p2_action: "подробнее",
-      p3_kind: "ваш день, записанный с теплотой",
-      p3_desc: "Несколько искренних слов становятся историей — на вашем устройстве, вашим собственным голосом.",
-      p3_action: "подробнее",
-      p4_kind: "весточка от вашего питомца",
-      p4_desc: "Тёплые и полезные отчёты о визите, будто открытка, что питомец прислал домой.",
-      p4_action: "подробнее",
-      status_live: "доступно",
-      status_early: "ранний доступ",
-      status_dev: "в разработке",
-      note_eyebrow: "заметка студии",
-      note_place: "Сеул · 2026",
-      note_dropcap: "Имя <strong>ipe</strong> происходит от <em>idle process</em> — состояния, в которое переходит процессор, когда ему наконец нечего делать, и он просто отдыхает.",
-      note_body: "Мы создаём ради этого мига. Никаких шумных дашбордов. Никакого облака, что подслушивает. Лишь немного пространства, чтобы усталый ум выдохнул.",
-      note_quote: "“be still, and know”",
-      footer_callout: "теперь можно перестать листать.",
-      back_top: "наверх ↑"
-    },
-    ar: {
-      meta_title: "ipe() — أشياء هادئة للعقول المزدحمة · when the process finally rests",
-      meta_desc: "‏ipe() (اختصار لـ idle process) استوديو صغير AI-native يصنع أشياء هادئة بروح المطوّرين: موسيقى لو-فاي بالذكاء الاصطناعي (idle)، وتعزية من الكتاب المقدس على الجهاز (still)، ودفتر يوميات بالذكاء الاصطناعي على الجهاز (draft)، وتقارير زيارة الحيوانات الأليفة (pawstcard). لا علاقة له بخشب الإيبي.",
-      nav_things: "ما نصنعه",
-      nav_note: "ملاحظة الاستوديو",
-      eyebrow_studio: "استوديو صغير أصيل في الذكاء الاصطناعي · سيول",
-      hero_h1: "أشياءُ هادئة<br>من أجل <em>العقول المزدحمة.</em>",
-      hero_intro: "موسيقى تتنفّس معها. أدوات خاصة تفكّر على جهازك. أشياء صغيرة صُنعت للحظة التي ينتهي فيها العمل أخيرًا.",
-      hero_explore: "اكتشف الاستوديو",
-      art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
-      manifesto_main: "نؤمن بأنّ التقنية تستطيع أن تطلب منك <strong>أقلّ</strong>.",
-      manifesto_side: "الهدوء بالتصميم<br>الخصوصية افتراضيًا",
-      things_eyebrow: "ما نصنعه",
-      things_h2: "أربع طرق<br><em>لتجد قليلًا من السكينة.</em>",
-      things_sub: "كلٌّ منها يبدأ بالسؤال نفسه:<br>أيمكن أن يكون هذا أكثر إنسانيةً قليلًا؟",
-      p1_kind: "موسيقى للتركيز والراحة",
-      p1_desc: "موسيقى لو-فاي وشافية للمساحة بين مهمة وأخرى.",
-      p1_action: "استمع الآن",
-      p2_kind: "عزاء كتابي هادئ",
-      p2_desc: "تأمّلات خاصة على جهازك، للأيام التي تحتاج فيها إلى صوت أهدأ.",
-      p2_action: "اعرف المزيد",
-      p3_kind: "يومك، مكتوبًا بلُطف",
-      p3_desc: "بضع كلمات صادقة تصير حكاية—على جهازك، وبصوتك أنت.",
-      p3_action: "اعرف المزيد",
-      p4_kind: "رسالة من حيوانك الأليف",
-      p4_desc: "تقارير زيارة دافئة ومفيدة، تبدو كبطاقة بريدية أرسلها حيوانك الأليف إلى البيت.",
-      p4_action: "اعرف المزيد",
-      status_live: "متاح الآن",
-      status_early: "وصول مبكّر",
-      status_dev: "قيد التطوير",
-      note_eyebrow: "ملاحظة الاستوديو",
-      note_place: "سيول · 2026",
-      note_dropcap: "الاسم <strong>ipe</strong> يأتي من <em>idle process</em>—الحالة التي يدخل فيها المعالج حين لا يبقى لديه أخيرًا ما يفعله، فيرتاح ببساطة.",
-      note_body: "نصنع من أجل تلك اللحظة. لا لوحات معلومات صاخبة. ولا سحابة تتنصّت. مجرّد مساحة صغيرة كي يتنفّس عقلٌ متعب.",
-      note_quote: "“be still, and know”",
-      footer_callout: "يمكنك التوقّف عن التمرير الآن.",
-      back_top: "إلى الأعلى ↑"
-    },
-    hi: {
-      meta_title: "ipe() — व्यस्त मनों के लिए शांत चीज़ें · when the process finally rests",
-      meta_desc: "ipe() (idle process का संक्षिप्त रूप) एक छोटा AI-native स्टूडियो है जो डेवलपर-मन की शांत चीज़ें बनाता है: AI लो-फ़ाई संगीत (idle), डिवाइस-पर AI बाइबल सांत्वना (still), डिवाइस-पर AI जर्नलिंग (draft), और पालतू विज़िट रिपोर्ट (pawstcard)। ipê लकड़ी से कोई संबंध नहीं।",
-      nav_things: "हम जो बनाते हैं",
-      nav_note: "स्टूडियो नोट",
-      eyebrow_studio: "एक छोटा AI-native स्टूडियो · सियोल",
-      hero_h1: "शांत चीज़ें<br><em>व्यस्त मनों</em> के लिए।",
-      hero_intro: "साथ साँस लेने के लिए संगीत। आपके डिवाइस पर ही सोचने वाले निजी उपकरण। उस पल के लिए बनी छोटी-छोटी चीज़ें, जब काम आख़िरकार पूरा हो जाता है।",
-      hero_explore: "स्टूडियो देखें",
-      art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
-      manifesto_main: "हमारा विश्वास है कि तकनीक आपसे <strong>कम</strong> माँग सकती है।",
-      manifesto_side: "बनावट से ही शांत<br>स्वभाव से ही निजी",
-      things_eyebrow: "हम जो बनाते हैं",
-      things_h2: "थोड़ी-सी शांति<br><em>पाने के चार रास्ते।</em>",
-      things_sub: "हर एक की शुरुआत एक ही सवाल से होती है:<br>क्या यह थोड़ा और इंसानी लग सकता है?",
-      p1_kind: "एकाग्रता और विश्राम के लिए संगीत",
-      p1_desc: "एक काम और अगले के बीच की जगह के लिए लो-फ़ाई और सुकून देने वाला संगीत।",
-      p1_action: "अभी सुनें",
-      p2_kind: "शांत बाइबिली सांत्वना",
-      p2_desc: "आपके डिवाइस पर ही निजी मनन, उन दिनों के लिए जब आपको एक कोमल आवाज़ चाहिए।",
-      p2_action: "और जानें",
-      p3_kind: "आपका दिन, कोमलता से लिखा हुआ",
-      p3_desc: "कुछ सच्चे शब्द एक कहानी बन जाते हैं—आपके डिवाइस पर, आपकी अपनी आवाज़ में।",
-      p3_action: "और जानें",
-      p4_kind: "आपके पालतू की ओर से एक संदेश",
-      p4_desc: "गर्मजोशी भरी, काम की मुलाक़ात रिपोर्टें—मानो आपके पालतू ने घर एक पोस्टकार्ड भेजा हो।",
-      p4_action: "और जानें",
-      status_live: "लाइव",
-      status_early: "अर्ली एक्सेस",
-      status_dev: "विकासाधीन",
-      note_eyebrow: "स्टूडियो नोट",
-      note_place: "सियोल · 2026",
-      note_dropcap: "नाम <strong>ipe</strong> आता है <em>idle process</em> से—वह अवस्था जिसमें प्रोसेसर तब पहुँचता है जब आख़िरकार उसके पास करने को कुछ नहीं बचता, और वह बस विश्राम करता है।",
-      note_body: "हम उसी पल के लिए बनाते हैं। कोई शोर मचाते डैशबोर्ड नहीं। कोई ताक-झाँक करता क्लाउड नहीं। बस थोड़ी-सी जगह, ताकि थका हुआ मन एक साँस छोड़ सके।",
-      note_quote: "“be still, and know”",
-      footer_callout: "अब आप स्क्रॉल करना रोक सकते हैं।",
-      back_top: "ऊपर जाएँ ↑"
-    },
-    id: {
-      meta_title: "ipe() — hal-hal tenang untuk pikiran yang sibuk · when the process finally rests",
-      meta_desc: "ipe() (singkatan idle process) adalah studio AI-native kecil yang membuat hal-hal tenang bernuansa developer: musik AI lo-fi (idle), penghiburan Alkitab AI di perangkat (still), jurnal AI di perangkat (draft), dan laporan kunjungan hewan peliharaan (pawstcard). Tidak terkait kayu ipê.",
-      nav_things: "yang kami buat",
-      nav_note: "catatan studio",
-      eyebrow_studio: "studio kecil AI-native · seoul",
-      hero_h1: "Hal-hal tenang<br>untuk <em>pikiran yang sibuk.</em>",
-      hero_intro: "Musik untuk menemani napas. Alat pribadi yang berpikir di perangkatmu. Hal-hal kecil untuk saat pekerjaan akhirnya selesai.",
-      hero_explore: "jelajahi studio",
-      art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
-      manifesto_main: "Kami percaya teknologi bisa meminta <strong>lebih sedikit</strong> darimu.",
-      manifesto_side: "tenang sejak dirancang<br>privat sejak awal",
-      things_eyebrow: "yang kami buat",
-      things_h2: "Empat cara untuk<br><em>menemukan sedikit ketenangan.</em>",
-      things_sub: "Masing-masing bermula dari pertanyaan yang sama:<br>bisakah ini terasa sedikit lebih manusiawi?",
-      p1_kind: "musik untuk fokus & rehat",
-      p1_desc: "Musik lo-fi dan penyembuh untuk ruang antara satu tugas dan tugas berikutnya.",
-      p1_action: "dengarkan sekarang",
-      p2_kind: "penghiburan alkitabiah yang tenang",
-      p2_desc: "Renungan pribadi di perangkatmu, untuk hari-hari saat kamu butuh suara yang lebih lembut.",
-      p2_action: "selengkapnya",
-      p3_kind: "harimu, ditulis dengan lembut",
-      p3_desc: "Beberapa kata yang jujur menjadi sebuah cerita—di perangkatmu, dengan suaramu sendiri.",
-      p3_action: "selengkapnya",
-      p4_kind: "sepatah kata dari hewan peliharaanmu",
-      p4_desc: "Laporan kunjungan yang hangat dan berguna, terasa seperti kartu pos yang dikirim pulang oleh hewan peliharaanmu.",
-      p4_action: "selengkapnya",
-      status_live: "tayang",
-      status_early: "akses awal",
-      status_dev: "dalam pengembangan",
-      note_eyebrow: "catatan studio",
-      note_place: "Seoul · 2026",
-      note_dropcap: "Nama <strong>ipe</strong> berasal dari <em>idle process</em>—keadaan yang dimasuki prosesor ketika akhirnya tak ada lagi yang perlu dikerjakan, dan ia sekadar beristirahat.",
-      note_body: "Kami berkarya untuk momen itu. Tanpa dasbor yang berisik. Tanpa awan yang menguping. Hanya sedikit ruang agar pikiran yang lelah bisa mengembuskan napas.",
-      note_quote: "“be still, and know”",
-      footer_callout: "kamu boleh berhenti menggulir sekarang.",
-      back_top: "ke atas ↑"
-    }
-  };
-
-  function setMeta(sel, attr, val) { var el = document.querySelector(sel); if (el) el.setAttribute(attr, val); }
-  function t(dict, key) { var v = dict[key]; return (v != null) ? v : I18N.en[key]; }
-
-  function renderProducts(dict) {
-    var grid = document.getElementById('product-grid');
-    if (!grid || !window.PRODUCTS) return;
-    var html = '';
-    for (var i = 0; i < window.PRODUCTS.length; i++) {
-      var p = window.PRODUCTS[i];
-      var kind = t(dict, p.kind_key), desc = t(dict, p.desc_key), act = t(dict, p.act_key), st = t(dict, p.status_key);
-      var open = p.href
-        ? '<a class="product ' + p.tone + '" href="' + p.href + '"' + (p.external ? ' target="_blank" rel="noopener"' : '') + '>'
-        : '<div class="product disabled ' + p.tone + '" aria-disabled="true">';
-      var close = p.href ? '</a>' : '</div>';
-      html += open
-        + '<div class="product-top"><span class="product-no ltr">' + p.no + '</span><span class="status"><i></i>' + st + '</span></div>'
-        + '<div class="product-mark" aria-hidden="true">' + p.mark + '</div>'
-        + '<p class="product-kind">' + kind + '</p>'
-        + '<h3 class="ltr">' + p.name + '</h3>'
-        + '<p class="product-description">' + desc + '</p>'
-        + '<span class="act">' + act + '<span aria-hidden="true">' + (p.href ? '↗' : '') + '</span></span>'
-        + close;
-    }
-    grid.innerHTML = html;
-  }
-
-  function applyLang(lang) {
-    if (!I18N[lang]) lang = DEFAULT_LANG;
-    var dict = I18N[lang];
-    var root = document.documentElement;
-    root.setAttribute('lang', lang);
-    root.setAttribute('dir', RTL.indexOf(lang) !== -1 ? 'rtl' : 'ltr');
-
-    var nodes = document.querySelectorAll('[data-i18n]');
-    for (var i = 0; i < nodes.length; i++) {
-      var key = nodes[i].getAttribute('data-i18n');
-      var val = t(dict, key);
-      if (val != null) nodes[i].innerHTML = val;
-    }
-    renderProducts(dict);
-
-    if (dict.meta_title || I18N.en.meta_title) { var mt = t(dict,'meta_title'); document.title = mt; setMeta('#og-title','content',mt); }
-    var md = t(dict,'meta_desc');
-    if (md) { setMeta('meta[name="description"]','content',md); setMeta('#og-desc','content',md); setMeta('meta[name="twitter:description"]','content',md); }
-    setMeta('#og-locale','content', LOCALE[lang] || 'en_US');
-
-    var base = 'https://ipe.rest/';
-    var url = lang === DEFAULT_LANG ? base : base + '?lang=' + lang;
-    setMeta('#canonical','href',url); setMeta('#og-url','content',url);
-    try { history.replaceState(null, '', lang === DEFAULT_LANG ? location.pathname : '?lang=' + lang); } catch (e) {}
-    try { localStorage.setItem('ipe_lang', lang); } catch (e) {}
-  }
-
-  var urlLang = null;
-  try { urlLang = new URLSearchParams(location.search).get('lang'); } catch (e) {}
-  var stored = null;
-  try { stored = localStorage.getItem('ipe_lang'); } catch (e) {}
-  function detectBrowserLang() {
-    try {
-      var list = navigator.languages || [navigator.language || navigator.userLanguage];
-      for (var i = 0; i < list.length; i++) {
-        var code = (list[i] || '').toLowerCase().split('-')[0];
-        if (I18N[code]) return code;
-      }
-    } catch (e) {}
-    return DEFAULT_LANG;
-  }
-  // priority: URL ?lang= > stored > browser > default(en)
-  var initial = (urlLang && I18N[urlLang]) ? urlLang
-              : ((stored && I18N[stored]) ? stored
-              : detectBrowserLang());
-
-  var sel = document.getElementById('lang');
-  if (sel) { sel.value = initial; sel.addEventListener('change', function () { applyLang(this.value); }); }
-  applyLang(initial);
-})();
 </script>
 </body>
 </html>

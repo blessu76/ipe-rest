@@ -1,6 +1,6 @@
 {
   "_meta": {
-    "note": "Single source of truth for ipe.rest/go/{track_code} redirects. Edit THIS file, then regenerate the static pages with: infra/scripts/build_go_redirects.py (do not hand-edit generated index.html files). Source of song data: studio/lyrics/INDEX.md (released songs). Decision 0052 축2 / ANALYTICS_SCHEMA §7.",
+    "note": "Redirect map for ipe.rest/go/{track_code}. The static pages in this folder are generated from this file.",
     "ga4_id": "G-XG4BH800J0",
     "default_lang": "en"
   },

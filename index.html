@@ -13,17 +13,17 @@
 <link rel="canonical" id="canonical" href="https://ipe.rest/">
 
 <!-- ===== PWA ===== -->
-<link rel="manifest" href="/manifest.webmanifest?v=22">
-<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=22">
-<link rel="apple-touch-icon" href="/icon-180.png?v=22">
+<link rel="manifest" href="/manifest.webmanifest?v=23">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
+<link rel="apple-touch-icon" href="/icon-180.png?v=23">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="ipe()">
 
 <!-- ===== Self-hosted fonts (OFL, no third-party requests) — preload critical above-the-fold ===== -->
-<link rel="preload" href="/fonts/inter-400.woff2?v=22" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/jbmono-400.woff2?v=22" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2?v=23" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/jbmono-400.woff2?v=23" as="font" type="font/woff2" crossorigin>
 
 <!-- hreflang (client-side i18n via ?lang=) -->
 <link rel="alternate" hreflang="x-default" href="https://ipe.rest/">
@@ -110,9 +110,9 @@
 
 <style>
 /* ============ Self-hosted web fonts (OFL) — Latin subset only; non-Latin (CJK/AR/HI/RU) falls to system stack ============ */
-@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/inter-400.woff2?v=22") format("woff2");}
-@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/jbmono-400.woff2?v=22") format("woff2");}
-@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/jbmono-600.woff2?v=22") format("woff2");}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/inter-400.woff2?v=23") format("woff2");}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/jbmono-400.woff2?v=23") format("woff2");}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/jbmono-600.woff2?v=23") format("woff2");}
 
 /* ============ ipe() umbrella — "Quiet Systems" (2026-10-20) ============
    White sheet · thin cobalt blueprint lines · numbered sections · sans titles + mono labels. One product for now: idle. */
@@ -203,11 +203,10 @@ img,svg{max-width:100%}
 .about-copy p strong,.about-copy p em{font-weight:400}
 .about-copy p em{font-style:normal;font-family:var(--mono);font-size:.92em;color:var(--cobalt)}
 .about-more{margin:20px 0 0}
-.text-link{display:inline-flex;align-items:center;gap:8px;min-height:var(--tap);color:var(--cobalt);font:600 13px var(--mono);letter-spacing:.06em;text-transform:uppercase}
-.text-link:hover,.text-link:focus-visible{text-decoration:underline;text-underline-offset:4px}
 .about-side{border-inline-start:1px solid var(--cobalt);padding:4px 0 8px;padding-inline-start:22px}
 .about-side .side-code{margin:0;color:var(--cobalt);font:12px var(--mono)}
 .about-side blockquote{margin:14px 0 18px;color:var(--ink);font-size:16px;line-height:1.6}
+[dir="rtl"] .about-side .ltr{text-align:right}
 .about-side .side-rule{display:block;width:24px;height:1px;background:var(--cobalt)}
 
 /* 02 — things we make (single hero card: idle) */
@@ -332,7 +331,7 @@ img,svg{max-width:100%}
 </head>
 <body>
 
-<a class="skip" href="#main">Skip to content</a>
+<a class="skip" href="#main" data-i18n="skip">Skip to content</a>
 
 <header class="site-head" id="top">
   <div class="wrap head-row">
@@ -400,7 +399,7 @@ img,svg{max-width:100%}
         </g>
         <rect x="377" y="193" width="7" height="7" fill="#2f6bf0"/>
         <rect x="537" y="61" width="7" height="7" fill="#2f6bf0"/>
-        <text x="460" y="430" fill="#2f6bf0" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" letter-spacing="1">46 : 10</text>
+        <text x="460" y="430" fill="#2f6bf0" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" letter-spacing="1">00 : 00</text>
         <text x="628" y="520" fill="#7b88a0" font-family="JetBrains Mono, monospace" font-size="12">//</text>
         </svg>
         <p class="art-tags ltr" aria-hidden="true">rest<br>mode</p>
@@ -425,7 +424,7 @@ img,svg{max-width:100%}
       </div>
       <aside class="about-side" aria-label="be still">
         <p class="side-code ltr">// be still</p>
-        <blockquote class="ltr" data-i18n="note_quote">“be still, and know”</blockquote>
+        <blockquote class="ltr" data-i18n="note_quote">“ipe. be still.”</blockquote>
         <span class="side-rule" aria-hidden="true"></span>
       </aside>
     </div>
@@ -518,11 +517,11 @@ img,svg{max-width:100%}
         <h3 class="ltr">idle()</h3>
         <p class="work-kind" data-i18n="p1_kind">music for focus &amp; rest</p>
         <p class="work-desc" data-i18n="p1_desc">Lo-fi and healing music for the space between one task and the next.</p>
-        <dl class="spec ltr">
-          <div><dt>genre</dt><dd>lo-fi · ambient · chillhop · healing</dd></div>
-          <div><dt>album</dt><dd>dear(you); vol.1 — 10/10</dd></div>
-          <div><dt>tracks</dt><dd>12 · YouTube @ipe-rest</dd></div>
-          <div><dt>made with</dt><dd>AI (Suno) · words by hand</dd></div>
+        <dl class="spec">
+          <div><dt data-i18n="spec_genre">genre</dt><dd class="ltr">lo-fi · ambient · chillhop · healing</dd></div>
+          <div><dt data-i18n="spec_album">album</dt><dd class="ltr">dear(you); vol.1 — 10/10</dd></div>
+          <div><dt data-i18n="spec_tracks">tracks</dt><dd class="ltr">12 · YouTube @ipe-rest</dd></div>
+          <div><dt data-i18n="spec_made">made with</dt><dd data-i18n="spec_made_v">AI (Suno) · lyrics AI-drafted, person-reviewed</dd></div>
         </dl>
         <span class="work-act"><span data-i18n="p1_action">listen now</span><span class="arw" aria-hidden="true">↗</span></span>
       </div>
@@ -567,6 +566,9 @@ img,svg{max-width:100%}
     <div class="foot-base">
       <span class="ltr">© 2026 ipe() · idle</span>
       <span data-i18n="note_place">Seoul · 2026</span>
+      <a href="/about/" data-i18n="foot_about">about</a>
+      <a href="/contact/" data-i18n="foot_contact">contact</a>
+      <a href="/privacy/" data-i18n="foot_privacy">privacy</a>
       <a href="#top" data-i18n="back_top">back to top ↑</a>
       <span class="sig ltr">ipe(); // be still</span>
     </div>
@@ -638,8 +640,17 @@ if ('serviceWorker' in navigator) {
       note_eyebrow: "studio note", note_place: "Seoul · 2026",
       note_dropcap: "The name <strong>ipe</strong> comes from <em>idle process</em>—the state a processor enters when it finally has nothing left to do, and simply rests.",
       note_body: "We make for that moment. No noisy dashboards. Just a little space for a tired mind to exhale.",
-      note_quote: "“be still, and know”",
+      note_quote: "“ipe. be still.”",
       footer_callout: "you can stop scrolling now.",
+      skip: "Skip to content",
+      spec_genre: "genre",
+      spec_album: "album",
+      spec_tracks: "tracks",
+      spec_made: "made with",
+      spec_made_v: "AI (Suno) · lyrics AI-drafted, person-reviewed",
+      foot_about: "about",
+      foot_contact: "contact",
+      foot_privacy: "privacy",
       menu: "Menu",
       back_top: "back to top ↑"
     },
@@ -668,8 +679,17 @@ if ('serviceWorker' in navigator) {
       note_place: "서울 · 2026",
       note_dropcap: "<strong>ipe</strong>라는 이름은 <em>idle process</em>에서 왔습니다—프로세서가 마침내 할 일이 하나도 남지 않았을 때 들어가는 상태, 그저 쉬는 상태.",
       note_body: "우리는 바로 그 순간을 위해 만듭니다. 시끄러운 대시보드도 없이. 지친 마음이 숨을 내쉴 작은 자리 하나만.",
-      note_quote: "“be still, and know”",
+      note_quote: "“ipe. be still.”",
       footer_callout: "이제 스크롤을 멈춰도 괜찮아요.",
+      skip: "본문으로 건너뛰기",
+      spec_genre: "장르",
+      spec_album: "앨범",
+      spec_tracks: "트랙",
+      spec_made: "제작",
+      spec_made_v: "AI (Suno) · 가사: AI 초안 + 사람 검토",
+      foot_about: "소개",
+      foot_contact: "문의",
+      foot_privacy: "개인정보처리방침",
       menu: "메뉴",
       back_top: "맨 위로 ↑"
     },
@@ -696,8 +716,17 @@ if ('serviceWorker' in navigator) {
       note_place: "ソウル · 2026",
       note_dropcap: "<strong>ipe</strong>という名は <em>idle process</em> に由来します—プロセッサがついにすべきことをすべて終え、ただ休むその状態のことです。",
       note_body: "私たちはその瞬間のためにつくります。騒がしいダッシュボードもなく。疲れた心が息をつける、小さな余白だけを。",
-      note_quote: "“be still, and know”",
+      note_quote: "“ipe. be still.”",
       footer_callout: "もうスクロールを止めていいのです。",
+      skip: "本文へスキップ",
+      spec_genre: "ジャンル",
+      spec_album: "アルバム",
+      spec_tracks: "トラック",
+      spec_made: "制作",
+      spec_made_v: "AI (Suno) · 歌詞：AIの下書き＋人による確認",
+      foot_about: "概要",
+      foot_contact: "お問い合わせ",
+      foot_privacy: "プライバシー",
       menu: "メニュー",
       back_top: "トップへ ↑"
     },
@@ -724,8 +753,17 @@ if ('serviceWorker' in navigator) {
       note_place: "首尔 · 2026",
       note_dropcap: "<strong>ipe</strong> 这个名字来自 <em>idle process</em>——处理器终于无事可做、只是安歇时所进入的那种状态。",
       note_body: "我们正是为那一刻而做。没有喧闹的仪表盘。只留一点点空间，让疲惫的心呼出一口气。",
-      note_quote: "“be still, and know”",
+      note_quote: "“ipe. be still.”",
       footer_callout: "现在，你可以停下滚动了。",
+      skip: "跳到正文",
+      spec_genre: "类型",
+      spec_album: "专辑",
+      spec_tracks: "曲目",
+      spec_made: "制作方式",
+      spec_made_v: "AI (Suno) · 歌词：AI 初稿 + 人工审阅",
+      foot_about: "关于",
+      foot_contact: "联系",
+      foot_privacy: "隐私政策",
       menu: "菜单",
       back_top: "回到顶部 ↑"
     },
@@ -752,8 +790,17 @@ if ('serviceWorker' in navigator) {
       note_place: "Seúl · 2026",
       note_dropcap: "El nombre <strong>ipe</strong> viene de <em>idle process</em>—el estado en que entra un procesador cuando por fin no le queda nada que hacer, y simplemente descansa.",
       note_body: "Hacemos para ese momento. Sin paneles ruidosos. Solo un poco de espacio para que una mente cansada exhale.",
-      note_quote: "“be still, and know”",
+      note_quote: "“ipe. be still.”",
       footer_callout: "ya puedes dejar de deslizar.",
+      skip: "Saltar al contenido",
+      spec_genre: "género",
+      spec_album: "álbum",
+      spec_tracks: "pistas",
+      spec_made: "hecho con",
+      spec_made_v: "IA (Suno) · letras: borrador de IA revisado por una persona",
+      foot_about: "acerca de",
+      foot_contact: "contacto",
+      foot_privacy: "privacidad",
       menu: "Menú",
       back_top: "volver arriba ↑"
     },
@@ -780,8 +827,17 @@ if ('serviceWorker' in navigator) {
       note_place: "Séoul · 2026",
       note_dropcap: "Le nom <strong>ipe</strong> vient de <em>idle process</em>—l'état dans lequel entre un processeur quand il n'a enfin plus rien à faire, et se repose simplement.",
       note_body: "Nous créons pour cet instant. Pas de tableaux de bord bruyants. Juste un peu d'espace pour qu'un esprit fatigué puisse souffler.",
-      note_quote: "“be still, and know”",
+      note_quote: "“ipe. be still.”",
       footer_callout: "vous pouvez arrêter de faire défiler maintenant.",
+      skip: "Aller au contenu",
+      spec_genre: "genre",
+      spec_album: "album",
+      spec_tracks: "titres",
+      spec_made: "réalisation",
+      spec_made_v: "IA (Suno) · paroles : brouillon d'IA relu par une personne",
+      foot_about: "à propos",
+      foot_contact: "contact",
+      foot_privacy: "confidentialité",
       menu: "Menu",
       back_top: "haut de page ↑"
     },
@@ -808,8 +864,17 @@ if ('serviceWorker' in navigator) {
       note_place: "Seoul · 2026",
       note_dropcap: "Der Name <strong>ipe</strong> kommt von <em>idle process</em>—dem Zustand, in den ein Prozessor eintritt, wenn er endlich nichts mehr zu tun hat und einfach ruht.",
       note_body: "Wir machen für genau diesen Moment. Keine lauten Dashboards. Nur ein wenig Raum, damit ein müder Geist ausatmen kann.",
-      note_quote: "“be still, and know”",
+      note_quote: "“ipe. be still.”",
       footer_callout: "du darfst jetzt aufhören zu scrollen.",
+      skip: "Zum Inhalt springen",
+      spec_genre: "Genre",
+      spec_album: "Album",
+      spec_tracks: "Tracks",
+      spec_made: "Entstehung",
+      spec_made_v: "KI (Suno) · Texte: KI-Entwurf, von einem Menschen geprüft",
+      foot_about: "Über uns",
+      foot_contact: "Kontakt",
+      foot_privacy: "Datenschutz",
       menu: "Menü",
       back_top: "nach oben ↑"
     },
@@ -836,8 +901,17 @@ if ('serviceWorker' in navigator) {
       note_place: "Seul · 2026",
       note_dropcap: "O nome <strong>ipe</strong> vem de <em>idle process</em>—o estado em que um processador entra quando finalmente não tem mais nada a fazer, e simplesmente descansa.",
       note_body: "Criamos para esse momento. Sem painéis barulhentos. Apenas um pouco de espaço para uma mente cansada respirar.",
-      note_quote: "“be still, and know”",
+      note_quote: "“ipe. be still.”",
       footer_callout: "você já pode parar de rolar.",
+      skip: "Ir para o conteúdo",
+      spec_genre: "gênero",
+      spec_album: "álbum",
+      spec_tracks: "faixas",
+      spec_made: "feito com",
+      spec_made_v: "IA (Suno) · letras: rascunho de IA revisado por uma pessoa",
+      foot_about: "sobre",
+      foot_contact: "contato",
+      foot_privacy: "privacidade",
       menu: "Menu",
       back_top: "voltar ao topo ↑"
     },
@@ -864,8 +938,17 @@ if ('serviceWorker' in navigator) {
       note_place: "Сеул · 2026",
       note_dropcap: "Имя <strong>ipe</strong> происходит от <em>idle process</em> — состояния, в которое переходит процессор, когда ему наконец нечего делать, и он просто отдыхает.",
       note_body: "Мы создаём ради этого мига. Никаких шумных дашбордов. Лишь немного пространства, чтобы усталый ум выдохнул.",
-      note_quote: "“be still, and know”",
+      note_quote: "“ipe. be still.”",
       footer_callout: "теперь можно перестать листать.",
+      skip: "Перейти к содержимому",
+      spec_genre: "жанр",
+      spec_album: "альбом",
+      spec_tracks: "треки",
+      spec_made: "как сделано",
+      spec_made_v: "ИИ (Suno) · тексты: черновик ИИ, проверен человеком",
+      foot_about: "о нас",
+      foot_contact: "контакты",
+      foot_privacy: "конфиденциальность",
       menu: "Меню",
       back_top: "наверх ↑"
     },
@@ -892,8 +975,17 @@ if ('serviceWorker' in navigator) {
       note_place: "سيول · 2026",
       note_dropcap: "الاسم <strong>ipe</strong> يأتي من <em>idle process</em>—الحالة التي يدخل فيها المعالج حين لا يبقى لديه أخيرًا ما يفعله، فيرتاح ببساطة.",
       note_body: "نصنع من أجل تلك اللحظة. لا لوحات معلومات صاخبة. مجرّد مساحة صغيرة كي يتنفّس عقلٌ متعب.",
-      note_quote: "“be still, and know”",
+      note_quote: "“ipe. be still.”",
       footer_callout: "يمكنك التوقّف عن التمرير الآن.",
+      skip: "تخطَّ إلى المحتوى",
+      spec_genre: "النوع",
+      spec_album: "الألبوم",
+      spec_tracks: "المقاطع",
+      spec_made: "طريقة الإنتاج",
+      spec_made_v: "الذكاء الاصطناعي (Suno) · الكلمات: مسودة بالذكاء الاصطناعي يراجعها شخص",
+      foot_about: "من نحن",
+      foot_contact: "اتصل بنا",
+      foot_privacy: "الخصوصية",
       menu: "القائمة",
       back_top: "إلى الأعلى ↑"
     },
@@ -920,8 +1012,17 @@ if ('serviceWorker' in navigator) {
       note_place: "सियोल · 2026",
       note_dropcap: "नाम <strong>ipe</strong> आता है <em>idle process</em> से—वह अवस्था जिसमें प्रोसेसर तब पहुँचता है जब आख़िरकार उसके पास करने को कुछ नहीं बचता, और वह बस विश्राम करता है।",
       note_body: "हम उसी पल के लिए बनाते हैं। कोई शोर मचाते डैशबोर्ड नहीं। बस थोड़ी-सी जगह, ताकि थका हुआ मन एक साँस छोड़ सके।",
-      note_quote: "“be still, and know”",
+      note_quote: "“ipe. be still.”",
       footer_callout: "अब आप स्क्रॉल करना रोक सकते हैं।",
+      skip: "मुख्य सामग्री पर जाएँ",
+      spec_genre: "शैली",
+      spec_album: "एल्बम",
+      spec_tracks: "ट्रैक",
+      spec_made: "कैसे बना",
+      spec_made_v: "AI (Suno) · बोल: AI का मसौदा, व्यक्ति द्वारा समीक्षित",
+      foot_about: "परिचय",
+      foot_contact: "संपर्क",
+      foot_privacy: "गोपनीयता",
       menu: "मेनू",
       back_top: "ऊपर जाएँ ↑"
     },
@@ -948,8 +1049,17 @@ if ('serviceWorker' in navigator) {
       note_place: "Seoul · 2026",
       note_dropcap: "Nama <strong>ipe</strong> berasal dari <em>idle process</em>—keadaan yang dimasuki prosesor ketika akhirnya tak ada lagi yang perlu dikerjakan, dan ia sekadar beristirahat.",
       note_body: "Kami berkarya untuk momen itu. Tanpa dasbor yang berisik. Hanya sedikit ruang agar pikiran yang lelah bisa mengembuskan napas.",
-      note_quote: "“be still, and know”",
+      note_quote: "“ipe. be still.”",
       footer_callout: "kamu boleh berhenti menggulir sekarang.",
+      skip: "Lewati ke konten",
+      spec_genre: "genre",
+      spec_album: "album",
+      spec_tracks: "trek",
+      spec_made: "dibuat dengan",
+      spec_made_v: "AI (Suno) · lirik: draf AI, ditinjau manusia",
+      foot_about: "tentang",
+      foot_contact: "kontak",
+      foot_privacy: "privasi",
       menu: "Menu",
       back_top: "ke atas ↑"
     }

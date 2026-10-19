@@ -5,4 +5,5 @@ Design: "Quiet Systems" (2026-10-20) — white sheet, thin cobalt blueprint line
 
 - i18n: 12 languages in the `I18N` object at the bottom of `index.html` (`?lang=xx`, `ar` is RTL).
 - SEO/GEO: meta + hreflang + JSON-LD in `<head>`, `sitemap.xml`, `robots.txt`, `llms.txt`.
-- Cache: bump `?v=` in `index.html` and `CACHE` in `sw.js` together when assets change.
+- Sub pages: `journal/`, `about/`, `contact/`, `privacy/` share `journal/journal.css` (EN/KO in one file, switched by `journal/journal.js`).
+- Cache: bump `?v=` in `index.html`, the sub pages and `CACHE` in `sw.js` together when assets change.

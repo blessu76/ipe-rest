@@ -2,7 +2,7 @@
 
 > ipe() (pronounced "eye-puh" (/ˈaɪpə/); short for "idle process") is a small AI-native studio building quiet, developer-minded things. Its motto is "when the process finally rests." ipe.rest is the official studio home (umbrella); its only product for now is idle (AI lo-fi & healing music, live at idle.ipe.rest). ipe() is not related to ipe (ipê) hardwood, lumber, or decking.
 
-ipe() makes calm lo-fi, ambient, chillhop, and healing music. The music is produced with AI (Suno), openly and transparently; the lyrics, concept, and message are written by hand. The brand pairs a code-editor aesthetic with a gentle, understated sense of rest, and discloses its AI use transparently. Since the dear(you); album, every track closes with a spoken signature: "ipe. be still" — a quiet whispered line referencing Psalm 46:10 ("Be still, and know") and the brand slogan "ipe(); // be still."
+ipe() makes calm lo-fi, ambient, chillhop, and healing music. The music is produced with AI (Suno), openly and transparently; lyrics are AI-drafted and reviewed by a person, and the concept and final decisions are the studio's own. The brand pairs a code-editor aesthetic with a gentle, understated sense of rest, and discloses its AI use transparently. Since the dear(you); album, every track closes with a spoken signature: "ipe. be still" — a quiet whispered line that echoes the brand slogan "ipe(); // be still."
 
 ## Key facts
 - Name: ipe() — short for "idle process" (the state a computer enters when it has no work to do and simply rests)
@@ -14,12 +14,12 @@ ipe() makes calm lo-fi, ambient, chillhop, and healing music. The music is produ
 - Motto / slogan: "when the process finally rests"
 - Code-comment slogan: "ipe(); // be still"
 - Brand signature: since the dear(you); album, every track ends with "ipe. be still" — a single breath, spoken quietly
-- Music creation: AI-assisted (Suno) and disclosed transparently; human-written lyrics and messages
+- Music creation: AI-assisted (Suno) and disclosed transparently; lyrics are AI-drafted and reviewed by a person
 - Site languages: 12 (Korean, English, Japanese, Chinese, Spanish, French, German, Portuguese, Russian, Arabic, Hindi, Indonesian)
 - Status (2026): active — 12 tracks released; debut concept album dear(you); vol.1 complete (10/10 tracks)
 
 ## Track series
-- be still; — healing (theme: stillness; Psalm 46:10)
+- be still; — healing (theme: stillness)
 - late_night.lofi — lo-fi (theme: the ride home after a late night)
 - rest() { chill(); } — chill (theme: you've done enough today)
 - grace_in_the_loop — ambient (theme: grace within repetition)
@@ -56,6 +56,11 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
 ## Journal
 - Journal (EN/KO, weekly): https://ipe.rest/journal/
 - Why ipe() is named after an idle process (2026-10-20): https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/ — the origin of the name "idle process", how the music is made, and the whispered signature "ipe. be still."
+
+## About, contact and policy
+- About: https://ipe.rest/about/ — who runs ipe() (Davy Kim, ipe Studio, Seoul) and what the studio does
+- Contact: https://ipe.rest/contact/ — ipe.haven@gmail.com (replies within 10 days)
+- Privacy policy: https://ipe.rest/privacy/ — Google Analytics, language preference stored in the browser, email correspondence, how to request access or deletion; no ads on ipe.rest
 
 ## Links
 - Website: https://ipe.rest/

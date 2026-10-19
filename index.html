@@ -13,17 +13,17 @@
 <link rel="canonical" id="canonical" href="https://ipe.rest/">
 
 <!-- ===== PWA ===== -->
-<link rel="manifest" href="/manifest.webmanifest?v=21">
-<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=21">
-<link rel="apple-touch-icon" href="/icon-180.png?v=21">
+<link rel="manifest" href="/manifest.webmanifest?v=22">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=22">
+<link rel="apple-touch-icon" href="/icon-180.png?v=22">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="ipe()">
 
 <!-- ===== Self-hosted fonts (OFL, no third-party requests) — preload critical above-the-fold ===== -->
-<link rel="preload" href="/fonts/inter-400.woff2?v=21" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/jbmono-400.woff2?v=21" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2?v=22" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/jbmono-400.woff2?v=22" as="font" type="font/woff2" crossorigin>
 
 <!-- hreflang (client-side i18n via ?lang=) -->
 <link rel="alternate" hreflang="x-default" href="https://ipe.rest/">
@@ -110,9 +110,9 @@
 
 <style>
 /* ============ Self-hosted web fonts (OFL) — Latin subset only; non-Latin (CJK/AR/HI/RU) falls to system stack ============ */
-@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/inter-400.woff2?v=21") format("woff2");}
-@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/jbmono-400.woff2?v=21") format("woff2");}
-@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/jbmono-600.woff2?v=21") format("woff2");}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/inter-400.woff2?v=22") format("woff2");}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/jbmono-400.woff2?v=22") format("woff2");}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/jbmono-600.woff2?v=22") format("woff2");}
 
 /* ============ ipe() umbrella — "Quiet Systems" (2026-10-20) ============
    White sheet · thin cobalt blueprint lines · numbered sections · sans titles + mono labels. One product for now: idle. */
@@ -155,7 +155,7 @@ img,svg{max-width:100%}
 .language{display:inline-flex;align-items:center;gap:6px;min-height:var(--tap);padding:0 12px;border:1px solid var(--line);color:var(--cobalt);font:600 12px var(--mono);cursor:pointer}
 .language:hover,.language:focus-within{border-color:var(--cobalt)}
 .language svg{width:14px;height:14px;flex:none}
-.language select{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:var(--cobalt);outline:0;cursor:pointer;padding:10px 2px;letter-spacing:.06em}
+.language select{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:var(--cobalt);outline:0;cursor:pointer;min-height:var(--tap);padding:0 2px;letter-spacing:.06em}
 .menu-btn{display:none;width:var(--tap);height:var(--tap);place-items:center;border:1px solid var(--line);background:var(--sheet);color:var(--ink);cursor:pointer;padding:0}
 .menu-btn svg{width:18px;height:18px}
 .site-head.is-open .menu-btn .i-open,.menu-btn .i-close{display:none}
@@ -255,7 +255,7 @@ img,svg{max-width:100%}
 .foot-row{display:grid;grid-template-columns:minmax(0,1.1fr) auto auto;gap:24px 40px;align-items:center;padding:24px 0;border-top:1px solid var(--line)}
 .foot-brand{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0}
 .foot-nav,.socials{display:flex;flex-wrap:wrap;align-items:center;gap:0 4px;margin:0;padding:0;list-style:none}
-.foot-nav a,.socials a{display:inline-flex;align-items:center;min-height:var(--tap);padding:0 10px;font-size:14px;color:var(--ink)}
+.foot-nav a,.socials a{display:inline-flex;align-items:center;justify-content:center;min-height:var(--tap);min-width:var(--tap);padding:0 10px;font-size:14px;color:var(--ink)}
 .socials a{font:12px var(--mono);color:var(--text)}
 .foot-nav a:hover,.socials a:hover{color:var(--cobalt)}
 .foot-base{display:flex;flex-wrap:wrap;align-items:center;gap:6px 28px;padding:14px 0 28px;border-top:1px solid var(--line);color:var(--muted);font:12px/1.5 var(--mono)}
@@ -420,7 +420,7 @@ img,svg{max-width:100%}
       <p class="about-lead" data-i18n="manifesto_main">We believe technology can ask for <strong>less</strong> of you.</p>
       <div class="about-copy">
         <p data-i18n="note_dropcap">The name <strong>ipe</strong> comes from <em>idle process</em>—the state a processor enters when it finally has nothing left to do, and simply rests.</p>
-        <p data-i18n="note_body">We make for that moment. No noisy dashboards. No cloud listening in. Just a little space for a tired mind to exhale.</p>
+        <p data-i18n="note_body">We make for that moment. No noisy dashboards. Just a little space for a tired mind to exhale.</p>
         <p class="about-more"><a class="text-link" href="/journal/"><span data-i18n="journal_link">read the journal</span> <span class="arw ltr" aria-hidden="true">→</span></a></p>
       </div>
       <aside class="about-side" aria-label="be still">
@@ -533,7 +533,7 @@ img,svg{max-width:100%}
     <div class="band">
       <div class="band-left">
         <span class="slash" aria-hidden="true"></span>
-        <p class="band-tags" data-i18n="manifesto_side">calm by design<br>private by default</p>
+        <p class="band-tags" data-i18n="manifesto_side">calm by design</p>
       </div>
       <p class="band-quote" data-i18n="things_h2">One way to<br><em>find a little quiet.</em></p>
       <span class="mk m1" aria-hidden="true"></span><span class="mk m2" aria-hidden="true"></span>
@@ -629,7 +629,7 @@ if ('serviceWorker' in navigator) {
       hero_explore: "explore the studio",
       art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
       manifesto_main: "We believe technology can ask for <strong>less</strong> of you.",
-      manifesto_side: "calm by design<br>private by default",
+      manifesto_side: "calm by design",
       things_eyebrow: "things we make",
       things_h2: "One way to<br><em>find a little quiet.</em>",
       things_sub: "It all begins with one question:<br>could this feel a little more human?",
@@ -637,7 +637,7 @@ if ('serviceWorker' in navigator) {
       status_live: "live",
       note_eyebrow: "studio note", note_place: "Seoul · 2026",
       note_dropcap: "The name <strong>ipe</strong> comes from <em>idle process</em>—the state a processor enters when it finally has nothing left to do, and simply rests.",
-      note_body: "We make for that moment. No noisy dashboards. No cloud listening in. Just a little space for a tired mind to exhale.",
+      note_body: "We make for that moment. No noisy dashboards. Just a little space for a tired mind to exhale.",
       note_quote: "“be still, and know”",
       footer_callout: "you can stop scrolling now.",
       menu: "Menu",
@@ -656,7 +656,7 @@ if ('serviceWorker' in navigator) {
       hero_explore: "스튜디오 둘러보기",
       art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
       manifesto_main: "기술은 당신에게 <strong>더 적은 것</strong>을 요구할 수 있다고 믿습니다.",
-      manifesto_side: "설계부터 고요하게<br>기본값은 프라이버시",
+      manifesto_side: "설계부터 고요하게",
       things_eyebrow: "우리가 만드는 것들",
       things_h2: "작은 고요를<br><em>찾는 한 가지 방법.</em>",
       things_sub: "하나의 질문에서 시작합니다:<br>조금 더 사람다울 순 없을까?",
@@ -667,7 +667,7 @@ if ('serviceWorker' in navigator) {
       note_eyebrow: "스튜디오 노트",
       note_place: "서울 · 2026",
       note_dropcap: "<strong>ipe</strong>라는 이름은 <em>idle process</em>에서 왔습니다—프로세서가 마침내 할 일이 하나도 남지 않았을 때 들어가는 상태, 그저 쉬는 상태.",
-      note_body: "우리는 바로 그 순간을 위해 만듭니다. 시끄러운 대시보드도 없이. 엿듣는 클라우드도 없이. 지친 마음이 숨을 내쉴 작은 자리 하나만.",
+      note_body: "우리는 바로 그 순간을 위해 만듭니다. 시끄러운 대시보드도 없이. 지친 마음이 숨을 내쉴 작은 자리 하나만.",
       note_quote: "“be still, and know”",
       footer_callout: "이제 스크롤을 멈춰도 괜찮아요.",
       menu: "메뉴",
@@ -684,7 +684,7 @@ if ('serviceWorker' in navigator) {
       hero_explore: "スタジオを見る",
       art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
       manifesto_main: "テクノロジーはあなたに<strong>もっと少なく</strong>を求められると、私たちは信じています。",
-      manifesto_side: "設計から静かに<br>初期値はプライバシー",
+      manifesto_side: "設計から静かに",
       things_eyebrow: "私たちがつくるもの",
       things_h2: "小さな静けさを<br><em>見つける一つの方法。</em>",
       things_sub: "ひとつの問いから始まります：<br>もう少し人間らしくできないだろうか？",
@@ -695,7 +695,7 @@ if ('serviceWorker' in navigator) {
       note_eyebrow: "スタジオノート",
       note_place: "ソウル · 2026",
       note_dropcap: "<strong>ipe</strong>という名は <em>idle process</em> に由来します—プロセッサがついにすべきことをすべて終え、ただ休むその状態のことです。",
-      note_body: "私たちはその瞬間のためにつくります。騒がしいダッシュボードもなく。聞き耳を立てるクラウドもなく。疲れた心が息をつける、小さな余白だけを。",
+      note_body: "私たちはその瞬間のためにつくります。騒がしいダッシュボードもなく。疲れた心が息をつける、小さな余白だけを。",
       note_quote: "“be still, and know”",
       footer_callout: "もうスクロールを止めていいのです。",
       menu: "メニュー",
@@ -712,7 +712,7 @@ if ('serviceWorker' in navigator) {
       hero_explore: "走进工作室",
       art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
       manifesto_main: "我们相信，科技可以向你索取得<strong>更少</strong>。",
-      manifesto_side: "以安静为设计<br>以隐私为默认",
+      manifesto_side: "以安静为设计",
       things_eyebrow: "我们做的东西",
       things_h2: "一种方式<br><em>寻回一点安静。</em>",
       things_sub: "一切始于一个问题：<br>它能不能，更有人情味一点？",
@@ -723,7 +723,7 @@ if ('serviceWorker' in navigator) {
       note_eyebrow: "工作室手记",
       note_place: "首尔 · 2026",
       note_dropcap: "<strong>ipe</strong> 这个名字来自 <em>idle process</em>——处理器终于无事可做、只是安歇时所进入的那种状态。",
-      note_body: "我们正是为那一刻而做。没有喧闹的仪表盘。没有偷听的云端。只留一点点空间，让疲惫的心呼出一口气。",
+      note_body: "我们正是为那一刻而做。没有喧闹的仪表盘。只留一点点空间，让疲惫的心呼出一口气。",
       note_quote: "“be still, and know”",
       footer_callout: "现在，你可以停下滚动了。",
       menu: "菜单",
@@ -740,7 +740,7 @@ if ('serviceWorker' in navigator) {
       hero_explore: "explorar el estudio",
       art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
       manifesto_main: "Creemos que la tecnología puede pedirte <strong>menos</strong>.",
-      manifesto_side: "serena por diseño<br>privada por defecto",
+      manifesto_side: "serena por diseño",
       things_eyebrow: "lo que hacemos",
       things_h2: "Una manera de<br><em>encontrar un poco de calma.</em>",
       things_sub: "Todo empieza con una pregunta:<br>¿podría sentirse un poco más humano?",
@@ -751,7 +751,7 @@ if ('serviceWorker' in navigator) {
       note_eyebrow: "nota del estudio",
       note_place: "Seúl · 2026",
       note_dropcap: "El nombre <strong>ipe</strong> viene de <em>idle process</em>—el estado en que entra un procesador cuando por fin no le queda nada que hacer, y simplemente descansa.",
-      note_body: "Hacemos para ese momento. Sin paneles ruidosos. Sin una nube que escucha. Solo un poco de espacio para que una mente cansada exhale.",
+      note_body: "Hacemos para ese momento. Sin paneles ruidosos. Solo un poco de espacio para que una mente cansada exhale.",
       note_quote: "“be still, and know”",
       footer_callout: "ya puedes dejar de deslizar.",
       menu: "Menú",
@@ -768,7 +768,7 @@ if ('serviceWorker' in navigator) {
       hero_explore: "explorer le studio",
       art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
       manifesto_main: "Nous croyons que la technologie peut exiger <strong>moins</strong> de vous.",
-      manifesto_side: "sereine par conception<br>privée par défaut",
+      manifesto_side: "sereine par conception",
       things_eyebrow: "ce que nous créons",
       things_h2: "Une façon de<br><em>retrouver un peu de calme.</em>",
       things_sub: "Tout commence par une question :<br>cela pourrait-il être un peu plus humain ?",
@@ -779,7 +779,7 @@ if ('serviceWorker' in navigator) {
       note_eyebrow: "note du studio",
       note_place: "Séoul · 2026",
       note_dropcap: "Le nom <strong>ipe</strong> vient de <em>idle process</em>—l'état dans lequel entre un processeur quand il n'a enfin plus rien à faire, et se repose simplement.",
-      note_body: "Nous créons pour cet instant. Pas de tableaux de bord bruyants. Pas de cloud à l'écoute. Juste un peu d'espace pour qu'un esprit fatigué puisse souffler.",
+      note_body: "Nous créons pour cet instant. Pas de tableaux de bord bruyants. Juste un peu d'espace pour qu'un esprit fatigué puisse souffler.",
       note_quote: "“be still, and know”",
       footer_callout: "vous pouvez arrêter de faire défiler maintenant.",
       menu: "Menu",
@@ -796,7 +796,7 @@ if ('serviceWorker' in navigator) {
       hero_explore: "das Studio entdecken",
       art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
       manifesto_main: "Wir glauben, dass Technik <strong>weniger</strong> von dir verlangen kann.",
-      manifesto_side: "ruhig von Grund auf<br>privat als Standard",
+      manifesto_side: "ruhig von Grund auf",
       things_eyebrow: "was wir machen",
       things_h2: "Ein Weg,<br><em>ein wenig Ruhe zu finden.</em>",
       things_sub: "Alles beginnt mit einer Frage:<br>ließe sich das ein wenig menschlicher anfühlen?",
@@ -807,7 +807,7 @@ if ('serviceWorker' in navigator) {
       note_eyebrow: "Studio-Notiz",
       note_place: "Seoul · 2026",
       note_dropcap: "Der Name <strong>ipe</strong> kommt von <em>idle process</em>—dem Zustand, in den ein Prozessor eintritt, wenn er endlich nichts mehr zu tun hat und einfach ruht.",
-      note_body: "Wir machen für genau diesen Moment. Keine lauten Dashboards. Keine Cloud, die mithört. Nur ein wenig Raum, damit ein müder Geist ausatmen kann.",
+      note_body: "Wir machen für genau diesen Moment. Keine lauten Dashboards. Nur ein wenig Raum, damit ein müder Geist ausatmen kann.",
       note_quote: "“be still, and know”",
       footer_callout: "du darfst jetzt aufhören zu scrollen.",
       menu: "Menü",
@@ -824,7 +824,7 @@ if ('serviceWorker' in navigator) {
       hero_explore: "explorar o estúdio",
       art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
       manifesto_main: "Acreditamos que a tecnologia pode pedir <strong>menos</strong> de você.",
-      manifesto_side: "serena por concepção<br>privada por padrão",
+      manifesto_side: "serena por concepção",
       things_eyebrow: "o que fazemos",
       things_h2: "Uma forma de<br><em>encontrar um pouco de calma.</em>",
       things_sub: "Tudo começa com uma pergunta:<br>será que isto pode ser um pouco mais humano?",
@@ -835,7 +835,7 @@ if ('serviceWorker' in navigator) {
       note_eyebrow: "nota do estúdio",
       note_place: "Seul · 2026",
       note_dropcap: "O nome <strong>ipe</strong> vem de <em>idle process</em>—o estado em que um processador entra quando finalmente não tem mais nada a fazer, e simplesmente descansa.",
-      note_body: "Criamos para esse momento. Sem painéis barulhentos. Sem uma nuvem a escutar. Apenas um pouco de espaço para uma mente cansada respirar.",
+      note_body: "Criamos para esse momento. Sem painéis barulhentos. Apenas um pouco de espaço para uma mente cansada respirar.",
       note_quote: "“be still, and know”",
       footer_callout: "você já pode parar de rolar.",
       menu: "Menu",
@@ -852,7 +852,7 @@ if ('serviceWorker' in navigator) {
       hero_explore: "заглянуть в студию",
       art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
       manifesto_main: "Мы верим, что технологии могут просить у вас <strong>меньше</strong>.",
-      manifesto_side: "спокойствие по замыслу<br>приватность по умолчанию",
+      manifesto_side: "спокойствие по замыслу",
       things_eyebrow: "что мы создаём",
       things_h2: "Один способ<br><em>найти немного тишины.</em>",
       things_sub: "Всё начинается с одного вопроса:<br>а может ли это быть чуть человечнее?",
@@ -863,7 +863,7 @@ if ('serviceWorker' in navigator) {
       note_eyebrow: "заметка студии",
       note_place: "Сеул · 2026",
       note_dropcap: "Имя <strong>ipe</strong> происходит от <em>idle process</em> — состояния, в которое переходит процессор, когда ему наконец нечего делать, и он просто отдыхает.",
-      note_body: "Мы создаём ради этого мига. Никаких шумных дашбордов. Никакого облака, что подслушивает. Лишь немного пространства, чтобы усталый ум выдохнул.",
+      note_body: "Мы создаём ради этого мига. Никаких шумных дашбордов. Лишь немного пространства, чтобы усталый ум выдохнул.",
       note_quote: "“be still, and know”",
       footer_callout: "теперь можно перестать листать.",
       menu: "Меню",
@@ -880,7 +880,7 @@ if ('serviceWorker' in navigator) {
       hero_explore: "اكتشف الاستوديو",
       art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
       manifesto_main: "نؤمن بأنّ التقنية تستطيع أن تطلب منك <strong>أقلّ</strong>.",
-      manifesto_side: "الهدوء بالتصميم<br>الخصوصية افتراضيًا",
+      manifesto_side: "الهدوء بالتصميم",
       things_eyebrow: "ما نصنعه",
       things_h2: "طريقة واحدة<br><em>لتجد قليلًا من السكينة.</em>",
       things_sub: "كل شيء يبدأ بسؤال واحد:<br>أيمكن أن يكون هذا أكثر إنسانيةً قليلًا؟",
@@ -891,7 +891,7 @@ if ('serviceWorker' in navigator) {
       note_eyebrow: "ملاحظة الاستوديو",
       note_place: "سيول · 2026",
       note_dropcap: "الاسم <strong>ipe</strong> يأتي من <em>idle process</em>—الحالة التي يدخل فيها المعالج حين لا يبقى لديه أخيرًا ما يفعله، فيرتاح ببساطة.",
-      note_body: "نصنع من أجل تلك اللحظة. لا لوحات معلومات صاخبة. ولا سحابة تتنصّت. مجرّد مساحة صغيرة كي يتنفّس عقلٌ متعب.",
+      note_body: "نصنع من أجل تلك اللحظة. لا لوحات معلومات صاخبة. مجرّد مساحة صغيرة كي يتنفّس عقلٌ متعب.",
       note_quote: "“be still, and know”",
       footer_callout: "يمكنك التوقّف عن التمرير الآن.",
       menu: "القائمة",
@@ -908,7 +908,7 @@ if ('serviceWorker' in navigator) {
       hero_explore: "स्टूडियो देखें",
       art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
       manifesto_main: "हमारा विश्वास है कि तकनीक आपसे <strong>कम</strong> माँग सकती है।",
-      manifesto_side: "बनावट से ही शांत<br>स्वभाव से ही निजी",
+      manifesto_side: "बनावट से ही शांत",
       things_eyebrow: "हम जो बनाते हैं",
       things_h2: "थोड़ी-सी शांति<br><em>पाने का एक रास्ता।</em>",
       things_sub: "सब कुछ एक ही सवाल से शुरू होता है:<br>क्या यह थोड़ा और इंसानी लग सकता है?",
@@ -919,7 +919,7 @@ if ('serviceWorker' in navigator) {
       note_eyebrow: "स्टूडियो नोट",
       note_place: "सियोल · 2026",
       note_dropcap: "नाम <strong>ipe</strong> आता है <em>idle process</em> से—वह अवस्था जिसमें प्रोसेसर तब पहुँचता है जब आख़िरकार उसके पास करने को कुछ नहीं बचता, और वह बस विश्राम करता है।",
-      note_body: "हम उसी पल के लिए बनाते हैं। कोई शोर मचाते डैशबोर्ड नहीं। कोई ताक-झाँक करता क्लाउड नहीं। बस थोड़ी-सी जगह, ताकि थका हुआ मन एक साँस छोड़ सके।",
+      note_body: "हम उसी पल के लिए बनाते हैं। कोई शोर मचाते डैशबोर्ड नहीं। बस थोड़ी-सी जगह, ताकि थका हुआ मन एक साँस छोड़ सके।",
       note_quote: "“be still, and know”",
       footer_callout: "अब आप स्क्रॉल करना रोक सकते हैं।",
       menu: "मेनू",
@@ -936,7 +936,7 @@ if ('serviceWorker' in navigator) {
       hero_explore: "jelajahi studio",
       art_note: "// when the process<br>&nbsp;&nbsp;&nbsp;finally rests",
       manifesto_main: "Kami percaya teknologi bisa meminta <strong>lebih sedikit</strong> darimu.",
-      manifesto_side: "tenang sejak dirancang<br>privat sejak awal",
+      manifesto_side: "tenang sejak dirancang",
       things_eyebrow: "yang kami buat",
       things_h2: "Satu cara untuk<br><em>menemukan sedikit ketenangan.</em>",
       things_sub: "Semuanya bermula dari satu pertanyaan:<br>bisakah ini terasa sedikit lebih manusiawi?",
@@ -947,7 +947,7 @@ if ('serviceWorker' in navigator) {
       note_eyebrow: "catatan studio",
       note_place: "Seoul · 2026",
       note_dropcap: "Nama <strong>ipe</strong> berasal dari <em>idle process</em>—keadaan yang dimasuki prosesor ketika akhirnya tak ada lagi yang perlu dikerjakan, dan ia sekadar beristirahat.",
-      note_body: "Kami berkarya untuk momen itu. Tanpa dasbor yang berisik. Tanpa awan yang menguping. Hanya sedikit ruang agar pikiran yang lelah bisa mengembuskan napas.",
+      note_body: "Kami berkarya untuk momen itu. Tanpa dasbor yang berisik. Hanya sedikit ruang agar pikiran yang lelah bisa mengembuskan napas.",
       note_quote: "“be still, and know”",
       footer_callout: "kamu boleh berhenti menggulir sekarang.",
       menu: "Menu",

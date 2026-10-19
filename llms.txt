@@ -53,6 +53,10 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
 - S1A1.09 Let's Smile a Little Tomorrow. — EN: https://youtu.be/81XXhmbA_JY · KR: https://youtu.be/QsghUul4Hak
 - S1A1.10 You Did So Well Today. — EN: https://youtu.be/lvyLfiBzMLg · KR: https://youtu.be/I_3pxFG_1Ug
 
+## Journal
+- Journal (EN/KO, weekly): https://ipe.rest/journal/
+- Why ipe() is named after an idle process (2026-10-20): https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/ — the origin of the name "idle process", how the music is made, and the whispered signature "ipe. be still."
+
 ## Links
 - Website: https://ipe.rest/
 - YouTube: https://www.youtube.com/@ipe-rest (all tracks released here)

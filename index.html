@@ -207,6 +207,7 @@ img,svg{max-width:100%}
 .note-copy{max-width:780px}
 .note-copy p{margin:0 0 35px;color:#56615b;font:400 17px/1.8 var(--sans)}
 .note-copy .dropcap{color:var(--ink);font:400 clamp(30px,3vw,46px)/1.35 var(--serif);letter-spacing:-.025em}
+.note-link{margin-top:48px}
 .note-copy blockquote{margin:65px 0 0;font:italic 25px var(--serif);color:#71877a}
 
 /* footer */
@@ -267,6 +268,7 @@ footer{background:#24312b;color:#f4f1e7;padding:56px 7vw 32px}
   <nav aria-label="Primary">
     <a href="#things" data-i18n="nav_things">things we make</a>
     <a href="#note" data-i18n="nav_note">studio note</a>
+    <a href="/journal/" data-i18n="nav_journal">journal</a>
   </nav>
   <label class="language" title="Language / 언어">
     <span class="sr-only">Language</span>
@@ -329,6 +331,7 @@ footer{background:#24312b;color:#f4f1e7;padding:56px 7vw 32px}
       <p class="dropcap" data-i18n="note_dropcap">The name <strong>ipe</strong> comes from <em>idle process</em>—the state a processor enters when it finally has nothing left to do, and simply rests.</p>
       <p data-i18n="note_body">We make for that moment. No noisy dashboards. No cloud listening in. Just a little space for a tired mind to exhale.</p>
       <blockquote class="ltr" data-i18n="note_quote">“be still, and know”</blockquote>
+      <a class="round-link note-link" href="/journal/"><span data-i18n="journal_link">read the journal</span> <span class="arw" aria-hidden="true">→</span></a>
     </div>
   </section>
 </main>
@@ -410,7 +413,7 @@ window.PRODUCTS = [
     en: {
       meta_title: "ipe() — quiet things for busy minds · when the process finally rests",
       meta_desc: "ipe() (short for idle process) is a small AI-native studio building quiet, developer-minded things: AI lo-fi music (idle), on-device AI bible comfort (still), on-device AI journaling (draft), and pet visit reports (pawstcard). Not related to ipe / ipê hardwood. when the process finally rests.",
-      nav_things: "things we make", nav_note: "studio note",
+      nav_things: "things we make", nav_note: "studio note", nav_journal: "journal", journal_link: "read the journal",
       eyebrow_studio: "a small AI-native studio · seoul",
       hero_h1: "Quiet things<br>for <em>busy minds.</em>",
       hero_intro: "Music to breathe with. Private tools that think on your device. Small things made for the moment the work is finally done.",
@@ -438,6 +441,8 @@ window.PRODUCTS = [
       meta_desc: "ipe()(idle process의 줄임말)는 개발자 감성의 조용한 것들을 만드는 작은 AI-native 스튜디오입니다: AI 로파이 음악(idle), 온디바이스 AI 성경 위로(still), 온디바이스 AI 저널링(draft), 반려동물 방문 리포트(pawstcard). ipê 원목과는 무관합니다.",
       nav_things: "우리가 만드는 것들",
       nav_note: "스튜디오 노트",
+      nav_journal: "저널",
+      journal_link: "저널 읽기",
       eyebrow_studio: "작은 AI 네이티브 스튜디오 · 서울",
       hero_h1: "고요한 것들,<br><em>분주한 마음을</em> 위해",
       hero_intro: "함께 숨 쉬는 음악. 당신의 기기 안에서 생각하는 프라이빗한 도구들. 일이 마침내 끝난 그 순간을 위한 작은 것들.",

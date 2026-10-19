@@ -9,21 +9,21 @@
 <meta name="description" id="meta-desc" content="ipe() (short for idle process) is a small AI-native studio building quiet, developer-minded things, starting with AI lo-fi music (idle). Not related to ipe / ipê hardwood. when the process finally rests.">
 <meta name="author" content="ipe()">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="theme-color" content="#fbfaf4">
+<meta name="theme-color" content="#fbfcfe">
 <link rel="canonical" id="canonical" href="https://ipe.rest/">
 
 <!-- ===== PWA ===== -->
-<link rel="manifest" href="/manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
-<link rel="apple-touch-icon" href="/icon-180.png">
+<link rel="manifest" href="/manifest.webmanifest?v=21">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=21">
+<link rel="apple-touch-icon" href="/icon-180.png?v=21">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
 <meta name="apple-mobile-web-app-title" content="ipe()">
 
 <!-- ===== Self-hosted fonts (OFL, no third-party requests) — preload critical above-the-fold ===== -->
-<link rel="preload" href="/fonts/lora-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/inter-400.woff2?v=21" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/jbmono-400.woff2?v=21" as="font" type="font/woff2" crossorigin>
 
 <!-- hreflang (client-side i18n via ?lang=) -->
 <link rel="alternate" hreflang="x-default" href="https://ipe.rest/">
@@ -110,245 +110,466 @@
 
 <style>
 /* ============ Self-hosted web fonts (OFL) — Latin subset only; non-Latin (CJK/AR/HI/RU) falls to system stack ============ */
-@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/inter-400.woff2") format("woff2");}
-@font-face{font-family:"Lora";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/lora-400.woff2") format("woff2");}
-@font-face{font-family:"Lora";font-style:normal;font-weight:700;font-display:swap;src:url("/fonts/lora-700.woff2") format("woff2");}
-@font-face{font-family:"Lora";font-style:italic;font-weight:400;font-display:swap;src:url("/fonts/lora-400-italic.woff2") format("woff2");}
-@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/jbmono-400.woff2") format("woff2");}
-@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/jbmono-600.woff2") format("woff2");}
+@font-face{font-family:"Inter";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/inter-400.woff2?v=21") format("woff2");}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:400;font-display:swap;src:url("/fonts/jbmono-400.woff2?v=21") format("woff2");}
+@font-face{font-family:"JetBrains Mono";font-style:normal;font-weight:600;font-display:swap;src:url("/fonts/jbmono-600.woff2?v=21") format("woff2");}
 
-/* ============ ipe() umbrella — LIGHT / WARM DAYLIGHT (Direction: light-concept) ============
-   Warm paper stock · serif display · calm sun horizon · quiet products (idle only for now). */
-:root{--sage-text:#71877a;--footer-sage:#a8bdab;--ink:#22302b;--muted:#68736d;--paper:#fbfaf4;--line:rgba(34,48,43,.16);
-  --serif:"Lora",Georgia,"Times New Roman",serif;
-  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Segoe UI","Noto Sans",Arial,sans-serif;
-  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,monospace;}
+/* ============ ipe() umbrella — "Quiet Systems" (2026-10-20) ============
+   White sheet · thin cobalt blueprint lines · numbered sections · sans titles + mono labels. One product for now: idle. */
+:root{
+  --paper:#fbfcfe;--sheet:#ffffff;--tint:#f4f7fd;
+  --ink:#0f1829;--text:#2c3547;--muted:#566074;
+  --cobalt:#1f4fd1;--cobalt-bright:#2f6bf0;
+  --line:rgba(31,79,209,.28);--line-soft:rgba(31,79,209,.14);--hair:rgba(15,24,41,.10);
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Pretendard","Hiragino Sans","Noto Sans","Segoe UI",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SF Mono",Menlo,Consolas,monospace;
+  --gut:32px;--tap:44px;
+}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--text);font:400 16px/1.7 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:hidden}
 a{color:inherit;text-decoration:none}
-select{font:inherit}
-::selection{background:#f7d87c;color:var(--ink)}
+select,button{font:inherit;color:inherit}
 img,svg{max-width:100%}
+::selection{background:#cfdcfb;color:var(--ink)}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 .ltr{direction:ltr;unicode-bidi:isolate}
-:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px}
+.skip{position:absolute;inset-inline-start:16px;top:-80px;z-index:50;background:var(--ink);color:#fff;padding:12px 16px;font:13px var(--mono)}
+.skip:focus{top:12px}
+.wrap{width:100%;max-width:calc(1200px + var(--gut)*2);margin-inline:auto;padding-inline:var(--gut)}
+.mono{font-family:var(--mono)}
+[dir="rtl"] .arw{display:inline-block;transform:scaleX(-1)}
+.mk{position:absolute;width:7px;height:7px;background:var(--cobalt-bright);pointer-events:none}
 
-/* topbar */
-.topbar{height:84px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;padding:0 4vw;border-bottom:1px solid var(--line);position:absolute;z-index:10;width:100%}
-.logo{font:700 25px/1 var(--serif);letter-spacing:-.04em}
-.logo span{color:var(--sage-text)}
-.topbar nav{display:flex;gap:36px;font:600 11px/1.2 var(--mono);text-transform:uppercase;letter-spacing:.12em;justify-self:center}
-.topbar nav a{position:relative}
-.topbar nav a:after{content:"";position:absolute;left:0;right:100%;bottom:-7px;height:1px;background:var(--ink);transition:right .25s}
-.topbar nav a:hover:after,.topbar nav a:focus-visible:after{right:0}
-.language{justify-self:end;display:inline-flex;align-items:center;gap:5px;border:1px solid var(--line);border-radius:99px;padding:8px 11px;font:600 11px var(--mono)}
-.language:hover{border-color:#71877a}
-.language svg{width:13px;height:13px;color:var(--muted);flex:none}
-.language select{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:var(--ink);outline:0;cursor:pointer;padding-right:2px}
-[dir="rtl"] .topbar{direction:rtl}
+/* ---------- header ---------- */
+.site-head{position:relative;z-index:20}
+.head-row{display:flex;align-items:center;gap:20px;min-height:84px;border-bottom:1px solid var(--line)}
+.logo{display:inline-flex;align-items:center;min-height:var(--tap);font:400 32px/1 var(--sans);letter-spacing:-.045em;color:var(--ink)}
+.tagline{margin-inline-end:auto;color:var(--muted);font:12px/1.4 var(--mono);letter-spacing:.02em}
+.nav{display:flex;align-items:center;gap:4px}
+.nav a{display:inline-flex;align-items:center;gap:8px;min-height:var(--tap);padding:0 12px;color:var(--ink);font-size:14px;position:relative}
+.nav a .num{font:12px var(--mono);color:var(--cobalt)}
+.nav a:after{content:"";position:absolute;inset-inline:12px;bottom:8px;height:1px;background:var(--cobalt);transform:scaleX(0);transform-origin:left;transition:transform .25s}
+.nav a:hover:after,.nav a:focus-visible:after{transform:scaleX(1)}
+.language{display:inline-flex;align-items:center;gap:6px;min-height:var(--tap);padding:0 12px;border:1px solid var(--line);color:var(--cobalt);font:600 12px var(--mono);cursor:pointer}
+.language:hover,.language:focus-within{border-color:var(--cobalt)}
+.language svg{width:14px;height:14px;flex:none}
+.language select{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:var(--cobalt);outline:0;cursor:pointer;padding:10px 2px;letter-spacing:.06em}
+.menu-btn{display:none;width:var(--tap);height:var(--tap);place-items:center;border:1px solid var(--line);background:var(--sheet);color:var(--ink);cursor:pointer;padding:0}
+.menu-btn svg{width:18px;height:18px}
+.site-head.is-open .menu-btn .i-open,.menu-btn .i-close{display:none}
+.site-head.is-open .menu-btn .i-close{display:block}
 
-/* hero */
-.hero{min-height:780px;display:grid;grid-template-columns:57% 43%;overflow:hidden;border-bottom:1px solid var(--line)}
-.hero-copy{padding:180px 7vw 110px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
-.eyebrow{margin:0 0 28px;display:flex;align-items:center;gap:11px;color:#607067;font:600 10px/1.3 var(--mono);letter-spacing:.13em;text-transform:uppercase}
-.eyebrow span:first-child{display:block;width:28px;height:1px;background:currentColor;flex:none}
-.hero h1,.section-heading h2{margin:0;font:400 clamp(52px,7vw,108px)/.92 var(--serif);letter-spacing:-.055em}
-.hero h1 em,.section-heading h2 em{color:#71877a;font-weight:400;font-style:italic}
-.intro{max-width:590px;margin:40px 0;color:var(--muted);font:400 17px/1.8 var(--sans)}
-.round-link{display:inline-flex;gap:28px;align-items:center;border:1px solid var(--ink);border-radius:99px;padding:15px 18px 15px 22px;font:600 11px var(--mono);letter-spacing:.08em;text-transform:uppercase;transition:.25s}
-.round-link .arw{font-size:17px}
-.round-link:hover{background:var(--ink);color:var(--paper);transform:translateY(-2px)}
-.hero-art{position:relative;min-height:740px;background:#dfe9dd;overflow:hidden;border-left:1px solid var(--line)}
-[dir="rtl"] .hero-art{border-left:0;border-right:1px solid var(--line)}
-.sun-disc{position:absolute;z-index:3;width:min(25vw,350px);aspect-ratio:1;border-radius:50%;background:#f6c94f;left:50%;top:27%;transform:translateX(-50%);box-shadow:0 20px 90px rgba(226,158,27,.2);display:grid;place-items:center}
-.sun-disc span{color:rgba(59,59,40,.58);font:600 9px/1.5 var(--mono);letter-spacing:.2em;text-align:center;text-transform:uppercase}
-.orbit{position:absolute;border:1px solid rgba(72,95,80,.2);border-radius:50%;aspect-ratio:1;left:50%;top:47%;transform:translate(-50%,-50%)}
-.orbit-one{width:82%}.orbit-two{width:115%}
-.horizon{position:absolute;z-index:4;inset:61% -10% 0;background:#a5bea9;border-radius:50% 50% 0 0/12% 12% 0 0;box-shadow:inset 0 1px rgba(255,255,255,.65)}
-.art-note{position:absolute;z-index:5;bottom:7%;left:9%;margin:0;color:rgba(37,56,44,.65);font:10px/1.7 var(--mono);letter-spacing:.08em}
-[dir="rtl"] .art-note{left:auto;right:9%;direction:ltr;text-align:left}
+/* ---------- hero ---------- */
+.hero{padding-top:40px}
+.hero-frame{position:relative;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);min-height:540px;border-bottom:1px solid var(--line-soft)}
+.hero-frame:before,.hero-frame:after{content:"";position:absolute;pointer-events:none;background:var(--line-soft)}
+.hero-frame:before{top:-40px;bottom:-56px;inset-inline-start:0;width:1px}
+.hero-frame:after{top:0;height:1px;inset-inline-start:-24px;inset-inline-end:-24px}
+.hero-copy{position:relative;min-width:0;padding:84px 48px 72px 44px;display:flex;flex-direction:column;align-items:flex-start;justify-content:center}
+[dir="rtl"] .hero-copy{padding:84px 44px 72px 48px}
+.hero-copy .code{margin:0 0 22px;color:var(--cobalt);font:13px var(--mono)}
+.hero h1{margin:0;color:var(--ink);font:400 clamp(42px,5vw,66px)/1.06 var(--sans);letter-spacing:-.04em;overflow-wrap:break-word}
+.hero h1 em,.band-quote em{font-style:normal}
+.hero-sub{margin:22px 0 0;color:var(--ink);font:13px/1.6 var(--mono);letter-spacing:.01em}
+.intro{max-width:30em;margin:22px 0 30px;color:var(--text);font-size:17px;line-height:1.75}
+.text-link{display:inline-flex;align-items:center;gap:14px;min-height:var(--tap);color:var(--cobalt);font:600 13px var(--mono);letter-spacing:.02em}
+.text-link .arw{transition:transform .25s}
+.text-link:hover .arw{transform:translateX(4px)}
+[dir="rtl"] .text-link:hover .arw{transform:scaleX(-1) translateX(4px)}
+.hero-art{position:relative;min-width:0;min-height:100%;overflow:hidden;background:#eef2f8;border-inline-start:1px solid var(--line-soft)}
+.hero-art svg,.work-art svg{direction:ltr;unicode-bidi:isolate}
+.hero-art svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.art-tags{position:absolute;top:64px;inset-inline-end:22px;margin:0;color:var(--cobalt);font:600 11px/1.75 var(--mono);letter-spacing:.16em;text-transform:uppercase;text-align:start}
+.art-note{position:absolute;bottom:18px;inset-inline-start:22px;margin:0;padding:2px 6px 2px 0;background:rgba(236,241,247,.88);color:#34425c;font:11px/1.7 var(--mono);letter-spacing:.04em;text-align:left}
+.hero .mk.m1{top:50%;inset-inline-start:calc(45.45% - 3px);margin-top:-60px}
+.hero .mk.m2{top:-3px;inset-inline-end:-3px}
+.hero .mk.m3{bottom:-3px;inset-inline-start:-3px}
 
-/* manifesto */
-.manifesto{min-height:210px;display:grid;grid-template-columns:1fr 5fr 1.5fr;align-items:center;gap:30px;padding:50px 7vw;border-bottom:1px solid var(--line)}
-.code-mark{font:11px var(--mono);color:#8a928d}
-.manifesto>p{margin:0;font:400 clamp(28px,3.1vw,48px)/1.2 var(--serif)}
-.manifesto>p strong{color:#77907d;font-weight:400;font-style:italic}
-.manifesto .manifesto-side{font:600 9px/1.8 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:#7a847e}
+/* ---------- section scaffold ---------- */
+.sec{padding-top:96px}
+.sec-head{display:flex;align-items:baseline;gap:28px;padding-bottom:12px;margin-bottom:40px;border-bottom:1px solid var(--line)}
+.sec-no{color:var(--cobalt);font:13px var(--mono)}
+.sec-label{margin:0;color:var(--cobalt);font:600 12px/1.4 var(--mono);letter-spacing:.14em;text-transform:uppercase}
+.sec-cap{margin:0 0 0 auto;margin-inline-start:auto;max-width:44ch;color:var(--muted);font:12px/1.6 var(--mono);text-align:end}
 
-/* things */
-.things{padding:130px 7vw 150px}
-.section-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;margin-bottom:70px}
-.section-heading h2{font-size:clamp(40px,5.1vw,76px)}
-.section-heading>p{margin:0 0 7px;max-width:320px;color:var(--muted);font:13px/1.7 var(--mono)}
-.product-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
-[dir="rtl"] .product-grid{border-left:0;border-right:1px solid var(--line)}
-.product-grid.is-single{grid-template-columns:minmax(0,440px)}
-.product{min-height:520px;padding:24px;display:flex;flex-direction:column;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:transform .3s,box-shadow .3s;color:inherit}
-[dir="rtl"] .product{border-right:0;border-left:1px solid var(--line)}
-.product:hover,.product:focus-visible{transform:translateY(-8px);box-shadow:0 18px 50px rgba(48,62,53,.1);z-index:2}
-.product.sun{background:#f7e6a5}.product.sage{background:#dce8db}.product.blue{background:#dfe9ea}.product.peach{background:#f2ddd1}
-.product.disabled{cursor:default}
-.product.disabled:hover,.product.disabled:focus-visible{transform:none;box-shadow:none}
-.product-top{display:flex;justify-content:space-between;align-items:center;font:10px var(--mono);text-transform:uppercase;letter-spacing:.09em}
-.status{display:flex;align-items:center;gap:6px;padding:6px 8px;border:1px solid rgba(36,49,43,.18);border-radius:99px}
-.status i{width:5px;height:5px;border-radius:50%;background:#5d7e61;flex:none}
-.product-mark{height:170px;display:grid;place-items:center;color:rgba(42,58,49,.55);font:300 67px/1 var(--serif)}
-.product-kind{margin:0 0 8px;font:600 9px var(--mono);text-transform:uppercase;letter-spacing:.12em;color:rgba(42,57,49,.65)}
-.product h3{margin:0 0 18px;font:400 38px/1 var(--serif);letter-spacing:-.04em}
-.product-description{margin:0;color:rgba(42,57,49,.75);font:13px/1.65 var(--sans)}
-.product .act{margin-top:auto;padding-top:26px;border-top:1px solid rgba(42,57,49,.17);display:flex;justify-content:space-between;font:600 10px var(--mono);text-transform:uppercase;letter-spacing:.08em}
+/* 01 — studio note */
+.about{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,5fr) minmax(0,2.3fr);gap:56px;align-items:start}
+.about-lead{margin:0;color:var(--ink);font:400 clamp(26px,2.5vw,34px)/1.28 var(--sans);letter-spacing:-.025em}
+.about-lead strong{font-weight:400;color:var(--cobalt)}
+.about-copy p{margin:0 0 18px;font-size:16px;line-height:1.8}
+.about-copy p:first-child{color:var(--ink);font-size:17px}
+.about-copy p strong,.about-copy p em{font-weight:400}
+.about-copy p em{font-style:normal;font-family:var(--mono);font-size:.92em;color:var(--cobalt)}
+.about-more{margin:20px 0 0}
+.text-link{display:inline-flex;align-items:center;gap:8px;min-height:var(--tap);color:var(--cobalt);font:600 13px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.text-link:hover,.text-link:focus-visible{text-decoration:underline;text-underline-offset:4px}
+.about-side{border-inline-start:1px solid var(--cobalt);padding:4px 0 8px;padding-inline-start:22px}
+.about-side .side-code{margin:0;color:var(--cobalt);font:12px var(--mono)}
+.about-side blockquote{margin:14px 0 18px;color:var(--ink);font-size:16px;line-height:1.6}
+.about-side .side-rule{display:block;width:24px;height:1px;background:var(--cobalt)}
 
-/* studio note */
-.note{display:grid;grid-template-columns:1fr 2fr;gap:10vw;padding:130px 7vw;background:#ece8dc;border-top:1px solid var(--line)}
-.note-label{display:flex;flex-direction:column;justify-content:space-between;gap:20px;font:10px var(--mono);color:#7b837e;text-transform:uppercase;letter-spacing:.1em}
-.note-copy{max-width:780px}
-.note-copy p{margin:0 0 35px;color:#56615b;font:400 17px/1.8 var(--sans)}
-.note-copy .dropcap{color:var(--ink);font:400 clamp(30px,3vw,46px)/1.35 var(--serif);letter-spacing:-.025em}
-.note-link{margin-top:48px}
-.note-copy blockquote{margin:65px 0 0;font:italic 25px var(--serif);color:#71877a}
+/* 02 — things we make (single hero card: idle) */
+.work{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);min-height:460px;background:var(--sheet);border:1px solid var(--line);transition:border-color .25s,box-shadow .25s;color:var(--text)}
+.work:hover,.work:focus-visible{border-color:var(--cobalt);box-shadow:0 22px 60px rgba(31,79,209,.10)}
+.work-art{position:relative;min-width:0;min-height:320px;overflow:hidden;background:#0b2463}
+.work-art svg{position:absolute;inset:0;width:100%;height:100%;display:block}
+.work-art .corner{position:absolute;top:14px;color:rgba(255,255,255,.82);font:12px var(--mono)}
+.work-art .c1{left:16px}.work-art .c2{right:16px}
+.work-art .wave-note{position:absolute;bottom:16px;left:16px;color:rgba(255,255,255,.78);font:11px/1.6 var(--mono);letter-spacing:.06em}
+.work-body{min-width:0;display:flex;flex-direction:column;padding:34px 40px 28px}
+.work-top{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.status{display:inline-flex;align-items:center;gap:8px;color:var(--cobalt);font:600 12px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.status i{width:7px;height:7px;border-radius:50%;background:var(--cobalt-bright);flex:none;box-shadow:0 0 0 4px rgba(47,107,240,.14)}
+.work-url{color:var(--muted);font:12px var(--mono)}
+.work h3{margin:26px 0 10px;color:var(--ink);font:400 clamp(46px,5.2vw,68px)/1 var(--sans);letter-spacing:-.05em}
+.work-kind{margin:0 0 12px;color:var(--ink);font-size:19px;line-height:1.45}
+.work-desc{margin:0;max-width:46ch;font-size:16px;line-height:1.75}
+.spec{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));column-gap:28px;margin:28px 0 0;padding:0;border-top:1px solid var(--hair);text-align:left}
+.spec div{min-width:0;padding:12px 0;border-bottom:1px solid var(--hair)}
+.spec dt{color:var(--muted);font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.spec dd{margin:4px 0 0;color:var(--ink);font:13px/1.5 var(--mono);overflow-wrap:anywhere}
+.work-act{margin-top:auto;padding-top:26px;display:flex;justify-content:space-between;align-items:center;min-height:calc(var(--tap) + 26px);color:var(--cobalt);font:600 13px var(--mono);letter-spacing:.06em;text-transform:uppercase}
+.work-act .arw{font-size:18px;transition:transform .25s}
+.work:hover .work-act .arw{transform:translate(3px,-3px)}
+[dir="rtl"] .work:hover .work-act .arw{transform:scaleX(-1) translate(3px,-3px)}
 
-/* footer */
-footer{background:#24312b;color:#f4f1e7;padding:56px 7vw 32px}
-.footer-callout{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
-.footer-callout p{margin:0;color:#aab6af;font:10px var(--mono);letter-spacing:.15em;text-transform:uppercase}
-.footer-callout h2{margin:40px 0;font:400 clamp(38px,5.5vw,80px)/1 var(--serif);letter-spacing:-.06em}
-.footer-callout h2 span{color:var(--footer-sage)}
-.footer-bottom{padding-top:28px;border-top:1px solid rgba(255,255,255,.18);display:grid;grid-template-columns:1fr auto 1fr;gap:30px;font:9px var(--mono);letter-spacing:.08em;text-transform:uppercase;color:#acb6b0}
-.footer-bottom>p{margin:0}
-.footer-bottom>a.totop{justify-self:end}
-.socials{display:flex;gap:22px;justify-self:center}
-.socials a:hover,.footer-bottom>a:hover{color:#fff}
+/* band — philosophy on a blueprint grid */
+.band-wrap{padding-top:72px}
+.band{position:relative;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:center;min-height:240px;padding:56px 56px;border:1px solid var(--line-soft);
+  background-color:var(--tint);
+  background-image:linear-gradient(rgba(31,79,209,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(31,79,209,.09) 1px,transparent 1px),linear-gradient(rgba(31,79,209,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(31,79,209,.045) 1px,transparent 1px);
+  background-size:80px 80px,80px 80px,16px 16px,16px 16px;background-position:-1px -1px}
+.band-left{display:flex;align-items:center;gap:28px;min-width:0}
+.band .slash{flex:none;width:96px;height:64px;background:linear-gradient(to bottom right,transparent calc(50% - .6px),var(--cobalt-bright) calc(50% - .6px),var(--cobalt-bright) calc(50% + .6px),transparent calc(50% + .6px))}
+.band-tags{margin:0;color:var(--cobalt);font:600 12px/1.9 var(--mono);letter-spacing:.16em;text-transform:uppercase}
+.band-quote{margin:0;color:var(--ink);font:400 clamp(22px,2.3vw,30px)/1.4 var(--sans);letter-spacing:-.02em}
+.band .mk.m1{top:22px;inset-inline-start:36px}
+.band .mk.m2{top:50%;inset-inline-end:40px}
 
-@media(max-width:1000px){.product-grid{grid-template-columns:repeat(2,1fr)}.hero{grid-template-columns:1fr 42%}.sun-disc{width:28vw}}
-@media(max-width:720px){
-  .topbar{height:68px;padding:0 22px;grid-template-columns:1fr auto}
-  .topbar nav{display:none}
-  .hero{display:flex;flex-direction:column;min-height:auto}
-  .hero-copy{padding:120px 24px 70px;min-height:600px}
-  .hero h1{font-size:clamp(48px,15vw,82px)}
-  .intro{font-size:15px;line-height:1.7;margin:32px 0}
-  .hero-art{min-height:440px;border-left:0;border-top:1px solid var(--line)}
-  [dir="rtl"] .hero-art{border-right:0;border-top:1px solid var(--line)}
-  .sun-disc{width:58vw;max-width:270px}
-  .manifesto{grid-template-columns:1fr;gap:22px;padding:60px 24px}
-  .manifesto .manifesto-side{padding-top:18px;border-top:1px solid var(--line)}
-  .things{padding:90px 24px 100px}
-  .section-heading{display:block;margin-bottom:45px}
-  .section-heading h2{font-size:44px}
-  .section-heading>p{margin-top:30px}
-  .product-grid{grid-template-columns:1fr}
-  .product{min-height:auto;padding-bottom:34px}
-  .product-mark{height:120px;font-size:54px}
-  .note{grid-template-columns:1fr;gap:44px;padding:90px 24px}
-  .note-label{flex-direction:row;justify-content:space-between}
-  .note-copy .dropcap{font-size:30px}
-  footer{padding:80px 24px 30px}
-  .footer-callout{min-height:130px}
-  .footer-callout h2{font-size:40px}
-  .footer-callout h2 span{display:inline}
-  .footer-bottom{grid-template-columns:1fr auto;gap:16px}
-  .socials{grid-row:1;grid-column:1/-1;flex-wrap:wrap;justify-self:start;padding-bottom:18px}
-  .footer-bottom>a.totop{grid-column:2}
+/* ---------- footer ---------- */
+.site-foot{padding-top:104px}
+.foot-callout{padding:48px 0 44px;border-top:1px solid var(--line)}
+.foot-callout p{margin:0;color:var(--ink);font:400 clamp(26px,3.2vw,42px)/1.2 var(--sans);letter-spacing:-.03em}
+.foot-row{display:grid;grid-template-columns:minmax(0,1.1fr) auto auto;gap:24px 40px;align-items:center;padding:24px 0;border-top:1px solid var(--line)}
+.foot-brand{display:flex;flex-direction:column;align-items:flex-start;gap:2px;min-width:0}
+.foot-nav,.socials{display:flex;flex-wrap:wrap;align-items:center;gap:0 4px;margin:0;padding:0;list-style:none}
+.foot-nav a,.socials a{display:inline-flex;align-items:center;min-height:var(--tap);padding:0 10px;font-size:14px;color:var(--ink)}
+.socials a{font:12px var(--mono);color:var(--text)}
+.foot-nav a:hover,.socials a:hover{color:var(--cobalt)}
+.foot-base{display:flex;flex-wrap:wrap;align-items:center;gap:6px 28px;padding:14px 0 28px;border-top:1px solid var(--line);color:var(--muted);font:12px/1.5 var(--mono)}
+.foot-base a{display:inline-flex;align-items:center;min-height:var(--tap)}
+.foot-base a:hover{color:var(--cobalt)}
+.foot-base .sig{margin-inline-start:auto;color:var(--cobalt)}
+
+/* ---------- tablet (≤1100) ---------- */
+@media(max-width:1100px){
+  .hero-frame{grid-template-columns:minmax(0,1fr) minmax(0,1fr);min-height:500px}
+  .hero-copy{padding:64px 32px 56px 32px}
+  [dir="rtl"] .hero-copy{padding:64px 32px 56px 32px}
+  .hero .mk.m1{inset-inline-start:calc(50% - 3px)}
+  .about{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:36px 40px}
+  .about-lead{grid-column:1/-1;max-width:24em}
+  .work-body{padding:28px 28px 24px}
+  .band{padding:48px 40px}
+  .foot-row{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+  .foot-brand{grid-column:1/-1}
+}
+/* ---------- mobile (≤760) ---------- */
+@media(max-width:760px){
+  :root{--gut:16px}
+  .head-row{min-height:68px;gap:8px}
+  .logo{font-size:28px;margin-inline-end:auto}
+  .head-row .tagline{display:none}
+  .menu-btn{display:inline-grid}
+  .nav{display:none;position:absolute;top:100%;inset-inline:16px;flex-direction:column;align-items:stretch;gap:0;padding:8px;background:var(--sheet);border:1px solid var(--line);box-shadow:0 18px 40px rgba(15,24,41,.10)}
+  .site-head.is-open .nav{display:flex}
+  .nav a{padding:0 12px;font-size:16px;border-bottom:1px solid var(--hair)}
+  .nav a:last-child{border-bottom:0}
+  .nav a:after{display:none}
+  .hero{padding-top:24px}
+  .hero-frame{grid-template-columns:minmax(0,1fr);min-height:0}
+  .hero-frame:before{display:none}
+  .hero-frame:after{inset-inline:0}
+  .hero-copy,[dir="rtl"] .hero-copy{padding:40px 0 40px}
+  .hero h1{font-size:clamp(36px,10.5vw,52px)}
+  .intro{font-size:16px}
+  .hero-art{min-height:0;aspect-ratio:4/3;border-inline-start:0;border-top:1px solid var(--line-soft)}
+  .art-tags{top:18px;inset-inline-end:16px}
+  .art-note{inset-inline-start:16px;bottom:14px}
+  .hero .mk.m1{display:none}
+  .sec{padding-top:72px}
+  .sec-head{flex-wrap:wrap;gap:6px 18px;margin-bottom:28px}
+  .sec-cap{flex-basis:100%;margin-inline-start:0;max-width:none;text-align:start}
+  .about{grid-template-columns:minmax(0,1fr);gap:28px}
+  .work{grid-template-columns:minmax(0,1fr);min-height:0}
+  .work-art{min-height:0;aspect-ratio:16/10}
+  .work-body{padding:24px 20px 16px}
+  .work h3{margin-top:22px}
+  .band-wrap{padding-top:56px}
+  .band{grid-template-columns:minmax(0,1fr);gap:28px;padding:40px 24px;min-height:0}
+  .band .mk.m2{top:auto;bottom:20px}
+  .site-foot{padding-top:80px}
+  .foot-callout{padding:36px 0 32px}
+  .foot-row{grid-template-columns:minmax(0,1fr);gap:8px}
+  .foot-nav,.socials{margin-inline-start:-10px}
+  .foot-base .sig{margin-inline-start:0}
+}
+/* ---------- small (≤420) ---------- */
+@media(max-width:420px){
+  .spec{grid-template-columns:minmax(0,1fr)}
+  .band-left{flex-direction:column;align-items:flex-start;gap:16px}
+  .band .slash{width:72px;height:44px}
+  .language{padding:0 8px}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 </style>
+
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "fc0a8475fd6c49299c632d6023a40a3a"}'></script>
 <!-- End Cloudflare Web Analytics -->
 </head>
 <body>
 
-<a class="sr-only" href="#things">Skip to content</a>
+<a class="skip" href="#main">Skip to content</a>
 
-<header class="topbar" id="top">
-  <a class="logo ltr" href="#top" aria-label="ipe home">ipe<span>()</span></a>
-  <nav aria-label="Primary">
-    <a href="#things" data-i18n="nav_things">things we make</a>
-    <a href="#note" data-i18n="nav_note">studio note</a>
-    <a href="/journal/" data-i18n="nav_journal">journal</a>
-  </nav>
-  <label class="language" title="Language / 언어">
-    <span class="sr-only">Language</span>
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
-    <select class="lang" id="lang" aria-label="Language / 언어">
-      <option value="en">EN</option>
-      <option value="ko">KO</option>
-      <option value="ja">JA</option>
-      <option value="zh">ZH</option>
-      <option value="es">ES</option>
-      <option value="fr">FR</option>
-      <option value="de">DE</option>
-      <option value="pt">PT</option>
-      <option value="ru">RU</option>
-      <option value="ar">AR</option>
-      <option value="hi">HI</option>
-      <option value="id">ID</option>
-    </select>
-  </label>
+<header class="site-head" id="top">
+  <div class="wrap head-row">
+    <a class="logo ltr" href="#top" aria-label="ipe() home">ipe()</a>
+    <span class="tagline ltr">when the process finally rests</span>
+    <nav class="nav" id="site-nav" aria-label="Primary">
+      <a href="#note"><span class="num ltr" aria-hidden="true">01</span><span data-i18n="nav_note">studio note</span></a>
+      <a href="#things"><span class="num ltr" aria-hidden="true">02</span><span data-i18n="nav_things">things we make</span></a>
+      <a href="/journal/"><span class="num ltr" aria-hidden="true">03</span><span data-i18n="nav_journal">journal</span></a>
+    </nav>
+    <label class="language" title="Language / 언어">
+      <span class="sr-only">Language</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
+      <select class="lang" id="lang" aria-label="Language / 언어">
+        <option value="en">EN</option>
+        <option value="ko">KO</option>
+        <option value="ja">JA</option>
+        <option value="zh">ZH</option>
+        <option value="es">ES</option>
+        <option value="fr">FR</option>
+        <option value="de">DE</option>
+        <option value="pt">PT</option>
+        <option value="ru">RU</option>
+        <option value="ar">AR</option>
+        <option value="hi">HI</option>
+        <option value="id">ID</option>
+      </select>
+    </label>
+    <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="sr-only" data-i18n="menu">Menu</span>
+      <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
+      <svg class="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    </button>
+  </div>
 </header>
 
-<main>
-  <section class="hero">
-    <div class="hero-copy">
-      <p class="eyebrow"><span></span><span data-i18n="eyebrow_studio">a small AI-native studio · seoul</span></p>
-      <h1 data-i18n="hero_h1">Quiet things<br>for <em>busy minds.</em></h1>
-      <p class="intro" data-i18n="hero_intro">Music to breathe with. Small things made for the moment the work is finally done.</p>
-      <a class="round-link" href="#things"><span data-i18n="hero_explore">explore the studio</span> <span class="arw" aria-hidden="true">↓</span></a>
-    </div>
-    <div class="hero-art" role="img" aria-label="A warm sun resting over a calm horizon">
-      <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-      <div class="sun-disc"><span>rest<br>mode</span></div><div class="horizon"></div>
-      <p class="art-note ltr" data-i18n="art_note">// when the process<br>&nbsp;&nbsp;&nbsp;finally rests</p>
-    </div>
-  </section>
-
-  <section class="manifesto" aria-label="Studio philosophy">
-    <span class="code-mark ltr">// 00</span>
-    <p data-i18n="manifesto_main">We believe technology can ask for <strong>less</strong> of you.</p>
-    <p class="manifesto-side" data-i18n="manifesto_side">calm by design<br>private by default</p>
-  </section>
-
-  <section class="things" id="things">
-    <div class="section-heading">
-      <div>
-        <p class="eyebrow"><span></span><span data-i18n="things_eyebrow">things we make</span></p>
-        <h2 data-i18n="things_h2">One way to<br><em>find a little quiet.</em></h2>
+<main id="main">
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-frame">
+      <div class="hero-copy">
+        <p class="code ltr">ipe(); // be still</p>
+        <h1 id="hero-title" data-i18n="hero_h1">Quiet things<br>for <em>busy minds.</em></h1>
+        <p class="hero-sub" data-i18n="eyebrow_studio">a small AI-native studio · seoul</p>
+        <p class="intro" data-i18n="hero_intro">Music to breathe with. Small things made for the moment the work is finally done.</p>
+        <a class="text-link" href="#things"><span data-i18n="hero_explore">explore the studio</span> <span class="arw" aria-hidden="true">→</span></a>
       </div>
-      <p data-i18n="things_sub">It all begins with one question:<br>could this feel a little more human?</p>
+      <div class="hero-art" role="img" aria-label="A quiet architectural drawing: an opening in a white wall, looking out at a blue sky">
+        <svg viewBox="0 0 660 540" preserveAspectRatio="xMaxYMid slice" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="sky" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2a63e6"/><stop offset="1" stop-color="#5b8ff2"/></linearGradient><linearGradient id="wall" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f3f6fa"/><stop offset="1" stop-color="#dfe5ee"/></linearGradient></defs>
+        <rect width="660" height="540" fill="url(#wall)"/>
+        <polygon points="0,0 660,0 660,34 0,70" fill="#f8fafc"/>
+        <polygon points="0,70 660,34 660,46 0,84" fill="#d3dbe7"/>
+        <rect x="380" y="64" width="160" height="262" fill="url(#sky)"/>
+        <polygon points="540,46 590,43 590,410 540,392" fill="#d8dfe9"/>
+        <polygon points="590,43 660,40 660,420 590,410" fill="#eef2f7"/>
+        <polygon points="70,540 392,352 660,326 660,344 400,368 112,540" fill="#fbfcfe"/>
+        <polygon points="112,540 400,368 660,344 660,540" fill="#e3e9f1"/>
+        <polygon points="70,540 392,352 400,368 112,540" fill="#cfd8e5"/>
+        <polygon points="380,326 540,326 470,368 330,380" fill="#ffffff" opacity=".35"/>
+        <g stroke="#2f6bf0" stroke-width="1" fill="none" opacity=".45">
+        <line x1="380" y1="0" x2="380" y2="540"/><line x1="0" y1="196" x2="660" y2="196"/>
+        <line x1="540" y1="0" x2="540" y2="540" stroke-dasharray="3 5"/>
+        <line x1="380" y1="440" x2="540" y2="440"/><line x1="380" y1="434" x2="380" y2="446"/><line x1="540" y1="434" x2="540" y2="446"/>
+        <circle cx="380" cy="196" r="38" stroke-dasharray="2 4"/>
+        </g>
+        <rect x="377" y="193" width="7" height="7" fill="#2f6bf0"/>
+        <rect x="537" y="61" width="7" height="7" fill="#2f6bf0"/>
+        <text x="460" y="430" fill="#2f6bf0" font-family="JetBrains Mono, monospace" font-size="10" text-anchor="middle" letter-spacing="1">46 : 10</text>
+        <text x="628" y="520" fill="#7b88a0" font-family="JetBrains Mono, monospace" font-size="12">//</text>
+        </svg>
+        <p class="art-tags ltr" aria-hidden="true">rest<br>mode</p>
+        <p class="art-note ltr" data-i18n="art_note">// when the process<br>&nbsp;&nbsp;&nbsp;finally rests</p>
+      </div>
+      <span class="mk m1" aria-hidden="true"></span><span class="mk m2" aria-hidden="true"></span><span class="mk m3" aria-hidden="true"></span>
     </div>
-    <div class="product-grid" id="product-grid"><!-- rendered by JS from PRODUCTS --></div>
   </section>
 
-  <section class="note" id="note">
-    <div class="note-label">
-      <p class="eyebrow"><span></span><span data-i18n="note_eyebrow">studio note</span></p>
-      <span class="ltr" data-i18n="note_place">Seoul · 2026</span>
+  <section class="sec wrap" id="note" aria-labelledby="note-h">
+    <div class="sec-head">
+      <span class="sec-no ltr" aria-hidden="true">01</span>
+      <h2 class="sec-label" id="note-h" data-i18n="note_eyebrow">studio note</h2>
+      <span class="sec-cap" data-i18n="note_place">Seoul · 2026</span>
     </div>
-    <div class="note-copy">
-      <p class="dropcap" data-i18n="note_dropcap">The name <strong>ipe</strong> comes from <em>idle process</em>—the state a processor enters when it finally has nothing left to do, and simply rests.</p>
-      <p data-i18n="note_body">We make for that moment. No noisy dashboards. No cloud listening in. Just a little space for a tired mind to exhale.</p>
-      <blockquote class="ltr" data-i18n="note_quote">“be still, and know”</blockquote>
-      <a class="round-link note-link" href="/journal/"><span data-i18n="journal_link">read the journal</span> <span class="arw" aria-hidden="true">→</span></a>
+    <div class="about">
+      <p class="about-lead" data-i18n="manifesto_main">We believe technology can ask for <strong>less</strong> of you.</p>
+      <div class="about-copy">
+        <p data-i18n="note_dropcap">The name <strong>ipe</strong> comes from <em>idle process</em>—the state a processor enters when it finally has nothing left to do, and simply rests.</p>
+        <p data-i18n="note_body">We make for that moment. No noisy dashboards. No cloud listening in. Just a little space for a tired mind to exhale.</p>
+        <p class="about-more"><a class="text-link" href="/journal/"><span data-i18n="journal_link">read the journal</span> <span class="arw ltr" aria-hidden="true">→</span></a></p>
+      </div>
+      <aside class="about-side" aria-label="be still">
+        <p class="side-code ltr">// be still</p>
+        <blockquote class="ltr" data-i18n="note_quote">“be still, and know”</blockquote>
+        <span class="side-rule" aria-hidden="true"></span>
+      </aside>
+    </div>
+  </section>
+
+  <section class="sec wrap" id="things" aria-labelledby="things-h">
+    <div class="sec-head">
+      <span class="sec-no ltr" aria-hidden="true">02</span>
+      <h2 class="sec-label" id="things-h" data-i18n="things_eyebrow">things we make</h2>
+      <p class="sec-cap" data-i18n="things_sub">It all begins with one question:<br>could this feel a little more human?</p>
+    </div>
+    <a class="work" href="https://idle.ipe.rest" target="_blank" rel="noopener">
+      <div class="work-art" aria-hidden="true">
+        <svg viewBox="0 0 480 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+        <defs><linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1f57"/><stop offset=".55" stop-color="#123a9c"/><stop offset="1" stop-color="#0b2463"/></linearGradient><radialGradient id="glow" cx=".58" cy=".42" r=".5"><stop offset="0" stop-color="#7fa6ff" stop-opacity=".35"/><stop offset="1" stop-color="#7fa6ff" stop-opacity="0"/></radialGradient></defs>
+        <rect width="480" height="400" fill="url(#sea)"/>
+        <rect width="480" height="400" fill="url(#glow)"/>
+        <polyline points="0,70.0 12,71.5 24,72.6 36,73.0 48,72.5 60,71.3 72,69.7 84,68.2 96,67.2 108,67.0 120,67.7 132,68.9 144,70.5 156,72.0 168,72.9 180,72.9 192,72.2 204,70.8 216,69.2 228,67.8 240,67.1 252,67.1 264,68.0 276,69.5 288,71.1 300,72.3 312,73.0 324,72.8 336,71.8 348,70.3 360,68.7 372,67.5 384,67.0 396,67.4 408,68.5 420,70.0 432,71.5 444,72.6 456,73.0 468,72.5 480,71.3" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.10"/>
+        <polyline points="0,92.6 12,93.8 24,94.0 36,93.2 48,91.6 60,89.6 72,87.7 84,86.4 96,86.0 108,86.5 120,88.0 132,89.9 144,91.9 156,93.4 168,94.0 180,93.7 192,92.4 204,90.5 216,88.5 228,86.9 240,86.0 252,86.2 264,87.3 276,89.1 288,91.1 300,92.9 312,93.9 324,93.9 336,93.0 348,91.3 360,89.3 372,87.5 384,86.3 396,86.0 408,86.7 420,88.3 432,90.3 444,92.2 456,93.6 468,94.0 480,93.5" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+        <polyline points="0,115.0 12,114.8 24,113.6 36,111.5 48,109.2 60,107.0 72,105.5 84,105.0 96,105.6 108,107.2 120,109.4 132,111.8 144,113.8 156,114.9 168,114.9 180,113.8 192,111.9 204,109.6 216,107.3 228,105.7 240,105.0 252,105.4 264,106.9 276,109.0 288,111.4 300,113.5 312,114.8 324,115.0 336,114.1 348,112.3 360,110.0 372,107.7 384,105.9 396,105.0 408,105.3 420,106.6 432,108.7 444,111.0 456,113.2 468,114.6 480,115.0" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.19"/>
+        <polyline points="0,135.1 12,133.3 24,130.8 36,128.2 48,125.9 60,124.4 72,124.1 84,124.9 96,126.8 108,129.3 120,131.9 132,134.2 144,135.6 156,135.9 168,135.0 180,133.1 192,130.6 204,128.0 216,125.7 228,124.4 240,124.1 252,125.1 264,127.0 276,129.5 288,132.1 300,134.3 312,135.7 324,135.9 336,134.9 348,132.9 360,130.4 372,127.8 384,125.6 396,124.3 408,124.1 420,125.2 432,127.2 444,129.7 456,132.4 468,134.5 480,135.7" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.23"/>
+        <polyline points="0,152.2 12,149.4 24,146.7 36,144.6 48,143.4 60,143.5 72,144.7 84,146.9 96,149.6 108,152.4 120,154.8 132,156.3 144,156.7 156,155.8 168,153.9 180,151.3 192,148.5 204,145.9 216,144.1 228,143.3 240,143.7 252,145.3 264,147.8 276,150.6 288,153.3 300,155.4 312,156.6 324,156.5 336,155.3 348,153.1 360,150.4 372,147.6 384,145.2 396,143.7 408,143.3 420,144.2 432,146.1 444,148.7 456,151.5 468,154.1 480,155.9" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.26"/>
+        <polyline points="0,167.4 12,164.9 24,163.2 36,162.7 48,163.3 60,165.0 72,167.6 84,170.5 96,173.4 108,175.7 120,177.0 132,177.3 144,176.3 156,174.3 168,171.6 180,168.6 192,165.9 204,163.8 216,162.8 228,162.9 240,164.2 252,166.4 264,169.3 276,172.2 288,174.8 300,176.6 312,177.3 324,176.8 336,175.2 348,172.8 360,169.9 372,167.0 384,164.6 396,163.1 408,162.7 420,163.5 432,165.4 444,168.0 456,171.0 468,173.8 480,176.0" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.29"/>
+        <polyline points="0,183.2 12,182.3 24,182.5 36,183.8 48,186.1 60,188.9 72,191.9 84,194.6 96,196.6 108,197.7 120,197.5 132,196.3 144,194.1 156,191.3 168,188.3 180,185.6 192,183.5 204,182.4 216,182.4 228,183.6 240,185.7 252,188.4 264,191.4 276,194.2 288,196.4 300,197.6 312,197.6 324,196.6 336,194.5 348,191.8 360,188.8 372,186.0 384,183.8 396,182.5 408,182.3 420,183.3 432,185.3 444,187.9 456,190.9 468,193.8 480,196.1" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.31"/>
+        <polyline points="0,202.2 12,203.2 24,205.2 36,207.9 48,210.8 60,213.6 72,216.0 84,217.5 96,218.0 108,217.4 120,215.8 132,213.4 144,210.5 156,207.6 168,205.0 180,203.1 192,202.1 204,202.2 216,203.4 228,205.4 240,208.1 252,211.1 264,213.9 276,216.1 288,217.6 300,218.0 312,217.3 324,215.6 336,213.2 348,210.3 360,207.4 372,204.8 384,203.0 396,202.1 408,202.3 420,203.5 432,205.6 444,208.4 456,211.3 468,214.1 480,216.3" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.32"/>
+        <polyline points="0,225.0 12,227.4 24,230.2 36,233.0 48,235.4 60,237.1 72,237.9 84,237.8 96,236.6 108,234.7 120,232.1 132,229.3 144,226.6 156,224.3 168,222.7 180,222.0 192,222.4 204,223.7 216,225.7 228,228.3 240,231.2 252,233.8 264,236.0 276,237.5 288,238.0 300,237.5 312,236.0 324,233.9 336,231.2 348,228.4 360,225.8 372,223.7 384,222.4 396,222.0 408,222.7 420,224.3 432,226.6 444,229.3 456,232.1 468,234.6 480,236.6" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.32"/>
+        <polyline points="0,250.1 12,252.7 24,255.0 36,256.7 48,257.6 60,257.7 72,256.8 84,255.2 96,253.0 108,250.4 120,247.8 132,245.4 144,243.6 156,242.5 168,242.3 180,242.9 192,244.4 204,246.5 216,249.0 228,251.7 240,254.1 252,256.1 264,257.3 276,257.8 288,257.3 300,256.0 312,254.0 324,251.5 336,248.9 348,246.4 360,244.3 372,242.9 384,242.3 396,242.5 408,243.7 420,245.6 432,248.0 444,250.6 456,253.1 468,255.3 480,256.9" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.31"/>
+        <polyline points="0,274.8 12,276.3 24,277.2 36,277.3 48,276.6 60,275.2 72,273.2 84,271.0 96,268.6 108,266.3 120,264.5 132,263.2 144,262.7 156,262.9 168,263.9 180,265.6 192,267.7 204,270.0 216,272.4 228,274.5 240,276.1 252,277.1 264,277.3 276,276.7 288,275.5 300,273.6 312,271.3 324,269.0 336,266.7 348,264.7 360,263.4 372,262.7 384,262.8 396,263.7 408,265.3 420,267.3 432,269.6 444,272.0 456,274.2 468,275.9 480,277.0" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.29"/>
+        <polyline points="0,296.6 12,296.6 24,296.0 36,294.7 48,293.0 60,291.0 72,288.9 84,286.9 96,285.2 108,284.0 120,283.4 132,283.4 144,284.1 156,285.3 168,287.1 180,289.1 192,291.2 204,293.2 216,294.9 228,296.1 240,296.7 252,296.6 264,295.9 276,294.6 288,292.8 300,290.8 312,288.7 324,286.7 336,285.1 348,283.9 360,283.3 372,283.4 384,284.2 396,285.5 408,287.2 420,289.3 432,291.4 444,293.4 456,295.0 468,296.1 480,296.7" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.26"/>
+        <polyline points="0,315.1 12,313.9 24,312.4 36,310.7 48,308.9 60,307.2 72,305.7 84,304.7 96,304.1 108,304.1 120,304.6 132,305.6 144,307.1 156,308.7 168,310.5 180,312.3 192,313.8 204,315.0 216,315.7 228,315.9 240,315.6 252,314.7 264,313.4 276,311.8 288,310.1 300,308.3 312,306.7 324,305.3 336,304.5 348,304.1 360,304.2 372,304.9 384,306.1 396,307.6 408,309.3 420,311.1 432,312.8 444,314.3 456,315.3 468,315.9 480,315.9" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.23"/>
+        <polyline points="0,331.6 12,330.2 24,328.7 36,327.3 48,326.2 60,325.4 72,325.0 84,325.0 96,325.5 108,326.3 120,327.4 132,328.8 144,330.3 156,331.7 168,333.0 180,334.0 192,334.7 204,335.0 216,334.9 228,334.3 240,333.4 252,332.2 264,330.8 276,329.3 288,327.9 300,326.7 312,325.7 324,325.1 336,325.0 348,325.2 360,325.9 372,326.9 384,328.2 396,329.7 408,331.1 420,332.5 432,333.7 444,334.5 456,335.0 468,335.0 480,334.6" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.19"/>
+        <polyline points="0,348.5 12,347.5 24,346.7 36,346.2 48,346.0 60,346.1 72,346.5 84,347.2 96,348.1 108,349.1 120,350.3 132,351.4 144,352.4 156,353.2 168,353.8 180,354.0 192,354.0 204,353.6 216,352.9 228,352.0 240,351.0 252,349.8 264,348.7 276,347.7 288,346.8 300,346.3 312,346.0 324,346.0 336,346.4 348,347.0 360,347.9 372,349.0 384,350.1 396,351.2 408,352.2 420,353.1 432,353.7 444,354.0 456,354.0 468,353.7 480,353.0" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.15"/>
+        <polyline points="0,367.4 12,367.1 24,367.0 36,367.2 48,367.5 60,368.1 72,368.8 84,369.6 96,370.4 108,371.2 120,371.9 132,372.4 144,372.8 156,373.0 168,372.9 180,372.7 192,372.2 204,371.6 216,370.8 228,370.0 240,369.2 252,368.4 264,367.8 276,367.3 288,367.1 300,367.0 312,367.2 324,367.6 336,368.1 348,368.8 360,369.6 372,370.4 384,371.2 396,371.9 408,372.5 420,372.8 432,373.0 444,372.9 456,372.6 468,372.1 480,371.5" fill="none" stroke="#ffffff" stroke-width="1" opacity="0.10"/>
+        <circle cx="322" cy="160" r="1" fill="#ffffff" opacity="0.77"/>
+        <circle cx="145" cy="268" r="0.8" fill="#ffffff" opacity="0.48"/>
+        <circle cx="240" cy="222" r="1" fill="#ffffff" opacity="0.72"/>
+        <circle cx="198" cy="269" r="0.8" fill="#ffffff" opacity="0.65"/>
+        <circle cx="289" cy="192" r="0.8" fill="#ffffff" opacity="0.68"/>
+        <circle cx="286" cy="171" r="1.2" fill="#ffffff" opacity="0.70"/>
+        <circle cx="320" cy="174" r="1.2" fill="#ffffff" opacity="0.89"/>
+        <circle cx="262" cy="200" r="1.6" fill="#ffffff" opacity="0.60"/>
+        <circle cx="323" cy="175" r="1" fill="#ffffff" opacity="0.95"/>
+        <circle cx="302" cy="166" r="1.2" fill="#ffffff" opacity="0.86"/>
+        <circle cx="242" cy="253" r="2.2" fill="#ffffff" opacity="0.77"/>
+        <circle cx="330" cy="150" r="1.6" fill="#ffffff" opacity="0.50"/>
+        <circle cx="339" cy="155" r="1" fill="#ffffff" opacity="0.88"/>
+        <circle cx="210" cy="201" r="2.2" fill="#ffffff" opacity="0.77"/>
+        <circle cx="161" cy="281" r="0.8" fill="#ffffff" opacity="0.49"/>
+        <circle cx="263" cy="246" r="2.2" fill="#ffffff" opacity="0.84"/>
+        <circle cx="327" cy="145" r="1" fill="#ffffff" opacity="0.85"/>
+        <circle cx="279" cy="198" r="0.8" fill="#ffffff" opacity="0.48"/>
+        <circle cx="351" cy="143" r="2.2" fill="#ffffff" opacity="0.81"/>
+        <circle cx="354" cy="145" r="1" fill="#ffffff" opacity="0.59"/>
+        <circle cx="257" cy="220" r="0.8" fill="#ffffff" opacity="0.90"/>
+        <circle cx="262" cy="224" r="1.6" fill="#ffffff" opacity="0.59"/>
+        <circle cx="212" cy="289" r="1.6" fill="#ffffff" opacity="0.92"/>
+        <circle cx="291" cy="197" r="2.2" fill="#ffffff" opacity="0.94"/>
+        <circle cx="357" cy="139" r="2.2" fill="#ffffff" opacity="0.75"/>
+        <circle cx="183" cy="273" r="0.8" fill="#ffffff" opacity="0.46"/>
+        <circle cx="256" cy="196" r="2.2" fill="#ffffff" opacity="0.57"/>
+        <circle cx="242" cy="193" r="0.8" fill="#ffffff" opacity="0.65"/>
+        <circle cx="211" cy="282" r="1.6" fill="#ffffff" opacity="0.95"/>
+        <circle cx="264" cy="261" r="1" fill="#ffffff" opacity="0.61"/>
+        <circle cx="196" cy="293" r="2.2" fill="#ffffff" opacity="0.82"/>
+        <circle cx="278" cy="193" r="2.2" fill="#ffffff" opacity="0.69"/>
+        <circle cx="213" cy="284" r="1.6" fill="#ffffff" opacity="0.84"/>
+        <circle cx="267" cy="225" r="2.2" fill="#ffffff" opacity="0.85"/>
+        <circle cx="345" cy="144" r="0.8" fill="#ffffff" opacity="0.84"/>
+        <circle cx="175" cy="268" r="0.8" fill="#ffffff" opacity="0.54"/>
+        <circle cx="226" cy="241" r="2.2" fill="#ffffff" opacity="0.55"/>
+        <circle cx="226" cy="252" r="1.6" fill="#ffffff" opacity="0.89"/>
+        <circle cx="192" cy="274" r="1.2" fill="#ffffff" opacity="0.55"/>
+        <circle cx="365" cy="134" r="1" fill="#ffffff" opacity="0.79"/>
+        <circle cx="380" cy="113" r="1" fill="#ffffff" opacity="0.62"/>
+        <circle cx="357" cy="149" r="1.6" fill="#ffffff" opacity="0.57"/>
+        <circle cx="185" cy="264" r="1" fill="#ffffff" opacity="0.89"/>
+        <circle cx="369" cy="110" r="0.8" fill="#ffffff" opacity="0.45"/>
+        <circle cx="222" cy="267" r="2.2" fill="#ffffff" opacity="0.65"/>
+        <circle cx="245" cy="213" r="1.2" fill="#ffffff" opacity="0.88"/>
+        <g stroke="#9db8ff" stroke-width="1" opacity=".35"><line x1="0" y1="200" x2="480" y2="200" stroke-dasharray="2 6"/><line x1="240" y1="0" x2="240" y2="400" stroke-dasharray="2 6"/></g>
+        </svg>
+        <span class="corner c1">01</span><span class="corner c2">♪</span>
+        <span class="wave-note ltr">// rest() { chill(); }</span>
+      </div>
+      <div class="work-body">
+        <div class="work-top">
+          <span class="status"><i aria-hidden="true"></i><span data-i18n="status_live">live</span></span>
+          <span class="work-url ltr">idle.ipe.rest</span>
+        </div>
+        <h3 class="ltr">idle()</h3>
+        <p class="work-kind" data-i18n="p1_kind">music for focus &amp; rest</p>
+        <p class="work-desc" data-i18n="p1_desc">Lo-fi and healing music for the space between one task and the next.</p>
+        <dl class="spec ltr">
+          <div><dt>genre</dt><dd>lo-fi · ambient · chillhop · healing</dd></div>
+          <div><dt>album</dt><dd>dear(you); vol.1 — 10/10</dd></div>
+          <div><dt>tracks</dt><dd>12 · YouTube @ipe-rest</dd></div>
+          <div><dt>made with</dt><dd>AI (Suno) · words by hand</dd></div>
+        </dl>
+        <span class="work-act"><span data-i18n="p1_action">listen now</span><span class="arw" aria-hidden="true">↗</span></span>
+      </div>
+    </a>
+  </section>
+
+  <section class="band-wrap wrap" aria-label="Studio philosophy">
+    <div class="band">
+      <div class="band-left">
+        <span class="slash" aria-hidden="true"></span>
+        <p class="band-tags" data-i18n="manifesto_side">calm by design<br>private by default</p>
+      </div>
+      <p class="band-quote" data-i18n="things_h2">One way to<br><em>find a little quiet.</em></p>
+      <span class="mk m1" aria-hidden="true"></span><span class="mk m2" aria-hidden="true"></span>
     </div>
   </section>
 </main>
 
-<footer>
-  <div class="footer-callout">
-    <p data-i18n="footer_callout">you can stop scrolling now.</p>
-    <h2 class="ltr">ipe<span>()</span></h2>
-  </div>
-  <div class="footer-bottom">
-    <p class="ltr">© 2026 ipe() · idle</p>
-    <div class="socials ltr">
-      <a href="https://www.youtube.com/@ipe-rest" target="_blank" rel="noopener">YouTube</a>
-      <a href="https://www.instagram.com/ipe.rest" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://www.tiktok.com/@ipe.rest" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://soundcloud.com/ipe-rest" target="_blank" rel="noopener">SoundCloud</a>
-      <a href="https://x.com/ipe_rest" target="_blank" rel="noopener">X</a>
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-callout"><p data-i18n="footer_callout">you can stop scrolling now.</p></div>
+    <div class="foot-row">
+      <div class="foot-brand">
+        <a class="logo ltr" href="#top" aria-label="ipe() home">ipe()</a>
+        <span class="tagline ltr">when the process finally rests</span>
+      </div>
+      <nav class="foot-nav" aria-label="Footer">
+        <a href="#note" data-i18n="nav_note">studio note</a>
+        <a href="#things" data-i18n="nav_things">things we make</a>
+        <a href="/journal/" data-i18n="nav_journal">journal</a>
+        <a class="ltr" href="https://idle.ipe.rest" target="_blank" rel="noopener">idle()</a>
+      </nav>
+      <ul class="socials ltr" aria-label="ipe() on social media">
+        <li><a href="https://www.youtube.com/@ipe-rest" target="_blank" rel="noopener">YouTube</a></li>
+        <li><a href="https://www.instagram.com/ipe.rest" target="_blank" rel="noopener">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@ipe.rest" target="_blank" rel="noopener">TikTok</a></li>
+        <li><a href="https://soundcloud.com/ipe-rest" target="_blank" rel="noopener">SoundCloud</a></li>
+        <li><a href="https://x.com/ipe_rest" target="_blank" rel="noopener">X</a></li>
+        <li><a href="https://www.facebook.com/ipe.rest" target="_blank" rel="noopener">Facebook</a></li>
+      </ul>
     </div>
-    <a class="totop" href="#top" data-i18n="back_top">back to top ↑</a>
+    <div class="foot-base">
+      <span class="ltr">© 2026 ipe() · idle</span>
+      <span data-i18n="note_place">Seoul · 2026</span>
+      <a href="#top" data-i18n="back_top">back to top ↑</a>
+      <span class="sig ltr">ipe(); // be still</span>
+    </div>
   </div>
 </footer>
 
@@ -390,18 +611,6 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 
-<!-- ===== Products (data-driven; extend by adding to this array) =====
-     AdSense hold: until AdSense approval only idle is shown on the umbrella. still/draft/pawstcard are kept below with hidden:true —
-     to bring them back, remove `hidden: true` (and restore the 'four' copy / JSON-LD / llms.txt via git revert of the idle-only commit). -->
-<script>
-window.PRODUCTS = [
-  { no: "01", name: "idle()",    kind_key: "p1_kind", desc_key: "p1_desc", act_key: "p1_action", status: "live",  status_key: "status_live",  href: "https://idle.ipe.rest", external: true,  tone: "sun",   mark: "♪" },
-  { no: "02", name: "still()",   hidden: true, kind_key: "p2_kind", desc_key: "p2_desc", act_key: "p2_action", status: "early", status_key: "status_early", href: "https://still.ipe.rest", external: true, tone: "sage",  mark: "○" },
-  { no: "03", name: "draft()",   hidden: true, kind_key: "p3_kind", desc_key: "p3_desc", act_key: "p3_action", status: "early", status_key: "status_early", href: "https://draft.ipe.rest", external: true, tone: "blue",  mark: "✎" },
-  { no: "04", name: "pawstcard", hidden: true, kind_key: "p4_kind", desc_key: "p4_desc", act_key: "p4_action", status: "dev",   status_key: "status_dev",   href: "https://pawstcard.ipe.rest", external: true, tone: "peach", mark: "◇" }
-];
-</script>
-
 <!-- ===== i18n ===== -->
 <script>
 (function () {
@@ -425,15 +634,13 @@ window.PRODUCTS = [
       things_h2: "One way to<br><em>find a little quiet.</em>",
       things_sub: "It all begins with one question:<br>could this feel a little more human?",
       p1_kind: "music for focus & rest", p1_desc: "Lo-fi and healing music for the space between one task and the next.", p1_action: "listen now",
-      p2_kind: "quiet biblical comfort", p2_desc: "Private, on-device reflections for days when you need a quieter voice.", p2_action: "learn more",
-      p3_kind: "your day, gently written", p3_desc: "A few honest words become a story—on your device, in your own voice.", p3_action: "learn more",
-      p4_kind: "a note from your pet", p4_desc: "Warm, useful visit reports that feel like a postcard sent home by your pet.", p4_action: "learn more",
-      status_live: "live", status_early: "early access", status_dev: "in development",
+      status_live: "live",
       note_eyebrow: "studio note", note_place: "Seoul · 2026",
       note_dropcap: "The name <strong>ipe</strong> comes from <em>idle process</em>—the state a processor enters when it finally has nothing left to do, and simply rests.",
       note_body: "We make for that moment. No noisy dashboards. No cloud listening in. Just a little space for a tired mind to exhale.",
       note_quote: "“be still, and know”",
       footer_callout: "you can stop scrolling now.",
+      menu: "Menu",
       back_top: "back to top ↑"
     },
     ko: {
@@ -456,24 +663,14 @@ window.PRODUCTS = [
       p1_kind: "집중과 쉼을 위한 음악",
       p1_desc: "하나의 일과 다음 일 사이, 그 여백을 위한 로파이와 힐링 음악.",
       p1_action: "지금 듣기",
-      p2_kind: "고요한 성경적 위로",
-      p2_desc: "더 잔잔한 목소리가 필요한 날을 위한, 기기 안에서 이루어지는 프라이빗한 묵상.",
-      p2_action: "자세히 보기",
-      p3_kind: "당신의 하루, 다정하게 적히다",
-      p3_desc: "몇 마디 솔직한 말이 이야기가 됩니다—당신의 기기에서, 당신의 목소리로.",
-      p3_action: "자세히 보기",
-      p4_kind: "반려동물이 보내는 한 통",
-      p4_desc: "반려동물이 집으로 부친 엽서 같은, 따뜻하고 쓸모 있는 방문 리포트.",
-      p4_action: "자세히 보기",
       status_live: "발매됨",
-      status_early: "얼리 액세스",
-      status_dev: "개발 중",
       note_eyebrow: "스튜디오 노트",
       note_place: "서울 · 2026",
       note_dropcap: "<strong>ipe</strong>라는 이름은 <em>idle process</em>에서 왔습니다—프로세서가 마침내 할 일이 하나도 남지 않았을 때 들어가는 상태, 그저 쉬는 상태.",
       note_body: "우리는 바로 그 순간을 위해 만듭니다. 시끄러운 대시보드도 없이. 엿듣는 클라우드도 없이. 지친 마음이 숨을 내쉴 작은 자리 하나만.",
       note_quote: "“be still, and know”",
       footer_callout: "이제 스크롤을 멈춰도 괜찮아요.",
+      menu: "메뉴",
       back_top: "맨 위로 ↑"
     },
     ja: {
@@ -494,24 +691,14 @@ window.PRODUCTS = [
       p1_kind: "集中と休息のための音楽",
       p1_desc: "ひとつの仕事と次の仕事のあいだ、その余白のためのローファイとヒーリング音楽。",
       p1_action: "いま聴く",
-      p2_kind: "静かな聖書の慰め",
-      p2_desc: "もっと穏やかな声がほしい日のための、デバイス内で完結するプライベートな黙想。",
-      p2_action: "詳しく見る",
-      p3_kind: "あなたの一日を、やさしく綴る",
-      p3_desc: "いくつかの正直な言葉が物語になる—あなたのデバイスで、あなた自身の声で。",
-      p3_action: "詳しく見る",
-      p4_kind: "ペットからの一通",
-      p4_desc: "ペットが家へ送った絵はがきのような、あたたかく役に立つ訪問レポート。",
-      p4_action: "詳しく見る",
       status_live: "配信中",
-      status_early: "アーリーアクセス",
-      status_dev: "開発中",
       note_eyebrow: "スタジオノート",
       note_place: "ソウル · 2026",
       note_dropcap: "<strong>ipe</strong>という名は <em>idle process</em> に由来します—プロセッサがついにすべきことをすべて終え、ただ休むその状態のことです。",
       note_body: "私たちはその瞬間のためにつくります。騒がしいダッシュボードもなく。聞き耳を立てるクラウドもなく。疲れた心が息をつける、小さな余白だけを。",
       note_quote: "“be still, and know”",
       footer_callout: "もうスクロールを止めていいのです。",
+      menu: "メニュー",
       back_top: "トップへ ↑"
     },
     zh: {
@@ -532,24 +719,14 @@ window.PRODUCTS = [
       p1_kind: "为专注与休息而作的音乐",
       p1_desc: "为一件事与下一件事之间的空隙而作的 Lo-fi 与疗愈音乐。",
       p1_action: "现在聆听",
-      p2_kind: "安静的圣经慰藉",
-      p2_desc: "在你需要更轻声的日子里，于设备本地进行的私密默想。",
-      p2_action: "了解更多",
-      p3_kind: "你的一天，被温柔写下",
-      p3_desc: "几句真诚的话，化作一个故事——在你的设备上，用你自己的声音。",
-      p3_action: "了解更多",
-      p4_kind: "来自宠物的一封信",
-      p4_desc: "温暖而实用的探访报告，像宠物从家里寄来的一张明信片。",
-      p4_action: "了解更多",
       status_live: "已上线",
-      status_early: "抢先体验",
-      status_dev: "开发中",
       note_eyebrow: "工作室手记",
       note_place: "首尔 · 2026",
       note_dropcap: "<strong>ipe</strong> 这个名字来自 <em>idle process</em>——处理器终于无事可做、只是安歇时所进入的那种状态。",
       note_body: "我们正是为那一刻而做。没有喧闹的仪表盘。没有偷听的云端。只留一点点空间，让疲惫的心呼出一口气。",
       note_quote: "“be still, and know”",
       footer_callout: "现在，你可以停下滚动了。",
+      menu: "菜单",
       back_top: "回到顶部 ↑"
     },
     es: {
@@ -570,24 +747,14 @@ window.PRODUCTS = [
       p1_kind: "música para concentrarse y descansar",
       p1_desc: "Música lo-fi y sanadora para el espacio entre una tarea y la siguiente.",
       p1_action: "escuchar ahora",
-      p2_kind: "consuelo bíblico y silencioso",
-      p2_desc: "Reflexiones privadas, en tu dispositivo, para los días en que necesitas una voz más serena.",
-      p2_action: "saber más",
-      p3_kind: "tu día, escrito con ternura",
-      p3_desc: "Unas pocas palabras honestas se vuelven historia—en tu dispositivo, con tu propia voz.",
-      p3_action: "saber más",
-      p4_kind: "una nota de tu mascota",
-      p4_desc: "Informes de visita cálidos y útiles, como una postal que tu mascota envía a casa.",
-      p4_action: "saber más",
       status_live: "en vivo",
-      status_early: "acceso anticipado",
-      status_dev: "en desarrollo",
       note_eyebrow: "nota del estudio",
       note_place: "Seúl · 2026",
       note_dropcap: "El nombre <strong>ipe</strong> viene de <em>idle process</em>—el estado en que entra un procesador cuando por fin no le queda nada que hacer, y simplemente descansa.",
       note_body: "Hacemos para ese momento. Sin paneles ruidosos. Sin una nube que escucha. Solo un poco de espacio para que una mente cansada exhale.",
       note_quote: "“be still, and know”",
       footer_callout: "ya puedes dejar de deslizar.",
+      menu: "Menú",
       back_top: "volver arriba ↑"
     },
     fr: {
@@ -608,24 +775,14 @@ window.PRODUCTS = [
       p1_kind: "de la musique pour se concentrer et se reposer",
       p1_desc: "De la musique lo-fi et apaisante pour l'espace entre une tâche et la suivante.",
       p1_action: "écouter maintenant",
-      p2_kind: "un réconfort biblique et paisible",
-      p2_desc: "Des méditations privées, sur votre appareil, pour les jours où vous avez besoin d'une voix plus douce.",
-      p2_action: "en savoir plus",
-      p3_kind: "votre journée, écrite avec douceur",
-      p3_desc: "Quelques mots sincères deviennent un récit—sur votre appareil, avec votre propre voix.",
-      p3_action: "en savoir plus",
-      p4_kind: "un mot de votre animal",
-      p4_desc: "Des comptes rendus de visite chaleureux et utiles, comme une carte postale envoyée par votre animal.",
-      p4_action: "en savoir plus",
       status_live: "en ligne",
-      status_early: "accès anticipé",
-      status_dev: "en développement",
       note_eyebrow: "note du studio",
       note_place: "Séoul · 2026",
       note_dropcap: "Le nom <strong>ipe</strong> vient de <em>idle process</em>—l'état dans lequel entre un processeur quand il n'a enfin plus rien à faire, et se repose simplement.",
       note_body: "Nous créons pour cet instant. Pas de tableaux de bord bruyants. Pas de cloud à l'écoute. Juste un peu d'espace pour qu'un esprit fatigué puisse souffler.",
       note_quote: "“be still, and know”",
       footer_callout: "vous pouvez arrêter de faire défiler maintenant.",
+      menu: "Menu",
       back_top: "haut de page ↑"
     },
     de: {
@@ -646,24 +803,14 @@ window.PRODUCTS = [
       p1_kind: "Musik für Fokus & Ruhe",
       p1_desc: "Lo-Fi- und Healing-Musik für den Raum zwischen einer Aufgabe und der nächsten.",
       p1_action: "jetzt hören",
-      p2_kind: "stiller biblischer Trost",
-      p2_desc: "Private Betrachtungen auf deinem Gerät, für Tage, an denen du eine leisere Stimme brauchst.",
-      p2_action: "mehr erfahren",
-      p3_kind: "dein Tag, sanft aufgeschrieben",
-      p3_desc: "Ein paar ehrliche Worte werden zu einer Geschichte—auf deinem Gerät, in deiner eigenen Stimme.",
-      p3_action: "mehr erfahren",
-      p4_kind: "ein Gruß von deinem Haustier",
-      p4_desc: "Warme, hilfreiche Besuchsberichte, die sich anfühlen wie eine Postkarte deines Haustiers nach Hause.",
-      p4_action: "mehr erfahren",
       status_live: "live",
-      status_early: "früher Zugang",
-      status_dev: "in Entwicklung",
       note_eyebrow: "Studio-Notiz",
       note_place: "Seoul · 2026",
       note_dropcap: "Der Name <strong>ipe</strong> kommt von <em>idle process</em>—dem Zustand, in den ein Prozessor eintritt, wenn er endlich nichts mehr zu tun hat und einfach ruht.",
       note_body: "Wir machen für genau diesen Moment. Keine lauten Dashboards. Keine Cloud, die mithört. Nur ein wenig Raum, damit ein müder Geist ausatmen kann.",
       note_quote: "“be still, and know”",
       footer_callout: "du darfst jetzt aufhören zu scrollen.",
+      menu: "Menü",
       back_top: "nach oben ↑"
     },
     pt: {
@@ -684,24 +831,14 @@ window.PRODUCTS = [
       p1_kind: "música para foco e descanso",
       p1_desc: "Música lo-fi e relaxante para o espaço entre uma tarefa e a seguinte.",
       p1_action: "ouvir agora",
-      p2_kind: "conforto bíblico e silencioso",
-      p2_desc: "Reflexões privadas, no seu dispositivo, para os dias em que você precisa de uma voz mais suave.",
-      p2_action: "saiba mais",
-      p3_kind: "o seu dia, escrito com carinho",
-      p3_desc: "Algumas palavras sinceras viram uma história—no seu dispositivo, com a sua própria voz.",
-      p3_action: "saiba mais",
-      p4_kind: "um recado do seu pet",
-      p4_desc: "Relatórios de visita calorosos e úteis, como um cartão-postal enviado para casa pelo seu pet.",
-      p4_action: "saiba mais",
       status_live: "no ar",
-      status_early: "acesso antecipado",
-      status_dev: "em desenvolvimento",
       note_eyebrow: "nota do estúdio",
       note_place: "Seul · 2026",
       note_dropcap: "O nome <strong>ipe</strong> vem de <em>idle process</em>—o estado em que um processador entra quando finalmente não tem mais nada a fazer, e simplesmente descansa.",
       note_body: "Criamos para esse momento. Sem painéis barulhentos. Sem uma nuvem a escutar. Apenas um pouco de espaço para uma mente cansada respirar.",
       note_quote: "“be still, and know”",
       footer_callout: "você já pode parar de rolar.",
+      menu: "Menu",
       back_top: "voltar ao topo ↑"
     },
     ru: {
@@ -722,24 +859,14 @@ window.PRODUCTS = [
       p1_kind: "музыка для сосредоточенности и отдыха",
       p1_desc: "Lo-fi и исцеляющая музыка для промежутка между одним делом и следующим.",
       p1_action: "слушать сейчас",
-      p2_kind: "тихое библейское утешение",
-      p2_desc: "Приватные размышления на вашем устройстве — для дней, когда нужен голос потише.",
-      p2_action: "подробнее",
-      p3_kind: "ваш день, записанный с теплотой",
-      p3_desc: "Несколько искренних слов становятся историей — на вашем устройстве, вашим собственным голосом.",
-      p3_action: "подробнее",
-      p4_kind: "весточка от вашего питомца",
-      p4_desc: "Тёплые и полезные отчёты о визите, будто открытка, что питомец прислал домой.",
-      p4_action: "подробнее",
       status_live: "доступно",
-      status_early: "ранний доступ",
-      status_dev: "в разработке",
       note_eyebrow: "заметка студии",
       note_place: "Сеул · 2026",
       note_dropcap: "Имя <strong>ipe</strong> происходит от <em>idle process</em> — состояния, в которое переходит процессор, когда ему наконец нечего делать, и он просто отдыхает.",
       note_body: "Мы создаём ради этого мига. Никаких шумных дашбордов. Никакого облака, что подслушивает. Лишь немного пространства, чтобы усталый ум выдохнул.",
       note_quote: "“be still, and know”",
       footer_callout: "теперь можно перестать листать.",
+      menu: "Меню",
       back_top: "наверх ↑"
     },
     ar: {
@@ -760,24 +887,14 @@ window.PRODUCTS = [
       p1_kind: "موسيقى للتركيز والراحة",
       p1_desc: "موسيقى لو-فاي وشافية للمساحة بين مهمة وأخرى.",
       p1_action: "استمع الآن",
-      p2_kind: "عزاء كتابي هادئ",
-      p2_desc: "تأمّلات خاصة على جهازك، للأيام التي تحتاج فيها إلى صوت أهدأ.",
-      p2_action: "اعرف المزيد",
-      p3_kind: "يومك، مكتوبًا بلُطف",
-      p3_desc: "بضع كلمات صادقة تصير حكاية—على جهازك، وبصوتك أنت.",
-      p3_action: "اعرف المزيد",
-      p4_kind: "رسالة من حيوانك الأليف",
-      p4_desc: "تقارير زيارة دافئة ومفيدة، تبدو كبطاقة بريدية أرسلها حيوانك الأليف إلى البيت.",
-      p4_action: "اعرف المزيد",
       status_live: "متاح الآن",
-      status_early: "وصول مبكّر",
-      status_dev: "قيد التطوير",
       note_eyebrow: "ملاحظة الاستوديو",
       note_place: "سيول · 2026",
       note_dropcap: "الاسم <strong>ipe</strong> يأتي من <em>idle process</em>—الحالة التي يدخل فيها المعالج حين لا يبقى لديه أخيرًا ما يفعله، فيرتاح ببساطة.",
       note_body: "نصنع من أجل تلك اللحظة. لا لوحات معلومات صاخبة. ولا سحابة تتنصّت. مجرّد مساحة صغيرة كي يتنفّس عقلٌ متعب.",
       note_quote: "“be still, and know”",
       footer_callout: "يمكنك التوقّف عن التمرير الآن.",
+      menu: "القائمة",
       back_top: "إلى الأعلى ↑"
     },
     hi: {
@@ -798,24 +915,14 @@ window.PRODUCTS = [
       p1_kind: "एकाग्रता और विश्राम के लिए संगीत",
       p1_desc: "एक काम और अगले के बीच की जगह के लिए लो-फ़ाई और सुकून देने वाला संगीत।",
       p1_action: "अभी सुनें",
-      p2_kind: "शांत बाइबिली सांत्वना",
-      p2_desc: "आपके डिवाइस पर ही निजी मनन, उन दिनों के लिए जब आपको एक कोमल आवाज़ चाहिए।",
-      p2_action: "और जानें",
-      p3_kind: "आपका दिन, कोमलता से लिखा हुआ",
-      p3_desc: "कुछ सच्चे शब्द एक कहानी बन जाते हैं—आपके डिवाइस पर, आपकी अपनी आवाज़ में।",
-      p3_action: "और जानें",
-      p4_kind: "आपके पालतू की ओर से एक संदेश",
-      p4_desc: "गर्मजोशी भरी, काम की मुलाक़ात रिपोर्टें—मानो आपके पालतू ने घर एक पोस्टकार्ड भेजा हो।",
-      p4_action: "और जानें",
       status_live: "लाइव",
-      status_early: "अर्ली एक्सेस",
-      status_dev: "विकासाधीन",
       note_eyebrow: "स्टूडियो नोट",
       note_place: "सियोल · 2026",
       note_dropcap: "नाम <strong>ipe</strong> आता है <em>idle process</em> से—वह अवस्था जिसमें प्रोसेसर तब पहुँचता है जब आख़िरकार उसके पास करने को कुछ नहीं बचता, और वह बस विश्राम करता है।",
       note_body: "हम उसी पल के लिए बनाते हैं। कोई शोर मचाते डैशबोर्ड नहीं। कोई ताक-झाँक करता क्लाउड नहीं। बस थोड़ी-सी जगह, ताकि थका हुआ मन एक साँस छोड़ सके।",
       note_quote: "“be still, and know”",
       footer_callout: "अब आप स्क्रॉल करना रोक सकते हैं।",
+      menu: "मेनू",
       back_top: "ऊपर जाएँ ↑"
     },
     id: {
@@ -836,24 +943,14 @@ window.PRODUCTS = [
       p1_kind: "musik untuk fokus & rehat",
       p1_desc: "Musik lo-fi dan penyembuh untuk ruang antara satu tugas dan tugas berikutnya.",
       p1_action: "dengarkan sekarang",
-      p2_kind: "penghiburan alkitabiah yang tenang",
-      p2_desc: "Renungan pribadi di perangkatmu, untuk hari-hari saat kamu butuh suara yang lebih lembut.",
-      p2_action: "selengkapnya",
-      p3_kind: "harimu, ditulis dengan lembut",
-      p3_desc: "Beberapa kata yang jujur menjadi sebuah cerita—di perangkatmu, dengan suaramu sendiri.",
-      p3_action: "selengkapnya",
-      p4_kind: "sepatah kata dari hewan peliharaanmu",
-      p4_desc: "Laporan kunjungan yang hangat dan berguna, terasa seperti kartu pos yang dikirim pulang oleh hewan peliharaanmu.",
-      p4_action: "selengkapnya",
       status_live: "tayang",
-      status_early: "akses awal",
-      status_dev: "dalam pengembangan",
       note_eyebrow: "catatan studio",
       note_place: "Seoul · 2026",
       note_dropcap: "Nama <strong>ipe</strong> berasal dari <em>idle process</em>—keadaan yang dimasuki prosesor ketika akhirnya tak ada lagi yang perlu dikerjakan, dan ia sekadar beristirahat.",
       note_body: "Kami berkarya untuk momen itu. Tanpa dasbor yang berisik. Tanpa awan yang menguping. Hanya sedikit ruang agar pikiran yang lelah bisa mengembuskan napas.",
       note_quote: "“be still, and know”",
       footer_callout: "kamu boleh berhenti menggulir sekarang.",
+      menu: "Menu",
       back_top: "ke atas ↑"
     }
   };
@@ -861,31 +958,6 @@ window.PRODUCTS = [
   function setMeta(sel, attr, val) { var el = document.querySelector(sel); if (el) el.setAttribute(attr, val); }
   function t(dict, key) { var v = dict[key]; return (v != null) ? v : I18N.en[key]; }
 
-  function renderProducts(dict) {
-    var grid = document.getElementById('product-grid');
-    if (!grid || !window.PRODUCTS) return;
-    var html = '', shown = 0;
-    for (var i = 0; i < window.PRODUCTS.length; i++) {
-      var p = window.PRODUCTS[i];
-      if (p.hidden) continue; // AdSense hold: idle only (see PRODUCTS comment)
-      shown++;
-      var kind = t(dict, p.kind_key), desc = t(dict, p.desc_key), act = t(dict, p.act_key), st = t(dict, p.status_key);
-      var open = p.href
-        ? '<a class="product ' + p.tone + '" href="' + p.href + '"' + (p.external ? ' target="_blank" rel="noopener"' : '') + '>'
-        : '<div class="product disabled ' + p.tone + '" aria-disabled="true">';
-      var close = p.href ? '</a>' : '</div>';
-      html += open
-        + '<div class="product-top"><span class="product-no ltr">' + p.no + '</span><span class="status"><i></i>' + st + '</span></div>'
-        + '<div class="product-mark" aria-hidden="true">' + p.mark + '</div>'
-        + '<p class="product-kind">' + kind + '</p>'
-        + '<h3 class="ltr">' + p.name + '</h3>'
-        + '<p class="product-description">' + desc + '</p>'
-        + '<span class="act">' + act + '<span aria-hidden="true">' + (p.href ? '↗' : '') + '</span></span>'
-        + close;
-    }
-    grid.classList.toggle('is-single', shown === 1);
-    grid.innerHTML = html;
-  }
 
   function applyLang(lang) {
     if (!I18N[lang]) lang = DEFAULT_LANG;
@@ -900,7 +972,6 @@ window.PRODUCTS = [
       var val = t(dict, key);
       if (val != null) nodes[i].innerHTML = val;
     }
-    renderProducts(dict);
 
     if (dict.meta_title || I18N.en.meta_title) { var mt = t(dict,'meta_title'); document.title = mt; setMeta('#og-title','content',mt); }
     var md = t(dict,'meta_desc');
@@ -935,6 +1006,14 @@ window.PRODUCTS = [
 
   var sel = document.getElementById('lang');
   if (sel) { sel.value = initial; sel.addEventListener('change', function () { applyLang(this.value); }); }
+  // mobile nav (≤760px): disclosure toggle, Esc / link click closes
+  var head = document.querySelector('.site-head'), btn = document.getElementById('menu-btn');
+  function setMenu(open) { if (!head || !btn) return; head.classList.toggle('is-open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
+  if (btn) btn.addEventListener('click', function () { setMenu(btn.getAttribute('aria-expanded') !== 'true'); });
+  document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && head && head.classList.contains('is-open')) { setMenu(false); btn.focus(); } });
+  var navLinks = document.querySelectorAll('#site-nav a');
+  for (var k = 0; k < navLinks.length; k++) navLinks[k].addEventListener('click', function () { setMenu(false); });
+
   applyLang(initial);
 })();
 </script>

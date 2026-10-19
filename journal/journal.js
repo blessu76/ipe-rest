@@ -15,7 +15,6 @@
     for (var i = 0; i < btns.length; i++) {
       btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-lang') === lang ? 'true' : 'false');
     }
-    try { localStorage.setItem('ipe_lang', lang); } catch (e) {}
   }
 
   var urlLang = null, stored = null, initial = 'en';
@@ -29,11 +28,15 @@
   // priority: ?lang= > stored > browser > en  (non-ko values fall back to en)
   if (urlLang) initial = urlLang === 'ko' ? 'ko' : 'en';
   else if (stored) initial = stored === 'ko' ? 'ko' : 'en';
-  apply(initial);
+  apply(initial);  // initial render never writes localStorage (a stored value like "ja" stays untouched)
 
   var btns = document.querySelectorAll('.langswitch button');
   for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener('click', function () { apply(this.getAttribute('data-lang')); });
+    btns[i].addEventListener('click', function () {
+      var l = this.getAttribute('data-lang') === 'ko' ? 'ko' : 'en';
+      apply(l);
+      try { localStorage.setItem('ipe_lang', l); } catch (e) {}  // saved only on an explicit user choice
+    });
   }
 
   // GA4 — same measurement ID as index.html

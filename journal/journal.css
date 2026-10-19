@@ -55,7 +55,7 @@ html[lang="ko"] [lang="en"]{display:none}
 .post-head{margin-bottom:48px}
 .post-head h1{margin:0 0 20px;font:400 clamp(34px,6vw,56px)/1.1 var(--serif);letter-spacing:-.045em;overflow-wrap:anywhere}
 .post-head h1 em{color:var(--sage-text);font-style:italic}
-.prose p{margin:0 0 26px;color:#3f4b45;font:400 17px/1.85 var(--sans);overflow-wrap:anywhere}
+.prose p{margin:0 0 26px;color:var(--ink);font:400 17px/1.85 var(--sans);overflow-wrap:anywhere}
 .prose p.lead{color:var(--ink);font:400 clamp(21px,2.6vw,26px)/1.55 var(--serif);letter-spacing:-.015em}
 .prose strong{font-weight:400;color:var(--ink);font-style:italic;font-family:var(--serif)}
 .prose code,.code-line{font-family:var(--mono);font-size:.9em;color:var(--sage-text)}

@@ -5,7 +5,7 @@ const CORE = [
   '/manifest.webmanifest',
   '/icon-192.png', '/icon-512.png', '/icon-180.png',
   '/og-image.png',
-  '/journal/', '/journal/journal.css', '/journal/journal.js',
+  '/journal/', '/journal/journal.css?v=1', '/journal/journal.js?v=1',
   '/fonts/lora-400.woff2', '/fonts/inter-400.woff2'
 ];
 

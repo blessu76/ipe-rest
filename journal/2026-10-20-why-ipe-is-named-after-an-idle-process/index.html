@@ -9,13 +9,12 @@
 <meta name="description" content="ipe() is short for “idle process” — the state a computer enters when it has no work left and simply rests. The story behind the name, the music, and the whispered “ipe. be still.”">
 <meta name="author" content="ipe()">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="theme-color" content="#fbfaf4">
+<meta name="theme-color" content="#fbfcfe">
 <link rel="canonical" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/">
-<link rel="manifest" href="/manifest.webmanifest">
-<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png">
-<link rel="apple-touch-icon" href="/icon-180.png">
-<link rel="preload" href="/fonts/lora-400.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="/fonts/inter-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="manifest" href="/manifest.webmanifest?v=23">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
+<link rel="apple-touch-icon" href="/icon-180.png?v=23">
+<link rel="preload" href="/fonts/inter-400.woff2?v=23" as="font" type="font/woff2" crossorigin>
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ipe()">
@@ -60,13 +59,14 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/journal/journal.css?v=1">
+<link rel="stylesheet" href="/journal/journal.css?v=2">
 </head>
 <body>
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ko">본문으로 건너뛰기</span></a>
 <header class="topbar">
-  <a class="logo" href="/" aria-label="ipe home">ipe<span>()</span></a>
+  <a class="logo ltr" href="/" aria-label="ipe() home">ipe()</a>
   <div class="top-right">
-    <nav aria-label="Primary"><a href="/">home</a><a href="/journal/" aria-current="page">journal</a></nav>
+    <nav aria-label="Primary"><a class="opt" href="/">home</a><a href="/journal/" aria-current="page">journal</a></nav>
     <div class="langswitch" role="group" aria-label="Language / 언어">
       <button type="button" data-lang="en" aria-pressed="true">EN</button>
       <button type="button" data-lang="ko" aria-pressed="false">KO</button>
@@ -74,7 +74,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
 <article class="wrap">
   <header class="post-head">
     <p class="eyebrow"><i></i><span>journal · <time datetime="2026-10-20">2026-10-20</time></span></p>
@@ -107,10 +107,16 @@
 </main>
 
 <footer>
-  <p class="sig">ipe<span>()</span></p>
+  <p class="sig ltr">ipe<span>()</span></p>
   <div class="foot">
-    <p>© 2026 ipe() · idle</p>
-    <p><a href="/">ipe.rest</a> · <a href="/journal/">journal</a></p>
+    <p class="ltr">© 2026 ipe() · idle</p>
+    <nav aria-label="Footer">
+      <a class="ltr" href="/">ipe.rest</a>
+      <a href="/journal/">journal</a>
+      <a href="/about/"><span lang="en">about</span><span lang="ko">소개</span></a>
+      <a href="/contact/"><span lang="en">contact</span><span lang="ko">문의</span></a>
+      <a href="/privacy/"><span lang="en">privacy</span><span lang="ko">개인정보처리방침</span></a>
+    </nav>
   </div>
 </footer>
 <script src="/journal/journal.js?v=1" defer></script>

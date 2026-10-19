@@ -362,15 +362,19 @@ footer{background:#24312b;color:#f4f1e7;padding:56px 7vw 32px}
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
     window.gtag('config', GA_MEASUREMENT_ID);
-    // outbound link clicks → GA4 'click' event (domain only, no personal data)
-    document.addEventListener('click', function (e) {
+    // outbound link clicks → GA4 custom 'outbound_click' (URL only, no personal data)
+    function trackOutbound(e) {
+      if (e.type === 'auxclick' && e.button !== 1) return;
       var a = e.target.closest && e.target.closest('a[href^="http"]');
-      if (!a || a.hostname === location.hostname) return;
-      window.gtag('event', 'click', {
-        link_domain: a.hostname, link_text: (a.textContent || '').trim().slice(0, 40),
-        outbound: true, transport_type: 'beacon'
+      if (!a) return;
+      var h = a.hostname;
+      if (h === 'ipe.rest' || /\.ipe\.rest$/.test(h)) return;
+      window.gtag('event', 'outbound_click', {
+        link_url: a.href, link_domain: h, transport_type: 'beacon'
       });
-    });
+    }
+    document.addEventListener('click', trackOutbound);
+    document.addEventListener('auxclick', trackOutbound);
   }
 })();
 </script>

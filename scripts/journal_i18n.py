@@ -162,9 +162,9 @@ def words(lang, body_html):
 def _header(u, lang, cluster, current_list=False):
     return """<a class="skip" href="#main">%(skip)s</a>
 <header class="topbar">
-  <a class="logo ltr" href="/" aria-label="%(home_aria)s">ipe()</a>
+  <a class="logo ltr" href="/%(lang)s/" aria-label="%(home_aria)s">ipe()</a>
   <div class="top-right">
-    <nav aria-label="Primary"><a class="opt" href="/">%(home)s</a><a href="/journal/%(lang)s/"%(cur)s>%(journal)s</a></nav>
+    <nav aria-label="Primary"><a class="opt" href="/%(lang)s/">%(home)s</a><a href="/journal/%(lang)s/"%(cur)s>%(journal)s</a></nav>
     %(select)s
   </div>
 </header>""" % dict(select=langselect(cluster, lang, u["langs_label"]), skip=esc(u["skip"]), home_aria=esc(u["home_aria"]), home=esc(u["home"]), journal=esc(u["journal"]),
@@ -177,14 +177,14 @@ def _footer(u, lang):
   <div class="foot">
     <p class="ltr">© 2026 ipe() · idle</p>
     <nav aria-label="Footer">
-      <a class="ltr" href="/">ipe.rest</a>
-      <a href="/journal/%s/">%s</a>
-      <a href="/about/">%s</a>
-      <a href="/contact/">%s</a>
-      <a href="/privacy/">%s</a>
+      <a class="ltr" href="/%(l)s/">ipe.rest</a>
+      <a href="/journal/%(l)s/">%(j)s</a>
+      <a href="/%(l)s/about/">%(a)s</a>
+      <a href="/%(l)s/contact/">%(c)s</a>
+      <a href="/%(l)s/privacy/">%(p)s</a>
     </nav>
   </div>
-</footer>""" % (lang, esc(u["journal"]), esc(u["about"]), esc(u["contact"]), esc(u["privacy"]))
+</footer>""" % dict(l=lang, j=esc(u["journal"]), a=esc(u["about"]), c=esc(u["contact"]), p=esc(u["privacy"]))
 
 
 def _common_head(lang, title, desc, canon):

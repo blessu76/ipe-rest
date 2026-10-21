@@ -134,6 +134,8 @@ def render_lang(src, ui, lang):
     out = sub1(out, r'<meta name="twitter:description" content="[^"]*">', '<meta name="twitter:description" content="%s">' % esc(d["meta_desc"]))
     out = ld_fix(out, lang, url)
     out = out.replace('href="/journal/en/"', 'href="/journal/%s/"' % lang)
+    for pg in ("about", "contact", "privacy"):
+        out = out.replace('href="/%s/"' % pg, 'href="/%s/%s/"' % (lang, pg))
     opts = "\n".join('        <option value="%s"%s>%s</option>' % (l, " selected" if l == lang else "", l.upper()) for l in LANGS)
     out = sub1(out, r'<!-- home:options -->', opts)
     out = sub1(out, r'<!-- home:script -->', SCRIPT % {"lang": lang, "langs": json.dumps(LANGS)})

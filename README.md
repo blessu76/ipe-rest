@@ -5,6 +5,7 @@ Design: "Quiet Systems" (2026-10-20) — white sheet, thin cobalt blueprint line
 
 - i18n: 12 languages, one static page each: `/en/ /ko/ … /id/` (`ar` is RTL). Strings in `scripts/home_i18n/<lang>.json`; run `python3 scripts/home_sync.py` to regenerate `/<lang>/index.html`, the root `/index.html` (x-default language chooser), `sitemap.xml` and `llms.txt` — never edit those by hand. Old `?lang=xx` links are forwarded by script to `/xx/`.
 - SEO/GEO: meta + hreflang + JSON-LD in `<head>`, `sitemap.xml`, `robots.txt`, `llms.txt`.
+- Info pages about/contact/privacy: 12 languages each at `/<lang>/<page>/` (EN/KO from `scripts/pages_src/`, 10 AI translations in `scripts/pages_i18n/<page>/<lang>.json`); `python3 scripts/pages_sync.py` generates them, the `/about/` etc. language choosers, sitemap and llms.txt.
 - Sub pages: `journal/`, `about/`, `contact/`, `privacy/` share `journal/journal.css` (EN/KO in one file, switched by `journal/journal.js`).
 - New journal post: follow `scripts/README-journal.md` (template + `scripts/journal_sync.py` keeps list page, `sitemap.xml`, `llms.txt`, JSON-LD in sync).
 - Cache: bump `?v=` in `index.html`, the sub pages and `CACHE` in `sw.js` together when assets change.

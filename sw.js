@@ -1,11 +1,11 @@
 // ipe() service worker — installable PWA + offline fallback
-const CACHE = 'ipe-v30';
+const CACHE = 'ipe-v31';
 const CORE = [
   '/', '/index.html',
   '/manifest.webmanifest?v=23',
   '/icon-192.png?v=23', '/icon-512.png', '/icon-180.png?v=23',
   '/og-image.png',
-  '/en/', '/journal/', '/journal/en/', '/journal/journal.css?v=7', '/journal/journal.js?v=6',
+  '/en/', '/journal/', '/journal/en/', '/journal/journal.css?v=7', '/journal/journal.js?v=7',
   '/about/', '/contact/', '/privacy/',
   '/fonts/inter-400.woff2?v=23', '/fonts/jbmono-400.woff2?v=23', '/fonts/jbmono-600.woff2?v=23'
 ];

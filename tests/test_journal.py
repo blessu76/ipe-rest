@@ -127,6 +127,18 @@ class JournalGeo(unittest.TestCase):
                 self.assertEqual(selected, [], f)
             self.assertNotIn("langlist", src)
 
+    def test_choosers_forward_retired_lang_query(self):
+        js = (ROOT / "journal" / "journal.js").read_text(encoding="utf-8")
+        i = js.index("hasAttribute('data-chooser')")
+        block = js[i:js.index("// GA4")]
+        self.assertIn("get('lang')", block)
+        self.assertLess(block.index("get('lang')"), block.index("localStorage.getItem('ipe_lang')"))  # ?lang= beats the stored choice
+        chooser = (ROOT / "journal" / "index.html").read_text(encoding="utf-8")
+        self.assertIn("data-chooser", chooser)
+        self.assertIn("journal.js?v=%s" % journal_sync.I18N.VER_JS, chooser)
+        sw = (ROOT / "sw.js").read_text(encoding="utf-8")
+        self.assertIn("journal.js?v=%s" % journal_sync.I18N.VER_JS, sw)
+
     def test_llms_and_robots(self):
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
         for f in posts():

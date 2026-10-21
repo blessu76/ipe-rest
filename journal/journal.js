@@ -74,7 +74,11 @@
     var avail = {}, links = document.querySelectorAll('.choose-list a[hreflang]');
     for (var q = 0; q < links.length; q++) avail[links[q].getAttribute('hreflang')] = links[q].getAttribute('href');
     var want = null;
-    try { want = localStorage.getItem('ipe_lang'); } catch (err) {}
+    try {  // retired ?lang=xx links win over the stored choice
+      var q = new URLSearchParams(location.search).get('lang');
+      if (q && avail[q]) want = q;
+    } catch (err) {}
+    if (!want) { try { want = localStorage.getItem('ipe_lang'); } catch (err) {} }
     if (!want || !avail[want]) {
       want = null;
       try {
@@ -85,7 +89,7 @@
         }
       } catch (err) {}
     }
-    if (want && avail[want]) location.replace(avail[want]);
+    if (want && avail[want]) location.replace(avail[want] + location.hash);
   }
 
   // GA4 — same measurement ID as index.html

@@ -20,7 +20,7 @@ from pathlib import Path
 SITE = "https://ipe.rest"
 ORG_ID = SITE + "/#organization"
 VER_CSS = "7"
-VER_JS = "6"
+VER_JS = "7"
 ASSET_VER = "23"
 
 LANGS = ["en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id"]

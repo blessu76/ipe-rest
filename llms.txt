@@ -53,6 +53,23 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
 - S1A1.09 Let's Smile a Little Tomorrow. — EN: https://youtu.be/81XXhmbA_JY · KR: https://youtu.be/QsghUul4Hak
 - S1A1.10 You Did So Well Today. — EN: https://youtu.be/lvyLfiBzMLg · KR: https://youtu.be/I_3pxFG_1Ug
 
+## Main page
+<!-- home:llms:start -->
+- Main page (12 languages, one static page per language; root is a language chooser): https://ipe.rest/
+  - English [en]: https://ipe.rest/en/
+  - 한국어 [ko]: https://ipe.rest/ko/
+  - 日本語 [ja]: https://ipe.rest/ja/
+  - 简体中文 [zh]: https://ipe.rest/zh/
+  - Español [es]: https://ipe.rest/es/
+  - Français [fr]: https://ipe.rest/fr/
+  - Deutsch [de]: https://ipe.rest/de/
+  - Português [pt]: https://ipe.rest/pt/
+  - Русский [ru]: https://ipe.rest/ru/
+  - العربية [ar]: https://ipe.rest/ar/
+  - हिन्दी [hi]: https://ipe.rest/hi/
+  - Bahasa Indonesia [id]: https://ipe.rest/id/
+<!-- home:llms:end -->
+
 ## Journal
 <!-- journal:llms:start -->
 - Journal (12 languages, one static page per language; language chooser): https://ipe.rest/journal/

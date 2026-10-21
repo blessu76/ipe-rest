@@ -15,10 +15,12 @@ Usage:
     python3 scripts/journal_sync.py --check   # validate only; exit 1 if anything is invalid or out of date
 """
 import argparse
+import datetime
 import html
 import json
 import re
 import sys
+import urllib.parse
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -28,6 +30,9 @@ DIR_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})-[a-z0-9]+(?:-[a-z0-9]+)*$")
 IMG_NS = "http://www.google.com/schemas/sitemap-image/1.1"
 LD_RE = re.compile(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', re.S)
 WORDCOUNT_RE = re.compile(r'("wordCount":\s*)\d+')
+COMMENT_RE = re.compile(r"<!--.*?-->", re.S)
+# leftovers from scripts/journal-post-template.html (folder slug "slug" is checked separately)
+PLACEHOLDER_RE = re.compile(r"\bTODO\b|YYYY-MM-DD")
 
 
 def meta(src, name, attr="name"):
@@ -42,7 +47,63 @@ def prose_words(src, lang):
     return len(html.unescape(re.sub(r"<[^>]+>", " ", m.group(1))).split())
 
 
-def load_post(d):
+def local_file(root, url):
+    """Map a site URL (https://ipe.rest/x/y.png) or root-relative path to a path under root.
+    Returns None for other domains (not ours to check) and for paths that escape root."""
+    if url.startswith(SITE + "/"):
+        url = url[len(SITE):]
+    if not url.startswith("/") or url.startswith("//"):
+        return None
+    f = (root / urllib.parse.unquote(re.split(r"[?#]", url, 1)[0]).lstrip("/")).resolve()
+    return f if root.resolve() in f.parents else None
+
+
+def check_images(root, src, ld):
+    """Errors for image URLs (JSON-LD image/thumbnailUrl, og:image, twitter:image) that are not real files."""
+    img = ld.get("image")
+    urls = {"BlogPosting.image.url": img.get("url") if isinstance(img, dict) else img,
+            "BlogPosting.thumbnailUrl": ld.get("thumbnailUrl"),
+            "og:image": meta(src, "og:image", "property"),
+            "twitter:image": meta(src, "twitter:image")}
+    errs = []
+    for label, u in urls.items():
+        if not u or not isinstance(u, str):
+            continue
+        if not u.startswith(SITE + "/"):
+            if u.startswith("/") or u.startswith(SITE):
+                errs.append("%s must be an absolute %s/… URL: %s" % (label, SITE, u))
+            continue  # other domains: not ours to check
+        f = local_file(root, u)
+        if f is None or not f.is_file():
+            errs.append("%s points at a file that is not in the repo: %s" % (label, u))
+    return errs
+
+
+def check_placeholders(d, src, ld):
+    """Errors for template leftovers (TODO, YYYY-MM-DD, folder slug 'slug', unclosed <h2>)."""
+    errs = []
+    if re.sub(r"^\d{4}-\d{2}-\d{2}-", "", d.name) == "slug":
+        errs.append("folder name still uses the template slug 'slug'")
+    body = COMMENT_RE.sub("", src)
+    hits = sorted(set(PLACEHOLDER_RE.findall(body)))
+    if hits:
+        first = next(i for i, ln in enumerate(body.splitlines(), 1) if PLACEHOLDER_RE.search(ln))
+        errs.append("template placeholder(s) left in the post: %s (first near line %d of the comment-stripped source) — "
+                    "replace every TODO / YYYY-MM-DD" % (", ".join(hits), first))
+    for key in ("datePublished", "dateModified"):
+        v = ld.get(key)
+        try:
+            ok = isinstance(v, str) and re.fullmatch(r"\d{4}-\d{2}-\d{2}", v) and datetime.date.fromisoformat(v)
+        except ValueError:
+            ok = False
+        if v and not ok:
+            errs.append("BlogPosting.%s must be a real YYYY-MM-DD date (got %r)" % (key, v))
+    if len(re.findall(r"<h2[ >]", body)) != len(re.findall(r"</h2>", body)):
+        errs.append("unbalanced <h2> / </h2> (escape literal tags as &lt;h2&gt;)")
+    return errs
+
+
+def load_post(d, root=ROOT):
     """Parse + validate one post dir. Returns (post dict, [errors])."""
     path = d / "index.html"
     src = path.read_text(encoding="utf-8")
@@ -85,7 +146,10 @@ def load_post(d):
             errs.append("BlogPosting.%s is empty" % key)
     if "wordCount" not in ld:
         errs.append("BlogPosting.wordCount missing (any number; the script fills it in)")
-    if ld.get("author", {}).get("@type") != "Organization":
+    errs += check_placeholders(d, src, ld)
+    errs += check_images(root, src, ld)
+    author = ld.get("author")
+    if not isinstance(author, dict) or author.get("@type") != "Organization":
         errs.append("author must be an Organization (no personal names)")
     if "@" in json.dumps(ld, ensure_ascii=False).replace("@type", "").replace("@id", "").replace("@context", ""):
         errs.append("JSON-LD contains '@' — e-mail addresses do not belong in posts' structured data")
@@ -139,7 +203,7 @@ def render_list(posts):
 def render_ld(posts):
     entries = []
     for p in posts:
-        e = {"@type": "BlogPosting", "headline": p["title_en"], "alternativeHeadline": p["title_ko"],
+        e = {"@type": "BlogPosting", "@id": p["url"] + "#article", "headline": p["title_en"], "alternativeHeadline": p["title_ko"],
              "description": p["desc"], "url": p["url"], "datePublished": p["published"],
              "dateModified": p["modified"], "inLanguage": ["en", "ko"]}
         if p["image"].get("url"):
@@ -188,7 +252,7 @@ def render_sitemap(posts):
 def render_llms(posts):
     lines = ["- Journal (EN/KO, weekly): %s/journal/" % SITE]
     for p in posts:
-        lines.append("- %s (%s): %s — %s" % (p["title_en"], p["published"], p["url"], p["desc"]))
+        lines.append("- %s (%s): %s - %s" % (p["title_en"], p["published"], p["url"], p["desc"]))
     return "\n".join(lines)
 
 
@@ -213,7 +277,7 @@ def build(root=ROOT):
                   key=lambda d: d.name, reverse=True)
     posts, errors, writes = [], [], {}
     for d in dirs:
-        p, errs = load_post(d)
+        p, errs = load_post(d, root)
         errors += ["%s: %s" % (d.name, e) for e in errs]
         if "ld" not in p:
             continue

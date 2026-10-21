@@ -67,7 +67,7 @@ class JournalGeo(unittest.TestCase):
     def test_new_post_flows_through(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            for name in ("journal", "sitemap.xml", "llms.txt"):
+            for name in ("journal", "sitemap.xml", "llms.txt", "og-image.png"):
                 src = ROOT / name
                 (shutil.copytree if src.is_dir() else shutil.copy)(src, root / name)
             old = posts()[0]
@@ -90,9 +90,101 @@ class JournalGeo(unittest.TestCase):
             f.write_text(f.read_text(encoding="utf-8").replace('hreflang="ko"', 'hreflang="xx"'), encoding="utf-8")
             shutil.copy(ROOT / "sitemap.xml", root / "sitemap.xml")
             shutil.copy(ROOT / "llms.txt", root / "llms.txt")
+            shutil.copy(ROOT / "og-image.png", root / "og-image.png")
             _, errors = journal_sync.build(root)
             self.assertTrue(any("hreflang=ko" in e for e in errors))
 
+
+class JournalValidation(unittest.TestCase):
+    """Each check must fail on a broken copy of the real post (and pass on the real one)."""
+
+    def build_with(self, edit):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            shutil.copytree(ROOT / "journal", root / "journal")
+            for name in ("sitemap.xml", "llms.txt", "og-image.png", "icon-512.png"):
+                shutil.copy(ROOT / name, root / name)
+            f = next((root / "journal").glob("2026-*/index.html"))
+            f.write_text(edit(f.read_text(encoding="utf-8")), encoding="utf-8")
+            return journal_sync.build(root)[1]
+
+    def test_unchanged_copy_is_valid(self):
+        self.assertEqual(self.build_with(lambda s: s), [])
+
+    def test_missing_image_file_is_rejected(self):
+        og = "https://ipe.rest/og-image.png"
+        errs = self.build_with(lambda s: s.replace(og, "https://ipe.rest/journal/nope/hero.png"))
+        self.assertTrue(any("not in the repo" in e and "hero.png" in e for e in errs), errs)
+        # each of the four places is checked on its own
+        for label in ("BlogPosting.image.url", "BlogPosting.thumbnailUrl", "og:image", "twitter:image"):
+            self.assertTrue(any(label in e for e in errs), (label, errs))
+        # og:image alone
+        errs = self.build_with(lambda s: s.replace('property="og:image" content="%s"' % og,
+                                                   'property="og:image" content="https://ipe.rest/gone.png"'))
+        self.assertTrue(any(e.endswith("gone.png") and "og:image" in e for e in errs), errs)
+
+    def test_image_path_cannot_escape_root(self):
+        errs = self.build_with(lambda s: s.replace("https://ipe.rest/og-image.png", "https://ipe.rest/../../etc/hosts"))
+        self.assertTrue(any("not in the repo" in e for e in errs), errs)
+
+    def test_other_domain_image_is_not_checked(self):
+        self.assertEqual(self.build_with(lambda s: s.replace("https://ipe.rest/og-image.png", "https://cdn.example.com/a.png")), [])
+
+    def test_todo_placeholder_is_rejected(self):
+        for field in ("excerpt-en", "excerpt-ko"):
+            errs = self.build_with(lambda s: re.sub(r'(<meta name="ipe:%s" content=")' % field, r"\1TODO ", s))
+            self.assertTrue(any("placeholder" in e and "TODO" in e for e in errs), (field, errs))
+        errs = self.build_with(lambda s: s.replace("</p>", " TODO fix this.</p>", 1))
+        self.assertTrue(any("placeholder" in e for e in errs), errs)
+        errs = self.build_with(lambda s: re.sub(r'("keywords": ")', r"\1TODO ", s))
+        self.assertTrue(any("placeholder" in e for e in errs), errs)
+
+    def test_date_placeholder_is_rejected(self):
+        errs = self.build_with(lambda s: s.replace('"dateModified": "2026-10-20"', '"dateModified": "YYYY-MM-DD"'))
+        self.assertTrue(any("YYYY-MM-DD" in e for e in errs), errs)
+        errs = self.build_with(lambda s: s.replace('"dateModified": "2026-10-20"', '"dateModified": "2026-13-45"'))
+        self.assertTrue(any("real YYYY-MM-DD date" in e for e in errs), errs)
+
+    def test_template_slug_folder_is_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name in ("journal", "sitemap.xml", "llms.txt", "og-image.png", "icon-512.png"):
+                src = ROOT / name
+                (shutil.copytree if src.is_dir() else shutil.copy)(src, root / name)
+            old = posts()[0]
+            new = root / "journal" / "2026-10-20-slug"
+            new.mkdir()
+            s = (old / "index.html").read_text(encoding="utf-8").replace(old.name, new.name)
+            (new / "index.html").write_text(s, encoding="utf-8")
+            errs = journal_sync.build(root)[1]
+            self.assertTrue(any("template slug" in e for e in errs), errs)
+
+    def test_unclosed_h2_is_rejected(self):
+        errs = self.build_with(lambda s: s.replace("</article>", "<p>Use <h2> for sections</p></article>", 1))
+        self.assertTrue(any("<h2>" in e for e in errs), errs)
+
+    def test_untouched_template_is_rejected_and_balanced(self):
+        tpl = (ROOT / "scripts" / "journal-post-template.html").read_text(encoding="utf-8")
+        self.assertEqual(len(re.findall(r"<h2[ >]", tpl)), len(re.findall(r"</h2>", tpl)))
+        with tempfile.TemporaryDirectory() as tmp:
+            d = Path(tmp) / "2026-10-30-new-post"
+            d.mkdir()
+            (d / "index.html").write_text(tpl.replace("YYYY-MM-DD-slug", d.name), encoding="utf-8")
+            _, errs = journal_sync.load_post(d, ROOT)
+            self.assertTrue(any("placeholder" in e for e in errs), errs)
+
+    def test_list_entries_link_to_article_nodes(self):
+        src = (ROOT / "journal" / "index.html").read_text(encoding="utf-8")
+        blog = json.loads(LD.findall(src)[0])["@graph"][0]
+        ids = {e["@id"] for e in blog["blogPost"]}
+        for d in posts():
+            self.assertIn("https://ipe.rest/journal/%s/#article" % d.name, ids)
+
+    def test_llms_post_line_separator_is_not_em_dash(self):
+        lines = [ln for ln in (ROOT / "llms.txt").read_text(encoding="utf-8").splitlines() if "/journal/20" in ln]
+        self.assertTrue(lines)
+        for ln in lines:
+            self.assertRegex(ln, r"/journal/\d{4}-[^ ]+/ - \S")
 
 if __name__ == "__main__":
     unittest.main()

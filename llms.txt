@@ -56,7 +56,7 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
 ## Journal
 <!-- journal:llms:start -->
 - Journal (EN/KO, weekly): https://ipe.rest/journal/
-- Why ipe() is named after an idle process (2026-10-20): https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/ — ipe() is short for “idle process” — the state a computer enters when it has no work left and simply rests. The story behind the name, the music, and the whispered “ipe. be still.”
+- Why ipe() is named after an idle process (2026-10-20): https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/ - ipe() is short for “idle process” — the state a computer enters when it has no work left and simply rests. The story behind the name, the music, and the whispered “ipe. be still.”
 <!-- journal:llms:end -->
 
 ## About, contact and policy

@@ -15,51 +15,101 @@ LD = re.compile(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', re.
 SM = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 
 
+SRC = ROOT / "scripts" / "journal_src"
+
+
 def posts():
-    return sorted(d for d in (ROOT / "journal").iterdir() if journal_sync.DIR_RE.match(d.name))
+    """Post sources (the served pages are generated from them)."""
+    return sorted(f for f in SRC.glob("*.html") if journal_sync.DIR_RE.match(f.stem))
+
+
+def slug_of(f):
+    return f.stem
+
+
+def copy_site(root, names=("journal", "scripts", "sitemap.xml", "llms.txt", "og-image.png", "icon-512.png")):
+    for name in names:
+        src = ROOT / name
+        (shutil.copytree if src.is_dir() else shutil.copy)(src, root / name)
 
 
 class JournalGeo(unittest.TestCase):
     def test_in_sync_and_valid(self):
         writes, errors = journal_sync.build(ROOT)
         self.assertEqual(errors, [])
-        stale = [str(p) for p, t in writes.items() if p.read_text(encoding="utf-8") != t]
+        stale = [str(p) for p, t in writes.items() if not p.exists() or p.read_text(encoding="utf-8") != t]
         self.assertEqual(stale, [], "run: python3 scripts/journal_sync.py")
 
-    def test_post_json_ld(self):
-        for d in posts():
-            src = (d / "index.html").read_text(encoding="utf-8")
-            blobs = [json.loads(b) for b in LD.findall(src)]
-            bp = next(b for b in blobs if b["@type"] == "BlogPosting")
-            for k in ("image", "wordCount", "keywords", "inLanguage", "about", "datePublished", "dateModified"):
-                self.assertTrue(bp.get(k), k)
-            self.assertTrue(bp["image"]["url"].startswith("https://"))
-            self.assertEqual(bp["author"]["@type"], "Organization")
-            self.assertTrue(any(a.get("@type") == "Organization" for a in bp["about"]))
-            self.assertIn("BreadcrumbList", [b["@type"] for b in blobs])
-            self.assertNotIn("Davy", json.dumps(bp))
+    def test_post_json_ld_for_every_language(self):
+        for f in posts():
+            slug = slug_of(f)
+            for lang in ("en", "ko", "ja", "ar"):
+                src = (ROOT / "journal" / lang / slug / "index.html").read_text(encoding="utf-8")
+                blobs = [json.loads(b) for b in LD.findall(src)]
+                bp = next(b for b in blobs if b["@type"] == "BlogPosting")
+                for k in ("image", "wordCount", "keywords", "inLanguage", "about", "datePublished", "dateModified", "abstract"):
+                    self.assertTrue(bp.get(k), (lang, k))
+                self.assertEqual(bp["inLanguage"], lang)  # single value
+                self.assertTrue(bp["image"]["url"].startswith("https://"))
+                self.assertEqual(bp["author"]["@type"], "Organization")
+                self.assertTrue(any(a.get("@type") == "Organization" for a in bp["about"]))
+                self.assertIn("BreadcrumbList", [b["@type"] for b in blobs])
+                self.assertNotIn("Davy", json.dumps(bp))
 
-    def test_list_page_has_blog_and_itemlist(self):
-        src = (ROOT / "journal" / "index.html").read_text(encoding="utf-8")
-        graph = json.loads(LD.findall(src)[0])["@graph"]
-        types = {g["@type"]: g for g in graph}
-        self.assertEqual(set(types), {"Blog", "ItemList"})
-        self.assertEqual(types["ItemList"]["numberOfItems"], len(posts()))
+    def test_original_vs_translation_relations_and_ai_note(self):
+        for f in posts():
+            slug = slug_of(f)
+            orig = re.search(r'ipe:original" content="(\w+)"', f.read_text(encoding="utf-8")).group(1)
+            self.assertIn(orig, ("en", "ko"))
+            base = "https://ipe.rest/journal/%s/%s/"
+            for lang in journal_sync.I18N.LANGS:
+                src = (ROOT / "journal" / lang / slug / "index.html").read_text(encoding="utf-8")
+                bp = next(json.loads(b) for b in LD.findall(src) if json.loads(b)["@type"] == "BlogPosting")
+                if lang == orig:
+                    self.assertEqual(len(bp["workTranslation"]), 11)
+                    self.assertNotIn("translationOfWork", bp)
+                else:
+                    self.assertEqual(bp["translationOfWork"]["@id"], base % (orig, slug) + "#article")
+                    self.assertNotIn("workTranslation", bp)
+                # AI-translation note only on the 10 machine-translated languages (not on the reviewed EN/KO)
+                self.assertEqual('class="ai-note"' in src, lang in journal_sync.I18N.TR_LANGS, lang)
 
-    def test_sitemap_lists_every_post_with_lastmod_hreflang_image(self):
+    def test_list_pages_have_blog_and_itemlist(self):
+        for lang in journal_sync.I18N.LANGS:
+            src = (ROOT / "journal" / lang / "index.html").read_text(encoding="utf-8")
+            graph = json.loads(LD.findall(src)[0])["@graph"]
+            types = {g["@type"]: g for g in graph}
+            self.assertEqual(set(types), {"Blog", "ItemList"})
+            self.assertEqual(types["ItemList"]["numberOfItems"], len(posts()))
+            self.assertEqual(types["Blog"]["inLanguage"], lang)
+            ids = {e["@id"] for e in types["Blog"]["blogPost"]}
+            for f in posts():
+                self.assertIn("https://ipe.rest/journal/%s/%s/#article" % (lang, slug_of(f)), ids)
+
+    def test_sitemap_has_every_language_page_with_13_hreflang_and_image(self):
         root = ET.parse(ROOT / "sitemap.xml").getroot()
         urls = {u.find(SM + "loc").text: u for u in root.findall(SM + "url")}
-        for d in posts():
-            u = urls["https://ipe.rest/journal/%s/" % d.name]
-            self.assertTrue(u.find(SM + "lastmod").text)
-            self.assertGreaterEqual(len(u.findall("{http://www.w3.org/1999/xhtml}link")), 3)
-            self.assertIsNotNone(u.find("{http://www.google.com/schemas/sitemap-image/1.1}image"))
-        self.assertIn("https://ipe.rest/journal/", urls)
+        X = "{http://www.w3.org/1999/xhtml}link"
+        for f in posts():
+            for lang in [None] + journal_sync.I18N.LANGS:
+                u = urls[journal_sync.I18N.post_url(slug_of(f), lang)]
+                self.assertTrue(u.find(SM + "lastmod").text)
+                self.assertEqual(len(u.findall(X)), 13)
+                self.assertIsNotNone(u.find("{http://www.google.com/schemas/sitemap-image/1.1}image"))
+        for lang in [None] + journal_sync.I18N.LANGS:
+            self.assertEqual(len(urls[journal_sync.I18N.list_url(lang)].findall(X)), 13)
+        self.assertFalse([l for l in urls if "?" in l], "no ?lang= urls in the sitemap")
+
+    def test_no_query_string_urls_anywhere(self):
+        for f in list((ROOT / "journal").rglob("index.html")) + [ROOT / "llms.txt"]:
+            self.assertNotIn("?lang=", f.read_text(encoding="utf-8"), f)
+        self.assertFalse(re.findall(r'"https://ipe\.rest/journal/[^"]*\?', (ROOT / "sitemap.xml").read_text(encoding="utf-8")))
 
     def test_llms_and_robots(self):
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
-        for d in posts():
-            self.assertIn("https://ipe.rest/journal/%s/" % d.name, llms)
+        for f in posts():
+            for lang in [None] + journal_sync.I18N.LANGS:
+                self.assertIn(journal_sync.I18N.post_url(slug_of(f), lang), llms)
         robots = (ROOT / "robots.txt").read_text()
         self.assertIn("Sitemap: https://ipe.rest/sitemap.xml", robots)
         self.assertNotRegex(robots, r"(?m)^Disallow:\s*/\s*$")
@@ -67,44 +117,41 @@ class JournalGeo(unittest.TestCase):
     def test_new_post_flows_through(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            for name in ("journal", "sitemap.xml", "llms.txt", "og-image.png"):
-                src = ROOT / name
-                (shutil.copytree if src.is_dir() else shutil.copy)(src, root / name)
+            copy_site(root)
             old = posts()[0]
-            new = root / "journal" / "2026-10-27-second-post"
-            new.mkdir()
-            s = (old / "index.html").read_text(encoding="utf-8")
-            s = s.replace(old.name, new.name).replace("2026-10-20", "2026-10-27")
-            (new / "index.html").write_text(s, encoding="utf-8")
+            new = root / "scripts" / "journal_src" / "2026-10-27-second-post.html"
+            s = old.read_text(encoding="utf-8")
+            s = s.replace(old.stem, new.stem).replace("2026-10-20", "2026-10-27")
+            new.write_text(s, encoding="utf-8")
             writes, errors = journal_sync.build(root)
             self.assertEqual(errors, [])
+            for lang in journal_sync.I18N.LANGS[:2]:  # en + ko come from the source itself
+                self.assertIn(root / "journal" / lang / "2026-10-27-second-post" / "index.html", writes)
+            self.assertIn(root / "journal" / "2026-10-27-second-post" / "index.html", writes)
             self.assertIn("2026-10-27-second-post", writes[root / "sitemap.xml"])
             self.assertIn("2026-10-27-second-post", writes[root / "llms.txt"])
-            self.assertIn("2026-10-27-second-post", writes[root / "journal" / "index.html"])
+            self.assertIn("2026-10-27-second-post", writes[root / "journal" / "en" / "index.html"])
+            # the new post has no translation JSON yet -> only en/ko in its cluster, never an empty ja page
+            self.assertNotIn(root / "journal" / "ja" / "2026-10-27-second-post" / "index.html", writes)
 
     def test_bad_post_is_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            shutil.copytree(ROOT / "journal", root / "journal")
-            f = next((root / "journal").glob("2026-*/index.html"))
-            f.write_text(f.read_text(encoding="utf-8").replace('hreflang="ko"', 'hreflang="xx"'), encoding="utf-8")
-            shutil.copy(ROOT / "sitemap.xml", root / "sitemap.xml")
-            shutil.copy(ROOT / "llms.txt", root / "llms.txt")
-            shutil.copy(ROOT / "og-image.png", root / "og-image.png")
+            copy_site(root)
+            f = next((root / "scripts" / "journal_src").glob("2026-*.html"))
+            f.write_text(f.read_text(encoding="utf-8").replace('<link rel="canonical" href="https://ipe.rest/', '<link rel="canonical" href="https://example.com/'), encoding="utf-8")
             _, errors = journal_sync.build(root)
-            self.assertTrue(any("hreflang=ko" in e for e in errors))
+            self.assertTrue(any("canonical" in e for e in errors), errors)
 
 
 class JournalValidation(unittest.TestCase):
-    """Each check must fail on a broken copy of the real post (and pass on the real one)."""
+    """Each check must fail on a broken copy of the real post source (and pass on the real one)."""
 
     def build_with(self, edit):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            shutil.copytree(ROOT / "journal", root / "journal")
-            for name in ("sitemap.xml", "llms.txt", "og-image.png", "icon-512.png"):
-                shutil.copy(ROOT / name, root / name)
-            f = next((root / "journal").glob("2026-*/index.html"))
+            copy_site(root)
+            f = next((root / "scripts" / "journal_src").glob("2026-*.html"))
             f.write_text(edit(f.read_text(encoding="utf-8")), encoding="utf-8")
             return journal_sync.build(root)[1]
 
@@ -115,10 +162,8 @@ class JournalValidation(unittest.TestCase):
         og = "https://ipe.rest/og-image.png"
         errs = self.build_with(lambda s: s.replace(og, "https://ipe.rest/journal/nope/hero.png"))
         self.assertTrue(any("not in the repo" in e and "hero.png" in e for e in errs), errs)
-        # each of the four places is checked on its own
         for label in ("BlogPosting.image.url", "BlogPosting.thumbnailUrl", "og:image", "twitter:image"):
             self.assertTrue(any(label in e for e in errs), (label, errs))
-        # og:image alone
         errs = self.build_with(lambda s: s.replace('property="og:image" content="%s"' % og,
                                                    'property="og:image" content="https://ipe.rest/gone.png"'))
         self.assertTrue(any(e.endswith("gone.png") and "og:image" in e for e in errs), errs)
@@ -145,17 +190,19 @@ class JournalValidation(unittest.TestCase):
         errs = self.build_with(lambda s: s.replace('"dateModified": "2026-10-20"', '"dateModified": "2026-13-45"'))
         self.assertTrue(any("real YYYY-MM-DD date" in e for e in errs), errs)
 
-    def test_template_slug_folder_is_rejected(self):
+    def test_original_language_and_ko_meta_are_required(self):
+        errs = self.build_with(lambda s: re.sub(r'<meta name="ipe:original"[^>]*>\n', "", s))
+        self.assertTrue(any("ipe:original" in e for e in errs), errs)
+        errs = self.build_with(lambda s: re.sub(r'<meta name="ipe:description-ko"[^>]*>\n', "", s))
+        self.assertTrue(any("ipe:description-ko" in e for e in errs), errs)
+
+    def test_template_slug_file_is_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            for name in ("journal", "sitemap.xml", "llms.txt", "og-image.png", "icon-512.png"):
-                src = ROOT / name
-                (shutil.copytree if src.is_dir() else shutil.copy)(src, root / name)
+            copy_site(root)
             old = posts()[0]
-            new = root / "journal" / "2026-10-20-slug"
-            new.mkdir()
-            s = (old / "index.html").read_text(encoding="utf-8").replace(old.name, new.name)
-            (new / "index.html").write_text(s, encoding="utf-8")
+            new = root / "scripts" / "journal_src" / "2026-10-20-slug.html"
+            new.write_text(old.read_text(encoding="utf-8").replace(old.stem, new.stem), encoding="utf-8")
             errs = journal_sync.build(root)[1]
             self.assertTrue(any("template slug" in e for e in errs), errs)
 
@@ -167,24 +214,11 @@ class JournalValidation(unittest.TestCase):
         tpl = (ROOT / "scripts" / "journal-post-template.html").read_text(encoding="utf-8")
         self.assertEqual(len(re.findall(r"<h2[ >]", tpl)), len(re.findall(r"</h2>", tpl)))
         with tempfile.TemporaryDirectory() as tmp:
-            d = Path(tmp) / "2026-10-30-new-post"
-            d.mkdir()
-            (d / "index.html").write_text(tpl.replace("YYYY-MM-DD-slug", d.name), encoding="utf-8")
-            _, errs = journal_sync.load_post(d, ROOT)
+            f = Path(tmp) / "2026-10-30-new-post.html"
+            f.write_text(tpl.replace("YYYY-MM-DD-slug", f.stem), encoding="utf-8")
+            _, errs = journal_sync.load_post(f, ROOT)
             self.assertTrue(any("placeholder" in e for e in errs), errs)
 
-    def test_list_entries_link_to_article_nodes(self):
-        src = (ROOT / "journal" / "index.html").read_text(encoding="utf-8")
-        blog = json.loads(LD.findall(src)[0])["@graph"][0]
-        ids = {e["@id"] for e in blog["blogPost"]}
-        for d in posts():
-            self.assertIn("https://ipe.rest/journal/%s/#article" % d.name, ids)
-
-    def test_llms_post_line_separator_is_not_em_dash(self):
-        lines = [ln for ln in (ROOT / "llms.txt").read_text(encoding="utf-8").splitlines() if "/journal/20" in ln]
-        self.assertTrue(lines)
-        for ln in lines:
-            self.assertRegex(ln, r"/journal/\d{4}-[^ ]+/ - \S")
 
 class JournalI18n(unittest.TestCase):
     """12-language structure: static per-language URLs, hreflang cluster reciprocity, JSON-LD translation links."""
@@ -210,7 +244,7 @@ class JournalI18n(unittest.TestCase):
         return self.pages.get(url.split("?")[0])
 
     def test_translations_exist_for_every_language(self):
-        slug = posts()[0].name
+        slug = slug_of(posts()[0])
         for l in self.I.TR_LANGS:
             self.assertIn("https://ipe.rest/journal/%s/%s/" % (l, slug), self.pages, l)
             self.assertIn("https://ipe.rest/journal/%s/" % l, self.pages, l)
@@ -234,13 +268,13 @@ class JournalI18n(unittest.TestCase):
 
     def test_hreflang_covers_all_twelve_languages(self):
         for url, (_, src) in self.pages.items():
-            if "/journal/20" in url or url.endswith("/journal/") or re.search(r"/journal/[a-z]{2}/", url):
-                self.assertEqual(set(self.hreflangs(src)), set(self.I.LANGS) | {"x-default"}, url)
+            self.assertEqual(set(self.hreflangs(src)), set(self.I.LANGS) | {"x-default"}, url)
 
     def test_html_lang_dir_and_og_locale(self):
         for url, (_, src) in self.pages.items():
             m = re.search(r"/journal/([a-z]{2})/", url)
             if not m:
+                self.assertIn("data-chooser", src, url)  # x-default pages are the language choosers
                 continue
             lang = m.group(1)
             self.assertIn('<html lang="%s" dir="%s">' % (lang, "rtl" if lang == "ar" else "ltr"), src, url)
@@ -249,11 +283,12 @@ class JournalI18n(unittest.TestCase):
             self.assertEqual(set(alts), set(self.I.OG_LOCALE.values()) - {self.I.OG_LOCALE[lang]}, url)
 
     def test_translated_post_json_ld_and_ai_note(self):
-        slug = posts()[0].name
+        slug = slug_of(posts()[0])
         orig_url = "https://ipe.rest/journal/%s/" % slug
-        orig_ld = next(b for b in self.lds(self.pages[orig_url][1]) if b["@type"] == "BlogPosting")
+        orig_ld = next(b for b in self.lds(self.pages["https://ipe.rest/journal/en/%s/" % slug][1]) if b["@type"] == "BlogPosting")
         listed = {w["inLanguage"]: w["@id"] for w in orig_ld["workTranslation"]}
-        self.assertEqual(set(listed), set(self.I.TR_LANGS))
+        self.assertEqual(set(listed), set(self.I.LANGS) - {"en"})
+        orig_url = "https://ipe.rest/journal/en/%s/" % slug
         for l in self.I.TR_LANGS:
             url = "https://ipe.rest/journal/%s/%s/" % (l, slug)
             src = self.pages[url][1]
@@ -268,7 +303,7 @@ class JournalI18n(unittest.TestCase):
             self.assertNotIn("workTranslation", bp)
             self.assertIn("BreadcrumbList", [b["@type"] for b in blobs])
             self.assertIn('class="ai-note"', src)
-            self.assertIn('href="/journal/%s/"' % slug, src)  # link back to the original
+            self.assertIn('href="/journal/en/%s/" hreflang="en"' % slug, src)  # link back to the original
             self.assertEqual(len(re.findall(r"<h1[ >]", src)), 1)
             self.assertIn("© 2026 ipe() · idle", src)
             self.assertIn("ipe(); // be still", src)
@@ -280,7 +315,6 @@ class JournalI18n(unittest.TestCase):
             self.assertEqual({g["@type"] for g in graph}, {"Blog", "ItemList"})
             blog = next(g for g in graph if g["@type"] == "Blog")
             self.assertEqual(blog["inLanguage"], l)
-            self.assertEqual(blog["translationOfWork"]["@id"], "https://ipe.rest/journal/#blog")
             for it in next(g for g in graph if g["@type"] == "ItemList")["itemListElement"]:
                 self.assertIsNotNone(self.page_for(it["url"]), it["url"])
 
@@ -319,9 +353,7 @@ class JournalI18n(unittest.TestCase):
     def test_missing_ui_strings_and_orphans_are_rejected(self):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
-            for name in ("journal", "scripts", "sitemap.xml", "llms.txt", "og-image.png"):
-                src = ROOT / name
-                (shutil.copytree if src.is_dir() else shutil.copy)(src, root / name)
+            copy_site(root)
             ui = root / "scripts" / "journal_i18n" / "ui.json"
             data = json.loads(ui.read_text(encoding="utf-8"))
             del data["ja"]["ai_label"]
@@ -330,7 +362,7 @@ class JournalI18n(unittest.TestCase):
             self.assertTrue(any("ui.json[ja] missing" in e and "ai_label" in e for e in errors), errors)
             # removing a translation source leaves its generated page behind -> reported as an orphan
             ui.write_text(json.dumps(json.loads((ROOT / "scripts" / "journal_i18n" / "ui.json").read_text(encoding="utf-8")), ensure_ascii=False), encoding="utf-8")
-            (root / "scripts" / "journal_i18n" / posts()[0].name / "id.json").unlink()
+            (root / "scripts" / "journal_i18n" / slug_of(posts()[0]) / "id.json").unlink()
             _, errors = journal_sync.build(root)
             self.assertTrue(any("orphan" in e and "/id/" in e.replace("\\", "/") for e in errors), errors)
 

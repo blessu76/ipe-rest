@@ -341,7 +341,7 @@ img,svg{max-width:100%}
     <nav class="nav" id="site-nav" aria-label="Primary">
       <a href="#note"><span class="num ltr" aria-hidden="true">01</span><span data-i18n="nav_note">studio note</span></a>
       <a href="#things"><span class="num ltr" aria-hidden="true">02</span><span data-i18n="nav_things">things we make</span></a>
-      <a href="/journal/"><span class="num ltr" aria-hidden="true">03</span><span data-i18n="nav_journal">journal</span></a>
+      <a href="/journal/en/"><span class="num ltr" aria-hidden="true">03</span><span data-i18n="nav_journal">journal</span></a>
     </nav>
     <label class="language" title="Language / 언어">
       <span class="sr-only">Language</span>
@@ -421,7 +421,7 @@ img,svg{max-width:100%}
       <div class="about-copy">
         <p data-i18n="note_dropcap">The name <strong>ipe</strong> comes from <em>idle process</em>—the state a processor enters when it finally has nothing left to do, and simply rests.</p>
         <p data-i18n="note_body">We make for that moment. No noisy dashboards. Just a little space for a tired mind to exhale.</p>
-        <p class="about-more"><a class="text-link" href="/journal/"><span data-i18n="journal_link">read the journal</span> <span class="arw ltr" aria-hidden="true">→</span></a></p>
+        <p class="about-more"><a class="text-link" href="/journal/en/"><span data-i18n="journal_link">read the journal</span> <span class="arw ltr" aria-hidden="true">→</span></a></p>
       </div>
       <aside class="about-side" aria-label="be still">
         <p class="side-code ltr">// be still</p>
@@ -552,7 +552,7 @@ img,svg{max-width:100%}
       <nav class="foot-nav" aria-label="Footer">
         <a href="#note" data-i18n="nav_note">studio note</a>
         <a href="#things" data-i18n="nav_things">things we make</a>
-        <a href="/journal/" data-i18n="nav_journal">journal</a>
+        <a href="/journal/en/" data-i18n="nav_journal">journal</a>
         <a class="ltr" href="https://idle.ipe.rest" target="_blank" rel="noopener">idle()</a>
       </nav>
       <ul class="socials ltr" aria-label="ipe() on social media">
@@ -1088,6 +1088,8 @@ if ('serviceWorker' in navigator) {
     var md = t(dict,'meta_desc');
     if (md) { setMeta('meta[name="description"]','content',md); setMeta('#og-desc','content',md); setMeta('meta[name="twitter:description"]','content',md); }
     setMeta('#og-locale','content', LOCALE[lang] || 'en_US');
+    var jl = document.querySelectorAll('a[href^="/journal/"]');
+    for (var j = 0; j < jl.length; j++) jl[j].setAttribute('href', '/journal/' + lang + '/');
 
     var base = 'https://ipe.rest/';
     var url = lang === DEFAULT_LANG ? base : base + '?lang=' + lang;

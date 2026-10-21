@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="ko" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ipe()는 왜 ‘유휴 프로세스’에서 이름을 따왔을까 — ipe() 저널</title>
+<meta name="description" content="ipe()는 ‘idle process’(유휴 프로세스)의 줄임말입니다. 더 할 일이 없을 때 컴퓨터가 들어가는, 그저 쉬는 상태. 이름의 유래와 음악, 그리고 속삭이는 “ipe. be still.”에 대한 이야기.">
+<meta name="author" content="ipe()">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#fbfcfe">
+<link rel="canonical" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="pt" href="https://ipe.rest/journal/pt/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="ru" href="https://ipe.rest/journal/ru/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="ar" href="https://ipe.rest/journal/ar/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="hi" href="https://ipe.rest/journal/hi/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<link rel="manifest" href="/manifest.webmanifest?v=23">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
+<link rel="apple-touch-icon" href="/icon-180.png?v=23">
+<link rel="preload" href="/fonts/inter-400.woff2?v=23" as="font" type="font/woff2" crossorigin>
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ipe()">
+<meta property="og:title" content="ipe()는 왜 ‘유휴 프로세스’에서 이름을 따왔을까">
+<meta property="og:description" content="ipe()는 ‘idle process’(유휴 프로세스)의 줄임말입니다. 더 할 일이 없을 때 컴퓨터가 들어가는, 그저 쉬는 상태. 이름의 유래와 음악, 그리고 속삭이는 “ipe. be still.”에 대한 이야기.">
+<meta property="og:url" content="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<meta property="og:image" content="https://ipe.rest/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-10-20">
+<meta property="article:modified_time" content="2026-10-20">
+<meta property="article:section" content="studio">
+<meta property="article:author" content="ipe()">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ipe()는 왜 ‘유휴 프로세스’에서 이름을 따왔을까">
+<meta name="twitter:description" content="ipe()는 ‘idle process’(유휴 프로세스)의 줄임말입니다. 더 할 일이 없을 때 컴퓨터가 들어가는, 그저 쉬는 상태. 이름의 유래와 음악, 그리고 속삭이는 “ipe. be still.”에 대한 이야기.">
+<meta name="twitter:image" content="https://ipe.rest/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/#article",
+  "headline": "ipe()는 왜 ‘유휴 프로세스’에서 이름을 따왔을까",
+  "description": "ipe()는 ‘idle process’(유휴 프로세스)의 줄임말입니다. 더 할 일이 없을 때 컴퓨터가 들어가는, 그저 쉬는 상태. 이름의 유래와 음악, 그리고 속삭이는 “ipe. be still.”에 대한 이야기.",
+  "abstract": "ipe()는 ‘idle process’의 줄임말로, 컴퓨터가 더 할 일이 없을 때 들어가는 상태입니다. ipe.rest는 서울의 작은 AI 네이티브 스튜디오이고, idle()은 AI의 도움을 받아 만드는 로파이·힐링 음악입니다. dear(you); vol.1 이후 모든 곡은 속삭이는 “ipe. be still.”로 끝납니다.",
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://ipe.rest/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "thumbnailUrl": "https://ipe.rest/og-image.png",
+  "url": "https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"
+  },
+  "articleSection": "studio",
+  "keywords": "ipe(), idle process, ipe.rest, idle, AI lo-fi, healing music, dear(you); vol.1, be still, AI-native studio, Seoul",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ipe.rest/icon-512.png"
+    }
+  },
+  "about": [
+    {
+      "@type": "Organization",
+      "@id": "https://ipe.rest/#organization",
+      "name": "ipe()",
+      "alternateName": [
+        "ipe",
+        "idle process",
+        "아이프"
+      ],
+      "url": "https://ipe.rest/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "idle process",
+      "description": "The state a computer enters when it has no work left to do and simply rests; the origin of the name ipe()."
+    },
+    {
+      "@type": "MusicAlbum",
+      "name": "dear(you); vol.1",
+      "url": "https://idle.ipe.rest/",
+      "numTracks": 10,
+      "byArtist": {
+        "@type": "Organization",
+        "@id": "https://ipe.rest/#organization",
+        "name": "ipe()"
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "WebSite",
+      "name": "idle",
+      "url": "https://idle.ipe.rest/"
+    }
+  ],
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://ipe.rest/journal/ko/#blog",
+    "name": "ipe() 저널",
+    "url": "https://ipe.rest/journal/ko/"
+  },
+  "inLanguage": "ko",
+  "wordCount": 157,
+  "translationOfWork": {
+    "@type": "BlogPosting",
+    "@id": "https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/#article",
+    "url": "https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/",
+    "inLanguage": "en"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ipe()",
+      "item": "https://ipe.rest/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "저널",
+      "item": "https://ipe.rest/journal/ko/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ipe()는 왜 ‘유휴 프로세스’에서 이름을 따왔을까"
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/journal/journal.css?v=5">
+</head>
+<body>
+<a class="skip" href="#main">본문으로 건너뛰기</a>
+<header class="topbar">
+  <a class="logo ltr" href="/" aria-label="ipe() 홈">ipe()</a>
+  <div class="top-right">
+    <nav aria-label="Primary"><a class="opt" href="/">홈</a><a href="/journal/ko/">저널</a></nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="wrap">
+  <header class="post-head">
+    <p class="eyebrow"><i></i><span>저널 · <time datetime="2026-10-20">2026-10-20</time></span></p>
+    <h1>ipe()는 왜 <em>유휴 프로세스</em>에서 이름을 따왔을까</h1>
+  </header>
+
+
+
+  <div class="prose">
+<p class="lead">ipe()는 ‘idle process’의 줄임말입니다. 컴퓨터가 더 할 일이 없을 때 들어가는 상태, 그저 쉬는 상태를 뜻합니다.</p>
+    <p>유휴 프로세스는 고장 난 것이 아닙니다. 기계는 켜져 있고, 준비되어 있고, 조용할 뿐입니다. 우리가 스튜디오에 담고 싶었던 장면이 바로 이것이었습니다. 마침내 일을 내려놓은 지친 마음. 발음은 ‘아이프’이며, ipê 원목과는 아무 관련이 없습니다. ipe.rest는 서울의 작은 AI 네이티브 스튜디오로, 분주한 마음을 위한 고요한 것들을 만듭니다.</p>
+    <p>이야기는 음악에서 시작되었습니다. idle()은 AI(Suno)로 만든 로파이·힐링 음악이고, 그 사실을 숨기지 않습니다. 가사와 콘셉트는 AI 초안을 바탕으로 사람이 다듬고 검토합니다. 첫 콘셉트 앨범 <strong>dear(you); vol.1</strong>은 “오늘도 버텨낸 당신에게 보내는 열 통의 편지”, 10곡입니다.</p>
+    <p>이 앨범부터 모든 곡은 같은 방식으로 끝납니다. 한 호흡의 속삭임, “ipe. be still.”</p>
+    <blockquote>ipe(); // be still</blockquote>
+    <p>이 마지막 줄은 코드 속 주석(//)처럼 조용히 남습니다. 실행되지도, 제목으로 내세워지지도 않고, 모든 것이 끝난 뒤에도 그저 그 자리에 있습니다. 재생 버튼을 누르는 데 믿음이 필요하지는 않습니다. 잠깐 멈추기만 하면 됩니다.</p>
+    <p>이 저널은 스튜디오가 자라는 동안 음악과 이름, 그리고 우리가 만드는 작은 것들에 대해 남기는 기록입니다.</p>
+  </div>
+
+  <a class="back" href="/journal/ko/">← 전체 글</a>
+  <nav class="langlist" aria-label="언어">
+    <a class="lg" lang="en" hreflang="en" href="/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/">English</a>
+    <a class="lg" aria-current="true" lang="ko" hreflang="ko" href="/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/">한국어</a>
+    <a class="lg" lang="ja" hreflang="ja" href="/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/">日本語</a>
+    <a class="lg" lang="zh" hreflang="zh" href="/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/">简体中文</a>
+    <a class="lg" lang="es" hreflang="es" href="/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/">Español</a>
+    <a class="lg" lang="fr" hreflang="fr" href="/journal/fr/2026-10-20-why-ipe-is-named-after-an-idle-process/">Français</a>
+    <a class="lg" lang="de" hreflang="de" href="/journal/de/2026-10-20-why-ipe-is-named-after-an-idle-process/">Deutsch</a>
+    <a class="lg" lang="pt" hreflang="pt" href="/journal/pt/2026-10-20-why-ipe-is-named-after-an-idle-process/">Português</a>
+    <a class="lg" lang="ru" hreflang="ru" href="/journal/ru/2026-10-20-why-ipe-is-named-after-an-idle-process/">Русский</a>
+    <a class="lg" lang="ar" hreflang="ar" href="/journal/ar/2026-10-20-why-ipe-is-named-after-an-idle-process/">العربية</a>
+    <a class="lg" lang="hi" hreflang="hi" href="/journal/hi/2026-10-20-why-ipe-is-named-after-an-idle-process/">हिन्दी</a>
+    <a class="lg" lang="id" hreflang="id" href="/journal/id/2026-10-20-why-ipe-is-named-after-an-idle-process/">Bahasa Indonesia</a>
+  </nav>
+</article>
+</main>
+
+<footer>
+  <p class="sig ltr">ipe<span>()</span></p>
+  <div class="foot">
+    <p class="ltr">© 2026 ipe() · idle</p>
+    <nav aria-label="Footer">
+      <a class="ltr" href="/">ipe.rest</a>
+      <a href="/journal/ko/">저널</a>
+      <a href="/about/">소개</a>
+      <a href="/contact/">문의</a>
+      <a href="/privacy/">개인정보처리방침</a>
+    </nav>
+  </div>
+</footer>
+<script src="/journal/journal.js?v=4" defer></script>
+</body>
+</html>

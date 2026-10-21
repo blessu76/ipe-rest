@@ -55,19 +55,23 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
 
 ## Journal
 <!-- journal:llms:start -->
-- Journal (EN/KO, weekly): https://ipe.rest/journal/
-- Journal translations (AI translations of the EN/KO originals; the originals are authoritative):
-  - 日本語 [ja]: https://ipe.rest/journal/ja/
-  - 简体中文 [zh]: https://ipe.rest/journal/zh/
-  - Español [es]: https://ipe.rest/journal/es/
-  - Français [fr]: https://ipe.rest/journal/fr/
-  - Deutsch [de]: https://ipe.rest/journal/de/
-  - Português [pt]: https://ipe.rest/journal/pt/
-  - Русский [ru]: https://ipe.rest/journal/ru/
-  - العربية [ar]: https://ipe.rest/journal/ar/
-  - हिन्दी [hi]: https://ipe.rest/journal/hi/
-  - Bahasa Indonesia [id]: https://ipe.rest/journal/id/
+- Journal (12 languages, one static page per language; language chooser): https://ipe.rest/journal/
+  - English [en]: https://ipe.rest/journal/en/
+  - 한국어 [ko]: https://ipe.rest/journal/ko/
+  - 日本語 [ja] (AI translation): https://ipe.rest/journal/ja/
+  - 简体中文 [zh] (AI translation): https://ipe.rest/journal/zh/
+  - Español [es] (AI translation): https://ipe.rest/journal/es/
+  - Français [fr] (AI translation): https://ipe.rest/journal/fr/
+  - Deutsch [de] (AI translation): https://ipe.rest/journal/de/
+  - Português [pt] (AI translation): https://ipe.rest/journal/pt/
+  - Русский [ru] (AI translation): https://ipe.rest/journal/ru/
+  - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
+  - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
+  - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
 - Why ipe() is named after an idle process (2026-10-20): https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/ - ipe() is short for “idle process” — the state a computer enters when it has no work left and simply rests. The story behind the name, the music, and the whispered “ipe. be still.”
+  - original language: en
+  - [en] Why ipe() is named after an idle process: https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/
+  - [ko] ipe()는 왜 ‘유휴 프로세스’에서 이름을 따왔을까: https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/
   - [ja] ipe() はなぜ「アイドルプロセス」から名前を取ったのか (AI translation): https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/
   - [zh] ipe() 为什么以“空闲进程”命名 (AI translation): https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/
   - [es] Por qué ipe() lleva el nombre de un proceso inactivo (AI translation): https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/

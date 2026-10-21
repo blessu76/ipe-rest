@@ -1,4 +1,4 @@
-<!-- NEW POST: copy to journal/YYYY-MM-DD-slug/index.html, replace every YYYY-MM-DD / slug / TODO, then run `python3 scripts/journal_sync.py`. Checklist: scripts/README-journal.md -->
+<!-- NEW POST: copy to scripts/journal_src/YYYY-MM-DD-slug.html (a SOURCE, not served), replace every YYYY-MM-DD / slug / TODO, then run `python3 scripts/journal_sync.py` (generates /journal/en|ko/<slug>/ + the /journal/<slug>/ chooser). ipe:original = the language you wrote it in (en|ko). Checklist: scripts/README-journal.md -->
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
@@ -11,15 +11,13 @@
 <meta name="ipe:excerpt-en" content="TODO one-line EN excerpt for the list card.">
 <meta name="ipe:excerpt-ko" content="TODO 목록 카드용 한 줄 요약(KO).">
 <meta name="ipe:category" content="studio">
+<meta name="ipe:original" content="en">
+<meta name="ipe:description-ko" content="TODO 한국어 설명(1–2문장).">
+<meta name="ipe:abstract-ko" content="TODO 한국어 요약(2–3문장).">
 <meta name="author" content="ipe()">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#fbfcfe">
 <link rel="canonical" href="https://ipe.rest/journal/YYYY-MM-DD-slug/">
-<!-- journal:i18n:start -->
-<link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/YYYY-MM-DD-slug/">
-<link rel="alternate" hreflang="en" href="https://ipe.rest/journal/YYYY-MM-DD-slug/?lang=en">
-<link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/YYYY-MM-DD-slug/?lang=ko">
-<!-- journal:i18n:end -->
 <link rel="manifest" href="/manifest.webmanifest?v=23">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
 <link rel="apple-touch-icon" href="/icon-180.png?v=23">
@@ -53,10 +51,6 @@
   "abstract": "TODO 2-sentence EN summary (what the post answers)",
   "datePublished": "YYYY-MM-DD",
   "dateModified": "YYYY-MM-DD",
-  "inLanguage": [
-    "en",
-    "ko"
-  ],
   "image": {
     "@type": "ImageObject",
     "url": "https://ipe.rest/og-image.png",
@@ -69,7 +63,6 @@
     "@type": "WebPage",
     "@id": "https://ipe.rest/journal/YYYY-MM-DD-slug/"
   },
-  "wordCount": 1,
   "articleSection": "studio",
   "keywords": "TODO ipe(), keyword two, keyword three",
   "isAccessibleForFree": true,
@@ -144,7 +137,7 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="/journal/journal.css?v=4">
+<link rel="stylesheet" href="/journal/journal.css?v=5">
 </head>
 <body>
 <a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ko">본문으로 건너뛰기</span></a>
@@ -178,8 +171,6 @@
   </div>
 
   <a class="back" href="/journal/"><span lang="en">← all entries</span><span lang="ko">← 전체 글</span></a>
-  <!-- journal:langnav:start -->
-  <!-- journal:langnav:end -->
 </article>
 </main>
 

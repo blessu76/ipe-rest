@@ -1,4 +1,4 @@
-/* ipe() journal — EN/KO switch (original pages only) + GA4 (same property as the main page). */
+/* ipe() journal — language chooser/redirect for x-default pages, EN/KO switch on the bilingual info pages (about/contact/privacy), GA4 (same property as the main page). */
 (function () {
   // Translated pages (/journal/<lang>/…) are single-language static pages: no switch, <html lang> stays as served.
   if (document.querySelector('.langswitch')) {
@@ -12,6 +12,8 @@
     function apply(lang) {
       if (lang !== 'ko') lang = 'en';
       root.setAttribute('lang', lang);
+    var jl = document.querySelectorAll('a[href="/journal/en/"],a[href="/journal/ko/"]');
+    for (var k = 0; k < jl.length; k++) jl[k].setAttribute('href', '/journal/' + lang + '/');
       if (titles[lang]) document.title = titles[lang];
       var btns = document.querySelectorAll('.langswitch button');
       for (var i = 0; i < btns.length; i++) {
@@ -40,6 +42,33 @@
         try { localStorage.setItem('ipe_lang', l); } catch (e) {}  // saved only on an explicit user choice
       });
     }
+  }
+
+  // Journal pages: remember an explicit language choice (clicks on the language list).
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a.lg[hreflang]');
+    if (!a) return;
+    try { localStorage.setItem('ipe_lang', a.getAttribute('hreflang')); } catch (err) {}
+  });
+
+  // x-default chooser pages (/journal/ and /journal/<slug>/): go to the stored choice, else the browser language.
+  // Without either (e.g. crawlers with no language), the page simply stays as the language list.
+  if (document.documentElement.hasAttribute('data-chooser')) {
+    var avail = {}, links = document.querySelectorAll('.choose-list a[hreflang]');
+    for (var q = 0; q < links.length; q++) avail[links[q].getAttribute('hreflang')] = links[q].getAttribute('href');
+    var want = null;
+    try { want = localStorage.getItem('ipe_lang'); } catch (err) {}
+    if (!want || !avail[want]) {
+      want = null;
+      try {
+        var langs = navigator.languages || [navigator.language || ''];
+        for (var n = 0; n < langs.length && !want; n++) {
+          var c = (langs[n] || '').toLowerCase().split('-')[0];
+          if (avail[c]) want = c;
+        }
+      } catch (err) {}
+    }
+    if (want && avail[want]) location.replace(avail[want]);
   }
 
   // GA4 — same measurement ID as index.html

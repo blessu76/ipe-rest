@@ -125,3 +125,10 @@ html[lang="ja"] .page-title,html[lang="ja"] .post-head h1,html[lang="zh"] .page-
 html[lang="ar"] .eyebrow,html[lang="ar"] .post-meta,html[lang="ar"] .more,html[lang="ar"] .back{letter-spacing:0}
 html[dir="rtl"] .post-card:hover,html[dir="rtl"] .post-card:focus-visible{transform:translateX(-6px)}
 html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
+
+/* x-default language chooser */
+.choose-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.choose-list a{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:4px 24px;min-height:var(--tap);padding:16px 0;border-bottom:1px solid var(--line);transition:transform .25s}
+.choose-list a:hover,.choose-list a:focus-visible{transform:translateX(6px)}
+.choose-list .lg-name{color:var(--cobalt);font:600 12px/1.5 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.choose-list .lg-title{color:var(--ink);font:400 17px/1.5 var(--sans);overflow-wrap:anywhere}

@@ -28,8 +28,46 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://ipe.rest/journal/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ipe.rest/journal/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ipe.rest/journal/ar/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://ipe.rest/journal/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/en/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://ipe.rest/journal/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ipe.rest/journal/ru/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ipe.rest/journal/ar/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://ipe.rest/journal/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ko/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
@@ -47,8 +85,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
@@ -66,8 +104,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
@@ -85,8 +123,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
@@ -104,8 +142,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
@@ -123,8 +161,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
@@ -142,8 +180,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
@@ -161,8 +199,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
@@ -180,8 +218,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
@@ -199,8 +237,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
@@ -218,8 +256,8 @@
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
@@ -237,8 +275,48 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://ipe.rest/journal/pt/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ipe.rest/journal/ru/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ipe.rest/journal/ar/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://ipe.rest/journal/hi/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://ipe.rest/journal/pt/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ipe.rest/journal/ru/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://ipe.rest/journal/ar/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://ipe.rest/journal/hi/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/</loc>
+    <lastmod>2026-10-20</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
@@ -257,8 +335,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
@@ -277,8 +355,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
@@ -297,8 +375,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
@@ -317,8 +395,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
@@ -337,8 +415,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
@@ -357,8 +435,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
@@ -377,8 +455,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
@@ -397,8 +475,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
@@ -417,8 +495,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
@@ -437,8 +515,8 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/"/>

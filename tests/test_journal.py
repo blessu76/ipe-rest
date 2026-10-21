@@ -105,6 +105,28 @@ class JournalGeo(unittest.TestCase):
             self.assertNotIn("?lang=", f.read_text(encoding="utf-8"), f)
         self.assertFalse(re.findall(r'"https://ipe\.rest/journal/[^"]*\?', (ROOT / "sitemap.xml").read_text(encoding="utf-8")))
 
+    def test_every_journal_page_has_header_language_select(self):
+        pages = [ROOT / "journal" / "index.html"] + [ROOT / "journal" / l / "index.html" for l in journal_sync.I18N.LANGS]
+        for f in posts():
+            pages.append(ROOT / "journal" / slug_of(f) / "index.html")
+            pages += [ROOT / "journal" / l / slug_of(f) / "index.html" for l in journal_sync.I18N.LANGS]
+        for f in pages:
+            src = f.read_text(encoding="utf-8")
+            m = re.search(r'<header class="topbar">.*?<select class="lang" data-lang-select[^>]*>(.*?)</select>.*?</header>', src, re.S)
+            self.assertIsNotNone(m, f)
+            opts = re.findall(r'<option value="([^"]*)"([^>]*)>', m.group(1))
+            real = [v for v, _ in opts if v]
+            self.assertEqual(len(real), 12, f)
+            for v in real:  # every option is an existing static page (no 404 / empty page)
+                self.assertTrue((ROOT / v.lstrip("/") / "index.html").is_file(), (f, v))
+            selected = [v for v, a in opts if "selected" in a and "disabled" not in a]
+            if f.parent.name in journal_sync.I18N.LANGS or f.parent.parent.name in journal_sync.I18N.LANGS:
+                lang = f.parent.name if f.parent.name in journal_sync.I18N.LANGS else f.parent.parent.name
+                self.assertEqual(selected, [v for v in real if v.startswith("/journal/%s/" % lang)], f)
+            else:  # x-default chooser: nothing preselected
+                self.assertEqual(selected, [], f)
+            self.assertNotIn("langlist", src)
+
     def test_llms_and_robots(self):
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
         for f in posts():

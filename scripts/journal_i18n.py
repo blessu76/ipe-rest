@@ -19,8 +19,8 @@ from pathlib import Path
 
 SITE = "https://ipe.rest"
 ORG_ID = SITE + "/#organization"
-VER_CSS = "5"
-VER_JS = "4"
+VER_CSS = "6"
+VER_JS = "5"
 ASSET_VER = "23"
 
 LANGS = ["en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id"]
@@ -77,14 +77,22 @@ def head_i18n(cluster, current):
     return "\n".join(lines)
 
 
-def langnav(cluster, current, label):
-    items = []
+GLOBE = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/>'
+         '<path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>')
+
+
+def langselect(cluster, current, label):
+    """Header language select (same look/behaviour as the main page). Options are only the languages that exist for this
+    page (cluster), each a real URL; `current` None = x-default chooser (nothing selected yet). journal.js navigates on change."""
+    opts = []
+    if current is None:
+        opts.append('<option value="" selected disabled>%s</option>' % esc(label))
     for h, u in cluster:
         if h == "x-default":
             continue
-        cur = ' aria-current="true"' if h == current else ""
-        items.append('<a class="lg"%s lang="%s" hreflang="%s" href="%s">%s</a>' % (cur, h, h, esc(u.replace(SITE, "")), NATIVE[h]))
-    return '<nav class="langlist" aria-label="%s">\n  %s\n</nav>' % (esc(label), "\n  ".join(items))
+        opts.append('<option value="%s" lang="%s"%s>%s</option>' % (esc(u.replace(SITE, "")), h, " selected" if h == current else "", h.upper()))
+    return ('<label class="language"><span class="sr-only">%s</span>%s<select class="lang" data-lang-select aria-label="%s">\n      %s\n    </select></label>'
+            % (esc(label), GLOBE, esc(label), "\n      ".join(opts)))
 
 
 def load(root):
@@ -151,14 +159,15 @@ def words(lang, body_html):
     return len(text.split())
 
 
-def _header(u, lang, current_list=False):
+def _header(u, lang, cluster, current_list=False):
     return """<a class="skip" href="#main">%(skip)s</a>
 <header class="topbar">
   <a class="logo ltr" href="/" aria-label="%(home_aria)s">ipe()</a>
   <div class="top-right">
     <nav aria-label="Primary"><a class="opt" href="/">%(home)s</a><a href="/journal/%(lang)s/"%(cur)s>%(journal)s</a></nav>
+    %(select)s
   </div>
-</header>""" % dict(skip=esc(u["skip"]), home_aria=esc(u["home_aria"]), home=esc(u["home"]), journal=esc(u["journal"]),
+</header>""" % dict(select=langselect(cluster, lang, u["langs_label"]), skip=esc(u["skip"]), home_aria=esc(u["home_aria"]), home=esc(u["home"]), journal=esc(u["journal"]),
                     lang=lang, cur=' aria-current="page"' if current_list else "")
 
 
@@ -267,7 +276,7 @@ def render_post(post, lang, ui, data, langs):
         '<link rel="stylesheet" href="/journal/journal.css?v=%s">' % VER_CSS,
         '</head>',
         '<body>',
-        _header(u, lang),
+        _header(u, lang, cluster),
         '',
         '<main id="main">',
         '<article class="wrap">',
@@ -285,7 +294,6 @@ def render_post(post, lang, ui, data, langs):
         '  </div>',
         '',
         '  <a class="back" href="/journal/%s/">%s</a>' % (lang, esc(u["all_entries"])),
-        '  ' + langnav(cluster, lang, u["langs_label"]).replace("\n", "\n  "),
         '</article>',
         '</main>',
         '',
@@ -357,7 +365,7 @@ def render_list_page(lang, ui, items, list_langs):
         '<link rel="stylesheet" href="/journal/journal.css?v=%s">' % VER_CSS,
         '</head>',
         '<body>',
-        _header(u, lang, current_list=True),
+        _header(u, lang, cluster, current_list=True),
         '',
         '<main id="main" class="wrap">',
         '  <p class="eyebrow"><i></i><span>%s</span></p>' % esc(u["eyebrow"]),
@@ -369,7 +377,6 @@ def render_list_page(lang, ui, items, list_langs):
         '  <ul class="post-list">',
         "\n".join(cards),
         '  </ul>',
-        '  ' + langnav(cluster, lang, u["langs_label"]).replace("\n", "\n  "),
         '</main>',
         '',
         _footer(u, lang),
@@ -401,7 +408,7 @@ def _chooser_head(title, desc, canon, cluster, og_type, og_locale, ld_objs):
     ] + [ld_script(o) for o in ld_objs] + ['<link rel="stylesheet" href="/journal/journal.css?v=%s">' % VER_CSS, '</head>']
 
 
-def _chooser_body(heading, lede, rows, ui_orig, lang):
+def _chooser_body(heading, lede, rows, ui_orig, lang, cluster):
     u = ui_orig
     items = "\n".join('    <li><a class="lg" lang="%s" hreflang="%s" href="%s"><span class="lg-name">%s</span>'
                       '<span class="lg-title">%s</span></a></li>' % (l, l, esc(href.replace(SITE, "")), NATIVE[l], html.escape(t, quote=False))
@@ -412,6 +419,7 @@ def _chooser_body(heading, lede, rows, ui_orig, lang):
   <a class="logo ltr" href="/" aria-label="%s">ipe()</a>
   <div class="top-right">
     <nav aria-label="Primary"><a class="opt" href="/">%s</a></nav>
+    %s
   </div>
 </header>
 
@@ -428,7 +436,7 @@ def _chooser_body(heading, lede, rows, ui_orig, lang):
 <script src="/journal/journal.js?v=%s" defer></script>
 </body>
 </html>
-""" % (esc(u["skip"]), esc(u["home_aria"]), esc(u["home"]), esc(u["eyebrow"]), heading, esc(lede), items,
+""" % (esc(u["skip"]), esc(u["home_aria"]), esc(u["home"]), langselect(cluster, None, u["langs_label"]), esc(u["eyebrow"]), heading, esc(lede), items,
        _footer(u, lang), VER_JS)
 
 
@@ -445,7 +453,7 @@ def render_chooser_post(post, ui, tr_all, langs):
     rows = [(l, post_url(slug, l), tr_all[l]["title"]) for l in LANGS if l in langs]
     head = _chooser_head(od["title"] + ui[orig]["title_suffix"], od["description"], url, post_cluster(slug, langs), "article",
                          OG_LOCALE[orig], [page])
-    body = _chooser_body(od["h1_html"], "ipe() journal — " + ", ".join(NATIVE[l] for l in LANGS if l in langs), rows, ui[orig], orig)
+    body = _chooser_body(od["h1_html"], "ipe() journal — " + ", ".join(NATIVE[l] for l in LANGS if l in langs), rows, ui[orig], orig, post_cluster(slug, langs))
     return "\n".join(head) + "\n" + body
 
 
@@ -459,5 +467,5 @@ def render_chooser_list(ui, posts_tr, list_langs, orig_lang="en"):
             "mainEntity": {"@type": "Blog", "@id": "%s/journal/%s/#blog" % (SITE, orig_lang)}}
     rows = [(l, list_url(l), ui[l]["blog_name"]) for l in LANGS if l in list_langs]
     head = _chooser_head(u["list_title"], u["list_desc"], url, list_cluster(list_langs), "website", OG_LOCALE[orig_lang], [page])
-    body = _chooser_body(u["list_h1"], u["list_lede"], rows, u, orig_lang)
+    body = _chooser_body(u["list_h1"], u["list_lede"], rows, u, orig_lang, list_cluster(list_langs))
     return "\n".join(head) + "\n" + body

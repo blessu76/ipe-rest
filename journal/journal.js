@@ -44,6 +44,15 @@
     }
   }
 
+  // Header language select (generated pages): options are real URLs of this page in each available language.
+  var picks = document.querySelectorAll('select[data-lang-select]');
+  for (var m = 0; m < picks.length; m++) picks[m].addEventListener('change', function () {
+    var o = this.options[this.selectedIndex];
+    if (!o || !o.value) return;
+    try { localStorage.setItem('ipe_lang', o.getAttribute('lang')); } catch (err) {}  // saved only on an explicit choice
+    location.href = o.value;
+  });
+
   // Journal pages: remember an explicit language choice (clicks on the language list).
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a.lg[hreflang]');

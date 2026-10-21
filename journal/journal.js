@@ -1,7 +1,7 @@
 /* ipe() journal — language chooser/redirect for x-default pages, EN/KO switch on the bilingual info pages (about/contact/privacy), GA4 (same property as the main page). */
 (function () {
   // Translated pages (/journal/<lang>/…) are single-language static pages: no switch, <html lang> stays as served.
-  if (document.querySelector('.langswitch')) {
+  if (document.querySelector('.langswitch')) {  // buttons (source template) or the header select (about/contact/privacy)
     var root = document.documentElement;
     var titles = {};
     var tEn = document.querySelector('meta[name="ipe:title-en"]');
@@ -19,6 +19,8 @@
       for (var i = 0; i < btns.length; i++) {
         btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-lang') === lang ? 'true' : 'false');
       }
+      var pick = document.querySelector('select[data-lang-pick]');
+      if (pick) pick.value = lang;
     }
 
     var urlLang = null, stored = null, initial = 'en';
@@ -34,6 +36,12 @@
     else if (stored) initial = stored === 'ko' ? 'ko' : 'en';
     apply(initial);  // initial render never writes localStorage (a stored value like "ja" stays untouched)
 
+    var pk = document.querySelector('select[data-lang-pick]');
+    if (pk) pk.addEventListener('change', function () {
+      var l = this.value === 'ko' ? 'ko' : 'en';
+      apply(l);
+      try { localStorage.setItem('ipe_lang', l); } catch (e) {}  // saved only on an explicit user choice
+    });
     var btns = document.querySelectorAll('.langswitch button');
     for (var i = 0; i < btns.length; i++) {
       btns[i].addEventListener('click', function () {

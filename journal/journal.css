@@ -36,7 +36,7 @@ img,svg{max-width:100%}
 .language svg{width:14px;height:14px;flex:none}
 .language select{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:var(--cobalt);outline:0;cursor:pointer;min-height:var(--tap);padding:0 2px;letter-spacing:.06em;font:inherit;border-radius:0}
 .sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
-.langswitch{display:inline-flex;border:1px solid var(--line);overflow:hidden;font:600 12px var(--mono)}
+.langswitch:not(.language){display:inline-flex;border:1px solid var(--line);overflow:hidden;font:600 12px var(--mono)}
 .langswitch button{appearance:none;border:0;background:transparent;color:var(--muted);font:inherit;min-height:var(--tap);min-width:var(--tap);padding:0 12px;cursor:pointer}
 .langswitch button[aria-pressed="true"]{background:var(--cobalt);color:#fff}
 

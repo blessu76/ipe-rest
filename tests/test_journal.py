@@ -127,6 +127,15 @@ class JournalGeo(unittest.TestCase):
                 self.assertEqual(selected, [], f)
             self.assertNotIn("langlist", src)
 
+    def test_info_pages_use_header_language_select(self):
+        for name in ("about", "contact", "privacy"):
+            src = (ROOT / name / "index.html").read_text(encoding="utf-8")
+            self.assertIn('<select class="lang" data-lang-pick', src, name)
+            self.assertEqual(re.findall(r'<option value="(\w+)"', src), ["en", "ko"], name)
+            self.assertNotIn("<button type=\"button\" data-lang", src, name)
+            self.assertIn("journal.css?v=%s" % journal_sync.I18N.VER_CSS, src, name)
+            self.assertIn("journal.js?v=%s" % journal_sync.I18N.VER_JS, src, name)
+
     def test_llms_and_robots(self):
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
         for f in posts():

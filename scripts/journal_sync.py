@@ -8,7 +8,10 @@ scripts/journal-post-template.html). This script READS every post and rewrites o
                          <!-- journal:ld:start/end -->    Blog + ItemList JSON-LD
     sitemap.xml          <!-- journal:start/end -->        /journal/ + every post (lastmod, hreflang, image:image)
     llms.txt             <!-- journal:llms:start/end -->   post list
-    each post            "wordCount" in its BlogPosting JSON-LD (words of the EN prose)
+    each post            "wordCount" in its BlogPosting JSON-LD (words of the EN prose), "workTranslation",
+                         <!-- journal:i18n:start/end -->     hreflang x-default/en/ko + translations, og:locale(+alternate)
+                         <!-- journal:langnav:start/end -->  links to the translated versions
+    journal/<lang>/      GENERATED translated posts + list pages (10 languages) from scripts/journal_i18n/ (see journal_i18n.py)
 
 Usage:
     python3 scripts/journal_sync.py           # validate + rewrite
@@ -23,9 +26,12 @@ import sys
 import urllib.parse
 from pathlib import Path
 
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+import journal_i18n as I18N  # noqa: E402
+
 ROOT = Path(__file__).resolve().parent.parent
-SITE = "https://ipe.rest"
-ORG_ID = SITE + "/#organization"
+SITE = I18N.SITE
+ORG_ID = I18N.ORG_ID
 DIR_RE = re.compile(r"^(\d{4}-\d{2}-\d{2})-[a-z0-9]+(?:-[a-z0-9]+)*$")
 IMG_NS = "http://www.google.com/schemas/sitemap-image/1.1"
 LD_RE = re.compile(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', re.S)
@@ -131,6 +137,9 @@ def load_post(d, root=ROOT):
         want = url if lang == "x-default" else "%s?lang=%s" % (url, lang)
         if '<link rel="alternate" hreflang="%s" href="%s">' % (lang, want) not in src:
             errs.append("missing hreflang=%s alternate (%s)" % (lang, want))
+    for mk in ("journal:i18n", "journal:langnav"):
+        if "<!-- %s:start -->" % mk not in src or "<!-- %s:end -->" % mk not in src:
+            errs.append("missing <!-- %s:start/end --> markers (copy them from scripts/journal-post-template.html)" % mk)
     if "<article" not in src:
         errs.append("missing <article>")
     if len(re.findall(r"<h1[ >]", src)) != 2:
@@ -200,7 +209,7 @@ def render_list(posts):
     return "\n".join(items)
 
 
-def render_ld(posts):
+def render_ld(posts, list_langs=()):
     entries = []
     for p in posts:
         e = {"@type": "BlogPosting", "@id": p["url"] + "#article", "headline": p["title_en"], "alternativeHeadline": p["title_ko"],
@@ -212,7 +221,7 @@ def render_ld(posts):
     graph = [
         {"@type": "Blog", "@id": SITE + "/journal/#blog", "name": "ipe() journal", "url": SITE + "/journal/",
          "description": "Notes from ipe(), a small AI-native studio in Seoul making quiet, developer-minded things.",
-         "inLanguage": ["en", "ko"],
+         "inLanguage": ["en", "ko"] + [l for l in I18N.LANGS if l in list_langs],
          "publisher": {"@type": "Organization", "@id": ORG_ID, "name": "ipe()", "url": SITE + "/"},
          "blogPost": entries},
         {"@type": "ItemList", "@id": SITE + "/journal/#list", "name": "ipe() journal — all posts",
@@ -220,20 +229,45 @@ def render_ld(posts):
          "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": p["url"], "name": p["title_en"]}
                              for i, p in enumerate(posts)]},
     ]
+    if list_langs:
+        graph[0]["workTranslation"] = [{"@type": "Blog", "@id": "%s/journal/%s/#blog" % (SITE, l), "url": I18N.list_url(l),
+                                        "inLanguage": l} for l in I18N.LANGS if l in list_langs]
     doc = {"@context": "https://schema.org", "@graph": graph}
     return '<script type="application/ld+json">\n%s\n</script>' % json.dumps(doc, ensure_ascii=False, indent=2)
 
 
-def render_sitemap(posts):
+def _xlinks(cluster):
+    return "\n".join('    <xhtml:link rel="alternate" hreflang="%s" href="%s"/>' % (h, html.escape(u)) for h, u in cluster)
+
+
+def render_sitemap(posts, tr=None):
+    """tr = {slug: {lang: data}} — each translation gets its own <url> with the full hreflang cluster."""
+    tr = tr or {}
+    list_langs = {l for v in tr.values() for l in v}
     newest = max(p["modified"] for p in posts)
+    lcl = _xlinks(I18N.list_cluster(list_langs))
     out = ["""  <url>
     <loc>%s/journal/</loc>
     <lastmod>%s</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-  </url>""" % (SITE, newest)]
+%s
+  </url>""" % (SITE, newest, lcl)]
+    for l in I18N.LANGS:
+        if l in list_langs:
+            ps = [p for p in posts if l in tr.get(p["slug"], {})]
+            lm = max(tr[p["slug"]][l].get("dateModified") or p["modified"] for p in ps)
+            out.append("""  <url>
+    <loc>%s</loc>
+    <lastmod>%s</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+%s
+  </url>""" % (I18N.list_url(l), lm, lcl))
     for p in posts:
         u = p["url"]
+        langs = set(tr.get(p["slug"], {}))
+        cl = _xlinks(I18N.post_cluster(p["slug"], langs))
         img = ""
         if p["image"].get("url"):
             img = "\n    <image:image><image:loc>%s</image:loc></image:image>" % html.escape(p["image"]["url"])
@@ -242,17 +276,35 @@ def render_sitemap(posts):
     <lastmod>{p['modified']}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="{u}"/>
-    <xhtml:link rel="alternate" hreflang="en" href="{u}?lang=en"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="{u}?lang=ko"/>{img}
+{cl}{img}
+  </url>""")
+        for l in I18N.LANGS:
+            if l in langs:
+                lm = tr[p["slug"]][l].get("dateModified") or p["modified"]
+                out.append(f"""  <url>
+    <loc>{I18N.post_url(p['slug'], l)}</loc>
+    <lastmod>{lm}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+{cl}{img}
   </url>""")
     return "\n".join(out)
 
 
-def render_llms(posts):
+def render_llms(posts, tr=None):
+    tr = tr or {}
+    list_langs = {l for v in tr.values() for l in v}
     lines = ["- Journal (EN/KO, weekly): %s/journal/" % SITE]
+    if list_langs:
+        lines.append("- Journal translations (AI translations of the EN/KO originals; the originals are authoritative):")
+        for l in I18N.LANGS:
+            if l in list_langs:
+                lines.append("  - %s [%s]: %s" % (I18N.NATIVE[l], l, I18N.list_url(l)))
     for p in posts:
         lines.append("- %s (%s): %s - %s" % (p["title_en"], p["published"], p["url"], p["desc"]))
+        for l in I18N.LANGS:
+            if l in tr.get(p["slug"], {}):
+                lines.append("  - [%s] %s (AI translation): %s" % (l, tr[p["slug"]][l]["title"], I18N.post_url(p["slug"], l)))
     return "\n".join(lines)
 
 
@@ -270,37 +322,98 @@ def ensure_ns(text):
     return text
 
 
+SCRIPT_RE = re.compile(r'(<script type="application/ld\+json">\s*)(.*?)(\s*</script>)', re.S)
+
+
+def sync_post_ld(src, url, langs):
+    """Set/remove BlogPosting.workTranslation (one entry per available translation); other JSON-LD untouched."""
+    def fix(m):
+        try:
+            obj = json.loads(m.group(2))
+        except ValueError:
+            return m.group(0)
+        if obj.get("@type") != "BlogPosting":
+            return m.group(0)
+        obj.pop("workTranslation", None)
+        if langs:
+            obj["workTranslation"] = [{"@type": "BlogPosting", "@id": I18N.post_url(slug_of(url), l) + "#article",
+                                       "url": I18N.post_url(slug_of(url), l), "inLanguage": l}
+                                      for l in I18N.LANGS if l in langs]
+        return m.group(1) + json.dumps(obj, ensure_ascii=False, indent=2) + m.group(3)
+    return SCRIPT_RE.sub(fix, src)
+
+
+def slug_of(url):
+    return url.rstrip("/").rsplit("/", 1)[-1]
+
+
 def build(root=ROOT):
     """Returns ({path: new_text}, [errors]) without writing."""
     jdir = root / "journal"
     dirs = sorted((d for d in jdir.iterdir() if d.is_dir() and DIR_RE.match(d.name) and (d / "index.html").exists()),
                   key=lambda d: d.name, reverse=True)
-    posts, errors, writes = [], [], {}
+    ui, tr, i18n_errs = I18N.load(root)
+    posts, errors, writes = [], list(i18n_errs), {}
     for d in dirs:
         p, errs = load_post(d, root)
         errors += ["%s: %s" % (d.name, e) for e in errs]
         if "ld" not in p:
             continue
-        want = WORDCOUNT_RE.sub(lambda m: m.group(1) + str(p["words"]), p["src"], count=1)
-        if want != p["src"]:
-            writes[p["path"]] = want
         posts.append(p)
     if not posts:
         return writes, errors + ["no posts found"]
+    slugs = {p["slug"] for p in posts}
+    for slug in tr:
+        if slug not in slugs:
+            errors.append("journal_i18n/%s has no matching post" % slug)
+    tr = {k: v for k, v in tr.items() if k in slugs}
+    list_langs = {l for v in tr.values() for l in v}
+
+    for p in posts:
+        langs = set(tr.get(p["slug"], {}))
+        t = p["src"]
+        t = replace_block(t, "<!-- journal:i18n:start -->", "<!-- journal:i18n:end -->",
+                          I18N.head_i18n(I18N.post_cluster(p["slug"], langs), "en"), p["slug"])
+        nav = I18N.langnav(I18N.post_cluster(p["slug"], langs), "en", "Languages", skip_orig=True) if langs else ""
+        t = replace_block(t, "<!-- journal:langnav:start -->", "<!-- journal:langnav:end -->", nav, p["slug"])
+        t = sync_post_ld(t, p["url"], langs)
+        t = WORDCOUNT_RE.sub(lambda m: m.group(1) + str(p["words"]), t, count=1)
+        if t != p["src"]:
+            writes[p["path"]] = t
+        # translated pages
+        for l in I18N.LANGS:
+            if l in langs:
+                writes[jdir / l / p["slug"] / "index.html"] = I18N.render_post(p, l, ui, tr[p["slug"]][l], langs)
+    for l in I18N.TR_LANGS:
+        if l in list_langs:
+            items = [(p, tr[p["slug"]][l]) for p in posts if l in tr.get(p["slug"], {})]
+            writes[jdir / l / "index.html"] = I18N.render_list_page(l, ui, items, list_langs)
+    # orphans: generated pages whose source translation is gone
+    for l in (I18N.TR_LANGS if root.joinpath(*I18N.I18N_DIR).is_dir() else []):
+        for f in (jdir / l).glob("*/index.html") if (jdir / l).is_dir() else []:
+            if f not in writes:
+                errors.append("orphan generated page %s (no source in scripts/journal_i18n/) — delete it" % f.relative_to(root))
+        f = jdir / l / "index.html"
+        if f.exists() and f not in writes:
+            errors.append("orphan generated page %s — delete it" % f.relative_to(root))
 
     idx = jdir / "index.html"
     t = idx.read_text(encoding="utf-8")
     t = replace_block(t, "<!-- journal:list:start -->", "<!-- journal:list:end -->", render_list(posts), "journal/index.html")
-    t = replace_block(t, "<!-- journal:ld:start -->", "<!-- journal:ld:end -->", render_ld(posts), "journal/index.html")
+    t = replace_block(t, "<!-- journal:ld:start -->", "<!-- journal:ld:end -->", render_ld(posts, list_langs), "journal/index.html")
+    t = replace_block(t, "<!-- journal:i18n:start -->", "<!-- journal:i18n:end -->",
+                      I18N.head_i18n(I18N.list_cluster(list_langs), "en"), "journal/index.html")
+    nav = I18N.langnav(I18N.list_cluster(list_langs), "en", "Languages", skip_orig=True) if list_langs else ""
+    t = replace_block(t, "<!-- journal:langnav:start -->", "<!-- journal:langnav:end -->", nav, "journal/index.html")
     writes[idx] = t
 
     sm = root / "sitemap.xml"
     t = ensure_ns(sm.read_text(encoding="utf-8"))
-    writes[sm] = replace_block(t, "<!-- journal:start -->", "<!-- journal:end -->", render_sitemap(posts), "sitemap.xml")
+    writes[sm] = replace_block(t, "<!-- journal:start -->", "<!-- journal:end -->", render_sitemap(posts, tr), "sitemap.xml")
 
     ll = root / "llms.txt"
     t = ll.read_text(encoding="utf-8")
-    writes[ll] = replace_block(t, "<!-- journal:llms:start -->", "<!-- journal:llms:end -->", render_llms(posts), "llms.txt")
+    writes[ll] = replace_block(t, "<!-- journal:llms:start -->", "<!-- journal:llms:end -->", render_llms(posts, tr), "llms.txt")
 
     # generated output must still parse
     import xml.etree.ElementTree as ET
@@ -308,11 +421,13 @@ def build(root=ROOT):
         ET.fromstring(writes[sm])
     except ET.ParseError as e:
         errors.append("sitemap.xml does not parse: %s" % e)
-    for raw in LD_RE.findall(writes[idx]):
-        try:
-            json.loads(raw)
-        except ValueError as e:
-            errors.append("journal/index.html JSON-LD invalid: %s" % e)
+    for path, text in writes.items():
+        if path.suffix == ".html":
+            for raw in LD_RE.findall(text):
+                try:
+                    json.loads(raw)
+                except ValueError as e:
+                    errors.append("%s JSON-LD invalid: %s" % (path.relative_to(root), e))
     return writes, errors
 
 
@@ -328,13 +443,14 @@ def main(argv=None):
         for e in errors:
             print("  - " + e, file=sys.stderr)
         return 1
-    stale = [p for p, new in writes.items() if p.read_text(encoding="utf-8") != new]
+    stale = [p for p, new in writes.items() if not p.exists() or p.read_text(encoding="utf-8") != new]
     if a.check:
         for p in stale:
             print("out of date: %s" % p.relative_to(root), file=sys.stderr)
         print("journal_sync --check: %s" % ("OUT OF DATE — run scripts/journal_sync.py" if stale else "ok"))
         return 1 if stale else 0
     for p in stale:
+        p.parent.mkdir(parents=True, exist_ok=True)
         p.write_text(writes[p], encoding="utf-8")
         print("updated %s" % p.relative_to(root))
     print("journal_sync: %d file(s) updated" % len(stale) if stale else "journal_sync: already up to date")

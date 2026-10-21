@@ -52,7 +52,7 @@ class JournalGeo(unittest.TestCase):
         for d in posts():
             u = urls["https://ipe.rest/journal/%s/" % d.name]
             self.assertTrue(u.find(SM + "lastmod").text)
-            self.assertEqual(len(u.findall("{http://www.w3.org/1999/xhtml}link")), 3)
+            self.assertGreaterEqual(len(u.findall("{http://www.w3.org/1999/xhtml}link")), 3)
             self.assertIsNotNone(u.find("{http://www.google.com/schemas/sitemap-image/1.1}image"))
         self.assertIn("https://ipe.rest/journal/", urls)
 
@@ -185,6 +185,155 @@ class JournalValidation(unittest.TestCase):
         self.assertTrue(lines)
         for ln in lines:
             self.assertRegex(ln, r"/journal/\d{4}-[^ ]+/ - \S")
+
+class JournalI18n(unittest.TestCase):
+    """12-language structure: static per-language URLs, hreflang cluster reciprocity, JSON-LD translation links."""
+
+    @classmethod
+    def setUpClass(cls):
+        import journal_i18n
+        cls.I = journal_i18n
+        cls.pages = {}  # url -> (path, src)
+        j = ROOT / "journal"
+        for f in j.rglob("index.html"):
+            rel = f.relative_to(j).parent.as_posix()
+            url = "https://ipe.rest/journal/" + (rel + "/" if rel != "." else "")
+            cls.pages[url] = (f, f.read_text(encoding="utf-8"))
+
+    def hreflangs(self, src):
+        return dict(re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="([^"]+)">', src))
+
+    def lds(self, src):
+        return [json.loads(b) for b in LD.findall(src)]
+
+    def page_for(self, url):
+        return self.pages.get(url.split("?")[0])
+
+    def test_translations_exist_for_every_language(self):
+        slug = posts()[0].name
+        for l in self.I.TR_LANGS:
+            self.assertIn("https://ipe.rest/journal/%s/%s/" % (l, slug), self.pages, l)
+            self.assertIn("https://ipe.rest/journal/%s/" % l, self.pages, l)
+
+    def test_every_json_ld_block_parses(self):
+        for url, (_, src) in self.pages.items():
+            self.assertTrue(self.lds(src), url)
+
+    def test_hreflang_clusters_are_reciprocal_and_self_referencing(self):
+        for url, (_, src) in self.pages.items():
+            hl = self.hreflangs(src)
+            canon = re.search(r'<link rel="canonical" href="([^"]+)"', src).group(1)
+            self.assertEqual(canon, url)
+            self.assertIn("x-default", hl, url)
+            self.assertEqual(len(set(hl.values())), len(hl), "duplicate hreflang target " + url)
+            self.assertIn(url, [h.split("?")[0] for h in hl.values()], "no self reference " + url)
+            for lang, target in hl.items():
+                other = self.page_for(target)
+                self.assertIsNotNone(other, "hreflang %s -> %s is not a page" % (lang, target))
+                self.assertEqual(self.hreflangs(other[1]), hl, "cluster of %s differs from %s" % (target, url))
+
+    def test_hreflang_covers_all_twelve_languages(self):
+        for url, (_, src) in self.pages.items():
+            if "/journal/20" in url or url.endswith("/journal/") or re.search(r"/journal/[a-z]{2}/", url):
+                self.assertEqual(set(self.hreflangs(src)), set(self.I.LANGS) | {"x-default"}, url)
+
+    def test_html_lang_dir_and_og_locale(self):
+        for url, (_, src) in self.pages.items():
+            m = re.search(r"/journal/([a-z]{2})/", url)
+            if not m:
+                continue
+            lang = m.group(1)
+            self.assertIn('<html lang="%s" dir="%s">' % (lang, "rtl" if lang == "ar" else "ltr"), src, url)
+            self.assertIn('<meta property="og:locale" content="%s">' % self.I.OG_LOCALE[lang], src, url)
+            alts = re.findall(r'og:locale:alternate" content="([^"]+)"', src)
+            self.assertEqual(set(alts), set(self.I.OG_LOCALE.values()) - {self.I.OG_LOCALE[lang]}, url)
+
+    def test_translated_post_json_ld_and_ai_note(self):
+        slug = posts()[0].name
+        orig_url = "https://ipe.rest/journal/%s/" % slug
+        orig_ld = next(b for b in self.lds(self.pages[orig_url][1]) if b["@type"] == "BlogPosting")
+        listed = {w["inLanguage"]: w["@id"] for w in orig_ld["workTranslation"]}
+        self.assertEqual(set(listed), set(self.I.TR_LANGS))
+        for l in self.I.TR_LANGS:
+            url = "https://ipe.rest/journal/%s/%s/" % (l, slug)
+            src = self.pages[url][1]
+            blobs = self.lds(src)
+            bp = next(b for b in blobs if b["@type"] == "BlogPosting")
+            self.assertEqual(bp["inLanguage"], l)
+            self.assertEqual(bp["@id"], url + "#article")
+            self.assertEqual(listed[l], bp["@id"])
+            self.assertEqual(bp["translationOfWork"]["@id"], orig_url + "#article")
+            for k in ("image", "wordCount", "keywords", "about", "datePublished", "dateModified", "abstract", "author", "publisher"):
+                self.assertTrue(bp.get(k), (l, k))
+            self.assertNotIn("workTranslation", bp)
+            self.assertIn("BreadcrumbList", [b["@type"] for b in blobs])
+            self.assertIn('class="ai-note"', src)
+            self.assertIn('href="/journal/%s/"' % slug, src)  # link back to the original
+            self.assertEqual(len(re.findall(r"<h1[ >]", src)), 1)
+            self.assertIn("© 2026 ipe() · idle", src)
+            self.assertIn("ipe(); // be still", src)
+
+    def test_translated_list_has_blog_and_itemlist(self):
+        for l in self.I.TR_LANGS:
+            src = self.pages["https://ipe.rest/journal/%s/" % l][1]
+            graph = self.lds(src)[0]["@graph"]
+            self.assertEqual({g["@type"] for g in graph}, {"Blog", "ItemList"})
+            blog = next(g for g in graph if g["@type"] == "Blog")
+            self.assertEqual(blog["inLanguage"], l)
+            self.assertEqual(blog["translationOfWork"]["@id"], "https://ipe.rest/journal/#blog")
+            for it in next(g for g in graph if g["@type"] == "ItemList")["itemListElement"]:
+                self.assertIsNotNone(self.page_for(it["url"]), it["url"])
+
+    def test_sitemap_matches_html_hreflang(self):
+        root = ET.parse(ROOT / "sitemap.xml").getroot()
+        X = "{http://www.w3.org/1999/xhtml}link"
+        seen = 0
+        for u in root.findall(SM + "url"):
+            loc = u.find(SM + "loc").text
+            if not loc.startswith("https://ipe.rest/journal/"):
+                continue
+            seen += 1
+            self.assertIn(loc, self.pages, loc)
+            sm = {l.get("hreflang"): l.get("href") for l in u.findall(X)}
+            self.assertEqual(sm, self.hreflangs(self.pages[loc][1]), loc)
+            self.assertTrue(u.find(SM + "lastmod").text, loc)
+        self.assertEqual(seen, len(self.pages))
+
+    def test_llms_lists_every_translation(self):
+        llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
+        for url in self.pages:
+            self.assertIn(url, llms, url)
+
+    def test_internal_links_resolve(self):
+        for url, (_, src) in self.pages.items():
+            for href in re.findall(r'<a [^>]*href="(/[^"#?]*)', src):
+                f = ROOT / href.lstrip("/")
+                self.assertTrue(f.is_dir() and (f / "index.html").exists() or f.is_file(), "%s -> %s" % (url, href))
+
+    def test_asset_versions_match_service_worker(self):
+        sw = (ROOT / "sw.js").read_text(encoding="utf-8")
+        for url, (_, src) in self.pages.items():
+            for asset in re.findall(r'(?:href|src)="(/journal/journal\.(?:css|js)\?v=\d+)"', src):
+                self.assertIn("'%s'" % asset, sw, "%s uses %s not listed in sw.js CORE" % (url, asset))
+
+    def test_missing_ui_strings_and_orphans_are_rejected(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name in ("journal", "scripts", "sitemap.xml", "llms.txt", "og-image.png"):
+                src = ROOT / name
+                (shutil.copytree if src.is_dir() else shutil.copy)(src, root / name)
+            ui = root / "scripts" / "journal_i18n" / "ui.json"
+            data = json.loads(ui.read_text(encoding="utf-8"))
+            del data["ja"]["ai_label"]
+            ui.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+            _, errors = journal_sync.build(root)
+            self.assertTrue(any("ui.json[ja] missing" in e and "ai_label" in e for e in errors), errors)
+            # removing a translation source leaves its generated page behind -> reported as an orphan
+            ui.write_text(json.dumps(json.loads((ROOT / "scripts" / "journal_i18n" / "ui.json").read_text(encoding="utf-8")), ensure_ascii=False), encoding="utf-8")
+            (root / "scripts" / "journal_i18n" / posts()[0].name / "id.json").unlink()
+            _, errors = journal_sync.build(root)
+            self.assertTrue(any("orphan" in e and "/id/" in e.replace("\\", "/") for e in errors), errors)
+
 
 if __name__ == "__main__":
     unittest.main()

@@ -1,42 +1,45 @@
-/* ipe() journal — EN/KO switch + GA4 (same property as the main page). */
+/* ipe() journal — EN/KO switch (original pages only) + GA4 (same property as the main page). */
 (function () {
-  var root = document.documentElement;
-  var titles = {};
-  var tEn = document.querySelector('meta[name="ipe:title-en"]');
-  var tKo = document.querySelector('meta[name="ipe:title-ko"]');
-  if (tEn) titles.en = tEn.content;
-  if (tKo) titles.ko = tKo.content;
+  // Translated pages (/journal/<lang>/…) are single-language static pages: no switch, <html lang> stays as served.
+  if (document.querySelector('.langswitch')) {
+    var root = document.documentElement;
+    var titles = {};
+    var tEn = document.querySelector('meta[name="ipe:title-en"]');
+    var tKo = document.querySelector('meta[name="ipe:title-ko"]');
+    if (tEn) titles.en = tEn.content;
+    if (tKo) titles.ko = tKo.content;
 
-  function apply(lang) {
-    if (lang !== 'ko') lang = 'en';
-    root.setAttribute('lang', lang);
-    if (titles[lang]) document.title = titles[lang];
+    function apply(lang) {
+      if (lang !== 'ko') lang = 'en';
+      root.setAttribute('lang', lang);
+      if (titles[lang]) document.title = titles[lang];
+      var btns = document.querySelectorAll('.langswitch button');
+      for (var i = 0; i < btns.length; i++) {
+        btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-lang') === lang ? 'true' : 'false');
+      }
+    }
+
+    var urlLang = null, stored = null, initial = 'en';
+    try { urlLang = new URLSearchParams(location.search).get('lang'); } catch (e) {}
+    try { stored = localStorage.getItem('ipe_lang'); } catch (e) {}
+    try {
+      var list = navigator.languages || [navigator.language || ''];
+      var first = (list[0] || '').toLowerCase().split('-')[0];
+      if (first === 'ko') initial = 'ko';
+    } catch (e) {}
+    // priority: ?lang= > stored > browser > en  (non-ko values fall back to en)
+    if (urlLang) initial = urlLang === 'ko' ? 'ko' : 'en';
+    else if (stored) initial = stored === 'ko' ? 'ko' : 'en';
+    apply(initial);  // initial render never writes localStorage (a stored value like "ja" stays untouched)
+
     var btns = document.querySelectorAll('.langswitch button');
     for (var i = 0; i < btns.length; i++) {
-      btns[i].setAttribute('aria-pressed', btns[i].getAttribute('data-lang') === lang ? 'true' : 'false');
+      btns[i].addEventListener('click', function () {
+        var l = this.getAttribute('data-lang') === 'ko' ? 'ko' : 'en';
+        apply(l);
+        try { localStorage.setItem('ipe_lang', l); } catch (e) {}  // saved only on an explicit user choice
+      });
     }
-  }
-
-  var urlLang = null, stored = null, initial = 'en';
-  try { urlLang = new URLSearchParams(location.search).get('lang'); } catch (e) {}
-  try { stored = localStorage.getItem('ipe_lang'); } catch (e) {}
-  try {
-    var list = navigator.languages || [navigator.language || ''];
-    var first = (list[0] || '').toLowerCase().split('-')[0];
-    if (first === 'ko') initial = 'ko';
-  } catch (e) {}
-  // priority: ?lang= > stored > browser > en  (non-ko values fall back to en)
-  if (urlLang) initial = urlLang === 'ko' ? 'ko' : 'en';
-  else if (stored) initial = stored === 'ko' ? 'ko' : 'en';
-  apply(initial);  // initial render never writes localStorage (a stored value like "ja" stays untouched)
-
-  var btns = document.querySelectorAll('.langswitch button');
-  for (var i = 0; i < btns.length; i++) {
-    btns[i].addEventListener('click', function () {
-      var l = this.getAttribute('data-lang') === 'ko' ? 'ko' : 'en';
-      apply(l);
-      try { localStorage.setItem('ipe_lang', l); } catch (e) {}  // saved only on an explicit user choice
-    });
   }
 
   // GA4 — same measurement ID as index.html

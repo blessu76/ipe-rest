@@ -11,9 +11,33 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#fbfcfe">
 <link rel="canonical" href="https://ipe.rest/journal/">
+<!-- journal:i18n:start -->
 <link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/">
 <link rel="alternate" hreflang="en" href="https://ipe.rest/journal/?lang=en">
 <link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/?lang=ko">
+<link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/">
+<link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/">
+<link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/">
+<link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/">
+<link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/">
+<link rel="alternate" hreflang="pt" href="https://ipe.rest/journal/pt/">
+<link rel="alternate" hreflang="ru" href="https://ipe.rest/journal/ru/">
+<link rel="alternate" hreflang="ar" href="https://ipe.rest/journal/ar/">
+<link rel="alternate" hreflang="hi" href="https://ipe.rest/journal/hi/">
+<link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<!-- journal:i18n:end -->
 <link rel="manifest" href="/manifest.webmanifest?v=23">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
 <link rel="apple-touch-icon" href="/icon-180.png?v=23">
@@ -25,8 +49,6 @@
 <meta property="og:description" content="Notes from a small AI-native studio in Seoul — about the music, the name, and what we build.">
 <meta property="og:url" content="https://ipe.rest/journal/">
 <meta property="og:image" content="https://ipe.rest/og-image.png">
-<meta property="og:locale" content="en_US">
-<meta property="og:locale:alternate" content="ko_KR">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="ipe() journal">
 <meta name="twitter:description" content="Notes from a small AI-native studio in Seoul — about the music, the name, and what we build.">
@@ -45,7 +67,17 @@
       "description": "Notes from ipe(), a small AI-native studio in Seoul making quiet, developer-minded things.",
       "inLanguage": [
         "en",
-        "ko"
+        "ko",
+        "ja",
+        "zh",
+        "es",
+        "fr",
+        "de",
+        "pt",
+        "ru",
+        "ar",
+        "hi",
+        "id"
       ],
       "publisher": {
         "@type": "Organization",
@@ -69,6 +101,68 @@
           ],
           "image": "https://ipe.rest/og-image.png"
         }
+      ],
+      "workTranslation": [
+        {
+          "@type": "Blog",
+          "@id": "https://ipe.rest/journal/ja/#blog",
+          "url": "https://ipe.rest/journal/ja/",
+          "inLanguage": "ja"
+        },
+        {
+          "@type": "Blog",
+          "@id": "https://ipe.rest/journal/zh/#blog",
+          "url": "https://ipe.rest/journal/zh/",
+          "inLanguage": "zh"
+        },
+        {
+          "@type": "Blog",
+          "@id": "https://ipe.rest/journal/es/#blog",
+          "url": "https://ipe.rest/journal/es/",
+          "inLanguage": "es"
+        },
+        {
+          "@type": "Blog",
+          "@id": "https://ipe.rest/journal/fr/#blog",
+          "url": "https://ipe.rest/journal/fr/",
+          "inLanguage": "fr"
+        },
+        {
+          "@type": "Blog",
+          "@id": "https://ipe.rest/journal/de/#blog",
+          "url": "https://ipe.rest/journal/de/",
+          "inLanguage": "de"
+        },
+        {
+          "@type": "Blog",
+          "@id": "https://ipe.rest/journal/pt/#blog",
+          "url": "https://ipe.rest/journal/pt/",
+          "inLanguage": "pt"
+        },
+        {
+          "@type": "Blog",
+          "@id": "https://ipe.rest/journal/ru/#blog",
+          "url": "https://ipe.rest/journal/ru/",
+          "inLanguage": "ru"
+        },
+        {
+          "@type": "Blog",
+          "@id": "https://ipe.rest/journal/ar/#blog",
+          "url": "https://ipe.rest/journal/ar/",
+          "inLanguage": "ar"
+        },
+        {
+          "@type": "Blog",
+          "@id": "https://ipe.rest/journal/hi/#blog",
+          "url": "https://ipe.rest/journal/hi/",
+          "inLanguage": "hi"
+        },
+        {
+          "@type": "Blog",
+          "@id": "https://ipe.rest/journal/id/#blog",
+          "url": "https://ipe.rest/journal/id/",
+          "inLanguage": "id"
+        }
       ]
     },
     {
@@ -90,7 +184,7 @@
 }
 </script>
 <!-- journal:ld:end -->
-<link rel="stylesheet" href="/journal/journal.css?v=3">
+<link rel="stylesheet" href="/journal/journal.css?v=4">
 </head>
 <body>
 <a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ko">본문으로 건너뛰기</span></a>
@@ -126,6 +220,20 @@
     </li>
     <!-- journal:list:end -->
   </ul>
+  <!-- journal:langnav:start -->
+<nav class="langlist" aria-label="Languages">
+  <a class="lg" lang="ja" hreflang="ja" href="/journal/ja/">日本語</a>
+  <a class="lg" lang="zh" hreflang="zh" href="/journal/zh/">简体中文</a>
+  <a class="lg" lang="es" hreflang="es" href="/journal/es/">Español</a>
+  <a class="lg" lang="fr" hreflang="fr" href="/journal/fr/">Français</a>
+  <a class="lg" lang="de" hreflang="de" href="/journal/de/">Deutsch</a>
+  <a class="lg" lang="pt" hreflang="pt" href="/journal/pt/">Português</a>
+  <a class="lg" lang="ru" hreflang="ru" href="/journal/ru/">Русский</a>
+  <a class="lg" lang="ar" hreflang="ar" href="/journal/ar/">العربية</a>
+  <a class="lg" lang="hi" hreflang="hi" href="/journal/hi/">हिन्दी</a>
+  <a class="lg" lang="id" hreflang="id" href="/journal/id/">Bahasa Indonesia</a>
+</nav>
+  <!-- journal:langnav:end -->
 </main>
 
 <footer>
@@ -141,6 +249,6 @@
     </nav>
   </div>
 </footer>
-<script src="/journal/journal.js?v=2" defer></script>
+<script src="/journal/journal.js?v=3" defer></script>
 </body>
 </html>

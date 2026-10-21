@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="zh" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ipe() 为什么以“空闲进程”命名 — ipe() 日志</title>
+<meta name="description" content="ipe() 是 “idle process”（空闲进程）的缩写——计算机无事可做、只是安静休息的状态。这是关于名字、音乐，以及那句轻声的 “ipe. be still.” 的故事。">
+<meta name="author" content="ipe()">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#fbfcfe">
+<link rel="canonical" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="en" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en">
+<link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko">
+<link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="zh" href="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="pt" href="https://ipe.rest/journal/pt/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="ru" href="https://ipe.rest/journal/ru/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="ar" href="https://ipe.rest/journal/ar/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="hi" href="https://ipe.rest/journal/hi/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="ar_AR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<link rel="manifest" href="/manifest.webmanifest?v=23">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
+<link rel="apple-touch-icon" href="/icon-180.png?v=23">
+<link rel="preload" href="/fonts/inter-400.woff2?v=23" as="font" type="font/woff2" crossorigin>
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ipe()">
+<meta property="og:title" content="ipe() 为什么以“空闲进程”命名">
+<meta property="og:description" content="ipe() 是 “idle process”（空闲进程）的缩写——计算机无事可做、只是安静休息的状态。这是关于名字、音乐，以及那句轻声的 “ipe. be still.” 的故事。">
+<meta property="og:url" content="https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/">
+<meta property="og:image" content="https://ipe.rest/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-10-20">
+<meta property="article:modified_time" content="2026-10-20">
+<meta property="article:section" content="studio">
+<meta property="article:author" content="ipe()">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ipe() 为什么以“空闲进程”命名">
+<meta name="twitter:description" content="ipe() 是 “idle process”（空闲进程）的缩写——计算机无事可做、只是安静休息的状态。这是关于名字、音乐，以及那句轻声的 “ipe. be still.” 的故事。">
+<meta name="twitter:image" content="https://ipe.rest/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/#article",
+  "headline": "ipe() 为什么以“空闲进程”命名",
+  "description": "ipe() 是 “idle process”（空闲进程）的缩写——计算机无事可做、只是安静休息的状态。这是关于名字、音乐，以及那句轻声的 “ipe. be still.” 的故事。",
+  "abstract": "ipe() 是 “idle process” 的缩写，指计算机没有任务可做时进入的状态。ipe.rest 是首尔一家小型 AI 原生工作室；idle() 是借助 AI 制作的 lo-fi 与治愈系音乐，自 dear(you); vol.1 起，每首曲子都以轻声的 “ipe. be still.” 结尾。",
+  "datePublished": "2026-10-20",
+  "dateModified": "2026-10-20",
+  "inLanguage": "zh",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://ipe.rest/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "thumbnailUrl": "https://ipe.rest/og-image.png",
+  "url": "https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ipe.rest/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/"
+  },
+  "wordCount": 464,
+  "articleSection": "studio",
+  "keywords": "ipe(), idle process, ipe.rest, idle, AI lo-fi, healing music, dear(you); vol.1, be still, AI-native studio, Seoul",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ipe.rest/icon-512.png"
+    }
+  },
+  "about": [
+    {
+      "@type": "Organization",
+      "@id": "https://ipe.rest/#organization",
+      "name": "ipe()",
+      "alternateName": [
+        "ipe",
+        "idle process",
+        "아이프"
+      ],
+      "url": "https://ipe.rest/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "idle process",
+      "description": "The state a computer enters when it has no work left to do and simply rests; the origin of the name ipe()."
+    },
+    {
+      "@type": "MusicAlbum",
+      "name": "dear(you); vol.1",
+      "url": "https://idle.ipe.rest/",
+      "numTracks": 10,
+      "byArtist": {
+        "@type": "Organization",
+        "@id": "https://ipe.rest/#organization",
+        "name": "ipe()"
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "WebSite",
+      "name": "idle",
+      "url": "https://idle.ipe.rest/"
+    }
+  ],
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://ipe.rest/journal/zh/#blog",
+    "name": "ipe() 日志",
+    "url": "https://ipe.rest/journal/zh/"
+  },
+  "translationOfWork": {
+    "@type": "BlogPosting",
+    "@id": "https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/#article",
+    "url": "https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/",
+    "inLanguage": [
+      "en",
+      "ko"
+    ]
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "ipe()",
+      "item": "https://ipe.rest/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "日志",
+      "item": "https://ipe.rest/journal/zh/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ipe() 为什么以“空闲进程”命名"
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/journal/journal.css?v=4">
+</head>
+<body>
+<a class="skip" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="logo ltr" href="/" aria-label="ipe() 首页">ipe()</a>
+  <div class="top-right">
+    <nav aria-label="Primary"><a class="opt" href="/">首页</a><a href="/journal/zh/">日志</a></nav>
+  </div>
+</header>
+
+<main id="main">
+<article class="wrap">
+  <header class="post-head">
+    <p class="eyebrow"><i></i><span>日志 · <time datetime="2026-10-20">2026-10-20</time></span></p>
+    <h1>ipe() 为什么以<em>“空闲进程”</em>命名</h1>
+  </header>
+
+  <p class="ai-note" role="note"><strong>AI 翻译</strong> 本页是原文（英文/韩文）的机器翻译，可能存在错误，请以原文为准。 <a href="/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/" hreflang="en">阅读原文</a></p>
+
+  <div class="prose">
+    <p class="lead">ipe() 是 “idle process”（空闲进程）的缩写——计算机没有工作可做、只是安静休息时所处的状态。</p>
+    <p>空闲进程并没有坏掉。机器开着，准备就绪，安安静静。这正是我们想为工作室描绘的画面：一颗疲惫的心，终于把工作放下。它读作 “eye-puh”（艾普），与 ipê 硬木毫无关系——ipe.rest 是首尔的一家小型 AI 原生工作室，为忙碌的心灵制作安静的东西。</p>
+    <p>这个想法从音乐开始。idle() 是我们的 lo-fi 与治愈系音乐，借助 AI（Suno）制作——我们对此毫不隐瞒。歌词与概念由 AI 起草，再由人来修改和审阅。我们的首张概念专辑 <strong>dear(you); vol.1</strong> 共十首曲目，是“写给又熬过艰难一天的你的十封信”。</p>
+    <p>从这张专辑起，每首曲子都以同样的方式结束：一口轻轻的气息，“ipe. be still.”</p>
+    <blockquote>ipe(); // be still</blockquote>
+    <p>最后这一句像代码里的注释一样安静：它不会运行，也不是标题，只是在一切结束之后留在那里。按下播放键不需要相信什么，只需要停一会儿。</p>
+    <p>这本日志用来记录工作室成长过程中的笔记——关于音乐、名字，以及我们做的那些小东西。</p>
+  </div>
+
+  <a class="back" href="/journal/zh/">← 全部文章</a>
+  <nav class="langlist" aria-label="语言">
+    <a class="lg" lang="en" hreflang="en" href="/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=en">English</a>
+    <a class="lg" lang="ko" hreflang="ko" href="/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/?lang=ko">한국어</a>
+    <a class="lg" lang="ja" hreflang="ja" href="/journal/ja/2026-10-20-why-ipe-is-named-after-an-idle-process/">日本語</a>
+    <a class="lg" aria-current="true" lang="zh" hreflang="zh" href="/journal/zh/2026-10-20-why-ipe-is-named-after-an-idle-process/">简体中文</a>
+    <a class="lg" lang="es" hreflang="es" href="/journal/es/2026-10-20-why-ipe-is-named-after-an-idle-process/">Español</a>
+    <a class="lg" lang="fr" hreflang="fr" href="/journal/fr/2026-10-20-why-ipe-is-named-after-an-idle-process/">Français</a>
+    <a class="lg" lang="de" hreflang="de" href="/journal/de/2026-10-20-why-ipe-is-named-after-an-idle-process/">Deutsch</a>
+    <a class="lg" lang="pt" hreflang="pt" href="/journal/pt/2026-10-20-why-ipe-is-named-after-an-idle-process/">Português</a>
+    <a class="lg" lang="ru" hreflang="ru" href="/journal/ru/2026-10-20-why-ipe-is-named-after-an-idle-process/">Русский</a>
+    <a class="lg" lang="ar" hreflang="ar" href="/journal/ar/2026-10-20-why-ipe-is-named-after-an-idle-process/">العربية</a>
+    <a class="lg" lang="hi" hreflang="hi" href="/journal/hi/2026-10-20-why-ipe-is-named-after-an-idle-process/">हिन्दी</a>
+    <a class="lg" lang="id" hreflang="id" href="/journal/id/2026-10-20-why-ipe-is-named-after-an-idle-process/">Bahasa Indonesia</a>
+  </nav>
+</article>
+</main>
+
+<footer>
+  <p class="sig ltr">ipe<span>()</span></p>
+  <div class="foot">
+    <p class="ltr">© 2026 ipe() · idle</p>
+    <nav aria-label="Footer">
+      <a class="ltr" href="/">ipe.rest</a>
+      <a href="/journal/zh/">日志</a>
+      <a href="/about/">关于</a>
+      <a href="/contact/">联系</a>
+      <a href="/privacy/">隐私</a>
+    </nav>
+  </div>
+</footer>
+<script src="/journal/journal.js?v=3" defer></script>
+</body>
+</html>

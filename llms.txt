@@ -56,6 +56,7 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
 ## Journal
 <!-- journal:llms:start -->
 - Journal (EN/KO, weekly): https://ipe.rest/journal/
+- dear(you); vol.1 — ten letters (2026-10-22): https://ipe.rest/journal/2026-10-22-dear-you-vol1-ten-letters/ - Ten ambient lo-fi tracks, ten letters, one feeling each — from empathy to peace. How dear(you); vol.1 is arranged, and why track 5 sits in the middle.
 - Why ipe() is named after an idle process (2026-10-20): https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/ - ipe() is short for “idle process” — the state a computer enters when it has no work left and simply rests. The story behind the name, the music, and the whispered “ipe. be still.”
 <!-- journal:llms:end -->
 

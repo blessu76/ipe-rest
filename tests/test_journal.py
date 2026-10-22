@@ -140,9 +140,9 @@ class JournalValidation(unittest.TestCase):
         self.assertTrue(any("placeholder" in e for e in errs), errs)
 
     def test_date_placeholder_is_rejected(self):
-        errs = self.build_with(lambda s: s.replace('"dateModified": "2026-10-20"', '"dateModified": "YYYY-MM-DD"'))
+        errs = self.build_with(lambda s: re.sub(r'"dateModified": "[\d-]+"', '"dateModified": "YYYY-MM-DD"', s))
         self.assertTrue(any("YYYY-MM-DD" in e for e in errs), errs)
-        errs = self.build_with(lambda s: s.replace('"dateModified": "2026-10-20"', '"dateModified": "2026-13-45"'))
+        errs = self.build_with(lambda s: re.sub(r'"dateModified": "[\d-]+"', '"dateModified": "2026-13-45"', s))
         self.assertTrue(any("real YYYY-MM-DD date" in e for e in errs), errs)
 
     def test_template_slug_folder_is_rejected(self):

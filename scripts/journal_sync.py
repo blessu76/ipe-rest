@@ -250,7 +250,7 @@ def render_sitemap(posts):
 
 
 def render_llms(posts):
-    lines = ["- Journal (EN/KO, weekly): %s/journal/" % SITE]
+    lines = ["- Journal (EN/KO, daily): %s/journal/" % SITE]
     for p in posts:
         lines.append("- %s (%s): %s - %s" % (p["title_en"], p["published"], p["url"], p["desc"]))
     return "\n".join(lines)

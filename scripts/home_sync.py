@@ -49,7 +49,12 @@ def load():
     jui = json.loads((ROOT / "scripts" / "journal_i18n" / "ui.json").read_text(encoding="utf-8"))
     for l in LANGS:  # the journal UI file already has a translated "journal" label for all 12 languages
         ui[l].setdefault("nav_journal", jui[l]["journal"])
+    global jui_ai
+    jui_ai = jui
     return src, ui
+
+
+jui_ai = {}
 
 
 def cluster():
@@ -134,6 +139,13 @@ def render_lang(src, ui, lang):
     out = sub1(out, r'<meta name="twitter:description" content="[^"]*">', '<meta name="twitter:description" content="%s">' % esc(d["meta_desc"]))
     out = ld_fix(out, lang, url)
     out = out.replace('href="/journal/en/"', 'href="/journal/%s/"' % lang)
+    if lang in J.TR_LANGS:  # machine-translated home: same notice as journal/about (EN is the source of truth)
+        u = jui_ai[lang]
+        note = ('<p class="ai-note" role="note" style="max-width:1200px;margin:16px auto 0;padding:12px 16px;width:calc(100%% - 32px);border:1px solid var(--line-soft);'
+                'border-inline-start:2px solid var(--cobalt);background:var(--tint);color:var(--text);font:400 14px/1.7 var(--sans);box-sizing:border-box">'
+                '<strong style="color:var(--ink);font-weight:600;margin-inline-end:4px">%s</strong> %s <a href="/en/" hreflang="en" style="color:var(--cobalt);text-decoration:underline">%s</a></p>\n'
+                % (esc(u["ai_label"]), esc(u["ai_text"]), esc(u["ai_link"])))
+        out = sub1(out, r'<main id="main">\n', '<main id="main">\n' + note)
     for pg in ("about", "contact", "privacy"):
         out = out.replace('href="/%s/"' % pg, 'href="/%s/%s/"' % (lang, pg))
     opts = "\n".join('        <option value="%s"%s>%s</option>' % (l, " selected" if l == lang else "", l.upper()) for l in LANGS)

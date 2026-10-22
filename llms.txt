@@ -85,6 +85,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- dear(you); vol.1 — ten letters (2026-10-22): https://ipe.rest/journal/2026-10-22-dear-you-vol1-ten-letters/ - Ten ambient lo-fi tracks, ten letters, one feeling each — from empathy to peace. How dear(you); vol.1 is arranged, and why track 5 sits in the middle.
+  - original language: en
+  - [en] dear(you); vol.1 — ten letters: https://ipe.rest/journal/en/2026-10-22-dear-you-vol1-ten-letters/
+  - [ko] dear(you); vol.1 — 열 통의 편지: https://ipe.rest/journal/ko/2026-10-22-dear-you-vol1-ten-letters/
+  - [ja] dear(you); vol.1 — 10通の手紙 (AI translation): https://ipe.rest/journal/ja/2026-10-22-dear-you-vol1-ten-letters/
+  - [zh] dear(you); vol.1 — 十封信 (AI translation): https://ipe.rest/journal/zh/2026-10-22-dear-you-vol1-ten-letters/
+  - [es] dear(you); vol.1 — diez cartas (AI translation): https://ipe.rest/journal/es/2026-10-22-dear-you-vol1-ten-letters/
+  - [fr] dear(you); vol.1 — dix lettres (AI translation): https://ipe.rest/journal/fr/2026-10-22-dear-you-vol1-ten-letters/
+  - [de] dear(you); vol.1 — zehn Briefe (AI translation): https://ipe.rest/journal/de/2026-10-22-dear-you-vol1-ten-letters/
+  - [pt] dear(you); vol.1 — dez cartas (AI translation): https://ipe.rest/journal/pt/2026-10-22-dear-you-vol1-ten-letters/
+  - [ru] dear(you); vol.1 — десять писем (AI translation): https://ipe.rest/journal/ru/2026-10-22-dear-you-vol1-ten-letters/
+  - [ar] dear(you); vol.1 — عشر رسائل (AI translation): https://ipe.rest/journal/ar/2026-10-22-dear-you-vol1-ten-letters/
+  - [hi] dear(you); vol.1 — दस चिट्ठियाँ (AI translation): https://ipe.rest/journal/hi/2026-10-22-dear-you-vol1-ten-letters/
+  - [id] dear(you); vol.1 — sepuluh surat (AI translation): https://ipe.rest/journal/id/2026-10-22-dear-you-vol1-ten-letters/
 - Why ipe() is named after an idle process (2026-10-20): https://ipe.rest/journal/2026-10-20-why-ipe-is-named-after-an-idle-process/ - ipe() is short for “idle process” — the state a computer enters when it has no work left and simply rests. The story behind the name, the music, and the whispered “ipe. be still.”
   - original language: en
   - [en] Why ipe() is named after an idle process: https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/

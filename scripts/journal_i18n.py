@@ -371,7 +371,8 @@ def render_list_page(lang, ui, items, list_langs):
         '  <p class="eyebrow"><i></i><span>%s</span></p>' % esc(u["eyebrow"]),
         '  <h1 class="page-title">%s</h1>' % u["list_h1"],
         '  <p class="lede">%s</p>' % esc(u["list_lede"]),
-        ('  <p class="ai-note" role="note"><strong>%s</strong> %s</p>' % (esc(u["ai_label"]), esc(u["ai_text"]))
+        ('  <p class="ai-note" role="note"><strong>%s</strong> %s <a href="/journal/en/" hreflang="en">English</a> · <a href="/journal/ko/" hreflang="ko">한국어</a></p>'
+         % (esc(u["ai_label"]), esc(u["ai_text"]))
          if lang in TR_LANGS else ''),
         '',
         '  <ul class="post-list">',

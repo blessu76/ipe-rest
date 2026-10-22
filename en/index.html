@@ -163,7 +163,8 @@ img,svg{max-width:100%}
 .nav a:after{content:"";position:absolute;inset-inline:12px;bottom:8px;height:1px;background:var(--cobalt);transform:scaleX(0);transform-origin:left;transition:transform .25s}
 .nav a:hover:after,.nav a:focus-visible:after{transform:scaleX(1)}
 .language{display:inline-flex;align-items:center;gap:6px;min-height:var(--tap);padding:0 12px;border:1px solid var(--line);color:var(--cobalt);font:600 12px var(--mono);cursor:pointer}
-.language:hover,.language:focus-within{border-color:var(--cobalt)}
+.language:hover{border-color:var(--cobalt)}
+.language:focus-within{border-color:var(--cobalt);outline:2px solid var(--cobalt);outline-offset:3px}
 .language svg{width:14px;height:14px;flex:none}
 .language select{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:var(--cobalt);outline:0;cursor:pointer;min-height:var(--tap);padding:0 2px;letter-spacing:.06em}
 .menu-btn{display:none;width:var(--tap);height:var(--tap);place-items:center;border:1px solid var(--line);background:var(--sheet);color:var(--ink);cursor:pointer;padding:0}

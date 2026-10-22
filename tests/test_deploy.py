@@ -1,4 +1,5 @@
 import re
+import shutil
 import subprocess
 import tempfile
 import unittest
@@ -26,6 +27,7 @@ class DeployWorkflow(unittest.TestCase):
         for ex in ("/scripts/", "/tests/", "/.github/"):
             self.assertIn("--exclude='%s'" % ex, sh)
 
+    @unittest.skipUnless(shutil.which("rsync"), "rsync 가 PATH 에 없다 — 설치 후 다시 실행 (build_site.sh 가 rsync 를 쓴다)")
     def test_built_site_content(self):
         with tempfile.TemporaryDirectory() as tmp:
             out = Path(tmp) / "site"
@@ -37,6 +39,7 @@ class DeployWorkflow(unittest.TestCase):
             for rel in MUST_NOT:
                 self.assertFalse((out / rel).exists(), "must not ship: " + rel)
             self.assertEqual(list(out.rglob("*.md")), [])
+            self.assertEqual(list(out.rglob(".DS_Store")), [])
             keys = [p for p in out.glob("*.txt") if KEY_FILE.match(p.name)]
             src_keys = [p for p in ROOT.glob("*.txt") if KEY_FILE.match(p.name)]
             self.assertTrue(keys and len(keys) == len(src_keys), "IndexNow key files must ship")

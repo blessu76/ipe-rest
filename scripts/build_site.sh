@@ -14,4 +14,5 @@ rsync -a \
   --exclude='/.git' \
   --exclude='/.gitignore' \
   --exclude='*.md' \
+  --exclude='.DS_Store' \
   ./ "$OUT"/

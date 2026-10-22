@@ -29,8 +29,15 @@ jobs:
         uses: actions/configure-pages@v5
 
       # scripts/ tests/ .github/ *.md 같은 개발 자원은 사이트에 올리지 않는다 (scripts/build_site.sh)
+      - name: Ensure rsync
+        run: command -v rsync || sudo apt-get install -y rsync
+
       - name: Build site (_site)
         run: scripts/build_site.sh _site
+
+      # 핵심 파일이 빠지거나 개발 자원이 새면 여기서 배포가 멈춘다
+      - name: Verify site build
+        run: python3 -m unittest discover -s tests -p test_deploy.py -v
 
       - name: Upload site
         uses: actions/upload-pages-artifact@v3

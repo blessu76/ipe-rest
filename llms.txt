@@ -85,6 +85,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- late_night.lofi — the ride home (2026-10-23): https://ipe.rest/journal/2026-10-23-late-night-lofi-the-ride-home/ - A series for the ride home after a late night — and its first single, “still compiling.” Slow lo-fi for the hour when the work is over and you are not home yet.
+  - original language: en
+  - [en] late_night.lofi — the ride home: https://ipe.rest/journal/en/2026-10-23-late-night-lofi-the-ride-home/
+  - [ko] late_night.lofi — 퇴근길의 소리: https://ipe.rest/journal/ko/2026-10-23-late-night-lofi-the-ride-home/
+  - [ja] late_night.lofi — 帰り道の音 (AI translation): https://ipe.rest/journal/ja/2026-10-23-late-night-lofi-the-ride-home/
+  - [zh] late_night.lofi — 下班路上的声音 (AI translation): https://ipe.rest/journal/zh/2026-10-23-late-night-lofi-the-ride-home/
+  - [es] late_night.lofi — el camino a casa (AI translation): https://ipe.rest/journal/es/2026-10-23-late-night-lofi-the-ride-home/
+  - [fr] late_night.lofi — le trajet du retour (AI translation): https://ipe.rest/journal/fr/2026-10-23-late-night-lofi-the-ride-home/
+  - [de] late_night.lofi — der Heimweg (AI translation): https://ipe.rest/journal/de/2026-10-23-late-night-lofi-the-ride-home/
+  - [pt] late_night.lofi — o caminho de volta para casa (AI translation): https://ipe.rest/journal/pt/2026-10-23-late-night-lofi-the-ride-home/
+  - [ru] late_night.lofi — звуки дороги домой (AI translation): https://ipe.rest/journal/ru/2026-10-23-late-night-lofi-the-ride-home/
+  - [ar] late_night.lofi — صوت طريق العودة (AI translation): https://ipe.rest/journal/ar/2026-10-23-late-night-lofi-the-ride-home/
+  - [hi] late_night.lofi — घर लौटने की राह की आवाज़ (AI translation): https://ipe.rest/journal/hi/2026-10-23-late-night-lofi-the-ride-home/
+  - [id] late_night.lofi — suara perjalanan pulang (AI translation): https://ipe.rest/journal/id/2026-10-23-late-night-lofi-the-ride-home/
 - dear(you); vol.1 — ten letters (2026-10-22): https://ipe.rest/journal/2026-10-22-dear-you-vol1-ten-letters/ - Ten ambient lo-fi tracks, ten letters, one feeling each — from empathy to peace. How dear(you); vol.1 is arranged, and why track 5 sits in the middle.
   - original language: en
   - [en] dear(you); vol.1 — ten letters: https://ipe.rest/journal/en/2026-10-22-dear-you-vol1-ten-letters/

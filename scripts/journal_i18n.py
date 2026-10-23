@@ -22,6 +22,7 @@ ORG_ID = SITE + "/#organization"
 VER_CSS = "8"
 VER_JS = "7"
 ASSET_VER = "23"
+ENGAGE_VER = "1"  # widget/ipe-engage.{js,css} — shared like + comment widget (bump with the files)
 
 LANGS = ["en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id"]
 ORIG_LANGS = ["en", "ko"]
@@ -274,6 +275,7 @@ def render_post(post, lang, ui, data, langs):
         ld_script(ld),
         ld_script(crumbs),
         '<link rel="stylesheet" href="/journal/journal.css?v=%s">' % VER_CSS,
+        '<link rel="stylesheet" href="/widget/ipe-engage.css?v=%s">' % ENGAGE_VER,
         '</head>',
         '<body>',
         _header(u, lang, cluster),
@@ -293,11 +295,14 @@ def render_post(post, lang, ui, data, langs):
         data["body"],
         '  </div>',
         '',
+        '  <section class="ipe-engage" data-site="ipe.rest" data-post="%s" data-lang="%s"></section>' % (slug, lang),
+        '',
         '  <a class="back" href="/journal/%s/">%s</a>' % (lang, esc(u["all_entries"])),
         '</article>',
         '</main>',
         '',
         _footer(u, lang),
+        '<script src="/widget/ipe-engage.js?v=%s" defer></script>' % ENGAGE_VER,
         '<script src="/journal/journal.js?v=%s" defer></script>' % VER_JS,
         '</body>',
         '</html>',

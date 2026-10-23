@@ -10,6 +10,7 @@ rsync -a \
   --exclude='/_site/' \
   --exclude='/scripts/' \
   --exclude='/tests/' \
+  --exclude='/firebase/' \
   --exclude='/.github/' \
   --exclude='/.git' \
   --exclude='/.gitignore' \

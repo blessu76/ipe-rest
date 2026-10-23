@@ -1,5 +1,5 @@
 // ipe() service worker — installable PWA + offline fallback
-const CACHE = 'ipe-v35';
+const CACHE = 'ipe-v36';
 const CORE = [
   '/', '/index.html',
   '/manifest.webmanifest?v=23',
@@ -27,6 +27,8 @@ self.addEventListener('activate', (e) => {
 self.addEventListener('fetch', (e) => {
   const req = e.request;
   if (req.method !== 'GET') return;
+  // 댓글·좋아요 위젯 데이터는 항상 네트워크(캐시 금지)
+  if (new URL(req.url).hostname === 'firestore.googleapis.com') return;
 
   const isHTML = req.mode === 'navigate' ||
     (req.headers.get('accept') || '').includes('text/html');

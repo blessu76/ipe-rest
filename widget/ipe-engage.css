@@ -1,0 +1,43 @@
+/* ipe() engage — like + comment widget. Quiet, minimal; picks up the host page's tokens (--ink --text --muted --cobalt --line --line-soft --hair --tint --sheet --sans --mono) with fallbacks.
+   Theme: data-theme="light" (default) | "dark" | "auto" (follows prefers-color-scheme). Host pages that are light-only keep the default. */
+.ipe-engage{--ie-ink:var(--ink,#0f1829);--ie-text:var(--text,#2c3547);--ie-muted:var(--muted,#566074);--ie-accent:var(--cobalt,#1f4fd1);--ie-line:var(--line,rgba(31,79,209,.28));--ie-soft:var(--line-soft,rgba(31,79,209,.14));--ie-hair:var(--hair,rgba(15,24,41,.10));--ie-bg:var(--tint,#f4f7fd);--ie-field:var(--sheet,#fff);
+  margin:64px 0 0;padding:32px 0 0;border-top:1px solid var(--ie-line);color:var(--ie-text);font:400 15px/1.7 var(--sans,system-ui,sans-serif);-webkit-font-smoothing:antialiased}
+.ipe-engage:empty{display:none}
+.ipe-engage[data-theme="dark"]{--ie-ink:#e8edf8;--ie-text:#c9d2e6;--ie-muted:#9aa6c4;--ie-accent:#8fb0ff;--ie-line:#26314d;--ie-soft:#1c2540;--ie-hair:#1c2540;--ie-bg:#111a2e;--ie-field:#0d1424}
+@media (prefers-color-scheme:dark){.ipe-engage[data-theme="auto"]{--ie-ink:#e8edf8;--ie-text:#c9d2e6;--ie-muted:#9aa6c4;--ie-accent:#8fb0ff;--ie-line:#26314d;--ie-soft:#1c2540;--ie-hair:#1c2540;--ie-bg:#111a2e;--ie-field:#0d1424}}
+.ipe-engage *{box-sizing:border-box}
+.ie-like{display:flex;align-items:center;gap:12px;margin:0 0 40px}
+.ie-like-btn{appearance:none;display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:0 18px;border:1px solid var(--ie-line);background:transparent;color:var(--ie-accent);font:600 12px/1 var(--mono,ui-monospace,monospace);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.ie-like-btn:hover:not(:disabled){border-color:var(--ie-accent)}
+.ie-like-btn[aria-pressed="true"]{background:var(--ie-accent);border-color:var(--ie-accent);color:var(--ie-field);cursor:default}
+.ie-like-btn:focus-visible,.ie-send:focus-visible,.ie-more:focus-visible,.ie-name:focus-visible,.ie-text:focus-visible{outline:2px solid var(--ie-accent);outline-offset:3px}
+.ie-heart{font-size:15px;line-height:1}
+.ie-like-count{color:var(--ie-muted);font:600 12px/1 var(--mono,ui-monospace,monospace);letter-spacing:.06em;min-width:1ch}
+.ie-title{margin:0 0 16px;color:var(--ie-ink);font:400 22px/1.3 var(--sans,system-ui,sans-serif);letter-spacing:-.02em}
+.ie-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--ie-hair)}
+.ie-item{padding:16px 0;border-bottom:1px solid var(--ie-hair)}
+.ie-meta{margin:0 0 4px;display:flex;flex-wrap:wrap;align-items:baseline;gap:4px 12px}
+.ie-by{color:var(--ie-ink);font-weight:600;overflow-wrap:anywhere}
+.ie-time{color:var(--ie-muted);font:12px/1.5 var(--mono,ui-monospace,monospace);letter-spacing:.04em}
+.ie-body{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}
+.ie-status{margin:12px 0 0;color:var(--ie-muted);font-size:14px}
+.ie-status:empty{display:none}
+.ie-more{appearance:none;margin:16px 0 0;min-height:44px;padding:0 4px;border:0;background:transparent;color:var(--ie-accent);font:600 12px/1 var(--mono,ui-monospace,monospace);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.ie-more:hover{text-decoration:underline;text-underline-offset:4px}
+.ie-more[hidden]{display:none}
+.ie-form{margin:32px 0 0;display:grid;gap:12px}
+.ie-name,.ie-text{width:100%;border:1px solid var(--ie-line);border-radius:0;background:var(--ie-field);color:var(--ie-ink);font:400 16px/1.6 var(--sans,system-ui,sans-serif);padding:10px 12px}
+.ie-name{min-height:44px}
+.ie-text{resize:vertical;min-height:96px}
+.ie-name::placeholder,.ie-text::placeholder{color:var(--ie-muted)}
+.ie-trap{position:absolute!important;inset-inline-start:-9999px;width:1px;height:1px;opacity:0;pointer-events:none}
+.ie-row{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:12px 24px}
+.ie-hint{flex:1 1 220px;margin:0;color:var(--ie-muted);font-size:13px;line-height:1.6}
+.ie-send{appearance:none;min-height:44px;min-width:96px;padding:0 20px;border:1px solid var(--ie-accent);background:var(--ie-accent);color:var(--ie-field);font:600 12px/1 var(--mono,ui-monospace,monospace);letter-spacing:.06em;text-transform:uppercase;cursor:pointer}
+.ie-send:disabled{opacity:.6;cursor:default}
+.ie-msg{margin:0;min-height:1.7em;color:var(--ie-accent);font-size:14px}
+.ie-msg.ie-bad{color:var(--ie-ink)}
+.ie-msg:empty{display:none}
+html[lang="ar"] .ie-like-btn,html[lang="ar"] .ie-send,html[lang="ar"] .ie-more{letter-spacing:0}
+@media (max-width:420px){.ie-row{flex-direction:column;align-items:stretch}.ie-send{width:100%}}
+@media (prefers-reduced-motion:reduce){.ie-like-btn{transition:none}}

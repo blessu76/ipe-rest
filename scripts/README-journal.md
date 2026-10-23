@@ -26,3 +26,8 @@
   The "AI translation" note appears only on the 10 machine-translated languages, never on EN/KO.
 - A language without a translation JSON is simply absent (no empty page, no dangling hreflang). Machine drafts: keep `ai_label`/`ai_text` in ui.json.
 - sitemap: every page (13 per post and per list) with lastmod, 13 hreflang, image. llms.txt lists all languages.
+
+
+## Likes + comments (💡#84)
+- Every generated post page (`journal/<lang>/<slug>/`) gets the shared widget automatically: `journal_i18n.render_post` adds `<section class="ipe-engage" data-site="ipe.rest" data-post="<slug>" data-lang="<lang>">`, `/widget/ipe-engage.css` and `/widget/ipe-engage.js` (`ENGAGE_VER`). Nothing to do per post — the slug is the post key, shared by all 12 languages.
+- Backend + rules + moderation (delete a comment) + how to use the widget on another site: `firebase/README.md`. Bump `ENGAGE_VER` (journal_i18n.py) when the widget files change, then rerun `journal_sync.py`.

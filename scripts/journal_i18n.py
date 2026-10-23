@@ -334,6 +334,7 @@ def render_list_page(lang, ui, items, list_langs):
         {"@type": "Blog", "@id": "%s/journal/%s/#blog" % (SITE, lang), "name": u["blog_name"], "url": url,
          "description": u["list_desc"], "inLanguage": lang,
          "publisher": {"@type": "Organization", "@id": ORG_ID, "name": "ipe()", "url": SITE + "/"},
+         "isPartOf": {"@id": "%s/%s/#website" % (SITE, lang)},
          "blogPost": entries},
         {"@type": "ItemList", "@id": "%s/journal/%s/#list" % (SITE, lang), "name": u["all_posts"],
          "itemListOrder": "https://schema.org/ItemListOrderDescending", "numberOfItems": len(items),

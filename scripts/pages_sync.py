@@ -116,9 +116,9 @@ def render(p, lang, data, ui):
             main, n = re.subn(r"(</h1>\n)", lambda m: m.group(1) + note + "\n", main, count=1)
     alts = "\n".join('<meta property="og:locale:alternate" content="%s">' % J.OG_LOCALE[l] for l in langs_of(data, p) if l != lang)
     ld = {"@context": "https://schema.org", "@graph": [
-        {"@type": LD_TYPE[p], "name": d["title"], "url": url, "inLanguage": lang,
-         "isPartOf": {"@type": "WebSite", "name": "ipe()", "url": SITE + "/%s/" % lang}},
-        {"@type": "BreadcrumbList", "itemListElement": [
+        {"@type": LD_TYPE[p], "@id": url + "#webpage", "name": d["title"], "url": url, "inLanguage": lang,
+         "isPartOf": {"@id": SITE + "/%s/#website" % lang}},
+        {"@type": "BreadcrumbList", "@id": url + "#breadcrumb", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "ipe()", "item": SITE + "/%s/" % lang},
             {"@type": "ListItem", "position": 2, "name": u[p], "item": url}]}]}
     parts = ['<!DOCTYPE html>', '<html lang="%s" dir="%s">' % (lang, "rtl" if lang in J.RTL else "ltr"), '<head>',
@@ -146,7 +146,7 @@ def render_chooser(p, data, ui):
     en = data[p]["en"]
     url = page_url(p)
     page = {"@context": "https://schema.org", "@type": LD_TYPE[p], "@id": url + "#webpage", "url": url, "name": en["title"],
-            "description": en["description"], "inLanguage": "en", "isPartOf": {"@type": "WebSite", "name": "ipe()", "url": SITE + "/"}}
+            "description": en["description"], "inLanguage": "en", "isPartOf": {"@id": SITE + "/#website"}}
     rows = [(l, page_url(p, l), data[p][l]["title"]) for l in langs]
     cl = cluster(data, p)
     head = J._chooser_head(en["title"], en["description"], url, cl, "website", "en_US", [page])

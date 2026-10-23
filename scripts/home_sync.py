@@ -80,8 +80,8 @@ def sub1(src, pat, repl, flags=0):
 
 def ld_fix(src, lang, url):
     """WebSite: url + inLanguage of this page. FAQ (English text) only on the English page."""
-    src = sub1(src, r'"url": "https://ipe\.rest/",\n  "inLanguage": \[[^\]]*\],',
-               '"url": "%s",\n  "inLanguage": "%s",' % (url, lang))
+    src = sub1(src, r'"@id": "https://ipe\.rest/#website",\n  "name": "ipe\(\)",\n  "url": "https://ipe\.rest/",\n  "inLanguage": \[[^\]]*\],',
+               '"@id": "%s#website",\n  "name": "ipe()",\n  "url": "%s",\n  "inLanguage": "%s",' % (url, url, lang))
     if lang != "en":
         src = sub1(src, r'<script type="application/ld\+json" id="faq-jsonld">.*?</script>\n', "", re.S)
     return src
@@ -183,8 +183,8 @@ def render_chooser(src, ui):
     ga = between(src, "<!-- ===== Google Analytics", "<!-- ===== PWA")
     sw = between(src, "<!-- ===== PWA service worker", "<!-- home:script")
     org = between(src, '<script type="application/ld+json">\n{\n  "@context": "https://schema.org",\n  "@type": "Organization"', "</script>") + "</script>"
-    site_ld = json.dumps({"@context": "https://schema.org", "@type": "WebSite", "name": "ipe()", "url": home_url(),
-                          "inLanguage": LANGS, "publisher": {"@type": "Organization", "name": "ipe()", "url": home_url()}},
+    site_ld = json.dumps({"@context": "https://schema.org", "@type": "WebSite", "@id": home_url() + "#website", "name": "ipe()",
+                          "url": home_url(), "inLanguage": LANGS, "publisher": {"@id": home_url() + "#organization"}},
                          ensure_ascii=False, indent=2)
     items = "\n".join('    <li><a class="lg" lang="%s" hreflang="%s" href="/%s/"><span class="lg-name">%s</span>'
                       '<span class="lg-sub">ipe.rest/%s/</span></a></li>' % (l, l, l, NATIVE[l], l) for l in LANGS)

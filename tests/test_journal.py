@@ -401,5 +401,35 @@ class JournalI18n(unittest.TestCase):
             self.assertTrue(any("orphan" in e and "/id/" in e.replace("\\", "/") for e in errors), errors)
 
 
+class JournalPublishTime(unittest.TestCase):
+    """Dates show 'YYYY-MM-DD HH:MM' (KST, no seconds); machine values carry +09:00."""
+
+    def test_every_post_has_published_at_and_it_is_rendered_in_all_languages(self):
+        for f in posts():
+            slug = slug_of(f)
+            at = journal_sync.meta(f.read_text(encoding="utf-8"), "ipe:published-at")
+            self.assertRegex(at or "", r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}\+09:00$", slug)
+            label = at[:10] + " " + at[11:16]
+            for lang in journal_sync.I18N.LANGS:
+                post = (ROOT / "journal" / lang / slug / "index.html").read_text(encoding="utf-8")
+                lst = (ROOT / "journal" / lang / "index.html").read_text(encoding="utf-8")
+                for page in (post, lst):
+                    self.assertIn('<time datetime="%s" dir="ltr">%s</time>' % (at, label), page, (lang, slug))
+                self.assertIn('"datePublished": "%s"' % at, post)
+                self.assertIn('"datePublished": "%s"' % at, lst)
+                self.assertIn('<meta property="article:published_time" content="%s">' % at, post)
+
+    def test_bad_published_at_is_rejected(self):
+        f = posts()[0]
+        src = f.read_text(encoding="utf-8")
+        at = journal_sync.meta(src, "ipe:published-at")
+        with tempfile.TemporaryDirectory() as d:
+            for bad in (at[:16] + ":30+09:00", at[:16] + "Z", "2000-01-01T09:00+09:00"):
+                g = Path(d) / f.name
+                g.write_text(src.replace(at, bad), encoding="utf-8")
+                _, errs = journal_sync.load_post(g)
+                self.assertTrue(any("published-at" in e for e in errs), (bad, errs))
+
+
 if __name__ == "__main__":
     unittest.main()

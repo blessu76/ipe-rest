@@ -184,6 +184,12 @@ def load_post(path, root=ROOT):
         langdata[lang] = d
     post["langdata"] = langdata
     post["original"] = original
+    pub_at = meta(src, "ipe:published-at") or ""
+    if pub_at and not (re.fullmatch(r"\d{4}-\d{2}-\d{2}T([01]\d|2[0-3]):[0-5]\d\+09:00", pub_at)
+                       and pub_at[:10] == ld.get("datePublished")):
+        errs.append("ipe:published-at must be YYYY-MM-DDTHH:MM+09:00 (KST, no seconds) on the datePublished date (got %r)" % pub_at)
+        pub_at = ""
+    post["published_at"] = pub_at
     post.update(
         ld=ld,
         category=meta(src, "ipe:category") or "studio",

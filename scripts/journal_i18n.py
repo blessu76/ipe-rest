@@ -210,6 +210,16 @@ def ld_script(obj):
     return '<script type="application/ld+json">\n%s\n</script>' % json.dumps(obj, ensure_ascii=False, indent=2)
 
 
+def stamp(post, date=None):
+    """(machine value, display text) for a post time. `date` = a modified date (default: published).
+    With ipe:published-at (KST) -> ('2026-10-23T09:55+09:00', '2026-10-23 09:55'); without -> date only."""
+    at = post.get("published_at") or ""
+    d = date or post["published"]
+    if at and d == at[:10]:
+        return at, at[:10] + " " + at[11:16]
+    return d, d
+
+
 def render_post(post, lang, ui, data, langs):
     """Full HTML of /journal/<lang>/<slug>/ ; `post` = parsed source (journal_sync.load_post), `langs` = available languages."""
     u = ui[lang]
@@ -219,14 +229,14 @@ def render_post(post, lang, ui, data, langs):
     orig_url = post_url(slug, orig)
     img = post["image"]
     cluster = post_cluster(slug, langs)
-    modified = data.get("dateModified") or post["modified"]
+    modified = stamp(post, data.get("dateModified") or post["modified"])[0]
     ld = dict(post["ld"])
     ld.pop("alternativeHeadline", None)
     ld.pop("workTranslation", None)
     ld.pop("translationOfWork", None)
     ld.update({
         "@id": url + "#article", "headline": data["title"], "description": data["description"],
-        "abstract": data["abstract"], "dateModified": modified, "inLanguage": lang, "url": url,
+        "abstract": data["abstract"], "datePublished": stamp(post)[0], "dateModified": modified, "inLanguage": lang, "url": url,
         "mainEntityOfPage": {"@type": "WebPage", "@id": url},
         "wordCount": words(lang, data["body"]),
         "isPartOf": {"@type": "Blog", "@id": "%s/journal/%s/#blog" % (SITE, lang), "name": u["blog_name"],
@@ -262,7 +272,7 @@ def render_post(post, lang, ui, data, langs):
         '<meta property="og:image" content="%s">' % img_url,
         '<meta property="og:image:width" content="%s">' % img.get("width", 1200),
         '<meta property="og:image:height" content="%s">' % img.get("height", 630),
-        '<meta property="article:published_time" content="%s">' % post["published"],
+        '<meta property="article:published_time" content="%s">' % stamp(post)[0],
         '<meta property="article:modified_time" content="%s">' % modified,
         '<meta property="article:section" content="%s">' % esc(post["category"]),
         '<meta property="article:author" content="ipe()">',
@@ -281,7 +291,7 @@ def render_post(post, lang, ui, data, langs):
         '<main id="main">',
         '<article class="wrap">',
         '  <header class="post-head">',
-        '    <p class="eyebrow"><i></i><span>%s · <time datetime="%s">%s</time></span></p>' % (esc(u["eyebrow"]), post["published"], post["published"]),
+        '    <p class="eyebrow"><i></i><span>%s · <time datetime="%s" dir="ltr">%s</time></span></p>' % ((esc(u["eyebrow"]),) + stamp(post)),
         '    <h1>%s</h1>' % data["h1_html"],
         '  </header>',
         '',
@@ -315,18 +325,18 @@ def render_list_page(lang, ui, items, list_langs):
     for p, d in items:
         cards.append("""    <li>
       <a class="post-card" href="/journal/%s/%s/">
-        <p class="post-meta"><time datetime="%s">%s</time> · %s</p>
+        <p class="post-meta"><time datetime="%s" dir="ltr">%s</time> · %s</p>
         <h2>%s</h2>
         <p class="excerpt">%s</p>
         <span class="more">%s</span>
       </a>
-    </li>""" % (lang, p["slug"], p["published"], p["published"], esc(p["category"]),
+    </li>""" % (lang, p["slug"], stamp(p)[0], stamp(p)[1], esc(p["category"]),
                 html.escape(d["title"], quote=False), html.escape(d["excerpt"], quote=False), esc(u["read"])))
     entries = []
     for p, d in items:
         e = {"@type": "BlogPosting", "@id": post_url(p["slug"], lang) + "#article", "headline": d["title"],
-             "description": d["description"], "url": post_url(p["slug"], lang), "datePublished": p["published"],
-             "dateModified": d.get("dateModified") or p["modified"], "inLanguage": lang}
+             "description": d["description"], "url": post_url(p["slug"], lang), "datePublished": stamp(p)[0],
+             "dateModified": stamp(p, d.get("dateModified") or p["modified"])[0], "inLanguage": lang}
         if p["image"].get("url"):
             e["image"] = p["image"]["url"]
         entries.append(e)

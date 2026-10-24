@@ -1,8 +1,0 @@
-{
-  "title": "Feito com IA, e dizemos isso",
-  "h1_html": "Feito com IA, <em>e dizemos isso.</em>",
-  "description": "Como a ipe() faz a sua música: com IA (Suno), abertamente. A letra começa como um rascunho de IA que uma pessoa revisa e confere; o conceito e as decisões finais são nossos.",
-  "abstract": "A música da ipe() é feita com IA (Suno), e o estúdio diz isso abertamente. A letra e o conceito começam como um rascunho de IA que uma pessoa revisa e confere; a direção e as decisões finais são do estúdio.",
-  "excerpt": "Como a ipe() faz a sua música, com IA e às claras, e por que preferimos dizer isso a esconder.",
-  "body": "    <p class=\"lead\">Toda faixa da ipe() é feita com IA, e dizemos isso na página, não nas letras miúdas.</p>\n    <p>A música é produzida com IA (Suno). A letra e o conceito começam como um rascunho de IA; depois uma pessoa o reescreve, o revisa e decide o que fica. A ideia de cada série, a ordem de um álbum, o sim ou o não final para uma faixa: essas decisões são nossas.</p>\n    <p>Por que dizer em voz alta? Porque esta música é para as horas cansadas: o caminho para casa depois de uma noite longa, a noite em que você não consegue desligar. Quem aperta o play nessa hora confia um pouco, e essa confiança não deveria depender de um palpite sobre como a música foi feita.</p>\n    <p>Dizer isso não é afirmar que a música seja melhor ou pior que outra, nem torna a escuta menos real. O caminho para casa continua sendo seu. É apenas um rótulo honesto, como a lista de ingredientes de um pote.</p>\n    <blockquote>ipe(); // made with AI, said out loud</blockquote>\n    <p>É só isso. Aperte o play quando estiver pronto.</p>\n    <p><a href=\"https://idle.ipe.rest/\" rel=\"noopener\">idle.ipe.rest</a></p>\n"
-}

@@ -85,20 +85,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
-- Made with AI, and we say so (2026-10-24): https://ipe.rest/journal/2026-10-24-made-with-ai-and-we-say-so/ - How ipe() makes its music: with AI (Suno), openly. Lyrics start as an AI draft that a person revises and reviews; the concept and the final decisions are ours.
+- Made with AI, and we say so (2026-10-25): https://ipe.rest/journal/2026-10-25-made-with-ai-and-we-say-so/ - How ipe() makes its music: with AI (Suno), openly. Lyrics start as an AI draft that a person revises and reviews; the concept and the final decisions are ours.
   - original language: en
-  - [en] Made with AI, and we say so: https://ipe.rest/journal/en/2026-10-24-made-with-ai-and-we-say-so/
-  - [ko] AI로 만들고, 그렇게 말합니다: https://ipe.rest/journal/ko/2026-10-24-made-with-ai-and-we-say-so/
-  - [ja] AIで作っています。そう伝えます (AI translation): https://ipe.rest/journal/ja/2026-10-24-made-with-ai-and-we-say-so/
-  - [zh] 用 AI 制作,并且明说 (AI translation): https://ipe.rest/journal/zh/2026-10-24-made-with-ai-and-we-say-so/
-  - [es] Hecho con IA, y lo decimos (AI translation): https://ipe.rest/journal/es/2026-10-24-made-with-ai-and-we-say-so/
-  - [fr] Faite avec l’IA, et nous le disons (AI translation): https://ipe.rest/journal/fr/2026-10-24-made-with-ai-and-we-say-so/
-  - [de] Mit KI gemacht – und wir sagen es (AI translation): https://ipe.rest/journal/de/2026-10-24-made-with-ai-and-we-say-so/
-  - [pt] Feito com IA, e dizemos isso (AI translation): https://ipe.rest/journal/pt/2026-10-24-made-with-ai-and-we-say-so/
-  - [ru] Сделано с помощью ИИ, и мы об этом говорим (AI translation): https://ipe.rest/journal/ru/2026-10-24-made-with-ai-and-we-say-so/
-  - [ar] صُنع بالذكاء الاصطناعي، ونقول ذلك (AI translation): https://ipe.rest/journal/ar/2026-10-24-made-with-ai-and-we-say-so/
-  - [hi] AI से बनाया, और हम यह कहते हैं (AI translation): https://ipe.rest/journal/hi/2026-10-24-made-with-ai-and-we-say-so/
-  - [id] Dibuat dengan AI, dan kami menyebutkannya (AI translation): https://ipe.rest/journal/id/2026-10-24-made-with-ai-and-we-say-so/
+  - [en] Made with AI, and we say so: https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/
+  - [ko] AI로 만들고, 그렇게 말합니다: https://ipe.rest/journal/ko/2026-10-25-made-with-ai-and-we-say-so/
+  - [ja] AIで作っています。そう伝えます (AI translation): https://ipe.rest/journal/ja/2026-10-25-made-with-ai-and-we-say-so/
+  - [zh] 用 AI 制作,并且明说 (AI translation): https://ipe.rest/journal/zh/2026-10-25-made-with-ai-and-we-say-so/
+  - [es] Hecho con IA, y lo decimos (AI translation): https://ipe.rest/journal/es/2026-10-25-made-with-ai-and-we-say-so/
+  - [fr] Faite avec l’IA, et nous le disons (AI translation): https://ipe.rest/journal/fr/2026-10-25-made-with-ai-and-we-say-so/
+  - [de] Mit KI gemacht – und wir sagen es (AI translation): https://ipe.rest/journal/de/2026-10-25-made-with-ai-and-we-say-so/
+  - [pt] Feito com IA, e dizemos isso (AI translation): https://ipe.rest/journal/pt/2026-10-25-made-with-ai-and-we-say-so/
+  - [ru] Сделано с помощью ИИ, и мы об этом говорим (AI translation): https://ipe.rest/journal/ru/2026-10-25-made-with-ai-and-we-say-so/
+  - [ar] صُنع بالذكاء الاصطناعي، ونقول ذلك (AI translation): https://ipe.rest/journal/ar/2026-10-25-made-with-ai-and-we-say-so/
+  - [hi] AI से बनाया, और हम यह कहते हैं (AI translation): https://ipe.rest/journal/hi/2026-10-25-made-with-ai-and-we-say-so/
+  - [id] Dibuat dengan AI, dan kami menyebutkannya (AI translation): https://ipe.rest/journal/id/2026-10-25-made-with-ai-and-we-say-so/
 - late_night.lofi — the ride home (2026-10-23): https://ipe.rest/journal/2026-10-23-late-night-lofi-the-ride-home/ - A series for the ride home after a late night — and its first single, “still compiling.” Slow lo-fi for the hour when the work is over and you are not home yet.
   - original language: en
   - [en] late_night.lofi — the ride home: https://ipe.rest/journal/en/2026-10-23-late-night-lofi-the-ride-home/

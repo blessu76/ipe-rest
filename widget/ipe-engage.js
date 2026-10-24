@@ -139,6 +139,7 @@
       meta.appendChild(el('strong', 'ie-by', f.name ? f.name.stringValue : ''));
       var ts = f.createdAt && f.createdAt.timestampValue ? new Date(f.createdAt.timestampValue) : null;
       if (ts && !isNaN(ts) && fmt) { var tm = el('time', 'ie-time', fmt.format(ts)); tm.setAttribute('datetime', ts.toISOString()); meta.appendChild(tm); }
+      if (f.lang && /^[a-z]{2}$/.test(f.lang.stringValue)) meta.appendChild(el('span', 'ie-lang', f.lang.stringValue.toUpperCase()));
       li.appendChild(meta);
       li.appendChild(el('p', 'ie-body', f.text ? f.text.stringValue : ''));  // textContent only — never HTML
       list.appendChild(li);
@@ -171,12 +172,12 @@
       send.disabled = true; send.textContent = t.sending;
       var id = randomId();
       api('POST', ':commit', { writes: [{
-        update: { name: db + '/posts/' + pid + '/comments/' + id, fields: { name: { stringValue: name }, text: { stringValue: text } } },
+        update: { name: db + '/posts/' + pid + '/comments/' + id, fields: { name: { stringValue: name }, text: { stringValue: text }, lang: { stringValue: lang } } },
         updateTransforms: [{ fieldPath: 'createdAt', setToServerValue: 'REQUEST_TIME' }],
         currentDocument: { exists: false }
       }] }).then(function () {
         store('set', lastKey, String(Date.now()));
-        addComment({ fields: { name: { stringValue: name }, text: { stringValue: text }, createdAt: { timestampValue: new Date().toISOString() } } });
+        addComment({ fields: { name: { stringValue: name }, text: { stringValue: text }, lang: { stringValue: lang }, createdAt: { timestampValue: new Date().toISOString() } } });
         status.textContent = '';
         textIn.value = '';
         say(t.sent);

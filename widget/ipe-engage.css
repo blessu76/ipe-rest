@@ -41,3 +41,5 @@
 html[lang="ar"] .ie-like-btn,html[lang="ar"] .ie-send,html[lang="ar"] .ie-more{letter-spacing:0}
 @media (max-width:420px){.ie-row{flex-direction:column;align-items:stretch}.ie-send{width:100%}}
 @media (prefers-reduced-motion:reduce){.ie-like-btn{transition:none}}
+
+.ipe-engage .ie-lang{display:inline-block;margin-inline-start:.5rem;padding:0 .35rem;border:1px solid currentColor;border-radius:3px;font-size:.68rem;line-height:1.4;letter-spacing:.04em;opacity:.6}

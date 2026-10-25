@@ -85,6 +85,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- We speak in code comments (2026-10-26): https://ipe.rest/journal/2026-10-26-we-speak-in-code-comments/ - Why ipe() writes its quietest lines as code comments: they do not run, they are not headlines, and they stay after everything else has finished.
+  - original language: en
+  - [en] We speak in code comments: https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/
+  - [ko] 우리는 코드 주석으로 말합니다: https://ipe.rest/journal/ko/2026-10-26-we-speak-in-code-comments/
+  - [ja] 私たちはコードのコメントで話します (AI translation): https://ipe.rest/journal/ja/2026-10-26-we-speak-in-code-comments/
+  - [zh] 我们用代码注释说话 (AI translation): https://ipe.rest/journal/zh/2026-10-26-we-speak-in-code-comments/
+  - [es] Hablamos en comentarios de código (AI translation): https://ipe.rest/journal/es/2026-10-26-we-speak-in-code-comments/
+  - [fr] Nous parlons en commentaires de code (AI translation): https://ipe.rest/journal/fr/2026-10-26-we-speak-in-code-comments/
+  - [de] Wir sprechen in Code-Kommentaren (AI translation): https://ipe.rest/journal/de/2026-10-26-we-speak-in-code-comments/
+  - [pt] Falamos em comentários de código (AI translation): https://ipe.rest/journal/pt/2026-10-26-we-speak-in-code-comments/
+  - [ru] Мы говорим комментариями в коде (AI translation): https://ipe.rest/journal/ru/2026-10-26-we-speak-in-code-comments/
+  - [ar] نتحدث بتعليقات الشيفرة (AI translation): https://ipe.rest/journal/ar/2026-10-26-we-speak-in-code-comments/
+  - [hi] हम कोड कमेंट्स में बोलते हैं (AI translation): https://ipe.rest/journal/hi/2026-10-26-we-speak-in-code-comments/
+  - [id] Kami berbicara lewat komentar kode (AI translation): https://ipe.rest/journal/id/2026-10-26-we-speak-in-code-comments/
 - Made with AI, and we say so (2026-10-25): https://ipe.rest/journal/2026-10-25-made-with-ai-and-we-say-so/ - How ipe() makes its music: with AI (Suno), openly. Lyrics start as an AI draft that a person revises and reviews; the concept and the final decisions are ours.
   - original language: en
   - [en] Made with AI, and we say so: https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/

@@ -25,6 +25,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 import journal_i18n as J  # noqa: E402
+import journal_sync as JS  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 SITE = J.SITE
@@ -32,7 +33,7 @@ LANGS = J.LANGS
 RTL = J.RTL
 OG_LOCALE = J.OG_LOCALE
 NATIVE = J.NATIVE
-LASTMOD = "2026-10-22"  # bump when the page content changes
+LASTMOD = "2026-10-25"  # bump when the page content changes
 
 
 def home_url(lang=None):
@@ -43,10 +44,10 @@ def esc(s):
     return html.escape(s, quote=True)
 
 
-def load():
-    src = (ROOT / "scripts" / "home_src" / "index.html").read_text(encoding="utf-8")
-    ui = {l: json.loads((ROOT / "scripts" / "home_i18n" / (l + ".json")).read_text(encoding="utf-8")) for l in LANGS}
-    jui = json.loads((ROOT / "scripts" / "journal_i18n" / "ui.json").read_text(encoding="utf-8"))
+def load(root=ROOT):
+    src = (root / "scripts" / "home_src" / "index.html").read_text(encoding="utf-8")
+    ui = {l: json.loads((root / "scripts" / "home_i18n" / (l + ".json")).read_text(encoding="utf-8")) for l in LANGS}
+    jui = json.loads((root / "scripts" / "journal_i18n" / "ui.json").read_text(encoding="utf-8"))
     for l in LANGS:  # the journal UI file already has a translated "journal" label for all 12 languages
         ui[l].setdefault("nav_journal", jui[l]["journal"])
     global jui_ai
@@ -55,6 +56,46 @@ def load():
 
 
 jui_ai = {}
+CARDS = 3  # newest journal posts shown on the main page
+
+
+def journal_posts(root=ROOT):
+    """[(post, {lang: data})] newest first — the same sources and translations the journal pages are generated from."""
+    sdir = root / "scripts" / "journal_src"
+    _ui, tr, _errs = J.load(root)
+    out = []
+    for f in sorted((f for f in sdir.glob("*.html") if JS.DIR_RE.match(f.stem)), key=lambda f: f.stem, reverse=True):
+        p, errs = JS.load_post(f, root)
+        if errs or "langdata" not in p:
+            raise SystemExit("home_sync: journal post %s is invalid — run journal_sync.py first" % f.stem)
+        data = dict(p["langdata"])
+        data.update(tr.get(p["slug"], {}))
+        out.append((p, data))
+    return out
+
+
+def journal_section(posts, lang, jui_l, d):
+    """Static 'journal' card section: the newest CARDS posts that exist in `lang`, then a link to the full list."""
+    items = [(p, data[lang]) for p, data in posts if lang in data][:CARDS]
+    cards = []
+    for p, x in items:
+        cards.append(
+            '      <li><a class="jcard" href="/journal/%s/%s/">\n'
+            '        <p class="jmeta ltr">%s<span class="jdot" aria-hidden="true">·</span><span class="jcat">%s</span></p>\n'
+            '        <h3 class="jtitle">%s</h3>\n'
+            '        <p class="jexcerpt">%s</p>\n'
+            '        <span class="jread">%s <span class="arw" aria-hidden="true">→</span></span>\n'
+            '      </a></li>' % (lang, p["slug"], J.time_tag(*J.stamp(p)), esc(p["category"]),
+                               html.escape(x["title"], quote=False), html.escape(x["excerpt"], quote=False),
+                               esc(jui_l["read"].replace("→", "").replace("←", "").strip())))
+    return ('  <section class="sec wrap" id="journal" aria-labelledby="journal-h">\n'
+            '    <div class="sec-head">\n'
+            '      <span class="sec-no ltr" aria-hidden="true">//</span>\n'
+            '      <h2 class="sec-label" id="journal-h">%s</h2>\n'
+            '    </div>\n'
+            '    <ul class="jcards">\n%s\n    </ul>\n'
+            '    <p class="jall"><a class="text-link" href="/journal/%s/"><span>%s</span> <span class="arw" aria-hidden="true">→</span></a></p>\n'
+            '  </section>\n' % (esc(jui_l["journal"]), "\n".join(cards), lang, esc(d["journal_all"]))) if cards else ""
 
 
 def cluster():
@@ -112,7 +153,7 @@ SCRIPT = """<script>
 </script>"""
 
 
-def render_lang(src, ui, lang):
+def render_lang(src, ui, lang, posts):
     d = dict(ui["en"])
     d.update(ui[lang])
     url = home_url(lang)
@@ -150,6 +191,8 @@ def render_lang(src, ui, lang):
         out = out.replace('href="/%s/"' % pg, 'href="/%s/%s/"' % (lang, pg))
     opts = "\n".join('        <option value="%s"%s>%s</option>' % (l, " selected" if l == lang else "", l.upper()) for l in LANGS)
     out = sub1(out, r'<!-- home:options -->', opts)
+    out = sub1(out, r'<!-- home:journal -->\n', journal_section(posts, lang, jui_ai[lang], d))
+    out = sub1(out, r'<!-- home:localtime -->', J.localtime_script() if "data-ipe-time" in out else "")
     out = sub1(out, r'<!-- home:script -->', SCRIPT % {"lang": lang, "langs": json.dumps(LANGS)})
     return out
 
@@ -181,7 +224,7 @@ def render_chooser(src, ui):
     title = "ipe() — quiet things for busy minds · choose your language"
     desc = en["meta_desc"]
     ga = between(src, "<!-- ===== Google Analytics", "<!-- ===== PWA")
-    sw = between(src, "<!-- ===== PWA service worker", "<!-- home:script")
+    sw = between(src, "<!-- ===== PWA service worker", "<!-- home:localtime")
     org = between(src, '<script type="application/ld+json">\n{\n  "@context": "https://schema.org",\n  "@type": "Organization"', "</script>") + "</script>"
     site_ld = json.dumps({"@context": "https://schema.org", "@type": "WebSite", "@id": home_url() + "#website", "name": "ipe()",
                           "url": home_url(), "inLanguage": LANGS, "publisher": {"@id": home_url() + "#organization"}},
@@ -334,22 +377,23 @@ def replace_between(text, start, end, block):
     return text[:i] + block + text[j:]
 
 
-def build():
-    src, ui = load()
+def build(root=ROOT):
+    src, ui = load(root)
+    posts = journal_posts(root)
     writes, errors = {}, []
     for l in LANGS:
-        writes[ROOT / l / "index.html"] = render_lang(src, ui, l)
-    writes[ROOT / "index.html"] = render_chooser(src, ui)
+        writes[root / l / "index.html"] = render_lang(src, ui, l, posts)
+    writes[root / "index.html"] = render_chooser(src, ui)
     for p, t in writes.items():
-        errors += ["%s: %s" % (p.relative_to(ROOT), e) for e in balanced(t)]
-    sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        errors += ["%s: %s" % (p.relative_to(root), e) for e in balanced(t)]
+    sm = (root / "sitemap.xml").read_text(encoding="utf-8")
     if "<!-- home:start -->" not in sm:  # first run: swap the old hand-written root <url> for the generated block
         sm = sub1(sm, r'  <url>\n    <loc>https://ipe\.rest/</loc>.*?</url>\n(?=  <!-- journal:start -->)', "  <!-- home:start -->\n  <!-- home:end -->\n", re.S)
-    writes[ROOT / "sitemap.xml"] = replace_between(sm, "  <!-- home:start -->", "<!-- home:end -->", sitemap_block())
-    lt = (ROOT / "llms.txt").read_text(encoding="utf-8")
+    writes[root / "sitemap.xml"] = replace_between(sm, "  <!-- home:start -->", "<!-- home:end -->", sitemap_block())
+    lt = (root / "llms.txt").read_text(encoding="utf-8")
     if "<!-- home:llms:start -->" not in lt:
         lt = lt.replace("## Journal\n", "## Main page\n<!-- home:llms:start -->\n<!-- home:llms:end -->\n\n## Journal\n", 1)
-    writes[ROOT / "llms.txt"] = replace_between(lt, "<!-- home:llms:start -->", "<!-- home:llms:end -->", llms_block())
+    writes[root / "llms.txt"] = replace_between(lt, "<!-- home:llms:start -->", "<!-- home:llms:end -->", llms_block())
     return writes, errors
 
 

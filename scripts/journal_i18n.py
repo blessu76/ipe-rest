@@ -220,6 +220,20 @@ def stamp(post, date=None):
     return d, d
 
 
+def time_tag(machine, label):
+    """<time> for a post stamp. With a KST time (…+09:00) it is localised on the reader's device by shared/ipe-localtime.js;
+    the static text (shown without JS) carries ' KST'. Date-only stamps stay plain."""
+    if "T" in machine:
+        return '<time datetime="%s" data-ipe-time dir="ltr">%s KST</time>' % (machine, label)
+    return '<time datetime="%s" dir="ltr">%s</time>' % (machine, label)
+
+
+def localtime_script():
+    """Inline <script> with shared/ipe-localtime.js byte for byte (no whitespace added around it; see shared/README.md)."""
+    src = (Path(__file__).resolve().parent.parent / "shared" / "ipe-localtime.js").read_bytes().decode("utf-8")
+    return "<script>" + src + "</script>"
+
+
 def render_post(post, lang, ui, data, langs):
     """Full HTML of /journal/<lang>/<slug>/ ; `post` = parsed source (journal_sync.load_post), `langs` = available languages."""
     u = ui[lang]
@@ -291,7 +305,7 @@ def render_post(post, lang, ui, data, langs):
         '<main id="main">',
         '<article class="wrap">',
         '  <header class="post-head">',
-        '    <p class="eyebrow"><i></i><span>%s · <time datetime="%s" dir="ltr">%s</time></span></p>' % ((esc(u["eyebrow"]),) + stamp(post)),
+        '    <p class="eyebrow"><i></i><span>%s · %s</span></p>' % (esc(u["eyebrow"]), time_tag(*stamp(post))),
         '    <h1>%s</h1>' % data["h1_html"],
         '  </header>',
         '',
@@ -309,6 +323,7 @@ def render_post(post, lang, ui, data, langs):
         '',
         _footer(u, lang),
         '<script src="/journal/journal.js?v=%s" defer></script>' % VER_JS,
+        localtime_script(),
         '</body>',
         '</html>',
         '',
@@ -325,12 +340,12 @@ def render_list_page(lang, ui, items, list_langs):
     for p, d in items:
         cards.append("""    <li>
       <a class="post-card" href="/journal/%s/%s/">
-        <p class="post-meta"><time datetime="%s" dir="ltr">%s</time> · %s</p>
+        <p class="post-meta">%s · %s</p>
         <h2>%s</h2>
         <p class="excerpt">%s</p>
         <span class="more">%s</span>
       </a>
-    </li>""" % (lang, p["slug"], stamp(p)[0], stamp(p)[1], esc(p["category"]),
+    </li>""" % (lang, p["slug"], time_tag(*stamp(p)), esc(p["category"]),
                 html.escape(d["title"], quote=False), html.escape(d["excerpt"], quote=False), esc(u["read"])))
     entries = []
     for p, d in items:
@@ -393,6 +408,7 @@ def render_list_page(lang, ui, items, list_langs):
         '',
         _footer(u, lang),
         '<script src="/journal/journal.js?v=%s" defer></script>' % VER_JS,
+        localtime_script(),
         '</body>',
         '</html>',
         '',

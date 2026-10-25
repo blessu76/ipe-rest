@@ -414,10 +414,30 @@ class JournalPublishTime(unittest.TestCase):
                 post = (ROOT / "journal" / lang / slug / "index.html").read_text(encoding="utf-8")
                 lst = (ROOT / "journal" / lang / "index.html").read_text(encoding="utf-8")
                 for page in (post, lst):
-                    self.assertIn('<time datetime="%s" dir="ltr">%s</time>' % (at, label), page, (lang, slug))
+                    self.assertIn('<time datetime="%s" data-ipe-time dir="ltr">%s KST</time>' % (at, label), page, (lang, slug))
                 self.assertIn('"datePublished": "%s"' % at, post)
                 self.assertIn('"datePublished": "%s"' % at, lst)
                 self.assertIn('<meta property="article:published_time" content="%s">' % at, post)
+
+    def test_localtime_script_is_inlined_verbatim_once_in_every_post_and_list(self):
+        import hashlib
+        canon = (ROOT / "shared" / "ipe-localtime.js").read_bytes()
+        want = hashlib.sha256(canon).hexdigest()
+        self.assertEqual(want, (ROOT / "shared" / "ipe-localtime.sha256").read_text().split()[0])
+        slugs = [f.stem for f in posts()]
+        n = 0
+        for lang in journal_sync.I18N.LANGS:
+            for rel in [Path("index.html")] + [Path(sl) / "index.html" for sl in slugs]:
+                page = (ROOT / "journal" / lang / rel).read_text(encoding="utf-8")
+                inline = [m for m in re.findall(r"<script>(.*?)</script>", page, re.S)]
+                self.assertEqual(len(inline), 1, (lang, str(rel)))
+                self.assertEqual(hashlib.sha256(inline[0].encode("utf-8")).hexdigest(), want, (lang, str(rel)))
+                self.assertIn("</script>\n</body>", page)
+                for dt in re.findall(r"<time datetime=\"([^\"]*)\" data-ipe-time", page):
+                    self.assertRegex(dt, r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}\+09:00$", (lang, str(rel)))
+                self.assertNotRegex(page, r"<time(?![^>]*data-ipe-time)[^>]*T\d\d:\d\d", (lang, str(rel)))
+                n += 1
+        self.assertGreaterEqual(n, 12)
 
     def test_bad_published_at_is_rejected(self):
         f = posts()[0]

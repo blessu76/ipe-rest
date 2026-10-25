@@ -33,7 +33,7 @@ LANGS = J.LANGS
 RTL = J.RTL
 OG_LOCALE = J.OG_LOCALE
 NATIVE = J.NATIVE
-LASTMOD = "2026-10-25"  # bump when the page content changes
+LASTMOD = "2026-10-22"  # fallback only: build() uses the newest journal post date (the cards change with it)
 
 
 def home_url(lang=None):
@@ -75,27 +75,33 @@ def journal_posts(root=ROOT):
 
 
 def journal_section(posts, lang, jui_l, d):
-    """Static 'journal' card section: the newest CARDS posts that exist in `lang`, then a link to the full list."""
+    """Static '03 journal' card section: the newest CARDS posts that exist in `lang`. Hidden section = no markup at all."""
+    order = {p["slug"]: i + 1 for i, (p, _d) in enumerate(reversed(posts))}  # J-nn = publication order, stable as posts are added
     items = [(p, data[lang]) for p, data in posts if lang in data][:CARDS]
+    if not items:
+        return ""
+    read = jui_l["read"]
     cards = []
     for p, x in items:
         cards.append(
-            '      <li><a class="jcard" href="/journal/%s/%s/">\n'
-            '        <p class="jmeta ltr">%s<span class="jdot" aria-hidden="true">·</span><span class="jcat">%s</span></p>\n'
-            '        <h3 class="jtitle">%s</h3>\n'
-            '        <p class="jexcerpt">%s</p>\n'
-            '        <span class="jread">%s <span class="arw" aria-hidden="true">→</span></span>\n'
-            '      </a></li>' % (lang, p["slug"], J.time_tag(*J.stamp(p)), esc(p["category"]),
-                               html.escape(x["title"], quote=False), html.escape(x["excerpt"], quote=False),
-                               esc(jui_l["read"].replace("→", "").replace("←", "").strip())))
+            '      <li class="jcard">\n'
+            '        <p class="jcard-meta"><span class="jcard-no ltr" aria-hidden="true">J-%02d</span>%s · <span class="ltr">%s</span></p>\n'
+            '        <h3><a class="jcard-link" href="/journal/%s/%s/">%s</a></h3>\n'
+            '        <p class="jcard-ex">%s</p>\n'
+            '        <span class="jcard-act" aria-hidden="true">%s</span>\n'
+            '        <span class="mk" aria-hidden="true"></span>\n'
+            '      </li>' % (order[p["slug"]], J.time_tag(*J.stamp(p)), esc(p["category"]), lang, p["slug"],
+                           html.escape(x["title"], quote=False), html.escape(x["excerpt"], quote=False), esc(read)))
     return ('  <section class="sec wrap" id="journal" aria-labelledby="journal-h">\n'
             '    <div class="sec-head">\n'
-            '      <span class="sec-no ltr" aria-hidden="true">//</span>\n'
+            '      <span class="sec-no ltr" aria-hidden="true">03</span>\n'
             '      <h2 class="sec-label" id="journal-h">%s</h2>\n'
+            '      <a class="text-link sec-cap" href="/journal/%s/"><span>%s</span> <span class="arw ltr" aria-hidden="true">→</span></a>\n'
             '    </div>\n'
+            '    <!-- journal:home:start (generated — do not hand-edit) -->\n'
             '    <ul class="jcards">\n%s\n    </ul>\n'
-            '    <p class="jall"><a class="text-link" href="/journal/%s/"><span>%s</span> <span class="arw" aria-hidden="true">→</span></a></p>\n'
-            '  </section>\n' % (esc(jui_l["journal"]), "\n".join(cards), lang, esc(d["journal_all"]))) if cards else ""
+            '    <!-- journal:home:end -->\n'
+            '  </section>\n\n' % (esc(jui_l["journal"]), lang, esc(d["journal_all"]), "\n".join(cards)))
 
 
 def cluster():
@@ -322,11 +328,11 @@ def render_chooser(src, ui):
        "langs": json.dumps(LANGS), "names": names}
 
 
-def sitemap_block():
+def sitemap_block(lastmod=LASTMOD):
     out = ["  <!-- home:start -->"]
     for lang in [None] + LANGS:
         pr = "1.0" if lang in (None, "en") else "0.9"
-        out += ["  <url>", "    <loc>%s</loc>" % home_url(lang), "    <lastmod>%s</lastmod>" % LASTMOD,
+        out += ["  <url>", "    <loc>%s</loc>" % home_url(lang), "    <lastmod>%s</lastmod>" % lastmod,
                 "    <changefreq>weekly</changefreq>", "    <priority>%s</priority>" % pr]
         out += ['    <xhtml:link rel="alternate" hreflang="%s" href="%s"/>' % (h, u) for h, u in cluster()]
         out += ["    <image:image><image:loc>%s/og-image.png</image:loc></image:image>" % SITE, "  </url>"]
@@ -389,7 +395,7 @@ def build(root=ROOT):
     sm = (root / "sitemap.xml").read_text(encoding="utf-8")
     if "<!-- home:start -->" not in sm:  # first run: swap the old hand-written root <url> for the generated block
         sm = sub1(sm, r'  <url>\n    <loc>https://ipe\.rest/</loc>.*?</url>\n(?=  <!-- journal:start -->)', "  <!-- home:start -->\n  <!-- home:end -->\n", re.S)
-    writes[root / "sitemap.xml"] = replace_between(sm, "  <!-- home:start -->", "<!-- home:end -->", sitemap_block())
+    writes[root / "sitemap.xml"] = replace_between(sm, "  <!-- home:start -->", "<!-- home:end -->", sitemap_block(max([p['published'] for p, _d in posts] + [LASTMOD])))
     lt = (root / "llms.txt").read_text(encoding="utf-8")
     if "<!-- home:llms:start -->" not in lt:
         lt = lt.replace("## Journal\n", "## Main page\n<!-- home:llms:start -->\n<!-- home:llms:end -->\n\n## Journal\n", 1)

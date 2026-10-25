@@ -110,7 +110,7 @@ class HomeJournalCards(unittest.TestCase):
     def cards(self, text):
         sec = re.search(r'<section class="sec wrap" id="journal".*?</section>', text, re.S)
         self.assertIsNotNone(sec)
-        return sec.group(0), re.findall(r'<a class="jcard" href="([^"]+)">', sec.group(0))
+        return sec.group(0), re.findall(r'<a class="jcard-link" href="([^"]+)">', sec.group(0))
 
     def test_every_language_shows_three_newest_posts_in_its_language(self):
         posts = home_sync.journal_posts()
@@ -119,6 +119,7 @@ class HomeJournalCards(unittest.TestCase):
             sec, hrefs = self.cards((ROOT / lang / "index.html").read_text(encoding="utf-8"))
             self.assertEqual(hrefs, ["/journal/%s/%s/" % (lang, s) for s in newest], lang)
             self.assertIn('href="/journal/%s/"' % lang, sec)  # "view all"
+            self.assertIn("J-0", sec)
             self.assertEqual(sec.count("data-ipe-time"), 3)
             for p, d in posts[:3]:
                 self.assertIn(d[lang]["title"].split("&")[0], sec)
@@ -130,7 +131,7 @@ class HomeJournalCards(unittest.TestCase):
 
     def test_chooser_has_no_cards_or_markers(self):
         text = (ROOT / "index.html").read_text(encoding="utf-8")
-        self.assertNotIn("jcard", text)
+        self.assertNotIn("jcard-link", text)
         self.assertNotIn("<!-- home:", text)
 
     def test_new_post_updates_the_cards(self):

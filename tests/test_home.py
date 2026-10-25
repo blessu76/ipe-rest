@@ -104,6 +104,56 @@ class HomePages(unittest.TestCase):
                 continue
             self.assertIn(ref.split("?")[0], page("en") + page(None))
 
+class HomeJournalCards(unittest.TestCase):
+    """The main page of every language carries a static card section with the newest journal posts of that language."""
+
+    def cards(self, text):
+        sec = re.search(r'<section class="sec wrap" id="journal".*?</section>', text, re.S)
+        self.assertIsNotNone(sec)
+        return sec.group(0), re.findall(r'<a class="jcard" href="([^"]+)">', sec.group(0))
+
+    def test_every_language_shows_three_newest_posts_in_its_language(self):
+        posts = home_sync.journal_posts()
+        newest = [p["slug"] for p, _d in posts][:3]
+        for lang in LANGS:
+            sec, hrefs = self.cards((ROOT / lang / "index.html").read_text(encoding="utf-8"))
+            self.assertEqual(hrefs, ["/journal/%s/%s/" % (lang, s) for s in newest], lang)
+            self.assertIn('href="/journal/%s/"' % lang, sec)  # "view all"
+            self.assertEqual(sec.count("data-ipe-time"), 3)
+            for p, d in posts[:3]:
+                self.assertIn(d[lang]["title"].split("&")[0], sec)
+
+    def test_localtime_script_inlined_byte_for_byte(self):
+        src = (ROOT / "shared" / "ipe-localtime.js").read_bytes().decode("utf-8")
+        for lang in LANGS:
+            self.assertIn("<script>" + src + "</script>", (ROOT / lang / "index.html").read_text(encoding="utf-8"))
+
+    def test_chooser_has_no_cards_or_markers(self):
+        text = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertNotIn("jcard", text)
+        self.assertNotIn("<!-- home:", text)
+
+    def test_new_post_updates_the_cards(self):
+        import shutil
+        import tempfile
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            for name in ("scripts", "journal", "shared", "sitemap.xml", "llms.txt", "og-image.png", "icon-512.png"):
+                src = ROOT / name
+                (shutil.copytree if src.is_dir() else shutil.copy)(src, root / name)
+            old = sorted((root / "scripts" / "journal_src").glob("*.html"))[0]
+            new = root / "scripts" / "journal_src" / "2026-10-28-fourth-post.html"
+            new.write_text(old.read_text(encoding="utf-8").replace(old.stem, new.stem).replace("2026-10-20", "2026-10-28"), encoding="utf-8")
+            writes, errors = home_sync.build(root)
+            self.assertEqual(errors, [])
+            for lang in ("en", "ko"):  # no translation JSON yet -> en/ko only; other languages keep their own newest three
+                _sec, hrefs = self.cards(writes[root / lang / "index.html"])
+                self.assertEqual(hrefs[0], "/journal/%s/2026-10-28-fourth-post/" % lang)
+                self.assertEqual(len(hrefs), 3)
+            _sec, hrefs = self.cards(writes[root / "ja" / "index.html"])
+            self.assertNotIn("fourth-post", "".join(hrefs))
+
+
 
 if __name__ == "__main__":
     unittest.main()

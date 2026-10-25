@@ -10,7 +10,7 @@
    `image.url/width/height` + `og:image`/`twitter:image`.
 5. `python3 scripts/journal_sync.py` — validates the source (canonical, `<article>`, 2×h1, JSON-LD, images, placeholders) and
    regenerates every `journal/**/index.html`, `sitemap.xml` and `llms.txt` (see below).
-5b. `python3 scripts/home_sync.py` — **main-page journal cards**: the newest 3 posts (per language) on `/<lang>/` are generated from the same sources; run it after every journal_sync (the test `test_generated_files_in_sync` fails if the cards are stale). A post is on the main page as soon as its page is.
+5b. `python3 scripts/home_sync.py` — **main-page journal cards**: the newest 3 posts (per language) (section `03 journal`) on `/<lang>/` are generated from the same sources; run it after every journal_sync (the test `test_generated_files_in_sync` fails if the cards are stale). A post is on the main page as soon as its page is.
 6. `python3 -m unittest discover tests` must be green.
 7. Bump `CACHE` in `sw.js` (and `?v=` if css/js changed); check 375 px / 320 px.
 8. Edited a post later? set `dateModified` in the source JSON-LD, then rerun step 5 (sitemap `lastmod` follows).

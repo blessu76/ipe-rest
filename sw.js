@@ -1,5 +1,5 @@
 // ipe() service worker — installable PWA + offline fallback
-const CACHE = 'ipe-v39';
+const CACHE = 'ipe-v40';
 const CORE = [
   '/', '/index.html',
   '/manifest.webmanifest?v=23',
@@ -33,8 +33,9 @@ self.addEventListener('fetch', (e) => {
 
   if (isHTML) {
     // network-first: 항상 최신 페이지, 오프라인이면 캐시
+    // cache:'no-cache' — 브라우저 HTTP 캐시(Pages max-age=600)를 거치지 않고 서버에 재검증(변경 없으면 304)
     e.respondWith(
-      fetch(req).then((res) => {
+      fetch(req, { cache: 'no-cache' }).then((res) => {
         const copy = res.clone();
         caches.open(CACHE).then((c) => c.put(req, copy));
         return res;

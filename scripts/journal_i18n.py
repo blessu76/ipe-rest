@@ -363,8 +363,29 @@ def _post_card(href, p, d, u):
                 html.escape(d["title"], quote=False), html.escape(d["excerpt"], quote=False), esc(u["read"]))
 
 
-CHOOSE_TITLE = " · choose your language"
-CHOOSE_DESC = "Choose your language: "
+# x-default (language chooser) pages share their text with the /en/ twin: marker in <title>, tail on <meta description>
+ALL_LANGS_TITLE = " (all languages)"
+ALL_LANGS_DESC = " Available in %d languages."
+CHOOSER_LASTMOD = "2026-10-26"  # day the chooser metadata changed (sitemap lastmod floor for x-default URLs)
+DESC_MAX = 160
+
+
+def chooser_title(title):
+    return title + ALL_LANGS_TITLE
+
+
+def chooser_desc(desc, n):
+    """Description + 'Available in n languages.' within DESC_MAX; the original text is cut at a sentence/word end if needed."""
+    tail = ALL_LANGS_DESC % n
+    room = DESC_MAX - len(tail)
+    if len(desc) > room:
+        cut = desc[:room - 1]
+        end = max(cut.rfind(". ") + 1, cut.rfind(".) ") + 2)
+        if end >= 60:
+            desc = cut[:end]
+        else:
+            desc = cut[:cut.rfind(" ")].rstrip(",;:—- ") + "…"
+    return desc + tail
 
 
 def render_list_page(lang, ui, items, list_langs):
@@ -444,23 +465,25 @@ def render_list_page(lang, ui, items, list_langs):
     return "\n".join(parts)
 
 
-def _chooser_head(title, desc, canon, cluster, og_type, og_locale, ld_objs):
-    # x-default chooser shares its text with the /en/ page; keep title/description distinct (duplicate-metadata SEO finding)
-    title, desc = title + CHOOSE_TITLE, CHOOSE_DESC + desc
+def _chooser_head(title, desc, canon, cluster, og_type, og_locale, ld_objs, og_title=None):
+    # <title>/<meta description> carry the x-default marker (distinct from /en/); og/twitter keep the plain title and description
+    og_title = og_title or title
+    meta_title = chooser_title(title)
+    meta_desc = chooser_desc(desc, len([h for h, _ in cluster if h != "x-default"]))
     return [
         '<!DOCTYPE html>', '<html lang="%s" dir="ltr" data-chooser>' % og_locale[:2], '<head>',
-        _common_head("en", title, desc, canon),
+        _common_head("en", meta_title, meta_desc, canon),
         "\n".join('<link rel="alternate" hreflang="%s" href="%s">' % (h, esc(u)) for h, u in cluster),
         _assets_head(), '',
         '<meta property="og:type" content="%s">' % og_type,
         '<meta property="og:site_name" content="ipe()">',
-        '<meta property="og:title" content="%s">' % esc(title),
+        '<meta property="og:title" content="%s">' % esc(og_title),
         '<meta property="og:description" content="%s">' % esc(desc),
         '<meta property="og:url" content="%s">' % canon,
         '<meta property="og:locale" content="%s">' % og_locale,
         '<meta property="og:image" content="%s/og-image.png">' % SITE,
         '<meta name="twitter:card" content="summary_large_image">',
-        '<meta name="twitter:title" content="%s">' % esc(title),
+        '<meta name="twitter:title" content="%s">' % esc(og_title),
         '<meta name="twitter:description" content="%s">' % esc(desc),
         '<meta name="twitter:image" content="%s/og-image.png">' % SITE, '',
     ] + [ld_script(o) for o in ld_objs] + ['<link rel="stylesheet" href="/journal/journal.css?v=%s">' % VER_CSS, '</head>']
@@ -512,7 +535,7 @@ def render_chooser_post(post, ui, tr_all, langs):
     crumbs = crumb_ld([("ipe()", SITE + "/"), (ui[orig]["crumb_journal"], list_url()), (od["title"], None)])
     rows = [(l, post_url(slug, l), tr_all[l]["title"]) for l in LANGS if l in langs]
     head = _chooser_head(od["title"] + ui[orig]["title_suffix"], od["description"], url, post_cluster(slug, langs), "article",
-                         OG_LOCALE[orig], [page, article, crumbs])
+                         OG_LOCALE[orig], [page, article, crumbs], og_title=od["title"])
     body = _chooser_body(od["h1_html"], "ipe() journal — " + ", ".join(NATIVE[l] for l in LANGS if l in langs), rows, ui[orig], orig, post_cluster(slug, langs))
     return "\n".join(head) + "\n" + body
 

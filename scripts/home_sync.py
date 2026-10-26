@@ -228,8 +228,9 @@ footer a{color:inherit}
 
 def render_chooser(src, ui):
     en = ui["en"]
-    title = "ipe() — quiet things for busy minds · choose your language"
-    desc = "Choose your language: " + en["meta_desc"]
+    title_plain = "ipe() — quiet things for busy minds"
+    title = J.chooser_title(title_plain)
+    desc = J.chooser_desc(en["meta_desc"], len(LANGS))
     ga = between(src, "<!-- ===== Google Analytics", "<!-- ===== PWA")
     sw = between(src, "<!-- ===== PWA service worker", "<!-- home:localtime")
     org = between(src, '<script type="application/ld+json">\n{\n  "@context": "https://schema.org",\n  "@type": "Organization"', "</script>") + "</script>"
@@ -257,15 +258,15 @@ def render_chooser(src, ui):
 %(hreflang)s
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ipe()">
-<meta property="og:title" content="%(title)s">
-<meta property="og:description" content="%(desc)s">
+<meta property="og:title" content="%(og_title)s">
+<meta property="og:description" content="%(og_desc)s">
 <meta property="og:url" content="%(root)s">
 <meta property="og:image" content="%(site)s/og-image.png">
 <meta property="og:locale" content="en_US">
 %(alts)s
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="%(title)s">
-<meta name="twitter:description" content="%(desc)s">
+<meta name="twitter:title" content="%(og_title)s">
+<meta name="twitter:description" content="%(og_desc)s">
 <meta name="twitter:image" content="%(site)s/og-image.png">
 %(org)s
 <script type="application/ld+json">
@@ -324,7 +325,7 @@ def render_chooser(src, ui):
 </script>
 </body>
 </html>
-""" % {"title": esc(title), "desc": esc(desc), "root": home_url(), "site": SITE, "hreflang": hreflang_block(), "alts": alts,
+""" % {"title": esc(title), "desc": esc(desc), "og_title": esc(title_plain), "og_desc": esc(en["meta_desc"]), "root": home_url(), "site": SITE, "hreflang": hreflang_block(), "alts": alts,
        "org": org, "site_ld": site_ld, "css": CHOOSER_CSS, "items": items, "ga": ga.strip(), "sw": sw.strip(),
        "langs": json.dumps(LANGS), "names": names}
 

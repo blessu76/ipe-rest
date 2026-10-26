@@ -227,6 +227,8 @@ def render_sitemap(posts, tr):
             img = "\n    <image:image><image:loc>%s</image:loc></image:image>" % html.escape(p["image"]["url"])
         for h, loc in I18N.post_cluster(p["slug"], langs):
             lm = (tr[p["slug"]].get(h, {}).get("dateModified") if h != "x-default" else None) or p["modified"]
+            if h == "x-default":  # chooser metadata changed on CHOOSER_LASTMOD
+                lm = max(lm, I18N.CHOOSER_LASTMOD)
             out.append(f"""  <url>
     <loc>{loc}</loc>
     <lastmod>{lm}</lastmod>

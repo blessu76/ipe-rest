@@ -100,30 +100,77 @@ class RootLangPicker(unittest.TestCase):
 
 
 class XDefaultSeo(unittest.TestCase):
-    """x-default (root) pages must not share title/description with their /en/ twin, and root /journal/ must link every x-default post."""
+    """x-default (root) pages must not share title/description with their /en/ twin; language pages stay untouched."""
 
-    def meta(self, path):
+    MARK = "(all languages)"
+    ROOTS = ["index.html", "about/index.html", "contact/index.html", "privacy/index.html", "journal/index.html"]
+
+    def meta(self, path, prop=None):
         h = (ROOT / path).read_text(encoding="utf-8")
+        if prop:
+            return re.search(r'<meta (?:property|name)="%s" content="(.*?)"' % re.escape(prop), h).group(1)
         return (re.search(r"<title>(.*?)</title>", h).group(1),
                 re.search(r'<meta name="description" content="(.*?)"', h).group(1))
+
+    def x_default_posts(self):
+        return sorted(p.parent.name for p in (ROOT / "journal").glob("2026-*/index.html"))
+
+    def roots(self):
+        return self.ROOTS + ["journal/%s/index.html" % s for s in self.x_default_posts()]
 
     def test_root_differs_from_en(self):
         pairs = [("index.html", "en/index.html")] + [
             (p + "/index.html", "en/" + p + "/index.html") for p in ("about", "contact", "privacy")
-        ] + [("journal/index.html", "journal/en/index.html")]
+        ] + [("journal/index.html", "journal/en/index.html")] + [
+            ("journal/%s/index.html" % s, "journal/en/%s/index.html" % s) for s in self.x_default_posts()]
+        self.assertGreaterEqual(len(pairs), 10)
         for root, en in pairs:
             (rt, rd), (et, ed) = self.meta(root), self.meta(en)
             self.assertNotEqual(rt, et, root)
             self.assertNotEqual(rd, ed, root)
-            self.assertIn("choose your language", rt, root)
+            self.assertTrue(rt.endswith(self.MARK), root)
 
-    def test_x_default_posts_distinct_and_linked(self):
-        slugs = sorted(p.parent.name for p in (ROOT / "journal").glob("2026-*/index.html"))
-        self.assertGreaterEqual(len(slugs), 5)
+    def test_marker_title_short_desc_one_colon(self):
+        for f in self.roots():
+            t, d = self.meta(f)
+            self.assertLessEqual(len(t), 80, f)
+            self.assertLessEqual(len(d), 160, f)
+            self.assertTrue(d.endswith("Available in 12 languages."), f)
+            self.assertNotIn("Choose your language", d, f)
+            for prop in ("og:title", "twitter:title"):  # share previews: plain title, no marker
+                self.assertNotIn("all languages", self.meta(f, prop), (f, prop))
+            self.assertNotIn(" Available in", self.meta(f, "og:description"), f)
+
+    def test_language_pages_unchanged(self):
+        """Regression: none of the 12 language pages (home, info pages, journal list/posts) carries the x-default marker."""
+        n = 0
+        for f in sorted(ROOT.glob("*/index.html")) + sorted(ROOT.glob("*/*/index.html")) + sorted(ROOT.glob("journal/*/*/index.html")):
+            rel = f.relative_to(ROOT).as_posix()
+            if rel.split("/")[0] in ("scripts", "tests", "fonts", ".git") or rel in self.roots():
+                continue
+            h = f.read_text(encoding="utf-8")
+            t = re.search(r"<title>(.*?)</title>", h)
+            if not t:
+                continue
+            n += 1
+            self.assertNotIn(self.MARK, t.group(1), rel)
+            self.assertNotIn("choose your language", t.group(1), rel)
+            self.assertNotIn("Available in 12 languages.", h, rel)
+        self.assertGreater(n, 100)
+
+    def test_root_cards_match_x_default_posts_exactly(self):
         root = (ROOT / "journal" / "index.html").read_text(encoding="utf-8")
-        for slug in slugs:
-            self.assertIn('class="post-card" href="/journal/%s/"' % slug, root)
-            self.assertNotEqual(self.meta("journal/%s/index.html" % slug), self.meta("journal/en/%s/index.html" % slug), slug)
+        cards = re.findall(r'class="post-card" href="(/journal/[^"]+)"', root)
+        self.assertEqual(sorted(cards), sorted("/journal/%s/" % s for s in self.x_default_posts()))
+        self.assertEqual(len(cards), len(set(cards)))
+
+    def test_sitemap_lastmod_for_changed_roots(self):
+        sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        for f in self.roots():
+            loc = "https://ipe.rest/" + f.replace("index.html", "")
+            m = re.search(r"<loc>%s</loc>\s*<lastmod>([^<]+)</lastmod>" % re.escape(loc), sm)
+            self.assertIsNotNone(m, loc)
+            self.assertGreaterEqual(m.group(1), "2026-10-26", loc)
 
 
 if __name__ == "__main__":

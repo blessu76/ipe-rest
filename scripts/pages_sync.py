@@ -158,7 +158,7 @@ def sitemap_block(data):
     out = ["  <!-- pages:start -->"]
     for p in PAGES:
         for lang in [None] + langs_of(data, p):
-            out += ["  <url>", "    <loc>%s</loc>" % page_url(p, lang), "    <lastmod>%s</lastmod>" % LASTMOD,
+            out += ["  <url>", "    <loc>%s</loc>" % page_url(p, lang), "    <lastmod>%s</lastmod>" % (LASTMOD if lang else J.CHOOSER_LASTMOD),
                     "    <changefreq>yearly</changefreq>", "    <priority>%s</priority>" % ("0.5" if lang in (None, "en") else "0.4")]
             out += ['    <xhtml:link rel="alternate" hreflang="%s" href="%s"/>' % (h, x) for h, x in cluster(data, p)]
             out += ["    <image:image><image:loc>%s/og-image.png</image:loc></image:image>" % SITE, "  </url>"]

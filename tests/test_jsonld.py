@@ -88,5 +88,40 @@ class JsonLdGraph(unittest.TestCase):
                         self.assertTrue(n.get("@id", "").endswith("#website"), "%s: %s" % (rel, n))
 
 
+class JournalLd(unittest.TestCase):
+    """Journal: every article/list/chooser page carries its BlogPosting (articles) and a BreadcrumbList."""
+
+    @classmethod
+    def setUpClass(cls):
+        cls.pages = {rel.parts[:-1]: [n for raw in LD.findall(h) for n in nodes(json.loads(raw))]
+                     for rel, h in pages() if rel.parts[0] == "journal"}
+
+    def test_every_page_has_breadcrumb_ending_at_itself(self):
+        self.assertGreater(len(self.pages), 60)
+        for key, ns in self.pages.items():
+            crumbs = [n for n in ns if n.get("@type") == "BreadcrumbList"]
+            self.assertEqual(len(crumbs), 1, key)
+            items = crumbs[0]["itemListElement"]
+            self.assertEqual([i["position"] for i in items], list(range(1, len(items) + 1)), key)
+            self.assertEqual(items[0]["item"], SITE + "/", key)
+            self.assertEqual(len(items), 3 if key[-1].startswith("2026-") else 2, key)
+            self.assertNotIn("item", items[-1], key)
+            if len(items) == 3:
+                self.assertTrue(items[1]["item"].startswith(SITE + "/journal/"), key)
+
+    def test_every_article_page_has_blogposting_in_page(self):
+        posts = [k for k in self.pages if k[-1].startswith("2026-")]
+        self.assertGreaterEqual(len(posts), 65)
+        for key in posts:
+            bp = [n for n in self.pages[key] if n.get("@type") == "BlogPosting" and "headline" in n and n.get("@id", "").endswith("#article")]
+            self.assertEqual(len(bp), 1, key)
+            for f in ("headline", "description", "datePublished", "dateModified", "inLanguage", "url", "author", "publisher", "image"):
+                self.assertIn(f, bp[0], (key, f))
+            if len(key) == 2:  # x-default chooser: mainEntity must resolve to the node on this page
+                web = [n for n in self.pages[key] if n.get("@type") == "WebPage" and "mainEntity" in n][0]
+                self.assertEqual(web["mainEntity"]["@id"], bp[0]["@id"], key)
+                self.assertEqual(bp[0]["inLanguage"], "en", key)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -234,15 +234,24 @@ def localtime_script():
     return "<script>" + src + "</script>"
 
 
-def render_post(post, lang, ui, data, langs):
-    """Full HTML of /journal/<lang>/<slug>/ ; `post` = parsed source (journal_sync.load_post), `langs` = available languages."""
+def crumb_ld(trail):
+    """BreadcrumbList; the last crumb is the current page (no `item`)."""
+    out = []
+    for i, (name, item) in enumerate(trail):
+        e = {"@type": "ListItem", "position": i + 1, "name": name}
+        if item:
+            e["item"] = item
+        out.append(e)
+    return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": out}
+
+
+def article_ld(post, lang, ui, data, langs):
+    """BlogPosting node of /journal/<lang>/<slug>/ (also embedded in the x-default chooser page)."""
     u = ui[lang]
     slug = post["slug"]
     url = post_url(slug, lang)
     orig = post["original"]
     orig_url = post_url(slug, orig)
-    img = post["image"]
-    cluster = post_cluster(slug, langs)
     modified = stamp(post, data.get("dateModified") or post["modified"])[0]
     ld = dict(post["ld"])
     ld.pop("alternativeHeadline", None)
@@ -263,10 +272,21 @@ def render_post(post, lang, ui, data, langs):
         ld["translationOfWork"] = {"@type": "BlogPosting", "@id": orig_url + "#article", "url": orig_url, "inLanguage": orig}
     if data.get("keywords"):
         ld["keywords"] = data["keywords"]
-    crumbs = {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
-        {"@type": "ListItem", "position": 1, "name": "ipe()", "item": SITE + "/"},
-        {"@type": "ListItem", "position": 2, "name": u["crumb_journal"], "item": list_url(lang)},
-        {"@type": "ListItem", "position": 3, "name": data["title"]}]}
+    return ld
+
+
+def render_post(post, lang, ui, data, langs):
+    """Full HTML of /journal/<lang>/<slug>/ ; `post` = parsed source (journal_sync.load_post), `langs` = available languages."""
+    u = ui[lang]
+    slug = post["slug"]
+    url = post_url(slug, lang)
+    orig = post["original"]
+    orig_url = post_url(slug, orig)
+    img = post["image"]
+    cluster = post_cluster(slug, langs)
+    modified = stamp(post, data.get("dateModified") or post["modified"])[0]
+    ld = article_ld(post, lang, ui, data, langs)
+    crumbs = crumb_ld([("ipe()", SITE + "/"), (u["crumb_journal"], list_url(lang)), (data["title"], None)])
     img_url = esc(img.get("url", ""))
     tw = esc(data["title"])
     page_title = data["title"] + u["title_suffix"]
@@ -367,6 +387,7 @@ def render_list_page(lang, ui, items, list_langs):
                              for i, (p, d) in enumerate(items)]},
     ]
     ldoc = {"@context": "https://schema.org", "@graph": graph}
+    crumbs = crumb_ld([("ipe()", SITE + "/"), (u["crumb_journal"], None)])
     og = esc(u["list_og_title"])
     parts = [
         '<!DOCTYPE html>',
@@ -388,6 +409,7 @@ def render_list_page(lang, ui, items, list_langs):
         '<meta name="twitter:image" content="%s/og-image.png">' % SITE,
         '',
         ld_script(ldoc),
+        ld_script(crumbs),
         '<link rel="stylesheet" href="/journal/journal.css?v=%s">' % VER_CSS,
         '</head>',
         '<body>',
@@ -478,9 +500,11 @@ def render_chooser_post(post, ui, tr_all, langs):
             "description": od["description"], "inLanguage": orig,
             "isPartOf": {"@type": "Blog", "@id": SITE + "/journal/#blog"},
             "mainEntity": {"@type": "BlogPosting", "@id": post_url(slug, orig) + "#article"}}
+    article = article_ld(post, orig, ui, od, langs)  # the version this page shows, so mainEntity resolves in-page
+    crumbs = crumb_ld([("ipe()", SITE + "/"), (ui[orig]["crumb_journal"], list_url()), (od["title"], None)])
     rows = [(l, post_url(slug, l), tr_all[l]["title"]) for l in LANGS if l in langs]
     head = _chooser_head(od["title"] + ui[orig]["title_suffix"], od["description"], url, post_cluster(slug, langs), "article",
-                         OG_LOCALE[orig], [page])
+                         OG_LOCALE[orig], [page, article, crumbs])
     body = _chooser_body(od["h1_html"], "ipe() journal — " + ", ".join(NATIVE[l] for l in LANGS if l in langs), rows, ui[orig], orig, post_cluster(slug, langs))
     return "\n".join(head) + "\n" + body
 
@@ -493,7 +517,8 @@ def render_chooser_list(ui, posts_tr, list_langs, orig_lang="en"):
             "name": u["list_og_title"], "description": u["list_desc"], "inLanguage": orig_lang,
             "isPartOf": {"@type": "WebSite", "@id": SITE + "/#website"},
             "mainEntity": {"@type": "Blog", "@id": "%s/journal/%s/#blog" % (SITE, orig_lang)}}
+    crumbs = crumb_ld([("ipe()", SITE + "/"), (u["crumb_journal"], None)])
     rows = [(l, list_url(l), ui[l]["blog_name"]) for l in LANGS if l in list_langs]
-    head = _chooser_head(u["list_title"], u["list_desc"], url, list_cluster(list_langs), "website", OG_LOCALE[orig_lang], [page])
+    head = _chooser_head(u["list_title"], u["list_desc"], url, list_cluster(list_langs), "website", OG_LOCALE[orig_lang], [page, crumbs])
     body = _chooser_body(u["list_h1"], u["list_lede"], rows, u, orig_lang, list_cluster(list_langs))
     return "\n".join(head) + "\n" + body

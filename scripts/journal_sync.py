@@ -314,7 +314,7 @@ def build(root=ROOT):
         if l in list_langs:
             items = [(p, allp[p["slug"]][l]) for p in posts if l in allp[p["slug"]]]
             writes[jdir / l / "index.html"] = I18N.render_list_page(l, ui, items, list_langs)
-    writes[jdir / "index.html"] = I18N.render_chooser_list(ui, allp, list_langs)
+    writes[jdir / "index.html"] = I18N.render_chooser_list(ui, allp, list_langs, posts=posts)
 
     # orphans: generated pages whose source is gone (posts removed or language dropped)
     for l in I18N.LANGS:

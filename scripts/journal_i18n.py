@@ -19,7 +19,7 @@ from pathlib import Path
 
 SITE = "https://ipe.rest"
 ORG_ID = SITE + "/#organization"
-VER_CSS = "8"
+VER_CSS = "9"
 VER_JS = "7"
 ASSET_VER = "23"
 
@@ -351,22 +351,28 @@ def render_post(post, lang, ui, data, langs):
     return "\n".join(parts)
 
 
-def render_list_page(lang, ui, items, list_langs):
-    """/journal/<lang>/ . items = [(post, data)] newest first."""
-    u = ui[lang]
-    url = list_url(lang)
-    cluster = list_cluster(list_langs)
-    cards = []
-    for p, d in items:
-        cards.append("""    <li>
-      <a class="post-card" href="/journal/%s/%s/">
+def _post_card(href, p, d, u):
+    return """    <li>
+      <a class="post-card" href="%s">
         <p class="post-meta">%s · %s</p>
         <h2>%s</h2>
         <p class="excerpt">%s</p>
         <span class="more">%s</span>
       </a>
-    </li>""" % (lang, p["slug"], time_tag(*stamp(p)), esc(p["category"]),
-                html.escape(d["title"], quote=False), html.escape(d["excerpt"], quote=False), esc(u["read"])))
+    </li>""" % (href, time_tag(*stamp(p)), esc(p["category"]),
+                html.escape(d["title"], quote=False), html.escape(d["excerpt"], quote=False), esc(u["read"]))
+
+
+CHOOSE_TITLE = " · choose your language"
+CHOOSE_DESC = "Choose your language: "
+
+
+def render_list_page(lang, ui, items, list_langs):
+    """/journal/<lang>/ . items = [(post, data)] newest first."""
+    u = ui[lang]
+    url = list_url(lang)
+    cluster = list_cluster(list_langs)
+    cards = [_post_card("/journal/%s/%s/" % (lang, p["slug"]), p, d, u) for p, d in items]
     entries = []
     for p, d in items:
         e = {"@type": "BlogPosting", "@id": post_url(p["slug"], lang) + "#article", "headline": d["title"],
@@ -439,6 +445,8 @@ def render_list_page(lang, ui, items, list_langs):
 
 
 def _chooser_head(title, desc, canon, cluster, og_type, og_locale, ld_objs):
+    # x-default chooser shares its text with the /en/ page; keep title/description distinct (duplicate-metadata SEO finding)
+    title, desc = title + CHOOSE_TITLE, CHOOSE_DESC + desc
     return [
         '<!DOCTYPE html>', '<html lang="%s" dir="ltr" data-chooser>' % og_locale[:2], '<head>',
         _common_head("en", title, desc, canon),
@@ -458,7 +466,7 @@ def _chooser_head(title, desc, canon, cluster, og_type, og_locale, ld_objs):
     ] + [ld_script(o) for o in ld_objs] + ['<link rel="stylesheet" href="/journal/journal.css?v=%s">' % VER_CSS, '</head>']
 
 
-def _chooser_body(heading, lede, rows, ui_orig, lang, cluster):
+def _chooser_body(heading, lede, rows, ui_orig, lang, cluster, after=""):
     u = ui_orig
     items = "\n".join('    <li><a class="lg" lang="%s" hreflang="%s" href="%s"><span class="lg-name">%s</span>'
                       '<span class="lg-title">%s</span></a></li>' % (l, l, esc(href.replace(SITE, "")), NATIVE[l], html.escape(t, quote=False))
@@ -480,13 +488,13 @@ def _chooser_body(heading, lede, rows, ui_orig, lang, cluster):
   <ul class="choose-list" aria-label="Languages">
 %s
   </ul>
-</main>
+%s</main>
 
 %s
 <script src="/journal/journal.js?v=%s" defer></script>
 </body>
 </html>
-""" % (esc(u["skip"]), esc(u["home_aria"]), esc(u["home"]), langselect(cluster, None, u["langs_label"]), esc(u["eyebrow"]), heading, esc(lede), items,
+""" % (esc(u["skip"]), esc(u["home_aria"]), esc(u["home"]), langselect(cluster, None, u["langs_label"]), esc(u["eyebrow"]), heading, esc(lede), items, after,
        _footer(u, lang), VER_JS)
 
 
@@ -509,7 +517,7 @@ def render_chooser_post(post, ui, tr_all, langs):
     return "\n".join(head) + "\n" + body
 
 
-def render_chooser_list(ui, posts_tr, list_langs, orig_lang="en"):
+def render_chooser_list(ui, posts_tr, list_langs, orig_lang="en", posts=()):
     """/journal/ — x-default list page: language chooser."""
     url = list_url()
     u = ui[orig_lang]
@@ -520,5 +528,9 @@ def render_chooser_list(ui, posts_tr, list_langs, orig_lang="en"):
     crumbs = crumb_ld([("ipe()", SITE + "/"), (u["crumb_journal"], None)])
     rows = [(l, list_url(l), ui[l]["blog_name"]) for l in LANGS if l in list_langs]
     head = _chooser_head(u["list_title"], u["list_desc"], url, list_cluster(list_langs), "website", OG_LOCALE[orig_lang], [page, crumbs])
-    body = _chooser_body(u["list_h1"], u["list_lede"], rows, u, orig_lang, list_cluster(list_langs))
+    after = ""
+    if posts:  # plain HTML links to every x-default article page (they are otherwise only reachable via sitemap/hreflang)
+        cards = "\n".join(_post_card("/journal/%s/" % p["slug"], p, posts_tr[p["slug"]][orig_lang], u) for p in posts)
+        after = '  <h2 class="eyebrow all-posts"><i></i><span>%s</span></h2>\n  <ul class="post-list">\n%s\n  </ul>\n' % (esc(u["all_posts"]), cards)
+    body = _chooser_body(u["list_h1"], u["list_lede"], rows, u, orig_lang, list_cluster(list_langs), after)
     return "\n".join(head) + "\n" + body

@@ -99,5 +99,32 @@ class RootLangPicker(unittest.TestCase):
         self.assertNotIn("outline:0", css)
 
 
+class XDefaultSeo(unittest.TestCase):
+    """x-default (root) pages must not share title/description with their /en/ twin, and root /journal/ must link every x-default post."""
+
+    def meta(self, path):
+        h = (ROOT / path).read_text(encoding="utf-8")
+        return (re.search(r"<title>(.*?)</title>", h).group(1),
+                re.search(r'<meta name="description" content="(.*?)"', h).group(1))
+
+    def test_root_differs_from_en(self):
+        pairs = [("index.html", "en/index.html")] + [
+            (p + "/index.html", "en/" + p + "/index.html") for p in ("about", "contact", "privacy")
+        ] + [("journal/index.html", "journal/en/index.html")]
+        for root, en in pairs:
+            (rt, rd), (et, ed) = self.meta(root), self.meta(en)
+            self.assertNotEqual(rt, et, root)
+            self.assertNotEqual(rd, ed, root)
+            self.assertIn("choose your language", rt, root)
+
+    def test_x_default_posts_distinct_and_linked(self):
+        slugs = sorted(p.parent.name for p in (ROOT / "journal").glob("2026-*/index.html"))
+        self.assertGreaterEqual(len(slugs), 5)
+        root = (ROOT / "journal" / "index.html").read_text(encoding="utf-8")
+        for slug in slugs:
+            self.assertIn('class="post-card" href="/journal/%s/"' % slug, root)
+            self.assertNotEqual(self.meta("journal/%s/index.html" % slug), self.meta("journal/en/%s/index.html" % slug), slug)
+
+
 if __name__ == "__main__":
     unittest.main()

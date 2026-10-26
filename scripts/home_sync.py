@@ -229,7 +229,7 @@ footer a{color:inherit}
 def render_chooser(src, ui):
     en = ui["en"]
     title = "ipe() — quiet things for busy minds · choose your language"
-    desc = en["meta_desc"]
+    desc = "Choose your language: " + en["meta_desc"]
     ga = between(src, "<!-- ===== Google Analytics", "<!-- ===== PWA")
     sw = between(src, "<!-- ===== PWA service worker", "<!-- home:localtime")
     org = between(src, '<script type="application/ld+json">\n{\n  "@context": "https://schema.org",\n  "@type": "Organization"', "</script>") + "</script>"

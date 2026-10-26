@@ -90,5 +90,14 @@ class InfoPages(unittest.TestCase):
                     self.assertNotIn('href="/%s/"' % p, src, f)
 
 
+class RootLangPicker(unittest.TestCase):
+    def test_focus_visible_has_outline(self):
+        css = (ROOT / "index.html").read_text(encoding="utf-8")
+        self.assertRegex(
+            css, r"\.lg:focus-visible\{outline:2px solid var\(--cobalt\);outline-offset:2px\}"
+        )
+        self.assertNotIn("outline:0", css)
+
+
 if __name__ == "__main__":
     unittest.main()

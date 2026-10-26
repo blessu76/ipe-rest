@@ -217,7 +217,8 @@ p.lede{color:var(--muted);margin:0 0 28px}
 #suggest a{color:inherit;font-weight:600}
 ul{list-style:none;margin:0 0 48px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
 .lg{display:flex;flex-direction:column;justify-content:center;min-height:56px;padding:10px 16px;border:1px solid var(--line);color:var(--ink);text-decoration:none}
-.lg:hover,.lg:focus-visible{border-color:var(--cobalt);outline:0}
+.lg:hover,.lg:focus-visible{border-color:var(--cobalt)}
+.lg:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}
 .lg-name{font-weight:600}.lg-sub{font:12px "JetBrains Mono",ui-monospace,monospace;color:var(--muted)}
 footer{padding:24px 0 40px;border-top:1px solid var(--line);color:var(--muted);font:12px "JetBrains Mono",ui-monospace,monospace}
 footer a{color:inherit}

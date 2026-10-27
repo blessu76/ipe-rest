@@ -8,6 +8,7 @@ This script READS them and WRITES (see journal_i18n.py for the URL rules):
     journal/<lang>/<slug>/index.html   12 languages, single-language static pages (en/ko from the source)
     journal/<lang>/index.html          12 language lists (Blog + ItemList)
     journal/<slug>/index.html, journal/index.html   x-default language choosers
+    journal/feed.xml                   RSS 2.0, English, published posts only (date <= today KST), newest first; not in sitemap
     sitemap.xml  <!-- journal:start/end -->        every page above, lastmod + 13 hreflang + image
     llms.txt     <!-- journal:llms:start/end -->   lists + posts per language
 
@@ -17,6 +18,7 @@ Usage:
 """
 import argparse
 import datetime
+import email.utils
 import html
 import json
 import re
@@ -201,6 +203,52 @@ def load_post(path, root=ROOT):
     return post, errs
 
 
+KST = datetime.timezone(datetime.timedelta(hours=9))
+RESERVED_SLUGS = {"feed"}  # /journal/feed.xml is the RSS file; no post may take this URL segment
+
+
+def today_kst():
+    return datetime.datetime.now(KST).date()
+
+
+def rfc822(post):
+    """pubDate: the post's KST publish time if it has one (ipe:published-at), else 09:00 KST on its date."""
+    at = post.get("published_at")
+    d = datetime.datetime.fromisoformat(at) if at else datetime.datetime.combine(
+        datetime.date.fromisoformat(post["published"]), datetime.time(9, 0), tzinfo=KST)
+    return email.utils.format_datetime(d.astimezone(KST)).replace("-0000", "+0900")
+
+
+def render_feed(posts, today=None):
+    """RSS 2.0 of the English text of every post already published (datePublished <= today, KST), newest first."""
+    today = (today or today_kst()).isoformat()
+    live = sorted((p for p in posts if p["published"] <= today), key=lambda p: (p["published"], p.get("published_at") or ""), reverse=True)
+    esc = html.escape
+    items = "\n".join("""    <item>
+      <title>%s</title>
+      <link>%s</link>
+      <guid isPermaLink="true">%s</guid>
+      <pubDate>%s</pubDate>
+      <category>%s</category>
+      <description>%s</description>
+    </item>""" % (esc(p["langdata"]["en"]["title"]), I18N.post_url(p["slug"], "en"),
+                  I18N.post_url(p["slug"], "en"), rfc822(p), esc(p["category"]), esc(p["langdata"]["en"]["description"]))
+        for p in live)
+    last = rfc822(live[0]) if live else ""
+    return """<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ipe() Journal</title>
+    <link>%s/journal/</link>
+    <atom:link href="%s/journal/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
+    <language>en</language>
+%s%s
+  </channel>
+</rss>
+""" % (SITE, SITE, ("    <lastBuildDate>%s</lastBuildDate>\n" % last) if last else "", items if items else "")
+
+
 def _xlinks(cluster):
     return "\n".join('    <xhtml:link rel="alternate" hreflang="%s" href="%s"/>' % (h, html.escape(u)) for h, u in cluster)
 
@@ -289,6 +337,7 @@ def build(root=ROOT):
     if not posts:
         return writes, errors + ["no posts found"]
     slugs = {p["slug"] for p in posts}
+    errors += ["slug %r is reserved" % x for x in sorted(RESERVED_SLUGS & slugs)]
     for slug in tr:
         if slug not in slugs:
             errors.append("journal_i18n/%s has no matching post source in scripts/journal_src/" % slug)
@@ -327,6 +376,8 @@ def build(root=ROOT):
         if DIR_RE.match(f.parent.name) and f not in writes:
             errors.append("orphan generated page %s (no source) — delete it" % f.relative_to(root))
 
+    writes[jdir / "feed.xml"] = render_feed(posts)
+
     sm = root / "sitemap.xml"
     t = ensure_ns(sm.read_text(encoding="utf-8"))
     writes[sm] = replace_block(t, "<!-- journal:start -->", "<!-- journal:end -->", render_sitemap(posts, allp), "sitemap.xml")
@@ -339,8 +390,9 @@ def build(root=ROOT):
     import xml.etree.ElementTree as ET
     try:
         ET.fromstring(writes[sm])
+        ET.fromstring(writes[jdir / "feed.xml"])
     except ET.ParseError as e:
-        errors.append("sitemap.xml does not parse: %s" % e)
+        errors.append("sitemap.xml or feed.xml does not parse: %s" % e)
     for path, text in writes.items():
         if path.suffix == ".html":
             for raw in LD_RE.findall(text):

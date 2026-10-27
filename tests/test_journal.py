@@ -1,3 +1,4 @@
+import datetime
 import json
 import re
 import shutil
@@ -449,6 +450,51 @@ class JournalPublishTime(unittest.TestCase):
                 g.write_text(src.replace(at, bad), encoding="utf-8")
                 _, errs = journal_sync.load_post(g)
                 self.assertTrue(any("published-at" in e for e in errs), (bad, errs))
+
+
+class JournalFeed(unittest.TestCase):
+    """💡#126 — /journal/feed.xml (RSS 2.0, English, published posts only) + rel=alternate auto-discovery."""
+
+    def loaded(self):
+        return [journal_sync.load_post(f)[0] for f in posts()]
+
+    def test_feed_is_valid_rss_with_one_item_per_published_post(self):
+        today = journal_sync.today_kst().isoformat()
+        want = [p for p in self.loaded() if p["published"] <= today]
+        root = ET.fromstring((ROOT / "journal" / "feed.xml").read_text(encoding="utf-8"))
+        self.assertEqual(root.tag, "rss")
+        self.assertEqual(root.get("version"), "2.0")
+        items = root.findall("./channel/item")
+        self.assertEqual(len(items), len(want))
+        self.assertGreaterEqual(len(items), 5)
+        links = [i.findtext("link") for i in items]
+        self.assertEqual(links, ["https://ipe.rest/journal/en/%s/" % p["slug"] for p in sorted(want, key=lambda p: p["slug"], reverse=True)])
+        for i in items:
+            self.assertEqual(i.findtext("guid"), i.findtext("link"))
+            self.assertRegex(i.findtext("pubDate"), r"^[A-Z][a-z]{2}, \d\d [A-Z][a-z]{2} \d{4} \d\d:\d\d:\d\d \+0900$")
+            self.assertTrue(i.findtext("title") and i.findtext("description"))
+
+    def test_future_posts_are_left_out(self):
+        posts_ = self.loaded()
+        newest = max(p["published"] for p in posts_)
+        before = datetime.date.fromisoformat(newest) - datetime.timedelta(days=1)
+        items = ET.fromstring(journal_sync.render_feed(posts_, today=before)).findall("./channel/item")
+        self.assertEqual(len(items), len([p for p in posts_ if p["published"] <= before.isoformat()]))
+        self.assertLess(len(items), len(posts_))
+        none = ET.fromstring(journal_sync.render_feed(posts_, today=datetime.date(2000, 1, 1)))
+        self.assertEqual(none.findall("./channel/item"), [])
+
+    def test_feed_is_not_in_the_sitemap_and_slug_is_reserved(self):
+        self.assertNotIn("feed.xml", (ROOT / "sitemap.xml").read_text(encoding="utf-8"))
+        self.assertIn("feed", journal_sync.RESERVED_SLUGS)
+
+    def test_autodiscovery_link_on_list_posts_and_home(self):
+        tag = '<link rel="alternate" type="application/rss+xml" title="ipe() Journal" href="https://ipe.rest/journal/feed.xml">'
+        pages = [ROOT / "journal" / "index.html", ROOT / "journal" / "en" / "index.html", ROOT / "journal" / "ko" / "index.html",
+                 ROOT / "index.html", ROOT / "en" / "index.html", ROOT / "ko" / "index.html"]
+        pages += [ROOT / "journal" / "en" / p.stem / "index.html" for p in posts()]
+        for page in pages:
+            self.assertEqual(page.read_text(encoding="utf-8").count(tag), 1, str(page.relative_to(ROOT)))
 
 
 if __name__ == "__main__":

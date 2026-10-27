@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>ipe() Journal</title>
+    <link>https://ipe.rest/journal/</link>
+    <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
+    <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
+    <language>en</language>
+    <lastBuildDate>Mon, 26 Oct 2026 09:30:00 +0900</lastBuildDate>
+    <item>
+      <title>We speak in code comments</title>
+      <link>https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/</guid>
+      <pubDate>Mon, 26 Oct 2026 09:30:00 +0900</pubDate>
+      <category>studio</category>
+      <description>Why ipe() writes its quietest lines as code comments: they do not run, they are not headlines, and they stay after everything else has finished.</description>
+    </item>
+    <item>
+      <title>Made with AI, and we say so</title>
+      <link>https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/</guid>
+      <pubDate>Sun, 25 Oct 2026 11:30:00 +0900</pubDate>
+      <category>studio</category>
+      <description>How ipe() makes its music: with AI (Suno), openly. Lyrics start as an AI draft that a person revises and reviews; the concept and the final decisions are ours.</description>
+    </item>
+    <item>
+      <title>late_night.lofi — the ride home</title>
+      <link>https://ipe.rest/journal/en/2026-10-23-late-night-lofi-the-ride-home/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-10-23-late-night-lofi-the-ride-home/</guid>
+      <pubDate>Fri, 23 Oct 2026 09:55:00 +0900</pubDate>
+      <category>studio</category>
+      <description>A series for the ride home after a late night — and its first single, “still compiling.” Slow lo-fi for the hour when the work is over and you are not home yet.</description>
+    </item>
+    <item>
+      <title>dear(you); vol.1 — ten letters</title>
+      <link>https://ipe.rest/journal/en/2026-10-22-dear-you-vol1-ten-letters/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-10-22-dear-you-vol1-ten-letters/</guid>
+      <pubDate>Thu, 22 Oct 2026 09:16:00 +0900</pubDate>
+      <category>studio</category>
+      <description>Ten ambient lo-fi tracks, ten letters, one feeling each — from empathy to peace. How dear(you); vol.1 is arranged, and why track 5 sits in the middle.</description>
+    </item>
+    <item>
+      <title>Why ipe() is named after an idle process</title>
+      <link>https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-10-20-why-ipe-is-named-after-an-idle-process/</guid>
+      <pubDate>Tue, 20 Oct 2026 01:40:00 +0900</pubDate>
+      <category>studio</category>
+      <description>ipe() is short for “idle process” — the state a computer enters when it has no work left and simply rests. The story behind the name, the music, and the whispered “ipe. be still.”</description>
+    </item>
+  </channel>
+</rss>

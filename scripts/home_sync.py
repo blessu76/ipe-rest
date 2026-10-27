@@ -252,6 +252,7 @@ def render_chooser(src, ui):
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#fbfcfe">
 <link rel="canonical" href="%(root)s">
+<link rel="alternate" type="application/rss+xml" title="ipe() Journal" href="https://ipe.rest/journal/feed.xml">
 <link rel="manifest" href="/manifest.webmanifest?v=23">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
 <link rel="apple-touch-icon" href="/icon-180.png?v=23">

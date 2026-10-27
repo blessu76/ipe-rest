@@ -195,7 +195,8 @@ def _common_head(lang, title, desc, canon):
 <meta name="author" content="ipe()">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#fbfcfe">
-<link rel="canonical" href="%s">""" % (esc(title), esc(desc), canon)
+<link rel="canonical" href="%s">
+<link rel="alternate" type="application/rss+xml" title="ipe() Journal" href="%s/journal/feed.xml">""" % (esc(title), esc(desc), canon, SITE)
 
 
 def _assets_head():

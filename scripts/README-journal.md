@@ -27,3 +27,7 @@
   The "AI translation" note appears only on the 10 machine-translated languages, never on EN/KO.
 - A language without a translation JSON is simply absent (no empty page, no dangling hreflang). Machine drafts: keep `ai_label`/`ai_text` in ui.json.
 - sitemap: every page (13 per post and per list) with lastmod, 13 hreflang, image. llms.txt lists all languages.
+
+## RSS feed (💡#126)
+
+`journal_sync.py` also writes `journal/feed.xml` (RSS 2.0, English, posts with datePublished <= today KST, newest first; not in the sitemap). The slug `feed` is reserved. Every journal/home/info page carries `<link rel="alternate" type="application/rss+xml">`. A post dated in the future appears in the feed (and `--check` goes stale) on its day — rerun the sync then.

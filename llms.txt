@@ -85,6 +85,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- Follow the journal, quietly (2026-10-27): https://ipe.rest/journal/2026-10-27-follow-the-journal-quietly/ - The ipe() journal now has an RSS feed: follow new entries in the reader of your choice, with no account and no sign-up.
+  - original language: en
+  - [en] Follow the journal, quietly: https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/
+  - [ko] 저널을 조용히 따라가세요: https://ipe.rest/journal/ko/2026-10-27-follow-the-journal-quietly/
+  - [ja] ジャーナルを、静かに追う (AI translation): https://ipe.rest/journal/ja/2026-10-27-follow-the-journal-quietly/
+  - [zh] 安静地关注日志 (AI translation): https://ipe.rest/journal/zh/2026-10-27-follow-the-journal-quietly/
+  - [es] Sigue el diario, en silencio (AI translation): https://ipe.rest/journal/es/2026-10-27-follow-the-journal-quietly/
+  - [fr] Suivre le journal, tranquillement (AI translation): https://ipe.rest/journal/fr/2026-10-27-follow-the-journal-quietly/
+  - [de] Dem Journal leise folgen (AI translation): https://ipe.rest/journal/de/2026-10-27-follow-the-journal-quietly/
+  - [pt] Acompanhe o diário, em silêncio (AI translation): https://ipe.rest/journal/pt/2026-10-27-follow-the-journal-quietly/
+  - [ru] Следите за журналом тихо (AI translation): https://ipe.rest/journal/ru/2026-10-27-follow-the-journal-quietly/
+  - [ar] تابع اليوميات بهدوء (AI translation): https://ipe.rest/journal/ar/2026-10-27-follow-the-journal-quietly/
+  - [hi] जर्नल को शांति से फ़ॉलो करें (AI translation): https://ipe.rest/journal/hi/2026-10-27-follow-the-journal-quietly/
+  - [id] Ikuti jurnal dengan tenang (AI translation): https://ipe.rest/journal/id/2026-10-27-follow-the-journal-quietly/
 - We speak in code comments (2026-10-26): https://ipe.rest/journal/2026-10-26-we-speak-in-code-comments/ - Why ipe() writes its quietest lines as code comments: they do not run, they are not headlines, and they stay after everything else has finished.
   - original language: en
   - [en] We speak in code comments: https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/

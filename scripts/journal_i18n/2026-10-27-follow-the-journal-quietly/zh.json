@@ -1,0 +1,8 @@
+{
+  "title": "安静地关注日志",
+  "h1_html": "安静地<em>关注日志</em>",
+  "description": "ipe() 日志现在有了 RSS 订阅源：无需账号、无需注册，用你喜欢的阅读器就能关注新文章。",
+  "abstract": "ipe.rest 现在提供 /journal/feed.xml，这是一个 RSS 2.0 订阅源，按时间从新到旧列出已发布的日志文章（英文），无需账号即可关注。",
+  "excerpt": "ipe() 日志现在有了 RSS 订阅源：用你自己的阅读器关注新文章。",
+  "body": "    <p class=\"lead\">ipe() 日志现在有了 RSS 订阅源：无需账号、无需注册，用你喜欢的阅读器就能关注新文章。</p>\n    <p>RSS 是一个古老而朴素的想法：网站把最新文章的列表发布为一个小文件，你的阅读器在你需要的时候去查看。没有账号，没有算法决定你看什么，也没有打断你的通知。</p>\n    <p>订阅源位于 <code class=\"ltr\">https://ipe.rest/journal/feed.xml</code>。它以英文列出文章，从新到旧，只包含已经发布的内容。日志的每个页面也在 head 中声明了订阅源，所以多数阅读器只要粘贴 ipe.rest/journal/ 就能找到它。</p>\n    <p>文章以英文和韩文撰写，网站上提供 12 种语言版本。订阅源包含英文标题和摘要，并链接到英文页面；其他语言可从每篇文章页面一键打开。</p>\n    <p>这很符合我们的做事方式：安静地等着被阅读。有空的时候再打开就好。</p>\n    <blockquote>ipe(); // subscribe once, no need to check back</blockquote>\n    <p><a href=\"/journal/feed.xml\">/journal/feed.xml</a></p>\n"
+}

@@ -1,0 +1,8 @@
+{
+  "title": "Ikuti jurnal dengan tenang",
+  "h1_html": "Ikuti jurnal <em>dengan tenang</em>",
+  "description": "Jurnal ipe() kini punya feed RSS: ikuti entri baru di pembaca pilihanmu, tanpa akun dan tanpa pendaftaran.",
+  "abstract": "ipe.rest kini menerbitkan /journal/feed.xml, feed RSS 2.0 berisi entri jurnal yang sudah terbit dalam bahasa Inggris, dari yang terbaru. Bisa diikuti tanpa akun.",
+  "excerpt": "Jurnal ipe() kini punya feed RSS: ikuti entri baru di pembacamu sendiri.",
+  "body": "    <p class=\"lead\">Jurnal ipe() kini punya feed RSS: ikuti entri baru di pembaca pilihanmu, tanpa akun dan tanpa pendaftaran.</p>\n    <p>RSS adalah gagasan lama yang sederhana: sebuah situs menerbitkan daftar entri terbarunya sebagai berkas kecil, dan pembacamu memeriksanya saat kamu memintanya. Tanpa akun, tanpa algoritma yang menentukan apa yang kamu lihat, tanpa notifikasi yang mengganggu.</p>\n    <p>Feed kami ada di <code class=\"ltr\">https://ipe.rest/journal/feed.xml</code>. Isinya entri dalam bahasa Inggris, dari yang terbaru, dan hanya yang sudah terbit. Halaman jurnal juga mengumumkannya di head, sehingga sebagian besar pembaca menemukannya jika kamu cukup menempelkan ipe.rest/journal/.</p>\n    <p>Entri ditulis dalam bahasa Inggris dan Korea dan tersedia dalam 12 bahasa di situs. Feed membawa judul dan ringkasan berbahasa Inggris dan menaut ke halaman berbahasa Inggris; bahasa lain hanya satu klik dari setiap entri.</p>\n    <p>Ini sesuai dengan cara kami bekerja: sesuatu yang tenang yang menunggu untuk dibaca. Buka saat kamu punya semenit.</p>\n    <blockquote>ipe(); // subscribe once, no need to check back</blockquote>\n    <p><a href=\"/journal/feed.xml\">/journal/feed.xml</a></p>\n"
+}

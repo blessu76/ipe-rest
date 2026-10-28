@@ -1,0 +1,8 @@
+{
+  "title": "Sebelum nada pertama — satu detik suara ruangan",
+  "h1_html": "Sebelum nada pertama: <em>satu detik suara ruangan</em>",
+  "description": "Setiap lagu ipe() dibuka dengan satu detik suara ruangan, bunyi tenang sebuah kamar kosong, sebelum musik dimulai. Mengapa kami membiarkannya.",
+  "abstract": "Setiap lagu ipe() dimulai dengan sepotong singkat suara ruangan, bunyi samar dari kamar tempat lagu itu dibuat. Ia membuat pendengar sempat tenang sebelum musik mulai, dan menjaga rekaman tetap jujur.",
+  "excerpt": "Satu detik suara ruangan yang tenang di awal setiap lagu ipe(), dan mengapa kami menyimpannya.",
+  "body": "    <p class=\"lead\">Sebelum nada pertama sebuah lagu ipe(), ada satu detik yang nyaris tak berisi apa-apa: bunyi sebuah ruangan yang tenang. Kami menyebutnya suara ruangan, dan kami membiarkannya.</p>\n    <p>Suara ruangan adalah bunyi sebuah tempat ketika tak ada yang bermain: dengung samar, udara yang bergerak, kursi yang menetap. Kebanyakan mix memotongnya agar musik mulai tepat di ketukan. Kami menyimpan sepotong pendek di awal setiap lagu.</p>\n    <p>Alasannya sederhana. Lagu yang dimulai dengan kehadiran penuh meminta Anda tiba sekaligus. Satu detik suara ruangan membiarkan Anda tiba dengan kecepatan sendiri: Anda menetap, ruangan menetap, lalu musik dimulai.</p>\n    <p>Ini juga soal kejujuran. Lagu-lagu dibuat di kamar kecil, larut malam, dengan volume rendah, dan kamar itu bagian dari rekaman. Menghapusnya akan membuat suara lebih bersih dan sedikit kurang benar.</p>\n    <blockquote>ipe(); // the room, then the music</blockquote>\n    <p>Jadi ketika menekan putar, tunggu satu detik sebelum menilai. Detik pertama juga bagian dari lagu.</p>\n"
+}

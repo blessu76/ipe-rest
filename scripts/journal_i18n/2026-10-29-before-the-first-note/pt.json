@@ -1,0 +1,8 @@
+{
+  "title": "Antes da primeira nota: um segundo de som de sala",
+  "h1_html": "Antes da primeira nota: <em>um segundo de som de sala</em>",
+  "description": "Cada faixa do ipe() abre com um segundo de som de sala, o ruído tranquilo de um quarto vazio, antes de a música começar. Por que o deixamos.",
+  "abstract": "Cada faixa do ipe() começa com um pequeno trecho de som de sala, o leve ruído do cômodo onde foi feita. Ele deixa quem ouve se acomodar antes da música e mantém a gravação honesta.",
+  "excerpt": "O segundo de som de sala tranquilo no início de cada faixa do ipe() e por que o mantemos.",
+  "body": "    <p class=\"lead\">Antes da primeira nota de uma faixa do ipe() há um segundo de quase nada: o som de uma sala tranquila. Chamamos isso de som de sala, e o deixamos.</p>\n    <p>O som de sala é como um espaço soa quando ninguém está tocando: um zumbido leve, o ar se movendo, uma cadeira que se acomoda. A maioria das mixagens o corta para que a música comece exatamente no tempo. Nós mantemos um trecho curto no começo de cada faixa.</p>\n    <p>O motivo é simples. Uma faixa que começa com toda a presença pede que você chegue de uma vez. Um segundo de som de sala deixa você chegar no seu próprio ritmo: você se acomoda, a sala se acomoda e então a música começa.</p>\n    <p>Também é uma questão de honestidade. As faixas são feitas num quarto pequeno, tarde da noite, em volume baixo, e esse quarto faz parte da gravação. Tirá-lo deixaria o som mais limpo e um pouco menos verdadeiro.</p>\n    <blockquote>ipe(); // the room, then the music</blockquote>\n    <p>Então, ao apertar play, espere um segundo antes de julgar. O primeiro segundo também faz parte da canção.</p>\n"
+}

@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- Before the first note — a second of room tone (2026-10-29): https://ipe.rest/journal/2026-10-29-before-the-first-note/ - Every ipe() track opens on a second of room tone, the quiet sound of an empty room, before any music begins. Why we leave it in.
+  - original language: en
+  - [en] Before the first note — a second of room tone: https://ipe.rest/journal/en/2026-10-29-before-the-first-note/
+  - [ko] 첫 음이 나오기 전 — 방의 숨소리 한 순간: https://ipe.rest/journal/ko/2026-10-29-before-the-first-note/
+  - [ja] 最初の音の前に — 部屋の気配のひと呼吸 (AI translation): https://ipe.rest/journal/ja/2026-10-29-before-the-first-note/
+  - [zh] 第一个音符之前——房间的一秒呼吸 (AI translation): https://ipe.rest/journal/zh/2026-10-29-before-the-first-note/
+  - [es] Antes de la primera nota: un segundo de sonido de sala (AI translation): https://ipe.rest/journal/es/2026-10-29-before-the-first-note/
+  - [fr] Avant la première note : une seconde de son de pièce (AI translation): https://ipe.rest/journal/fr/2026-10-29-before-the-first-note/
+  - [de] Vor dem ersten Ton – eine Sekunde Raumklang (AI translation): https://ipe.rest/journal/de/2026-10-29-before-the-first-note/
+  - [pt] Antes da primeira nota: um segundo de som de sala (AI translation): https://ipe.rest/journal/pt/2026-10-29-before-the-first-note/
+  - [ru] Перед первой нотой — секунда звука комнаты (AI translation): https://ipe.rest/journal/ru/2026-10-29-before-the-first-note/
+  - [ar] قبل النغمة الأولى — ثانية من صوت الغرفة (AI translation): https://ipe.rest/journal/ar/2026-10-29-before-the-first-note/
+  - [hi] पहले सुर से पहले — कमरे की एक पल की आवाज़ (AI translation): https://ipe.rest/journal/hi/2026-10-29-before-the-first-note/
+  - [id] Sebelum nada pertama — satu detik suara ruangan (AI translation): https://ipe.rest/journal/id/2026-10-29-before-the-first-note/
 - ipe. be still — the last breath of every track (2026-10-28): https://ipe.rest/journal/2026-10-28-ipe-be-still-the-last-breath/ - Every ipe() track ends with one whispered line, “ipe. be still.” The rule behind that last breath: at the very end, quiet, and always in English.
   - original language: en
   - [en] ipe. be still — the last breath of every track: https://ipe.rest/journal/en/2026-10-28-ipe-be-still-the-last-breath/

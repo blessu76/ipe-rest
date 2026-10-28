@@ -1,9 +1,7 @@
 import re
 import unittest
-from pathlib import PurePosixPath
-from urllib.parse import urlsplit, unquote
-
 from pathlib import Path
+from urllib.parse import urlsplit, unquote
 
 ROOT = Path(__file__).resolve().parent.parent
 SW = (ROOT / "sw.js").read_text(encoding="utf-8")
@@ -21,9 +19,15 @@ def must_not():
 
 
 def deployed_html():
-    pages = [ROOT / "index.html"]
-    pages += sorted((ROOT / "journal").rglob("*.html"))
-    return [p for p in pages if p.is_file()]
+    # 레포 안의 *.html 전부 — MUST_NOT 최상위(scripts/ 등)와 .git 같은 점 폴더는 배포되지 않으므로 뺀다
+    skip = must_not()
+    pages = []
+    for p in sorted(ROOT.rglob("*.html")):
+        top = p.relative_to(ROOT).parts[0]
+        if top in skip or top.startswith("."):
+            continue
+        pages.append(p)
+    return pages
 
 
 def site_path(ref, page):

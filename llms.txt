@@ -73,6 +73,7 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
 ## Journal
 <!-- journal:llms:start -->
 - Journal (12 languages, one static page per language; language chooser): https://ipe.rest/journal/
+  - Feed (RSS, English): https://ipe.rest/journal/feed.xml
   - English [en]: https://ipe.rest/journal/en/
   - 한국어 [ko]: https://ipe.rest/journal/ko/
   - 日本語 [ja] (AI translation): https://ipe.rest/journal/ja/

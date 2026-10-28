@@ -290,6 +290,7 @@ def render_sitemap(posts, tr):
 def render_llms(posts, tr):
     list_langs = {l for v in tr.values() for l in v}
     lines = ["- Journal (12 languages, one static page per language; language chooser): %s/journal/" % SITE]
+    lines.append("  - Feed (RSS, English): %s/journal/feed.xml" % SITE)
     for l in I18N.LANGS:
         if l in list_langs:
             lines.append("  - %s [%s]%s: %s" % (I18N.NATIVE[l], l, " (AI translation)" if l in I18N.TR_LANGS else "", I18N.list_url(l)))

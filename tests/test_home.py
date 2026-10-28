@@ -143,13 +143,13 @@ class HomeJournalCards(unittest.TestCase):
                 src = ROOT / name
                 (shutil.copytree if src.is_dir() else shutil.copy)(src, root / name)
             old = sorted((root / "scripts" / "journal_src").glob("*.html"))[0]
-            new = root / "scripts" / "journal_src" / "2026-10-28-fourth-post.html"
-            new.write_text(old.read_text(encoding="utf-8").replace(old.stem, new.stem).replace("2026-10-20", "2026-10-28"), encoding="utf-8")
+            new = root / "scripts" / "journal_src" / "2027-01-01-fourth-post.html"
+            new.write_text(old.read_text(encoding="utf-8").replace(old.stem, new.stem).replace("2026-10-20", "2027-01-01"), encoding="utf-8")
             writes, errors = home_sync.build(root)
             self.assertEqual(errors, [])
             for lang in ("en", "ko"):  # no translation JSON yet -> en/ko only; other languages keep their own newest three
                 _sec, hrefs = self.cards(writes[root / lang / "index.html"])
-                self.assertEqual(hrefs[0], "/journal/%s/2026-10-28-fourth-post/" % lang)
+                self.assertEqual(hrefs[0], "/journal/%s/2027-01-01-fourth-post/" % lang)
                 self.assertEqual(len(hrefs), 3)
             _sec, hrefs = self.cards(writes[root / "ja" / "index.html"])
             self.assertNotIn("fourth-post", "".join(hrefs))

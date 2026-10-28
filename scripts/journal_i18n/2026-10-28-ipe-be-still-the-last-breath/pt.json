@@ -1,0 +1,8 @@
+{
+  "title": "ipe. be still — o último suspiro de cada faixa",
+  "h1_html": "O último suspiro <em>de cada faixa</em>",
+  "description": "Toda faixa do ipe() termina com uma linha sussurrada, “ipe. be still.”. A regra por trás desse último suspiro: bem no final, em voz baixa e sempre em inglês.",
+  "abstract": "Desde o álbum dear(you);, toda faixa do ipe() termina com “ipe. be still.”, um único suspiro tranquilo depois da música. Fica bem no final, é dita em vez de cantada e permanece em inglês.",
+  "excerpt": "A única linha sussurrada que encerra cada faixa do ipe() e por que ela é um só suspiro.",
+  "body": "    <p class=\"lead\">Toda faixa do ipe() termina do mesmo jeito: depois da última nota, uma linha sussurrada, “ipe. be still.”. É um único suspiro e está sempre em inglês.</p>\n    <p>A regra é curta. A linha fica bem no final, depois que a música acabou. É dita, não cantada, e dita em voz baixa. Desde o álbum dear(you); ela fecha todas as faixas e não muda de um lançamento para outro.</p>\n    <p>Mantemos num só suspiro de propósito. Uma canção pode carregar uma história, mas o último segundo só carrega uma coisa. A linha não explica nada e não pede nada; é a pausa que se faz quando o trabalho termina.</p>\n    <p>Em termos de código, é o estado idle: o programa terminou, não há mais nada para executar e a máquina descansa. É daí que vem o nosso nome, e o sussurro é a mesma ideia em som.</p>\n    <blockquote>ipe(); // be still</blockquote>\n    <p>Então, se você ouvir tarde da noite, deixe a faixa correr até o fim. Deixe esse último segundo em paz antes de partir para a próxima.</p>\n    <p><a href=\"https://idle.ipe.rest/\" rel=\"noopener\">idle.ipe.rest</a></p>\n"
+}

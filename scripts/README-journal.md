@@ -1,4 +1,4 @@
-# Adding a journal post (weekly) — checklist
+# Adding a journal post (daily — one post a day, at a random time between 10:00 and 11:00 KST) — checklist
 
 1. `cp scripts/journal-post-template.html scripts/journal_src/YYYY-MM-DD-slug.html` (a SOURCE — not served; the pages are generated). Set `ipe:original` (en|ko) to the language you wrote it in.
 2. Replace every `YYYY-MM-DD`, `slug`, `TODO` (title EN/KO, description EN/KO, excerpt EN/KO, keywords, abstract EN/KO, EN+KO prose).

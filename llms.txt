@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- ipe. be still — the last breath of every track (2026-10-28): https://ipe.rest/journal/2026-10-28-ipe-be-still-the-last-breath/ - Every ipe() track ends with one whispered line, “ipe. be still.” The rule behind that last breath: at the very end, quiet, and always in English.
+  - original language: en
+  - [en] ipe. be still — the last breath of every track: https://ipe.rest/journal/en/2026-10-28-ipe-be-still-the-last-breath/
+  - [ko] ipe. be still — 모든 곡 끝의 한 호흡: https://ipe.rest/journal/ko/2026-10-28-ipe-be-still-the-last-breath/
+  - [ja] ipe. be still — すべての曲の終わりのひと息 (AI translation): https://ipe.rest/journal/ja/2026-10-28-ipe-be-still-the-last-breath/
+  - [zh] ipe. be still — 每首曲子结尾的一口气 (AI translation): https://ipe.rest/journal/zh/2026-10-28-ipe-be-still-the-last-breath/
+  - [es] ipe. be still — el último aliento de cada pista (AI translation): https://ipe.rest/journal/es/2026-10-28-ipe-be-still-the-last-breath/
+  - [fr] ipe. be still — le dernier souffle de chaque morceau (AI translation): https://ipe.rest/journal/fr/2026-10-28-ipe-be-still-the-last-breath/
+  - [de] ipe. be still — der letzte Atemzug jedes Tracks (AI translation): https://ipe.rest/journal/de/2026-10-28-ipe-be-still-the-last-breath/
+  - [pt] ipe. be still — o último suspiro de cada faixa (AI translation): https://ipe.rest/journal/pt/2026-10-28-ipe-be-still-the-last-breath/
+  - [ru] ipe. be still — последний вдох каждого трека (AI translation): https://ipe.rest/journal/ru/2026-10-28-ipe-be-still-the-last-breath/
+  - [ar] ipe. be still — النفَس الأخير في كل مقطوعة (AI translation): https://ipe.rest/journal/ar/2026-10-28-ipe-be-still-the-last-breath/
+  - [hi] ipe. be still — हर ट्रैक के अंत की एक साँस (AI translation): https://ipe.rest/journal/hi/2026-10-28-ipe-be-still-the-last-breath/
+  - [id] ipe. be still — satu embusan napas di akhir setiap lagu (AI translation): https://ipe.rest/journal/id/2026-10-28-ipe-be-still-the-last-breath/
 - Follow the journal, quietly (2026-10-27): https://ipe.rest/journal/2026-10-27-follow-the-journal-quietly/ - The ipe() journal now has an RSS feed: follow new entries in the reader of your choice, with no account and no sign-up.
   - original language: en
   - [en] Follow the journal, quietly: https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/

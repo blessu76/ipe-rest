@@ -6,7 +6,15 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 27 Oct 2026 10:08:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 28 Oct 2026 12:41:00 +0900</lastBuildDate>
+    <item>
+      <title>ipe. be still — the last breath of every track</title>
+      <link>https://ipe.rest/journal/en/2026-10-28-ipe-be-still-the-last-breath/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-10-28-ipe-be-still-the-last-breath/</guid>
+      <pubDate>Wed, 28 Oct 2026 12:41:00 +0900</pubDate>
+      <category>studio</category>
+      <description>Every ipe() track ends with one whispered line, “ipe. be still.” The rule behind that last breath: at the very end, quiet, and always in English.</description>
+    </item>
     <item>
       <title>Follow the journal, quietly</title>
       <link>https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/</link>

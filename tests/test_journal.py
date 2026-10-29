@@ -552,3 +552,28 @@ class JournalLengthLint(unittest.TestCase):
             d = json.loads(f.read_text(encoding="utf-8"))["description"]
             lim = journal_sync.DESC_MAX_CJK if f.stem in journal_sync.CJK_LANGS else journal_sync.DESC_MAX
             self.assertLessEqual(len(d), lim, "%s/%s" % (f.parent.name, f.name))
+
+
+class JournalNoFutureDates(unittest.TestCase):
+    """JSON-LD must never carry a datePublished/dateModified that has not happened yet (KST)."""
+
+    def test_future_post_is_rejected_by_the_generator(self):
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            copy_site(root)
+            old = posts()[0]
+            new = root / "scripts" / "journal_src" / "2099-01-01-from-the-future.html"
+            s = old.read_text(encoding="utf-8")
+            new.write_text(s.replace(old.stem, new.stem).replace("2026-10-20", "2099-01-01"), encoding="utf-8")
+            _, errors = journal_sync.build(root)
+            self.assertTrue(any("in the future" in e for e in errors), errors)
+
+    def test_published_pages_have_no_future_dates_in_json_ld(self):
+        today = journal_sync.today_kst().isoformat()
+        bad = []
+        for f in (ROOT / "journal").rglob("index.html"):
+            for raw in LD.findall(f.read_text(encoding="utf-8")):
+                for key, val in re.findall(r'"(datePublished|dateModified)":\s*"(\d{4}-\d{2}-\d{2})', raw):
+                    if val > today:
+                        bad.append("%s %s=%s" % (f.relative_to(ROOT), key, val))
+        self.assertEqual(bad, [])

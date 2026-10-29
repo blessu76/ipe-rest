@@ -377,6 +377,9 @@ def build(root=ROOT):
     if not posts:
         return writes, errors + ["no posts found"]
     slugs = {p["slug"] for p in posts}
+    today = today_kst().isoformat()
+    errors += ["%s: datePublished %s is in the future (today KST %s) — structured data must not claim a date that has not happened; "
+               "set the real publish date" % (p["slug"], p["published"], today) for p in posts if p["published"] > today]
     errors += ["slug %r is reserved" % x for x in sorted(RESERVED_SLUGS & slugs)]
     for slug in tr:
         if slug not in slugs:

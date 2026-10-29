@@ -190,3 +190,33 @@ class DistinctTitles(unittest.TestCase):
                 t = re.search(r"<title>(.*?)</title>", src).group(1).strip().lower()
                 self.assertNotIn(t, seen, "%s duplicates %s title %r" % (l, seen.get(t), t))
                 seen[t] = l
+
+
+class GoAndOgImage(unittest.TestCase):
+    """/go/<track>/ redirect pages are never indexed; the shared OG image is 1200x630 and every page declares that size."""
+
+    ROOT = Path(__file__).resolve().parent.parent
+
+    def test_every_go_page_is_noindex_and_robots_does_not_block_it(self):
+        pages = sorted((self.ROOT / "go").glob("*/index.html"))
+        self.assertTrue(pages)
+        for f in pages:
+            self.assertRegex(f.read_text(encoding="utf-8"), r'<meta name="robots" content="noindex', str(f))
+        # noindex only works if crawlers may fetch the page
+        self.assertNotRegex((self.ROOT / "robots.txt").read_text(encoding="utf-8"), r"(?m)^Disallow:\s*/go")
+        sm = (self.ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        self.assertNotIn("/go/", sm)
+
+    def test_og_image_is_1200x630_and_declared_sizes_match(self):
+        import struct
+        w, h = struct.unpack(">II", (self.ROOT / "og-image.png").read_bytes()[16:24])
+        self.assertEqual((w, h), (1200, 630))
+        for f in self.ROOT.rglob("index.html"):
+            if f.relative_to(self.ROOT).parts[0] in ("scripts", "tests", ".git"):
+                continue
+            src = f.read_text(encoding="utf-8")
+            if "https://ipe.rest/og-image.png" in src:
+                for k, v in (("width", 1200), ("height", 630)):
+                    m = re.search(r'og:image:%s" content="(\d+)"' % k, src)
+                    if m:
+                        self.assertEqual(int(m.group(1)), v, str(f))

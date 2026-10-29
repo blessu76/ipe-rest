@@ -533,3 +533,22 @@ class JournalPostNav(unittest.TestCase):
         self.assertIsNone(journal_sync.nav_for("c", "en", ps, allp, today)["next"])
         # adding links must not move lastmod: the generated sitemap is already in sync (test_in_sync_and_valid) and carries no nav text
         self.assertNotIn("post-nav", (ROOT / "sitemap.xml").read_text(encoding="utf-8"))
+
+
+class JournalLengthLint(unittest.TestCase):
+    """SERP length lint: warns (never fails the build) on long titles/descriptions; translated descriptions are kept within limits."""
+
+    def test_lint_flags_long_title_and_description_per_language(self):
+        ui = {"en": {"title_suffix": " — ipe() journal"}, "ja": {"title_suffix": ""}}
+        allp = {"s": {"en": {"title": "t" * 50, "description": "d" * 161}, "ja": {"title": "あ" * 41, "description": "あ" * 110}}}
+        w = journal_sync.length_warnings(allp, ui)
+        self.assertEqual(len(w), 3, w)
+        self.assertTrue(any(x.startswith("title 66 > 60: en/") for x in w))
+        self.assertTrue(any(x.startswith("title 41 > 40: ja/") for x in w))
+        self.assertTrue(any(x.startswith("description 161 > 160: en/") for x in w))
+
+    def test_translated_descriptions_fit_the_limit(self):
+        for f in sorted((ROOT / "scripts" / "journal_i18n").glob("*/*.json")):
+            d = json.loads(f.read_text(encoding="utf-8"))["description"]
+            lim = journal_sync.DESC_MAX_CJK if f.stem in journal_sync.CJK_LANGS else journal_sync.DESC_MAX
+            self.assertLessEqual(len(d), lim, "%s/%s" % (f.parent.name, f.name))

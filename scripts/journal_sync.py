@@ -219,6 +219,29 @@ def rfc822(post):
     return email.utils.format_datetime(d.astimezone(KST)).replace("-0000", "+0900")
 
 
+WARNINGS = []  # filled by build(): non-fatal findings (length lint)
+CJK_LANGS = {"ja", "zh", "ko"}
+TITLE_MAX, TITLE_MAX_CJK = 60, 40   # full <title> (post title + suffix), characters
+DESC_MAX, DESC_MAX_CJK = 160, 110   # meta description, characters
+
+
+def length_warnings(allp, ui):
+    """SERP-length warnings (never errors): <title> > 60 (CJK 40) or description > 160 (CJK 110) per post per language."""
+    out = []
+    for slug in sorted(allp):
+        for lang in I18N.LANGS:
+            d = allp[slug].get(lang)
+            if not d:
+                continue
+            cjk = lang in CJK_LANGS
+            title = d["title"] + ui.get(lang, {}).get("title_suffix", "")
+            if len(title) > (TITLE_MAX_CJK if cjk else TITLE_MAX):
+                out.append("title %d > %d: %s/%s" % (len(title), TITLE_MAX_CJK if cjk else TITLE_MAX, lang, slug))
+            if len(d["description"]) > (DESC_MAX_CJK if cjk else DESC_MAX):
+                out.append("description %d > %d: %s/%s" % (len(d["description"]), DESC_MAX_CJK if cjk else DESC_MAX, lang, slug))
+    return out
+
+
 def nav_for(slug, lang, posts, allp, today=None):
     """Prev/next + latest-3 for one post in one language: only posts already published (date <= today KST) that exist in `lang`.
     prev = the next older post, next = the next newer one; related = the 3 newest others."""
@@ -367,6 +390,7 @@ def build(root=ROOT):
     ui_errs, bad = I18N.ui_errors(ui, used)
     errors += ui_errs
     allp = {s: {l: d for l, d in v.items() if l not in bad} for s, v in allp.items()}
+    WARNINGS[:] = length_warnings(allp, ui)
     list_langs = {l for v in allp.values() for l in v}
     if bad or not ({"en", "ko"} <= list_langs):
         return writes, errors + ([] if not ({"en", "ko"} - list_langs) else ["en and ko pages could not be generated"])
@@ -427,6 +451,8 @@ def main(argv=None):
     a = ap.parse_args(argv)
     root = Path(a.root)
     writes, errors = build(root)
+    for w in WARNINGS:
+        print("warning: " + w, file=sys.stderr)
     if errors:
         print("journal_sync: %d problem(s):" % len(errors), file=sys.stderr)
         for e in errors:

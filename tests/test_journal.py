@@ -24,6 +24,15 @@ def posts():
     return sorted(f for f in SRC.glob("*.html") if journal_sync.DIR_RE.match(f.stem))
 
 
+def shortest_post():
+    """The post with the fewest English prose words (the lint probes pad a copy of it)."""
+    return min(posts(), key=lambda p: journal_sync.prose_words(p.read_text(encoding="utf-8"), "en"))
+
+
+def shortest_words():
+    return journal_sync.prose_words(shortest_post().read_text(encoding="utf-8"), "en")
+
+
 def slug_of(f):
     return f.stem
 
@@ -581,9 +590,9 @@ class JournalWordLint(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmp:
             root = Path(tmp)
             copy_site(root)
-            old = posts()[0]
+            old = shortest_post()
             new = root / "scripts" / "journal_src" / "2026-10-30-lint-probe.html"
-            s = old.read_text(encoding="utf-8").replace(old.stem, new.stem).replace("2026-10-20", "2026-10-30")
+            s = old.read_text(encoding="utf-8").replace(old.stem, new.stem).replace(old.stem[:10], "2026-10-30")
             if extra_words:
                 s = s.replace('<div class="prose" lang="en">', '<div class="prose" lang="en"><h2>Probe</h2><p>%s</p>' % " ".join(["word"] * extra_words), 1)
             new.write_text(s, encoding="utf-8")
@@ -597,13 +606,13 @@ class JournalWordLint(unittest.TestCase):
         self.assertTrue(any("2026-10-30-lint-probe" in e and "%d words" % words in e for e in errors), errors)
 
     def test_new_post_between_300_and_400_only_warns(self):
-        words, errors, warnings, _ = self.new_post_build(350 - 229)
+        words, errors, warnings, _ = self.new_post_build(350 - shortest_words())
         self.assertTrue(300 <= words < 400, words)
         self.assertEqual(errors, [])
         self.assertTrue(any("2026-10-30-lint-probe" in w and "%d words" % words in w for w in warnings), warnings)
 
     def test_long_new_post_is_quiet(self):
-        words, errors, warnings, _ = self.new_post_build(450 - 229)
+        words, errors, warnings, _ = self.new_post_build(450 - shortest_words())
         self.assertGreaterEqual(words, 400)
         self.assertEqual(errors, [])
         self.assertFalse(any("lint-probe" in w and "words" in w for w in warnings), warnings)
@@ -612,7 +621,8 @@ class JournalWordLint(unittest.TestCase):
         errors = journal_sync.build(ROOT)[1]
         self.assertEqual(errors, [])
         body = [w for w in journal_sync.WARNINGS if w.startswith("body ")]
-        self.assertEqual(len(body), len(posts()), body)   # every current post is < 400 words
+        short = [p for p in posts() if journal_sync.prose_words(p.read_text(encoding="utf-8"), "en") < journal_sync.LINT_WARN_WORDS]
+        self.assertEqual(len(body), len(short), body)   # exactly the posts still under 400 words warn
 
 
 class JournalNoFutureDates(unittest.TestCase):

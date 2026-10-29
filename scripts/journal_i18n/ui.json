@@ -19,7 +19,11 @@
     "blog_name": "ipe() journal",
     "all_posts": "ipe() journal — all posts",
     "crumb_journal": "journal",
-    "home_aria": "ipe() home"
+    "home_aria": "ipe() home",
+    "more_label": "More from the journal",
+    "prev": "Previous",
+    "next": "Next",
+    "latest": "Latest entries"
   },
   "ko": {
     "skip": "본문으로 건너뛰기",
@@ -41,7 +45,11 @@
     "blog_name": "ipe() 저널",
     "all_posts": "ipe() 저널 — 전체 글",
     "crumb_journal": "저널",
-    "home_aria": "ipe() 홈"
+    "home_aria": "ipe() 홈",
+    "more_label": "저널 더 보기",
+    "prev": "이전 글",
+    "next": "다음 글",
+    "latest": "최신 글"
   },
   "ja": {
     "skip": "本文へスキップ",
@@ -66,7 +74,11 @@
     "blog_name": "ipe() ジャーナル",
     "all_posts": "ipe() ジャーナル — 全記事",
     "crumb_journal": "ジャーナル",
-    "home_aria": "ipe() ホーム"
+    "home_aria": "ipe() ホーム",
+    "more_label": "ジャーナルをもっと読む",
+    "prev": "前の記事",
+    "next": "次の記事",
+    "latest": "最新の記事"
   },
   "zh": {
     "skip": "跳到正文",
@@ -91,7 +103,11 @@
     "blog_name": "ipe() 日志",
     "all_posts": "ipe() 日志 — 全部文章",
     "crumb_journal": "日志",
-    "home_aria": "ipe() 首页"
+    "home_aria": "ipe() 首页",
+    "more_label": "更多日志",
+    "prev": "上一篇",
+    "next": "下一篇",
+    "latest": "最新文章"
   },
   "es": {
     "skip": "Saltar al contenido",
@@ -116,7 +132,11 @@
     "blog_name": "diario de ipe()",
     "all_posts": "diario de ipe() — todas las entradas",
     "crumb_journal": "diario",
-    "home_aria": "ipe() inicio"
+    "home_aria": "ipe() inicio",
+    "more_label": "Más del diario",
+    "prev": "Anterior",
+    "next": "Siguiente",
+    "latest": "Últimas entradas"
   },
   "fr": {
     "skip": "Aller au contenu",
@@ -141,7 +161,11 @@
     "blog_name": "journal d’ipe()",
     "all_posts": "journal d’ipe() — toutes les entrées",
     "crumb_journal": "journal",
-    "home_aria": "ipe() accueil"
+    "home_aria": "ipe() accueil",
+    "more_label": "Plus du journal",
+    "prev": "Précédent",
+    "next": "Suivant",
+    "latest": "Dernières entrées"
   },
   "de": {
     "skip": "Zum Inhalt springen",
@@ -166,7 +190,11 @@
     "blog_name": "ipe() Journal",
     "all_posts": "ipe() Journal — alle Einträge",
     "crumb_journal": "Journal",
-    "home_aria": "ipe() Startseite"
+    "home_aria": "ipe() Startseite",
+    "more_label": "Mehr aus dem Journal",
+    "prev": "Zurück",
+    "next": "Weiter",
+    "latest": "Neueste Einträge"
   },
   "pt": {
     "skip": "Ir para o conteúdo",
@@ -191,7 +219,11 @@
     "blog_name": "diário do ipe()",
     "all_posts": "diário do ipe() — todas as entradas",
     "crumb_journal": "diário",
-    "home_aria": "ipe() início"
+    "home_aria": "ipe() início",
+    "more_label": "Mais do diário",
+    "prev": "Anterior",
+    "next": "Seguinte",
+    "latest": "Últimas entradas"
   },
   "ru": {
     "skip": "К содержимому",
@@ -216,7 +248,11 @@
     "blog_name": "журнал ipe()",
     "all_posts": "журнал ipe() — все записи",
     "crumb_journal": "журнал",
-    "home_aria": "ipe() главная"
+    "home_aria": "ipe() главная",
+    "more_label": "Ещё из журнала",
+    "prev": "Назад",
+    "next": "Далее",
+    "latest": "Последние записи"
   },
   "ar": {
     "skip": "تخطَّ إلى المحتوى",
@@ -241,7 +277,11 @@
     "blog_name": "مدوّنة ipe()",
     "all_posts": "مدوّنة ipe() — كل المقالات",
     "crumb_journal": "المدوّنة",
-    "home_aria": "ipe() الرئيسية"
+    "home_aria": "ipe() الرئيسية",
+    "more_label": "المزيد من اليوميات",
+    "prev": "السابق",
+    "next": "التالي",
+    "latest": "أحدث المقالات"
   },
   "hi": {
     "skip": "मुख्य सामग्री पर जाएँ",
@@ -266,7 +306,11 @@
     "blog_name": "ipe() जर्नल",
     "all_posts": "ipe() जर्नल — सभी प्रविष्टियाँ",
     "crumb_journal": "जर्नल",
-    "home_aria": "ipe() होम"
+    "home_aria": "ipe() होम",
+    "more_label": "जर्नल में और",
+    "prev": "पिछला",
+    "next": "अगला",
+    "latest": "नवीनतम प्रविष्टियाँ"
   },
   "id": {
     "skip": "Lompat ke konten",
@@ -291,6 +335,10 @@
     "blog_name": "jurnal ipe()",
     "all_posts": "jurnal ipe() — semua tulisan",
     "crumb_journal": "jurnal",
-    "home_aria": "ipe() beranda"
+    "home_aria": "ipe() beranda",
+    "more_label": "Lebih banyak dari jurnal",
+    "prev": "Sebelumnya",
+    "next": "Berikutnya",
+    "latest": "Tulisan terbaru"
   }
 }

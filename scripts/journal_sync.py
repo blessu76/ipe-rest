@@ -219,6 +219,22 @@ def rfc822(post):
     return email.utils.format_datetime(d.astimezone(KST)).replace("-0000", "+0900")
 
 
+def nav_for(slug, lang, posts, allp, today=None):
+    """Prev/next + latest-3 for one post in one language: only posts already published (date <= today KST) that exist in `lang`.
+    prev = the next older post, next = the next newer one; related = the 3 newest others."""
+    today = (today or today_kst()).isoformat()
+    live = sorted((p for p in posts if p["published"] <= today and lang in allp[p["slug"]]),
+                  key=lambda p: (p["published"], p.get("published_at") or ""), reverse=True)
+    ref = {p["slug"]: (p["slug"], allp[p["slug"]][lang]["title"]) for p in live}
+    order = [p["slug"] for p in live]
+    nav = {"prev": None, "next": None, "related": [ref[x] for x in order if x != slug][:3]}
+    if slug in order:
+        i = order.index(slug)
+        nav["prev"] = ref[order[i + 1]] if i + 1 < len(order) else None
+        nav["next"] = ref[order[i - 1]] if i > 0 else None
+    return nav
+
+
 def render_feed(posts, today=None):
     """RSS 2.0 of the English text of every post already published (datePublished <= today, KST), newest first."""
     today = (today or today_kst()).isoformat()
@@ -360,7 +376,7 @@ def build(root=ROOT):
         langs = set(allp[slug])
         for l in I18N.LANGS:
             if l in langs:
-                writes[jdir / l / slug / "index.html"] = I18N.render_post(p, l, ui, allp[slug][l], langs)
+                writes[jdir / l / slug / "index.html"] = I18N.render_post(p, l, ui, allp[slug][l], langs, nav_for(slug, l, posts, allp))
         writes[jdir / slug / "index.html"] = I18N.render_chooser_post(p, ui, allp[slug], langs)
     for l in I18N.LANGS:
         if l in list_langs:

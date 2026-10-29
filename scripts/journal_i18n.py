@@ -19,7 +19,7 @@ from pathlib import Path
 
 SITE = "https://ipe.rest"
 ORG_ID = SITE + "/#organization"
-VER_CSS = "9"
+VER_CSS = "10"
 VER_JS = "7"
 ASSET_VER = "23"
 
@@ -33,7 +33,7 @@ NATIVE = {"en": "English", "ko": "한국어", "ja": "日本語", "zh": "简体�
           "de": "Deutsch", "pt": "Português", "ru": "Русский", "ar": "العربية", "hi": "हिन्दी", "id": "Bahasa Indonesia"}
 UI_KEYS = ("skip", "home", "journal", "about", "contact", "privacy", "all_entries", "read", "eyebrow",
            "langs_label", "title_suffix", "list_title", "list_h1", "list_lede", "list_desc",
-           "list_og_title", "blog_name", "all_posts", "crumb_journal", "home_aria")
+           "list_og_title", "blog_name", "all_posts", "crumb_journal", "home_aria", "more_label", "prev", "next", "latest")
 AI_KEYS = ("ai_label", "ai_text", "ai_link")  # only the machine-translated languages
 POST_KEYS = ("title", "description", "abstract", "excerpt", "h1_html", "body")
 I18N_DIR = ("scripts", "journal_i18n")
@@ -276,7 +276,32 @@ def article_ld(post, lang, ui, data, langs):
     return ld
 
 
-def render_post(post, lang, ui, data, langs):
+def post_nav(u, lang, nav):
+    """<nav> under a post: older/newer neighbour + the latest posts in the same language. `nav` = {"prev": (slug, title)|None,
+    "next": (slug, title)|None, "related": [(slug, title), ...]} (journal_sync.nav_for). Plain links only — no dates, so adding
+    a post never changes another post's dateModified / sitemap lastmod."""
+    if not nav or not (nav.get("prev") or nav.get("next") or nav.get("related")):
+        return ""
+    def link(slug, title):
+        return '<a href="/journal/%s/%s/">%s</a>' % (lang, slug, html.escape(title, quote=False))
+    out = ['  <nav class="post-nav" aria-label="%s">' % esc(u["more_label"])]
+    if nav.get("prev") or nav.get("next"):
+        out.append('    <ul class="pn-step">')
+        if nav.get("prev"):
+            out.append('      <li class="pn-prev"><span>%s</span> %s</li>' % (esc(u["prev"]), link(*nav["prev"])))
+        if nav.get("next"):
+            out.append('      <li class="pn-next"><span>%s</span> %s</li>' % (esc(u["next"]), link(*nav["next"])))
+        out.append('    </ul>')
+    if nav.get("related"):
+        out.append('    <p class="pn-head">%s</p>' % esc(u["latest"]))
+        out.append('    <ul class="pn-list">')
+        out += ['      <li>%s</li>' % link(*r) for r in nav["related"]]
+        out.append('    </ul>')
+    out.append('  </nav>')
+    return "\n".join(out)
+
+
+def render_post(post, lang, ui, data, langs, nav=None):
     """Full HTML of /journal/<lang>/<slug>/ ; `post` = parsed source (journal_sync.load_post), `langs` = available languages."""
     u = ui[lang]
     slug = post["slug"]
@@ -338,6 +363,7 @@ def render_post(post, lang, ui, data, langs):
         data["body"],
         '  </div>',
         '',
+        post_nav(u, lang, nav),
         '  <a class="back" href="/journal/%s/">%s</a>' % (lang, esc(u["all_entries"])),
         '</article>',
         '</main>',

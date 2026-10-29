@@ -499,3 +499,37 @@ class JournalFeed(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class JournalPostNav(unittest.TestCase):
+    """Every post page ends with prev/next + the 3 newest other posts of the same language (internal links, SEO)."""
+
+    def test_nav_in_every_language_links_same_language_only(self):
+        slugs = sorted(slug_of(f) for f in posts())
+        for lang in journal_sync.I18N.LANGS:
+            for i, slug in enumerate(slugs):
+                src = (ROOT / "journal" / lang / slug / "index.html").read_text(encoding="utf-8")
+                m = re.search(r'<nav class="post-nav".*?</nav>', src, re.S)
+                self.assertTrue(m, (lang, slug))
+                links = re.findall(r'href="([^"]+)"', m.group(0))
+                self.assertTrue(links and all(l.startswith("/journal/%s/20" % lang) for l in links), (lang, slug, links))
+                self.assertNotIn("/journal/%s/%s/" % (lang, slug), links)
+                self.assertEqual(len(re.findall(r'<ul class="pn-list">.*?</ul>', m.group(0), re.S)), 1)
+                self.assertLessEqual(len(re.findall(r"<li>", m.group(0).split('pn-list')[-1])), 3)
+                prev = '<li class="pn-prev">' in m.group(0)
+                nxt = '<li class="pn-next">' in m.group(0)
+                self.assertEqual(prev, i > 0, (lang, slug))
+                self.assertEqual(nxt, i < len(slugs) - 1, (lang, slug))
+
+    def test_nav_does_not_touch_lastmod_and_ignores_future_posts(self):
+        allp = {"a": {"en": {"title": "A"}}, "b": {"en": {"title": "B"}}, "c": {"en": {"title": "C"}}, "d": {"en": {"title": "D"}}}
+        ps = [{"slug": s, "published": d, "published_at": ""} for s, d in
+              (("a", "2026-10-01"), ("b", "2026-10-02"), ("c", "2026-10-03"), ("d", "2026-10-09"))]
+        today = datetime.date(2026, 10, 5)
+        nav = journal_sync.nav_for("b", "en", ps, allp, today)
+        self.assertEqual(nav["prev"], ("a", "A"))
+        self.assertEqual(nav["next"], ("c", "C"))
+        self.assertEqual([s for s, _ in nav["related"]], ["c", "a"])  # d is in the future
+        self.assertIsNone(journal_sync.nav_for("c", "en", ps, allp, today)["next"])
+        # adding links must not move lastmod: the generated sitemap is already in sync (test_in_sync_and_valid) and carries no nav text
+        self.assertNotIn("post-nav", (ROOT / "sitemap.xml").read_text(encoding="utf-8"))

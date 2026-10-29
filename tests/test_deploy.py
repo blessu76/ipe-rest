@@ -12,7 +12,7 @@ KEY_FILE = re.compile(r"^[0-9a-f]{32,}\.txt$")
 
 MUST_HAVE = ["CNAME", ".nojekyll", "robots.txt", "sitemap.xml", "llms.txt", "sw.js", "manifest.webmanifest",
              "index.html", "og-image.png", "fonts/inter-400.woff2", "go/redirects.json",
-             "journal/index.html", "journal/journal.css", "journal/journal.js", "en/index.html", "ko/index.html"]
+             "404.html", "journal/index.html", "journal/journal.css", "journal/journal.js", "en/index.html", "ko/index.html"]
 MUST_NOT = ["scripts", "tests", ".github", ".git", ".gitignore", "README.md", "_site"]
 
 
@@ -43,6 +43,14 @@ class DeployWorkflow(unittest.TestCase):
             keys = [p for p in out.glob("*.txt") if KEY_FILE.match(p.name)]
             src_keys = [p for p in ROOT.glob("*.txt") if KEY_FILE.match(p.name)]
             self.assertTrue(keys and len(keys) == len(src_keys), "IndexNow key files must ship")
+
+    def test_404_page_is_noindex_and_links_home(self):
+        html = (ROOT / "404.html").read_text(encoding="utf-8")
+        self.assertRegex(html, r'<meta name="robots" content="noindex, follow">')
+        self.assertNotIn("canonical", html)
+        self.assertNotIn("hreflang", html)
+        for href in ("/en/", "/journal/en/", "/"):
+            self.assertIn('href="%s"' % href, html)
 
     def test_public_pages_do_not_reference_dev_dirs(self):
         pat = re.compile(r"""["'(=/ ](?:scripts|tests)/""")

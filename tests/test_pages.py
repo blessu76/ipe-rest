@@ -175,3 +175,18 @@ class XDefaultSeo(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+
+class DistinctTitles(unittest.TestCase):
+    """The same page in two languages must not share one <title> (duplicate-title SEO finding, fr = en)."""
+
+    def test_list_and_contact_titles_differ_between_languages(self):
+        import re
+        root = Path(__file__).resolve().parent.parent
+        for rel in ("journal/{l}/index.html", "{l}/contact/index.html"):
+            seen = {}
+            for l in ("en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id"):
+                src = (root / rel.format(l=l)).read_text(encoding="utf-8")
+                t = re.search(r"<title>(.*?)</title>", src).group(1).strip().lower()
+                self.assertNotIn(t, seen, "%s duplicates %s title %r" % (l, seen.get(t), t))
+                seen[t] = l

@@ -554,6 +554,67 @@ class JournalLengthLint(unittest.TestCase):
             self.assertLessEqual(len(d), lim, "%s/%s" % (f.parent.name, f.name))
 
 
+class JournalWordLint(unittest.TestCase):
+    """Body length (English prose): <400 words warns; a post dated 2026-10-30 or later with <300 words is an error."""
+
+    def test_constants(self):
+        self.assertEqual((journal_sync.LINT_WARN_WORDS, journal_sync.LINT_ERROR_WORDS, journal_sync.LINT_ERROR_FROM),
+                         (400, 300, "2026-10-30"))
+
+    def test_levels(self):
+        lint = journal_sync.word_lint
+        self.assertEqual(lint("old", "2026-10-29", 280)[0], "warning")   # existing post: warning only
+        self.assertEqual(lint("old", "2026-10-29", 50)[0], "warning")
+        self.assertEqual(lint("new", "2026-10-30", 280)[0], "error")
+        self.assertEqual(lint("new", "2026-11-05", 299)[0], "error")
+        self.assertEqual(lint("new", "2026-10-30", 300)[0], "warning")
+        self.assertEqual(lint("new", "2026-10-30", 350)[0], "warning")
+        self.assertEqual(lint("new", "2026-10-30", 399)[0], "warning")
+        self.assertEqual(lint("new", "2026-10-30", 400)[0], None)
+        self.assertEqual(lint("new", "2026-10-30", 450)[0], None)
+        level, msg = lint("2026-10-30-stub", "2026-10-30", 280)
+        self.assertIn("2026-10-30-stub", msg)
+        self.assertIn("280 words", msg)
+
+    def new_post_build(self, extra_words):
+        """Build a copy of the site plus a 2026-10-30 post made from the oldest real one, padded by extra_words words."""
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            copy_site(root)
+            old = posts()[0]
+            new = root / "scripts" / "journal_src" / "2026-10-30-lint-probe.html"
+            s = old.read_text(encoding="utf-8").replace(old.stem, new.stem).replace("2026-10-20", "2026-10-30")
+            if extra_words:
+                s = s.replace('<div class="prose" lang="en">', '<div class="prose" lang="en"><h2>Probe</h2><p>%s</p>' % " ".join(["word"] * extra_words), 1)
+            new.write_text(s, encoding="utf-8")
+            words = journal_sync.prose_words(s, "en")
+            writes, errors = journal_sync.build(root)
+            return words, errors, list(journal_sync.WARNINGS), any(f.parent.name == new.stem for f in writes)
+
+    def test_short_new_post_fails_loudly_not_silently(self):
+        words, errors, _, _ = self.new_post_build(0)
+        self.assertLess(words, 300)
+        self.assertTrue(any("2026-10-30-lint-probe" in e and "%d words" % words in e for e in errors), errors)
+
+    def test_new_post_between_300_and_400_only_warns(self):
+        words, errors, warnings, _ = self.new_post_build(350 - 229)
+        self.assertTrue(300 <= words < 400, words)
+        self.assertEqual(errors, [])
+        self.assertTrue(any("2026-10-30-lint-probe" in w and "%d words" % words in w for w in warnings), warnings)
+
+    def test_long_new_post_is_quiet(self):
+        words, errors, warnings, _ = self.new_post_build(450 - 229)
+        self.assertGreaterEqual(words, 400)
+        self.assertEqual(errors, [])
+        self.assertFalse(any("lint-probe" in w and "words" in w for w in warnings), warnings)
+
+    def test_existing_posts_warn_but_never_fail(self):
+        errors = journal_sync.build(ROOT)[1]
+        self.assertEqual(errors, [])
+        body = [w for w in journal_sync.WARNINGS if w.startswith("body ")]
+        self.assertEqual(len(body), len(posts()), body)   # every current post is < 400 words
+
+
 class JournalNoFutureDates(unittest.TestCase):
     """JSON-LD must never carry a datePublished/dateModified that has not happened yet (KST)."""
 

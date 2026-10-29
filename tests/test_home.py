@@ -56,6 +56,33 @@ class HomePages(unittest.TestCase):
             self.assertEqual(src.count('property="og:title" content="%s"' % home_sync.esc(t.replace("&amp;", "&"))), 1, lang)
         self.assertEqual(len(titles), 12)
 
+    def test_non_english_home_titles_have_no_tagline_tail(self):
+        tail = " · when the process finally rests"
+        for lang in LANGS:
+            t = re.search(r"<title>(.*?)</title>", page(lang)).group(1)
+            if lang == "en":
+                self.assertTrue(t.endswith(tail), t)
+            else:
+                self.assertNotIn("when the process", t, lang)
+                self.assertTrue(t.startswith("ipe() — "), t)
+        # x-default root keeps its own title
+        self.assertIn("<title>ipe() — quiet things for busy minds (all languages)</title>", page(None))
+
+    def test_og_and_twitter_titles_match_title(self):
+        for lang in LANGS:
+            src = page(lang)
+            t = re.search(r"<title>(.*?)</title>", src).group(1)
+            self.assertEqual(re.search(r'<meta property="og:title" content="([^"]*)">', src).group(1), home_sync.esc(t.replace("&amp;", "&")), lang)
+            self.assertEqual(re.search(r'<meta name="twitter:title" content="([^"]*)">', src).group(1), home_sync.esc(t.replace("&amp;", "&")), lang)
+
+    def test_home_title_length_per_language(self):
+        cjk = {"ja", "zh", "ko"}
+        for lang in LANGS:
+            if lang == "en":
+                continue
+            t = re.search(r"<title>(.*?)</title>", page(lang)).group(1)
+            self.assertLessEqual(len(t), 40 if lang in cjk else 60, "%s: %s" % (lang, t))
+
     def test_json_ld_in_language(self):
         for lang in LANGS:
             blobs = [json.loads(b) for b in LD.findall(page(lang))]

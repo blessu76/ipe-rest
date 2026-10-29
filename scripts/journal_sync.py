@@ -225,6 +225,23 @@ TITLE_MAX, TITLE_MAX_CJK = 60, 40   # full <title> (post title + suffix), charac
 DESC_MAX, DESC_MAX_CJK = 160, 110   # meta description, characters
 
 
+# Body-length lint (original English prose, words). Posts dated before LINT_ERROR_FROM only ever warn;
+# a post dated on/after it that is under LINT_ERROR_WORDS is an ERROR (the run fails loudly — the post is never silently dropped).
+LINT_WARN_WORDS = 400
+LINT_ERROR_WORDS = 300
+LINT_ERROR_FROM = "2026-10-30"
+
+
+def word_lint(slug, published, words):
+    """Returns ("error"|"warning"|None, message) for one post's English body word count."""
+    if words < LINT_ERROR_WORDS and published >= LINT_ERROR_FROM:
+        return "error", ("%s: body is %d words (< %d) — posts dated %s or later must have at least %d words; "
+                         "write more, do not publish a stub" % (slug, words, LINT_ERROR_WORDS, LINT_ERROR_FROM, LINT_ERROR_WORDS))
+    if words < LINT_WARN_WORDS:
+        return "warning", "body %d words < %d: %s" % (words, LINT_WARN_WORDS, slug)
+    return None, ""
+
+
 def length_warnings(allp, ui):
     """SERP-length warnings (never errors): <title> > 60 (CJK 40) or description > 160 (CJK 110) per post per language."""
     out = []
@@ -394,6 +411,12 @@ def build(root=ROOT):
     errors += ui_errs
     allp = {s: {l: d for l, d in v.items() if l not in bad} for s, v in allp.items()}
     WARNINGS[:] = length_warnings(allp, ui)
+    for p in posts:
+        level, msg = word_lint(p["slug"], p["published"], prose_words(p["src"], "en"))
+        if level == "error":
+            errors.append(msg)
+        elif level == "warning":
+            WARNINGS.append(msg)
     list_langs = {l for v in allp.values() for l in v}
     if bad or not ({"en", "ko"} <= list_langs):
         return writes, errors + ([] if not ({"en", "ko"} - list_langs) else ["en and ko pages could not be generated"])

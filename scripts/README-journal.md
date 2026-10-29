@@ -14,7 +14,7 @@
 6. `python3 -m unittest discover tests` must be green.
 7. Bump `CACHE` in `sw.js` (and `?v=` if css/js changed); check 375 px / 320 px.
 8. Edited a post later? set `dateModified` in the source JSON-LD, then rerun step 5 (sitemap `lastmod` follows).
-9. After publishing (deployed to GitHub Pages): `python3 scripts/indexnow.py` — notifies IndexNow (Bing, Naver, Yandex…) of every sitemap URL (`--dry-run` to preview; or pass specific URLs). Key file: `c26cb51665a3463fe37863c316dc0080.txt` (public).
+9. The deploy workflow now runs `python3 scripts/indexnow.py --today` after each deploy (only URLs whose sitemap lastmod is today KST; failures never block the deploy). Manual: `python3 scripts/indexnow.py` — notifies IndexNow (Bing, Naver, Yandex…) of every sitemap URL (`--dry-run` to preview; or pass specific URLs). Key file: `c26cb51665a3463fe37863c316dc0080.txt` (public).
 
 
 ## URLs and languages (12: en ko ja zh es fr de pt ru ar hi id) — all equal, all static, never `?lang=`

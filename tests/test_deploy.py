@@ -22,6 +22,14 @@ class DeployWorkflow(unittest.TestCase):
         self.assertRegex(WORKFLOW, r"path:\s*'_site'")
         self.assertNotRegex(WORKFLOW, r"path:\s*'\.'")
 
+    def test_indexnow_runs_after_deploy_and_never_blocks_it(self):
+        i = WORKFLOW.index("- name: Notify IndexNow")
+        block = WORKFLOW[i:WORKFLOW.index("- name:", i + 10)]
+        self.assertGreater(i, WORKFLOW.index("actions/deploy-pages"))
+        self.assertIn("continue-on-error: true", block)
+        self.assertIn("scripts/indexnow.py --today", block)
+        self.assertNotRegex(block, r"[0-9a-f]{32}")  # no key value in the workflow
+
     def test_build_script_excludes_dev_dirs(self):
         sh = BUILD.read_text(encoding="utf-8")
         for ex in ("/scripts/", "/tests/", "/.github/"):

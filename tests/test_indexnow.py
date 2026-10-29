@@ -42,6 +42,24 @@ class IndexNow(unittest.TestCase):
         self.assertEqual(indexnow.sitemap_urls(self.dir / "sitemap.xml"),
                          ["https://example.test/", "https://example.test/a/"])
 
+    def test_sitemap_urls_modified_only_that_day(self):
+        sm = ('<?xml version="1.0"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+              '<url><loc>https://example.test/a/</loc><lastmod>2026-10-29</lastmod></url>'
+              '<url><loc>https://example.test/b/</loc><lastmod>2026-10-28</lastmod></url>'
+              '<url><loc>https://example.test/c/</loc></url></urlset>')
+        (self.dir / "sitemap.xml").write_text(sm)
+        self.assertEqual(indexnow.sitemap_urls_modified(self.dir / "sitemap.xml", "2026-10-29"), ["https://example.test/a/"])
+        self.assertEqual(indexnow.sitemap_urls_modified(self.dir / "sitemap.xml", "2000-01-01"), [])
+
+    def test_today_with_nothing_to_send_is_ok_and_sends_nothing(self):
+        (self.dir / (KEY + ".txt")).write_text(KEY)
+        (self.dir / "sitemap.xml").write_text('<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+                                              '<url><loc>https://example.test/</loc><lastmod>2000-01-01</lastmod></url></urlset>')
+        buf = io.StringIO()
+        with contextlib.redirect_stdout(buf):
+            self.assertEqual(indexnow.main(["--today", "--root", str(self.dir)]), 0)
+        self.assertIn("nothing to submit", buf.getvalue())
+
     def test_payload(self):
         p = indexnow.build_payload(KEY, ["https://example.test/", "https://example.test/a/"])
         self.assertEqual(p["host"], "example.test")

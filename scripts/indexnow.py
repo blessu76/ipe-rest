@@ -5,12 +5,14 @@ Run AFTER the site is published (the key file must already be live):
 
     python3 scripts/indexnow.py                 # every <loc> in sitemap.xml
     python3 scripts/indexnow.py URL [URL ...]   # only these URLs
+    python3 scripts/indexnow.py --today         # only <loc> whose <lastmod> is today (KST) — used by the deploy workflow
     python3 scripts/indexnow.py --dry-run       # print the payload, send nothing
 
 The key is the repo-root file named <32 hex>.txt whose single line is the key
 itself. It is a public file (not a secret). Standard library only.
 """
 import argparse
+import datetime
 import json
 import re
 import sys
@@ -40,6 +42,21 @@ def sitemap_urls(sitemap_path):
     tree = ET.parse(sitemap_path)
     urls = [e.text.strip() for e in tree.iter(LOC_TAG) if e.text and e.text.strip()]
     return list(dict.fromkeys(urls))
+
+
+def sitemap_urls_modified(sitemap_path, day):
+    """<loc> values whose <lastmod> starts with `day` (YYYY-MM-DD)."""
+    out = []
+    for u in ET.parse(sitemap_path).getroot():
+        loc = u.find(LOC_TAG)
+        mod = u.find(LOC_TAG.replace("}loc", "}lastmod"))
+        if loc is not None and loc.text and mod is not None and (mod.text or "").strip().startswith(day):
+            out.append(loc.text.strip())
+    return list(dict.fromkeys(out))
+
+
+def today_kst():
+    return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).date().isoformat()
 
 
 def build_payload(key, urls):
@@ -75,11 +92,18 @@ def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("urls", nargs="*", help="URLs to submit (default: every <loc> in sitemap.xml)")
     ap.add_argument("--root", default=str(ROOT), help="site root (default: this repo)")
+    ap.add_argument("--today", action="store_true", help="only sitemap URLs whose lastmod is today (KST); nothing to send = exit 0")
     ap.add_argument("--dry-run", action="store_true", help="print the payload, send nothing")
     a = ap.parse_args(argv)
 
     root = Path(a.root)
-    urls = a.urls or sitemap_urls(root / "sitemap.xml")
+    if a.today:
+        urls = sitemap_urls_modified(root / "sitemap.xml", today_kst())
+        if not urls:
+            print("IndexNow: no sitemap URL with lastmod %s — nothing to submit" % today_kst())
+            return 0
+    else:
+        urls = a.urls or sitemap_urls(root / "sitemap.xml")
     payload = build_payload(find_key(root), urls)
     if a.dry_run:
         print("POST " + ENDPOINT)

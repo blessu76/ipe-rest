@@ -48,6 +48,12 @@ jobs:
         id: deployment
         uses: actions/deploy-pages@v4
 
+      # 배포 뒤 IndexNow(Bing·Naver·Yandex 등): sitemap lastmod 가 오늘(KST)인 URL 만. 실패해도 배포 결과는 건드리지 않는다.
+      # 키는 워크플로에 쓰지 않고 레포 루트의 <key>.txt 에서 읽는다(공개 파일).
+      - name: Notify IndexNow
+        continue-on-error: true
+        run: python3 scripts/indexnow.py --today
+
       # 커밋 메시지 등 임의 문자열은 절대 run 스크립트에 ${{ }}로 직접 넣지 않는다
       # (괄호·백틱·따옴표·$가 shell/JSON을 깨뜨림). env로 넘기고 jq로 안전하게 JSON 구성.
       - name: Notify Slack — success

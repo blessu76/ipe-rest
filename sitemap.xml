@@ -267,7 +267,7 @@
   <!-- journal:start -->
   <url>
     <loc>https://ipe.rest/journal/en/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -286,7 +286,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ko/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -305,7 +305,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ja/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -324,7 +324,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/zh/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -343,7 +343,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/es/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -362,7 +362,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/fr/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -381,7 +381,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/de/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -400,7 +400,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/pt/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -419,7 +419,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ru/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -438,7 +438,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ar/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -457,7 +457,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/hi/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -476,7 +476,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/id/</loc>
-    <lastmod>2026-10-30</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -1215,7 +1215,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/"/>
@@ -1235,7 +1235,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ko/2026-10-27-follow-the-journal-quietly/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/"/>
@@ -1255,7 +1255,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ja/2026-10-27-follow-the-journal-quietly/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/"/>
@@ -1275,7 +1275,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/zh/2026-10-27-follow-the-journal-quietly/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/"/>
@@ -1295,7 +1295,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/es/2026-10-27-follow-the-journal-quietly/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/"/>
@@ -1315,7 +1315,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/fr/2026-10-27-follow-the-journal-quietly/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/"/>
@@ -1335,7 +1335,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/de/2026-10-27-follow-the-journal-quietly/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/"/>
@@ -1355,7 +1355,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/pt/2026-10-27-follow-the-journal-quietly/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/"/>
@@ -1375,7 +1375,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ru/2026-10-27-follow-the-journal-quietly/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/"/>
@@ -1395,7 +1395,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ar/2026-10-27-follow-the-journal-quietly/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/"/>
@@ -1415,7 +1415,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/hi/2026-10-27-follow-the-journal-quietly/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/"/>
@@ -1435,7 +1435,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/id/2026-10-27-follow-the-journal-quietly/</loc>
-    <lastmod>2026-10-27</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/"/>
@@ -1695,7 +1695,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/"/>
@@ -1715,7 +1715,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ko/2026-10-25-made-with-ai-and-we-say-so/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/"/>
@@ -1735,7 +1735,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ja/2026-10-25-made-with-ai-and-we-say-so/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/"/>
@@ -1755,7 +1755,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/zh/2026-10-25-made-with-ai-and-we-say-so/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/"/>
@@ -1775,7 +1775,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/es/2026-10-25-made-with-ai-and-we-say-so/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/"/>
@@ -1795,7 +1795,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/fr/2026-10-25-made-with-ai-and-we-say-so/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/"/>
@@ -1815,7 +1815,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/de/2026-10-25-made-with-ai-and-we-say-so/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/"/>
@@ -1835,7 +1835,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/pt/2026-10-25-made-with-ai-and-we-say-so/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/"/>
@@ -1855,7 +1855,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ru/2026-10-25-made-with-ai-and-we-say-so/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/"/>
@@ -1875,7 +1875,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ar/2026-10-25-made-with-ai-and-we-say-so/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/"/>
@@ -1895,7 +1895,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/hi/2026-10-25-made-with-ai-and-we-say-so/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/"/>
@@ -1915,7 +1915,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/id/2026-10-25-made-with-ai-and-we-say-so/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-25-made-with-ai-and-we-say-so/"/>

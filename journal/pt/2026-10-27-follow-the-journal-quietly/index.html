@@ -49,7 +49,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="article:published_time" content="2026-10-27T10:08+09:00">
-<meta property="article:modified_time" content="2026-10-27T10:08+09:00">
+<meta property="article:modified_time" content="2026-10-31">
 <meta property="article:section" content="studio">
 <meta property="article:author" content="ipe()">
 <meta name="twitter:card" content="summary_large_image">
@@ -66,7 +66,7 @@
   "description": "O diário do ipe() agora tem um feed RSS: acompanhe as novas entradas no leitor que preferir, sem conta e sem cadastro.",
   "abstract": "O ipe.rest agora publica /journal/feed.xml, um feed RSS 2.0 com as entradas publicadas do diário em inglês, da mais nova para a mais antiga. Dá para acompanhar sem conta.",
   "datePublished": "2026-10-27T10:08+09:00",
-  "dateModified": "2026-10-27T10:08+09:00",
+  "dateModified": "2026-10-31",
   "image": {
     "@type": "ImageObject",
     "url": "https://ipe.rest/og-image.png",
@@ -130,7 +130,7 @@
     "url": "https://ipe.rest/journal/pt/"
   },
   "inLanguage": "pt",
-  "wordCount": 183,
+  "wordCount": 461,
   "translationOfWork": {
     "@type": "BlogPosting",
     "@id": "https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/#article",
@@ -328,8 +328,15 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
   <div class="prose">
     <p class="lead">O diário do ipe() agora tem um feed RSS: acompanhe as novas entradas no leitor que preferir, sem conta e sem cadastro.</p>
     <p>RSS é uma ideia antiga e simples: um site publica a lista de suas entradas mais recentes em um arquivo pequeno, e o seu leitor consulta quando você pede. Sem conta, sem algoritmo decidindo o que você vê, sem notificações que interrompam.</p>
+    <h2>O que o feed contém</h2>
     <p>Nosso feed fica em <code class="ltr">https://ipe.rest/journal/feed.xml</code>. Ele lista as entradas em inglês, da mais nova para a mais antiga, e somente as que já foram publicadas. As páginas do diário também o anunciam no head, então a maioria dos leitores o encontra se você apenas colar ipe.rest/journal/.</p>
     <p>As entradas são escritas em inglês e coreano e estão disponíveis em 12 idiomas no site. O feed traz o título e o resumo em inglês e aponta para a página em inglês; os outros idiomas ficam a um clique de cada entrada.</p>
+    <p>É um único arquivo RSS 2.0 simples, nada mais. Uma entrada com data futura fica de fora até o seu dia chegar, então tudo o que você vê no leitor é algo que pode abrir e ler agora mesmo. O feed é gerado de novo junto com o site, por isso nunca se afasta das páginas para as quais aponta.</p>
+    <h2>Como acompanhar</h2>
+    <p>Qualquer leitor de feeds serve; não operamos nenhum nem recomendamos um em particular. Na maioria dos leitores você escolhe “adicionar feed” ou “assinar” e cola o endereço do feed acima ou simplesmente o endereço do diário, ipe.rest/journal/. Com o endereço do diário, o leitor procura o feed anunciado no head da página e preenche o resto.</p>
+    <p>A partir daí quem confere é o leitor. Quando você o abre ou o atualiza, as entradas novas aparecem na sua lista; se nada novo foi publicado, nada acontece. Não há nada para confirmar por e-mail nem nada para cancelar depois: se deixar de querer as entradas, você remove o feed do leitor e pronto.</p>
+    <h2>Por que nos damos ao trabalho</h2>
+    <p>Um diário só é útil se a próxima entrada puder ser encontrada sem que ninguém corra atrás de você. A maior parte do que escrevemos é lenta: notas sobre a música, o nome e como um pequeno estúdio trabalha com IA, algo que dizemos abertamente. Entradas assim não precisam de notificação. Precisam de um lugar onde esperar até você ter um minuto, e um feed é exatamente isso. Se preferir não usar leitor nenhum, nada se perde: a lista em ipe.rest/journal/ mostra todas as entradas, e as mais recentes também aparecem na página inicial.</p>
     <p>Combina com o nosso jeito de trabalhar: algo tranquilo que espera para ser lido. Abra quando tiver um minuto.</p>
     <blockquote>ipe(); // subscribe once, no need to check back</blockquote>
     <p><a href="/journal/feed.xml">/journal/feed.xml</a></p>

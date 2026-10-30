@@ -49,7 +49,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="article:published_time" content="2026-10-27T10:08+09:00">
-<meta property="article:modified_time" content="2026-10-27T10:08+09:00">
+<meta property="article:modified_time" content="2026-10-31">
 <meta property="article:section" content="studio">
 <meta property="article:author" content="ipe()">
 <meta name="twitter:card" content="summary_large_image">
@@ -66,7 +66,7 @@
   "description": "Das ipe()-Journal hat jetzt einen RSS-Feed: Neue Einträge im Reader deiner Wahl verfolgen, ohne Konto und ohne Anmeldung.",
   "abstract": "ipe.rest veröffentlicht jetzt /journal/feed.xml, einen RSS-2.0-Feed der veröffentlichten Journal-Einträge auf Englisch, neueste zuerst. Man kann ihm ohne Konto folgen.",
   "datePublished": "2026-10-27T10:08+09:00",
-  "dateModified": "2026-10-27T10:08+09:00",
+  "dateModified": "2026-10-31",
   "image": {
     "@type": "ImageObject",
     "url": "https://ipe.rest/og-image.png",
@@ -130,7 +130,7 @@
     "url": "https://ipe.rest/journal/de/"
   },
   "inLanguage": "de",
-  "wordCount": 170,
+  "wordCount": 434,
   "translationOfWork": {
     "@type": "BlogPosting",
     "@id": "https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/#article",
@@ -328,8 +328,15 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
   <div class="prose">
     <p class="lead">Das ipe()-Journal hat jetzt einen RSS-Feed: Neue Einträge im Reader deiner Wahl verfolgen, ohne Konto und ohne Anmeldung.</p>
     <p>RSS ist eine alte, schlichte Idee: Eine Seite veröffentlicht die Liste ihrer neuesten Einträge als kleine Datei, und dein Reader schaut nach, wenn du es verlangst. Kein Konto, kein Algorithmus, der entscheidet, was du siehst, keine Benachrichtigung, die dich unterbricht.</p>
+    <h2>Was der Feed enthält</h2>
     <p>Unser Feed liegt unter <code class="ltr">https://ipe.rest/journal/feed.xml</code>. Er listet die Einträge auf Englisch, neueste zuerst, und nur solche, die bereits veröffentlicht sind. Die Journal-Seiten kündigen ihn auch im head an, daher finden die meisten Reader ihn, wenn du einfach ipe.rest/journal/ einfügst.</p>
     <p>Die Einträge sind auf Englisch und Koreanisch geschrieben und auf der Seite in 12 Sprachen verfügbar. Der Feed enthält den englischen Titel und die Zusammenfassung und verlinkt auf die englische Seite; die anderen Sprachen sind von jedem Eintrag aus einen Klick entfernt.</p>
+    <p>Es ist eine einzige, schlichte RSS-2.0-Datei, mehr nicht. Ein Eintrag mit zukünftigem Datum bleibt draußen, bis sein Tag da ist; alles, was dein Reader zeigt, kannst du also sofort öffnen und lesen. Der Feed wird zusammen mit der Seite neu erzeugt und weicht daher nie von den Seiten ab, auf die er verweist.</p>
+    <h2>So folgst du dem Journal</h2>
+    <p>Jeder Feed-Reader genügt; wir betreiben keinen und empfehlen auch keinen bestimmten. In den meisten Readern wählst du „Feed hinzufügen“ oder „Abonnieren“ und fügst entweder die oben genannte Feed-Adresse oder einfach die Journal-Adresse ipe.rest/journal/ ein. Mit der Journal-Adresse sucht der Reader den im head der Seite angekündigten Feed und ergänzt den Rest.</p>
+    <p>Von da an übernimmt der Reader das Nachsehen. Wenn du ihn öffnest oder aktualisierst, erscheinen neue Einträge in deiner Liste; wurde nichts Neues veröffentlicht, passiert nichts. Es gibt nichts per E-Mail zu bestätigen und später nichts zu kündigen: Willst du die Einträge nicht mehr, entfernst du den Feed aus deinem Reader, und damit ist es erledigt.</p>
+    <h2>Warum wir das tun</h2>
+    <p>Ein Journal ist nur nützlich, wenn man den nächsten Eintrag finden kann, ohne dass ihm jemand hinterherläuft. Das meiste, was wir schreiben, ist langsam: Notizen zur Musik, zum Namen und dazu, wie ein kleines Studio mit KI arbeitet, was wir offen sagen. Solche Einträge brauchen keine Benachrichtigung. Sie brauchen einen Ort, an dem sie warten, bis du eine Minute hast, und genau das ist ein Feed. Wenn du lieber ganz ohne Reader auskommst, geht nichts verloren: Die Liste unter ipe.rest/journal/ zeigt jeden Eintrag, und die neuesten erscheinen auch auf der Startseite.</p>
     <p>Das passt zu unserer Arbeitsweise: etwas Leises, das darauf wartet, gelesen zu werden. Öffne es, wenn du eine Minute hast.</p>
     <blockquote>ipe(); // subscribe once, no need to check back</blockquote>
     <p><a href="/journal/feed.xml">/journal/feed.xml</a></p>

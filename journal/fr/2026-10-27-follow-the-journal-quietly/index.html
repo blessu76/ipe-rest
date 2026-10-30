@@ -49,7 +49,7 @@
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="article:published_time" content="2026-10-27T10:08+09:00">
-<meta property="article:modified_time" content="2026-10-27T10:08+09:00">
+<meta property="article:modified_time" content="2026-10-31">
 <meta property="article:section" content="studio">
 <meta property="article:author" content="ipe()">
 <meta name="twitter:card" content="summary_large_image">
@@ -66,7 +66,7 @@
   "description": "Le journal d'ipe() a maintenant un flux RSS : suivez les nouvelles entrées dans le lecteur de votre choix, sans compte et sans inscription.",
   "abstract": "ipe.rest publie désormais /journal/feed.xml, un flux RSS 2.0 des entrées publiées du journal en anglais, de la plus récente à la plus ancienne. Il se suit sans compte.",
   "datePublished": "2026-10-27T10:08+09:00",
-  "dateModified": "2026-10-27T10:08+09:00",
+  "dateModified": "2026-10-31",
   "image": {
     "@type": "ImageObject",
     "url": "https://ipe.rest/og-image.png",
@@ -130,7 +130,7 @@
     "url": "https://ipe.rest/journal/fr/"
   },
   "inLanguage": "fr",
-  "wordCount": 201,
+  "wordCount": 517,
   "translationOfWork": {
     "@type": "BlogPosting",
     "@id": "https://ipe.rest/journal/en/2026-10-27-follow-the-journal-quietly/#article",
@@ -328,8 +328,15 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
   <div class="prose">
     <p class="lead">Le journal d'ipe() a maintenant un flux RSS : suivez les nouvelles entrées dans le lecteur de votre choix, sans compte et sans inscription.</p>
     <p>Le RSS est une idée ancienne et simple : un site publie la liste de ses entrées les plus récentes dans un petit fichier, et votre lecteur le consulte quand vous le lui demandez. Pas de compte, pas d'algorithme qui décide de ce que vous voyez, pas de notification qui vous interrompt.</p>
+    <h2>Ce que contient le flux</h2>
     <p>Notre flux se trouve à <code class="ltr">https://ipe.rest/journal/feed.xml</code>. Il liste les entrées en anglais, de la plus récente à la plus ancienne, et uniquement celles qui sont déjà publiées. Les pages du journal l'annoncent aussi dans leur head ; la plupart des lecteurs le trouvent donc en collant simplement ipe.rest/journal/.</p>
     <p>Les entrées sont écrites en anglais et en coréen et disponibles en 12 langues sur le site. Le flux porte le titre et le résumé en anglais et renvoie vers la page en anglais ; les autres langues sont à un clic depuis chaque entrée.</p>
+    <p>C'est un seul fichier RSS 2.0, tout simple, rien de plus. Une entrée datée du futur reste de côté jusqu'à son jour ; tout ce que vous voyez dans votre lecteur, vous pouvez donc l'ouvrir et le lire tout de suite. Le flux est régénéré avec le site, il ne s'écarte donc jamais des pages vers lesquelles il renvoie.</p>
+    <h2>Comment le suivre</h2>
+    <p>N'importe quel lecteur de flux convient ; nous n'en exploitons aucun et n'en recommandons aucun en particulier. Dans la plupart des lecteurs, vous choisissez « ajouter un flux » ou « s'abonner » et vous collez soit l'adresse du flux ci-dessus, soit simplement celle du journal, ipe.rest/journal/. Avec l'adresse du journal, le lecteur cherche le flux annoncé dans le head de la page et complète le reste.</p>
+    <p>À partir de là, c'est le lecteur qui vérifie. Quand vous l'ouvrez ou l'actualisez, les nouvelles entrées apparaissent dans votre liste ; s'il n'y a rien de nouveau, il ne se passe rien. Il n'y a rien à confirmer par e-mail et rien à résilier ensuite : si vous ne voulez plus des entrées, vous retirez le flux de votre lecteur et c'est terminé.</p>
+    <h2>Pourquoi nous nous en donnons la peine</h2>
+    <p>Un journal n'est utile que si l'on peut trouver la prochaine entrée sans que personne ne vous coure après. La plupart de ce que nous écrivons est lent : des notes sur la musique, sur le nom, et sur la manière dont un petit studio travaille avec l'IA, ce que nous disons ouvertement. De telles entrées n'ont pas besoin de notification. Elles ont besoin d'un endroit où attendre que vous ayez une minute, et un flux est exactement cela. Si vous préférez ne pas utiliser de lecteur du tout, vous ne perdez rien : la liste sur ipe.rest/journal/ montre chaque entrée, et les plus récentes figurent aussi sur la page d'accueil.</p>
     <p>Cela correspond à notre façon de travailler : une chose tranquille qui attend d'être lue. Ouvrez-le quand vous avez une minute.</p>
     <blockquote>ipe(); // subscribe once, no need to check back</blockquote>
     <p><a href="/journal/feed.xml">/journal/feed.xml</a></p>

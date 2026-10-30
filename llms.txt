@@ -179,7 +179,7 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - [es] late_night.lofi — el camino a casa (AI translation): https://ipe.rest/journal/es/2026-10-23-late-night-lofi-the-ride-home/
   - [fr] late_night.lofi — le trajet du retour (AI translation): https://ipe.rest/journal/fr/2026-10-23-late-night-lofi-the-ride-home/
   - [de] late_night.lofi — der Heimweg (AI translation): https://ipe.rest/journal/de/2026-10-23-late-night-lofi-the-ride-home/
-  - [pt] late_night.lofi — o caminho de volta para casa (AI translation): https://ipe.rest/journal/pt/2026-10-23-late-night-lofi-the-ride-home/
+  - [pt] late_night.lofi — a volta para casa (AI translation): https://ipe.rest/journal/pt/2026-10-23-late-night-lofi-the-ride-home/
   - [ru] late_night.lofi — звуки дороги домой (AI translation): https://ipe.rest/journal/ru/2026-10-23-late-night-lofi-the-ride-home/
   - [ar] late_night.lofi — صوت طريق العودة (AI translation): https://ipe.rest/journal/ar/2026-10-23-late-night-lofi-the-ride-home/
   - [hi] late_night.lofi — घर लौटने की राह की आवाज़ (AI translation): https://ipe.rest/journal/hi/2026-10-23-late-night-lofi-the-ride-home/

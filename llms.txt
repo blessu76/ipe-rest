@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- Calm by design — nothing here chases you (2026-10-30): https://ipe.rest/journal/2026-10-30-calm-by-design-nothing-here-chases-you/ - Nothing on ipe.rest is built to bring you back: no streaks, no badges, no pings. Why a studio for tired minds is designed to ask for so little.
+  - original language: en
+  - [en] Calm by design — nothing here chases you: https://ipe.rest/journal/en/2026-10-30-calm-by-design-nothing-here-chases-you/
+  - [ko] 조용한 설계 — 여기엔 쫓아오는 것이 없습니다: https://ipe.rest/journal/ko/2026-10-30-calm-by-design-nothing-here-chases-you/
+  - [ja] 静かな設計 — 追いかけてくるものはない (AI translation): https://ipe.rest/journal/ja/2026-10-30-calm-by-design-nothing-here-chases-you/
+  - [zh] 静默设计——这里没有追着你的东西 (AI translation): https://ipe.rest/journal/zh/2026-10-30-calm-by-design-nothing-here-chases-you/
+  - [es] Calma por diseño: aquí nada te persigue (AI translation): https://ipe.rest/journal/es/2026-10-30-calm-by-design-nothing-here-chases-you/
+  - [fr] Un calme voulu : rien ne vous presse (AI translation): https://ipe.rest/journal/fr/2026-10-30-calm-by-design-nothing-here-chases-you/
+  - [de] Ruhe als Prinzip – hier jagt nichts Sie (AI translation): https://ipe.rest/journal/de/2026-10-30-calm-by-design-nothing-here-chases-you/
+  - [pt] Calma por design: nada aqui te persegue (AI translation): https://ipe.rest/journal/pt/2026-10-30-calm-by-design-nothing-here-chases-you/
+  - [ru] Тишина по замыслу: здесь никто не гонится (AI translation): https://ipe.rest/journal/ru/2026-10-30-calm-by-design-nothing-here-chases-you/
+  - [ar] هدوء مقصود — لا شيء هنا يلاحقك (AI translation): https://ipe.rest/journal/ar/2026-10-30-calm-by-design-nothing-here-chases-you/
+  - [hi] शांत डिज़ाइन — यहाँ कुछ आपका पीछा नहीं करता (AI translation): https://ipe.rest/journal/hi/2026-10-30-calm-by-design-nothing-here-chases-you/
+  - [id] Tenang sejak awal — tak ada yang mengejar (AI translation): https://ipe.rest/journal/id/2026-10-30-calm-by-design-nothing-here-chases-you/
 - Before the first note — a second of room tone (2026-10-29): https://ipe.rest/journal/2026-10-29-before-the-first-note/ - Every ipe() track opens on a second of room tone, the quiet sound of an empty room, before any music begins. Why we leave it in.
   - original language: en
   - [en] Before the first note — a second of room tone: https://ipe.rest/journal/en/2026-10-29-before-the-first-note/

@@ -167,6 +167,8 @@ class XDefaultSeo(unittest.TestCase):
     def test_sitemap_lastmod_for_changed_roots(self):
         sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
         for f in self.roots():
+            if f.startswith("journal/"):
+                continue  # journal shells canonicalise to /journal/en/... and are deliberately not in the sitemap (test_journal.JournalShellSeo)
             loc = "https://ipe.rest/" + f.replace("index.html", "")
             m = re.search(r"<loc>%s</loc>\s*<lastmod>([^<]+)</lastmod>" % re.escape(loc), sm)
             self.assertIsNotNone(m, loc)

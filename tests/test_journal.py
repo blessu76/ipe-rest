@@ -101,12 +101,12 @@ class JournalGeo(unittest.TestCase):
         urls = {u.find(SM + "loc").text: u for u in root.findall(SM + "url")}
         X = "{http://www.w3.org/1999/xhtml}link"
         for f in posts():
-            for lang in [None] + journal_sync.I18N.LANGS:
+            for lang in journal_sync.I18N.LANGS:  # the language-less shell /journal/<slug>/ is deliberately NOT in the sitemap
                 u = urls[journal_sync.I18N.post_url(slug_of(f), lang)]
                 self.assertTrue(u.find(SM + "lastmod").text)
                 self.assertEqual(len(u.findall(X)), 13)
                 self.assertIsNotNone(u.find("{http://www.google.com/schemas/sitemap-image/1.1}image"))
-        for lang in [None] + journal_sync.I18N.LANGS:
+        for lang in journal_sync.I18N.LANGS:
             self.assertEqual(len(urls[journal_sync.I18N.list_url(lang)].findall(X)), 13)
         self.assertFalse([l for l in urls if "?" in l], "no ?lang= urls in the sitemap")
 
@@ -152,8 +152,9 @@ class JournalGeo(unittest.TestCase):
     def test_llms_and_robots(self):
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
         for f in posts():
-            for lang in [None] + journal_sync.I18N.LANGS:
+            for lang in journal_sync.I18N.LANGS:
                 self.assertIn(journal_sync.I18N.post_url(slug_of(f), lang), llms)
+            self.assertNotIn(journal_sync.I18N.post_url(slug_of(f)), llms)  # llms.txt points at the /en/ canonical, not the shell
         robots = (ROOT / "robots.txt").read_text()
         self.assertIn("Sitemap: https://ipe.rest/sitemap.xml", robots)
         self.assertNotRegex(robots, r"(?m)^Disallow:\s*/\s*$")
@@ -301,10 +302,16 @@ class JournalI18n(unittest.TestCase):
         for url, (_, src) in self.pages.items():
             hl = self.hreflangs(src)
             canon = re.search(r'<link rel="canonical" href="([^"]+)"', src).group(1)
-            self.assertEqual(canon, url)
             self.assertIn("x-default", hl, url)
-            self.assertEqual(len(set(hl.values())), len(hl), "duplicate hreflang target " + url)
-            self.assertIn(url, [h.split("?")[0] for h in hl.values()], "no self reference " + url)
+            shell = "data-chooser" in src
+            if shell:  # language-less shell: canonical -> the /en/ page, same cluster as the language pages, not itself in it
+                self.assertEqual(canon, hl["en"], url)
+                self.assertNotIn(url, hl.values(), url)
+            else:
+                self.assertEqual(canon, url)
+                self.assertIn(url, [h.split("?")[0] for h in hl.values()], "no self reference " + url)
+            self.assertEqual(hl["x-default"], hl["en"], "x-default must be the /en/ page " + url)
+            self.assertEqual(len(set(h for k, h in hl.items() if k != "x-default")), len(hl) - 1, "duplicate hreflang target " + url)
             for lang, target in hl.items():
                 other = self.page_for(target)
                 self.assertIsNotNone(other, "hreflang %s -> %s is not a page" % (lang, target))
@@ -370,17 +377,19 @@ class JournalI18n(unittest.TestCase):
             loc = u.find(SM + "loc").text
             if not loc.startswith("https://ipe.rest/journal/"):
                 continue
+            self.assertNotIn("data-chooser", self.pages[loc][1], "shell in sitemap: " + loc)
             seen += 1
             self.assertIn(loc, self.pages, loc)
             sm = {l.get("hreflang"): l.get("href") for l in u.findall(X)}
             self.assertEqual(sm, self.hreflangs(self.pages[loc][1]), loc)
             self.assertTrue(u.find(SM + "lastmod").text, loc)
-        self.assertEqual(seen, len(self.pages))
+        self.assertEqual(seen, len([1 for _, src in self.pages.values() if "data-chooser" not in src]))
 
     def test_llms_lists_every_translation(self):
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
-        for url in self.pages:
-            self.assertIn(url, llms, url)
+        for url, (_, src) in self.pages.items():
+            if "data-chooser" not in src:  # shells are not listed (llms.txt links their /en/ canonical)
+                self.assertIn(url, llms, url)
 
     def test_internal_links_resolve(self):
         for url, (_, src) in self.pages.items():
@@ -648,3 +657,56 @@ class JournalNoFutureDates(unittest.TestCase):
                     if val > today:
                         bad.append("%s %s=%s" % (f.relative_to(ROOT), key, val))
         self.assertEqual(bad, [])
+
+
+class JournalShellSeo(unittest.TestCase):
+    """The language-less shells (/journal/ and /journal/<slug>/) must never compete with the /en/ pages
+    (Search Console: shell chosen as Google canonical over /journal/en/<slug>/). Rule: shell canonical = /en/,
+    hreflang x-default = /en/ on EVERY journal page, shells not in the sitemap, and no noindex on the shell
+    (noindex + canonical to another URL = mixed signals)."""
+
+    SITE = "https://ipe.rest"
+
+    def shells(self):
+        return [ROOT / "journal" / "index.html"] + [ROOT / "journal" / f.stem / "index.html" for f in posts()]
+
+    def en_url(self, shell):
+        rel = shell.relative_to(ROOT / "journal").parent.as_posix()
+        return "%s/journal/en/%s" % (self.SITE, "" if rel == "." else rel + "/")
+
+    def test_shell_canonical_is_en(self):
+        shells = self.shells()
+        self.assertEqual(len(shells), len(posts()) + 1)
+        for f in shells:
+            src = f.read_text(encoding="utf-8")
+            self.assertIn('<link rel="canonical" href="%s">' % self.en_url(f), src, f)
+            self.assertNotRegex(src, r'<meta name="robots" content="[^"]*noindex', f)
+
+    def test_x_default_is_en_on_every_journal_page(self):
+        n = 0
+        for f in (ROOT / "journal").rglob("index.html"):
+            src = f.read_text(encoding="utf-8")
+            m = re.search(r'<link rel="alternate" hreflang="x-default" href="([^"]+)"', src)
+            self.assertIsNotNone(m, f)
+            en = re.search(r'<link rel="alternate" hreflang="en" href="([^"]+)"', src).group(1)
+            self.assertEqual(m.group(1), en, f)
+            self.assertIn("/journal/en/", m.group(1), f)
+            n += 1
+        self.assertEqual(n, 13 * (len(posts()) + 1))  # 12 languages + shell, for every post and for the list
+
+    def test_sitemap_has_no_shell(self):
+        root = ET.parse(ROOT / "sitemap.xml").getroot()
+        locs = {u.find(SM + "loc").text for u in root.findall(SM + "url")}
+        for f in self.shells():
+            rel = f.relative_to(ROOT / "journal").parent.as_posix()
+            self.assertNotIn("%s/journal/%s" % (self.SITE, "" if rel == "." else rel + "/"), locs, f)
+        for u in root.findall(SM + "url"):  # x-default hreflang inside the sitemap points at /en/ too
+            for l in u.findall("{http://www.w3.org/1999/xhtml}link"):
+                if l.get("hreflang") == "x-default" and "/journal/" in l.get("href"):
+                    self.assertIn("/journal/en/", l.get("href"))
+
+    def test_generator_emits_the_rule(self):
+        """The rule lives in the generator, so a new post gets it automatically."""
+        I = journal_sync.I18N
+        self.assertEqual(dict(I.post_cluster("2026-10-31-x", {"en", "ko"}))["x-default"], I.post_url("2026-10-31-x", "en"))
+        self.assertEqual(dict(I.list_cluster({"en", "ko"}))["x-default"], I.list_url("en"))

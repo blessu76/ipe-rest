@@ -3,7 +3,7 @@
 URL rule (static, never ?lang=) — all 12 languages are equal:
     post         /journal/<lang>/<slug>/     lang = en ko ja zh es fr de pt ru ar hi id
     list         /journal/<lang>/
-    x-default    /journal/<slug>/ and /journal/   language-chooser pages (generated; self-canonical)
+    x-default    /journal/<slug>/ and /journal/   language-chooser shells (generated; canonical -> /journal/en/..., hreflang x-default -> en, not in the sitemap)
 The post's source language is `ipe:original` (en | ko) in scripts/journal_src/<slug>.html. en and ko are generated from that
 bilingual source; the other 10 come from scripts/journal_i18n/<slug>/<lang>.json. Only those 10 get the "AI translation" note.
 
@@ -57,12 +57,12 @@ def list_url(lang=None):
 
 
 def post_cluster(slug, langs):
-    """[(hreflang, url)] for a post: x-default + each available language (LANGS order)."""
-    return [("x-default", post_url(slug))] + [(l, post_url(slug, l)) for l in LANGS if l in langs]
+    """[(hreflang, url)] for a post: x-default (= the /en/ page, never the language-less shell) + each available language (LANGS order)."""
+    return [("x-default", post_url(slug, "en"))] + [(l, post_url(slug, l)) for l in LANGS if l in langs]
 
 
 def list_cluster(langs):
-    return [("x-default", list_url())] + [(l, list_url(l)) for l in LANGS if l in langs]
+    return [("x-default", list_url("en"))] + [(l, list_url(l)) for l in LANGS if l in langs]
 
 
 def head_i18n(cluster, current):
@@ -565,7 +565,8 @@ def _chooser_body(heading, lede, rows, ui_orig, lang, cluster, after=""):
 
 
 def render_chooser_post(post, ui, tr_all, langs):
-    """/journal/<slug>/ — x-default: language chooser (self-canonical, indexable)."""
+    """/journal/<slug>/ — language-chooser shell. canonical + hreflang x-default -> the /en/ page (so Google picks /en/, not the shell);
+    deliberately NO noindex (noindex + a canonical to another URL send mixed signals); not in the sitemap."""
     slug, orig = post["slug"], post["original"]
     url = post_url(slug)
     od = tr_all[orig]
@@ -575,16 +576,16 @@ def render_chooser_post(post, ui, tr_all, langs):
             "isPartOf": {"@type": "Blog", "@id": SITE + "/journal/#blog"},
             "mainEntity": {"@type": "BlogPosting", "@id": post_url(slug, orig) + "#article"}}
     article = article_ld(post, orig, ui, od, langs)  # the version this page shows, so mainEntity resolves in-page
-    crumbs = crumb_ld([("ipe()", SITE + "/"), (ui[orig]["crumb_journal"], list_url()), (od["title"], None)])
+    crumbs = crumb_ld([("ipe()", SITE + "/"), (ui[orig]["crumb_journal"], list_url("en")), (od["title"], None)])
     rows = [(l, post_url(slug, l), tr_all[l]["title"]) for l in LANGS if l in langs]
-    head = _chooser_head(od["title"] + ui[orig]["title_suffix"], od["description"], url, post_cluster(slug, langs), "article",
+    head = _chooser_head(od["title"] + ui[orig]["title_suffix"], od["description"], post_url(slug, "en"), post_cluster(slug, langs), "article",
                          OG_LOCALE[orig], [page, article, crumbs], og_title=od["title"])
     body = _chooser_body(od["h1_html"], "ipe() journal — " + ", ".join(NATIVE[l] for l in LANGS if l in langs), rows, ui[orig], orig, post_cluster(slug, langs))
     return "\n".join(head) + "\n" + body
 
 
 def render_chooser_list(ui, posts_tr, list_langs, orig_lang="en", posts=()):
-    """/journal/ — x-default list page: language chooser."""
+    """/journal/ — language-chooser shell: canonical + hreflang x-default -> /journal/en/, not in the sitemap, no noindex."""
     url = list_url()
     u = ui[orig_lang]
     page = {"@context": "https://schema.org", "@type": "CollectionPage", "@id": url + "#webpage", "url": url,
@@ -593,7 +594,7 @@ def render_chooser_list(ui, posts_tr, list_langs, orig_lang="en", posts=()):
             "mainEntity": {"@type": "Blog", "@id": "%s/journal/%s/#blog" % (SITE, orig_lang)}}
     crumbs = crumb_ld([("ipe()", SITE + "/"), (u["crumb_journal"], None)])
     rows = [(l, list_url(l), ui[l]["blog_name"]) for l in LANGS if l in list_langs]
-    head = _chooser_head(u["list_title"], u["list_desc"], url, list_cluster(list_langs), "website", OG_LOCALE[orig_lang], [page, crumbs])
+    head = _chooser_head(u["list_title"], u["list_desc"], list_url("en"), list_cluster(list_langs), "website", OG_LOCALE[orig_lang], [page, crumbs])
     after = ""
     if posts:  # plain HTML links to every x-default article page (they are otherwise only reachable via sitemap/hreflang)
         cards = "\n".join(_post_card("/journal/%s/" % p["slug"], p, posts_tr[p["slug"]][orig_lang], u) for p in posts)

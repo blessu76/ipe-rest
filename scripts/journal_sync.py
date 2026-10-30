@@ -7,7 +7,7 @@ This script READS them and WRITES (see journal_i18n.py for the URL rules):
 
     journal/<lang>/<slug>/index.html   12 languages, single-language static pages (en/ko from the source)
     journal/<lang>/index.html          12 language lists (Blog + ItemList)
-    journal/<slug>/index.html, journal/index.html   x-default language choosers
+    journal/<slug>/index.html, journal/index.html   language-chooser shells (canonical + x-default -> /en/, not in the sitemap)
     journal/feed.xml                   RSS 2.0, English, published posts only (date <= today KST), newest first; not in sitemap
     sitemap.xml  <!-- journal:start/end -->        every page above, lastmod + 13 hreflang + image
     llms.txt     <!-- journal:llms:start/end -->   lists + posts per language
@@ -315,14 +315,15 @@ def render_sitemap(posts, tr):
     newest = max(p["modified"] for p in posts)
     lcl = _xlinks(I18N.list_cluster(list_langs))
     out = []
-    for loc in [I18N.list_url()] + [I18N.list_url(l) for l in I18N.LANGS if l in list_langs]:
+    # the language-less shells (/journal/ and /journal/<slug>/) are NOT listed: they canonicalise to /en/ and x-default points there
+    for loc in [I18N.list_url(l) for l in I18N.LANGS if l in list_langs]:
         out.append("""  <url>
     <loc>%s</loc>
     <lastmod>%s</lastmod>
     <changefreq>weekly</changefreq>
     <priority>%s</priority>
 %s
-  </url>""" % (loc, newest, "0.8" if loc == I18N.list_url() or loc == I18N.list_url("en") else "0.7", lcl))
+  </url>""" % (loc, newest, "0.8" if loc == I18N.list_url("en") else "0.7", lcl))
     for p in posts:
         langs = set(tr[p["slug"]])
         cl = _xlinks(I18N.post_cluster(p["slug"], langs))
@@ -330,14 +331,14 @@ def render_sitemap(posts, tr):
         if p["image"].get("url"):
             img = "\n    <image:image><image:loc>%s</image:loc></image:image>" % html.escape(p["image"]["url"])
         for h, loc in I18N.post_cluster(p["slug"], langs):
-            lm = (tr[p["slug"]].get(h, {}).get("dateModified") if h != "x-default" else None) or p["modified"]
-            if h == "x-default":  # chooser metadata changed on CHOOSER_LASTMOD
-                lm = max(lm, I18N.CHOOSER_LASTMOD)
+            if h == "x-default":  # = the /en/ URL, already emitted as its own language entry
+                continue
+            lm = tr[p["slug"]].get(h, {}).get("dateModified") or p["modified"]
             out.append(f"""  <url>
     <loc>{loc}</loc>
     <lastmod>{lm}</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>{"0.6" if h in ("x-default", p["original"]) else "0.5"}</priority>
+    <priority>{"0.6" if h == p["original"] else "0.5"}</priority>
 {cl}{img}
   </url>""")
     return "\n".join(out)
@@ -345,14 +346,14 @@ def render_sitemap(posts, tr):
 
 def render_llms(posts, tr):
     list_langs = {l for v in tr.values() for l in v}
-    lines = ["- Journal (12 languages, one static page per language; language chooser): %s/journal/" % SITE]
+    lines = ["- Journal (12 languages, one static page per language; language chooser): %s" % I18N.list_url("en")]
     lines.append("  - Feed (RSS, English): %s/journal/feed.xml" % SITE)
     for l in I18N.LANGS:
         if l in list_langs:
             lines.append("  - %s [%s]%s: %s" % (I18N.NATIVE[l], l, " (AI translation)" if l in I18N.TR_LANGS else "", I18N.list_url(l)))
     for p in posts:
         en = tr[p["slug"]]["en"]
-        lines.append("- %s (%s): %s - %s" % (en["title"], p["published"], p["url"], en["description"]))
+        lines.append("- %s (%s): %s - %s" % (en["title"], p["published"], I18N.post_url(p["slug"], "en"), en["description"]))
         lines.append("  - original language: %s" % p["original"])
         for l in I18N.LANGS:
             if l in tr[p["slug"]]:

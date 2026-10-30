@@ -21,12 +21,13 @@
 - `/journal/<lang>/<slug>/` and list `/journal/<lang>/`. **Generated — never edit `journal/**/index.html` by hand.**
 - en + ko come from the bilingual source. The other 10 come from `scripts/journal_i18n/<slug>/<lang>.json`
   (`title, description, abstract, excerpt, h1_html, body`; optional `keywords`, `dateModified`); UI strings per language: `scripts/journal_i18n/ui.json`.
-- `/journal/<slug>/` and `/journal/` are generated **language choosers** (x-default): self-canonical, indexable, listed in the sitemap;
-  `journal.js` sends visitors to their stored/browser language, crawlers without a language simply see the list.
+- `/journal/<slug>/` and `/journal/` are generated **language-chooser shells** (language-less): `journal.js` sends visitors to their stored/browser language,
+  crawlers without a language simply see the list. They must never compete with the language pages (Search Console picked the shell over `/journal/en/<slug>/`): canonical → `/journal/en/…`,
+  hreflang x-default → `/journal/en/…` on **every** journal page, **not in the sitemap**, llms.txt links the `/en/` URL. **No `noindex`** on the shell (noindex + canonical to another URL = mixed signals). Tests: `JournalShellSeo`.
 - Original = `ipe:original`: its page carries `workTranslation` (the other 11), the rest `translationOfWork` → original.
   The "AI translation" note appears only on the 10 machine-translated languages, never on EN/KO.
 - A language without a translation JSON is simply absent (no empty page, no dangling hreflang). Machine drafts: keep `ai_label`/`ai_text` in ui.json.
-- sitemap: every page (13 per post and per list) with lastmod, 13 hreflang, image. llms.txt lists all languages.
+- sitemap: every language page (12 per post and per list; no shells) with lastmod, 13 hreflang (x-default = en), image. llms.txt lists all languages.
 
 ## RSS feed (💡#126)
 

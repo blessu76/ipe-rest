@@ -19,7 +19,7 @@ from pathlib import Path
 
 SITE = "https://ipe.rest"
 ORG_ID = SITE + "/#organization"
-VER_CSS = "10"
+VER_CSS = "10"  # journal.css is inlined into the generated pages (css_inline); this version only labels the sw.js core cache entry — bump with it
 VER_JS = "7"
 ASSET_VER = "23"
 
@@ -207,6 +207,22 @@ def _assets_head():
 <link rel="preload" href="/fonts/inter-400.woff2?v=%s" as="font" type="font/woff2" crossorigin>""" % (v, v, v, v)
 
 
+_CSS_CACHE = []
+
+
+def css_inline():
+    """journal/journal.css (the single source of truth) inlined as <style> — the sub pages no longer wait on a render-blocking
+    stylesheet request. Comments and line breaks are stripped; the file itself stays (SW core cache, readability).
+    Changing journal.css changes every generated page, so re-run the *_sync.py scripts (their --check fails otherwise)."""
+    if not _CSS_CACHE:
+        import re
+        css = (Path(__file__).resolve().parent.parent / "journal" / "journal.css").read_text(encoding="utf-8")
+        css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
+        css = "\n".join(l.strip() for l in css.splitlines() if l.strip())
+        _CSS_CACHE.append("<style>\n%s\n</style>" % css)
+    return _CSS_CACHE[0]
+
+
 def ld_script(obj):
     return '<script type="application/ld+json">\n%s\n</script>' % json.dumps(obj, ensure_ascii=False, indent=2)
 
@@ -343,7 +359,7 @@ def render_post(post, lang, ui, data, langs, nav=None):
         '',
         ld_script(ld),
         ld_script(crumbs),
-        '<link rel="stylesheet" href="/journal/journal.css?v=%s">' % VER_CSS,
+        css_inline(),
         '</head>',
         '<body>',
         _header(u, lang, cluster),
@@ -464,7 +480,7 @@ def render_list_page(lang, ui, items, list_langs):
         '',
         ld_script(ldoc),
         ld_script(crumbs),
-        '<link rel="stylesheet" href="/journal/journal.css?v=%s">' % VER_CSS,
+        css_inline(),
         '</head>',
         '<body>',
         _header(u, lang, cluster, current_list=True),
@@ -513,7 +529,7 @@ def _chooser_head(title, desc, canon, cluster, og_type, og_locale, ld_objs, og_t
         '<meta name="twitter:title" content="%s">' % esc(og_title),
         '<meta name="twitter:description" content="%s">' % esc(desc),
         '<meta name="twitter:image" content="%s/og-image.png">' % SITE, '',
-    ] + [ld_script(o) for o in ld_objs] + ['<link rel="stylesheet" href="/journal/journal.css?v=%s">' % VER_CSS, '</head>']
+    ] + [ld_script(o) for o in ld_objs] + [css_inline(), '</head>']
 
 
 def _chooser_body(heading, lede, rows, ui_orig, lang, cluster, after=""):

@@ -135,7 +135,7 @@ def render(p, lang, data, ui):
              '<meta name="twitter:title" content="%s">' % esc(d["title"]),
              '<meta name="twitter:description" content="%s">' % esc(d["description"]),
              '<meta name="twitter:image" content="%s/og-image.png">' % SITE,
-             J.ld_script(ld), '<link rel="stylesheet" href="/journal/journal.css?v=%s">' % J.VER_CSS, '</head>', '<body>',
+             J.ld_script(ld), J.css_inline(), '</head>', '<body>',
              J._header(u, lang, cl), '', '<main id="main">', '<div class="wrap">' + main, '</div>', '</main>', '',
              J._footer(u, lang), '<script src="/journal/journal.js?v=%s" defer></script>' % J.VER_JS, '</body>', '</html>', '']
     return "\n".join(parts)

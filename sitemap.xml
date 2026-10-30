@@ -2656,31 +2656,11 @@
   <!-- journal:end -->
   <!-- pages:start -->
   <url>
-    <loc>https://ipe.rest/about/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/zh/about/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://ipe.rest/pt/about/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://ipe.rest/ru/about/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ipe.rest/ar/about/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://ipe.rest/hi/about/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
-    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://ipe.rest/en/about/</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
@@ -2700,7 +2680,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
@@ -2720,7 +2700,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
@@ -2740,7 +2720,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
@@ -2760,7 +2740,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
@@ -2780,7 +2760,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
@@ -2800,7 +2780,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
@@ -2820,7 +2800,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
@@ -2840,7 +2820,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
@@ -2860,7 +2840,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
@@ -2880,7 +2860,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
@@ -2900,7 +2880,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/about/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
@@ -2916,31 +2896,11 @@
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://ipe.rest/contact/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/zh/contact/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://ipe.rest/pt/contact/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://ipe.rest/ru/contact/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ipe.rest/ar/contact/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://ipe.rest/hi/contact/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
-    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://ipe.rest/en/contact/</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
@@ -2960,7 +2920,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
@@ -2980,7 +2940,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
@@ -3000,7 +2960,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
@@ -3020,7 +2980,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
@@ -3040,7 +3000,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
@@ -3060,7 +3020,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
@@ -3080,7 +3040,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
@@ -3100,7 +3060,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
@@ -3120,7 +3080,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
@@ -3140,7 +3100,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
@@ -3160,7 +3120,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
@@ -3176,31 +3136,11 @@
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://ipe.rest/privacy/</loc>
-    <lastmod>2026-10-26</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="zh" href="https://ipe.rest/zh/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="pt" href="https://ipe.rest/pt/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://ipe.rest/ru/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="ar" href="https://ipe.rest/ar/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="hi" href="https://ipe.rest/hi/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/privacy/"/>
-    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
-  </url>
-  <url>
     <loc>https://ipe.rest/en/privacy/</loc>
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
@@ -3220,7 +3160,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
@@ -3240,7 +3180,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
@@ -3260,7 +3200,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
@@ -3280,7 +3220,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
@@ -3300,7 +3240,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
@@ -3320,7 +3260,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
@@ -3340,7 +3280,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
@@ -3360,7 +3300,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
@@ -3380,7 +3320,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
@@ -3400,7 +3340,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
@@ -3420,7 +3360,7 @@
     <lastmod>2026-10-22</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>

@@ -61,7 +61,7 @@ class InfoPages(unittest.TestCase):
     def test_chooser(self):
         for p in PAGES:
             src = read(p)
-            self.assertIn('<link rel="canonical" href="https://ipe.rest/%s/">' % p, src)
+            self.assertIn('<link rel="canonical" href="https://ipe.rest/en/%s/">' % p, src)
             for lang in LANGS:
                 self.assertIn('href="/%s/%s/"' % (lang, p), src)
 
@@ -69,7 +69,8 @@ class InfoPages(unittest.TestCase):
         root = ET.parse(ROOT / "sitemap.xml").getroot()
         urls = {u.find(SM + "loc").text: u for u in root.findall(SM + "url")}
         for p in PAGES:
-            for lang in [None] + LANGS:
+            self.assertNotIn(pages_sync.page_url(p), urls)  # the language-less shell is not listed
+            for lang in LANGS:
                 u = urls[pages_sync.page_url(p, lang)]
                 self.assertTrue(u.find(SM + "lastmod").text)
                 self.assertEqual(len(u.findall(X)), 13)
@@ -80,14 +81,55 @@ class InfoPages(unittest.TestCase):
     def test_llms_and_other_pages_link_to_language_pages(self):
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
         for p in PAGES:
-            for lang in [None] + LANGS:
+            for lang in LANGS:
                 self.assertIn(pages_sync.page_url(p, lang), llms)
+            self.assertNotIn("(language chooser): " + pages_sync.page_url(p), llms)
         for lang in LANGS:  # main page, journal footer
             for f in (ROOT / lang / "index.html", ROOT / "journal" / lang / "index.html"):
                 src = f.read_text(encoding="utf-8")
                 for p in PAGES:
                     self.assertIn('href="/%s/%s/"' % (lang, p), src, f)
                     self.assertNotIn('href="/%s/"' % p, src, f)
+
+
+class InfoPageShellSeo(unittest.TestCase):
+    """The language-less shells /about/ /contact/ /privacy/ must never compete with the /en/ pages (same incident as the journal shells).
+    Rule: shell canonical + og:url = /en/<page>/, hreflang x-default = /en/<page>/ on all 13 pages, shell not in the sitemap, NO noindex."""
+
+    SITE = "https://ipe.rest"
+
+    def test_shell_canonical_og_and_no_noindex(self):
+        for p in PAGES:
+            src = read(p)
+            en = "%s/en/%s/" % (self.SITE, p)
+            self.assertIn('<link rel="canonical" href="%s">' % en, src, p)
+            self.assertIn('<meta property="og:url" content="%s">' % en, src, p)
+            self.assertNotRegex(src, r'<meta name="robots" content="[^"]*noindex', p)
+            self.assertNotIn('href="%s/%s/"' % (self.SITE, p), src, p)  # nothing points at the shell itself
+
+    def test_x_default_is_en_on_every_page(self):
+        for p in PAGES:
+            for lang in [None] + LANGS:
+                src = read(p, lang)
+                m = re.search(r'<link rel="alternate" hreflang="x-default" href="([^"]+)"', src)
+                self.assertEqual(m.group(1), "%s/en/%s/" % (self.SITE, p), (p, lang))
+
+    def test_sitemap_has_no_shell_and_x_default_is_en(self):
+        root = ET.parse(ROOT / "sitemap.xml").getroot()
+        locs = {u.find(SM + "loc").text for u in root.findall(SM + "url")}
+        for p in PAGES:
+            self.assertNotIn("%s/%s/" % (self.SITE, p), locs, p)
+            self.assertIn("%s/en/%s/" % (self.SITE, p), locs, p)
+        for u in root.findall(SM + "url"):
+            if re.search(r"/(about|contact|privacy)/$", u.find(SM + "loc").text):
+                xd = [l.get("href") for l in u.findall(X) if l.get("hreflang") == "x-default"]
+                self.assertEqual(len(xd), 1)
+                self.assertTrue(xd[0].startswith(self.SITE + "/en/"), xd)
+
+    def test_generator_emits_the_rule(self):
+        data = pages_sync.load()[0]
+        for p in PAGES:
+            self.assertEqual(dict(pages_sync.cluster(data, p))["x-default"], pages_sync.page_url(p, "en"))
 
 
 class RootLangPicker(unittest.TestCase):
@@ -167,8 +209,8 @@ class XDefaultSeo(unittest.TestCase):
     def test_sitemap_lastmod_for_changed_roots(self):
         sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
         for f in self.roots():
-            if f.startswith("journal/"):
-                continue  # journal shells canonicalise to /journal/en/... and are deliberately not in the sitemap (test_journal.JournalShellSeo)
+            if f.startswith("journal/") or f.split("/")[0] in PAGES:
+                continue  # journal + info-page shells canonicalise to /en/... and are deliberately not in the sitemap (JournalShellSeo, InfoPageShellSeo)
             loc = "https://ipe.rest/" + f.replace("index.html", "")
             m = re.search(r"<loc>%s</loc>\s*<lastmod>([^<]+)</lastmod>" % re.escape(loc), sm)
             self.assertIsNotNone(m, loc)

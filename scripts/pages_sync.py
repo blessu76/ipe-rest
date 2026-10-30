@@ -5,8 +5,9 @@ Sources:  scripts/pages_src/<page>.html            hand-written EN+KO source (no
           scripts/pages_i18n/<page>/<lang>.json    10 AI translations: {"title", "description", "main"}  (main = the HTML
                                                    between <div class="wrap"> and its closing </div>, same structure as the EN page)
 Writes:   /<lang>/<page>/index.html                single-language static pages (en/ko from the source; 10 more where a JSON exists)
-          /<page>/index.html                       x-default language chooser (self-canonical)
-          sitemap.xml  <!-- pages:start/end -->    chooser + every language page: lastmod + hreflang + image
+          /<page>/index.html                       language-chooser shell (language-less): canonical + hreflang x-default -> /en/<page>/,
+                                                   NOT in the sitemap, no noindex (same rule as the journal shells; see README-journal.md)
+          sitemap.xml  <!-- pages:start/end -->    every language page (not the shell): lastmod + hreflang (x-default = /en/) + image
           llms.txt     <!-- pages:llms:start/end -->
 
 In `main`, links /about/ /contact/ /privacy/ and the back link "/" are rewritten to the page's own language.
@@ -77,7 +78,8 @@ def langs_of(data, p):
 
 
 def cluster(data, p):
-    return [("x-default", page_url(p))] + [(l, page_url(p, l)) for l in langs_of(data, p)]
+    """x-default = the /en/ page, never the language-less shell (Search Console picked the shell over /en/ on the journal)."""
+    return [("x-default", page_url(p, "en"))] + [(l, page_url(p, l)) for l in langs_of(data, p)]
 
 
 def localize(main, lang):
@@ -144,7 +146,7 @@ def render(p, lang, data, ui):
 def render_chooser(p, data, ui):
     langs = langs_of(data, p)
     en = data[p]["en"]
-    url = page_url(p)
+    url = page_url(p, "en")  # canonical / og:url / JSON-LD url -> the /en/ page (the shell itself is /<page>/ and deliberately has NO noindex)
     page = {"@context": "https://schema.org", "@type": LD_TYPE[p], "@id": url + "#webpage", "url": url, "name": en["title"],
             "description": en["description"], "inLanguage": "en", "isPartOf": {"@id": SITE + "/#website"}}
     rows = [(l, page_url(p, l), data[p][l]["title"]) for l in langs]
@@ -157,9 +159,9 @@ def render_chooser(p, data, ui):
 def sitemap_block(data):
     out = ["  <!-- pages:start -->"]
     for p in PAGES:
-        for lang in [None] + langs_of(data, p):
-            out += ["  <url>", "    <loc>%s</loc>" % page_url(p, lang), "    <lastmod>%s</lastmod>" % (LASTMOD if lang else J.CHOOSER_LASTMOD),
-                    "    <changefreq>yearly</changefreq>", "    <priority>%s</priority>" % ("0.5" if lang in (None, "en") else "0.4")]
+        for lang in langs_of(data, p):  # the language-less shell /<page>/ is NOT listed (canonical -> /en/)
+            out += ["  <url>", "    <loc>%s</loc>" % page_url(p, lang), "    <lastmod>%s</lastmod>" % LASTMOD,
+                    "    <changefreq>yearly</changefreq>", "    <priority>%s</priority>" % ("0.5" if lang == "en" else "0.4")]
             out += ['    <xhtml:link rel="alternate" hreflang="%s" href="%s"/>' % (h, x) for h, x in cluster(data, p)]
             out += ["    <image:image><image:loc>%s/og-image.png</image:loc></image:image>" % SITE, "  </url>"]
     out.append("  <!-- pages:end -->")
@@ -172,7 +174,7 @@ def llms_block(data):
             "contact": "ipe.haven@gmail.com (replies within 10 days)",
             "privacy": "Google Analytics, language preference stored in the browser, email correspondence, how to request access or deletion; no ads on ipe.rest"}
     for p in PAGES:
-        lines.append("- %s (language chooser): %s — %s" % (p.capitalize(), page_url(p), desc[p]))
+        lines.append("- %s (12 languages, one static page per language): %s — %s" % (p.capitalize(), page_url(p, "en"), desc[p]))
         lines += ["  - %s [%s]%s: %s" % (J.NATIVE[l], l, " (AI translation)" if l in TR else "", page_url(p, l)) for l in langs_of(data, p)]
     lines.append("<!-- pages:llms:end -->")
     return "\n".join(lines)

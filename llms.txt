@@ -216,7 +216,7 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
 
 ## About, contact and policy
 <!-- pages:llms:start -->
-- About (language chooser): https://ipe.rest/about/ — who runs ipe() (Davy Kim, ipe Studio, Seoul) and what the studio does
+- About (12 languages, one static page per language): https://ipe.rest/en/about/ — who runs ipe() (Davy Kim, ipe Studio, Seoul) and what the studio does
   - English [en]: https://ipe.rest/en/about/
   - 한국어 [ko]: https://ipe.rest/ko/about/
   - 日本語 [ja] (AI translation): https://ipe.rest/ja/about/
@@ -229,7 +229,7 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/ar/about/
   - हिन्दी [hi] (AI translation): https://ipe.rest/hi/about/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/id/about/
-- Contact (language chooser): https://ipe.rest/contact/ — ipe.haven@gmail.com (replies within 10 days)
+- Contact (12 languages, one static page per language): https://ipe.rest/en/contact/ — ipe.haven@gmail.com (replies within 10 days)
   - English [en]: https://ipe.rest/en/contact/
   - 한국어 [ko]: https://ipe.rest/ko/contact/
   - 日本語 [ja] (AI translation): https://ipe.rest/ja/contact/
@@ -242,7 +242,7 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/ar/contact/
   - हिन्दी [hi] (AI translation): https://ipe.rest/hi/contact/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/id/contact/
-- Privacy (language chooser): https://ipe.rest/privacy/ — Google Analytics, language preference stored in the browser, email correspondence, how to request access or deletion; no ads on ipe.rest
+- Privacy (12 languages, one static page per language): https://ipe.rest/en/privacy/ — Google Analytics, language preference stored in the browser, email correspondence, how to request access or deletion; no ads on ipe.rest
   - English [en]: https://ipe.rest/en/privacy/
   - 한국어 [ko]: https://ipe.rest/ko/privacy/
   - 日本語 [ja] (AI translation): https://ipe.rest/ja/privacy/

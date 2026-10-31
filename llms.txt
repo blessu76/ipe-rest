@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- Which language you get, and in what order (2026-11-01): https://ipe.rest/journal/en/2026-11-01-which-language-you-get-and-in-what-order/ - ipe sites pick your language in one fixed order: the address, your saved choice, your browser’s language, then English. Links between sites carry it along.
+  - original language: en
+  - [en] Which language you get, and in what order: https://ipe.rest/journal/en/2026-11-01-which-language-you-get-and-in-what-order/
+  - [ko] 어떤 언어로 열리는지, 그 순서: https://ipe.rest/journal/ko/2026-11-01-which-language-you-get-and-in-what-order/
+  - [ja] どの言語で開くか、その順番 (AI translation): https://ipe.rest/journal/ja/2026-11-01-which-language-you-get-and-in-what-order/
+  - [zh] 你会看到哪种语言，按什么顺序 (AI translation): https://ipe.rest/journal/zh/2026-11-01-which-language-you-get-and-in-what-order/
+  - [es] Qué idioma ves y en qué orden (AI translation): https://ipe.rest/journal/es/2026-11-01-which-language-you-get-and-in-what-order/
+  - [fr] Quelle langue, et dans quel ordre (AI translation): https://ipe.rest/journal/fr/2026-11-01-which-language-you-get-and-in-what-order/
+  - [de] Welche Sprache, und in welcher Reihenfolge (AI translation): https://ipe.rest/journal/de/2026-11-01-which-language-you-get-and-in-what-order/
+  - [pt] Qual idioma você recebe, e em que ordem (AI translation): https://ipe.rest/journal/pt/2026-11-01-which-language-you-get-and-in-what-order/
+  - [ru] Какой язык вы увидите и в каком порядке (AI translation): https://ipe.rest/journal/ru/2026-11-01-which-language-you-get-and-in-what-order/
+  - [ar] أي لغة تحصل عليها، وبأي ترتيب (AI translation): https://ipe.rest/journal/ar/2026-11-01-which-language-you-get-and-in-what-order/
+  - [hi] आपको कौन-सी भाषा मिलती है, और किस क्रम में (AI translation): https://ipe.rest/journal/hi/2026-11-01-which-language-you-get-and-in-what-order/
+  - [id] Bahasa apa, dan dalam urutan apa (AI translation): https://ipe.rest/journal/id/2026-11-01-which-language-you-get-and-in-what-order/
 - Twelve languages, one page each (2026-10-31): https://ipe.rest/journal/en/2026-10-31-twelve-languages-one-page-each/ - ipe.rest speaks 12 languages, each on its own plain page. Two are written by hand; ten are machine translated and labeled as such.
   - original language: en
   - [en] Twelve languages, one page each: https://ipe.rest/journal/en/2026-10-31-twelve-languages-one-page-each/

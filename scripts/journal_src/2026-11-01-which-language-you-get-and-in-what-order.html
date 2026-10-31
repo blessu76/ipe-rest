@@ -1,0 +1,202 @@
+<!-- SOURCE (not served): scripts/journal_sync.py generates /journal/<lang>/<slug>/ for en+ko from this file, and /journal/<slug>/ as the language chooser. -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Which language you get, and in what order — ipe() journal</title>
+<meta name="ipe:title-en" content="Which language you get, and in what order — ipe() journal">
+<meta name="ipe:title-ko" content="어떤 언어로 열리는지, 그 순서 — ipe() 저널">
+<meta name="description" content="ipe sites pick your language in one fixed order: the address, your saved choice, your browser’s language, then English. Links between sites carry it along.">
+<meta name="ipe:excerpt-en" content="How an ipe site picks your language: address, saved choice, browser language, English, and how the choice follows you between sites.">
+<meta name="ipe:excerpt-ko" content="ipe 사이트가 언어를 고르는 순서: 주소, 저장한 선택, 브라우저 언어, 영어. 그리고 그 선택이 사이트 사이를 따라다니는 방식.">
+<meta name="ipe:published-at" content="2026-11-01T10:44+09:00">
+<meta name="ipe:category" content="studio">
+<meta name="ipe:original" content="en">
+<meta name="ipe:description-ko" content="ipe 사이트는 정해진 한 가지 순서로 언어를 고릅니다. 주소, 저장해 둔 선택, 브라우저 언어, 영어. 사이트 사이의 링크도 언어를 함께 넘깁니다.">
+<meta name="ipe:abstract-ko" content="ipe 사이트는 주소에 적힌 언어, 브라우저에 저장된 선택, 브라우저의 언어, 영어의 순서로 언어를 정합니다. ipe 사이트 사이의 링크는 언어를 함께 넘깁니다.">
+<meta name="author" content="ipe()">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#fbfcfe">
+<link rel="canonical" href="https://ipe.rest/journal/2026-11-01-which-language-you-get-and-in-what-order/">
+<link rel="manifest" href="/manifest.webmanifest?v=23">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
+<link rel="apple-touch-icon" href="/icon-180.png?v=23">
+<link rel="preload" href="/fonts/inter-400.woff2?v=23" as="font" type="font/woff2" crossorigin>
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ipe()">
+<meta property="og:title" content="Which language you get, and in what order">
+<meta property="og:description" content="How an ipe site picks your language: address, saved choice, browser language, English, and how the choice follows you between sites.">
+<meta property="og:url" content="https://ipe.rest/journal/2026-11-01-which-language-you-get-and-in-what-order/">
+<meta property="og:image" content="https://ipe.rest/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-11-01">
+<meta property="article:modified_time" content="2026-11-01">
+<meta property="article:section" content="studio">
+<meta property="article:author" content="ipe()">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Which language you get, and in what order">
+<meta name="twitter:description" content="How an ipe site picks your language: address, saved choice, browser language, English, and how the choice follows you between sites.">
+<meta name="twitter:image" content="https://ipe.rest/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://ipe.rest/journal/2026-11-01-which-language-you-get-and-in-what-order/#article",
+  "headline": "Which language you get, and in what order",
+  "alternativeHeadline": "어떤 언어로 열리는지, 그 순서",
+  "description": "ipe sites pick your language in one fixed order: the address, your saved choice, your browser’s language, then English. Links between sites carry it along.",
+  "abstract": "ipe sites choose a language in one order: a language named in the address, then the choice saved in the browser, then the browser’s language, then English. Links between ipe sites pass the language along.",
+  "datePublished": "2026-11-01",
+  "dateModified": "2026-11-01",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://ipe.rest/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "thumbnailUrl": "https://ipe.rest/og-image.png",
+  "url": "https://ipe.rest/journal/2026-11-01-which-language-you-get-and-in-what-order/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ipe.rest/journal/2026-11-01-which-language-you-get-and-in-what-order/"
+  },
+  "articleSection": "studio",
+  "keywords": "ipe(), language, language order, browser language, multilingual, 12 languages, journal",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ipe.rest/icon-512.png"
+    }
+  },
+  "about": [
+    {
+      "@type": "Organization",
+      "@id": "https://ipe.rest/#organization",
+      "name": "ipe()",
+      "alternateName": [
+        "ipe",
+        "idle process",
+        "아이프"
+      ],
+      "url": "https://ipe.rest/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "language order",
+      "description": "On ipe sites, the fixed order in which a visitor's language is chosen: a language named in the address, then the choice saved in the browser, then the browser's language, then English."
+    }
+  ],
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://ipe.rest/journal/#blog",
+    "name": "ipe() journal",
+    "url": "https://ipe.rest/journal/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ipe()", "item": "https://ipe.rest/" },
+    { "@type": "ListItem", "position": 2, "name": "journal", "item": "https://ipe.rest/journal/" },
+    { "@type": "ListItem", "position": 3, "name": "Which language you get, and in what order" }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ko">본문으로 건너뛰기</span></a>
+<header class="topbar">
+  <a class="logo ltr" href="/" aria-label="ipe() home">ipe()</a>
+  <div class="top-right">
+    <nav aria-label="Primary"><a class="opt" href="/">home</a><a href="/journal/" aria-current="page">journal</a></nav>
+    <div class="langswitch" role="group" aria-label="Language / 언어">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ko" aria-pressed="false">KO</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article class="wrap">
+  <header class="post-head">
+    <p class="eyebrow"><i></i><span>journal · <time datetime="2026-11-01">2026-11-01</time></span></p>
+    <h1 lang="en">Which language you get, <em>and in what order</em></h1>
+    <h1 lang="ko">어떤 언어로 열리는지, <em>그 순서</em></h1>
+  </header>
+
+  <div class="prose" lang="en">
+    <p class="lead">When you open an ipe site, it picks your language in the same order every time: the address first, then the choice you saved, then your browser’s language, and English last.</p>
+    <p>ipe.rest has been available in twelve languages for a while, each on its own page. What changed on the first of November is how you get to the right one. Before, the front page only suggested your browser’s language; now a short rule takes you there, and we mean for the same rule to hold across ipe’s sites.</p>
+    <h2>The four steps</h2>
+    <p>First, the address. If a link says which language it wants, such as <code>lang=ko</code> at the end of an address, that wins, because whoever made the link meant it. The site also saves that choice for next time.</p>
+    <p>Second, the choice you saved. When you pick a language on the site, it is kept in your own browser under the name <code>ipe_lang</code>. It stays on your device and is never sent to us. If it is there, it is used.</p>
+    <p>Third, your browser’s language. A browser keeps an ordered list of the languages its owner reads. The site walks down that list and takes the first one it has a page for. A regional form such as ko-KR counts as plain ko.</p>
+    <p>Fourth, English. If nothing on the list matches, you land on the English page instead of an empty screen. English is a sensible last resort for us because it is one of the two languages we write the originals in, the other being Korean.</p>
+    <h2>Following you from site to site</h2>
+    <p>ipe is more than one site: the main page at ipe.rest, the music site idle, and the games portal play. A language you chose should not be forgotten at the door. So when a link on ipe.rest leads to one of the others, it carries the language you are reading. Where that site has a page in the language, the link goes straight to it. Where it does not, the language travels in the address, and the other site follows the same four steps from there.</p>
+    <h2>What the rule does not do</h2>
+    <p>Every language is still its own plain, static page at its own address, so the rule only decides where you land when you arrive from an address with no language in it, such as ipe.rest or /journal/. Once you are on a language page, you stay there. The jump replaces the address in your history instead of adding to it, so the Back button does not bounce you forward again.</p>
+    <p>Search engines and link-preview programs are left alone. They are shown the page that lists every language, because that is the page meant for them to read, and it keeps its own canonical address. And if your browser runs no scripts at all, you see that same list and simply pick one.</p>
+    <h2>Why we keep it plain</h2>
+    <p>A language is the first thing a page says to you, and a wrong guess costs a tired person a few seconds they do not have to spare. So the order puts anything stated outright, a link that names a language or a choice you made, ahead of anything guessed, which is your browser’s list. English only fills the gap when nothing else is left.</p>
+    <blockquote>ipe(); // address, then your choice, then your browser, then English</blockquote>
+    <p>If a page opens in a language you did not expect, switch it once. The site remembers, and from then on your choice comes before the browser’s guess.</p>
+  </div>
+
+  <div class="prose" lang="ko">
+    <p class="lead">ipe 사이트는 열릴 때마다 같은 순서로 언어를 고릅니다. 먼저 주소, 그다음 저장해 둔 선택, 그다음 브라우저의 언어, 마지막이 영어입니다.</p>
+    <p>ipe.rest는 한동안 열두 개 언어로 제공되어 왔고, 언어마다 독립된 페이지가 있습니다. 11월 1일에 바뀐 것은 알맞은 페이지에 닿는 방법입니다. 전에는 첫 화면이 브라우저의 언어를 제안만 했지만, 이제는 짧은 규칙 하나가 그곳으로 데려다 줍니다. 같은 규칙이 ipe의 여러 사이트에 두루 적용되도록 하려고 합니다.</p>
+    <h2>네 단계</h2>
+    <p>첫째는 주소입니다. 주소 끝의 <code>lang=ko</code>처럼 링크가 원하는 언어를 밝혀 두었다면 그것이 이깁니다. 링크를 만든 사람이 의도한 것이기 때문입니다. 사이트는 그 선택을 다음을 위해 저장해 두기도 합니다.</p>
+    <p>둘째는 저장해 둔 선택입니다. 사이트에서 언어를 고르면 그 선택이 여러분의 브라우저 안에 <code>ipe_lang</code>이라는 이름으로 보관됩니다. 값은 기기에 머물 뿐 저희에게 전송되지 않습니다. 값이 있으면 그대로 씁니다.</p>
+    <p>셋째는 브라우저의 언어입니다. 브라우저는 주인이 읽는 언어를 순서대로 적은 목록을 갖고 있습니다. 사이트는 그 목록을 위에서부터 훑어 내려가며, 페이지가 있는 첫 번째 언어를 고릅니다. ko-KR처럼 지역이 붙은 형태는 그냥 ko로 셉니다.</p>
+    <p>넷째는 영어입니다. 목록에 맞는 것이 하나도 없으면 빈 화면 대신 영어 페이지로 가게 됩니다. 영어는 저희가 원문을 쓰는 두 언어 가운데 하나이고 다른 하나가 한국어이기 때문에, 마지막 수단으로 알맞다고 생각합니다.</p>
+    <h2>사이트를 옮겨도 따라가기</h2>
+    <p>ipe는 사이트 하나가 아닙니다. ipe.rest의 메인 페이지, 음악 사이트 idle, 게임 포털 play가 있습니다. 한 번 고른 언어가 문 앞에서 잊히면 안 됩니다. 그래서 ipe.rest의 링크가 다른 사이트로 이어질 때는 지금 읽고 있는 언어를 함께 실어 보냅니다. 그 사이트에 해당 언어의 페이지가 있으면 링크는 곧장 그 페이지로 갑니다. 없으면 언어가 주소에 실려 가고, 상대 사이트가 거기서부터 같은 네 단계를 따릅니다.</p>
+    <h2>이 규칙이 하지 않는 것</h2>
+    <p>언어마다 자기 주소에 있는 평범한 정적 페이지라는 점은 그대로입니다. 그래서 규칙이 정하는 것은 ipe.rest나 /journal/처럼 언어가 없는 주소로 들어왔을 때 어디에 닿는가뿐입니다. 언어 페이지에 한 번 들어서면 거기에 머뭅니다. 이동은 기록에 덧붙지 않고 주소를 바꿔치기하므로, 뒤로 가기를 눌러도 다시 앞으로 튕겨 나가지 않습니다.</p>
+    <p>검색 엔진과 링크 미리보기 프로그램은 그대로 둡니다. 이들에게는 모든 언어를 나열한 페이지를 보여 줍니다. 그것이 읽으라고 마련된 페이지이고, 자기만의 대표 주소를 지키기 때문입니다. 브라우저가 스크립트를 전혀 실행하지 않는 경우에도 같은 목록이 보이고, 그중 하나를 고르시면 됩니다.</p>
+    <h2>단순하게 두는 이유</h2>
+    <p>언어는 페이지가 여러분에게 건네는 첫마디이고, 틀리게 짚으면 지친 사람이 아낄 수 없는 몇 초를 잃습니다. 그래서 이 순서는 분명하게 밝혀진 것, 곧 언어를 지정한 링크나 직접 고른 선택을 짐작한 것, 곧 브라우저의 목록보다 앞에 둡니다. 영어는 다른 것이 아무것도 남지 않았을 때만 빈자리를 채웁니다.</p>
+    <blockquote>ipe(); // address, then your choice, then your browser, then English</blockquote>
+    <p>페이지가 뜻밖의 언어로 열렸다면 한 번만 바꿔 주세요. 사이트가 기억하고, 그다음부터는 여러분의 선택이 브라우저의 짐작보다 앞섭니다.</p>
+  </div>
+
+  <a class="back" href="/journal/"><span lang="en">← all entries</span><span lang="ko">← 전체 글</span></a>
+</article>
+</main>
+
+<footer>
+  <p class="sig ltr">ipe<span>()</span></p>
+  <div class="foot">
+    <p class="ltr">© 2026 ipe() · idle</p>
+    <nav aria-label="Footer">
+      <a class="ltr" href="/">ipe.rest</a>
+      <a href="/journal/">journal</a>
+      <a href="/about/"><span lang="en">about</span><span lang="ko">소개</span></a>
+      <a href="/contact/"><span lang="en">contact</span><span lang="ko">문의</span></a>
+      <a href="/privacy/"><span lang="en">privacy</span><span lang="ko">개인정보처리방침</span></a>
+    </nav>
+  </div>
+</footer>
+<script src="/journal/journal.js?v=3" defer></script>
+</body>
+</html>

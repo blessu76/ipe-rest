@@ -8,8 +8,8 @@ Writes:   /<lang>/index.html               12 single-language static pages (self
           sitemap.xml  <!-- home:start/end -->        13 urls (root + 12) with lastmod + hreflang 13 + image
           llms.txt     <!-- home:llms:start/end -->   main page per language
 
-Never edit /index.html or /<lang>/index.html by hand. `?lang=xx` is retired: old links land on / (or a page) and a small
-script forwards them to /xx/.
+Never edit /index.html or /<lang>/index.html by hand. `?lang=xx` is a language hint, not a page: a small script saves it and forwards to /xx/.
+The root chooser sends visitors on by the common ipe order (URL > saved choice > browser language > English); crawlers stay.
 
 Usage:
     python3 scripts/home_sync.py           # rewrite
@@ -138,10 +138,13 @@ SCRIPT = """<script>
 (function () {
   var LANG = '%(lang)s';
   var VALID = %(langs)s;
-  // retired lang-query links -> the static page of that language
+  // ?lang=xx names a language (the URL wins over everything else): remember it and show that language's static page
   try {
-    var q = new URLSearchParams(location.search).get('lang');
-    if (q && VALID.indexOf(q) !== -1 && q !== LANG) { location.replace('/' + q + '/' + location.hash); return; }
+    var q = String(new URLSearchParams(location.search).get('lang') || '').toLowerCase().split(/[-_]/)[0];
+    if (q && VALID.indexOf(q) !== -1 && q !== LANG) {
+      try { localStorage.setItem('ipe_lang', q); } catch (e) {}
+      location.replace('/' + q + '/' + location.hash); return;
+    }
   } catch (e) {}
   var sel = document.getElementById('lang');
   if (sel) sel.addEventListener('change', function () {
@@ -200,7 +203,7 @@ def render_lang(src, ui, lang, posts):
     out = sub1(out, r'<!-- home:journal -->\n', journal_section(posts, lang, jui_ai[lang], d))
     out = sub1(out, r'<!-- home:localtime -->', J.localtime_script() if "data-ipe-time" in out else "")
     out = sub1(out, r'<!-- home:script -->', SCRIPT % {"lang": lang, "langs": json.dumps(LANGS)})
-    return out
+    return J.localize_sibling_links(out, lang)
 
 
 CHOOSER_CSS = """:root{--bg:#fbfcfe;--ink:#0f1b33;--muted:#5b6784;--cobalt:#1f4fd8;--line:#d7deec}
@@ -213,8 +216,6 @@ header{padding:24px 0;border-bottom:1px solid var(--line)}
 .tagline{display:block;margin-top:4px;font:12px "JetBrains Mono",ui-monospace,monospace;color:var(--muted)}
 h1{font-size:clamp(28px,6vw,40px);line-height:1.15;margin:40px 0 12px;font-weight:600}
 p.lede{color:var(--muted);margin:0 0 28px}
-#suggest{display:none;margin:0 0 20px;padding:12px 16px;border:1px solid var(--cobalt);color:var(--cobalt)}
-#suggest a{color:inherit;font-weight:600}
 ul{list-style:none;margin:0 0 48px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
 .lg{display:flex;flex-direction:column;justify-content:center;min-height:56px;padding:10px 16px;border:1px solid var(--line);color:var(--ink);text-decoration:none}
 .lg:hover,.lg:focus-visible{border-color:var(--cobalt)}
@@ -239,7 +240,6 @@ def render_chooser(src, ui):
                          ensure_ascii=False, indent=2)
     items = "\n".join('    <li><a class="lg" lang="%s" hreflang="%s" href="/%s/"><span class="lg-name">%s</span>'
                       '<span class="lg-sub">ipe.rest/%s/</span></a></li>' % (l, l, l, NATIVE[l], l) for l in LANGS)
-    names = json.dumps({l: NATIVE[l] for l in LANGS}, ensure_ascii=False)
     alts = "\n".join('<meta property="og:locale:alternate" content="%s">' % OG_LOCALE[l] for l in LANGS if l != "en")
     return """<!DOCTYPE html>
 <html lang="en" dir="ltr" data-chooser>
@@ -286,7 +286,6 @@ def render_chooser(src, ui):
 <main class="wrap">
   <h1>Choose your language</h1>
   <p class="lede">ipe() — quiet things for busy minds. A small AI-native studio in Seoul. The home page is available in 12 languages.</p>
-  <p id="suggest" role="status"></p>
   <ul aria-label="Languages">
 %(items)s
   </ul>
@@ -297,42 +296,39 @@ def render_chooser(src, ui):
 %(sw)s
 <script>
 (function () {
-  var VALID = %(langs)s, NAMES = %(names)s;
+  var VALID = %(langs)s;
   var h = location.hash || '';
-  try {  // retired lang-query links -> /xx/
-    var q = new URLSearchParams(location.search).get('lang');
-    if (q && VALID.indexOf(q) !== -1) { location.replace('/' + q + '/' + h); return; }
-  } catch (e) {}
-  var stored = null;
-  try { stored = localStorage.getItem('ipe_lang'); } catch (e) {}
-  // an explicit earlier choice is honoured; otherwise only suggest the browser language (no automatic redirect)
-  if (stored && VALID.indexOf(stored) !== -1) { location.replace('/' + stored + '/' + h); return; }
-  try {
-    var list = navigator.languages || [navigator.language];
-    for (var i = 0; i < list.length; i++) {
-      var c = (list[i] || '').toLowerCase().split('-')[0];
-      if (VALID.indexOf(c) !== -1) {
-        var box = document.getElementById('suggest');
-        box.innerHTML = '';
-        var a = document.createElement('a');
-        a.href = '/' + c + '/'; a.textContent = NAMES[c] + ' →'; a.lang = c;
-        box.appendChild(a); box.style.display = 'block';
-        a.addEventListener('click', function () { try { localStorage.setItem('ipe_lang', c); } catch (e) {} });
-        break;
-      }
-    }
-  } catch (e) {}
+  function norm(v) { return String(v || '').toLowerCase().split(/[-_]/)[0]; }  // ko-KR -> ko
+  function go(l) { location.replace('/' + l + '/' + h); }
   var links = document.querySelectorAll('.lg');
   for (var k = 0; k < links.length; k++) links[k].addEventListener('click', function () {
     try { localStorage.setItem('ipe_lang', this.getAttribute('hreflang')); } catch (e) {}
   });
+  // language order (common to every ipe site): 1 URL (?lang=xx) > 2 the user's saved choice > 3 browser language > 4 English.
+  // This page is the x-default chooser; it only stays on screen for crawlers and for visitors without JavaScript.
+  var q = '', stored = null;
+  try { q = norm(new URLSearchParams(location.search).get('lang')); } catch (e) {}
+  if (q && VALID.indexOf(q) !== -1) { try { localStorage.setItem('ipe_lang', q); } catch (e) {} go(q); return; }
+  try { stored = localStorage.getItem('ipe_lang'); } catch (e) {}
+  if (stored && VALID.indexOf(stored) !== -1) { go(stored); return; }
+  // search/preview bots are never sent away from the chooser (it is the indexed x-default page); the browser-language
+  // redirect below is a location.replace to a different URL, so it can neither loop nor change this page's canonical
+  if (/bot|crawl|spider|slurp|facebookexternalhit|lighthouse|preview/i.test(navigator.userAgent || '')) return;
+  try {
+    var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+    for (var i = 0; i < list.length; i++) {
+      var c = norm(list[i]);
+      if (VALID.indexOf(c) !== -1) { go(c); return; }
+    }
+  } catch (e) {}
+  go('en');
 })();
 </script>
 </body>
 </html>
 """ % {"title": esc(title), "desc": esc(desc), "og_title": esc(title_plain), "og_desc": esc(en["meta_desc"]), "root": home_url(), "site": SITE, "img_alt": J.OG_IMAGE_ALT_ATTR, "hreflang": hreflang_block(), "alts": alts,
        "org": org, "site_ld": site_ld, "css": CHOOSER_CSS, "items": items, "ga": ga.strip(), "sw": sw.strip(),
-       "langs": json.dumps(LANGS), "names": names}
+       "langs": json.dumps(LANGS)}
 
 
 def sitemap_block(lastmod=LASTMOD):

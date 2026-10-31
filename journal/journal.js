@@ -1,4 +1,4 @@
-/* ipe() journal — language chooser/redirect for x-default pages, EN/KO switch on the bilingual info pages (about/contact/privacy), GA4 (same property as the main page). */
+/* ipe() journal — language chooser/redirect for x-default pages (URL > saved > browser > en), EN/KO switch on the bilingual info pages (about/contact/privacy), GA4 (same property as the main page). */
 (function () {
   // Translated pages (/journal/<lang>/…) are single-language static pages: no switch, <html lang> stays as served.
   if (document.querySelector('.langswitch')) {  // buttons (source template) or the header select (about/contact/privacy)
@@ -68,26 +68,32 @@
     try { localStorage.setItem('ipe_lang', a.getAttribute('hreflang')); } catch (err) {}
   });
 
-  // x-default chooser pages (/journal/ and /journal/<slug>/): go to the stored choice, else the browser language.
-  // Without either (e.g. crawlers with no language), the page simply stays as the language list.
+  // x-default chooser pages (/journal/, /about/, ... and /journal/<slug>/): the common ipe language order —
+  // 1 ?lang=xx > 2 the saved choice > 3 browser language (first match, ko-KR -> ko) > 4 English.
+  // Search/preview bots stay on the chooser (the indexed x-default page); the redirect is a location.replace to another URL,
+  // so it cannot loop.
   if (document.documentElement.hasAttribute('data-chooser')) {
     var avail = {}, links = document.querySelectorAll('.choose-list a[hreflang]');
     for (var q = 0; q < links.length; q++) avail[links[q].getAttribute('hreflang')] = links[q].getAttribute('href');
+    var norm = function (v) { return String(v || '').toLowerCase().split(/[-_]/)[0]; };
     var want = null;
-    try {  // retired ?lang=xx links win over the stored choice
-      var q = new URLSearchParams(location.search).get('lang');
-      if (q && avail[q]) want = q;
+    try {  // ?lang=xx wins over the stored choice and is remembered
+      var ql = norm(new URLSearchParams(location.search).get('lang'));
+      if (ql && avail[ql]) { want = ql; try { localStorage.setItem('ipe_lang', ql); } catch (err) {} }
     } catch (err) {}
     if (!want) { try { want = localStorage.getItem('ipe_lang'); } catch (err) {} }
     if (!want || !avail[want]) {
       want = null;
-      try {
-        var langs = navigator.languages || [navigator.language || ''];
-        for (var n = 0; n < langs.length && !want; n++) {
-          var c = (langs[n] || '').toLowerCase().split('-')[0];
-          if (avail[c]) want = c;
-        }
-      } catch (err) {}
+      if (!/bot|crawl|spider|slurp|facebookexternalhit|lighthouse|preview/i.test(navigator.userAgent || '')) {
+        try {
+          var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
+          for (var n = 0; n < langs.length && !want; n++) {
+            var c = norm(langs[n]);
+            if (avail[c]) want = c;
+          }
+        } catch (err) {}
+        if (!want && avail.en) want = 'en';
+      }
     }
     if (want && avail[want]) location.replace(avail[want] + location.hash);
   }

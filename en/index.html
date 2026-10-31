@@ -475,7 +475,7 @@ img,svg{max-width:100%}
       <h2 class="sec-label" id="things-h" data-i18n="things_eyebrow">things we make</h2>
       <p class="sec-cap" data-i18n="things_sub">It all begins with one question:<br>could this feel a little more human?</p>
     </div>
-    <a class="work" href="https://idle.ipe.rest" target="_blank" rel="noopener">
+    <a class="work" href="https://idle.ipe.rest/en/" target="_blank" rel="noopener">
       <div class="work-art" aria-hidden="true">
         <svg viewBox="0 0 480 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
         <defs><linearGradient id="sea" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0a1f57"/><stop offset=".55" stop-color="#123a9c"/><stop offset="1" stop-color="#0b2463"/></linearGradient><radialGradient id="glow" cx=".58" cy=".42" r=".5"><stop offset="0" stop-color="#7fa6ff" stop-opacity=".35"/><stop offset="1" stop-color="#7fa6ff" stop-opacity="0"/></radialGradient></defs>
@@ -566,7 +566,7 @@ img,svg{max-width:100%}
       </div>
 
     </a>
-    <a class="work work-play" href="https://play.ipe.rest" target="_blank" rel="noopener">
+    <a class="work work-play" href="https://play.ipe.rest/" target="_blank" rel="noopener">
       <div class="work-body">
         <div class="work-top">
           <span class="status"><i aria-hidden="true"></i><span data-i18n="play_status">portal open</span></span>
@@ -637,8 +637,8 @@ img,svg{max-width:100%}
         <a href="#note" data-i18n="nav_note">studio note</a>
         <a href="#things" data-i18n="nav_things">things we make</a>
         <a href="/journal/en/" data-i18n="nav_journal">journal</a>
-        <a class="ltr" href="https://idle.ipe.rest" target="_blank" rel="noopener">idle()</a>
-        <a class="ltr" href="https://play.ipe.rest" target="_blank" rel="noopener">play()</a>
+        <a class="ltr" href="https://idle.ipe.rest/en/" target="_blank" rel="noopener">idle()</a>
+        <a class="ltr" href="https://play.ipe.rest/" target="_blank" rel="noopener">play()</a>
       </nav>
       <ul class="socials ltr" aria-label="ipe() on social media">
         <li><a href="https://www.youtube.com/@ipe-rest" target="_blank" rel="noopener">YouTube</a></li>
@@ -736,10 +736,13 @@ if ('serviceWorker' in navigator) {
 (function () {
   var LANG = 'en';
   var VALID = ["en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id"];
-  // retired lang-query links -> the static page of that language
+  // ?lang=xx names a language (the URL wins over everything else): remember it and show that language's static page
   try {
-    var q = new URLSearchParams(location.search).get('lang');
-    if (q && VALID.indexOf(q) !== -1 && q !== LANG) { location.replace('/' + q + '/' + location.hash); return; }
+    var q = String(new URLSearchParams(location.search).get('lang') || '').toLowerCase().split(/[-_]/)[0];
+    if (q && VALID.indexOf(q) !== -1 && q !== LANG) {
+      try { localStorage.setItem('ipe_lang', q); } catch (e) {}
+      location.replace('/' + q + '/' + location.hash); return;
+    }
   } catch (e) {}
   var sel = document.getElementById('lang');
   if (sel) sel.addEventListener('change', function () {

@@ -8,6 +8,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
 import home_sync  # noqa: E402
+import journal_i18n as J  # noqa: E402
 
 LANGS = home_sync.LANGS
 LD = re.compile(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', re.S)
@@ -44,12 +45,14 @@ class HomePages(unittest.TestCase):
             self.assertIn("/journal/%s/" % lang, src)
             self.assertNotIn('href="/journal/en/"', src) if lang != "en" else None
             self.assertIn("ipe() · idle", src)
-            self.assertNotIn("?lang=", re.sub(r"<script>.*?</script>|<!--.*?-->", "", src, flags=re.S))
+            body = re.sub(r"<script>.*?</script>|<!--.*?-->", "", src, flags=re.S)
+            # no query-string URLs of our own; the only ?lang= is the language hint on a link to a site without that folder
+            self.assertNotIn("?lang=", re.sub(r'href="https://play\.ipe\.rest/\?lang=[a-z]{2}"', "", body))
 
     def test_play_portal_linked_and_llms_not_stale(self):
         for lang in LANGS:
             src = page(lang)
-            self.assertEqual(src.count('href="https://play.ipe.rest"'), 2, lang)  # card + footer, like idle
+            self.assertEqual(src.count('href="%s"' % J.sibling_url("play.ipe.rest", lang)), 2, lang)  # card + footer, like idle
             self.assertIn('"url": "https://play.ipe.rest/"', src, lang)  # Organization.hasPart
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
         self.assertIn("play.ipe.rest", llms)
@@ -104,15 +107,41 @@ class HomePages(unittest.TestCase):
         src = page(None)
         self.assertIn('<link rel="canonical" href="https://ipe.rest/">', src)
         self.assertEqual(hreflangs(src), dict(home_sync.cluster()))
-        for lang in LANGS:
+        for lang in LANGS:  # the chooser markup still lists every language (crawlers and no-JS visitors stay here)
             self.assertIn('href="/%s/"' % lang, src)
         self.assertIn("URLSearchParams", src)
-        self.assertIn("location.replace('/' + q + '/'", src)
         self.assertNotIn("navigator.languages[0]", src)
-        # crawlers get no automatic redirect: the browser-language case only offers a link
-        self.assertNotIn("location.replace('/' + c", src)
-        for lang in LANGS:  # language pages forward an old ?lang=xx too
+        # common ipe language order: 1 ?lang= > 2 saved choice > 3 browser language (region stripped) > 4 English
+        js = src[src.index("var VALID"):]
+        order = [js.index(x) for x in ("get('lang')", "localStorage.getItem('ipe_lang')", "navigator.languages", "go('en')")]
+        self.assertEqual(order, sorted(order))
+        self.assertIn("split(/[-_]/)[0]", js)  # ko-KR -> ko
+        self.assertIn("location.replace('/' + l + '/' + h)", js)
+        self.assertIn("localStorage.setItem('ipe_lang', q)", js)  # ?lang=xx is remembered
+        # crawlers are not sent away from the indexed chooser; the redirect only ever targets /xx/ (no loop)
+        self.assertLess(js.index("/bot|crawl|spider"), js.index("navigator.languages"))
+        for lang in LANGS:  # language pages forward an old ?lang=xx too (and remember it)
             self.assertIn("URLSearchParams", page(lang))
+            self.assertIn("localStorage.setItem('ipe_lang', q)", page(lang))
+
+    def test_links_to_other_ipe_sites_carry_the_language(self):
+        want = {"idle.ipe.rest": {l: "https://idle.ipe.rest/%s/" % l for l in LANGS},
+                "play.ipe.rest": {l: ("https://play.ipe.rest/%s/" % l if l not in ("en", "ar", "hi") else
+                                      "https://play.ipe.rest/" if l == "en" else "https://play.ipe.rest/?lang=%s" % l) for l in LANGS}}
+        for lang in LANGS:
+            src = page(lang)
+            for host, urls in want.items():
+                found = set(re.findall(r'<a [^>]*href="(https://%s[^"]*)"' % re.escape(host), src))
+                self.assertEqual(found, {urls[lang]}, (lang, host))
+            for h in ("about", "contact", "privacy"):  # info pages and journal posts link idle in their own language too
+                self.assertEqual(set(re.findall(r'<a [^>]*href="(https://idle\.ipe\.rest[^"]*)"', (ROOT / lang / h / "index.html").read_text(encoding="utf-8"))) - {want["idle.ipe.rest"][lang]}, set(), (lang, h))
+
+    def test_x_default_shells_follow_the_same_order(self):
+        js = (ROOT / "journal" / "journal.js").read_text(encoding="utf-8")
+        block = js[js.index("hasAttribute('data-chooser')"):js.index("// GA4")]
+        order = [block.index(x) for x in ("get('lang')", "localStorage.getItem('ipe_lang')", "navigator.languages", "want = 'en'")]
+        self.assertEqual(order, sorted(order))
+        self.assertLess(block.index("/bot|crawl|spider"), block.index("navigator.languages"))
 
     def test_sitemap_has_home_pages(self):
         root = ET.parse(ROOT / "sitemap.xml").getroot()

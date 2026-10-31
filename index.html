@@ -119,8 +119,6 @@ header{padding:24px 0;border-bottom:1px solid var(--line)}
 .tagline{display:block;margin-top:4px;font:12px "JetBrains Mono",ui-monospace,monospace;color:var(--muted)}
 h1{font-size:clamp(28px,6vw,40px);line-height:1.15;margin:40px 0 12px;font-weight:600}
 p.lede{color:var(--muted);margin:0 0 28px}
-#suggest{display:none;margin:0 0 20px;padding:12px 16px;border:1px solid var(--cobalt);color:var(--cobalt)}
-#suggest a{color:inherit;font-weight:600}
 ul{list-style:none;margin:0 0 48px;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px}
 .lg{display:flex;flex-direction:column;justify-content:center;min-height:56px;padding:10px 16px;border:1px solid var(--line);color:var(--ink);text-decoration:none}
 .lg:hover,.lg:focus-visible{border-color:var(--cobalt)}
@@ -137,7 +135,6 @@ footer a{color:inherit}
 <main class="wrap">
   <h1>Choose your language</h1>
   <p class="lede">ipe() — quiet things for busy minds. A small AI-native studio in Seoul. The home page is available in 12 languages.</p>
-  <p id="suggest" role="status"></p>
   <ul aria-label="Languages">
     <li><a class="lg" lang="en" hreflang="en" href="/en/"><span class="lg-name">English</span><span class="lg-sub">ipe.rest/en/</span></a></li>
     <li><a class="lg" lang="ko" hreflang="ko" href="/ko/"><span class="lg-name">한국어</span><span class="lg-sub">ipe.rest/ko/</span></a></li>
@@ -193,35 +190,32 @@ if ('serviceWorker' in navigator) {
 </script>
 <script>
 (function () {
-  var VALID = ["en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id"], NAMES = {"en": "English", "ko": "한국어", "ja": "日本語", "zh": "简体中文", "es": "Español", "fr": "Français", "de": "Deutsch", "pt": "Português", "ru": "Русский", "ar": "العربية", "hi": "हिन्दी", "id": "Bahasa Indonesia"};
+  var VALID = ["en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id"];
   var h = location.hash || '';
-  try {  // retired lang-query links -> /xx/
-    var q = new URLSearchParams(location.search).get('lang');
-    if (q && VALID.indexOf(q) !== -1) { location.replace('/' + q + '/' + h); return; }
-  } catch (e) {}
-  var stored = null;
-  try { stored = localStorage.getItem('ipe_lang'); } catch (e) {}
-  // an explicit earlier choice is honoured; otherwise only suggest the browser language (no automatic redirect)
-  if (stored && VALID.indexOf(stored) !== -1) { location.replace('/' + stored + '/' + h); return; }
-  try {
-    var list = navigator.languages || [navigator.language];
-    for (var i = 0; i < list.length; i++) {
-      var c = (list[i] || '').toLowerCase().split('-')[0];
-      if (VALID.indexOf(c) !== -1) {
-        var box = document.getElementById('suggest');
-        box.innerHTML = '';
-        var a = document.createElement('a');
-        a.href = '/' + c + '/'; a.textContent = NAMES[c] + ' →'; a.lang = c;
-        box.appendChild(a); box.style.display = 'block';
-        a.addEventListener('click', function () { try { localStorage.setItem('ipe_lang', c); } catch (e) {} });
-        break;
-      }
-    }
-  } catch (e) {}
+  function norm(v) { return String(v || '').toLowerCase().split(/[-_]/)[0]; }  // ko-KR -> ko
+  function go(l) { location.replace('/' + l + '/' + h); }
   var links = document.querySelectorAll('.lg');
   for (var k = 0; k < links.length; k++) links[k].addEventListener('click', function () {
     try { localStorage.setItem('ipe_lang', this.getAttribute('hreflang')); } catch (e) {}
   });
+  // language order (common to every ipe site): 1 URL (?lang=xx) > 2 the user's saved choice > 3 browser language > 4 English.
+  // This page is the x-default chooser; it only stays on screen for crawlers and for visitors without JavaScript.
+  var q = '', stored = null;
+  try { q = norm(new URLSearchParams(location.search).get('lang')); } catch (e) {}
+  if (q && VALID.indexOf(q) !== -1) { try { localStorage.setItem('ipe_lang', q); } catch (e) {} go(q); return; }
+  try { stored = localStorage.getItem('ipe_lang'); } catch (e) {}
+  if (stored && VALID.indexOf(stored) !== -1) { go(stored); return; }
+  // search/preview bots are never sent away from the chooser (it is the indexed x-default page); the browser-language
+  // redirect below is a location.replace to a different URL, so it can neither loop nor change this page's canonical
+  if (/bot|crawl|spider|slurp|facebookexternalhit|lighthouse|preview/i.test(navigator.userAgent || '')) return;
+  try {
+    var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
+    for (var i = 0; i < list.length; i++) {
+      var c = norm(list[i]);
+      if (VALID.indexOf(c) !== -1) { go(c); return; }
+    }
+  } catch (e) {}
+  go('en');
 })();
 </script>
 </body>

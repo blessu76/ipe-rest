@@ -83,11 +83,11 @@ def cluster(data, p):
 
 
 def localize(main, lang):
-    """Point internal links at the page's own language (translations may carry the EN-localized hrefs)."""
+    """Point internal links (and links to other ipe sites) at the page's own language (translations may carry the EN-localized hrefs)."""
     main = re.sub(r'href="/(?:[a-z]{2}/)?(about|contact|privacy)/"', lambda m: 'href="/%s/%s/"' % (lang, m.group(1)), main)
     main = re.sub(r'href="/journal/(?:[a-z]{2}/)?"', 'href="/journal/%s/"' % lang, main)
     main = re.sub(r'class="back" href="/(?:[a-z]{2}/)?"', 'class="back" href="/%s/"' % lang, main)
-    return main
+    return J.localize_sibling_links(main, lang)
 
 
 def check_data(p, lang, d):

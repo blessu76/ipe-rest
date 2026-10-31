@@ -18,6 +18,7 @@ import json
 from pathlib import Path
 
 SITE = "https://ipe.rest"
+OG_IMAGE_ALT = "ipe() — quiet things for busy minds"
 ORG_ID = SITE + "/#organization"
 VER_CSS = "10"  # journal.css is inlined into the generated pages (css_inline); this version only labels the sw.js core cache entry — bump with it
 VER_JS = "7"
@@ -41,6 +42,9 @@ I18N_DIR = ("scripts", "journal_i18n")
 
 def esc(s):
     return html.escape(s, quote=True)
+
+
+OG_IMAGE_ALT_ATTR = esc(OG_IMAGE_ALT)
 
 
 def post_url(slug, lang=None):
@@ -348,6 +352,7 @@ def render_post(post, lang, ui, data, langs, nav=None):
         '<meta property="og:image" content="%s">' % img_url,
         '<meta property="og:image:width" content="%s">' % img.get("width", 1200),
         '<meta property="og:image:height" content="%s">' % img.get("height", 630),
+        '<meta property="og:image:alt" content="%s">' % OG_IMAGE_ALT_ATTR,
         '<meta property="article:published_time" content="%s">' % stamp(post)[0],
         '<meta property="article:modified_time" content="%s">' % modified,
         '<meta property="article:section" content="%s">' % esc(post["category"]),
@@ -356,6 +361,7 @@ def render_post(post, lang, ui, data, langs, nav=None):
         '<meta name="twitter:title" content="%s">' % tw,
         '<meta name="twitter:description" content="%s">' % esc(data["description"]),
         '<meta name="twitter:image" content="%s">' % img_url,
+        '<meta name="twitter:image:alt" content="%s">' % OG_IMAGE_ALT_ATTR,
         '',
         ld_script(ld),
         ld_script(crumbs),
@@ -473,10 +479,14 @@ def render_list_page(lang, ui, items, list_langs):
         '<meta property="og:description" content="%s">' % esc(u["list_desc"]),
         '<meta property="og:url" content="%s">' % url,
         '<meta property="og:image" content="%s/og-image.png">' % SITE,
+        '<meta property="og:image:width" content="1200">',
+        '<meta property="og:image:height" content="630">',
+        '<meta property="og:image:alt" content="%s">' % OG_IMAGE_ALT_ATTR,
         '<meta name="twitter:card" content="summary_large_image">',
         '<meta name="twitter:title" content="%s">' % og,
         '<meta name="twitter:description" content="%s">' % esc(u["list_desc"]),
         '<meta name="twitter:image" content="%s/og-image.png">' % SITE,
+        '<meta name="twitter:image:alt" content="%s">' % OG_IMAGE_ALT_ATTR,
         '',
         ld_script(ldoc),
         ld_script(crumbs),
@@ -525,10 +535,14 @@ def _chooser_head(title, desc, canon, cluster, og_type, og_locale, ld_objs, og_t
         '<meta property="og:url" content="%s">' % canon,
         '<meta property="og:locale" content="%s">' % og_locale,
         '<meta property="og:image" content="%s/og-image.png">' % SITE,
+        '<meta property="og:image:width" content="1200">',
+        '<meta property="og:image:height" content="630">',
+        '<meta property="og:image:alt" content="%s">' % OG_IMAGE_ALT_ATTR,
         '<meta name="twitter:card" content="summary_large_image">',
         '<meta name="twitter:title" content="%s">' % esc(og_title),
         '<meta name="twitter:description" content="%s">' % esc(desc),
-        '<meta name="twitter:image" content="%s/og-image.png">' % SITE, '',
+        '<meta name="twitter:image" content="%s/og-image.png">' % SITE,
+        '<meta name="twitter:image:alt" content="%s">' % OG_IMAGE_ALT_ATTR, '',
     ] + [ld_script(o) for o in ld_objs] + [css_inline(), '</head>']
 
 

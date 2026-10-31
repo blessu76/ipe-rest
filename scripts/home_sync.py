@@ -263,12 +263,16 @@ def render_chooser(src, ui):
 <meta property="og:description" content="%(og_desc)s">
 <meta property="og:url" content="%(root)s">
 <meta property="og:image" content="%(site)s/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="%(img_alt)s">
 <meta property="og:locale" content="en_US">
 %(alts)s
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="%(og_title)s">
 <meta name="twitter:description" content="%(og_desc)s">
 <meta name="twitter:image" content="%(site)s/og-image.png">
+<meta name="twitter:image:alt" content="%(img_alt)s">
 %(org)s
 <script type="application/ld+json">
 %(site_ld)s
@@ -326,7 +330,7 @@ def render_chooser(src, ui):
 </script>
 </body>
 </html>
-""" % {"title": esc(title), "desc": esc(desc), "og_title": esc(title_plain), "og_desc": esc(en["meta_desc"]), "root": home_url(), "site": SITE, "hreflang": hreflang_block(), "alts": alts,
+""" % {"title": esc(title), "desc": esc(desc), "og_title": esc(title_plain), "og_desc": esc(en["meta_desc"]), "root": home_url(), "site": SITE, "img_alt": J.OG_IMAGE_ALT_ATTR, "hreflang": hreflang_block(), "alts": alts,
        "org": org, "site_ld": site_ld, "css": CHOOSER_CSS, "items": items, "ga": ga.strip(), "sw": sw.strip(),
        "langs": json.dumps(LANGS), "names": names}
 

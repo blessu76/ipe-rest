@@ -88,7 +88,8 @@
   "description": "ipe() (short for 'idle process') is a small AI-native studio building quiet, developer-minded products — starting with AI lo-fi music that respects your attention. when the process finally rests.",
   "disambiguatingDescription": "ipe() is a software & music studio at ipe.rest — not related to ipe (ipê) hardwood, lumber, or decking. The name comes from 'idle process', the computing term for a processor at rest.",
   "hasPart": [
-    { "@type": "WebSite", "name": "idle", "url": "https://idle.ipe.rest/", "description": "AI lo-fi & healing music for tired developers — 12 tracks on YouTube, including the debut album dear(you); vol.1." }
+    { "@type": "WebSite", "name": "idle", "url": "https://idle.ipe.rest/", "description": "AI lo-fi & healing music for tired developers — 12 tracks on YouTube, including the debut album dear(you); vol.1." },
+    { "@type": "WebSite", "name": "ipe() Games", "url": "https://play.ipe.rest/", "description": "Four small games from ipe(): Iltonggi, Inkisle, Sunmeld and Claimball. Short rounds, few rules, no ads. None is released yet." }
   ],
   "sameAs": [
     "https://www.youtube.com/@ipe-rest",
@@ -234,6 +235,8 @@ img,svg{max-width:100%}
 .spec div{min-width:0;padding:12px 0;border-bottom:1px solid var(--hair)}
 .spec dt{color:var(--muted);font:11px var(--mono);letter-spacing:.12em;text-transform:uppercase}
 .spec dd{margin:4px 0 0;color:var(--ink);font:13px/1.5 var(--mono);overflow-wrap:anywhere}
+.work-play{grid-template-columns:minmax(0,1fr);min-height:0;margin-top:20px}
+.work-play h3{margin:18px 0 8px;font-size:clamp(34px,4vw,44px)}
 .work-act{margin-top:auto;padding-top:26px;display:flex;justify-content:space-between;align-items:center;min-height:calc(var(--tap) + 26px);color:var(--cobalt);font:600 13px var(--mono);letter-spacing:.06em;text-transform:uppercase}
 .work-act .arw{font-size:18px;transition:transform .25s}
 .work:hover .work-act .arw{transform:translate(3px,-3px)}
@@ -550,6 +553,19 @@ img,svg{max-width:100%}
         </dl>
         <span class="work-act"><span data-i18n="p1_action">dengarkan sekarang</span><span class="arw" aria-hidden="true">↗</span></span>
       </div>
+
+    </a>
+    <a class="work work-play" href="https://play.ipe.rest" target="_blank" rel="noopener">
+      <div class="work-body">
+        <div class="work-top">
+          <span class="status"><i aria-hidden="true"></i><span data-i18n="play_status">portal dibuka</span></span>
+          <span class="work-url ltr">play.ipe.rest</span>
+        </div>
+        <h3 class="ltr">play()</h3>
+        <p class="work-kind" data-i18n="play_kind">game untuk waktu istirahatmu</p>
+        <p class="work-desc" data-i18n="play_desc">Empat game kecil: ronde singkat, aturan sedikit, tanpa iklan. Belum ada yang dirilis.</p>
+        <span class="work-act"><span data-i18n="play_action">kunjungi portal</span><span class="arw" aria-hidden="true">↗</span></span>
+      </div>
     </a>
   </section>
 
@@ -611,6 +627,7 @@ img,svg{max-width:100%}
         <a href="#things" data-i18n="nav_things">yang kami buat</a>
         <a href="/journal/id/" data-i18n="nav_journal">jurnal</a>
         <a class="ltr" href="https://idle.ipe.rest" target="_blank" rel="noopener">idle()</a>
+        <a class="ltr" href="https://play.ipe.rest" target="_blank" rel="noopener">play()</a>
       </nav>
       <ul class="socials ltr" aria-label="ipe() on social media">
         <li><a href="https://www.youtube.com/@ipe-rest" target="_blank" rel="noopener">YouTube</a></li>

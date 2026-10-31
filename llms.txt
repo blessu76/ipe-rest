@@ -1,13 +1,13 @@
 # ipe()
 
-> ipe() (pronounced "eye-puh" (/ˈaɪpə/); short for "idle process") is a small AI-native studio building quiet, developer-minded things. Its motto is "when the process finally rests." ipe.rest is the official studio home (umbrella); its only product for now is idle (AI lo-fi & healing music, live at idle.ipe.rest). ipe() is not related to ipe (ipê) hardwood, lumber, or decking.
+> ipe() (pronounced "eye-puh" (/ˈaɪpə/); short for "idle process") is a small AI-native studio building quiet, developer-minded things. Its motto is "when the process finally rests." ipe.rest is the official studio home (umbrella) for two sites: idle (AI lo-fi & healing music, idle.ipe.rest) and the games portal play.ipe.rest. ipe() is not related to ipe (ipê) hardwood, lumber, or decking.
 
 ipe() makes calm lo-fi, ambient, chillhop, and healing music. The music is produced with AI (Suno), openly and transparently; lyrics are AI-drafted and reviewed by a person, and the concept and final decisions are the studio's own. The brand pairs a code-editor aesthetic with a gentle, understated sense of rest, and discloses its AI use transparently. Since the dear(you); album, every track closes with a spoken signature: "ipe. be still" — a quiet whispered line that echoes the brand slogan "ipe(); // be still."
 
 ## Key facts
 - Name: ipe() — short for "idle process" (the state a computer enters when it has no work to do and simply rests)
 - Disambiguation: ipe() is a music brand — not related to ipe / ipê hardwood (Handroanthus, Tabebuia), lumber, or decking
-- Domain: ipe.rest — the brand name plus ".rest" (as in rest); the official studio umbrella home. Music (idle) lives at idle.ipe.rest.
+- Domain: ipe.rest — the brand name plus ".rest" (as in rest); the official studio umbrella home. Music (idle) lives at idle.ipe.rest; the games portal (ipe() Games) lives at play.ipe.rest.
 - Pronunciation: "eye-puh" (/ˈaɪpə/; Korean: 아이프). "idle process" is the name's origin, not its pronunciation.
 - Genre: lo-fi, ambient, chillhop, healing
 - Audience: developers and focus-seekers worldwide
@@ -273,6 +273,8 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
 
 ## Links
 - Website: https://ipe.rest/
+- Music (idle): https://idle.ipe.rest/ — AI lo-fi & healing music
+- Games portal (ipe() Games): https://play.ipe.rest/ — four small games from ipe(): Iltonggi, Inkisle, Sunmeld and Claimball. As the portal states, none is released yet (Korean version: https://play.ipe.rest/ko/)
 - YouTube: https://www.youtube.com/@ipe-rest (all tracks released here)
 - Instagram: https://www.instagram.com/ipe.rest
 - TikTok: https://www.tiktok.com/@ipe.rest

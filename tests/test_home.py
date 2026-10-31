@@ -46,6 +46,15 @@ class HomePages(unittest.TestCase):
             self.assertIn("ipe() · idle", src)
             self.assertNotIn("?lang=", re.sub(r"<script>.*?</script>|<!--.*?-->", "", src, flags=re.S))
 
+    def test_play_portal_linked_and_llms_not_stale(self):
+        for lang in LANGS:
+            src = page(lang)
+            self.assertEqual(src.count('href="https://play.ipe.rest"'), 2, lang)  # card + footer, like idle
+            self.assertIn('"url": "https://play.ipe.rest/"', src, lang)  # Organization.hasPart
+        llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
+        self.assertIn("play.ipe.rest", llms)
+        self.assertNotIn("only product", llms)
+
     def test_titles_and_descriptions_are_per_language(self):
         titles = set()
         for lang in LANGS:

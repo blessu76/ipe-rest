@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- Twelve languages, one page each (2026-10-31): https://ipe.rest/journal/en/2026-10-31-twelve-languages-one-page-each/ - ipe.rest speaks 12 languages, each on its own plain page. Two are written by hand; ten are machine translated and labeled as such.
+  - original language: en
+  - [en] Twelve languages, one page each: https://ipe.rest/journal/en/2026-10-31-twelve-languages-one-page-each/
+  - [ko] 열두 개 언어, 언어마다 한 페이지: https://ipe.rest/journal/ko/2026-10-31-twelve-languages-one-page-each/
+  - [ja] 12の言語、1言語に1ページ — このサイトの話し方 (AI translation): https://ipe.rest/journal/ja/2026-10-31-twelve-languages-one-page-each/
+  - [zh] 十二种语言，每种语言一页 —— 本站如何开口 (AI translation): https://ipe.rest/journal/zh/2026-10-31-twelve-languages-one-page-each/
+  - [es] Doce idiomas, una página por idioma (AI translation): https://ipe.rest/journal/es/2026-10-31-twelve-languages-one-page-each/
+  - [fr] Douze langues, une page par langue (AI translation): https://ipe.rest/journal/fr/2026-10-31-twelve-languages-one-page-each/
+  - [de] Zwölf Sprachen, je eine Seite (AI translation): https://ipe.rest/journal/de/2026-10-31-twelve-languages-one-page-each/
+  - [pt] Doze idiomas, uma página por idioma (AI translation): https://ipe.rest/journal/pt/2026-10-31-twelve-languages-one-page-each/
+  - [ru] Двенадцать языков, по странице на язык (AI translation): https://ipe.rest/journal/ru/2026-10-31-twelve-languages-one-page-each/
+  - [ar] اثنتا عشرة لغة، وصفحة لكل لغة (AI translation): https://ipe.rest/journal/ar/2026-10-31-twelve-languages-one-page-each/
+  - [hi] बारह भाषाएँ, हर भाषा का एक पृष्ठ (AI translation): https://ipe.rest/journal/hi/2026-10-31-twelve-languages-one-page-each/
+  - [id] 12 bahasa, satu halaman tiap bahasa (AI translation): https://ipe.rest/journal/id/2026-10-31-twelve-languages-one-page-each/
 - Calm by design — nothing here chases you (2026-10-30): https://ipe.rest/journal/en/2026-10-30-calm-by-design-nothing-here-chases-you/ - Nothing on ipe.rest is built to bring you back: no streaks, no badges, no pings. Why a studio for tired minds is designed to ask for so little.
   - original language: en
   - [en] Calm by design — nothing here chases you: https://ipe.rest/journal/en/2026-10-30-calm-by-design-nothing-here-chases-you/

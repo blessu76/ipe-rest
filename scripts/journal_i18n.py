@@ -448,10 +448,24 @@ def chooser_title(title):
     return title + ALL_LANGS_TITLE
 
 
+# Source descriptions too long for the chooser tail: a short complete sentence stands in (keyed by the start of the source text)
+CHOOSER_DESC_SHORT = {
+    "ipe() (short for idle process) is a small": "ipe() is a small AI-native studio making quiet lo-fi music for developers.",
+    "Notes from ipe(), a small AI-native studio": "Notes from ipe(), a small AI-native studio in Seoul, about the music, the name, and what we build.",
+    "Privacy policy for ipe.rest: Google Analyt": "Privacy policy for ipe.rest: analytics, language preference, email you send us, and your rights. No ads.",
+    "A series for the ride home after a late ni": "A series for the ride home after a late night, and its first single, \u201cstill compiling.\u201d",
+    "How ipe() makes its music: with AI (Suno),": "How ipe() makes its music: with AI (Suno), openly. Lyrics are an AI draft a person revises and reviews.",
+    "Why ipe() writes its quietest lines as cod": "Why ipe() writes its quietest lines as code comments: they do not run and they are not headlines.",
+    "Every ipe() track ends with one whispered line": "Every ipe() track ends with one whispered line, \u201cipe. be still.\u201d The rule behind that last breath.",
+}
+
+
 def chooser_desc(desc, n):
-    """Description + 'Available in n languages.' within DESC_MAX; the original text is cut at a sentence/word end if needed."""
+    """Description + 'Available in n languages.' within DESC_MAX; too-long text gets a short stand-in, else a sentence/word-end cut."""
     tail = ALL_LANGS_DESC % n
     room = DESC_MAX - len(tail)
+    if len(desc) > room:
+        desc = next((v for k, v in CHOOSER_DESC_SHORT.items() if desc.startswith(k)), desc)
     if len(desc) > room:
         cut = desc[:room - 1]
         end = max(cut.rfind(". ") + 1, cut.rfind(".) ") + 2)

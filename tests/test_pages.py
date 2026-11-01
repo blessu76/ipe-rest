@@ -179,6 +179,7 @@ class XDefaultSeo(unittest.TestCase):
             self.assertLessEqual(len(d), 160, f)
             self.assertTrue(d.endswith("Available in 12 languages."), f)
             self.assertNotIn("Choose your language", d, f)
+            self.assertNotIn("…", d, f)  # no truncated description (#181)
             for prop in ("og:title", "twitter:title"):  # share previews: plain title, no marker
                 self.assertNotIn("all languages", self.meta(f, prop), (f, prop))
             self.assertNotIn(" Available in", self.meta(f, "og:description"), f)

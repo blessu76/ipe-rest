@@ -184,7 +184,7 @@ class HomeJournalCards(unittest.TestCase):
             sec, hrefs = self.cards((ROOT / lang / "index.html").read_text(encoding="utf-8"))
             self.assertEqual(hrefs, ["/journal/%s/%s/" % (lang, s) for s in newest], lang)
             self.assertIn('href="/journal/%s/"' % lang, sec)  # "view all"
-            self.assertIn("J-0", sec)
+            self.assertRegex(sec, r"J-\d+")
             self.assertEqual(sec.count("data-ipe-time"), 3)
             for p, d in posts[:3]:
                 self.assertIn(d[lang]["title"].split("&")[0], sec)

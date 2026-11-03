@@ -6,7 +6,15 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 01 Nov 2026 10:44:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 03 Nov 2026 20:13:00 +0900</lastBuildDate>
+    <item>
+      <title>What this site remembers about you</title>
+      <link>https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/</guid>
+      <pubDate>Tue, 03 Nov 2026 20:13:00 +0900</pubDate>
+      <category>studio</category>
+      <description>ipe.rest keeps almost nothing about you: a language choice on your device, a page-view count, and a note if you write to us. Here is the plain list.</description>
+    </item>
     <item>
       <title>Which language you get, and in what order</title>
       <link>https://ipe.rest/journal/en/2026-11-01-which-language-you-get-and-in-what-order/</link>

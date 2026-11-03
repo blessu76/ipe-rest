@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- What this site remembers about you (2026-11-03): https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/ - ipe.rest keeps almost nothing about you: a language choice on your device, a page-view count, and a note if you write to us. Here is the plain list.
+  - original language: en
+  - [en] What this site remembers about you: https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/
+  - [ko] 이 사이트가 여러분에 대해 기억하는 것: https://ipe.rest/journal/ko/2026-11-03-what-this-site-remembers-about-you/
+  - [ja] このサイトがあなたについて覚えていること (AI translation): https://ipe.rest/journal/ja/2026-11-03-what-this-site-remembers-about-you/
+  - [zh] 这个网站记住了你的什么 (AI translation): https://ipe.rest/journal/zh/2026-11-03-what-this-site-remembers-about-you/
+  - [es] Lo que este sitio recuerda de ti (AI translation): https://ipe.rest/journal/es/2026-11-03-what-this-site-remembers-about-you/
+  - [fr] Ce que ce site retient de vous (AI translation): https://ipe.rest/journal/fr/2026-11-03-what-this-site-remembers-about-you/
+  - [de] Was diese Seite sich über dich merkt (AI translation): https://ipe.rest/journal/de/2026-11-03-what-this-site-remembers-about-you/
+  - [pt] O que este site lembra sobre você (AI translation): https://ipe.rest/journal/pt/2026-11-03-what-this-site-remembers-about-you/
+  - [ru] Что этот сайт помнит о вас (AI translation): https://ipe.rest/journal/ru/2026-11-03-what-this-site-remembers-about-you/
+  - [ar] ما الذي يتذكره هذا الموقع عنك (AI translation): https://ipe.rest/journal/ar/2026-11-03-what-this-site-remembers-about-you/
+  - [hi] यह साइट आपके बारे में क्या याद रखती है (AI translation): https://ipe.rest/journal/hi/2026-11-03-what-this-site-remembers-about-you/
+  - [id] Apa yang diingat situs ini tentang Anda (AI translation): https://ipe.rest/journal/id/2026-11-03-what-this-site-remembers-about-you/
 - Which language you get, and in what order (2026-11-01): https://ipe.rest/journal/en/2026-11-01-which-language-you-get-and-in-what-order/ - ipe sites pick your language in one fixed order: the address, your saved choice, your browser’s language, then English. Links between sites carry it along.
   - original language: en
   - [en] Which language you get, and in what order: https://ipe.rest/journal/en/2026-11-01-which-language-you-get-and-in-what-order/

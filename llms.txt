@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- Open it once, read it offline (2026-11-04): https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/ - ipe.rest keeps a small copy of itself in your browser, so a page you have opened once can open again without a connection. Here is how it works, in plain words.
+  - original language: en
+  - [en] Open it once, read it offline: https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/
+  - [ko] 한 번 열어 두면 오프라인에서도 읽힙니다: https://ipe.rest/journal/ko/2026-11-04-open-it-once-read-it-offline/
+  - [ja] 一度開けば、オフラインでも読めます (AI translation): https://ipe.rest/journal/ja/2026-11-04-open-it-once-read-it-offline/
+  - [zh] 打开一次，离线也能读 (AI translation): https://ipe.rest/journal/zh/2026-11-04-open-it-once-read-it-offline/
+  - [es] Ábrelo una vez, léelo sin conexión (AI translation): https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/
+  - [fr] Ouvrez une fois, lisez hors connexion (AI translation): https://ipe.rest/journal/fr/2026-11-04-open-it-once-read-it-offline/
+  - [de] Einmal öffnen, offline lesen (AI translation): https://ipe.rest/journal/de/2026-11-04-open-it-once-read-it-offline/
+  - [pt] Abra uma vez, leia offline (AI translation): https://ipe.rest/journal/pt/2026-11-04-open-it-once-read-it-offline/
+  - [ru] Откройте один раз — читайте без сети (AI translation): https://ipe.rest/journal/ru/2026-11-04-open-it-once-read-it-offline/
+  - [ar] افتحه مرة واحدة واقرأه بلا اتصال (AI translation): https://ipe.rest/journal/ar/2026-11-04-open-it-once-read-it-offline/
+  - [hi] एक बार खोलें, ऑफ़लाइन पढ़ें (AI translation): https://ipe.rest/journal/hi/2026-11-04-open-it-once-read-it-offline/
+  - [id] Buka sekali, baca secara offline (AI translation): https://ipe.rest/journal/id/2026-11-04-open-it-once-read-it-offline/
 - What this site remembers about you (2026-11-03): https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/ - ipe.rest keeps almost nothing about you: a language choice on your device, a page-view count, and a note if you write to us. Here is the plain list.
   - original language: en
   - [en] What this site remembers about you: https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/

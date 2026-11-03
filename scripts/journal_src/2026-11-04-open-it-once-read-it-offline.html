@@ -1,0 +1,208 @@
+<!-- SOURCE (not served): scripts/journal_sync.py generates /journal/<lang>/<slug>/ for en+ko from this file, and /journal/<slug>/ as the language chooser. -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Open it once, read it offline — ipe() journal</title>
+<meta name="ipe:title-en" content="Open it once, read it offline — ipe() journal">
+<meta name="ipe:title-ko" content="한 번 열어 두면 오프라인에서도 읽힙니다 — ipe() 저널">
+<meta name="description" content="ipe.rest keeps a small copy of itself in your browser, so a page you have opened once can open again without a connection. Here is how it works, in plain words.">
+<meta name="ipe:excerpt-en" content="How ipe.rest opens a page you have already read when your connection drops: a small helper in your browser, a saved copy of the site, and what it will not do.">
+<meta name="ipe:excerpt-ko" content="연결이 끊겨도 이미 읽은 페이지가 열리는 이유: 브라우저 안의 작은 도우미, 저장된 사이트 사본, 그리고 그것이 하지 않는 일.">
+<meta name="ipe:published-at" content="2026-11-04T10:30+09:00">
+<meta name="ipe:category" content="studio">
+<meta name="ipe:original" content="en">
+<meta name="ipe:description-ko" content="ipe.rest 는 브라우저 안에 자기 사본을 조금 보관해서, 한 번 열어 본 페이지는 연결이 없어도 다시 열립니다. 어떻게 작동하는지 쉬운 말로 적었습니다.">
+<meta name="ipe:abstract-ko" content="ipe.rest 는 서비스 워커를 등록해 핵심 파일 몇 개와 읽은 페이지를 저장합니다. 페이지는 네트워크를 먼저 확인하고 오프라인일 때만 저장본을 쓰며, 글꼴·아이콘·스타일은 캐시를 먼저 씁니다. 버전이 바뀌면 옛 사본은 삭제됩니다.">
+<meta name="author" content="ipe()">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#fbfcfe">
+<link rel="canonical" href="https://ipe.rest/journal/2026-11-04-open-it-once-read-it-offline/">
+<link rel="manifest" href="/manifest.webmanifest?v=23">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
+<link rel="apple-touch-icon" href="/icon-180.png?v=23">
+<link rel="preload" href="/fonts/inter-400.woff2?v=23" as="font" type="font/woff2" crossorigin>
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ipe()">
+<meta property="og:title" content="Open it once, read it offline">
+<meta property="og:description" content="How ipe.rest opens a page you have already read when your connection drops: a small helper in your browser, a saved copy of the site, and what it will not do.">
+<meta property="og:url" content="https://ipe.rest/journal/2026-11-04-open-it-once-read-it-offline/">
+<meta property="og:image" content="https://ipe.rest/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-11-04">
+<meta property="article:modified_time" content="2026-11-04">
+<meta property="article:section" content="studio">
+<meta property="article:author" content="ipe()">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Open it once, read it offline">
+<meta name="twitter:description" content="How ipe.rest opens a page you have already read when your connection drops: a small helper in your browser, a saved copy of the site, and what it will not do.">
+<meta name="twitter:image" content="https://ipe.rest/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://ipe.rest/journal/2026-11-04-open-it-once-read-it-offline/#article",
+  "headline": "Open it once, read it offline",
+  "alternativeHeadline": "한 번 열어 두면 오프라인에서도 읽힙니다",
+  "description": "ipe.rest keeps a small copy of itself in your browser, so a page you have opened once can open again without a connection. Here is how it works, in plain words.",
+  "abstract": "ipe.rest registers a service worker that saves a short list of core files and each page you read. Pages are fetched from the network first and fall back to the saved copy offline; fonts, icons and styles come from the cache first. Old copies are deleted when the version changes.",
+  "datePublished": "2026-11-04",
+  "dateModified": "2026-11-04",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://ipe.rest/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "thumbnailUrl": "https://ipe.rest/og-image.png",
+  "url": "https://ipe.rest/journal/2026-11-04-open-it-once-read-it-offline/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ipe.rest/journal/2026-11-04-open-it-once-read-it-offline/"
+  },
+  "articleSection": "studio",
+  "keywords": "ipe(), offline, service worker, cache, PWA, journal",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ipe.rest/icon-512.png"
+    }
+  },
+  "about": [
+    {
+      "@type": "Organization",
+      "@id": "https://ipe.rest/#organization",
+      "name": "ipe()",
+      "alternateName": [
+        "ipe",
+        "idle process",
+        "아이프"
+      ],
+      "url": "https://ipe.rest/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "service worker",
+      "description": "A small program your browser runs in the background. It decides whether each file comes from the network or from a copy saved on your device."
+    }
+  ],
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://ipe.rest/journal/#blog",
+    "name": "ipe() journal",
+    "url": "https://ipe.rest/journal/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ipe()", "item": "https://ipe.rest/" },
+    { "@type": "ListItem", "position": 2, "name": "journal", "item": "https://ipe.rest/journal/" },
+    { "@type": "ListItem", "position": 3, "name": "Open it once, read it offline" }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ko">본문으로 건너뛰기</span></a>
+<header class="topbar">
+  <a class="logo ltr" href="/" aria-label="ipe() home">ipe()</a>
+  <div class="top-right">
+    <nav aria-label="Primary"><a class="opt" href="/">home</a><a href="/journal/" aria-current="page">journal</a></nav>
+    <div class="langswitch" role="group" aria-label="Language / 언어">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ko" aria-pressed="false">KO</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article class="wrap">
+  <header class="post-head">
+    <p class="eyebrow"><i></i><span>journal · <time datetime="2026-11-04">2026-11-04</time></span></p>
+    <h1 lang="en">Open it once, <em>read it offline</em></h1>
+    <h1 lang="ko">한 번 열어 두면 <em>오프라인에서도 읽힙니다</em></h1>
+  </header>
+
+  <div class="prose" lang="en">
+    <p class="lead">ipe.rest keeps a small copy of itself in your browser, so a page you have already opened can open again with no connection. Here is how that works, and what it will not do.</p>
+    <p>Last time we listed what this site remembers about you, and one item was a cache of the site’s own files. This entry is about that cache: why it is there, how it behaves, and how to get rid of it.</p>
+    <h2>What the home page sets up</h2>
+    <p>When you open the home page, it registers a small program called a service worker. Your browser runs it in the background, apart from the page. Its job is simple: it sits between the site and the network and decides where each file should come from.</p>
+    <p>The first time it runs, it saves a short list of core files: the home pages, the journal index, the about, contact and privacy pages, the icons and the fonts. Everything else is saved later, as you read it.</p>
+    <h2>Pages: the network comes first</h2>
+    <p>For pages, the worker asks the network first, and it asks the server whether the page has changed instead of trusting an older copy held by the browser. When you are online you always get the current page, and a fresh copy goes into the cache each time.</p>
+    <p>If the network fails, the worker falls back to the copy it saved. So an entry you opened yesterday still opens today on a train with no signal. A page you never opened cannot be there, and in that case the worker shows the home page instead of a browser error.</p>
+    <h2>Fonts, icons and styles: the cache comes first</h2>
+    <p>Files that rarely change go the other way. The worker looks in the cache first and goes to the network only when it has no copy. That is why fonts and icons are not downloaded again on every visit.</p>
+    <h2>How old copies go away</h2>
+    <p>The cache has a version name, and we change it whenever the site’s files change. When a new version starts, the worker deletes every cache with a different name. Old copies do not pile up on your device, and a fix we publish reaches you on your next visit.</p>
+    <p>To remove everything yourself, clear the site’s data in your browser settings. The next visit starts from nothing.</p>
+    <h2>What it does not do</h2>
+    <p>The cache is a plain stash of files kept inside your browser. It is not a profile of you, and nothing in it is sent to us. It cannot show a page you never opened, and a link to another site, such as a track on YouTube, still needs a connection like anything else.</p>
+    <h2>Why we bother</h2>
+    <p>A journal about quiet things should not demand a perfect signal. People read in waiting rooms and on commutes, and a site that can open from a stash is kinder to those moments.</p>
+    <blockquote>ipe(); // open it once, and it remembers how to open itself</blockquote>
+    <p>If a page ever looks out of date, reload it once while you are online. The page itself is always asked for fresh; only the fonts, icons and styles come from the stash, and they are renewed with each new version.</p>
+  </div>
+
+  <div class="prose" lang="ko">
+    <p class="lead">ipe.rest 는 브라우저 안에 자기 사본을 조금 보관합니다. 그래서 이미 열어 본 페이지는 연결이 없어도 다시 열립니다. 어떻게 작동하는지, 그리고 무엇은 하지 못하는지를 적었습니다.</p>
+    <p>지난번에는 이 사이트가 여러분에 대해 기억하는 것을 적었고, 그중 하나가 사이트 자체 파일의 캐시였습니다. 이번 글은 그 캐시에 관한 것입니다. 왜 있는지, 어떻게 움직이는지, 어떻게 지우는지를 이야기합니다.</p>
+    <h2>홈페이지가 마련해 두는 것</h2>
+    <p>홈페이지를 열면 서비스 워커라는 작은 프로그램이 등록됩니다. 브라우저가 페이지와는 따로 백그라운드에서 실행하는 프로그램입니다. 하는 일은 단순합니다. 사이트와 네트워크 사이에 서서 각 파일을 어디에서 가져올지 정합니다.</p>
+    <p>처음 실행될 때는 핵심 파일 몇 개를 저장합니다. 홈페이지들, 저널 목록, 소개·문의·개인정보처리방침 페이지, 아이콘, 글꼴입니다. 나머지는 여러분이 읽는 대로 나중에 저장됩니다.</p>
+    <h2>페이지는 네트워크가 먼저</h2>
+    <p>페이지에 대해서는 먼저 네트워크에 묻습니다. 브라우저가 들고 있는 오래된 사본을 믿지 않고, 서버에 페이지가 바뀌었는지 다시 확인합니다. 온라인일 때는 늘 최신 페이지를 받고, 그때마다 새 사본이 캐시에 들어갑니다.</p>
+    <p>네트워크가 끊기면 저장해 둔 사본으로 돌아갑니다. 그래서 어제 열어 본 글은 신호 없는 기차 안에서도 오늘 다시 열립니다. 한 번도 열지 않은 페이지는 저장되어 있을 수 없고, 그럴 때는 브라우저 오류 대신 홈페이지를 보여 줍니다.</p>
+    <h2>글꼴·아이콘·스타일은 캐시가 먼저</h2>
+    <p>거의 바뀌지 않는 파일은 반대로 움직입니다. 캐시를 먼저 보고, 사본이 없을 때만 네트워크로 갑니다. 방문할 때마다 글꼴과 아이콘을 다시 내려받지 않는 이유입니다.</p>
+    <h2>옛 사본이 사라지는 방식</h2>
+    <p>캐시에는 버전 이름이 있고, 사이트 파일이 바뀔 때마다 저희가 그 이름을 바꿉니다. 새 버전이 시작되면 워커는 이름이 다른 캐시를 모두 지웁니다. 옛 사본이 기기에 쌓이지 않고, 저희가 올린 수정은 다음 방문 때 닿습니다.</p>
+    <p>직접 모두 지우려면 브라우저 설정에서 이 사이트의 데이터를 지우세요. 다음 방문은 아무것도 없는 상태에서 시작됩니다.</p>
+    <h2>하지 못하는 것</h2>
+    <p>캐시는 브라우저 안에 보관되는 평범한 파일 모음입니다. 여러분에 대한 프로필이 아니고, 안에 든 것이 저희에게 전송되지도 않습니다. 열어 본 적 없는 페이지는 보여 줄 수 없고, YouTube 의 트랙 같은 다른 사이트로 가는 링크는 여느 때처럼 연결이 필요합니다.</p>
+    <h2>굳이 이렇게 하는 이유</h2>
+    <p>조용한 것들에 관한 저널이 완벽한 신호를 요구해서는 안 됩니다. 사람들은 대기실이나 출퇴근길에서 글을 읽고, 저장해 둔 사본으로 열리는 사이트는 그런 순간에 더 친절합니다.</p>
+    <blockquote>ipe(); // open it once, and it remembers how to open itself</blockquote>
+    <p>페이지가 오래된 것처럼 보이면 온라인일 때 한 번 새로 고침하세요. 페이지 자체는 언제나 새로 요청하고, 캐시에서 오는 것은 글꼴·아이콘·스타일뿐이며 이들은 새 버전마다 갱신됩니다.</p>
+  </div>
+
+  <a class="back" href="/journal/"><span lang="en">← all entries</span><span lang="ko">← 전체 글</span></a>
+</article>
+</main>
+
+<footer>
+  <p class="sig ltr">ipe<span>()</span></p>
+  <div class="foot">
+    <p class="ltr">© 2026 ipe() · idle</p>
+    <nav aria-label="Footer">
+      <a class="ltr" href="/">ipe.rest</a>
+      <a href="/journal/">journal</a>
+      <a href="/about/"><span lang="en">about</span><span lang="ko">소개</span></a>
+      <a href="/contact/"><span lang="en">contact</span><span lang="ko">문의</span></a>
+      <a href="/privacy/"><span lang="en">privacy</span><span lang="ko">개인정보처리방침</span></a>
+    </nav>
+  </div>
+</footer>
+<script src="/journal/journal.js?v=3" defer></script>
+</body>
+</html>

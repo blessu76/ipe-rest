@@ -125,7 +125,7 @@
     "url": "https://ipe.rest/journal/en/"
   },
   "inLanguage": "en",
-  "wordCount": 537,
+  "wordCount": 554,
   "workTranslation": [
     {
       "@type": "BlogPosting",
@@ -390,7 +390,7 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
     <p>The first time it runs, it saves a short list of core files: the home pages, the journal index, the about, contact and privacy pages, the icons and the fonts. Everything else is saved later, as you read it.</p>
     <h2>Pages: the network comes first</h2>
     <p>For pages, the worker asks the network first, and it asks the server whether the page has changed instead of trusting an older copy held by the browser. When you are online you always get the current page, and a fresh copy goes into the cache each time.</p>
-    <p>If the network fails, the worker falls back to the copy it saved. So an entry you opened yesterday still opens today on a train with no signal. A page you never opened cannot be there, and in that case the worker shows the home page instead of a browser error.</p>
+    <p>If the network fails, the worker falls back to the copy it saved. So, if you have opened the home page in this browser, an entry you opened yesterday still opens today on a train with no signal. A page you never opened cannot be there, and in that case the worker shows the home page instead of a browser error.</p>
     <h2>Fonts, icons and styles: the cache comes first</h2>
     <p>Files that rarely change go the other way. The worker looks in the cache first and goes to the network only when it has no copy. That is why fonts and icons are not downloaded again on every visit.</p>
     <h2>How old copies go away</h2>
@@ -401,7 +401,7 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
     <h2>Why we bother</h2>
     <p>A journal about quiet things should not demand a perfect signal. People read in waiting rooms and on commutes, and a site that can open from a stash is kinder to those moments.</p>
     <blockquote>ipe(); // open it once, and it remembers how to open itself</blockquote>
-    <p>If a page ever looks out of date, reload it once while you are online. The page itself is always asked for fresh; only the fonts, icons and styles come from the stash, and they are renewed with each new version.</p>
+    <p>If a page ever looks out of date, reload it once while you are online. The page itself is always asked for fresh; only files that rarely change, such as fonts, icons, styles, scripts and images, come from the stash, and they are renewed with each new version.</p>
   </div>
 
   <nav class="post-nav" aria-label="More from the journal">

@@ -125,7 +125,7 @@
     "url": "https://ipe.rest/journal/de/"
   },
   "inLanguage": "de",
-  "wordCount": 528,
+  "wordCount": 545,
   "translationOfWork": {
     "@type": "BlogPosting",
     "@id": "https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/#article",
@@ -328,7 +328,7 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
     <p>Beim ersten Start speichert er eine kurze Liste zentraler Dateien: die Startseiten, den Journal-Index, die Seiten „Über uns“, Kontakt und Datenschutz, die Icons und die Schriften. Alles andere wird später gespeichert, während Sie lesen.</p>
     <h2>Seiten: zuerst das Netzwerk</h2>
     <p>Bei Seiten fragt der Service Worker zuerst das Netzwerk und erkundigt sich beim Server, ob sich die Seite geändert hat, statt einer älteren Kopie des Browsers zu vertrauen. Wenn Sie online sind, erhalten Sie immer die aktuelle Seite, und jedes Mal landet eine frische Kopie im Cache.</p>
-    <p>Fällt das Netzwerk aus, greift der Service Worker auf die gespeicherte Kopie zurück. Ein Eintrag, den Sie gestern geöffnet haben, öffnet sich also heute auch in einem Zug ohne Empfang. Eine Seite, die Sie nie geöffnet haben, kann dort nicht liegen; in diesem Fall zeigt der Service Worker die Startseite statt einer Browserfehlermeldung.</p>
+    <p>Fällt das Netzwerk aus, greift der Service Worker auf die gespeicherte Kopie zurück. Wenn Sie in diesem Browser einmal die Startseite geöffnet haben, öffnet sich also ein Eintrag, den Sie gestern gelesen haben, heute auch in einem Zug ohne Empfang. Eine Seite, die Sie nie geöffnet haben, kann dort nicht liegen; in diesem Fall zeigt der Service Worker die Startseite statt einer Browserfehlermeldung.</p>
     <h2>Schriften, Icons und Stile: zuerst der Cache</h2>
     <p>Dateien, die sich selten ändern, laufen andersherum. Der Service Worker sieht zuerst im Cache nach und geht nur ins Netzwerk, wenn er keine Kopie hat. Deshalb werden Schriften und Icons nicht bei jedem Besuch neu heruntergeladen.</p>
     <h2>Wie alte Kopien verschwinden</h2>
@@ -339,7 +339,7 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
     <h2>Warum wir uns die Mühe machen</h2>
     <p>Ein Journal über stille Dinge sollte kein perfektes Signal verlangen. Menschen lesen in Wartezimmern und auf dem Arbeitsweg, und eine Website, die aus einem Vorrat öffnen kann, geht mit diesen Momenten freundlicher um.</p>
     <blockquote>ipe(); // open it once, and it remembers how to open itself</blockquote>
-    <p>Wenn eine Seite einmal veraltet aussieht, laden Sie sie einmal neu, während Sie online sind. Die Seite selbst wird immer frisch angefragt; nur Schriften, Icons und Stile kommen aus dem Vorrat, und sie werden mit jeder neuen Version erneuert.</p>
+    <p>Wenn eine Seite einmal veraltet aussieht, laden Sie sie einmal neu, während Sie online sind. Die Seite selbst wird immer frisch angefragt; nur Dateien, die sich selten ändern (Schriften, Icons, Stile, Skripte und Bilder), kommen aus dem Vorrat, und sie werden mit jeder neuen Version erneuert.</p>
 
   </div>
 

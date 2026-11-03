@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Ábrelo una vez, léelo sin conexión — diario de ipe()</title>
-<meta name="description" content="ipe.rest guarda una pequeña copia de sí mismo en su navegador, así una página abierta una vez puede volver a abrirse sin conexión. Así funciona.">
+<meta name="description" content="ipe.rest guarda una pequeña copia de sí mismo en tu navegador, así una página abierta una vez puede volver a abrirse sin conexión. Así funciona.">
 <meta name="author" content="ipe()">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#fbfcfe">
@@ -43,7 +43,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ipe()">
 <meta property="og:title" content="Ábrelo una vez, léelo sin conexión">
-<meta property="og:description" content="ipe.rest guarda una pequeña copia de sí mismo en su navegador, así una página abierta una vez puede volver a abrirse sin conexión. Así funciona.">
+<meta property="og:description" content="ipe.rest guarda una pequeña copia de sí mismo en tu navegador, así una página abierta una vez puede volver a abrirse sin conexión. Así funciona.">
 <meta property="og:url" content="https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/">
 <meta property="og:image" content="https://ipe.rest/og-image.png">
 <meta property="og:image:width" content="1200">
@@ -55,7 +55,7 @@
 <meta property="article:author" content="ipe()">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Ábrelo una vez, léelo sin conexión">
-<meta name="twitter:description" content="ipe.rest guarda una pequeña copia de sí mismo en su navegador, así una página abierta una vez puede volver a abrirse sin conexión. Así funciona.">
+<meta name="twitter:description" content="ipe.rest guarda una pequeña copia de sí mismo en tu navegador, así una página abierta una vez puede volver a abrirse sin conexión. Así funciona.">
 <meta name="twitter:image" content="https://ipe.rest/og-image.png">
 <meta name="twitter:image:alt" content="ipe() — quiet things for busy minds">
 
@@ -65,7 +65,7 @@
   "@type": "BlogPosting",
   "@id": "https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/#article",
   "headline": "Ábrelo una vez, léelo sin conexión",
-  "description": "ipe.rest guarda una pequeña copia de sí mismo en su navegador, así una página abierta una vez puede volver a abrirse sin conexión. Así funciona.",
+  "description": "ipe.rest guarda una pequeña copia de sí mismo en tu navegador, así una página abierta una vez puede volver a abrirse sin conexión. Así funciona.",
   "abstract": "ipe.rest registra un service worker que guarda una lista corta de archivos básicos y cada página que lees. Las páginas se piden primero a la red y, sin conexión, se recurre a la copia guardada; las fuentes, los iconos y los estilos salen primero de la caché. Las copias antiguas se borran cuando cambia la versión.",
   "datePublished": "2026-11-04T10:30+09:00",
   "dateModified": "2026-11-04T10:30+09:00",
@@ -125,7 +125,7 @@
     "url": "https://ipe.rest/journal/es/"
   },
   "inLanguage": "es",
-  "wordCount": 558,
+  "wordCount": 574,
   "translationOfWork": {
     "@type": "BlogPosting",
     "@id": "https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/#article",
@@ -328,7 +328,7 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
     <p>La primera vez que se ejecuta, guarda una lista corta de archivos básicos: las páginas de inicio, el índice del diario, las páginas de información, contacto y privacidad, los iconos y las fuentes. Todo lo demás se guarda más tarde, a medida que lo lees.</p>
     <h2>Páginas: primero la red</h2>
     <p>Para las páginas, el service worker pregunta primero a la red, y pregunta al servidor si la página ha cambiado en lugar de fiarse de una copia más antigua que tenga el navegador. Cuando estás con conexión, siempre recibes la página actual, y cada vez se guarda en la caché una copia nueva.</p>
-    <p>Si la red falla, recurre a la copia que guardó. Así, una entrada que abriste ayer sigue abriéndose hoy en un tren sin señal. Una página que nunca abriste no puede estar ahí, y en ese caso muestra la página de inicio en lugar de un error del navegador.</p>
+    <p>Si la red falla, recurre a la copia que guardó. Así, si ya has abierto la página de inicio en este navegador, una entrada que abriste ayer sigue abriéndose hoy en un tren sin señal. Una página que nunca abriste no puede estar ahí, y en ese caso muestra la página de inicio en lugar de un error del navegador.</p>
     <h2>Fuentes, iconos y estilos: primero la caché</h2>
     <p>Los archivos que rara vez cambian van al revés. Busca primero en la caché y solo va a la red cuando no tiene copia. Por eso las fuentes y los iconos no se descargan de nuevo en cada visita.</p>
     <h2>Cómo desaparecen las copias antiguas</h2>
@@ -339,7 +339,7 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
     <h2>Por qué nos tomamos la molestia</h2>
     <p>Un diario sobre cosas tranquilas no debería exigir una señal perfecta. La gente lee en salas de espera y en los trayectos al trabajo, y un sitio que puede abrirse desde lo guardado es más amable en esos momentos.</p>
     <blockquote>ipe(); // open it once, and it remembers how to open itself</blockquote>
-    <p>Si alguna página parece desactualizada, vuelve a cargarla una vez con conexión. La página en sí se pide siempre de nuevo; solo las fuentes, los iconos y los estilos salen de lo guardado, y se renuevan con cada versión nueva.</p>
+    <p>Si alguna página parece desactualizada, vuelve a cargarla una vez con conexión. La página en sí se pide siempre de nuevo; solo los archivos que rara vez cambian (fuentes, iconos, estilos, scripts e imágenes) salen de lo guardado, y se renuevan con cada versión nueva.</p>
 
   </div>
 

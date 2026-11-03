@@ -150,7 +150,7 @@
     <p>The first time it runs, it saves a short list of core files: the home pages, the journal index, the about, contact and privacy pages, the icons and the fonts. Everything else is saved later, as you read it.</p>
     <h2>Pages: the network comes first</h2>
     <p>For pages, the worker asks the network first, and it asks the server whether the page has changed instead of trusting an older copy held by the browser. When you are online you always get the current page, and a fresh copy goes into the cache each time.</p>
-    <p>If the network fails, the worker falls back to the copy it saved. So an entry you opened yesterday still opens today on a train with no signal. A page you never opened cannot be there, and in that case the worker shows the home page instead of a browser error.</p>
+    <p>If the network fails, the worker falls back to the copy it saved. So, if you have opened the home page in this browser, an entry you opened yesterday still opens today on a train with no signal. A page you never opened cannot be there, and in that case the worker shows the home page instead of a browser error.</p>
     <h2>Fonts, icons and styles: the cache comes first</h2>
     <p>Files that rarely change go the other way. The worker looks in the cache first and goes to the network only when it has no copy. That is why fonts and icons are not downloaded again on every visit.</p>
     <h2>How old copies go away</h2>
@@ -161,7 +161,7 @@
     <h2>Why we bother</h2>
     <p>A journal about quiet things should not demand a perfect signal. People read in waiting rooms and on commutes, and a site that can open from a stash is kinder to those moments.</p>
     <blockquote>ipe(); // open it once, and it remembers how to open itself</blockquote>
-    <p>If a page ever looks out of date, reload it once while you are online. The page itself is always asked for fresh; only the fonts, icons and styles come from the stash, and they are renewed with each new version.</p>
+    <p>If a page ever looks out of date, reload it once while you are online. The page itself is always asked for fresh; only files that rarely change, such as fonts, icons, styles, scripts and images, come from the stash, and they are renewed with each new version.</p>
   </div>
 
   <div class="prose" lang="ko">
@@ -172,7 +172,7 @@
     <p>처음 실행될 때는 핵심 파일 몇 개를 저장합니다. 홈페이지들, 저널 목록, 소개·문의·개인정보처리방침 페이지, 아이콘, 글꼴입니다. 나머지는 여러분이 읽는 대로 나중에 저장됩니다.</p>
     <h2>페이지는 네트워크가 먼저</h2>
     <p>페이지에 대해서는 먼저 네트워크에 묻습니다. 브라우저가 들고 있는 오래된 사본을 믿지 않고, 서버에 페이지가 바뀌었는지 다시 확인합니다. 온라인일 때는 늘 최신 페이지를 받고, 그때마다 새 사본이 캐시에 들어갑니다.</p>
-    <p>네트워크가 끊기면 저장해 둔 사본으로 돌아갑니다. 그래서 어제 열어 본 글은 신호 없는 기차 안에서도 오늘 다시 열립니다. 한 번도 열지 않은 페이지는 저장되어 있을 수 없고, 그럴 때는 브라우저 오류 대신 홈페이지를 보여 줍니다.</p>
+    <p>네트워크가 끊기면 저장해 둔 사본으로 돌아갑니다. 그래서 이 브라우저에서 홈페이지를 한 번 열어 둔 적이 있다면, 어제 열어 본 글은 신호 없는 기차 안에서도 오늘 다시 열립니다. 한 번도 열지 않은 페이지는 저장되어 있을 수 없고, 그럴 때는 브라우저 오류 대신 홈페이지를 보여 줍니다.</p>
     <h2>글꼴·아이콘·스타일은 캐시가 먼저</h2>
     <p>거의 바뀌지 않는 파일은 반대로 움직입니다. 캐시를 먼저 보고, 사본이 없을 때만 네트워크로 갑니다. 방문할 때마다 글꼴과 아이콘을 다시 내려받지 않는 이유입니다.</p>
     <h2>옛 사본이 사라지는 방식</h2>
@@ -183,7 +183,7 @@
     <h2>굳이 이렇게 하는 이유</h2>
     <p>조용한 것들에 관한 저널이 완벽한 신호를 요구해서는 안 됩니다. 사람들은 대기실이나 출퇴근길에서 글을 읽고, 저장해 둔 사본으로 열리는 사이트는 그런 순간에 더 친절합니다.</p>
     <blockquote>ipe(); // open it once, and it remembers how to open itself</blockquote>
-    <p>페이지가 오래된 것처럼 보이면 온라인일 때 한 번 새로 고침하세요. 페이지 자체는 언제나 새로 요청하고, 캐시에서 오는 것은 글꼴·아이콘·스타일뿐이며 이들은 새 버전마다 갱신됩니다.</p>
+    <p>페이지가 오래된 것처럼 보이면 온라인일 때 한 번 새로 고침하세요. 페이지 자체는 언제나 새로 요청하고, 캐시에서 오는 것은 거의 바뀌지 않는 파일(글꼴·아이콘·스타일·스크립트·이미지)뿐이며 이들은 새 버전마다 갱신됩니다.</p>
   </div>
 
   <a class="back" href="/journal/"><span lang="en">← all entries</span><span lang="ko">← 전체 글</span></a>

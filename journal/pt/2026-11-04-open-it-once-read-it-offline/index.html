@@ -125,7 +125,7 @@
     "url": "https://ipe.rest/journal/pt/"
   },
   "inLanguage": "pt",
-  "wordCount": 555,
+  "wordCount": 567,
   "translationOfWork": {
     "@type": "BlogPosting",
     "@id": "https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/#article",
@@ -328,7 +328,7 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
     <p>Na primeira vez que roda, ele salva uma curta lista de arquivos essenciais: as páginas iniciais, o índice do journal, as páginas sobre, contato e privacidade, os ícones e as fontes. Todo o resto é salvo depois, conforme você lê.</p>
     <h2>Páginas: a rede vem primeiro</h2>
     <p>Para páginas, o service worker pergunta primeiro à rede e pergunta ao servidor se a página mudou, em vez de confiar numa cópia mais antiga guardada pelo navegador. Quando você está online, sempre recebe a página atual, e uma cópia nova vai para o cache a cada vez.</p>
-    <p>Se a rede falha, o service worker recorre à cópia que salvou. Assim, uma entrada que você abriu ontem ainda abre hoje num trem sem sinal. Uma página que você nunca abriu não pode estar lá e, nesse caso, o service worker mostra a página inicial em vez de um erro do navegador.</p>
+    <p>Se a rede falha, o service worker recorre à cópia que salvou. Assim, se você já abriu a página inicial neste navegador, uma entrada que abriu ontem ainda abre hoje num trem sem sinal. Uma página que você nunca abriu não pode estar lá e, nesse caso, o service worker mostra a página inicial em vez de um erro do navegador.</p>
     <h2>Fontes, ícones e estilos: o cache vem primeiro</h2>
     <p>Os arquivos que raramente mudam seguem o caminho oposto. O service worker olha primeiro no cache e só vai à rede quando não tem cópia. É por isso que fontes e ícones não são baixados de novo a cada visita.</p>
     <h2>Como as cópias antigas desaparecem</h2>
@@ -339,7 +339,7 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
     <h2>Por que nos damos ao trabalho</h2>
     <p>Um journal sobre coisas tranquilas não deveria exigir um sinal perfeito. As pessoas leem em salas de espera e no trajeto do dia a dia, e um site que consegue abrir a partir de um estoque é mais gentil com esses momentos.</p>
     <blockquote>ipe(); // open it once, and it remembers how to open itself</blockquote>
-    <p>Se uma página parecer desatualizada, recarregue-a uma vez enquanto estiver online. A página em si é sempre pedida de novo; só as fontes, os ícones e os estilos vêm do estoque, e eles são renovados a cada nova versão.</p>
+    <p>Se uma página parecer desatualizada, recarregue-a uma vez enquanto estiver online. A página em si é sempre pedida de novo; só os arquivos que raramente mudam (fontes, ícones, estilos, scripts e imagens) vêm do estoque, e eles são renovados a cada nova versão.</p>
 
   </div>
 

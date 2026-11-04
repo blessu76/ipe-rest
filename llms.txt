@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- Small choices that make a page easy to read (2026-11-05): https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/ - Small, checkable choices that make ipe.rest easy to read: a skip link, a visible focus ring, big tap targets, free zoom, calm motion.
+  - original language: en
+  - [en] Small choices that make a page easy to read: https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [ko] 페이지를 읽기 쉽게 만드는 작은 선택들: https://ipe.rest/journal/ko/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [ja] ページを読みやすくする小さな選択 (AI translation): https://ipe.rest/journal/ja/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [zh] 让页面易于阅读的小选择 (AI translation): https://ipe.rest/journal/zh/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [es] Pequeños gestos que facilitan la lectura (AI translation): https://ipe.rest/journal/es/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [fr] Petits choix pour une page facile à lire (AI translation): https://ipe.rest/journal/fr/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [de] Kleine Entscheidungen für leichtes Lesen (AI translation): https://ipe.rest/journal/de/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [pt] Pequenas escolhas para ler com facilidade (AI translation): https://ipe.rest/journal/pt/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [ru] Мелочи для удобного чтения страницы (AI translation): https://ipe.rest/journal/ru/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [ar] خيارات صغيرة تجعل الصفحة سهلة القراءة (AI translation): https://ipe.rest/journal/ar/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [hi] पेज को पढ़ने में आसान बनाने वाले छोटे चुनाव (AI translation): https://ipe.rest/journal/hi/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [id] Pilihan kecil agar halaman mudah dibaca (AI translation): https://ipe.rest/journal/id/2026-11-05-small-choices-that-make-a-page-easy-to-read/
 - Open it once, read it offline (2026-11-04): https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/ - ipe.rest keeps a small copy of itself in your browser, so a page you have opened once can open again without a connection. Here is how it works, in plain words.
   - original language: en
   - [en] Open it once, read it offline: https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/

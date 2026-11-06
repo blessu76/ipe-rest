@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
-"""Notify IndexNow (Bing, Naver, Yandex, ...) about new or changed URLs.
+"""Notify IndexNow (Bing, Naver, Yandex, ...) about new or changed URLs — the logic lives in the web kit
+(vendor/ipe_web_kit/indexnow.py, pinned by tag in vendor/ipe_web_kit/KIT_VERSION).
 
 Run AFTER the site is published (the key file must already be live):
 
@@ -11,110 +12,19 @@ Run AFTER the site is published (the key file must already be live):
 The key is the repo-root file named <32 hex>.txt whose single line is the key
 itself. It is a public file (not a secret). Standard library only.
 """
-import argparse
-import datetime
-import json
-import re
 import sys
-import urllib.error
-import urllib.request
-import xml.etree.ElementTree as ET
 from pathlib import Path
-from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parent.parent
-ENDPOINT = "https://api.indexnow.org/indexnow"
-KEY_FILE_RE = re.compile(r"^([0-9a-f]{32})\.txt$")
-LOC_TAG = "{http://www.sitemaps.org/schemas/sitemap/0.9}loc"
-
-
-def find_key(root):
-    """Return the key whose <key>.txt file in `root` contains exactly that key."""
-    for p in sorted(Path(root).iterdir()):
-        m = KEY_FILE_RE.match(p.name)
-        if m and p.read_text(encoding="utf-8").strip() == m.group(1):
-            return m.group(1)
-    raise SystemExit("no IndexNow key file (<32 hex>.txt containing its own name) in " + str(root))
-
-
-def sitemap_urls(sitemap_path):
-    """All <loc> values of a sitemap (xhtml:link alternates are not included)."""
-    tree = ET.parse(sitemap_path)
-    urls = [e.text.strip() for e in tree.iter(LOC_TAG) if e.text and e.text.strip()]
-    return list(dict.fromkeys(urls))
-
-
-def sitemap_urls_modified(sitemap_path, day):
-    """<loc> values whose <lastmod> starts with `day` (YYYY-MM-DD)."""
-    out = []
-    for u in ET.parse(sitemap_path).getroot():
-        loc = u.find(LOC_TAG)
-        mod = u.find(LOC_TAG.replace("}loc", "}lastmod"))
-        if loc is not None and loc.text and mod is not None and (mod.text or "").strip().startswith(day):
-            out.append(loc.text.strip())
-    return list(dict.fromkeys(out))
-
-
-def today_kst():
-    return datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=9))).date().isoformat()
-
-
-def build_payload(key, urls):
-    if not urls:
-        raise SystemExit("no URLs to submit")
-    hosts = {urlsplit(u).netloc for u in urls}
-    if len(hosts) != 1 or "" in hosts:
-        raise SystemExit("all URLs must share one host, got: " + ", ".join(sorted(hosts)))
-    host = hosts.pop()
-    return {
-        "host": host,
-        "key": key,
-        "keyLocation": "https://%s/%s.txt" % (host, key),
-        "urlList": list(urls),
-    }
-
-
-def send(payload, endpoint=ENDPOINT, timeout=30):
-    req = urllib.request.Request(
-        endpoint,
-        data=json.dumps(payload).encode("utf-8"),
-        headers={"Content-Type": "application/json; charset=utf-8"},
-        method="POST",
-    )
-    try:
-        with urllib.request.urlopen(req, timeout=timeout) as r:
-            return r.status
-    except urllib.error.HTTPError as e:
-        return e.code
+sys.path.insert(0, str(ROOT / "vendor"))
+from ipe_web_kit import indexnow as _kit  # noqa: E402
+from ipe_web_kit.indexnow import (  # noqa: E402,F401
+    ENDPOINT, build_payload, find_key, send, sitemap_urls, sitemap_urls_modified, today_kst)
 
 
 def main(argv=None):
-    ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("urls", nargs="*", help="URLs to submit (default: every <loc> in sitemap.xml)")
-    ap.add_argument("--root", default=str(ROOT), help="site root (default: this repo)")
-    ap.add_argument("--today", action="store_true", help="only sitemap URLs whose lastmod is today (KST); nothing to send = exit 0")
-    ap.add_argument("--dry-run", action="store_true", help="print the payload, send nothing")
-    a = ap.parse_args(argv)
-
-    root = Path(a.root)
-    if a.today:
-        urls = sitemap_urls_modified(root / "sitemap.xml", today_kst())
-        if not urls:
-            print("IndexNow: no sitemap URL with lastmod %s — nothing to submit" % today_kst())
-            return 0
-    else:
-        urls = a.urls or sitemap_urls(root / "sitemap.xml")
-    payload = build_payload(find_key(root), urls)
-    if a.dry_run:
-        print("POST " + ENDPOINT)
-        print(json.dumps(payload, indent=2, ensure_ascii=False))
-        return 0
-    status = send(payload)
-    print("IndexNow %s: HTTP %d (%d URLs)" % (payload["host"], status, len(urls)))
-    if status in (200, 202):
-        return 0
-    print("200/202 = ok; 403 = key file not live yet / key mismatch; 422 = URL host mismatch; 429 = too many requests", file=sys.stderr)
-    return 1
+    # send is looked up here at call time, so tests can swap indexnow.send
+    return _kit.main(argv, root=ROOT, sender=lambda payload: send(payload))
 
 
 if __name__ == "__main__":

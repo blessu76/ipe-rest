@@ -13,7 +13,7 @@ KEY_FILE = re.compile(r"^[0-9a-f]{32,}\.txt$")
 MUST_HAVE = ["CNAME", ".nojekyll", "robots.txt", "sitemap.xml", "llms.txt", "sw.js", "manifest.webmanifest",
              "index.html", "og-image.png", "fonts/inter-400.woff2", "go/redirects.json",
              "404.html", "journal/index.html", "journal/journal.css", "journal/journal.js", "en/index.html", "ko/index.html"]
-MUST_NOT = ["scripts", "tests", ".github", ".git", ".gitignore", "README.md", "_site"]
+MUST_NOT = ["scripts", "tests", "vendor", ".github", ".git", ".gitignore", "README.md", "_site"]
 
 
 class DeployWorkflow(unittest.TestCase):
@@ -32,7 +32,7 @@ class DeployWorkflow(unittest.TestCase):
 
     def test_build_script_excludes_dev_dirs(self):
         sh = BUILD.read_text(encoding="utf-8")
-        for ex in ("/scripts/", "/tests/", "/.github/"):
+        for ex in ("/scripts/", "/tests/", "/vendor/", "/.github/"):
             self.assertIn("--exclude='%s'" % ex, sh)
 
     @unittest.skipUnless(shutil.which("rsync"), "rsync 가 PATH 에 없다 — 설치 후 다시 실행 (build_site.sh 가 rsync 를 쓴다)")

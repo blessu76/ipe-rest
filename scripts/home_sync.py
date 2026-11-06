@@ -40,8 +40,7 @@ def home_url(lang=None):
     return SITE + "/" if lang is None else "%s/%s/" % (SITE, lang)
 
 
-def esc(s):
-    return html.escape(s, quote=True)
+esc = J.esc  # web kit seo.esc
 
 
 def load(root=ROOT):
@@ -236,7 +235,7 @@ def render_chooser(src, ui):
     sw = between(src, "<!-- ===== PWA service worker", "<!-- home:localtime")
     org = between(src, '<script type="application/ld+json">\n{\n  "@context": "https://schema.org",\n  "@type": "Organization"', "</script>") + "</script>"
     site_ld = json.dumps({"@context": "https://schema.org", "@type": "WebSite", "@id": home_url() + "#website", "name": "ipe()",
-                          "url": home_url(), "inLanguage": LANGS, "publisher": {"@id": home_url() + "#organization"}},
+                          "url": home_url(), "inLanguage": LANGS, "publisher": {"@id": J.ORG_ID}},
                          ensure_ascii=False, indent=2)
     items = "\n".join('    <li><a class="lg" lang="%s" hreflang="%s" href="/%s/"><span class="lg-name">%s</span>'
                       '<span class="lg-sub">ipe.rest/%s/</span></a></li>' % (l, l, l, NATIVE[l], l) for l in LANGS)

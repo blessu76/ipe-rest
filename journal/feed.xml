@@ -6,7 +6,15 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 05 Nov 2026 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 06 Nov 2026 10:00:00 +0900</lastBuildDate>
+    <item>
+      <title>How little a journal page has to load</title>
+      <link>https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/</guid>
+      <pubDate>Fri, 06 Nov 2026 10:00:00 +0900</pubDate>
+      <category>studio</category>
+      <description>What a journal page on ipe.rest loads: one small HTML file, one script, fonts from our own server. Measured sizes, and what we left out.</description>
+    </item>
     <item>
       <title>Small choices that make a page easy to read</title>
       <link>https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/</link>

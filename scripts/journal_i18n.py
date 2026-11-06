@@ -211,6 +211,7 @@ def _footer(u, lang):
       <a href="/%(l)s/about/">%(a)s</a>
       <a href="/%(l)s/contact/">%(c)s</a>
       <a href="/%(l)s/privacy/">%(p)s</a>
+      <a href="/en/terms/" hreflang="en">terms</a>
     </nav>
   </div>
 </footer>""" % dict(l=lang, j=esc(u["journal"]), a=esc(u["about"]), c=esc(u["contact"]), p=esc(u["privacy"]))

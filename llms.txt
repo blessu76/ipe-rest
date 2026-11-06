@@ -326,7 +326,7 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/ar/contact/
   - हिन्दी [hi] (AI translation): https://ipe.rest/hi/contact/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/id/contact/
-- Privacy (12 languages, one static page per language): https://ipe.rest/en/privacy/ — Google Analytics, language preference stored in the browser, email correspondence, how to request access or deletion; no ads on ipe.rest
+- Privacy (12 languages, one static page per language): https://ipe.rest/en/privacy/ — applies to ipe.rest and all *.ipe.rest subdomains: Google Analytics, Google AdSense advertising, cookies and consent, language preference stored in the browser, email correspondence, how to request access or deletion
   - English [en]: https://ipe.rest/en/privacy/
   - 한국어 [ko]: https://ipe.rest/ko/privacy/
   - 日本語 [ja] (AI translation): https://ipe.rest/ja/privacy/
@@ -339,6 +339,8 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/ar/privacy/
   - हिन्दी [hi] (AI translation): https://ipe.rest/hi/privacy/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/id/privacy/
+- Terms (English only): https://ipe.rest/en/terms/ — terms of use for ipe.rest and its subdomains (English only): acceptable use, content ownership, AI-assisted writing, third-party ads and links, liability
+  - English [en]: https://ipe.rest/en/terms/
 <!-- pages:llms:end -->
 
 ## Links

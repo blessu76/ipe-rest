@@ -4577,7 +4577,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/en/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -4597,7 +4597,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/ko/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -4617,7 +4617,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/ja/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -4637,7 +4637,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/zh/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -4657,7 +4657,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/es/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -4677,7 +4677,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/fr/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -4697,7 +4697,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/de/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -4717,7 +4717,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/pt/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -4737,7 +4737,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/ru/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -4757,7 +4757,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/ar/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -4777,7 +4777,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/hi/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -4797,7 +4797,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/id/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -4813,6 +4813,15 @@
     <xhtml:link rel="alternate" hreflang="ar" href="https://ipe.rest/ar/privacy/"/>
     <xhtml:link rel="alternate" hreflang="hi" href="https://ipe.rest/hi/privacy/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/privacy/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/en/terms/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/terms/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <!-- pages:end -->

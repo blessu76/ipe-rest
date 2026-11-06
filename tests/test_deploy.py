@@ -10,7 +10,7 @@ WORKFLOW = (ROOT / ".github" / "workflows" / "deploy.yml").read_text(encoding="u
 BUILD = ROOT / "scripts" / "build_site.sh"
 KEY_FILE = re.compile(r"^[0-9a-f]{32,}\.txt$")
 
-MUST_HAVE = ["CNAME", ".nojekyll", "robots.txt", "sitemap.xml", "llms.txt", "sw.js", "manifest.webmanifest",
+MUST_HAVE = ["CNAME", ".nojekyll", "robots.txt", "ads.txt", "sitemap.xml", "llms.txt", "sw.js", "manifest.webmanifest",
              "index.html", "og-image.png", "fonts/inter-400.woff2", "go/redirects.json",
              "404.html", "journal/index.html", "journal/journal.css", "journal/journal.js", "en/index.html", "ko/index.html"]
 MUST_NOT = ["scripts", "tests", ".github", ".git", ".gitignore", "README.md", "_site"]
@@ -51,6 +51,13 @@ class DeployWorkflow(unittest.TestCase):
             keys = [p for p in out.glob("*.txt") if KEY_FILE.match(p.name)]
             src_keys = [p for p in ROOT.glob("*.txt") if KEY_FILE.match(p.name)]
             self.assertTrue(keys and len(keys) == len(src_keys), "IndexNow key files must ship")
+
+    def test_ads_txt_lines_are_comments_or_valid_records(self):
+        record = re.compile(r"^google\.com, pub-\d{16}, (DIRECT|RESELLER), f08c47fec0942fa0$")
+        lines = (ROOT / "ads.txt").read_text(encoding="utf-8").splitlines()
+        self.assertTrue(lines)
+        for ln in lines:
+            self.assertTrue(ln.startswith("#") or record.match(ln), "bad ads.txt line: " + ln)
 
     def test_404_page_is_noindex_and_links_home(self):
         html = (ROOT / "404.html").read_text(encoding="utf-8")

@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- The plain files that describe this site (2026-11-07): https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/ - The small text files at the edge of ipe.rest: robots.txt, a sitemap, llms.txt, an RSS feed and a manifest. What each one does, and what we cannot confirm.
+  - original language: en
+  - [en] The plain files that describe this site: https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/
+  - [ko] 이 사이트를 설명하는 평문 파일들: https://ipe.rest/journal/ko/2026-11-07-the-plain-files-that-describe-this-site/
+  - [ja] このサイトを説明する素のファイル (AI translation): https://ipe.rest/journal/ja/2026-11-07-the-plain-files-that-describe-this-site/
+  - [zh] 描述本站的几个纯文本文件 (AI translation): https://ipe.rest/journal/zh/2026-11-07-the-plain-files-that-describe-this-site/
+  - [es] Los archivos que describen este sitio (AI translation): https://ipe.rest/journal/es/2026-11-07-the-plain-files-that-describe-this-site/
+  - [fr] Les fichiers simples qui décrivent ce site (AI translation): https://ipe.rest/journal/fr/2026-11-07-the-plain-files-that-describe-this-site/
+  - [de] Die Dateien, die diese Seite beschreiben (AI translation): https://ipe.rest/journal/de/2026-11-07-the-plain-files-that-describe-this-site/
+  - [pt] Os arquivos que descrevem este site (AI translation): https://ipe.rest/journal/pt/2026-11-07-the-plain-files-that-describe-this-site/
+  - [ru] Простые файлы, которые описывают этот сайт (AI translation): https://ipe.rest/journal/ru/2026-11-07-the-plain-files-that-describe-this-site/
+  - [ar] الملفات البسيطة التي تصف هذا الموقع (AI translation): https://ipe.rest/journal/ar/2026-11-07-the-plain-files-that-describe-this-site/
+  - [hi] वे सादे फ़ाइलें जो इस साइट का वर्णन करती हैं (AI translation): https://ipe.rest/journal/hi/2026-11-07-the-plain-files-that-describe-this-site/
+  - [id] Berkas sederhana yang menjelaskan situs ini (AI translation): https://ipe.rest/journal/id/2026-11-07-the-plain-files-that-describe-this-site/
 - How little a journal page has to load (2026-11-06): https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/ - What a journal page on ipe.rest loads: one small HTML file, one script, fonts from our own server. Measured sizes, and what we left out.
   - original language: en
   - [en] How little a journal page has to load: https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/

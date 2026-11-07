@@ -6,12 +6,12 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Nov 2026 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 07 Nov 2026 20:30:00 +0900</lastBuildDate>
     <item>
       <title>The plain files that describe this site</title>
       <link>https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/</link>
       <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/</guid>
-      <pubDate>Sat, 07 Nov 2026 10:00:00 +0900</pubDate>
+      <pubDate>Sat, 07 Nov 2026 20:30:00 +0900</pubDate>
       <category>studio</category>
       <description>The small text files at the edge of ipe.rest: robots.txt, a sitemap, llms.txt, an RSS feed and a manifest. What each one does, and what we cannot confirm.</description>
     </item>

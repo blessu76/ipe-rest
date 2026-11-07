@@ -50,14 +50,12 @@ def esc(s):
 # site root, otherwise `?lang=xx` on the root (every ipe site reads it).
 SIBLING_LANG_PATHS = {
     "idle.ipe.rest": set(LANGS),
-    "play.ipe.rest": {"ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "id"},  # English is the root; no ar/hi folder yet
 }
-SIBLING_EN_ROOT = {"play.ipe.rest"}
 SIBLING_A_RE = re.compile(r'(<a\b[^>]*\bhref=")https://(%s)/?(")' % "|".join(re.escape(h) for h in SIBLING_LANG_PATHS))
 
 
 def sibling_url(host, lang):
-    if lang in SIBLING_LANG_PATHS[host] and not (lang == "en" and host in SIBLING_EN_ROOT):
+    if lang in SIBLING_LANG_PATHS[host]:
         return "https://%s/%s/" % (host, lang)
     if lang == "en":
         return "https://%s/" % host
@@ -65,7 +63,7 @@ def sibling_url(host, lang):
 
 
 def localize_sibling_links(page, lang):
-    """Point <a href> links to idle./play.ipe.rest (site root only; deep links and JSON-LD urls stay) at `lang`."""
+    """Point <a href> links to idle.ipe.rest (site root only; deep links and JSON-LD urls stay) at `lang`."""
     return SIBLING_A_RE.sub(lambda m: m.group(1) + sibling_url(m.group(2), lang) + m.group(3), page)
 
 

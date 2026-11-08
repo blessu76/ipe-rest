@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- What the tests check before a page ships (2026-11-08): https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/ - The 137 small tests behind ipe.rest: what they check, how long they take, and what they cannot see.
+  - original language: en
+  - [en] What the tests check before a page ships: https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [ko] 페이지를 내보내기 전에 테스트가 확인하는 것: https://ipe.rest/journal/ko/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [ja] ページを公開する前にテストが確認すること (AI translation): https://ipe.rest/journal/ja/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [zh] 页面发布前,测试检查什么 (AI translation): https://ipe.rest/journal/zh/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [es] Qué revisan las pruebas antes de publicar (AI translation): https://ipe.rest/journal/es/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [fr] Ce que les tests vérifient d’abord (AI translation): https://ipe.rest/journal/fr/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [de] Was Tests prüfen, bevor eine Seite erscheint (AI translation): https://ipe.rest/journal/de/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [pt] O que os testes checam antes de publicar (AI translation): https://ipe.rest/journal/pt/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [ru] Что тесты проверяют перед выходом страницы (AI translation): https://ipe.rest/journal/ru/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [ar] ما تفحصه الاختبارات قبل نشر الصفحة (AI translation): https://ipe.rest/journal/ar/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [hi] पन्ना भेजने से पहले टेस्ट क्या जाँचते हैं (AI translation): https://ipe.rest/journal/hi/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [id] Apa yang diperiksa tes sebelum halaman terbit (AI translation): https://ipe.rest/journal/id/2026-11-08-what-the-tests-check-before-a-page-ships/
 - The plain files that describe this site (2026-11-07): https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/ - The small text files at the edge of ipe.rest: robots.txt, a sitemap, llms.txt, an RSS feed and a manifest. What each one does, and what we cannot confirm.
   - original language: en
   - [en] The plain files that describe this site: https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/

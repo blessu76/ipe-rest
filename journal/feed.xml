@@ -6,7 +6,15 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Sat, 07 Nov 2026 20:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Sun, 08 Nov 2026 10:04:00 +0900</lastBuildDate>
+    <item>
+      <title>What the tests check before a page ships</title>
+      <link>https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/</guid>
+      <pubDate>Sun, 08 Nov 2026 10:04:00 +0900</pubDate>
+      <category>studio</category>
+      <description>The 137 small tests behind ipe.rest: what they check, how long they take, and what they cannot see.</description>
+    </item>
     <item>
       <title>The plain files that describe this site</title>
       <link>https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/</link>

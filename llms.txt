@@ -86,6 +86,34 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- What happens after a change goes up (2026-11-10): https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/ - From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.
+  - original language: en
+  - [en] What happens after a change goes up: https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/
+  - [ko] 변경이 올라간 뒤에 일어나는 일: https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/
+  - [ja] 変更が公開されたあとに起こること (AI translation): https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/
+  - [zh] 改动上线之后会发生什么 (AI translation): https://ipe.rest/journal/zh/2026-11-10-what-happens-after-a-change-goes-up/
+  - [es] Qué ocurre después de subir un cambio (AI translation): https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/
+  - [fr] Ce qui se passe après la mise en ligne d’un changement (AI translation): https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/
+  - [de] Was nach dem Hochladen einer Änderung passiert (AI translation): https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/
+  - [pt] O que acontece depois que uma mudança sobe (AI translation): https://ipe.rest/journal/pt/2026-11-10-what-happens-after-a-change-goes-up/
+  - [ru] Что происходит после выхода изменения (AI translation): https://ipe.rest/journal/ru/2026-11-10-what-happens-after-a-change-goes-up/
+  - [ar] ماذا يحدث بعد أن يُرفع التغيير (AI translation): https://ipe.rest/journal/ar/2026-11-10-what-happens-after-a-change-goes-up/
+  - [hi] बदलाव चढ़ जाने के बाद क्या होता है (AI translation): https://ipe.rest/journal/hi/2026-11-10-what-happens-after-a-change-goes-up/
+  - [id] Apa yang terjadi setelah perubahan naik (AI translation): https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/
+- How one entry becomes thirteen pages (2026-11-09): https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/ - Eleven files written by hand, one script, thirteen pages: how a journal entry on ipe.rest is built.
+  - original language: en
+  - [en] How one entry becomes thirteen pages: https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [ko] 글 하나가 열세 페이지가 되기까지: https://ipe.rest/journal/ko/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [ja] 1つの記事が13ページになるまで (AI translation): https://ipe.rest/journal/ja/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [zh] 一篇文章如何变成十三个页面 (AI translation): https://ipe.rest/journal/zh/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [es] Cómo una entrada se convierte en trece páginas (AI translation): https://ipe.rest/journal/es/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [fr] Comment une entrée devient treize pages (AI translation): https://ipe.rest/journal/fr/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [de] Wie aus einem Beitrag dreizehn Seiten werden (AI translation): https://ipe.rest/journal/de/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [pt] Como uma entrada vira treze páginas (AI translation): https://ipe.rest/journal/pt/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [ru] Как из одной записи получается тринадцать страниц (AI translation): https://ipe.rest/journal/ru/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [ar] كيف تصبح تدوينة واحدة ثلاث عشرة صفحة (AI translation): https://ipe.rest/journal/ar/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [hi] एक प्रविष्टि से तेरह पन्ने कैसे बनते हैं (AI translation): https://ipe.rest/journal/hi/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [id] Bagaimana satu entri menjadi tiga belas halaman (AI translation): https://ipe.rest/journal/id/2026-11-09-how-one-entry-becomes-thirteen-pages/
 - What the tests check before a page ships (2026-11-08): https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/ - The 137 small tests behind ipe.rest: what they check, how long they take, and what they cannot see.
   - original language: en
   - [en] What the tests check before a page ships: https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/

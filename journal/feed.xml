@@ -6,12 +6,12 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 10 Nov 2026 10:00:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 10 Nov 2026 10:50:00 +0900</lastBuildDate>
     <item>
       <title>What happens after a change goes up</title>
       <link>https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/</link>
       <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/</guid>
-      <pubDate>Tue, 10 Nov 2026 10:00:00 +0900</pubDate>
+      <pubDate>Tue, 10 Nov 2026 10:50:00 +0900</pubDate>
       <category>studio</category>
       <description>From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.</description>
     </item>
@@ -19,7 +19,7 @@
       <title>How one entry becomes thirteen pages</title>
       <link>https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/</link>
       <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/</guid>
-      <pubDate>Mon, 09 Nov 2026 10:00:00 +0900</pubDate>
+      <pubDate>Mon, 09 Nov 2026 10:50:00 +0900</pubDate>
       <category>studio</category>
       <description>Eleven files written by hand, one script, thirteen pages: how a journal entry on ipe.rest is built.</description>
     </item>

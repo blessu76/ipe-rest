@@ -220,7 +220,7 @@ def rfc822(post):
 
 
 WARNINGS = []  # filled by build(): non-fatal findings (length lint)
-CJK_LANGS = {"ja", "zh", "ko"}
+CJK_LANGS = {"ja", "zh", "zh-Hant", "ko"}
 TITLE_MAX, TITLE_MAX_CJK = 60, 40   # full <title> (post title + suffix), characters
 DESC_MAX, DESC_MAX_CJK = 160, 110   # meta description, characters
 
@@ -246,7 +246,7 @@ def length_warnings(allp, ui):
     """SERP-length warnings (never errors): <title> > 60 (CJK 40) or description > 160 (CJK 110) per post per language."""
     out = []
     for slug in sorted(allp):
-        for lang in I18N.LANGS:
+        for lang in I18N.PAGE_LANGS:
             d = allp[slug].get(lang)
             if not d:
                 continue
@@ -346,7 +346,7 @@ def render_sitemap(posts, tr):
 
 def render_llms(posts, tr):
     list_langs = {l for v in tr.values() for l in v}
-    lines = ["- Journal (12 languages, one static page per language; language chooser): %s" % I18N.list_url("en")]
+    lines = ["- Journal (%d languages, one static page per language; language chooser): %s" % (len(I18N.LANGS), I18N.list_url("en"))]
     lines.append("  - Feed (RSS, English): %s/journal/feed.xml" % SITE)
     for l in I18N.LANGS:
         if l in list_langs:
@@ -425,18 +425,18 @@ def build(root=ROOT):
     for p in posts:
         slug = p["slug"]
         langs = set(allp[slug])
-        for l in I18N.LANGS:
+        for l in I18N.PAGE_LANGS:
             if l in langs:
                 writes[jdir / l / slug / "index.html"] = I18N.render_post(p, l, ui, allp[slug][l], langs, nav_for(slug, l, posts, allp))
         writes[jdir / slug / "index.html"] = I18N.render_chooser_post(p, ui, allp[slug], langs)
-    for l in I18N.LANGS:
+    for l in I18N.PAGE_LANGS:
         if l in list_langs:
             items = [(p, allp[p["slug"]][l]) for p in posts if l in allp[p["slug"]]]
             writes[jdir / l / "index.html"] = I18N.render_list_page(l, ui, items, list_langs)
     writes[jdir / "index.html"] = I18N.render_chooser_list(ui, allp, list_langs, posts=posts)
 
     # orphans: generated pages whose source is gone (posts removed or language dropped)
-    for l in I18N.LANGS:
+    for l in I18N.PAGE_LANGS:
         for f in (jdir / l).glob("*/index.html") if (jdir / l).is_dir() else []:
             if f not in writes:
                 errors.append("orphan generated page %s (no source) — delete it" % f.relative_to(root))

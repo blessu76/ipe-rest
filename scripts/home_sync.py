@@ -30,6 +30,7 @@ import journal_sync as JS  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 SITE = J.SITE
 LANGS = J.LANGS
+PAGE_LANGS = J.PAGE_LANGS
 RTL = J.RTL
 OG_LOCALE = J.OG_LOCALE
 NATIVE = J.NATIVE
@@ -45,9 +46,9 @@ esc = J.esc  # web kit seo.esc
 
 def load(root=ROOT):
     src = (root / "scripts" / "home_src" / "index.html").read_text(encoding="utf-8")
-    ui = {l: json.loads((root / "scripts" / "home_i18n" / (l + ".json")).read_text(encoding="utf-8")) for l in LANGS}
+    ui = {l: json.loads((root / "scripts" / "home_i18n" / (J.K.legacy_code(l) + ".json")).read_text(encoding="utf-8")) for l in PAGE_LANGS}
     jui = json.loads((root / "scripts" / "journal_i18n" / "ui.json").read_text(encoding="utf-8"))
-    for l in LANGS:  # the journal UI file already has a translated "journal" label for all 12 languages
+    for l in PAGE_LANGS:  # the journal UI file already has a translated "journal" label for every page language
         ui[l].setdefault("nav_journal", jui[l]["journal"])
     global jui_ai
     jui_ai = jui
@@ -197,7 +198,8 @@ def render_lang(src, ui, lang, posts):
         out = sub1(out, r'<main id="main">\n', '<main id="main">\n' + note)
     for pg in ("about", "contact", "privacy"):
         out = out.replace('href="/%s/"' % pg, 'href="/%s/%s/"' % (lang, pg))
-    opts = "\n".join('        <option value="%s"%s>%s</option>' % (l, " selected" if l == lang else "", l.upper()) for l in LANGS)
+    opts = "\n".join('        <option value="%s"%s>%s</option>' % (l, " selected" if l == lang else "", l.upper())
+                     for l in (LANGS if lang in LANGS else LANGS + [lang]))
     out = sub1(out, r'<!-- home:options -->', opts)
     out = sub1(out, r'<!-- home:journal -->\n', journal_section(posts, lang, jui_ai[lang], d))
     out = sub1(out, r'<!-- home:localtime -->', J.localtime_script() if "data-ipe-time" in out else "")
@@ -284,7 +286,7 @@ def render_chooser(src, ui):
 <header><div class="wrap"><a class="logo" href="/" aria-label="ipe() home">ipe()</a><span class="tagline">when the process finally rests</span></div></header>
 <main class="wrap">
   <h1>Choose your language</h1>
-  <p class="lede">ipe() — quiet things for busy minds. A small AI-native studio in Seoul. The home page is available in 12 languages.</p>
+  <p class="lede">ipe() — quiet things for busy minds. A small AI-native studio in Seoul. The home page is available in %(n)s languages.</p>
   <ul aria-label="Languages">
 %(items)s
   </ul>
@@ -327,7 +329,7 @@ def render_chooser(src, ui):
 </html>
 """ % {"title": esc(title), "desc": esc(desc), "og_title": esc(title_plain), "og_desc": esc(en["meta_desc"]), "root": home_url(), "site": SITE, "img_alt": J.OG_IMAGE_ALT_ATTR, "hreflang": hreflang_block(), "alts": alts,
        "org": org, "site_ld": site_ld, "css": CHOOSER_CSS, "items": items, "ga": ga.strip(), "sw": sw.strip(),
-       "langs": json.dumps(LANGS)}
+       "langs": json.dumps(LANGS), "n": len(LANGS)}
 
 
 def sitemap_block(lastmod=LASTMOD):
@@ -344,7 +346,7 @@ def sitemap_block(lastmod=LASTMOD):
 
 def llms_block():
     lines = ["<!-- home:llms:start -->",
-             "- Main page (12 languages, one static page per language; root is a language chooser): %s" % home_url()]
+             "- Main page (%d languages, one static page per language; root is a language chooser): %s" % (len(LANGS), home_url())]
     lines += ["  - %s [%s]: %s" % (NATIVE[l], l, home_url(l)) for l in LANGS]
     lines.append("<!-- home:llms:end -->")
     return "\n".join(lines)
@@ -389,7 +391,7 @@ def build(root=ROOT):
     src, ui = load(root)
     posts = journal_posts(root)
     writes, errors = {}, []
-    for l in LANGS:
+    for l in PAGE_LANGS:
         writes[root / l / "index.html"] = render_lang(src, ui, l, posts)
     writes[root / "index.html"] = render_chooser(src, ui)
     for p, t in writes.items():

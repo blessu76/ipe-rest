@@ -76,7 +76,7 @@ class JournalGeo(unittest.TestCase):
                 src = (ROOT / "journal" / lang / slug / "index.html").read_text(encoding="utf-8")
                 bp = next(json.loads(b) for b in LD.findall(src) if json.loads(b)["@type"] == "BlogPosting")
                 if lang == orig:
-                    self.assertEqual(len(bp["workTranslation"]), 11)
+                    self.assertEqual(len(bp["workTranslation"]), len(journal_sync.I18N.LANGS) - 1)
                     self.assertNotIn("translationOfWork", bp)
                 else:
                     self.assertEqual(bp["translationOfWork"]["@id"], base % (orig, slug) + "#article")
@@ -96,7 +96,7 @@ class JournalGeo(unittest.TestCase):
             for f in posts():
                 self.assertIn("https://ipe.rest/journal/%s/%s/#article" % (lang, slug_of(f)), ids)
 
-    def test_sitemap_has_every_language_page_with_13_hreflang_and_image(self):
+    def test_sitemap_has_every_language_page_with_cluster_hreflang_and_image(self):
         root = ET.parse(ROOT / "sitemap.xml").getroot()
         urls = {u.find(SM + "loc").text: u for u in root.findall(SM + "url")}
         X = "{http://www.w3.org/1999/xhtml}link"
@@ -104,10 +104,10 @@ class JournalGeo(unittest.TestCase):
             for lang in journal_sync.I18N.LANGS:  # the language-less shell /journal/<slug>/ is deliberately NOT in the sitemap
                 u = urls[journal_sync.I18N.post_url(slug_of(f), lang)]
                 self.assertTrue(u.find(SM + "lastmod").text)
-                self.assertEqual(len(u.findall(X)), 13)
+                self.assertEqual(len(u.findall(X)), len(journal_sync.I18N.LANGS) + 1)
                 self.assertIsNotNone(u.find("{http://www.google.com/schemas/sitemap-image/1.1}image"))
         for lang in journal_sync.I18N.LANGS:
-            self.assertEqual(len(urls[journal_sync.I18N.list_url(lang)].findall(X)), 13)
+            self.assertEqual(len(urls[journal_sync.I18N.list_url(lang)].findall(X)), len(journal_sync.I18N.LANGS) + 1)
         self.assertFalse([l for l in urls if "?" in l], "no ?lang= urls in the sitemap")
 
     def test_no_query_string_urls_anywhere(self):
@@ -126,7 +126,7 @@ class JournalGeo(unittest.TestCase):
             self.assertIsNotNone(m, f)
             opts = re.findall(r'<option value="([^"]*)"([^>]*)>', m.group(1))
             real = [v for v, _ in opts if v]
-            self.assertEqual(len(real), 12, f)
+            self.assertEqual(len(real), len(journal_sync.I18N.LANGS), f)
             for v in real:  # every option is an existing static page (no 404 / empty page)
                 self.assertTrue((ROOT / v.lstrip("/") / "index.html").is_file(), (f, v))
             selected = [v for v, a in opts if "selected" in a and "disabled" not in a]
@@ -278,6 +278,9 @@ class JournalI18n(unittest.TestCase):
             rel = f.relative_to(j).parent.as_posix()
             url = "https://ipe.rest/journal/" + (rel + "/" if rel != "." else "")
             cls.pages[url] = (f, f.read_text(encoding="utf-8"))
+        # retired pages stay served but sit outside every hreflang cluster, sitemap and llms.txt
+        cls.live = {u: v for u, v in cls.pages.items() if (re.search(r"/journal/([^/]+)/", u) or [None, None])[1] not in cls.I.RETIRED}
+        cls.live_tr = [l for l in cls.I.TR_LANGS if l not in cls.I.RETIRED]
 
     def hreflangs(self, src):
         return dict(re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="([^"]+)">', src))
@@ -299,7 +302,7 @@ class JournalI18n(unittest.TestCase):
             self.assertTrue(self.lds(src), url)
 
     def test_hreflang_clusters_are_reciprocal_and_self_referencing(self):
-        for url, (_, src) in self.pages.items():
+        for url, (_, src) in self.live.items():
             hl = self.hreflangs(src)
             canon = re.search(r'<link rel="canonical" href="([^"]+)"', src).group(1)
             self.assertIn("x-default", hl, url)
@@ -318,12 +321,12 @@ class JournalI18n(unittest.TestCase):
                 self.assertEqual(self.hreflangs(other[1]), hl, "cluster of %s differs from %s" % (target, url))
 
     def test_hreflang_covers_all_twelve_languages(self):
-        for url, (_, src) in self.pages.items():
+        for url, (_, src) in self.live.items():
             self.assertEqual(set(self.hreflangs(src)), set(self.I.LANGS) | {"x-default"}, url)
 
     def test_html_lang_dir_and_og_locale(self):
-        for url, (_, src) in self.pages.items():
-            m = re.search(r"/journal/([a-z]{2})/", url)
+        for url, (_, src) in self.live.items():
+            m = re.search(r"/journal/([a-z]{2}(?:-[A-Za-z]+)?)/", url)
             if not m:
                 self.assertIn("data-chooser", src, url)  # x-default pages are the language choosers
                 continue
@@ -331,7 +334,7 @@ class JournalI18n(unittest.TestCase):
             self.assertIn('<html lang="%s" dir="%s">' % (lang, "rtl" if lang == "ar" else "ltr"), src, url)
             self.assertIn('<meta property="og:locale" content="%s">' % self.I.OG_LOCALE[lang], src, url)
             alts = re.findall(r'og:locale:alternate" content="([^"]+)"', src)
-            self.assertEqual(set(alts), set(self.I.OG_LOCALE.values()) - {self.I.OG_LOCALE[lang]}, url)
+            self.assertEqual(set(alts), {self.I.OG_LOCALE[l] for l in self.I.LANGS} - {self.I.OG_LOCALE[lang]}, url)
 
     def test_translated_post_json_ld_and_ai_note(self):
         slug = slug_of(posts()[0])
@@ -340,7 +343,7 @@ class JournalI18n(unittest.TestCase):
         listed = {w["inLanguage"]: w["@id"] for w in orig_ld["workTranslation"]}
         self.assertEqual(set(listed), set(self.I.LANGS) - {"en"})
         orig_url = "https://ipe.rest/journal/en/%s/" % slug
-        for l in self.I.TR_LANGS:
+        for l in self.live_tr:
             url = "https://ipe.rest/journal/%s/%s/" % (l, slug)
             src = self.pages[url][1]
             blobs = self.lds(src)
@@ -360,7 +363,7 @@ class JournalI18n(unittest.TestCase):
             self.assertIn("ipe(); // be still", src)
 
     def test_translated_list_has_blog_and_itemlist(self):
-        for l in self.I.TR_LANGS:
+        for l in self.live_tr:
             src = self.pages["https://ipe.rest/journal/%s/" % l][1]
             graph = self.lds(src)[0]["@graph"]
             self.assertEqual({g["@type"] for g in graph}, {"Blog", "ItemList"})
@@ -383,11 +386,11 @@ class JournalI18n(unittest.TestCase):
             sm = {l.get("hreflang"): l.get("href") for l in u.findall(X)}
             self.assertEqual(sm, self.hreflangs(self.pages[loc][1]), loc)
             self.assertTrue(u.find(SM + "lastmod").text, loc)
-        self.assertEqual(seen, len([1 for _, src in self.pages.values() if "data-chooser" not in src]))
+        self.assertEqual(seen, len([1 for _, src in self.live.values() if "data-chooser" not in src]))
 
     def test_llms_lists_every_translation(self):
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
-        for url, (_, src) in self.pages.items():
+        for url, (_, src) in self.live.items():
             if "data-chooser" not in src:  # shells are not listed (llms.txt links their /en/ canonical)
                 self.assertIn(url, llms, url)
 

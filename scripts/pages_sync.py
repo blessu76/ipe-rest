@@ -26,6 +26,7 @@ import journal_i18n as J  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 SITE = J.SITE
 LANGS = J.LANGS
+PAGE_LANGS = J.PAGE_LANGS
 TR = J.TR_LANGS
 PAGES = ("about", "contact", "privacy")
 LASTMOD = "2026-10-22"
@@ -66,7 +67,7 @@ def load():
         srcs[p] = s
         data[p] = {l: split_source(s, l) for l in J.ORIG_LANGS}
         for l in TR:
-            f = ROOT / "scripts" / "pages_i18n" / p / (l + ".json")
+            f = ROOT / "scripts" / "pages_i18n" / p / (J.K.legacy_code(l) + ".json")
             if f.exists():
                 data[p][l] = json.loads(f.read_text(encoding="utf-8"))
     ui = json.loads((ROOT / "scripts" / "journal_i18n" / "ui.json").read_text(encoding="utf-8"))
@@ -75,6 +76,10 @@ def load():
 
 def langs_of(data, p):
     return [l for l in LANGS if l in data[p]]
+
+
+def gen_langs(data, p):
+    return [l for l in PAGE_LANGS if l in data[p]]
 
 
 def cluster(data, p):
@@ -177,7 +182,7 @@ def llms_block(data):
             "contact": "ipe.haven@gmail.com (replies within 10 days)",
             "privacy": "Google Analytics, language preference stored in the browser, email correspondence, how to request access or deletion; no ads on ipe.rest"}
     for p in PAGES:
-        lines.append("- %s (12 languages, one static page per language): %s — %s" % (p.capitalize(), page_url(p, "en"), desc[p]))
+        lines.append("- %s (%d languages, one static page per language): %s — %s" % (p.capitalize(), len(LANGS), page_url(p, "en"), desc[p]))
         lines += ["  - %s [%s]%s: %s" % (J.NATIVE[l], l, " (AI translation)" if l in TR else "", page_url(p, l)) for l in langs_of(data, p)]
     lines.append("<!-- pages:llms:end -->")
     return "\n".join(lines)
@@ -192,7 +197,7 @@ def build():
     data, ui = load()
     writes, errors = {}, []
     for p in PAGES:
-        for l in langs_of(data, p):
+        for l in gen_langs(data, p):
             errors += check_data(p, l, data[p][l])
             writes[ROOT / l / p / "index.html"] = render(p, l, data, ui)
         writes[ROOT / p / "index.html"] = render_chooser(p, data, ui)

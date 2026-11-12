@@ -31,14 +31,10 @@
 <link rel="alternate" hreflang="en" href="https://ipe.rest/en/">
 <link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/">
 <link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/">
-<link rel="alternate" hreflang="zh" href="https://ipe.rest/zh/">
 <link rel="alternate" hreflang="es" href="https://ipe.rest/es/">
+<link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/">
 <link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/">
 <link rel="alternate" hreflang="de" href="https://ipe.rest/de/">
-<link rel="alternate" hreflang="pt" href="https://ipe.rest/pt/">
-<link rel="alternate" hreflang="ru" href="https://ipe.rest/ru/">
-<link rel="alternate" hreflang="ar" href="https://ipe.rest/ar/">
-<link rel="alternate" hreflang="hi" href="https://ipe.rest/hi/">
 <link rel="alternate" hreflang="id" href="https://ipe.rest/id/">
 
 <!-- Open Graph -->
@@ -55,13 +51,9 @@
 <meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:locale:alternate" content="ja_JP">
-<meta property="og:locale:alternate" content="zh_CN">
 <meta property="og:locale:alternate" content="es_ES">
-<meta property="og:locale:alternate" content="de_DE">
 <meta property="og:locale:alternate" content="pt_BR">
-<meta property="og:locale:alternate" content="ru_RU">
-<meta property="og:locale:alternate" content="ar_AR">
-<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="de_DE">
 <meta property="og:locale:alternate" content="id_ID">
 
 <!-- Twitter -->
@@ -376,14 +368,10 @@ img,svg{max-width:100%}
         <option value="en">EN</option>
         <option value="ko">KO</option>
         <option value="ja">JA</option>
-        <option value="zh">ZH</option>
         <option value="es">ES</option>
+        <option value="pt-BR">PT-BR</option>
         <option value="fr" selected>FR</option>
         <option value="de">DE</option>
-        <option value="pt">PT</option>
-        <option value="ru">RU</option>
-        <option value="ar">AR</option>
-        <option value="hi">HI</option>
         <option value="id">ID</option>
       </select>
     </label>
@@ -724,7 +712,7 @@ if ('serviceWorker' in navigator) {
 <script>
 (function () {
   var LANG = 'fr';
-  var VALID = ["en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id"];
+  var VALID = ["en", "ko", "ja", "es", "pt-BR", "fr", "de", "id"];
   // ?lang=xx names a language (the URL wins over everything else): remember it and show that language's static page
   try {
     var q = String(new URLSearchParams(location.search).get('lang') || '').toLowerCase().split(/[-_]/)[0];

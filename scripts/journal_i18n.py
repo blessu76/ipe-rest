@@ -1,7 +1,10 @@
-"""Journal translations (10 languages) for ipe.rest — stdlib only. Used by journal_sync.py.
+"""Journal translations for ipe.rest — stdlib only. Used by journal_sync.py.
 
-URL rule (static, never ?lang=) — all 12 languages are equal:
-    post         /journal/<lang>/<slug>/     lang = en ko ja zh es fr de pt ru ar hi id
+Languages: LANGS = kit languages.SUPPORTED tags that are live (scripts/home_i18n/<file>.json exists and is not a skeleton).
+RETIRED (zh ru ar hi) keep their generated pages but are not listed anywhere. Translation files use legacy codes (pt.json = pt-BR).
+
+URL rule (static, never ?lang=):
+    post         /journal/<lang>/<slug>/     lang = a LANGS tag (en ko ja es pt-BR fr de id ...)
     list         /journal/<lang>/
     x-default    /journal/<slug>/ and /journal/   language-chooser shells (generated; canonical -> /journal/en/..., hreflang x-default -> en, not in the sitemap)
 The post's source language is `ipe:original` (en | ko) in scripts/journal_src/<slug>.html. en and ko are generated from that
@@ -22,6 +25,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "vendor"))
 from ipe_web_kit import localtime as kit_localtime  # noqa: E402
 from ipe_web_kit.seo import ORG_ID, esc  # noqa: E402,F401  (web kit, pinned in vendor/ipe_web_kit/KIT_VERSION)
+from ipe_web_kit import languages as K  # noqa: E402
 
 SITE = "https://ipe.rest"
 OG_IMAGE_ALT = "ipe() — quiet things for busy minds"
@@ -29,14 +33,25 @@ VER_CSS = "10"  # journal.css is inlined into the generated pages (css_inline); 
 VER_JS = "8"
 ASSET_VER = "23"
 
-LANGS = ["en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id"]
+SKELETON = "_skeleton"
+_ROOT = Path(__file__).resolve().parent.parent
+
+
+def _is_live(code):
+    f = _ROOT / "scripts" / "home_i18n" / ("%s.json" % code)
+    return f.is_file() and not json.loads(f.read_text(encoding="utf-8")).get(SKELETON)
+
+
+LANGS = [t for t in K.SUPPORTED if _is_live(K.legacy_code(t))]
+RETIRED = [K.legacy_code(t) for t in K.ENDED]
+PAGE_LANGS = LANGS + RETIRED
 ORIG_LANGS = ["en", "ko"]
-TR_LANGS = [l for l in LANGS if l not in ORIG_LANGS]
+TR_LANGS = [l for l in PAGE_LANGS if l not in ORIG_LANGS]
 RTL = {"ar"}
-OG_LOCALE = {"en": "en_US", "ko": "ko_KR", "ja": "ja_JP", "zh": "zh_CN", "es": "es_ES", "fr": "fr_FR", "de": "de_DE",
-             "pt": "pt_BR", "ru": "ru_RU", "ar": "ar_AR", "hi": "hi_IN", "id": "id_ID"}
-NATIVE = {"en": "English", "ko": "한국어", "ja": "日本語", "zh": "简体中文", "es": "Español", "fr": "Français",
-          "de": "Deutsch", "pt": "Português", "ru": "Русский", "ar": "العربية", "hi": "हिन्दी", "id": "Bahasa Indonesia"}
+OG_LOCALE = {"en": "en_US", "ko": "ko_KR", "ja": "ja_JP", "zh-Hant": "zh_TW", "es": "es_ES", "pt-BR": "pt_BR", "fr": "fr_FR",
+             "de": "de_DE", "id": "id_ID", "th": "th_TH", "vi": "vi_VN", "tr": "tr_TR",
+             "zh": "zh_CN", "ru": "ru_RU", "ar": "ar_AR", "hi": "hi_IN"}
+NATIVE = dict(K.NAMES, zh="简体中文", ru="Русский", ar="العربية", hi="हिन्दी")
 UI_KEYS = ("skip", "home", "journal", "about", "contact", "privacy", "all_entries", "read", "eyebrow",
            "langs_label", "title_suffix", "list_title", "list_h1", "list_lede", "list_desc",
            "list_og_title", "blog_name", "all_posts", "crumb_journal", "home_aria", "more_label", "prev", "next", "latest")
@@ -49,7 +64,7 @@ I18N_DIR = ("scripts", "journal_i18n")
 # A link carries the page's language: that folder when the site has it, the bare root for English where English is the
 # site root, otherwise `?lang=xx` on the root (every ipe site reads it).
 SIBLING_LANG_PATHS = {
-    "idle.ipe.rest": set(LANGS),
+    "idle.ipe.rest": {K.legacy_code(l) for l in PAGE_LANGS},
     "play.ipe.rest": {"ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "id"},  # English is the root; no ar/hi folder yet
 }
 SIBLING_EN_ROOT = {"play.ipe.rest"}
@@ -57,8 +72,9 @@ SIBLING_A_RE = re.compile(r'(<a\b[^>]*\bhref=")https://(%s)/?(")' % "|".join(re.
 
 
 def sibling_url(host, lang):
-    if lang in SIBLING_LANG_PATHS[host] and not (lang == "en" and host in SIBLING_EN_ROOT):
-        return "https://%s/%s/" % (host, lang)
+    folder = K.legacy_code(lang)
+    if folder in SIBLING_LANG_PATHS[host] and not (lang == "en" and host in SIBLING_EN_ROOT):
+        return "https://%s/%s/" % (host, folder)
     if lang == "en":
         return "https://%s/" % host
     return "https://%s/?lang=%s" % (host, lang)
@@ -138,7 +154,7 @@ def load(root):
             errs.append("journal_i18n/ui.json invalid: %s" % e)
     for d in sorted(p for p in base.iterdir() if p.is_dir()):
         for lang in TR_LANGS:
-            f = d / ("%s.json" % lang)
+            f = d / ("%s.json" % K.legacy_code(lang))
             if not f.is_file():
                 continue
             try:

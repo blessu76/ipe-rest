@@ -39,7 +39,7 @@ class HomePages(unittest.TestCase):
             self.assertIn('<link rel="canonical" href="https://ipe.rest/%s/">' % lang, src)
             self.assertIn('<meta property="og:url" content="https://ipe.rest/%s/">' % lang, src)
             self.assertIn('<meta property="og:locale" content="%s">' % home_sync.OG_LOCALE[lang], src)
-            self.assertEqual(src.count('property="og:locale:alternate"'), 11)
+            self.assertEqual(src.count('property="og:locale:alternate"'), len(LANGS) - 1)
             self.assertEqual(hreflangs(src), want)  # all 12 + x-default, identical on every page (mutual)
             self.assertIn("G-XG4BH800J0", src)  # GA tag on every language page
             self.assertIn("/journal/%s/" % lang, src)
@@ -64,9 +64,9 @@ class HomePages(unittest.TestCase):
             src = page(lang)
             t = re.search(r"<title>(.*?)</title>", src).group(1)
             titles.add(t)
-            self.assertIn('content="%s"' % home_sync.esc(json.loads((ROOT / "scripts/home_i18n" / (lang + ".json")).read_text(encoding="utf-8"))["meta_desc"]), src)
+            self.assertIn('content="%s"' % home_sync.esc(json.loads((ROOT / "scripts/home_i18n" / (J.K.legacy_code(lang) + ".json")).read_text(encoding="utf-8"))["meta_desc"]), src)
             self.assertEqual(src.count('property="og:title" content="%s"' % home_sync.esc(t.replace("&amp;", "&"))), 1, lang)
-        self.assertEqual(len(titles), 12)
+        self.assertEqual(len(titles), len(LANGS))
 
     def test_non_english_home_titles_have_no_tagline_tail(self):
         tail = " · when the process finally rests"
@@ -125,8 +125,8 @@ class HomePages(unittest.TestCase):
             self.assertIn("localStorage.setItem('ipe_lang', q)", page(lang))
 
     def test_links_to_other_ipe_sites_carry_the_language(self):
-        want = {"idle.ipe.rest": {l: "https://idle.ipe.rest/%s/" % l for l in LANGS},
-                "play.ipe.rest": {l: ("https://play.ipe.rest/%s/" % l if l not in ("en", "ar", "hi") else
+        want = {"idle.ipe.rest": {l: "https://idle.ipe.rest/%s/" % J.K.legacy_code(l) for l in LANGS},
+                "play.ipe.rest": {l: ("https://play.ipe.rest/%s/" % J.K.legacy_code(l) if J.K.legacy_code(l) in J.SIBLING_LANG_PATHS["play.ipe.rest"] else
                                       "https://play.ipe.rest/" if l == "en" else "https://play.ipe.rest/?lang=%s" % l) for l in LANGS}}
         for lang in LANGS:
             src = page(lang)
@@ -149,7 +149,7 @@ class HomePages(unittest.TestCase):
         for lang in [None] + LANGS:
             u = urls[home_sync.home_url(lang)]
             self.assertTrue(u.find(SM + "lastmod").text)
-            self.assertEqual(len(u.findall(X)), 13)
+            self.assertEqual(len(u.findall(X)), len(LANGS) + 1)
             self.assertIsNotNone(u.find("{http://www.google.com/schemas/sitemap-image/1.1}image"))
             self.assertEqual({a.get("hreflang"): a.get("href") for a in u.findall(X)}, dict(home_sync.cluster()))
         self.assertFalse([l for l in urls if "?" in l])

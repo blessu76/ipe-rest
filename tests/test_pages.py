@@ -35,7 +35,7 @@ class InfoPages(unittest.TestCase):
     def test_page_head_and_body(self):
         for p in PAGES:
             want = dict(pages_sync.cluster(pages_sync.load()[0], p))
-            self.assertEqual(len(want), 13)
+            self.assertEqual(len(want), len(LANGS) + 1)
             for lang in LANGS:
                 src = read(p, lang)
                 self.assertIn('<html lang="%s" dir="%s">' % (lang, "rtl" if lang == "ar" else "ltr"), src)
@@ -46,7 +46,7 @@ class InfoPages(unittest.TestCase):
                 self.assertIn('<select class="lang" data-lang-select', src)
                 sel = re.findall(r'<option value="([^"]*)"[^>]* selected>', src)
                 self.assertEqual(sel, ["/%s/%s/" % (lang, p)])
-                self.assertEqual(len(re.findall(r'<option value="/', src)), 12)
+                self.assertEqual(len(re.findall(r'<option value="/', src)), len(LANGS))
                 ld = json.loads(LD.findall(src)[0])
                 self.assertEqual(ld["@graph"][0]["inLanguage"], lang)
                 self.assertEqual(ld["@graph"][0]["url"], "https://ipe.rest/%s/%s/" % (lang, p))
@@ -73,7 +73,7 @@ class InfoPages(unittest.TestCase):
             for lang in LANGS:
                 u = urls[pages_sync.page_url(p, lang)]
                 self.assertTrue(u.find(SM + "lastmod").text)
-                self.assertEqual(len(u.findall(X)), 13)
+                self.assertEqual(len(u.findall(X)), len(LANGS) + 1)
                 self.assertIsNotNone(u.find("{http://www.google.com/schemas/sitemap-image/1.1}image"))
         self.assertEqual(len(urls), len(root.findall(SM + "url")))
         self.assertNotIn("https://ipe.rest/about/</loc>\n    <lastmod>2026-10-20", (ROOT / "sitemap.xml").read_text(encoding="utf-8"))
@@ -177,7 +177,7 @@ class XDefaultSeo(unittest.TestCase):
             t, d = self.meta(f)
             self.assertLessEqual(len(t), 80, f)
             self.assertLessEqual(len(d), 160, f)
-            self.assertTrue(d.endswith("Available in 12 languages."), f)
+            self.assertTrue(d.endswith("Available in %d languages." % len(LANGS)), f)
             self.assertNotIn("Choose your language", d, f)
             self.assertNotIn("…", d, f)  # no truncated description (#181)
             for prop in ("og:title", "twitter:title"):  # share previews: plain title, no marker
@@ -198,7 +198,7 @@ class XDefaultSeo(unittest.TestCase):
             n += 1
             self.assertNotIn(self.MARK, t.group(1), rel)
             self.assertNotIn("choose your language", t.group(1), rel)
-            self.assertNotIn("Available in 12 languages.", h, rel)
+            self.assertNotIn("Available in %d languages." % len(LANGS), h, rel)
         self.assertGreater(n, 100)
 
     def test_root_cards_match_x_default_posts_exactly(self):
@@ -230,7 +230,7 @@ class DistinctTitles(unittest.TestCase):
         root = Path(__file__).resolve().parent.parent
         for rel in ("journal/{l}/index.html", "{l}/contact/index.html"):
             seen = {}
-            for l in ("en", "ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "ar", "hi", "id"):
+            for l in LANGS:
                 src = (root / rel.format(l=l)).read_text(encoding="utf-8")
                 t = re.search(r"<title>(.*?)</title>", src).group(1).strip().lower()
                 self.assertNotIn(t, seen, "%s duplicates %s title %r" % (l, seen.get(t), t))

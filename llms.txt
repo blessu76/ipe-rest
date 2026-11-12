@@ -86,6 +86,34 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - العربية [ar] (AI translation): https://ipe.rest/journal/ar/
   - हिन्दी [hi] (AI translation): https://ipe.rest/journal/hi/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+- What a missing page shows you (2026-11-12): https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/ - One 4,355-byte file, no script, and a way home in 12 languages.
+  - original language: en
+  - [en] What a missing page shows you: https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/
+  - [ko] 없는 페이지가 보여 주는 것: https://ipe.rest/journal/ko/2026-11-12-what-a-missing-page-shows-you/
+  - [ja] 存在しないページが見せるもの (AI translation): https://ipe.rest/journal/ja/2026-11-12-what-a-missing-page-shows-you/
+  - [zh] 一个不存在的页面让你看到什么 (AI translation): https://ipe.rest/journal/zh/2026-11-12-what-a-missing-page-shows-you/
+  - [es] Lo que te muestra una página que falta (AI translation): https://ipe.rest/journal/es/2026-11-12-what-a-missing-page-shows-you/
+  - [fr] Ce que vous montre une page manquante (AI translation): https://ipe.rest/journal/fr/2026-11-12-what-a-missing-page-shows-you/
+  - [de] Was eine fehlende Seite dir zeigt (AI translation): https://ipe.rest/journal/de/2026-11-12-what-a-missing-page-shows-you/
+  - [pt] O que uma página ausente mostra a você (AI translation): https://ipe.rest/journal/pt/2026-11-12-what-a-missing-page-shows-you/
+  - [ru] Что показывает вам отсутствующая страница (AI translation): https://ipe.rest/journal/ru/2026-11-12-what-a-missing-page-shows-you/
+  - [ar] ما تُريك إياه صفحة مفقودة (AI translation): https://ipe.rest/journal/ar/2026-11-12-what-a-missing-page-shows-you/
+  - [hi] एक गुम पन्ना आपको क्या दिखाता है (AI translation): https://ipe.rest/journal/hi/2026-11-12-what-a-missing-page-shows-you/
+  - [id] Apa yang diperlihatkan halaman yang hilang (AI translation): https://ipe.rest/journal/id/2026-11-12-what-a-missing-page-shows-you/
+- The time on an entry is yours (2026-11-11): https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/ - Entries record Korean time; a 1,639-byte script shows it in your time zone.
+  - original language: en
+  - [en] The time on an entry is yours: https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/
+  - [ko] 글에 적힌 시각은 당신의 시계로 보입니다: https://ipe.rest/journal/ko/2026-11-11-the-time-on-an-entry-is-yours/
+  - [ja] 記事に載る時刻はあなたの時刻 (AI translation): https://ipe.rest/journal/ja/2026-11-11-the-time-on-an-entry-is-yours/
+  - [zh] 文章上的时间属于你 (AI translation): https://ipe.rest/journal/zh/2026-11-11-the-time-on-an-entry-is-yours/
+  - [es] La hora de una entrada es suya (AI translation): https://ipe.rest/journal/es/2026-11-11-the-time-on-an-entry-is-yours/
+  - [fr] L'heure d'une entrée est la vôtre (AI translation): https://ipe.rest/journal/fr/2026-11-11-the-time-on-an-entry-is-yours/
+  - [de] Die Zeit an einem Eintrag gehört Ihnen (AI translation): https://ipe.rest/journal/de/2026-11-11-the-time-on-an-entry-is-yours/
+  - [pt] A hora de uma entrada é sua (AI translation): https://ipe.rest/journal/pt/2026-11-11-the-time-on-an-entry-is-yours/
+  - [ru] Время под записью — ваше (AI translation): https://ipe.rest/journal/ru/2026-11-11-the-time-on-an-entry-is-yours/
+  - [ar] الوقت المكتوب على التدوينة هو وقتك (AI translation): https://ipe.rest/journal/ar/2026-11-11-the-time-on-an-entry-is-yours/
+  - [hi] किसी प्रविष्टि पर लिखा समय आपका है (AI translation): https://ipe.rest/journal/hi/2026-11-11-the-time-on-an-entry-is-yours/
+  - [id] Waktu pada sebuah tulisan adalah milik Anda (AI translation): https://ipe.rest/journal/id/2026-11-11-the-time-on-an-entry-is-yours/
 - What happens after a change goes up (2026-11-10): https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/ - From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.
   - original language: en
   - [en] What happens after a change goes up: https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/

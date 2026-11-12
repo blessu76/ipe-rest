@@ -9,6 +9,7 @@ import shutil
 from pathlib import Path
 
 from . import ASSET_REV, ASSETS
+from .localtime import time_tag
 from .seo import esc
 
 CSS = ASSETS / "ipe-kit.css"
@@ -38,7 +39,7 @@ def copy_css(dest_dir, url_prefix="/assets/"):
 def studio_line(label="an ipe studio app", year=None, version=None, studio="ipe studio"):
     """푸터 아래 회사 서명 줄 — `© 2026 ipe studio · an ipe studio app · v1.0.0 (73)`.
 
-    version 은 version.AppVersion.
+    version 은 version.AppVersion(버전 글자만 보인다).
     글자(label · studio)는 웹이 번역해 넘긴다. year 가 None 이면 © 부분을 빼고 studio 링크만.
     """
     head = '<a href="%s">%s</a>' % (STUDIO_URL, esc(studio))

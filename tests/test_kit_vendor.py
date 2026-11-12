@@ -18,6 +18,15 @@ class KitVendor(unittest.TestCase):
                            capture_output=True, text=True)
         self.assertEqual(r.returncode, 0, r.stdout + r.stderr)
 
+    def test_no_release_notes_menu_or_module(self):
+        # release notes were removed from the web entirely (Davy decision): no page, no menu, no kit module
+        for rel in ("releases", "releases.html"):
+            self.assertFalse((ROOT / rel).exists(), rel)
+        self.assertFalse((ROOT / "vendor" / "ipe_web_kit" / "releases.py").exists())
+        self.assertFalse((ROOT / "vendor" / "ipe_web_kit" / "data" / "release_rules.json").exists())
+        for page in [ROOT / "index.html", ROOT / "sitemap.xml", ROOT / "llms.txt", ROOT / "sw.js"] + sorted(ROOT.glob("*/index.html")):
+            self.assertNotRegex(page.read_text(encoding="utf-8"), r"/releases/", str(page))
+
     def test_pinned_tag(self):
         stamp = (ROOT / "vendor" / "ipe_web_kit" / "KIT_VERSION").read_text(encoding="utf-8").split()
         self.assertEqual(stamp[0], "v" + KIT_VERSION)

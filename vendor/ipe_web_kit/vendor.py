@@ -8,7 +8,7 @@
     python3 -m ipe_web_kit.vendor update ~/Developer/draft-rest --tag v0.1.1     # 올림 · 내림 모두
     # 웹에서(시험 · CI — 네트워크 · 토큰 없이):
     python3 vendor/ipe_web_kit/vendor.py verify .
-    # 앱 repo 에도 같은 복사본(릴리즈노트 도구) — 놓을 자리를 --into 로(마지막 폴더 이름은 ipe_web_kit):
+    # 앱 repo 에도 같은 복사본 — 놓을 자리를 --into 로(마지막 폴더 이름은 ipe_web_kit):
     python3 -m ipe_web_kit.vendor install ~/Developer/draft-app --tag v0.4.0 --into tool/ipe_web_kit
     python3 tool/ipe_web_kit/vendor.py verify . --into tool/ipe_web_kit
 

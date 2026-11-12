@@ -42,7 +42,21 @@ LD_TYPE = {"about": "AboutPage", "contact": "ContactPage", "privacy": "WebPage",
 esc = J.esc
 
 
+# Legal pages live at fixed /legal/ addresses. Their bodies are the current live texts, kept verbatim in scripts/legal_src/ (copied from
+# the site before the move; edit the text THERE). Only the paths below are rewritten at build time — no placeholders, no template.
+LEGAL_PATH = {("privacy", "en"): "/legal/privacy/", ("privacy", "ko"): "/ko/legal/privacy/", ("terms", "en"): "/legal/terms/"}
+LEGAL_SRC = {("privacy", "en"): "privacy.en.html", ("privacy", "ko"): "privacy.ko.html", ("terms", "en"): "terms.en.html"}
+LEGAL_REWRITE = (("/en/privacy/", "/legal/privacy/"), ("/ko/privacy/", "/ko/legal/privacy/"), ("/en/terms/", "/legal/terms/"))
+# old addresses -> 1-hop stubs: (path, lang, title, target)
+LEGAL_STUBS = (("privacy", "en", "Privacy policy — ipe()", "/legal/privacy/"), ("en/privacy", "en", "Privacy policy — ipe()", "/legal/privacy/"),
+               ("ko/privacy", "ko", "개인정보처리방침 — ipe()", "/ko/legal/privacy/"), ("terms", "en", "Terms of use — ipe()", "/legal/terms/"),
+               ("en/terms", "en", "Terms of use — ipe()", "/legal/terms/"), ("ko/terms", "ko", "이용약관 — ipe()", "/legal/terms/"),
+               ("ko/legal/terms", "ko", "이용약관 — ipe()", "/legal/terms/"))
+
+
 def page_url(page, lang=None):
+    if (page, lang) in LEGAL_PATH:
+        return SITE + LEGAL_PATH[(page, lang)]
     return "%s/%s/" % (SITE, page) if lang is None else "%s/%s/%s/" % (SITE, lang, page)
 
 
@@ -127,7 +141,7 @@ def render(p, lang, data, ui):
     main = localize(d["main"], lang)
     if lang in TR:
         note = '  <p class="ai-note" role="note"><strong>%s</strong> %s <a href="%s" hreflang="en">%s</a></p>' % (
-            esc(u["ai_label"]), esc(u["ai_text"]), "/en/%s/" % p, esc(u["ai_link"]))
+            esc(u["ai_label"]), esc(u["ai_text"]), LEGAL_PATH.get((p, "en"), "/en/%s/" % p), esc(u["ai_link"]))
         main, n = re.subn(r'(<p class="(?:lede|stamp)"[^>]*>.*?</p>\n)', lambda m: m.group(1) + note + "\n", main, count=1, flags=re.S)
         if n != 1:
             main, n = re.subn(r"(</h1>\n)", lambda m: m.group(1) + note + "\n", main, count=1)
@@ -189,6 +203,22 @@ def render_redirect(p, data):
         "</head>", "<body>", '<p><a href="/en/%s/">%s</a></p>' % (p, esc(en["title"])), "</body>", "</html>", ""])
 
 
+def render_stub(title, lang, target):
+    """Old legal address -> straight to the /legal/ page (meta refresh + JS replace, canonical = the target)."""
+    return "\n".join([
+        "<!DOCTYPE html>", '<html lang="%s" dir="ltr">' % lang, "<head>", '<meta charset="utf-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1">', "<title>%s</title>" % esc(title),
+        '<link rel="canonical" href="%s%s">' % (SITE, target), '<meta http-equiv="refresh" content="0; url=%s">' % target,
+        '<script>location.replace("%s");</script>' % target, "</head>", "<body>", '<p><a href="%s">%s</a></p>' % (target, esc(title)), "</body>", "</html>", ""])
+
+
+def legal_body(p, lang):
+    t = (ROOT / "scripts" / "legal_src" / LEGAL_SRC[(p, lang)]).read_text(encoding="utf-8")
+    for a, b in LEGAL_REWRITE:
+        t = t.replace(a, b)
+    return t
+
+
 def sitemap_block(data):
     out = ["  <!-- pages:start -->"]
     for p in PAGES:
@@ -224,9 +254,15 @@ def build():
     writes, errors = {}, []
     for p in PAGES:
         for l in gen_langs(data, p):
+            if (p, l) in LEGAL_PATH:  # current live text from scripts/legal_src, served at /legal/
+                writes[ROOT / LEGAL_PATH[(p, l)].strip("/") / "index.html"] = legal_body(p, l)
+                continue
             errors += check_data(p, l, data[p][l])
             writes[ROOT / l / p / "index.html"] = render(p, l, data, ui)
-        writes[ROOT / p / "index.html"] = render_redirect(p, data) if p in EN_ONLY else render_chooser(p, data, ui)
+        if p not in ("privacy", "terms"):
+            writes[ROOT / p / "index.html"] = render_chooser(p, data, ui)
+    for path, lang, title, target in LEGAL_STUBS:
+        writes[ROOT / path / "index.html"] = render_stub(title, lang, target)
     sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     if "<!-- pages:start -->" not in sm:  # first run: replace the three hand-written <url> entries
         sm = re.sub(r'  <url>\n    <loc>https://ipe\.rest/(?:about|contact|privacy)/</loc>.*?</url>\n', "", sm, flags=re.S)

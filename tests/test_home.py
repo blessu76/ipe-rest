@@ -46,17 +46,20 @@ class HomePages(unittest.TestCase):
             self.assertNotIn('href="/journal/en/"', src) if lang != "en" else None
             self.assertIn("ipe() · idle", src)
             body = re.sub(r"<script>.*?</script>|<!--.*?-->", "", src, flags=re.S)
-            # no query-string URLs of our own; the only ?lang= is the language hint on a link to a site without that folder
-            self.assertNotIn("?lang=", re.sub(r'href="https://play\.ipe\.rest/\?lang=[A-Za-z-]+"', "", body))
+            # no query-string URLs of our own
+            self.assertNotIn("?lang=", body)
 
-    def test_play_portal_linked_and_llms_not_stale(self):
+    def test_play_portal_not_on_the_umbrella_home(self):
+        # Davy 2026-11-07: ipe.rest must not carry play.ipe.rest (card, footer link, JSON-LD, FAQ, llms.txt)
         for lang in LANGS:
             src = page(lang)
-            self.assertEqual(src.count('href="%s"' % J.sibling_url("play.ipe.rest", lang)), 2, lang)  # card + footer, like idle
-            self.assertIn('"url": "https://play.ipe.rest/"', src, lang)  # Organization.hasPart
+            self.assertNotIn("play.ipe.rest", src, lang)
+            self.assertNotIn("work-play", src, lang)
+        self.assertNotIn("play.ipe.rest", (ROOT / "index.html").read_text(encoding="utf-8"))
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
-        self.assertIn("play.ipe.rest", llms)
+        self.assertNotIn("play.ipe.rest", llms)
         self.assertNotIn("only product", llms)
+        self.assertIn("idle.ipe.rest", llms)
 
     def test_titles_and_descriptions_are_per_language(self):
         titles = set()
@@ -125,9 +128,7 @@ class HomePages(unittest.TestCase):
             self.assertIn("localStorage.setItem('ipe_lang', q)", page(lang))
 
     def test_links_to_other_ipe_sites_carry_the_language(self):
-        want = {"idle.ipe.rest": {l: "https://idle.ipe.rest/%s/" % J.K.legacy_code(l) for l in LANGS},
-                "play.ipe.rest": {l: ("https://play.ipe.rest/%s/" % J.K.legacy_code(l) if J.K.legacy_code(l) in J.SIBLING_LANG_PATHS["play.ipe.rest"] else
-                                      "https://play.ipe.rest/" if l == "en" else "https://play.ipe.rest/?lang=%s" % l) for l in LANGS}}
+        want = {"idle.ipe.rest": {l: "https://idle.ipe.rest/%s/" % J.K.legacy_code(l) for l in LANGS}}
         for lang in LANGS:
             src = page(lang)
             for host, urls in want.items():

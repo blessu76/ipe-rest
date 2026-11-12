@@ -1,0 +1,2 @@
+# ipe.rest ads.txt — placeholder. AdSense 게시자 ID 를 받으면 아래 주석 줄을 실제 ID 로 교체한다.
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

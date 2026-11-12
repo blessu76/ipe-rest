@@ -1,0 +1,206 @@
+<!-- SOURCE (not served): scripts/journal_sync.py generates /journal/<lang>/<slug>/ for en+ko from this file, and /journal/<slug>/ as the language chooser. -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What the tests check before a page ships — ipe() journal</title>
+<meta name="ipe:title-en" content="What the tests check before a page ships — ipe() journal">
+<meta name="ipe:title-ko" content="페이지를 내보내기 전에 테스트가 확인하는 것 — ipe() 저널">
+<meta name="description" content="The 137 small tests behind ipe.rest: what they check, how long they take, and what they cannot see.">
+<meta name="ipe:excerpt-en" content="137 tests in ten files run in about eight seconds. What they check, why only seven run on every deploy, and what no test here can see.">
+<meta name="ipe:excerpt-ko" content="파일 열 개에 든 테스트 137개가 약 8초에 돈다. 무엇을 확인하는지, 배포마다 도는 건 왜 일곱 개뿐인지, 어떤 테스트도 보지 못하는 것.">
+<meta name="ipe:published-at" content="2026-11-08T10:04+09:00">
+<meta name="ipe:category" content="studio">
+<meta name="ipe:original" content="en">
+<meta name="ipe:description-ko" content="ipe.rest 를 바꾸기 전에 돌리는 작은 테스트 137개: 무엇을 확인하는지, 얼마나 걸리는지, 배포마다 도는 일곱 개, 그리고 보지 못하는 것.">
+<meta name="ipe:abstract-ko" content="ipe.rest 는 바뀌기 전에 작은 테스트 137개를 거칩니다. 테스트는 열 개 파일, 모두 1,850줄에 들어 있고 명령 하나로 약 8초에 돕니다. 저널 페이지, 사이트맵, 언어 연결, 구조화 데이터, 서비스 워커 버전을 확인합니다. 배포 때마다 도는 것은 이 가운데 7개뿐이고 나머지 130개는 커밋 전에 우리가 직접 돌립니다. 번역의 뜻이나 좁은 화면의 모양은 어떤 테스트도 보지 못합니다. 수치는 2026년 11월 8일에 쟀습니다.">
+<meta name="author" content="ipe()">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#fbfcfe">
+<link rel="canonical" href="https://ipe.rest/journal/2026-11-08-what-the-tests-check-before-a-page-ships/">
+<link rel="manifest" href="/manifest.webmanifest?v=23">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
+<link rel="apple-touch-icon" href="/icon-180.png?v=23">
+<link rel="preload" href="/fonts/inter-400.woff2?v=23" as="font" type="font/woff2" crossorigin>
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ipe()">
+<meta property="og:title" content="What the tests check before a page ships">
+<meta property="og:description" content="137 tests in ten files run in about eight seconds. What they check, why only seven run on every deploy, and what no test here can see.">
+<meta property="og:url" content="https://ipe.rest/journal/2026-11-08-what-the-tests-check-before-a-page-ships/">
+<meta property="og:image" content="https://ipe.rest/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-11-08">
+<meta property="article:modified_time" content="2026-11-08">
+<meta property="article:section" content="studio">
+<meta property="article:author" content="ipe()">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What the tests check before a page ships">
+<meta name="twitter:description" content="137 tests in ten files run in about eight seconds. What they check, why only seven run on every deploy, and what no test here can see.">
+<meta name="twitter:image" content="https://ipe.rest/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://ipe.rest/journal/2026-11-08-what-the-tests-check-before-a-page-ships/#article",
+  "headline": "What the tests check before a page ships",
+  "alternativeHeadline": "페이지를 내보내기 전에 테스트가 확인하는 것",
+  "description": "The 137 small tests behind ipe.rest: what they check, how long they take, and what they cannot see.",
+  "abstract": "ipe.rest goes through 137 small tests before it changes. They sit in ten files, 1,850 lines in all, and run in about eight seconds with one command. They check journal pages, the sitemap, language links, structured data and the service worker version. Only 7 of them run on every deploy; the other 130 we run ourselves before committing. No test here reads a translation for meaning or looks at a narrow screen. Figures were measured on 8 November 2026.",
+  "datePublished": "2026-11-08",
+  "dateModified": "2026-11-08",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://ipe.rest/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "thumbnailUrl": "https://ipe.rest/og-image.png",
+  "url": "https://ipe.rest/journal/2026-11-08-what-the-tests-check-before-a-page-ships/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ipe.rest/journal/2026-11-08-what-the-tests-check-before-a-page-ships/"
+  },
+  "articleSection": "studio",
+  "keywords": "ipe(), unit tests, automated testing, static site, hreflang, structured data, deploy checks, journal",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ipe.rest/icon-512.png"
+    }
+  },
+  "about": [
+    {
+      "@type": "Organization",
+      "@id": "https://ipe.rest/#organization",
+      "name": "ipe()",
+      "alternateName": [
+        "ipe",
+        "idle process",
+        "아이프"
+      ],
+      "url": "https://ipe.rest/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "unit test",
+      "description": "A small automated check that runs a piece of code or a generated file and fails when the result is not what was expected."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "hreflang",
+      "description": "An annotation that tells search engines which language versions of the same page exist and how they relate to each other."
+    }
+  ],
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://ipe.rest/journal/#blog",
+    "name": "ipe() journal",
+    "url": "https://ipe.rest/journal/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ipe()", "item": "https://ipe.rest/" },
+    { "@type": "ListItem", "position": 2, "name": "journal", "item": "https://ipe.rest/journal/" },
+    { "@type": "ListItem", "position": 3, "name": "What the tests check before a page ships" }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ko">본문으로 건너뛰기</span></a>
+<header class="topbar">
+  <a class="logo ltr" href="/" aria-label="ipe() home">ipe()</a>
+  <div class="top-right">
+    <nav aria-label="Primary"><a class="opt" href="/">home</a><a href="/journal/" aria-current="page">journal</a></nav>
+    <div class="langswitch" role="group" aria-label="Language / 언어">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ko" aria-pressed="false">KO</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article class="wrap">
+  <header class="post-head">
+    <p class="eyebrow"><i></i><span>journal · <time datetime="2026-11-08">2026-11-08</time></span></p>
+    <h1 lang="en">What the tests <em>check</em> before a page ships</h1>
+    <h1 lang="ko">페이지를 내보내기 전에 테스트가 <em>확인하는</em> 것</h1>
+  </header>
+
+  <div class="prose" lang="en">
+    <p class="lead">Before ipe.rest changes, 137 small tests check it on our own machine. They take about eight seconds, only seven of them also run on every deploy, and there are things none of them can see. Here is what they look at.</p>
+    <p>Yesterday’s entry was about files for machines. This one is about something readers never meet: the checks that run before a page goes live. The figures are from 8 November 2026, taken from the repository as it stood before this entry was added: one command, <code>python3 -m unittest discover tests</code>, 137 tests, all passing.</p>
+    <h2>Ten files, one command</h2>
+    <p>The tests live in ten files, 1,850 lines in all. Most of the weight is on the journal: 56 of the 137 are about journal pages. Another 23 cover the other pages, such as about, contact, privacy and terms, and 18 cover the home page. The rest are small groups: 9 for search-engine notifications, 8 for structured data, 7 for the deploy, 7 for how times are shown, 4 for the service worker, 4 for links and asset versions, and 1 for the share image.</p>
+    <h2>What they catch</h2>
+    <p>Many pages here are generated from our sources: the journal entries, the sitemap, the feed, llms.txt and the cards on the home page. A test fails if any generated file is out of date, so nobody can edit one by hand and forget the source.</p>
+    <p>Other tests guard the languages. Every entry must have a version in each of the twelve languages, each page must link to the others and to itself, and the sitemap must list the same links the page does. Others guard the rules we set ourselves: a new entry under 300 words is refused, one under 400 words only gets a warning, an entry dated in the future is turned away, and a page description may not be cut off with an ellipsis.</p>
+    <p>The service worker, which lets a page open offline, has a cache name that carries a version number. A test checks that the version in each page’s asset links matches the one the service worker lists, so a changed stylesheet is not served stale.</p>
+    <h2>The seven that run on every deploy</h2>
+    <p>Only one file, with 7 of the tests, runs in the deploy workflow. It checks the built site rather than the repository: that the files a visitor needs are there, that folders such as scripts and tests are not uploaded, and that the 404 page is marked noindex and links home. If it fails, the deploy stops before anything is published.</p>
+    <p>The other 130 are a habit, not a gate. We run them before we commit, and nothing on the server makes us.</p>
+    <h2>What they cannot see</h2>
+    <p>A passing test says the pages agree with each other, not that they are good. No test reads the ten machine-drafted translations for meaning, which is why those pages carry an AI-translation note. No test here opens a browser, so layout on a narrow phone screen is checked by eye. And we cannot say whether any crawler notices the care we take in keeping these files in step.</p>
+    <blockquote>ipe(); // check the plain things, every time</blockquote>
+    <p>Most of what keeps a quiet site quiet is dull: a count that matches, a link that resolves, a version that moved. We would rather a machine check that for eight seconds than hope we remembered.</p>
+  </div>
+
+  <div class="prose" lang="ko">
+    <p class="lead">ipe.rest 가 바뀌기 전에는 우리 컴퓨터에서 작은 테스트 137개가 먼저 확인합니다. 약 8초가 걸리고, 배포 때마다 함께 도는 것은 그중 일곱 개뿐이며, 어떤 테스트도 보지 못하는 것이 있습니다. 무엇을 보는지 적었습니다.</p>
+    <p>어제 글은 기계를 위한 파일을 다뤘습니다. 이번 글은 읽는 사람이 만날 일이 없는 것, 페이지가 공개되기 전에 도는 확인을 다룹니다. 수치는 2026년 11월 8일에, 이 글이 더해지기 전의 저장소에서 쟀습니다. 명령은 하나, <code>python3 -m unittest discover tests</code> 이고, 137개가 모두 통과했습니다.</p>
+    <h2>파일 열 개, 명령 하나</h2>
+    <p>테스트는 열 개 파일에 모두 1,850줄로 들어 있습니다. 무게는 저널에 가장 많이 실려서 137개 가운데 56개가 저널 페이지에 관한 것입니다. 23개는 소개, 문의, 개인정보처리방침, 이용약관 같은 나머지 페이지를, 18개는 홈페이지를 다룹니다. 나머지는 작은 묶음입니다. 검색엔진 알림 9개, 구조화 데이터 8개, 배포 7개, 시각 표시 7개, 서비스 워커 4개, 링크와 자산 버전 4개, 공유 이미지 1개입니다.</p>
+    <h2>무엇을 잡아내는가</h2>
+    <p>이곳의 많은 페이지는 우리 원고에서 만들어집니다. 저널 글, 사이트맵, 피드, llms.txt, 홈페이지의 카드가 그렇습니다. 만들어진 파일이 하나라도 최신이 아니면 테스트가 실패하므로, 누군가 손으로 고치고 원고를 잊는 일이 생기지 않습니다.</p>
+    <p>다른 테스트는 언어를 지킵니다. 모든 글은 열두 언어 각각의 버전이 있어야 하고, 각 페이지는 다른 언어 페이지와 자기 자신을 가리켜야 하며, 사이트맵은 페이지와 같은 연결을 담아야 합니다. 또 어떤 테스트는 우리가 스스로 정한 규칙을 지킵니다. 300단어 미만의 새 글은 거부하고, 400단어 미만이면 경고만 하며, 미래 날짜의 글은 돌려보내고, 페이지 설명은 말줄임표로 잘려서는 안 됩니다.</p>
+    <p>페이지를 오프라인에서도 열어 주는 서비스 워커의 캐시 이름에는 버전 번호가 붙어 있습니다. 각 페이지의 자산 링크에 적힌 버전이 서비스 워커가 올린 버전과 같은지 테스트가 확인하므로, 바뀐 스타일시트가 낡은 채로 전달되지 않습니다.</p>
+    <h2>배포마다 도는 일곱 개</h2>
+    <p>배포 작업에서 도는 것은 파일 하나, 테스트 7개뿐입니다. 이것은 저장소가 아니라 만들어진 사이트를 확인합니다. 방문자에게 필요한 파일이 있는지, scripts 나 tests 같은 폴더가 올라가지 않았는지, 404 페이지가 noindex 이고 홈으로 이어지는지입니다. 실패하면 아무것도 공개되기 전에 배포가 멈춥니다.</p>
+    <p>나머지 130개는 관문이 아니라 습관입니다. 커밋 전에 우리가 돌리고, 서버가 우리에게 그것을 강제하지는 않습니다.</p>
+    <h2>보지 못하는 것</h2>
+    <p>통과한 테스트는 페이지들이 서로 맞는다는 뜻이지, 좋다는 뜻이 아닙니다. 기계가 초안을 쓴 열 개 언어의 번역을 뜻으로 읽어 보는 테스트는 없고, 그래서 그 페이지들에는 AI 번역 안내가 붙어 있습니다. 여기 있는 테스트 중에는 브라우저를 여는 것도 없어서, 좁은 휴대폰 화면의 배치는 눈으로 확인합니다. 그리고 이 파일들을 맞춰 두려는 우리의 수고를 크롤러가 알아보는지는 말할 수 없습니다.</p>
+    <blockquote>ipe(); // check the plain things, every time</blockquote>
+    <p>조용한 사이트가 조용하도록 지켜 주는 것 대부분은 따분합니다. 맞아떨어지는 숫자, 이어지는 링크, 올라간 버전 같은 것입니다. 우리가 기억하길 바라기보다 기계가 8초 동안 확인하는 쪽이 낫습니다.</p>
+  </div>
+
+  <a class="back" href="/journal/"><span lang="en">← all entries</span><span lang="ko">← 전체 글</span></a>
+</article>
+</main>
+
+<footer>
+  <p class="sig ltr">ipe<span>()</span></p>
+  <div class="foot">
+    <p class="ltr">© 2026 ipe() · idle</p>
+    <nav aria-label="Footer">
+      <a class="ltr" href="/">ipe.rest</a>
+      <a href="/journal/">journal</a>
+      <a href="/about/"><span lang="en">about</span><span lang="ko">소개</span></a>
+      <a href="/contact/"><span lang="en">contact</span><span lang="ko">문의</span></a>
+      <a href="/privacy/"><span lang="en">privacy</span><span lang="ko">개인정보처리방침</span></a>
+      <a href="/en/terms/" hreflang="en"><span lang="en">terms</span><span lang="ko">이용약관 (영문)</span></a>
+    </nav>
+  </div>
+</footer>
+<script src="/journal/journal.js?v=3" defer></script>
+</body>
+</html>

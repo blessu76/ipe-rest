@@ -5,7 +5,7 @@
   <!-- home:start -->
   <url>
     <loc>https://ipe.rest/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -25,7 +25,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/en/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -45,7 +45,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/ko/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -65,7 +65,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/ja/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -85,7 +85,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/zh-Hant/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -105,7 +105,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/es/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -125,7 +125,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/pt-BR/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -145,7 +145,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/fr/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -165,7 +165,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/de/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -185,7 +185,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/id/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -205,7 +205,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/th/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -225,7 +225,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/vi/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -245,7 +245,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/tr/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
@@ -267,7 +267,7 @@
   <!-- journal:start -->
   <url>
     <loc>https://ipe.rest/journal/en/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -286,7 +286,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ko/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -305,7 +305,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ja/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -324,7 +324,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/zh-Hant/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -343,7 +343,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/es/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -362,7 +362,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/pt-BR/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -381,7 +381,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/fr/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -400,7 +400,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/de/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -419,7 +419,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/id/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -438,7 +438,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/th/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -457,7 +457,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/vi/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -476,7 +476,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/tr/</loc>
-    <lastmod>2026-11-03</lastmod>
+    <lastmod>2026-11-12</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
@@ -492,6 +492,1158 @@
     <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
     <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
     <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-12-what-a-missing-page-shows-you/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ko/2026-11-12-what-a-missing-page-shows-you/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-12-what-a-missing-page-shows-you/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ja/2026-11-12-what-a-missing-page-shows-you/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-12-what-a-missing-page-shows-you/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/es/2026-11-12-what-a-missing-page-shows-you/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-12-what-a-missing-page-shows-you/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-12-what-a-missing-page-shows-you/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/fr/2026-11-12-what-a-missing-page-shows-you/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-12-what-a-missing-page-shows-you/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/de/2026-11-12-what-a-missing-page-shows-you/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-12-what-a-missing-page-shows-you/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/id/2026-11-12-what-a-missing-page-shows-you/</loc>
+    <lastmod>2026-11-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-12-what-a-missing-page-shows-you/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-12-what-a-missing-page-shows-you/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ko/2026-11-11-the-time-on-an-entry-is-yours/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ja/2026-11-11-the-time-on-an-entry-is-yours/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/es/2026-11-11-the-time-on-an-entry-is-yours/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/pt-BR/2026-11-11-the-time-on-an-entry-is-yours/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/fr/2026-11-11-the-time-on-an-entry-is-yours/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/de/2026-11-11-the-time-on-an-entry-is-yours/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/id/2026-11-11-the-time-on-an-entry-is-yours/</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-11-the-time-on-an-entry-is-yours/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/</loc>
+    <lastmod>2026-11-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ko/2026-11-09-how-one-entry-becomes-thirteen-pages/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ja/2026-11-09-how-one-entry-becomes-thirteen-pages/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/es/2026-11-09-how-one-entry-becomes-thirteen-pages/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/pt-BR/2026-11-09-how-one-entry-becomes-thirteen-pages/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/fr/2026-11-09-how-one-entry-becomes-thirteen-pages/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/de/2026-11-09-how-one-entry-becomes-thirteen-pages/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/id/2026-11-09-how-one-entry-becomes-thirteen-pages/</loc>
+    <lastmod>2026-11-09</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-09-how-one-entry-becomes-thirteen-pages/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ko/2026-11-08-what-the-tests-check-before-a-page-ships/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ja/2026-11-08-what-the-tests-check-before-a-page-ships/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/es/2026-11-08-what-the-tests-check-before-a-page-ships/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/pt-BR/2026-11-08-what-the-tests-check-before-a-page-ships/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/fr/2026-11-08-what-the-tests-check-before-a-page-ships/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/de/2026-11-08-what-the-tests-check-before-a-page-ships/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/id/2026-11-08-what-the-tests-check-before-a-page-ships/</loc>
+    <lastmod>2026-11-08</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-08-what-the-tests-check-before-a-page-ships/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ko/2026-11-07-the-plain-files-that-describe-this-site/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ja/2026-11-07-the-plain-files-that-describe-this-site/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/es/2026-11-07-the-plain-files-that-describe-this-site/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/pt-BR/2026-11-07-the-plain-files-that-describe-this-site/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/fr/2026-11-07-the-plain-files-that-describe-this-site/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/de/2026-11-07-the-plain-files-that-describe-this-site/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/id/2026-11-07-the-plain-files-that-describe-this-site/</loc>
+    <lastmod>2026-11-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-07-the-plain-files-that-describe-this-site/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ko/2026-11-06-how-little-a-journal-page-has-to-load/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ja/2026-11-06-how-little-a-journal-page-has-to-load/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/es/2026-11-06-how-little-a-journal-page-has-to-load/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/pt-BR/2026-11-06-how-little-a-journal-page-has-to-load/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/fr/2026-11-06-how-little-a-journal-page-has-to-load/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/de/2026-11-06-how-little-a-journal-page-has-to-load/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/id/2026-11-06-how-little-a-journal-page-has-to-load/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-06-how-little-a-journal-page-has-to-load/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ko/2026-11-05-small-choices-that-make-a-page-easy-to-read/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ja/2026-11-05-small-choices-that-make-a-page-easy-to-read/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/es/2026-11-05-small-choices-that-make-a-page-easy-to-read/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/pt-BR/2026-11-05-small-choices-that-make-a-page-easy-to-read/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/fr/2026-11-05-small-choices-that-make-a-page-easy-to-read/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/de/2026-11-05-small-choices-that-make-a-page-easy-to-read/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/id/2026-11-05-small-choices-that-make-a-page-easy-to-read/</loc>
+    <lastmod>2026-11-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-05-small-choices-that-make-a-page-easy-to-read/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-04-open-it-once-read-it-offline/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ko/2026-11-04-open-it-once-read-it-offline/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-04-open-it-once-read-it-offline/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/ja/2026-11-04-open-it-once-read-it-offline/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-04-open-it-once-read-it-offline/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-04-open-it-once-read-it-offline/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/pt-BR/2026-11-04-open-it-once-read-it-offline/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-04-open-it-once-read-it-offline/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/fr/2026-11-04-open-it-once-read-it-offline/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-04-open-it-once-read-it-offline/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/de/2026-11-04-open-it-once-read-it-offline/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-04-open-it-once-read-it-offline/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/id/2026-11-04-open-it-once-read-it-offline/</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-04-open-it-once-read-it-offline/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-04-open-it-once-read-it-offline/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/</loc>
@@ -1391,7 +2543,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/"/>
@@ -1407,7 +2559,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ko/2026-10-26-we-speak-in-code-comments/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/"/>
@@ -1423,7 +2575,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/ja/2026-10-26-we-speak-in-code-comments/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/"/>
@@ -1439,7 +2591,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/es/2026-10-26-we-speak-in-code-comments/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/"/>
@@ -1455,7 +2607,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/pt-BR/2026-10-26-we-speak-in-code-comments/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/"/>
@@ -1471,7 +2623,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/fr/2026-10-26-we-speak-in-code-comments/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/"/>
@@ -1487,7 +2639,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/de/2026-10-26-we-speak-in-code-comments/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/"/>
@@ -1503,7 +2655,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/journal/id/2026-10-26-we-speak-in-code-comments/</loc>
-    <lastmod>2026-10-26</lastmod>
+    <lastmod>2026-11-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-10-26-we-speak-in-code-comments/"/>
@@ -2513,7 +3665,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/en/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -2529,7 +3681,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/ko/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -2545,7 +3697,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/ja/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -2561,7 +3713,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/es/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -2577,7 +3729,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/pt-BR/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -2593,7 +3745,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/fr/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -2609,7 +3761,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/de/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -2625,7 +3777,7 @@
   </url>
   <url>
     <loc>https://ipe.rest/id/privacy/</loc>
-    <lastmod>2026-10-22</lastmod>
+    <lastmod>2026-11-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/privacy/"/>
@@ -2637,6 +3789,15 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/privacy/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/privacy/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/privacy/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/en/terms/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/terms/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <!-- pages:end -->

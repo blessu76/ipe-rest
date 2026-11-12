@@ -1,13 +1,13 @@
 # ipe()
 
-> ipe() (pronounced "eye-puh" (/ˈaɪpə/); short for "idle process") is a small AI-native studio building quiet, developer-minded things. Its motto is "when the process finally rests." ipe.rest is the official studio home (umbrella) for two sites: idle (AI lo-fi & healing music, idle.ipe.rest) and the games portal play.ipe.rest. ipe() is not related to ipe (ipê) hardwood, lumber, or decking.
+> ipe() (pronounced "eye-puh" (/ˈaɪpə/); short for "idle process") is a small AI-native studio building quiet, developer-minded things. Its motto is "when the process finally rests." ipe.rest is the official studio home (umbrella) for idle (AI lo-fi & healing music, idle.ipe.rest). ipe() is not related to ipe (ipê) hardwood, lumber, or decking.
 
 ipe() makes calm lo-fi, ambient, chillhop, and healing music. The music is produced with AI (Suno), openly and transparently; lyrics are AI-drafted and reviewed by a person, and the concept and final decisions are the studio's own. The brand pairs a code-editor aesthetic with a gentle, understated sense of rest, and discloses its AI use transparently. Since the dear(you); album, every track closes with a spoken signature: "ipe. be still" — a quiet whispered line that echoes the brand slogan "ipe(); // be still."
 
 ## Key facts
 - Name: ipe() — short for "idle process" (the state a computer enters when it has no work to do and simply rests)
 - Disambiguation: ipe() is a music brand — not related to ipe / ipê hardwood (Handroanthus, Tabebuia), lumber, or decking
-- Domain: ipe.rest — the brand name plus ".rest" (as in rest); the official studio umbrella home. Music (idle) lives at idle.ipe.rest; the games portal (ipe() Games) lives at play.ipe.rest.
+- Domain: ipe.rest — the brand name plus ".rest" (as in rest); the official studio umbrella home. Music (idle) lives at idle.ipe.rest.
 - Pronunciation: "eye-puh" (/ˈaɪpə/; Korean: 아이프). "idle process" is the name's origin, not its pronunciation.
 - Genre: lo-fi, ambient, chillhop, healing
 - Audience: developers and focus-seekers worldwide
@@ -15,7 +15,7 @@ ipe() makes calm lo-fi, ambient, chillhop, and healing music. The music is produ
 - Code-comment slogan: "ipe(); // be still"
 - Brand signature: since the dear(you); album, every track ends with "ipe. be still" — a single breath, spoken quietly
 - Music creation: AI-assisted (Suno) and disclosed transparently; lyrics are AI-drafted and reviewed by a person
-- Site languages: 8 (Korean, English, Japanese, Spanish, French, German, Portuguese, Indonesian); retired pages kept for Chinese, Russian, Arabic, Hindi
+- Site languages: 12 (Korean, English, Japanese, Chinese, Spanish, French, German, Portuguese, Russian, Arabic, Hindi, Indonesian)
 - Status (2026): active — 12 tracks released; debut concept album dear(you); vol.1 complete (10/10 tracks)
 
 ## Track series
@@ -86,6 +86,96 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - ไทย [th] (AI translation): https://ipe.rest/journal/th/
   - Tiếng Việt [vi] (AI translation): https://ipe.rest/journal/vi/
   - Türkçe [tr] (AI translation): https://ipe.rest/journal/tr/
+- What a missing page shows you (2026-11-12): https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/ - One 4,355-byte file, no script, and a way home in 12 languages.
+  - original language: en
+  - [en] What a missing page shows you: https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/
+  - [ko] 없는 페이지가 보여 주는 것: https://ipe.rest/journal/ko/2026-11-12-what-a-missing-page-shows-you/
+  - [ja] 存在しないページが見せるもの (AI translation): https://ipe.rest/journal/ja/2026-11-12-what-a-missing-page-shows-you/
+  - [es] Lo que te muestra una página que falta (AI translation): https://ipe.rest/journal/es/2026-11-12-what-a-missing-page-shows-you/
+  - [pt-BR] O que uma página ausente mostra a você (AI translation): https://ipe.rest/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/
+  - [fr] Ce que vous montre une page manquante (AI translation): https://ipe.rest/journal/fr/2026-11-12-what-a-missing-page-shows-you/
+  - [de] Was eine fehlende Seite dir zeigt (AI translation): https://ipe.rest/journal/de/2026-11-12-what-a-missing-page-shows-you/
+  - [id] Apa yang diperlihatkan halaman yang hilang (AI translation): https://ipe.rest/journal/id/2026-11-12-what-a-missing-page-shows-you/
+- The time on an entry is yours (2026-11-11): https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/ - Entries record Korean time; a 1,639-byte script shows it in your time zone.
+  - original language: en
+  - [en] The time on an entry is yours: https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/
+  - [ko] 글에 적힌 시각은 당신의 시계로 보입니다: https://ipe.rest/journal/ko/2026-11-11-the-time-on-an-entry-is-yours/
+  - [ja] 記事に載る時刻はあなたの時刻 (AI translation): https://ipe.rest/journal/ja/2026-11-11-the-time-on-an-entry-is-yours/
+  - [es] La hora de una entrada es suya (AI translation): https://ipe.rest/journal/es/2026-11-11-the-time-on-an-entry-is-yours/
+  - [pt-BR] A hora de uma entrada é sua (AI translation): https://ipe.rest/journal/pt-BR/2026-11-11-the-time-on-an-entry-is-yours/
+  - [fr] L'heure d'une entrée est la vôtre (AI translation): https://ipe.rest/journal/fr/2026-11-11-the-time-on-an-entry-is-yours/
+  - [de] Die Zeit an einem Eintrag gehört Ihnen (AI translation): https://ipe.rest/journal/de/2026-11-11-the-time-on-an-entry-is-yours/
+  - [id] Waktu pada sebuah tulisan adalah milik Anda (AI translation): https://ipe.rest/journal/id/2026-11-11-the-time-on-an-entry-is-yours/
+- What happens after a change goes up (2026-11-10): https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/ - From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.
+  - original language: en
+  - [en] What happens after a change goes up: https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/
+  - [ko] 변경이 올라간 뒤에 일어나는 일: https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/
+  - [ja] 変更が公開されたあとに起こること (AI translation): https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/
+  - [es] Qué ocurre después de subir un cambio (AI translation): https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/
+  - [pt-BR] O que acontece depois que uma mudança sobe (AI translation): https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/
+  - [fr] Ce qui se passe après la mise en ligne d’un changement (AI translation): https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/
+  - [de] Was nach dem Hochladen einer Änderung passiert (AI translation): https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/
+  - [id] Apa yang terjadi setelah perubahan naik (AI translation): https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/
+- How one entry becomes thirteen pages (2026-11-09): https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/ - Eleven files written by hand, one script, thirteen pages: how a journal entry on ipe.rest is built.
+  - original language: en
+  - [en] How one entry becomes thirteen pages: https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [ko] 글 하나가 열세 페이지가 되기까지: https://ipe.rest/journal/ko/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [ja] 1つの記事が13ページになるまで (AI translation): https://ipe.rest/journal/ja/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [es] Cómo una entrada se convierte en trece páginas (AI translation): https://ipe.rest/journal/es/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [pt-BR] Como uma entrada vira treze páginas (AI translation): https://ipe.rest/journal/pt-BR/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [fr] Comment une entrée devient treize pages (AI translation): https://ipe.rest/journal/fr/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [de] Wie aus einem Beitrag dreizehn Seiten werden (AI translation): https://ipe.rest/journal/de/2026-11-09-how-one-entry-becomes-thirteen-pages/
+  - [id] Bagaimana satu entri menjadi tiga belas halaman (AI translation): https://ipe.rest/journal/id/2026-11-09-how-one-entry-becomes-thirteen-pages/
+- What the tests check before a page ships (2026-11-08): https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/ - The 137 small tests behind ipe.rest: what they check, how long they take, and what they cannot see.
+  - original language: en
+  - [en] What the tests check before a page ships: https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [ko] 페이지를 내보내기 전에 테스트가 확인하는 것: https://ipe.rest/journal/ko/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [ja] ページを公開する前にテストが確認すること (AI translation): https://ipe.rest/journal/ja/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [es] Qué revisan las pruebas antes de publicar (AI translation): https://ipe.rest/journal/es/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [pt-BR] O que os testes checam antes de publicar (AI translation): https://ipe.rest/journal/pt-BR/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [fr] Ce que les tests vérifient d’abord (AI translation): https://ipe.rest/journal/fr/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [de] Was Tests prüfen, bevor eine Seite erscheint (AI translation): https://ipe.rest/journal/de/2026-11-08-what-the-tests-check-before-a-page-ships/
+  - [id] Apa yang diperiksa tes sebelum halaman terbit (AI translation): https://ipe.rest/journal/id/2026-11-08-what-the-tests-check-before-a-page-ships/
+- The plain files that describe this site (2026-11-07): https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/ - The small text files at the edge of ipe.rest: robots.txt, a sitemap, llms.txt, an RSS feed and a manifest. What each one does, and what we cannot confirm.
+  - original language: en
+  - [en] The plain files that describe this site: https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/
+  - [ko] 이 사이트를 설명하는 평문 파일들: https://ipe.rest/journal/ko/2026-11-07-the-plain-files-that-describe-this-site/
+  - [ja] このサイトを説明する素のファイル (AI translation): https://ipe.rest/journal/ja/2026-11-07-the-plain-files-that-describe-this-site/
+  - [es] Los archivos que describen este sitio (AI translation): https://ipe.rest/journal/es/2026-11-07-the-plain-files-that-describe-this-site/
+  - [pt-BR] Os arquivos que descrevem este site (AI translation): https://ipe.rest/journal/pt-BR/2026-11-07-the-plain-files-that-describe-this-site/
+  - [fr] Les fichiers simples qui décrivent ce site (AI translation): https://ipe.rest/journal/fr/2026-11-07-the-plain-files-that-describe-this-site/
+  - [de] Die Dateien, die diese Seite beschreiben (AI translation): https://ipe.rest/journal/de/2026-11-07-the-plain-files-that-describe-this-site/
+  - [id] Berkas sederhana yang menjelaskan situs ini (AI translation): https://ipe.rest/journal/id/2026-11-07-the-plain-files-that-describe-this-site/
+- How little a journal page has to load (2026-11-06): https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/ - What a journal page on ipe.rest loads: one small HTML file, one script, fonts from our own server. Measured sizes, and what we left out.
+  - original language: en
+  - [en] How little a journal page has to load: https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/
+  - [ko] 저널 한 페이지가 불러오는 것은 얼마나 적은가: https://ipe.rest/journal/ko/2026-11-06-how-little-a-journal-page-has-to-load/
+  - [ja] ジャーナル1ページが読み込むものの少なさ (AI translation): https://ipe.rest/journal/ja/2026-11-06-how-little-a-journal-page-has-to-load/
+  - [es] Qué poco carga una página del diario (AI translation): https://ipe.rest/journal/es/2026-11-06-how-little-a-journal-page-has-to-load/
+  - [pt-BR] Quão pouco carrega uma página do diário (AI translation): https://ipe.rest/journal/pt-BR/2026-11-06-how-little-a-journal-page-has-to-load/
+  - [fr] Le peu qu’une page du journal a à charger (AI translation): https://ipe.rest/journal/fr/2026-11-06-how-little-a-journal-page-has-to-load/
+  - [de] Wie wenig eine Journalseite laden muss (AI translation): https://ipe.rest/journal/de/2026-11-06-how-little-a-journal-page-has-to-load/
+  - [id] Betapa ringan halaman jurnal dimuat (AI translation): https://ipe.rest/journal/id/2026-11-06-how-little-a-journal-page-has-to-load/
+- Small choices that make a page easy to read (2026-11-05): https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/ - Small, checkable choices that make ipe.rest easy to read: a skip link, a visible focus ring, big tap targets, free zoom, calm motion.
+  - original language: en
+  - [en] Small choices that make a page easy to read: https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [ko] 페이지를 읽기 쉽게 만드는 작은 선택들: https://ipe.rest/journal/ko/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [ja] ページを読みやすくする小さな選択 (AI translation): https://ipe.rest/journal/ja/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [es] Pequeños gestos que facilitan la lectura (AI translation): https://ipe.rest/journal/es/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [pt-BR] Pequenas escolhas para ler com facilidade (AI translation): https://ipe.rest/journal/pt-BR/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [fr] Petits choix pour une page facile à lire (AI translation): https://ipe.rest/journal/fr/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [de] Kleine Entscheidungen für leichtes Lesen (AI translation): https://ipe.rest/journal/de/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+  - [id] Pilihan kecil agar halaman mudah dibaca (AI translation): https://ipe.rest/journal/id/2026-11-05-small-choices-that-make-a-page-easy-to-read/
+- Open it once, read it offline (2026-11-04): https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/ - ipe.rest keeps a small copy of itself in your browser, so a page you have opened once can open again without a connection. Here is how it works, in plain words.
+  - original language: en
+  - [en] Open it once, read it offline: https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/
+  - [ko] 한 번 열어 두면 오프라인에서도 읽힙니다: https://ipe.rest/journal/ko/2026-11-04-open-it-once-read-it-offline/
+  - [ja] 一度開けば、オフラインでも読めます (AI translation): https://ipe.rest/journal/ja/2026-11-04-open-it-once-read-it-offline/
+  - [es] Ábrelo una vez, léelo sin conexión (AI translation): https://ipe.rest/journal/es/2026-11-04-open-it-once-read-it-offline/
+  - [pt-BR] Abra uma vez, leia offline (AI translation): https://ipe.rest/journal/pt-BR/2026-11-04-open-it-once-read-it-offline/
+  - [fr] Ouvrez une fois, lisez hors connexion (AI translation): https://ipe.rest/journal/fr/2026-11-04-open-it-once-read-it-offline/
+  - [de] Einmal öffnen, offline lesen (AI translation): https://ipe.rest/journal/de/2026-11-04-open-it-once-read-it-offline/
+  - [id] Buka sekali, baca secara offline (AI translation): https://ipe.rest/journal/id/2026-11-04-open-it-once-read-it-offline/
 - What this site remembers about you (2026-11-03): https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/ - ipe.rest keeps almost nothing about you: a language choice on your device, a page-view count, and a note if you write to us. Here is the plain list.
   - original language: en
   - [en] What this site remembers about you: https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/
@@ -236,7 +326,7 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - ไทย [th] (AI translation): https://ipe.rest/th/contact/
   - Tiếng Việt [vi] (AI translation): https://ipe.rest/vi/contact/
   - Türkçe [tr] (AI translation): https://ipe.rest/tr/contact/
-- Privacy (8 languages, one static page per language): https://ipe.rest/en/privacy/ — Google Analytics, language preference stored in the browser, email correspondence, how to request access or deletion; no ads on ipe.rest
+- Privacy (8 languages, one static page per language): https://ipe.rest/en/privacy/ — applies to ipe.rest and all *.ipe.rest subdomains: Google Analytics, Google AdSense advertising, cookies and consent, language preference stored in the browser, email correspondence, how to request access or deletion
   - English [en]: https://ipe.rest/en/privacy/
   - 한국어 [ko]: https://ipe.rest/ko/privacy/
   - 日本語 [ja] (AI translation): https://ipe.rest/ja/privacy/
@@ -245,12 +335,13 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - Français [fr] (AI translation): https://ipe.rest/fr/privacy/
   - Deutsch [de] (AI translation): https://ipe.rest/de/privacy/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/id/privacy/
+- Terms (English only): https://ipe.rest/en/terms/ — terms of use for ipe.rest and its subdomains (English only): acceptable use, content ownership, AI-assisted writing, third-party ads and links, liability
+  - English [en]: https://ipe.rest/en/terms/
 <!-- pages:llms:end -->
 
 ## Links
 - Website: https://ipe.rest/
 - Music (idle): https://idle.ipe.rest/ — AI lo-fi & healing music
-- Games portal (ipe() Games): https://play.ipe.rest/ — four small games from ipe(): Iltonggi, Inkisle, Sunmeld and Claimball. As the portal states, none is released yet (Korean version: https://play.ipe.rest/ko/)
 - YouTube: https://www.youtube.com/@ipe-rest (all tracks released here)
 - Instagram: https://www.instagram.com/ipe.rest
 - TikTok: https://www.tiktok.com/@ipe.rest

@@ -11,7 +11,8 @@ import journal_i18n  # noqa: E402
 import pages_sync  # noqa: E402
 
 LANGS = pages_sync.LANGS
-PAGES = pages_sync.PAGES
+PAGES = tuple(x for x in pages_sync.PAGES if x not in pages_sync.EN_ONLY)  # the info pages translated per language
+EN_ONLY = pages_sync.EN_ONLY
 PL = pages_sync.page_langs  # languages that really have /<lang>/<page>/ (privacy = ko/en originals + translated, not the new 4)
 NEW4 = ["zh-Hant", "th", "vi", "tr"]  # live languages without translated privacy (Davy 2026-11-12: legal text stays ko/en original)
 SM = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
@@ -114,6 +115,41 @@ class InfoPages(unittest.TestCase):
                 for p in PAGES:
                     self.assertIn('href="/%s/%s/"' % (lang, p), src if lang not in NEW4 or p != "privacy" else src.replace("/en/privacy/", "/%s/privacy/" % lang), f)
                     self.assertNotIn('href="/%s/"' % p, src, f)
+
+
+class EnglishOnlyPages(unittest.TestCase):
+    """Terms of use is English-only: /en/terms/ is the page, /terms/ redirects to it, nothing else is generated or listed."""
+
+    def test_terms_page_and_redirect(self):
+        self.assertEqual(EN_ONLY, ("terms",))
+        for p in EN_ONLY:
+            src = read(p, "en")
+            self.assertIn('<link rel="canonical" href="https://ipe.rest/en/%s/">' % p, src)
+            self.assertIn("mailto:ipe.haven@gmail.com", src)
+            self.assertEqual(dict(re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="([^"]+)">', src)),
+                             {"x-default": "https://ipe.rest/en/%s/" % p, "en": "https://ipe.rest/en/%s/" % p})
+            sh = read(p)
+            self.assertIn('<link rel="canonical" href="https://ipe.rest/en/%s/">' % p, sh)
+            self.assertIn('url=/en/%s/' % p, sh)
+            self.assertNotRegex(sh, r"noindex")
+            for lang in LANGS:
+                if lang != "en":
+                    self.assertFalse((ROOT / lang / p).exists(), (p, lang))
+            sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+            self.assertIn("<loc>https://ipe.rest/en/%s/</loc>" % p, sm)
+            self.assertNotIn("<loc>https://ipe.rest/%s/</loc>" % p, sm)
+
+    def test_every_privacy_language_links_to_the_english_terms(self):
+        for lang in PL("privacy"):
+            self.assertIn('href="/en/terms/"', read("privacy", lang), lang)
+            self.assertNotIn('href="/%s/terms/"' % lang if lang != "en" else "x\0", read("privacy", lang), lang)
+
+    def test_privacy_describes_ads_cookies_and_subdomains(self):
+        src = read("privacy", "en")
+        for needle in ("AdSense", "ipe.rest", "idle.ipe.rest", "pawstcard.ipe.rest", "play.ipe.rest", "iltonggi.ipe.rest", "inkisle.ipe.rest"):
+            self.assertIn(needle, src, needle)
+        self.assertNotRegex(src, r"(?i)(this site|ipe\.rest) (shows?|has) no (ads|advertising)")
+        self.assertNotRegex(src, r"(?i)idle only")
 
 
 class InfoPageShellSeo(unittest.TestCase):
@@ -292,3 +328,19 @@ class GoAndOgImage(unittest.TestCase):
                     m = re.search(r'og:image:%s" content="(\d+)"' % k, src)
                     if m:
                         self.assertEqual(int(m.group(1)), v, str(f))
+
+
+class FooterLinks(unittest.TestCase):
+    """Every language's home, info and journal-index footer links about, contact, privacy and the English-only terms page."""
+
+    def test_footers_link_the_four_legal_info_pages(self):
+        for lang in LANGS:
+            pages = [("home", ROOT / lang / "index.html"), ("about", ROOT / lang / "about" / "index.html"),
+                     ("journal", ROOT / "journal" / lang / "index.html")]
+            if lang in PL("privacy"):
+                pages.append(("privacy", ROOT / lang / "privacy" / "index.html"))
+            for name, f in pages:
+                src = f.read_text(encoding="utf-8")
+                foot = src[src.rindex("<footer"):]
+                for href in ("/%s/about/" % lang, "/%s/contact/" % lang, journal_i18n.privacy_href(lang), "/en/terms/"):
+                    self.assertIn('href="%s"' % href, foot, "%s footer (%s) lacks %s" % (name, lang, href))

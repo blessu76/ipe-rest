@@ -294,7 +294,7 @@ def render_chooser(src, ui):
 %(items)s
   </ul>
 </main>
-<footer><div class="wrap">ipe() · idle &nbsp;·&nbsp; AI draft + human review &nbsp;·&nbsp; <a href="/journal/">journal</a> · <a href="/about/">about</a> · <a href="/contact/">contact</a> · <a href="/privacy/">privacy</a></div></footer>
+<footer><div class="wrap">ipe() · idle &nbsp;·&nbsp; AI draft + human review &nbsp;·&nbsp; <a href="/journal/en/">journal</a> · <a href="/en/about/">about</a> · <a href="/en/contact/">contact</a> · <a href="/en/privacy/">privacy</a> · <a href="/en/terms/" hreflang="en">terms</a></div></footer>
 
 %(ga)s
 %(sw)s

@@ -33,6 +33,9 @@ def shortest_words():
     return journal_sync.prose_words(shortest_post().read_text(encoding="utf-8"), "en")
 
 
+STUB_WORDS = 100   # English words of the stub body used by the lint probes
+
+
 def slug_of(f):
     return f.stem
 
@@ -686,6 +689,8 @@ class JournalWordLint(unittest.TestCase):
             old = shortest_post()
             new = root / "scripts" / "journal_src" / "2026-10-30-lint-probe.html"
             s = old.read_text(encoding="utf-8").replace(old.stem, new.stem).replace(old.stem[:10], "2026-10-30")
+            # fixed 100-word stub so the probe does not depend on how long the real posts are (all are 400+ now)
+            s = re.sub(r'(<div class="prose" lang="en">).*?(</div>)', lambda m: m.group(1) + "<p>" + " ".join(["stub"] * 100) + "</p>" + m.group(2), s, count=1, flags=re.S)
             if extra_words:
                 s = s.replace('<div class="prose" lang="en">', '<div class="prose" lang="en"><h2>Probe</h2><p>%s</p>' % " ".join(["word"] * extra_words), 1)
             new.write_text(s, encoding="utf-8")
@@ -700,13 +705,13 @@ class JournalWordLint(unittest.TestCase):
         self.assertTrue(any("2026-10-30-lint-probe" in e and "%d words" % words in e for e in errors), errors)
 
     def test_new_post_between_300_and_400_only_warns(self):
-        words, errors, warnings, _ = self.new_post_build(350 - shortest_words())
+        words, errors, warnings, _ = self.new_post_build(350 - STUB_WORDS)
         self.assertTrue(300 <= words < 400, words)
         self.assertEqual(errors, [])
         self.assertTrue(any("2026-10-30-lint-probe" in w and "%d words" % words in w for w in warnings), warnings)
 
     def test_long_new_post_is_quiet(self):
-        words, errors, warnings, _ = self.new_post_build(450 - shortest_words())
+        words, errors, warnings, _ = self.new_post_build(450 - STUB_WORDS)
         self.assertGreaterEqual(words, 400)
         self.assertEqual(errors, [])
         self.assertFalse(any("lint-probe" in w and "words" in w for w in warnings), warnings)

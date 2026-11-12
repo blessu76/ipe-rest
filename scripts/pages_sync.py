@@ -28,15 +28,17 @@ SITE = J.SITE
 LANGS = J.LANGS
 PAGE_LANGS = J.PAGE_LANGS
 TR = J.TR_LANGS
-PAGES = ("about", "contact", "privacy")
+PAGES = ("about", "contact", "privacy", "terms")
+EN_ONLY = ("terms",)  # English-only legal text (no KO source, no translations); add <lang>.json files under pages_i18n/terms/ to translate
 NO_PRIVACY = J.NO_PRIVACY_TRANSLATION  # th vi tr zh-Hant: no privacy page (legal text stays ko/en); links go to /en/privacy/
 
 
 def page_langs(p):
     """Languages that get /<lang>/<page>/ : all live ones, except the legal-text exceptions for privacy."""
     return [l for l in LANGS if not (p == "privacy" and l in NO_PRIVACY)]
-LASTMOD = "2026-10-22"
-LD_TYPE = {"about": "AboutPage", "contact": "ContactPage", "privacy": "WebPage"}
+LASTMOD_DEFAULT = "2026-10-22"
+LASTMOD = {"privacy": "2026-11-06", "terms": "2026-11-06"}
+LD_TYPE = {"about": "AboutPage", "contact": "ContactPage", "privacy": "WebPage", "terms": "WebPage"}
 esc = J.esc
 
 
@@ -71,7 +73,7 @@ def load():
     for p in PAGES:
         s = (ROOT / "scripts" / "pages_src" / (p + ".html")).read_text(encoding="utf-8")
         srcs[p] = s
-        data[p] = {l: split_source(s, l) for l in J.ORIG_LANGS}
+        data[p] = {l: split_source(s, l) for l in (("en",) if p in EN_ONLY else J.ORIG_LANGS)}
         for l in TR:
             f = ROOT / "scripts" / "pages_i18n" / p / (J.K.legacy_code(l) + ".json")
             if f.exists():
@@ -97,6 +99,7 @@ def localize(main, lang):
     """Point internal links (and links to other ipe sites) at the page's own language (translations may carry the EN-localized hrefs)."""
     main = re.sub(r'href="/(?:[a-z]{2}(?:-[A-Za-z]+)?/)?(about|contact|privacy)/"',
                   lambda m: 'href="%s"' % (J.privacy_href(lang) if m.group(1) == "privacy" else "/%s/%s/" % (lang, m.group(1))), main)
+    main = re.sub(r'href="/(?:[a-z]{2}(?:-[A-Za-z]+)?/)?terms/"', 'href="/en/terms/"', main)  # terms exist in English only
     main = re.sub(r'href="/journal/(?:[a-z]{2}/)?"', 'href="/journal/%s/"' % lang, main)
     main = re.sub(r'class="back" href="/(?:[a-z]{2}/)?"', 'class="back" href="/%s/"' % lang, main)
     return J.localize_sibling_links(main, lang)
@@ -134,7 +137,7 @@ def render(p, lang, data, ui):
          "isPartOf": {"@id": SITE + "/%s/#website" % lang}},
         {"@type": "BreadcrumbList", "@id": url + "#breadcrumb", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "ipe()", "item": SITE + "/%s/" % lang},
-            {"@type": "ListItem", "position": 2, "name": u[p], "item": url}]}]}
+            {"@type": "ListItem", "position": 2, "name": u.get(p, p), "item": url}]}]}
     parts = ['<!DOCTYPE html>', '<html lang="%s" dir="%s">' % (lang, "rtl" if lang in J.RTL else "ltr"), '<head>',
              J._common_head(lang, d["title"], d["description"], url),
              "\n".join('<link rel="alternate" hreflang="%s" href="%s">' % (h, x) for h, x in cl),
@@ -167,15 +170,30 @@ def render_chooser(p, data, ui):
     rows = [(l, page_url(p, l), data[p][l]["title"]) for l in langs]
     cl = cluster(data, p)
     head = J._chooser_head(en["title"], en["description"], url, cl, "website", "en_US", [page])
-    body = J._chooser_body(en["title"], "ipe() — " + ", ".join(J.NATIVE[l] for l in langs), rows, dict(ui["en"], eyebrow=ui["en"][p]), "en", cl)
+    body = J._chooser_body(en["title"], "ipe() — " + ", ".join(J.NATIVE[l] for l in langs), rows, dict(ui["en"], eyebrow=ui["en"].get(p, p)), "en", cl)
     return "\n".join(head) + "\n" + body
+
+
+def render_redirect(p, data):
+    """English-only pages: /<page>/ is a plain redirect to /en/<page>/ (a one-language chooser would be pointless)."""
+    en = data[p]["en"]
+    url = page_url(p, "en")
+    return "\n".join([
+        "<!DOCTYPE html>", '<html lang="en" dir="ltr">', "<head>", '<meta charset="utf-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1">',
+        "<title>%s</title>" % esc(en["title"]),
+        '<meta name="description" content="%s">' % esc(en["description"]),
+        '<link rel="canonical" href="%s">' % url,
+        '<meta http-equiv="refresh" content="0; url=/en/%s/">' % p,
+        '<script>location.replace("/en/%s/");</script>' % p,
+        "</head>", "<body>", '<p><a href="/en/%s/">%s</a></p>' % (p, esc(en["title"])), "</body>", "</html>", ""])
 
 
 def sitemap_block(data):
     out = ["  <!-- pages:start -->"]
     for p in PAGES:
         for lang in langs_of(data, p):  # the language-less shell /<page>/ is NOT listed (canonical -> /en/)
-            out += ["  <url>", "    <loc>%s</loc>" % page_url(p, lang), "    <lastmod>%s</lastmod>" % LASTMOD,
+            out += ["  <url>", "    <loc>%s</loc>" % page_url(p, lang), "    <lastmod>%s</lastmod>" % LASTMOD.get(p, LASTMOD_DEFAULT),
                     "    <changefreq>yearly</changefreq>", "    <priority>%s</priority>" % ("0.5" if lang == "en" else "0.4")]
             out += ['    <xhtml:link rel="alternate" hreflang="%s" href="%s"/>' % (h, x) for h, x in cluster(data, p)]
             out += ["    <image:image><image:loc>%s/og-image.png</image:loc></image:image>" % SITE, "  </url>"]
@@ -187,9 +205,10 @@ def llms_block(data):
     lines = ["<!-- pages:llms:start -->"]
     desc = {"about": "who runs ipe() (Davy Kim, ipe Studio, Seoul) and what the studio does",
             "contact": "ipe.haven@gmail.com (replies within 10 days)",
-            "privacy": "Google Analytics, language preference stored in the browser, email correspondence, how to request access or deletion; no ads on ipe.rest"}
+            "privacy": "applies to ipe.rest and all *.ipe.rest subdomains: Google Analytics, Google AdSense advertising, cookies and consent, language preference stored in the browser, email correspondence, how to request access or deletion",
+            "terms": "terms of use for ipe.rest and its subdomains (English only): acceptable use, content ownership, AI-assisted writing, third-party ads and links, liability"}
     for p in PAGES:
-        lines.append("- %s (%d languages, one static page per language): %s — %s" % (p.capitalize(), len(langs_of(data, p)), page_url(p, "en"), desc[p]))
+        lines.append("- %s (%s): %s — %s" % (p.capitalize(), "English only" if p in EN_ONLY else "%d languages, one static page per language" % len(langs_of(data, p)), page_url(p, "en"), desc[p]))
         lines += ["  - %s [%s]%s: %s" % (J.NATIVE[l], l, " (AI translation)" if l in TR else "", page_url(p, l)) for l in langs_of(data, p)]
     lines.append("<!-- pages:llms:end -->")
     return "\n".join(lines)
@@ -207,7 +226,7 @@ def build():
         for l in gen_langs(data, p):
             errors += check_data(p, l, data[p][l])
             writes[ROOT / l / p / "index.html"] = render(p, l, data, ui)
-        writes[ROOT / p / "index.html"] = render_chooser(p, data, ui)
+        writes[ROOT / p / "index.html"] = render_redirect(p, data) if p in EN_ONLY else render_chooser(p, data, ui)
     sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     if "<!-- pages:start -->" not in sm:  # first run: replace the three hand-written <url> entries
         sm = re.sub(r'  <url>\n    <loc>https://ipe\.rest/(?:about|contact|privacy)/</loc>.*?</url>\n', "", sm, flags=re.S)

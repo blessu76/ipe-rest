@@ -79,15 +79,13 @@ I18N_DIR = ("scripts", "journal_i18n")
 # site root, otherwise `?lang=xx` on the root (every ipe site reads it).
 SIBLING_LANG_PATHS = {
     "idle.ipe.rest": {K.legacy_code(l) for l in PAGE_LANGS},
-    "play.ipe.rest": {"ko", "ja", "zh", "es", "fr", "de", "pt", "ru", "id"},  # English is the root; no ar/hi folder yet
 }
-SIBLING_EN_ROOT = {"play.ipe.rest"}
 SIBLING_A_RE = re.compile(r'(<a\b[^>]*\bhref=")https://(%s)/?(")' % "|".join(re.escape(h) for h in SIBLING_LANG_PATHS))
 
 
 def sibling_url(host, lang):
     folder = K.legacy_code(lang)
-    if folder in SIBLING_LANG_PATHS[host] and not (lang == "en" and host in SIBLING_EN_ROOT):
+    if folder in SIBLING_LANG_PATHS[host]:
         return "https://%s/%s/" % (host, folder)
     if lang == "en":
         return "https://%s/" % host
@@ -95,7 +93,7 @@ def sibling_url(host, lang):
 
 
 def localize_sibling_links(page, lang):
-    """Point <a href> links to idle./play.ipe.rest (site root only; deep links and JSON-LD urls stay) at `lang`."""
+    """Point <a href> links to idle.ipe.rest (site root only; deep links and JSON-LD urls stay) at `lang`."""
     return SIBLING_A_RE.sub(lambda m: m.group(1) + sibling_url(m.group(2), lang) + m.group(3), page)
 
 
@@ -241,6 +239,7 @@ def _footer(u, lang):
       <a href="/%(l)s/about/">%(a)s</a>
       <a href="/%(l)s/contact/">%(c)s</a>
       <a href="%(ph)s"%(pl)s>%(p)s</a>
+      <a href="/en/terms/" hreflang="en">terms</a>
     </nav>
   </div>
 </footer>""" % dict(l=lang, j=esc(u["journal"]), a=esc(u["about"]), c=esc(u["contact"]), p=esc(u["privacy"]),

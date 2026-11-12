@@ -6,7 +6,79 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 03 Nov 2026 20:13:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 12 Nov 2026 10:20:00 +0900</lastBuildDate>
+    <item>
+      <title>What a missing page shows you</title>
+      <link>https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/</guid>
+      <pubDate>Thu, 12 Nov 2026 10:20:00 +0900</pubDate>
+      <category>studio</category>
+      <description>One 4,355-byte file, no script, and a way home in 12 languages.</description>
+    </item>
+    <item>
+      <title>The time on an entry is yours</title>
+      <link>https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/</guid>
+      <pubDate>Wed, 11 Nov 2026 10:20:00 +0900</pubDate>
+      <category>studio</category>
+      <description>Entries record Korean time; a 1,639-byte script shows it in your time zone.</description>
+    </item>
+    <item>
+      <title>What happens after a change goes up</title>
+      <link>https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/</guid>
+      <pubDate>Tue, 10 Nov 2026 10:50:00 +0900</pubDate>
+      <category>studio</category>
+      <description>From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.</description>
+    </item>
+    <item>
+      <title>How one entry becomes thirteen pages</title>
+      <link>https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/</guid>
+      <pubDate>Mon, 09 Nov 2026 10:50:00 +0900</pubDate>
+      <category>studio</category>
+      <description>Eleven files written by hand, one script, thirteen pages: how a journal entry on ipe.rest is built.</description>
+    </item>
+    <item>
+      <title>What the tests check before a page ships</title>
+      <link>https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-08-what-the-tests-check-before-a-page-ships/</guid>
+      <pubDate>Sun, 08 Nov 2026 10:04:00 +0900</pubDate>
+      <category>studio</category>
+      <description>The 137 small tests behind ipe.rest: what they check, how long they take, and what they cannot see.</description>
+    </item>
+    <item>
+      <title>The plain files that describe this site</title>
+      <link>https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-07-the-plain-files-that-describe-this-site/</guid>
+      <pubDate>Sat, 07 Nov 2026 20:30:00 +0900</pubDate>
+      <category>studio</category>
+      <description>The small text files at the edge of ipe.rest: robots.txt, a sitemap, llms.txt, an RSS feed and a manifest. What each one does, and what we cannot confirm.</description>
+    </item>
+    <item>
+      <title>How little a journal page has to load</title>
+      <link>https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-06-how-little-a-journal-page-has-to-load/</guid>
+      <pubDate>Fri, 06 Nov 2026 10:00:00 +0900</pubDate>
+      <category>studio</category>
+      <description>What a journal page on ipe.rest loads: one small HTML file, one script, fonts from our own server. Measured sizes, and what we left out.</description>
+    </item>
+    <item>
+      <title>Small choices that make a page easy to read</title>
+      <link>https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-05-small-choices-that-make-a-page-easy-to-read/</guid>
+      <pubDate>Thu, 05 Nov 2026 10:00:00 +0900</pubDate>
+      <category>studio</category>
+      <description>Small, checkable choices that make ipe.rest easy to read: a skip link, a visible focus ring, big tap targets, free zoom, calm motion.</description>
+    </item>
+    <item>
+      <title>Open it once, read it offline</title>
+      <link>https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-04-open-it-once-read-it-offline/</guid>
+      <pubDate>Wed, 04 Nov 2026 10:01:00 +0900</pubDate>
+      <category>studio</category>
+      <description>ipe.rest keeps a small copy of itself in your browser, so a page you have opened once can open again without a connection. Here is how it works, in plain words.</description>
+    </item>
     <item>
       <title>What this site remembers about you</title>
       <link>https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/</link>

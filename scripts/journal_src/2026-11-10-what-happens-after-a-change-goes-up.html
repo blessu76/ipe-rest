@@ -1,0 +1,208 @@
+<!-- SOURCE (not served): scripts/journal_sync.py generates /journal/<lang>/<slug>/ for en+ko from this file, and /journal/<slug>/ as the language chooser. -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>What happens after a change goes up — ipe() journal</title>
+<meta name="ipe:title-en" content="What happens after a change goes up — ipe() journal">
+<meta name="ipe:title-ko" content="변경이 올라간 뒤에 일어나는 일 — ipe() 저널">
+<meta name="description" content="From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.">
+<meta name="ipe:excerpt-en" content="Most deploys finish in under 40 seconds. What the workflow copies, what it checks, whom it tells afterwards, and what can stop it.">
+<meta name="ipe:excerpt-ko" content="배포는 대부분 40초 안에 끝난다. 무엇을 복사하고, 무엇을 확인하고, 끝난 뒤 누구에게 알리는지, 그리고 무엇이 배포를 멈추는지.">
+<meta name="ipe:published-at" content="2026-11-10T10:50+09:00">
+<meta name="ipe:category" content="studio">
+<meta name="ipe:original" content="en">
+<meta name="ipe:description-ko" content="저장한 변경이 ipe.rest 의 실제 페이지가 되기까지: 배포의 단계, 사이트에 올라가는 329개 파일, 확인이 실패하면 일어나는 일.">
+<meta name="ipe:abstract-ko" content="ipe.rest 는 GitHub Pages 의 정적 사이트입니다. 변경이 main 브랜치에 닿으면 워크플로가 저장소 파일 586개 가운데 329개를 사이트 폴더로 복사하고, 그 폴더에서 확인 7개를 돌리고, 올려서 공개한 다음, 오늘 바뀐 페이지를 IndexNow 로 검색엔진에 알립니다. 확인이 실패하면 아무것도 공개되지 않고 이전 사이트가 그대로 남습니다. 최근 실행 여덟 번 가운데 일곱 번이 통과했고 그중 다섯 번은 40초 안에 끝났습니다. 수치는 2026년 11월 10일에 쟀습니다.">
+<meta name="author" content="ipe()">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#fbfcfe">
+<link rel="canonical" href="https://ipe.rest/journal/2026-11-10-what-happens-after-a-change-goes-up/">
+<link rel="manifest" href="/manifest.webmanifest?v=23">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
+<link rel="apple-touch-icon" href="/icon-180.png?v=23">
+<link rel="preload" href="/fonts/inter-400.woff2?v=23" as="font" type="font/woff2" crossorigin>
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ipe()">
+<meta property="og:title" content="What happens after a change goes up">
+<meta property="og:description" content="Most deploys finish in under 40 seconds. What the workflow copies, what it checks, whom it tells afterwards, and what can stop it.">
+<meta property="og:url" content="https://ipe.rest/journal/2026-11-10-what-happens-after-a-change-goes-up/">
+<meta property="og:image" content="https://ipe.rest/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="2026-11-10">
+<meta property="article:modified_time" content="2026-11-10">
+<meta property="article:section" content="studio">
+<meta property="article:author" content="ipe()">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="What happens after a change goes up">
+<meta name="twitter:description" content="Most deploys finish in under 40 seconds. What the workflow copies, what it checks, whom it tells afterwards, and what can stop it.">
+<meta name="twitter:image" content="https://ipe.rest/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://ipe.rest/journal/2026-11-10-what-happens-after-a-change-goes-up/#article",
+  "headline": "What happens after a change goes up",
+  "alternativeHeadline": "변경이 올라간 뒤에 일어나는 일",
+  "description": "From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.",
+  "abstract": "ipe.rest is a static site on GitHub Pages. When a change reaches the main branch, a workflow copies 329 of the repository's 586 files into a site folder, runs 7 checks on that folder, uploads it, publishes it, and then tells search engines through IndexNow about pages changed today. If a check fails, nothing is published and the previous site stays up. Of the last eight runs, seven passed, and five of those took under 40 seconds. Figures were measured on 10 November 2026.",
+  "datePublished": "2026-11-10",
+  "dateModified": "2026-11-10",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://ipe.rest/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "thumbnailUrl": "https://ipe.rest/og-image.png",
+  "url": "https://ipe.rest/journal/2026-11-10-what-happens-after-a-change-goes-up/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ipe.rest/journal/2026-11-10-what-happens-after-a-change-goes-up/"
+  },
+  "articleSection": "studio",
+  "keywords": "ipe(), deploy, GitHub Pages, GitHub Actions, IndexNow, static site, service worker, search engines",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ipe.rest/icon-512.png"
+    }
+  },
+  "about": [
+    {
+      "@type": "Organization",
+      "@id": "https://ipe.rest/#organization",
+      "name": "ipe()",
+      "alternateName": [
+        "ipe",
+        "idle process",
+        "아이프"
+      ],
+      "url": "https://ipe.rest/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "deploy",
+      "description": "The step that takes a finished version of a website and puts it where visitors can reach it."
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "IndexNow",
+      "description": "An open protocol that lets a website tell participating search engines which of its pages are new or changed."
+    }
+  ],
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://ipe.rest/journal/#blog",
+    "name": "ipe() journal",
+    "url": "https://ipe.rest/journal/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ipe()", "item": "https://ipe.rest/" },
+    { "@type": "ListItem", "position": 2, "name": "journal", "item": "https://ipe.rest/journal/" },
+    { "@type": "ListItem", "position": 3, "name": "What happens after a change goes up" }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ko">본문으로 건너뛰기</span></a>
+<header class="topbar">
+  <a class="logo ltr" href="/" aria-label="ipe() home">ipe()</a>
+  <div class="top-right">
+    <nav aria-label="Primary"><a class="opt" href="/">home</a><a href="/journal/" aria-current="page">journal</a></nav>
+    <div class="langswitch" role="group" aria-label="Language / 언어">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ko" aria-pressed="false">KO</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article class="wrap">
+  <header class="post-head">
+    <p class="eyebrow"><i></i><span>journal · <time datetime="2026-11-10">2026-11-10</time></span></p>
+    <h1 lang="en">What happens after a <em>change</em> goes up</h1>
+    <h1 lang="ko">변경이 올라간 뒤에 <em>일어나는</em> 일</h1>
+  </header>
+
+  <div class="prose" lang="en">
+    <p class="lead">A change to ipe.rest reaches visitors through a short workflow on GitHub. It copies the site, checks it, publishes it and tells search engines what is new. Most runs finish in under 40 seconds.</p>
+    <p>The last entry described how the pages get built. This one starts where that ends, when a change reaches the main branch of our repository. The figures are from 10 November 2026: the workflow file, a local build of the site, and the last eight runs on GitHub.</p>
+    <h2>Copy</h2>
+    <p>The site is plain files, so the first step is a copy. The workflow checks out the repository and copies everything except what visitors do not need: the scripts, the tests, the workflow itself, version-control data and any Markdown files. Of the 586 files in the repository, 329 go into the site folder, about 10 MB.</p>
+    <h2>Check</h2>
+    <p>Then seven tests run against that folder, not against the repository. They look for the files a visitor needs, such as the robots file, the sitemap, the service worker and the home pages; for folders that must not be there, such as scripts and tests; and for the 404 page, which must be marked noindex and link home. A failure stops the workflow here. Nothing is published, and the previous version stays live.</p>
+    <h2>Publish</h2>
+    <p>Next the folder is uploaded and handed to GitHub Pages, which serves it. Only one deploy runs at a time: if a newer change arrives while one is running, the older run is cancelled. There is no server of ours in between and no database. When the service worker version changes, a visitor’s browser installs a fresh cache and deletes the old ones on a later visit.</p>
+    <h2>Tell</h2>
+    <p>After publishing, the workflow sends IndexNow, a protocol that Bing, Naver, Yandex and other search engines accept, the addresses of pages whose sitemap date is today in Korean time. The key it needs is a public text file in the site’s root. This step is allowed to fail: if it does, the deploy still counts as a success.</p>
+    <h2>How it has gone</h2>
+    <p>Of the last eight runs, seven succeeded and one failed; the next run, 22 seconds later, succeeded. Five of the seven successful runs took under 40 seconds, and the slowest took 2 minutes 18 seconds. We measured from the start of a run to its last update, so read the times as approximate.</p>
+    <h2>What a green run does not say</h2>
+    <p>A passing run says the files arrived and seven checks passed. It does not say a page looks right on a small phone screen, and IndexNow only informs search engines; it promises nothing about when, or whether, they list a page.</p>
+    <blockquote>ipe(); // copy, check, publish, tell</blockquote>
+    <p>The workflow is short on purpose. Fewer steps leave fewer places for a quiet site to break.</p>
+  </div>
+
+  <div class="prose" lang="ko">
+    <p class="lead">ipe.rest 의 변경은 GitHub 의 짧은 워크플로를 거쳐 방문자에게 닿습니다. 사이트를 복사하고, 확인하고, 공개하고, 무엇이 새로운지 검색엔진에 알립니다. 대부분의 실행은 40초 안에 끝납니다.</p>
+    <p>지난 글은 페이지가 만들어지는 과정을 다뤘습니다. 이번 글은 그것이 끝나는 곳, 곧 변경이 저장소의 main 브랜치에 닿는 때부터 시작합니다. 수치는 2026년 11월 10일에 워크플로 파일, 사이트를 내 컴퓨터에서 만든 결과, GitHub 의 최근 실행 여덟 번에서 쟀습니다.</p>
+    <h2>복사</h2>
+    <p>사이트는 평범한 파일이라서 첫 단계는 복사입니다. 워크플로는 저장소를 내려받아, 방문자에게 필요 없는 것을 뺀 나머지를 모두 복사합니다. 뺀 것은 스크립트, 테스트, 워크플로 자신, 버전 관리 데이터, 그리고 모든 Markdown 파일입니다. 저장소의 586개 파일 가운데 329개가 사이트 폴더로 들어가며, 크기는 약 10MB 입니다.</p>
+    <h2>확인</h2>
+    <p>그다음 저장소가 아니라 그 폴더를 대상으로 테스트 일곱 개가 돕니다. 방문자에게 필요한 파일, 곧 robots 파일, 사이트맵, 서비스 워커, 홈페이지가 있는지, scripts 나 tests 같은 폴더가 없어야 하는 자리에 없는지, 그리고 404 페이지가 noindex 이고 홈으로 이어지는지를 봅니다. 실패하면 워크플로는 여기서 멈춥니다. 아무것도 공개되지 않고 이전 버전이 그대로 남습니다.</p>
+    <h2>공개</h2>
+    <p>다음으로 폴더를 올려 GitHub Pages 에 넘기면 그쪽이 서비스합니다. 배포는 한 번에 하나만 돕니다. 하나가 도는 동안 더 새로운 변경이 오면 이전 실행은 취소됩니다. 중간에 우리 서버도, 데이터베이스도 없습니다. 서비스 워커의 버전이 바뀌면, 방문자의 브라우저는 이후 방문 때 새 캐시를 설치하고 옛 캐시를 지웁니다.</p>
+    <h2>알림</h2>
+    <p>공개한 뒤 워크플로는 사이트맵 날짜가 한국 시각으로 오늘인 페이지의 주소를 IndexNow 로 보냅니다. IndexNow 는 Bing, Naver, Yandex 등의 검색엔진이 받는 규약입니다. 필요한 키는 사이트 루트에 있는 공개 텍스트 파일입니다. 이 단계는 실패해도 됩니다. 실패하더라도 배포는 성공으로 칩니다.</p>
+    <h2>그동안의 기록</h2>
+    <p>최근 실행 여덟 번 가운데 일곱 번이 성공했고 한 번이 실패했으며, 22초 뒤의 다음 실행은 성공했습니다. 성공한 일곱 번 가운데 다섯 번은 40초 안에 끝났고, 가장 느린 것은 2분 18초였습니다. 실행이 시작된 때부터 마지막으로 갱신된 때까지를 쟀으니 시간은 대략으로 읽어 주세요.</p>
+    <h2>초록 불이 말하지 않는 것</h2>
+    <p>통과한 실행은 파일이 도착했고 확인 일곱 개를 넘었다는 뜻입니다. 페이지가 작은 휴대폰 화면에서 제대로 보인다는 뜻은 아니며, IndexNow 는 검색엔진에 알릴 뿐 페이지를 언제, 또는 과연 올릴지는 아무것도 약속하지 않습니다.</p>
+    <blockquote>ipe(); // copy, check, publish, tell</blockquote>
+    <p>워크플로는 일부러 짧습니다. 단계가 적을수록 조용한 사이트가 깨질 자리도 적습니다.</p>
+  </div>
+
+  <a class="back" href="/journal/"><span lang="en">← all entries</span><span lang="ko">← 전체 글</span></a>
+</article>
+</main>
+
+<footer>
+  <p class="sig ltr">ipe<span>()</span></p>
+  <div class="foot">
+    <p class="ltr">© 2026 ipe() · idle</p>
+    <nav aria-label="Footer">
+      <a class="ltr" href="/">ipe.rest</a>
+      <a href="/journal/">journal</a>
+      <a href="/about/"><span lang="en">about</span><span lang="ko">소개</span></a>
+      <a href="/contact/"><span lang="en">contact</span><span lang="ko">문의</span></a>
+      <a href="/privacy/"><span lang="en">privacy</span><span lang="ko">개인정보처리방침</span></a>
+      <a href="/en/terms/" hreflang="en"><span lang="en">terms</span><span lang="ko">이용약관 (영문)</span></a>
+    </nav>
+  </div>
+</footer>
+<script src="/journal/journal.js?v=3" defer></script>
+</body>
+</html>

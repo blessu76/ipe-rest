@@ -309,9 +309,10 @@ def _xlinks(cluster):
     return "\n".join('    <xhtml:link rel="alternate" hreflang="%s" href="%s"/>' % (h, html.escape(u)) for h, u in cluster)
 
 
-def render_sitemap(posts, tr):
-    """tr = {slug: {lang: data}} — every language page (and the x-default chooser) gets its own <url> with the full hreflang cluster."""
-    list_langs = {l for v in tr.values() for l in v}
+def render_sitemap(posts, tr, list_langs=None):
+    """tr = {slug: {lang: data}} (real translations only — fallback pages are not listed) — every language page (and the x-default
+    chooser) gets its own <url> with the full hreflang cluster. list_langs = languages with a list page (default: those in tr)."""
+    list_langs = set(list_langs) if list_langs is not None else {l for v in tr.values() for l in v}
     newest = max(p["modified"] for p in posts)
     lcl = _xlinks(I18N.list_cluster(list_langs))
     out = []
@@ -344,8 +345,8 @@ def render_sitemap(posts, tr):
     return "\n".join(out)
 
 
-def render_llms(posts, tr):
-    list_langs = {l for v in tr.values() for l in v}
+def render_llms(posts, tr, list_langs=None):
+    list_langs = set(list_langs) if list_langs is not None else {l for v in tr.values() for l in v}
     lines = ["- Journal (%d languages, one static page per language; language chooser): %s" % (len(I18N.LANGS), I18N.list_url("en"))]
     lines.append("  - Feed (RSS, English): %s/journal/feed.xml" % SITE)
     for l in I18N.LANGS:
@@ -407,7 +408,7 @@ def build(root=ROOT):
     for p in posts:
         allp[p["slug"]] = dict(p["langdata"])
         allp[p["slug"]].update(tr.get(p["slug"], {}))
-    used = {l for v in allp.values() for l in v}
+    used = {l for v in allp.values() for l in v} | set(I18N.NO_POST_TRANSLATION)  # their list pages + fallback pages need UI strings too
     ui_errs, bad = I18N.ui_errors(ui, used)
     errors += ui_errs
     allp = {s: {l: d for l, d in v.items() if l not in bad} for s, v in allp.items()}
@@ -418,17 +419,25 @@ def build(root=ROOT):
             errors.append(msg)
         elif level == "warning":
             WARNINGS.append(msg)
+    real = {s: dict(v) for s, v in allp.items()}  # real translations: what hreflang, the sitemap and llms.txt list
+    miss = sorted("%s/%s" % (l, s) for s, v in allp.items() for l in I18N.LANGS
+                  if l not in v and l not in bad and l not in I18N.NO_POST_TRANSLATION)
+    errors += ["post translation missing (only %s may fall back to the EN original): %s" % (", ".join(I18N.NO_POST_TRANSLATION), m) for m in miss]
+    for s, v in allp.items():  # EN original + a localised note for the languages without post translations
+        for l in I18N.NO_POST_TRANSLATION:
+            if l in I18N.LANGS and l not in v and l not in bad and "en" in v:
+                v[l] = dict(v["en"], **{I18N.FALLBACK: True})
     list_langs = {l for v in allp.values() for l in v}
     if bad or not ({"en", "ko"} <= list_langs):
         return writes, errors + ([] if not ({"en", "ko"} - list_langs) else ["en and ko pages could not be generated"])
 
     for p in posts:
         slug = p["slug"]
-        langs = set(allp[slug])
+        langs = set(real[slug])
         for l in I18N.PAGE_LANGS:
-            if l in langs:
+            if l in allp[slug]:
                 writes[jdir / l / slug / "index.html"] = I18N.render_post(p, l, ui, allp[slug][l], langs, nav_for(slug, l, posts, allp))
-        writes[jdir / slug / "index.html"] = I18N.render_chooser_post(p, ui, allp[slug], langs)
+        writes[jdir / slug / "index.html"] = I18N.render_chooser_post(p, ui, real[slug], langs)
     for l in I18N.PAGE_LANGS:
         if l in list_langs:
             items = [(p, allp[p["slug"]][l]) for p in posts if l in allp[p["slug"]]]
@@ -448,11 +457,11 @@ def build(root=ROOT):
 
     sm = root / "sitemap.xml"
     t = ensure_ns(sm.read_text(encoding="utf-8"))
-    writes[sm] = replace_block(t, "<!-- journal:start -->", "<!-- journal:end -->", render_sitemap(posts, allp), "sitemap.xml")
+    writes[sm] = replace_block(t, "<!-- journal:start -->", "<!-- journal:end -->", render_sitemap(posts, real, list_langs), "sitemap.xml")
 
     ll = root / "llms.txt"
     t = ll.read_text(encoding="utf-8")
-    writes[ll] = replace_block(t, "<!-- journal:llms:start -->", "<!-- journal:llms:end -->", render_llms(posts, allp), "llms.txt")
+    writes[ll] = replace_block(t, "<!-- journal:llms:start -->", "<!-- journal:llms:end -->", render_llms(posts, real, list_langs), "llms.txt")
 
     # generated output must still parse
     import xml.etree.ElementTree as ET

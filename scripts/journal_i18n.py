@@ -47,11 +47,25 @@ RETIRED = [K.legacy_code(t) for t in K.ENDED]
 PAGE_LANGS = LANGS + RETIRED
 ORIG_LANGS = ["en", "ko"]
 TR_LANGS = [l for l in PAGE_LANGS if l not in ORIG_LANGS]
+# Languages whose posts are NOT translated (decision 2026-11-12, Davy): the list pages are translated UI, but each post page
+# at /journal/<lang>/<slug>/ shows the EN original under a localised "not translated yet" note (data["_fallback"]); it
+# canonicalises to /journal/en/<slug>/ and is left out of the sitemap and of every other page's hreflang cluster.
+# Any other live language must have a translation for every post (journal_sync.build checks it).
+NO_POST_TRANSLATION = ["zh-Hant", "th", "vi", "tr"]
+FALLBACK = "_fallback"
+# Legal documents (terms · privacy) stay in their ko/en source (Davy 2026-11-12): these languages have no /<lang>/privacy/ page,
+# every privacy link on their pages goes to the EN original instead (privacy_href).
+NO_PRIVACY_TRANSLATION = list(NO_POST_TRANSLATION)
+
+
+def privacy_href(lang):
+    return "/en/privacy/" if lang in NO_PRIVACY_TRANSLATION else "/%s/privacy/" % lang
 RTL = {"ar"}
 OG_LOCALE = {"en": "en_US", "ko": "ko_KR", "ja": "ja_JP", "zh-Hant": "zh_TW", "es": "es_ES", "pt-BR": "pt_BR", "fr": "fr_FR",
              "de": "de_DE", "id": "id_ID", "th": "th_TH", "vi": "vi_VN", "tr": "tr_TR",
              "zh": "zh_CN", "ru": "ru_RU", "ar": "ar_AR", "hi": "hi_IN"}
 NATIVE = dict(K.NAMES, zh="简体中文", ru="Русский", ar="العربية", hi="हिन्दी")
+NT_KEYS = ("nt_label", "nt_text")  # only the languages in NO_POST_TRANSLATION
 UI_KEYS = ("skip", "home", "journal", "about", "contact", "privacy", "all_entries", "read", "eyebrow",
            "langs_label", "title_suffix", "list_title", "list_h1", "list_lede", "list_desc",
            "list_og_title", "blog_name", "all_posts", "crumb_journal", "home_aria", "more_label", "prev", "next", "latest")
@@ -187,7 +201,7 @@ def ui_errors(ui, langs):
     for lang in LANGS:
         if lang not in langs:
             continue
-        keys = UI_KEYS + (AI_KEYS if lang in TR_LANGS else ())
+        keys = UI_KEYS + (AI_KEYS if lang in TR_LANGS else ()) + (NT_KEYS if lang in NO_POST_TRANSLATION else ())
         miss = [k for k in keys if not str(ui.get(lang, {}).get(k, "")).strip()]
         if miss:
             bad.add(lang)
@@ -226,10 +240,11 @@ def _footer(u, lang):
       <a href="/journal/%(l)s/">%(j)s</a>
       <a href="/%(l)s/about/">%(a)s</a>
       <a href="/%(l)s/contact/">%(c)s</a>
-      <a href="/%(l)s/privacy/">%(p)s</a>
+      <a href="%(ph)s"%(pl)s>%(p)s</a>
     </nav>
   </div>
-</footer>""" % dict(l=lang, j=esc(u["journal"]), a=esc(u["about"]), c=esc(u["contact"]), p=esc(u["privacy"]))
+</footer>""" % dict(l=lang, j=esc(u["journal"]), a=esc(u["about"]), c=esc(u["contact"]), p=esc(u["privacy"]),
+                    ph=privacy_href(lang), pl=' hreflang="en"' if lang in NO_PRIVACY_TRANSLATION else "")
 
 
 def _common_head(lang, title, desc, canon):
@@ -370,9 +385,12 @@ def render_post(post, lang, ui, data, langs, nav=None):
     orig = post["original"]
     orig_url = post_url(slug, orig)
     img = post["image"]
-    cluster = post_cluster(slug, langs)
+    fb = bool(data.get(FALLBACK))
+    cluster = post_cluster(slug, langs)  # real translations only; a fallback page is not in its own cluster
+    sel = [(l, post_url(slug, l)) for l in LANGS]  # the picker lists all live languages: every one has a page (real or fallback) — hreflang stays real-only
     modified = stamp(post, data.get("dateModified") or post["modified"])[0]
-    ld = article_ld(post, lang, ui, data, langs)
+    ld = article_ld(post, "en" if fb else lang, ui, data, langs)
+    canon = post_url(slug, "en") if fb else url
     crumbs = crumb_ld([("ipe()", SITE + "/"), (u["crumb_journal"], list_url(lang)), (data["title"], None)])
     img_url = esc(img.get("url", ""))
     tw = esc(data["title"])
@@ -381,15 +399,15 @@ def render_post(post, lang, ui, data, langs, nav=None):
         '<!DOCTYPE html>',
         '<html lang="%s" dir="%s">' % (lang, "rtl" if lang in RTL else "ltr"),
         '<head>',
-        _common_head(lang, page_title, data["description"], url),
-        head_i18n(cluster, lang),
+        _common_head(lang, page_title, data["description"], canon),
+        head_i18n(cluster, "en" if fb else lang),
         _assets_head(),
         '',
         '<meta property="og:type" content="article">',
         '<meta property="og:site_name" content="ipe()">',
         '<meta property="og:title" content="%s">' % tw,
         '<meta property="og:description" content="%s">' % esc(data["description"]),
-        '<meta property="og:url" content="%s">' % url,
+        '<meta property="og:url" content="%s">' % canon,
         '<meta property="og:image" content="%s">' % img_url,
         '<meta property="og:image:width" content="%s">' % img.get("width", 1200),
         '<meta property="og:image:height" content="%s">' % img.get("height", 630),
@@ -409,20 +427,22 @@ def render_post(post, lang, ui, data, langs, nav=None):
         css_inline(),
         '</head>',
         '<body>',
-        _header(u, lang, cluster),
+        _header(u, lang, sel),
         '',
         '<main id="main">',
         '<article class="wrap">',
         '  <header class="post-head">',
         '    <p class="eyebrow"><i></i><span>%s · %s</span></p>' % (esc(u["eyebrow"]), time_tag(*stamp(post))),
-        '    <h1>%s</h1>' % data["h1_html"],
+        '    <h1%s>%s</h1>' % (' lang="en"' if fb else "", data["h1_html"]),
         '  </header>',
         '',
         ('  <p class="ai-note" role="note"><strong>%s</strong> %s <a href="%s" hreflang="%s">%s</a></p>' % (
             esc(u["ai_label"]), esc(u["ai_text"]), esc(orig_url.replace(SITE, "")), orig, esc(u["ai_link"]))
-         if lang in TR_LANGS else ''),
+         if lang in TR_LANGS and not fb else ''),
+        ('  <p class="ai-note" role="note"><strong>%s</strong> %s <a href="%s" hreflang="%s">%s</a></p>' % (
+            esc(u["nt_label"]), esc(u["nt_text"]), esc(post_url(slug, "en").replace(SITE, "")), "en", esc(u["ai_link"])) if fb else ''),
         '',
-        '  <div class="prose">',
+        '  <div class="prose"%s>' % (' lang="en"' if fb else ""),
         data["body"],
         '  </div>',
         '',
@@ -442,15 +462,16 @@ def render_post(post, lang, ui, data, langs, nav=None):
 
 
 def _post_card(href, p, d, u):
+    la = ' lang="en"' if d.get(FALLBACK) else ""  # EN original shown in a page of another language
     return """    <li>
       <a class="post-card" href="%s">
         <p class="post-meta">%s · %s</p>
-        <h2>%s</h2>
-        <p class="excerpt">%s</p>
+        <h2%s>%s</h2>
+        <p class="excerpt"%s>%s</p>
         <span class="more">%s</span>
       </a>
     </li>""" % (href, time_tag(*stamp(p)), esc(p["category"]),
-                html.escape(d["title"], quote=False), html.escape(d["excerpt"], quote=False), esc(u["read"]))
+                la, html.escape(d["title"], quote=False), la, html.escape(d["excerpt"], quote=False), esc(u["read"]))
 
 
 # x-default (language chooser) pages share their text with the /en/ twin: marker in <title>, tail on <meta description>
@@ -649,7 +670,7 @@ def render_chooser_post(post, ui, tr_all, langs):
     rows = [(l, post_url(slug, l), tr_all[l]["title"]) for l in LANGS if l in langs]
     head = _chooser_head(od["title"] + ui[orig]["title_suffix"], od["description"], post_url(slug, "en"), post_cluster(slug, langs), "article",
                          OG_LOCALE[orig], [page, article, crumbs], og_title=od["title"])
-    body = _chooser_body(od["h1_html"], "ipe() journal — " + ", ".join(NATIVE[l] for l in LANGS if l in langs), rows, ui[orig], orig, post_cluster(slug, langs))
+    body = _chooser_body(od["h1_html"], "ipe() journal — " + ", ".join(NATIVE[l] for l in LANGS if l in langs), rows, ui[orig], orig, [(l, post_url(slug, l)) for l in LANGS])
     return "\n".join(head) + "\n" + body
 
 

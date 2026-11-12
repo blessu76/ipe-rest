@@ -70,6 +70,8 @@ def journal_posts(root=ROOT):
             raise SystemExit("home_sync: journal post %s is invalid — run journal_sync.py first" % f.stem)
         data = dict(p["langdata"])
         data.update(tr.get(p["slug"], {}))
+        for l in J.NO_POST_TRANSLATION:  # no translated post: the card shows the EN original and links the fallback page /journal/<l>/<slug>/
+            data.setdefault(l, dict(data["en"], **{J.FALLBACK: True}))
         out.append((p, data))
     return out
 
@@ -83,15 +85,16 @@ def journal_section(posts, lang, jui_l, d):
     read = jui_l["read"]
     cards = []
     for p, x in items:
+        fb = ' lang="en"' if x.get(J.FALLBACK) else ""  # EN text on a page of another language
         cards.append(
             '      <li class="jcard">\n'
             '        <p class="jcard-meta"><span class="jcard-no ltr" aria-hidden="true">J-%02d</span>%s · <span class="ltr">%s</span></p>\n'
-            '        <h3><a class="jcard-link" href="/journal/%s/%s/">%s</a></h3>\n'
-            '        <p class="jcard-ex">%s</p>\n'
+            '        <h3%s><a class="jcard-link" href="/journal/%s/%s/">%s</a></h3>\n'
+            '        <p class="jcard-ex"%s>%s</p>\n'
             '        <span class="jcard-act" aria-hidden="true">%s</span>\n'
             '        <span class="mk" aria-hidden="true"></span>\n'
-            '      </li>' % (order[p["slug"]], J.time_tag(*J.stamp(p)), esc(p["category"]), lang, p["slug"],
-                           html.escape(x["title"], quote=False), html.escape(x["excerpt"], quote=False), esc(read)))
+            '      </li>' % (order[p["slug"]], J.time_tag(*J.stamp(p)), esc(p["category"]), fb, lang, p["slug"],
+                           html.escape(x["title"], quote=False), fb, html.escape(x["excerpt"], quote=False), esc(read)))
     return ('  <section class="sec wrap" id="journal" aria-labelledby="journal-h">\n'
             '    <div class="sec-head">\n'
             '      <span class="sec-no ltr" aria-hidden="true">03</span>\n'
@@ -197,7 +200,7 @@ def render_lang(src, ui, lang, posts):
                 % (esc(u["ai_label"]), esc(u["ai_text"]), esc(u["ai_link"])))
         out = sub1(out, r'<main id="main">\n', '<main id="main">\n' + note)
     for pg in ("about", "contact", "privacy"):
-        out = out.replace('href="/%s/"' % pg, 'href="/%s/%s/"' % (lang, pg))
+        out = out.replace('href="/%s/"' % pg, 'href="%s"' % (J.privacy_href(lang) if pg == "privacy" else "/%s/%s/" % (lang, pg)))
     opts = "\n".join('        <option value="%s"%s>%s</option>' % (l, " selected" if l == lang else "", l.upper())
                      for l in (LANGS if lang in LANGS else LANGS + [lang]))
     out = sub1(out, r'<!-- home:options -->', opts)

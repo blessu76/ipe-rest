@@ -47,7 +47,7 @@ class HomePages(unittest.TestCase):
             self.assertIn("ipe() · idle", src)
             body = re.sub(r"<script>.*?</script>|<!--.*?-->", "", src, flags=re.S)
             # no query-string URLs of our own; the only ?lang= is the language hint on a link to a site without that folder
-            self.assertNotIn("?lang=", re.sub(r'href="https://play\.ipe\.rest/\?lang=[a-z]{2}"', "", body))
+            self.assertNotIn("?lang=", re.sub(r'href="https://play\.ipe\.rest/\?lang=[A-Za-z-]+"', "", body))
 
     def test_play_portal_linked_and_llms_not_stale(self):
         for lang in LANGS:
@@ -134,6 +134,8 @@ class HomePages(unittest.TestCase):
                 found = set(re.findall(r'<a [^>]*href="(https://%s[^"]*)"' % re.escape(host), src))
                 self.assertEqual(found, {urls[lang]}, (lang, host))
             for h in ("about", "contact", "privacy"):  # info pages and journal posts link idle in their own language too
+                if h == "privacy" and lang in J.NO_PRIVACY_TRANSLATION:
+                    continue  # legal text is not translated: no /<lang>/privacy/ page (see test_pages.test_privacy_is_not_translated_for_new_languages)
                 self.assertEqual(set(re.findall(r'<a [^>]*href="(https://idle\.ipe\.rest[^"]*)"', (ROOT / lang / h / "index.html").read_text(encoding="utf-8"))) - {want["idle.ipe.rest"][lang]}, set(), (lang, h))
 
     def test_x_default_shells_follow_the_same_order(self):
@@ -188,6 +190,13 @@ class HomeJournalCards(unittest.TestCase):
             self.assertEqual(sec.count("data-ipe-time"), 3)
             for p, d in posts[:3]:
                 self.assertIn(d[lang]["title"].split("&")[0], sec)
+            if lang in J.NO_POST_TRANSLATION:  # fallback cards: EN original text marked lang="en", linking the language's own fallback page
+                self.assertEqual(sec.count('<p class="jcard-ex" lang="en">'), 3, lang)
+                self.assertEqual(sec.count('<h3 lang="en">'), 3, lang)
+                for p, d in posts[:3]:
+                    self.assertEqual(d[lang]["title"], d["en"]["title"])
+            else:
+                self.assertNotIn('lang="en"', sec, lang)
 
     def test_localtime_script_inlined_byte_for_byte(self):
         src = (ROOT / "shared" / "ipe-localtime.js").read_bytes().decode("utf-8")

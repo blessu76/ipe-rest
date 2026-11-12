@@ -29,6 +29,12 @@ LANGS = J.LANGS
 PAGE_LANGS = J.PAGE_LANGS
 TR = J.TR_LANGS
 PAGES = ("about", "contact", "privacy")
+NO_PRIVACY = J.NO_PRIVACY_TRANSLATION  # th vi tr zh-Hant: no privacy page (legal text stays ko/en); links go to /en/privacy/
+
+
+def page_langs(p):
+    """Languages that get /<lang>/<page>/ : all live ones, except the legal-text exceptions for privacy."""
+    return [l for l in LANGS if not (p == "privacy" and l in NO_PRIVACY)]
 LASTMOD = "2026-10-22"
 LD_TYPE = {"about": "AboutPage", "contact": "ContactPage", "privacy": "WebPage"}
 esc = J.esc
@@ -75,7 +81,7 @@ def load():
 
 
 def langs_of(data, p):
-    return [l for l in LANGS if l in data[p]]
+    return [l for l in page_langs(p) if l in data[p]]
 
 
 def gen_langs(data, p):
@@ -89,7 +95,8 @@ def cluster(data, p):
 
 def localize(main, lang):
     """Point internal links (and links to other ipe sites) at the page's own language (translations may carry the EN-localized hrefs)."""
-    main = re.sub(r'href="/(?:[a-z]{2}/)?(about|contact|privacy)/"', lambda m: 'href="/%s/%s/"' % (lang, m.group(1)), main)
+    main = re.sub(r'href="/(?:[a-z]{2}(?:-[A-Za-z]+)?/)?(about|contact|privacy)/"',
+                  lambda m: 'href="%s"' % (J.privacy_href(lang) if m.group(1) == "privacy" else "/%s/%s/" % (lang, m.group(1))), main)
     main = re.sub(r'href="/journal/(?:[a-z]{2}/)?"', 'href="/journal/%s/"' % lang, main)
     main = re.sub(r'class="back" href="/(?:[a-z]{2}/)?"', 'class="back" href="/%s/"' % lang, main)
     return J.localize_sibling_links(main, lang)
@@ -182,7 +189,7 @@ def llms_block(data):
             "contact": "ipe.haven@gmail.com (replies within 10 days)",
             "privacy": "Google Analytics, language preference stored in the browser, email correspondence, how to request access or deletion; no ads on ipe.rest"}
     for p in PAGES:
-        lines.append("- %s (%d languages, one static page per language): %s — %s" % (p.capitalize(), len(LANGS), page_url(p, "en"), desc[p]))
+        lines.append("- %s (%d languages, one static page per language): %s — %s" % (p.capitalize(), len(langs_of(data, p)), page_url(p, "en"), desc[p]))
         lines += ["  - %s [%s]%s: %s" % (J.NATIVE[l], l, " (AI translation)" if l in TR else "", page_url(p, l)) for l in langs_of(data, p)]
     lines.append("<!-- pages:llms:end -->")
     return "\n".join(lines)

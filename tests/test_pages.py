@@ -7,10 +7,13 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 sys.path.insert(0, str(ROOT / "scripts"))
+import journal_i18n  # noqa: E402
 import pages_sync  # noqa: E402
 
 LANGS = pages_sync.LANGS
 PAGES = pages_sync.PAGES
+PL = pages_sync.page_langs  # languages that really have /<lang>/<page>/ (privacy = ko/en originals + translated, not the new 4)
+NEW4 = ["zh-Hant", "th", "vi", "tr"]  # live languages without translated privacy (Davy 2026-11-12: legal text stays ko/en original)
 SM = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 X = "{http://www.w3.org/1999/xhtml}link"
 LD = re.compile(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', re.S)
@@ -28,15 +31,36 @@ class InfoPages(unittest.TestCase):
         self.assertEqual(stale, [], "run: python3 scripts/pages_sync.py")
 
     def test_all_12_languages_exist_for_every_page(self):
+        self.assertEqual(len(LANGS), 12)
         for p in PAGES:
-            for lang in LANGS:
+            for lang in PL(p):
                 self.assertTrue((ROOT / lang / p / "index.html").is_file(), (p, lang))
+        for p in ("about", "contact"):  # not legal text: every live language has it
+            self.assertEqual(PL(p), LANGS)
+
+    def test_privacy_is_not_translated_for_new_languages(self):
+        """Legal text stays the ko/en original: no /<new>/privacy/ page, no hreflang or sitemap entry, every link goes to /en/privacy/."""
+        self.assertEqual(PL("privacy"), [l for l in LANGS if l not in NEW4])
+        self.assertEqual(len(PL("privacy")), 8)
+        sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
+        for lang in NEW4:
+            self.assertFalse((ROOT / lang / "privacy").exists(), lang)
+            self.assertNotIn("https://ipe.rest/%s/privacy/" % lang, sm)
+            for f in (ROOT / lang / "index.html", ROOT / "journal" / lang / "index.html",
+                      ROOT / lang / "about" / "index.html", ROOT / lang / "contact" / "index.html"):
+                src = f.read_text(encoding="utf-8")
+                self.assertIn('href="/en/privacy/"', src, f)
+                self.assertNotIn('href="/%s/privacy/"' % lang, src, f)
+        for lang in PL("privacy"):
+            src = read("privacy", lang)
+            for n in NEW4:
+                self.assertNotIn('hreflang="%s"' % n, src, (lang, n))
 
     def test_page_head_and_body(self):
         for p in PAGES:
             want = dict(pages_sync.cluster(pages_sync.load()[0], p))
-            self.assertEqual(len(want), len(LANGS) + 1)
-            for lang in LANGS:
+            self.assertEqual(len(want), len(PL(p)) + 1)
+            for lang in PL(p):
                 src = read(p, lang)
                 self.assertIn('<html lang="%s" dir="%s">' % (lang, "rtl" if lang == "ar" else "ltr"), src)
                 self.assertIn('<link rel="canonical" href="https://ipe.rest/%s/%s/">' % (lang, p), src)
@@ -46,7 +70,7 @@ class InfoPages(unittest.TestCase):
                 self.assertIn('<select class="lang" data-lang-select', src)
                 sel = re.findall(r'<option value="([^"]*)"[^>]* selected>', src)
                 self.assertEqual(sel, ["/%s/%s/" % (lang, p)])
-                self.assertEqual(len(re.findall(r'<option value="/', src)), len(LANGS))
+                self.assertEqual(len(re.findall(r'<option value="/', src)), len(PL(p)))
                 ld = json.loads(LD.findall(src)[0])
                 self.assertEqual(ld["@graph"][0]["inLanguage"], lang)
                 self.assertEqual(ld["@graph"][0]["url"], "https://ipe.rest/%s/%s/" % (lang, p))
@@ -62,7 +86,7 @@ class InfoPages(unittest.TestCase):
         for p in PAGES:
             src = read(p)
             self.assertIn('<link rel="canonical" href="https://ipe.rest/en/%s/">' % p, src)
-            for lang in LANGS:
+            for lang in PL(p):
                 self.assertIn('href="/%s/%s/"' % (lang, p), src)
 
     def test_sitemap(self):
@@ -70,10 +94,10 @@ class InfoPages(unittest.TestCase):
         urls = {u.find(SM + "loc").text: u for u in root.findall(SM + "url")}
         for p in PAGES:
             self.assertNotIn(pages_sync.page_url(p), urls)  # the language-less shell is not listed
-            for lang in LANGS:
+            for lang in PL(p):
                 u = urls[pages_sync.page_url(p, lang)]
                 self.assertTrue(u.find(SM + "lastmod").text)
-                self.assertEqual(len(u.findall(X)), len(LANGS) + 1)
+                self.assertEqual(len(u.findall(X)), len(PL(p)) + 1)
                 self.assertIsNotNone(u.find("{http://www.google.com/schemas/sitemap-image/1.1}image"))
         self.assertEqual(len(urls), len(root.findall(SM + "url")))
         self.assertNotIn("https://ipe.rest/about/</loc>\n    <lastmod>2026-10-20", (ROOT / "sitemap.xml").read_text(encoding="utf-8"))
@@ -81,14 +105,14 @@ class InfoPages(unittest.TestCase):
     def test_llms_and_other_pages_link_to_language_pages(self):
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
         for p in PAGES:
-            for lang in LANGS:
+            for lang in PL(p):
                 self.assertIn(pages_sync.page_url(p, lang), llms)
             self.assertNotIn("(language chooser): " + pages_sync.page_url(p), llms)
         for lang in LANGS:  # main page, journal footer
             for f in (ROOT / lang / "index.html", ROOT / "journal" / lang / "index.html"):
                 src = f.read_text(encoding="utf-8")
                 for p in PAGES:
-                    self.assertIn('href="/%s/%s/"' % (lang, p), src, f)
+                    self.assertIn('href="/%s/%s/"' % (lang, p), src if lang not in NEW4 or p != "privacy" else src.replace("/en/privacy/", "/%s/privacy/" % lang), f)
                     self.assertNotIn('href="/%s/"' % p, src, f)
 
 
@@ -109,7 +133,7 @@ class InfoPageShellSeo(unittest.TestCase):
 
     def test_x_default_is_en_on_every_page(self):
         for p in PAGES:
-            for lang in [None] + LANGS:
+            for lang in [None] + PL(p):
                 src = read(p, lang)
                 m = re.search(r'<link rel="alternate" hreflang="x-default" href="([^"]+)"', src)
                 self.assertEqual(m.group(1), "%s/en/%s/" % (self.SITE, p), (p, lang))
@@ -177,7 +201,10 @@ class XDefaultSeo(unittest.TestCase):
             t, d = self.meta(f)
             self.assertLessEqual(len(t), 80, f)
             self.assertLessEqual(len(d), 160, f)
-            self.assertTrue(d.endswith("Available in %d languages." % len(LANGS)), f)
+            n = len(PL("privacy")) if f.startswith("privacy/") else len(LANGS)  # privacy is not translated into the new 4
+            if re.match(r"journal/2\d{3}-", f):  # post shells: only the really translated languages (the 4 no-translation ones fall back to /en/)
+                n = len(LANGS) - len(journal_i18n.NO_POST_TRANSLATION)
+            self.assertTrue(d.endswith("Available in %d languages." % n), f)
             self.assertNotIn("Choose your language", d, f)
             self.assertNotIn("…", d, f)  # no truncated description (#181)
             for prop in ("og:title", "twitter:title"):  # share previews: plain title, no marker

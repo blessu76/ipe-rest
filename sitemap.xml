@@ -12,11 +12,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -28,11 +32,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -44,11 +52,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -60,11 +72,35 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/zh-Hant/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -76,11 +112,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -92,11 +132,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -108,11 +152,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -124,11 +172,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -140,11 +192,75 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/th/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/vi/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/tr/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <!-- home:end -->
@@ -158,11 +274,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
   </url>
   <url>
     <loc>https://ipe.rest/journal/ko/</loc>
@@ -173,11 +293,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
   </url>
   <url>
     <loc>https://ipe.rest/journal/ja/</loc>
@@ -188,11 +312,34 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/zh-Hant/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
   </url>
   <url>
     <loc>https://ipe.rest/journal/es/</loc>
@@ -203,11 +350,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
   </url>
   <url>
     <loc>https://ipe.rest/journal/pt-BR/</loc>
@@ -218,11 +369,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
   </url>
   <url>
     <loc>https://ipe.rest/journal/fr/</loc>
@@ -233,11 +388,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
   </url>
   <url>
     <loc>https://ipe.rest/journal/de/</loc>
@@ -248,11 +407,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
   </url>
   <url>
     <loc>https://ipe.rest/journal/id/</loc>
@@ -263,11 +426,72 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/th/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/vi/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
+  </url>
+  <url>
+    <loc>https://ipe.rest/journal/tr/</loc>
+    <lastmod>2026-11-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/"/>
   </url>
   <url>
     <loc>https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/</loc>
@@ -1816,11 +2040,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/about/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/about/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -1832,11 +2060,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/about/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/about/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -1848,11 +2080,35 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/about/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/about/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/zh-Hant/about/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/about/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -1864,11 +2120,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/about/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/about/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -1880,11 +2140,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/about/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/about/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -1896,11 +2160,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/about/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/about/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -1912,11 +2180,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/about/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/about/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -1928,11 +2200,75 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/about/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/about/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/about/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/th/about/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/about/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/vi/about/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/about/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/tr/about/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/about/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/about/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/about/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/about/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/about/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/about/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/about/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/about/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/about/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/about/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/about/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/about/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -1944,11 +2280,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/contact/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/contact/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/contact/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/contact/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -1960,11 +2300,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/contact/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/contact/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/contact/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/contact/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -1976,11 +2320,35 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/contact/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/contact/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/contact/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/contact/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/zh-Hant/contact/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/contact/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/contact/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -1992,11 +2360,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/contact/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/contact/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/contact/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/contact/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -2008,11 +2380,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/contact/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/contact/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/contact/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/contact/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -2024,11 +2400,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/contact/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/contact/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/contact/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/contact/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -2040,11 +2420,15 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/contact/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/contact/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/contact/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/contact/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
@@ -2056,11 +2440,75 @@
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/contact/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
     <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/contact/"/>
     <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
     <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
     <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/contact/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/contact/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/th/contact/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/contact/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/contact/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/vi/contact/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/contact/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/contact/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/tr/contact/</loc>
+    <lastmod>2026-10-22</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/contact/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/contact/"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/zh-Hant/contact/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/contact/"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/pt-BR/contact/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://ipe.rest/fr/contact/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://ipe.rest/de/contact/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://ipe.rest/id/contact/"/>
+    <xhtml:link rel="alternate" hreflang="th" href="https://ipe.rest/th/contact/"/>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://ipe.rest/vi/contact/"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://ipe.rest/tr/contact/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>

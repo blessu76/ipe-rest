@@ -55,29 +55,37 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
 
 ## Main page
 <!-- home:llms:start -->
-- Main page (8 languages, one static page per language; root is a language chooser): https://ipe.rest/
+- Main page (12 languages, one static page per language; root is a language chooser): https://ipe.rest/
   - English [en]: https://ipe.rest/en/
   - 한국어 [ko]: https://ipe.rest/ko/
   - 日本語 [ja]: https://ipe.rest/ja/
+  - 繁體中文 [zh-Hant]: https://ipe.rest/zh-Hant/
   - Español [es]: https://ipe.rest/es/
   - Português (Brasil) [pt-BR]: https://ipe.rest/pt-BR/
   - Français [fr]: https://ipe.rest/fr/
   - Deutsch [de]: https://ipe.rest/de/
   - Bahasa Indonesia [id]: https://ipe.rest/id/
+  - ไทย [th]: https://ipe.rest/th/
+  - Tiếng Việt [vi]: https://ipe.rest/vi/
+  - Türkçe [tr]: https://ipe.rest/tr/
 <!-- home:llms:end -->
 
 ## Journal
 <!-- journal:llms:start -->
-- Journal (8 languages, one static page per language; language chooser): https://ipe.rest/journal/en/
+- Journal (12 languages, one static page per language; language chooser): https://ipe.rest/journal/en/
   - Feed (RSS, English): https://ipe.rest/journal/feed.xml
   - English [en]: https://ipe.rest/journal/en/
   - 한국어 [ko]: https://ipe.rest/journal/ko/
   - 日本語 [ja] (AI translation): https://ipe.rest/journal/ja/
+  - 繁體中文 [zh-Hant] (AI translation): https://ipe.rest/journal/zh-Hant/
   - Español [es] (AI translation): https://ipe.rest/journal/es/
   - Português (Brasil) [pt-BR] (AI translation): https://ipe.rest/journal/pt-BR/
   - Français [fr] (AI translation): https://ipe.rest/journal/fr/
   - Deutsch [de] (AI translation): https://ipe.rest/journal/de/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/journal/id/
+  - ไทย [th] (AI translation): https://ipe.rest/journal/th/
+  - Tiếng Việt [vi] (AI translation): https://ipe.rest/journal/vi/
+  - Türkçe [tr] (AI translation): https://ipe.rest/journal/tr/
 - What this site remembers about you (2026-11-03): https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/ - ipe.rest keeps almost nothing about you: a language choice on your device, a page-view count, and a note if you write to us. Here is the plain list.
   - original language: en
   - [en] What this site remembers about you: https://ipe.rest/journal/en/2026-11-03-what-this-site-remembers-about-you/
@@ -202,24 +210,32 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
 
 ## About, contact and policy
 <!-- pages:llms:start -->
-- About (8 languages, one static page per language): https://ipe.rest/en/about/ — who runs ipe() (Davy Kim, ipe Studio, Seoul) and what the studio does
+- About (12 languages, one static page per language): https://ipe.rest/en/about/ — who runs ipe() (Davy Kim, ipe Studio, Seoul) and what the studio does
   - English [en]: https://ipe.rest/en/about/
   - 한국어 [ko]: https://ipe.rest/ko/about/
   - 日本語 [ja] (AI translation): https://ipe.rest/ja/about/
+  - 繁體中文 [zh-Hant] (AI translation): https://ipe.rest/zh-Hant/about/
   - Español [es] (AI translation): https://ipe.rest/es/about/
   - Português (Brasil) [pt-BR] (AI translation): https://ipe.rest/pt-BR/about/
   - Français [fr] (AI translation): https://ipe.rest/fr/about/
   - Deutsch [de] (AI translation): https://ipe.rest/de/about/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/id/about/
-- Contact (8 languages, one static page per language): https://ipe.rest/en/contact/ — ipe.haven@gmail.com (replies within 10 days)
+  - ไทย [th] (AI translation): https://ipe.rest/th/about/
+  - Tiếng Việt [vi] (AI translation): https://ipe.rest/vi/about/
+  - Türkçe [tr] (AI translation): https://ipe.rest/tr/about/
+- Contact (12 languages, one static page per language): https://ipe.rest/en/contact/ — ipe.haven@gmail.com (replies within 10 days)
   - English [en]: https://ipe.rest/en/contact/
   - 한국어 [ko]: https://ipe.rest/ko/contact/
   - 日本語 [ja] (AI translation): https://ipe.rest/ja/contact/
+  - 繁體中文 [zh-Hant] (AI translation): https://ipe.rest/zh-Hant/contact/
   - Español [es] (AI translation): https://ipe.rest/es/contact/
   - Português (Brasil) [pt-BR] (AI translation): https://ipe.rest/pt-BR/contact/
   - Français [fr] (AI translation): https://ipe.rest/fr/contact/
   - Deutsch [de] (AI translation): https://ipe.rest/de/contact/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/id/contact/
+  - ไทย [th] (AI translation): https://ipe.rest/th/contact/
+  - Tiếng Việt [vi] (AI translation): https://ipe.rest/vi/contact/
+  - Türkçe [tr] (AI translation): https://ipe.rest/tr/contact/
 - Privacy (8 languages, one static page per language): https://ipe.rest/en/privacy/ — Google Analytics, language preference stored in the browser, email correspondence, how to request access or deletion; no ads on ipe.rest
   - English [en]: https://ipe.rest/en/privacy/
   - 한국어 [ko]: https://ipe.rest/ko/privacy/

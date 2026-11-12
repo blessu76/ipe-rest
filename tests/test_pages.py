@@ -133,8 +133,10 @@ class EnglishOnlyPages(unittest.TestCase):
             self.assertIn('url=/en/%s/' % p, sh)
             self.assertNotRegex(sh, r"noindex")
             for lang in LANGS:
-                if lang != "en":
-                    self.assertFalse((ROOT / lang / p).exists(), (p, lang))
+                if lang != "en" and (ROOT / lang / p / "index.html").exists():
+                    stub = (ROOT / lang / p / "index.html").read_text(encoding="utf-8")
+                    self.assertIn('<meta http-equiv="refresh" content="0; url=/terms/">', stub, lang)
+                    self.assertNotIn("mailto:", stub, lang)
             sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
             self.assertIn("<loc>https://ipe.rest/en/%s/</loc>" % p, sm)
             self.assertNotIn("<loc>https://ipe.rest/%s/</loc>" % p, sm)

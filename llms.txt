@@ -86,6 +86,16 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - ไทย [th] (AI translation): https://ipe.rest/journal/th/
   - Tiếng Việt [vi] (AI translation): https://ipe.rest/journal/vi/
   - Türkçe [tr] (AI translation): https://ipe.rest/journal/tr/
+- The journal list, newest first, on one page (2026-11-14): https://ipe.rest/journal/en/2026-11-14-the-journal-list-newest-first-on-one-page/ - One list, newest first, every entry on the same page: what each card shows and what the list leaves out.
+  - original language: en
+  - [en] The journal list, newest first, on one page: https://ipe.rest/journal/en/2026-11-14-the-journal-list-newest-first-on-one-page/
+  - [ko] 저널 목록, 최신 글부터 한 페이지에: https://ipe.rest/journal/ko/2026-11-14-the-journal-list-newest-first-on-one-page/
+  - [ja] ジャーナル一覧は、新しい順にひとつのページで (AI translation): https://ipe.rest/journal/ja/2026-11-14-the-journal-list-newest-first-on-one-page/
+  - [es] La lista del diario: lo nuevo primero, en una página (AI translation): https://ipe.rest/journal/es/2026-11-14-the-journal-list-newest-first-on-one-page/
+  - [pt-BR] A lista do diário: o mais novo primeiro, numa página (AI translation): https://ipe.rest/journal/pt-BR/2026-11-14-the-journal-list-newest-first-on-one-page/
+  - [fr] La liste du journal : le plus récent d'abord, sur une page (AI translation): https://ipe.rest/journal/fr/2026-11-14-the-journal-list-newest-first-on-one-page/
+  - [de] Die Journal-Liste: neueste zuerst, auf einer Seite (AI translation): https://ipe.rest/journal/de/2026-11-14-the-journal-list-newest-first-on-one-page/
+  - [id] Daftar jurnal: terbaru dulu, dalam satu halaman (AI translation): https://ipe.rest/journal/id/2026-11-14-the-journal-list-newest-first-on-one-page/
 - One scroll down the home page (2026-11-13): https://ipe.rest/journal/en/2026-11-13-one-scroll-down-the-home-page/ - Four stops from top to bottom, and then the page tells you to stop scrolling.
   - original language: en
   - [en] One scroll down the home page: https://ipe.rest/journal/en/2026-11-13-one-scroll-down-the-home-page/

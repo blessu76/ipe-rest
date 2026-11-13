@@ -6,7 +6,15 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 13 Nov 2026 10:20:00 +0900</lastBuildDate>
+    <lastBuildDate>Sat, 14 Nov 2026 08:20:00 +0900</lastBuildDate>
+    <item>
+      <title>The journal list, newest first, on one page</title>
+      <link>https://ipe.rest/journal/en/2026-11-14-the-journal-list-newest-first-on-one-page/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-14-the-journal-list-newest-first-on-one-page/</guid>
+      <pubDate>Sat, 14 Nov 2026 08:20:00 +0900</pubDate>
+      <category>studio</category>
+      <description>One list, newest first, every entry on the same page: what each card shows and what the list leaves out.</description>
+    </item>
     <item>
       <title>One scroll down the home page</title>
       <link>https://ipe.rest/journal/en/2026-11-13-one-scroll-down-the-home-page/</link>

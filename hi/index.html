@@ -641,6 +641,7 @@ img,svg{max-width:100%}
 <script>
 (function () {
   var GA_MEASUREMENT_ID = 'G-XG4BH800J0';
+  if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;
   if (GA_MEASUREMENT_ID.indexOf('XXXX') === -1) {
     var s = document.createElement('script');
     s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_MEASUREMENT_ID;
@@ -655,7 +656,7 @@ img,svg{max-width:100%}
       var a = e.target.closest && e.target.closest('a[href^="http"]');
       if (!a) return;
       var h = a.hostname;
-      if (h === 'ipe.rest' || /\.ipe\.rest$/.test(h)) return;
+      if (h === location.hostname || h === 'ipe.rest' || /\.ipe\.rest$/.test(h)) return;
       window.gtag('event', 'outbound_click', {
         link_url: a.href, link_domain: h, transport_type: 'beacon'
       });

@@ -98,6 +98,7 @@
     if (want && avail[want]) location.replace(avail[want] + location.hash);
   }
 
+  if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;
   // GA4 — same measurement ID as index.html
   var GA = 'G-XG4BH800J0';
   var s = document.createElement('script');
@@ -112,7 +113,7 @@
     var a = e.target.closest && e.target.closest('a[href^="http"]');
     if (!a) return;
     var h = a.hostname;
-    if (h === 'ipe.rest' || /\.ipe\.rest$/.test(h)) return;
+    if (h === location.hostname || h === 'ipe.rest' || /\.ipe\.rest$/.test(h)) return;
     window.gtag('event', 'outbound_click', { link_url: a.href, link_domain: h, transport_type: 'beacon' });
   }
   document.addEventListener('click', trackOutbound);

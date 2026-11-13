@@ -49,6 +49,19 @@ class HomePages(unittest.TestCase):
             # no query-string URLs of our own
             self.assertNotIn("?lang=", body)
 
+    def test_ga_skips_localhost_and_own_host(self):
+        guard = r"/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)"
+        own = "h === location.hostname"
+        src = (ROOT / "scripts" / "home_src" / "index.html").read_text(encoding="utf-8")
+        self.assertIn(guard, src)
+        self.assertIn(own, src)
+        for lang in LANGS:
+            self.assertIn(guard, page(lang), lang)
+        self.assertIn(guard, page(None))
+        js = (ROOT / "journal" / "journal.js").read_text(encoding="utf-8")
+        self.assertIn(guard, js)
+        self.assertIn(own, js)
+
     def test_play_portal_not_on_the_umbrella_home(self):
         # Davy 2026-11-07: ipe.rest must not carry play.ipe.rest (card, footer link, JSON-LD, FAQ, llms.txt)
         for lang in LANGS:

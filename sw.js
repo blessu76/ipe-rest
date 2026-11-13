@@ -1,5 +1,5 @@
 // ipe() service worker — installable PWA + offline fallback
-const CACHE = 'ipe-v76';
+const CACHE = 'ipe-v77';
 const CORE = [
   '/', '/index.html',
   '/manifest.webmanifest?v=23',

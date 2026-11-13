@@ -6,7 +6,15 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 12 Nov 2026 10:20:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 13 Nov 2026 10:20:00 +0900</lastBuildDate>
+    <item>
+      <title>One scroll down the home page</title>
+      <link>https://ipe.rest/journal/en/2026-11-13-one-scroll-down-the-home-page/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-13-one-scroll-down-the-home-page/</guid>
+      <pubDate>Fri, 13 Nov 2026 10:20:00 +0900</pubDate>
+      <category>studio</category>
+      <description>Four stops from top to bottom, and then the page tells you to stop scrolling.</description>
+    </item>
     <item>
       <title>What a missing page shows you</title>
       <link>https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/</link>

@@ -86,6 +86,16 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - ไทย [th] (AI translation): https://ipe.rest/journal/th/
   - Tiếng Việt [vi] (AI translation): https://ipe.rest/journal/vi/
   - Türkçe [tr] (AI translation): https://ipe.rest/journal/tr/
+- One scroll down the home page (2026-11-13): https://ipe.rest/journal/en/2026-11-13-one-scroll-down-the-home-page/ - Four stops from top to bottom, and then the page tells you to stop scrolling.
+  - original language: en
+  - [en] One scroll down the home page: https://ipe.rest/journal/en/2026-11-13-one-scroll-down-the-home-page/
+  - [ko] 홈페이지를 한 번 스크롤하면: https://ipe.rest/journal/ko/2026-11-13-one-scroll-down-the-home-page/
+  - [ja] ホームページを一度スクロールする (AI translation): https://ipe.rest/journal/ja/2026-11-13-one-scroll-down-the-home-page/
+  - [es] Un solo desplazamiento por la página de inicio (AI translation): https://ipe.rest/journal/es/2026-11-13-one-scroll-down-the-home-page/
+  - [pt-BR] Uma rolagem pela página inicial (AI translation): https://ipe.rest/journal/pt-BR/2026-11-13-one-scroll-down-the-home-page/
+  - [fr] Un seul défilement de la page d’accueil (AI translation): https://ipe.rest/journal/fr/2026-11-13-one-scroll-down-the-home-page/
+  - [de] Einmal über die Startseite scrollen (AI translation): https://ipe.rest/journal/de/2026-11-13-one-scroll-down-the-home-page/
+  - [id] Satu gulir di beranda (AI translation): https://ipe.rest/journal/id/2026-11-13-one-scroll-down-the-home-page/
 - What a missing page shows you (2026-11-12): https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/ - One 4,355-byte file, no script, and a way home in 12 languages.
   - original language: en
   - [en] What a missing page shows you: https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/

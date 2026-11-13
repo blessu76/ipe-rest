@@ -29,12 +29,11 @@ LANGS = J.LANGS
 PAGE_LANGS = J.PAGE_LANGS
 TR = J.TR_LANGS
 PAGES = ("about", "contact", "privacy", "terms")
-NO_PRIVACY = J.NO_PRIVACY_TRANSLATION  # th vi tr zh-Hant: no privacy page (legal text stays ko/en); links go to /en/privacy/
 
 
 def page_langs(p):
-    """Languages that get /<lang>/<page>/ : all live ones, except the legal-text exceptions for privacy."""
-    return [l for l in LANGS if not (p == "privacy" and l in NO_PRIVACY)]
+    """Languages that get /<lang>/<page>/ : all live ones, except privacy, which exists only as the ko and en legal texts."""
+    return [l for l in LANGS if p != "privacy" or l in ("en", "ko")]
 LASTMOD_DEFAULT = "2026-10-22"
 LASTMOD = {"privacy": "2026-11-13", "terms": "2026-11-13"}
 LD_TYPE = {"about": "AboutPage", "contact": "ContactPage", "privacy": "WebPage", "terms": "WebPage"}
@@ -51,6 +50,8 @@ LEGAL_REWRITE = (("/en/privacy/", "/en/legal/privacy/"), ("/ko/privacy/", "/ko/l
 LEGAL_STUBS = (("privacy", "en", "Privacy policy — ipe()", "/en/legal/privacy/"), ("en/privacy", "en", "Privacy policy — ipe()", "/en/legal/privacy/"),
                ("ko/privacy", "ko", "개인정보처리방침 — ipe()", "/ko/legal/privacy/"), ("terms", "en", "Terms of use — ipe()", "/en/legal/terms/"),
                ("en/terms", "en", "Terms of use — ipe()", "/en/legal/terms/"), ("ko/terms", "ko", "이용약관 — ipe()", "/ko/legal/terms/"))
+LEGAL_STUBS += tuple((l + "/privacy", "en", "Privacy policy — ipe()", "/en/legal/privacy/")
+                     for l in ("ja", "es", "pt-BR", "fr", "de", "id", "ar", "hi", "ru", "zh"))  # pre-v1.0 translations retired
 
 
 def page_url(page, lang=None):
@@ -114,7 +115,7 @@ def localize(main, lang):
     """Point internal links (and links to other ipe sites) at the page's own language (translations may carry the EN-localized hrefs)."""
     main = re.sub(r'href="/(?:[a-z]{2}(?:-[A-Za-z]+)?/)?(about|contact|privacy)/"',
                   lambda m: 'href="%s"' % (J.privacy_href(lang) if m.group(1) == "privacy" else "/%s/%s/" % (lang, m.group(1))), main)
-    main = re.sub(r'href="/(?:[a-z]{2}(?:-[A-Za-z]+)?/)?terms/"', 'href="/en/terms/"', main)  # terms exist in English only
+    main = re.sub(r'href="/(?:[a-z]{2}(?:-[A-Za-z]+)?/)?terms/"', 'href="%s"' % J.legal_href("terms", lang), main)
     main = re.sub(r'href="/journal/(?:[a-z]{2}/)?"', 'href="/journal/%s/"' % lang, main)
     main = re.sub(r'class="back" href="/(?:[a-z]{2}/)?"', 'class="back" href="/%s/"' % lang, main)
     return J.localize_sibling_links(main, lang)

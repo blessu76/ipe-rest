@@ -53,13 +53,18 @@ TR_LANGS = [l for l in PAGE_LANGS if l not in ORIG_LANGS]
 # Any other live language must have a translation for every post (journal_sync.build checks it).
 NO_POST_TRANSLATION = ["zh-Hant", "th", "vi", "tr"]
 FALLBACK = "_fallback"
-# Legal documents (terms · privacy) stay in their ko/en source (Davy 2026-11-12): these languages have no /<lang>/privacy/ page,
-# every privacy link on their pages goes to the EN original instead (privacy_href).
-NO_PRIVACY_TRANSLATION = list(NO_POST_TRANSLATION)
+# Legal documents (terms · privacy) live at /<lang>/legal/<page>/ in ko (Korean text) and en (v1.0 English text);
+# every other language links to the English text.
+def legal_href(page, lang):
+    return "/ko/legal/%s/" % page if lang == "ko" else "/en/legal/%s/" % page
+
+
+def legal_hreflang(lang):
+    return "" if lang == "ko" else ' hreflang="en"'
 
 
 def privacy_href(lang):
-    return "/en/privacy/" if lang in NO_PRIVACY_TRANSLATION else "/%s/privacy/" % lang
+    return legal_href("privacy", lang)
 RTL = {"ar"}
 OG_LOCALE = {"en": "en_US", "ko": "ko_KR", "ja": "ja_JP", "zh-Hant": "zh_TW", "es": "es_ES", "pt-BR": "pt_BR", "fr": "fr_FR",
              "de": "de_DE", "id": "id_ID", "th": "th_TH", "vi": "vi_VN", "tr": "tr_TR",
@@ -239,11 +244,11 @@ def _footer(u, lang):
       <a href="/%(l)s/about/">%(a)s</a>
       <a href="/%(l)s/contact/">%(c)s</a>
       <a href="%(ph)s"%(pl)s>%(p)s</a>
-      <a href="/en/terms/" hreflang="en">terms</a>
+      <a href="%(th)s"%(tl)s>terms</a>
     </nav>
   </div>
 </footer>""" % dict(l=lang, j=esc(u["journal"]), a=esc(u["about"]), c=esc(u["contact"]), p=esc(u["privacy"]),
-                    ph=privacy_href(lang), pl=' hreflang="en"' if lang in NO_PRIVACY_TRANSLATION else "")
+                    ph=privacy_href(lang), pl=legal_hreflang(lang), th=legal_href("terms", lang), tl=legal_hreflang(lang))
 
 
 def _common_head(lang, title, desc, canon):

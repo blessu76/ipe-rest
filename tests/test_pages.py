@@ -13,7 +13,8 @@ import pages_sync  # noqa: E402
 LANGS = pages_sync.LANGS
 PAGES = tuple(x for x in pages_sync.PAGES if x != "terms")  # terms exists only in en/ko: see EnglishOnlyPages
 PL = pages_sync.page_langs  # languages that really have /<lang>/<page>/ (privacy = ko/en originals + translated, not the new 4)
-NEW4 = ["zh-Hant", "th", "vi", "tr"]  # live languages without translated privacy (Davy 2026-11-12: legal text stays ko/en original)
+NEW4 = ["zh-Hant", "th", "vi", "tr"]  # live languages without any privacy page (Davy 2026-11-12: legal text stays ko/en original)
+OLD_PRIVACY = ["ja", "es", "pt-BR", "fr", "de", "id", "ar", "hi", "ru", "zh"]  # retired pre-v1.0 translations: 1-hop stubs to the English text
 SM = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
 X = "{http://www.w3.org/1999/xhtml}link"
 LD = re.compile(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', re.S)
@@ -53,23 +54,31 @@ class InfoPages(unittest.TestCase):
         for p in ("about", "contact"):  # not legal text: every live language has it
             self.assertEqual(PL(p), LANGS)
 
-    def test_privacy_is_not_translated_for_new_languages(self):
-        """Legal text stays the ko/en original: no /<new>/privacy/ page, no hreflang or sitemap entry, every link goes to /en/privacy/ (1-hop stub -> /en/legal/privacy/)."""
-        self.assertEqual(PL("privacy"), [l for l in LANGS if l not in NEW4])
-        self.assertEqual(len(PL("privacy")), 8)
+    def test_privacy_exists_only_in_ko_and_en(self):
+        """Legal text stays the ko/en original: other languages have no privacy page, no hreflang or sitemap entry; their links go to /en/legal/privacy/."""
+        self.assertEqual(PL("privacy"), ["en", "ko"])
         sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
-        for lang in NEW4:
-            self.assertFalse((ROOT / lang / "privacy").exists(), lang)
+        for lang in LANGS:
+            if lang in ("en", "ko"):
+                continue
             self.assertNotIn("https://ipe.rest/%s/privacy/" % lang, sm)
             for f in (ROOT / lang / "index.html", ROOT / "journal" / lang / "index.html",
                       ROOT / lang / "about" / "index.html", ROOT / lang / "contact" / "index.html"):
                 src = f.read_text(encoding="utf-8")
-                self.assertIn('href="/en/privacy/"', src, f)
+                self.assertIn('href="/en/legal/privacy/"', src, f)
                 self.assertNotIn('href="/%s/privacy/"' % lang, src, f)
         for lang in PL("privacy"):
             src = read("privacy", lang)
-            for n in NEW4:
+            for n in NEW4 + OLD_PRIVACY:
                 self.assertNotIn('hreflang="%s"' % n, src, (lang, n))
+
+    def test_retired_privacy_translations_are_stubs(self):
+        for lang in OLD_PRIVACY:
+            f = ROOT / lang / "privacy" / "index.html"
+            stub = f.read_text(encoding="utf-8")
+            self.assertIn('<link rel="canonical" href="https://ipe.rest/en/legal/privacy/">', stub, lang)
+            self.assertIn("location.replace(\"/en/legal/privacy/\")", stub, lang)
+            self.assertNotIn("<main", stub, lang)
 
     def test_page_head_and_body(self):
         for p in PAGES:
@@ -130,7 +139,8 @@ class InfoPages(unittest.TestCase):
             for f in (ROOT / lang / "index.html", ROOT / "journal" / lang / "index.html"):
                 src = f.read_text(encoding="utf-8")
                 for p in PAGES:
-                    self.assertIn('href="/%s/%s/"' % (lang, p), src if lang not in NEW4 or p != "privacy" else src.replace("/en/privacy/", "/%s/privacy/" % lang), f)
+                    link = journal_i18n.privacy_href(lang) if p == "privacy" else "/%s/%s/" % (lang, p)
+                    self.assertIn('href="%s"' % link, src, f)
                     self.assertNotIn('href="/%s/"' % p, src, f)
 
 
@@ -210,11 +220,11 @@ class EnglishOnlyPages(unittest.TestCase):
         self.assertNotIn("two-step", read("privacy", "en"))
         self.assertIn("<h2>10. 안전성 확보 조치</h2>", ko)
 
-    def test_every_privacy_language_links_to_the_english_terms(self):
+    def test_every_privacy_language_links_to_its_legal_terms(self):
         for lang in PL("privacy"):
-            want = {"en": 'href="/en/legal/terms/"', "ko": 'href="/ko/legal/terms/"'}.get(lang, 'href="/en/terms/"')
+            want = 'href="%s"' % journal_i18n.legal_href("terms", lang)
             self.assertIn(want, read("privacy", lang), lang)
-            self.assertNotIn('href="/%s/terms/"' % lang if lang != "en" else "x\0", read("privacy", lang), lang)
+            self.assertNotIn('href="/en/terms/"', read("privacy", lang), lang)
 
     def test_privacy_describes_ads_cookies_and_subdomains(self):
         src = read("privacy", "en")
@@ -419,7 +429,7 @@ class FooterLinks(unittest.TestCase):
             for name, f in pages:
                 src = f.read_text(encoding="utf-8")
                 foot = src[src.rindex("<footer"):]
-                terms = "/ko/legal/terms/" if (name == "privacy" and lang == "ko") else "/en/terms/"
+                terms = journal_i18n.legal_href("terms", lang)
                 for href in ("/%s/about/" % lang, "/%s/contact/" % lang, journal_i18n.privacy_href(lang), terms):
                     if name == "privacy" and ("privacy", lang) in LEGAL:  # the /legal/ copies carry the rewritten addresses
                         for a, b in pages_sync.LEGAL_REWRITE:

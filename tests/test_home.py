@@ -148,8 +148,8 @@ class HomePages(unittest.TestCase):
                 found = set(re.findall(r'<a [^>]*href="(https://%s[^"]*)"' % re.escape(host), src))
                 self.assertEqual(found, {urls[lang]}, (lang, host))
             for h in ("about", "contact", "privacy"):  # info pages and journal posts link idle in their own language too
-                if h == "privacy" and lang in J.NO_PRIVACY_TRANSLATION:
-                    continue  # legal text is not translated: no /<lang>/privacy/ page (see test_pages.test_privacy_is_not_translated_for_new_languages)
+                if h == "privacy" and lang not in ("en", "ko"):
+                    continue  # legal text is ko/en only: no /<lang>/privacy/ page (see test_pages.test_privacy_exists_only_in_ko_and_en)
                 self.assertEqual(set(re.findall(r'<a [^>]*href="(https://idle\.ipe\.rest[^"]*)"', (ROOT / lang / h / "index.html").read_text(encoding="utf-8"))) - {want["idle.ipe.rest"][lang]}, set(), (lang, h))
 
     def test_x_default_shells_follow_the_same_order(self):

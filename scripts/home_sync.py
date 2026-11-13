@@ -201,6 +201,7 @@ def render_lang(src, ui, lang, posts):
         out = sub1(out, r'<main id="main">\n', '<main id="main">\n' + note)
     for pg in ("about", "contact", "privacy"):
         out = out.replace('href="/%s/"' % pg, 'href="%s"' % (J.privacy_href(lang) if pg == "privacy" else "/%s/%s/" % (lang, pg)))
+    out = out.replace('<a href="/en/legal/terms/" hreflang="en">', '<a href="%s"%s>' % (J.legal_href("terms", lang), J.legal_hreflang(lang)))
     opts = "\n".join('        <option value="%s"%s>%s</option>' % (l, " selected" if l == lang else "", l.upper())
                      for l in (LANGS if lang in LANGS else LANGS + [lang]))
     out = sub1(out, r'<!-- home:options -->', opts)
@@ -294,7 +295,7 @@ def render_chooser(src, ui):
 %(items)s
   </ul>
 </main>
-<footer><div class="wrap">ipe() · idle &nbsp;·&nbsp; AI draft + human review &nbsp;·&nbsp; <a href="/journal/en/">journal</a> · <a href="/en/about/">about</a> · <a href="/en/contact/">contact</a> · <a href="/en/privacy/">privacy</a> · <a href="/en/terms/" hreflang="en">terms</a></div></footer>
+<footer><div class="wrap">ipe() · idle &nbsp;·&nbsp; AI draft + human review &nbsp;·&nbsp; <a href="/journal/en/">journal</a> · <a href="/en/about/">about</a> · <a href="/en/contact/">contact</a> · <a href="/en/legal/privacy/">privacy</a> · <a href="/en/legal/terms/" hreflang="en">terms</a></div></footer>
 
 %(ga)s
 %(sw)s

@@ -3792,12 +3792,12 @@
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://ipe.rest/legal/privacy/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <loc>https://ipe.rest/en/legal/privacy/</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/legal/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/privacy/"/>
@@ -3809,11 +3809,11 @@
   </url>
   <url>
     <loc>https://ipe.rest/ko/legal/privacy/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/legal/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/privacy/"/>
@@ -3825,11 +3825,11 @@
   </url>
   <url>
     <loc>https://ipe.rest/ja/privacy/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/legal/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/privacy/"/>
@@ -3841,11 +3841,11 @@
   </url>
   <url>
     <loc>https://ipe.rest/es/privacy/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/legal/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/privacy/"/>
@@ -3857,11 +3857,11 @@
   </url>
   <url>
     <loc>https://ipe.rest/pt-BR/privacy/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/legal/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/privacy/"/>
@@ -3873,11 +3873,11 @@
   </url>
   <url>
     <loc>https://ipe.rest/fr/privacy/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/legal/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/privacy/"/>
@@ -3889,11 +3889,11 @@
   </url>
   <url>
     <loc>https://ipe.rest/de/privacy/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/legal/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/privacy/"/>
@@ -3905,11 +3905,11 @@
   </url>
   <url>
     <loc>https://ipe.rest/id/privacy/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/legal/privacy/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/legal/privacy/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/legal/privacy/"/>
     <xhtml:link rel="alternate" hreflang="ja" href="https://ipe.rest/ja/privacy/"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://ipe.rest/es/privacy/"/>
@@ -3920,22 +3920,22 @@
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
-    <loc>https://ipe.rest/legal/terms/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <loc>https://ipe.rest/en/legal/terms/</loc>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/legal/terms/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/legal/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/legal/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/legal/terms/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/legal/terms/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <url>
     <loc>https://ipe.rest/ko/legal/terms/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/legal/terms/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/legal/terms/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/en/legal/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/en/legal/terms/"/>
     <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/legal/terms/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>

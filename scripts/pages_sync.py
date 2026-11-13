@@ -29,7 +29,6 @@ LANGS = J.LANGS
 PAGE_LANGS = J.PAGE_LANGS
 TR = J.TR_LANGS
 PAGES = ("about", "contact", "privacy", "terms")
-EN_ONLY = ("terms",)  # English-only legal text (no KO source, no translations); add <lang>.json files under pages_i18n/terms/ to translate
 NO_PRIVACY = J.NO_PRIVACY_TRANSLATION  # th vi tr zh-Hant: no privacy page (legal text stays ko/en); links go to /en/privacy/
 
 
@@ -37,20 +36,21 @@ def page_langs(p):
     """Languages that get /<lang>/<page>/ : all live ones, except the legal-text exceptions for privacy."""
     return [l for l in LANGS if not (p == "privacy" and l in NO_PRIVACY)]
 LASTMOD_DEFAULT = "2026-10-22"
-LASTMOD = {"privacy": "2026-11-06", "terms": "2026-11-06"}
+LASTMOD = {"privacy": "2026-11-13", "terms": "2026-11-13"}
 LD_TYPE = {"about": "AboutPage", "contact": "ContactPage", "privacy": "WebPage", "terms": "WebPage"}
 esc = J.esc
 
 
-# Legal pages live at fixed /legal/ addresses. Their bodies are the current live texts, kept verbatim in scripts/legal_src/ (copied from
-# the site before the move; edit the text THERE). Only the paths below are rewritten at build time — no placeholders, no template.
-LEGAL_PATH = {("privacy", "en"): "/legal/privacy/", ("privacy", "ko"): "/ko/legal/privacy/", ("terms", "en"): "/legal/terms/", ("terms", "ko"): "/ko/legal/terms/"}
+# Legal pages live at /<lang>/legal/<page>/ (en, ko). Their bodies are the v1.0 texts kept in scripts/legal_src/ (generated from the
+# _ipe md by scripts/legal_md.py; edit the text THERE). Only the paths below are rewritten at build time — no placeholders, no template.
+# /legal/<page>/ is a 한국어 / English chooser; the old addresses are 1-hop stubs.
+LEGAL_PATH = {("privacy", "en"): "/en/legal/privacy/", ("privacy", "ko"): "/ko/legal/privacy/", ("terms", "en"): "/en/legal/terms/", ("terms", "ko"): "/ko/legal/terms/"}
 LEGAL_SRC = {("privacy", "en"): "privacy.en.html", ("privacy", "ko"): "privacy.ko.html", ("terms", "en"): "terms.en.html", ("terms", "ko"): "terms.ko.html"}
-LEGAL_REWRITE = (("/en/privacy/", "/legal/privacy/"), ("/ko/privacy/", "/ko/legal/privacy/"), ("/en/terms/", "/legal/terms/"), ("/ko/terms/", "/ko/legal/terms/"))
+LEGAL_REWRITE = (("/en/privacy/", "/en/legal/privacy/"), ("/ko/privacy/", "/ko/legal/privacy/"), ("/en/terms/", "/en/legal/terms/"), ("/ko/terms/", "/ko/legal/terms/"))
 # old addresses -> 1-hop stubs: (path, lang, title, target)
-LEGAL_STUBS = (("privacy", "en", "Privacy policy — ipe()", "/legal/privacy/"), ("en/privacy", "en", "Privacy policy — ipe()", "/legal/privacy/"),
-               ("ko/privacy", "ko", "개인정보처리방침 — ipe()", "/ko/legal/privacy/"), ("terms", "en", "Terms of use — ipe()", "/legal/terms/"),
-               ("en/terms", "en", "Terms of use — ipe()", "/legal/terms/"), ("ko/terms", "ko", "이용약관 — ipe()", "/ko/legal/terms/"))
+LEGAL_STUBS = (("privacy", "en", "Privacy policy — ipe()", "/en/legal/privacy/"), ("en/privacy", "en", "Privacy policy — ipe()", "/en/legal/privacy/"),
+               ("ko/privacy", "ko", "개인정보처리방침 — ipe()", "/ko/legal/privacy/"), ("terms", "en", "Terms of use — ipe()", "/en/legal/terms/"),
+               ("en/terms", "en", "Terms of use — ipe()", "/en/legal/terms/"), ("ko/terms", "ko", "이용약관 — ipe()", "/ko/legal/terms/"))
 
 
 def page_url(page, lang=None):
@@ -86,9 +86,9 @@ def load():
     for p in PAGES:
         s = (ROOT / "scripts" / "pages_src" / (p + ".html")).read_text(encoding="utf-8")
         srcs[p] = s
-        data[p] = {l: split_source(s, l) for l in (("en",) if p in EN_ONLY else J.ORIG_LANGS)}
+        data[p] = {l: split_source(s, l) for l in J.ORIG_LANGS if p != "terms" or l == "en"}
         if p == "terms":
-            data[p]["ko"] = {}  # /ko/legal/terms/ body comes from legal_src (no pages_src section); listed for sitemap/hreflang/llms
+            data[p]["ko"] = legal_meta("terms", "ko")  # the ko body is scripts/legal_src/terms.ko.html; pages_src has no ko section
         for l in TR:
             f = ROOT / "scripts" / "pages_i18n" / p / (J.K.legacy_code(l) + ".json")
             if f.exists():
@@ -189,6 +189,18 @@ def render_chooser(p, data, ui):
     return "\n".join(head) + "\n" + body
 
 
+def render_legal_chooser(p, data, ui):
+    en_url, ko_url = page_url(p, "en"), page_url(p, "ko")
+    en, ko = data[p]["en"], data[p]["ko"]
+    page = {"@context": "https://schema.org", "@type": LD_TYPE[p], "@id": en_url + "#webpage", "url": en_url, "name": en["title"],
+            "description": en["description"], "inLanguage": "en", "isPartOf": {"@id": SITE + "/#website"}}
+    cl = [("x-default", en_url), ("en", en_url), ("ko", ko_url)]
+    rows = [("ko", ko_url, ko["title"]), ("en", en_url, en["title"])]
+    head = J._chooser_head(en["title"], en["description"], en_url, cl, "website", "en_US", [page])
+    body = J._chooser_body(en["title"], "ipe() — 한국어 / English · 시행일 2026-07-26 · Effective 2026-07-26", rows, dict(ui["en"], eyebrow=ui["en"].get(p, p)), "en", cl)
+    return "\n".join(head) + "\n" + body
+
+
 def render_redirect(p, data):
     """English-only pages: /<page>/ is a plain redirect to /en/<page>/ (a one-language chooser would be pointless)."""
     en = data[p]["en"]
@@ -213,11 +225,19 @@ def render_stub(title, lang, target):
         '<script>location.replace("%s");</script>' % target, "</head>", "<body>", '<p><a href="%s">%s</a></p>' % (target, esc(title)), "</body>", "</html>", ""])
 
 
+def legal_meta(p, lang):
+    t = (ROOT / "scripts" / "legal_src" / LEGAL_SRC[(p, lang)]).read_text(encoding="utf-8")
+    return {"title": html.unescape(re.search(r"<title>(.*?)</title>", t).group(1)), "description": meta(t, "description")}
+
+
 def legal_body(p, lang):
     t = (ROOT / "scripts" / "legal_src" / LEGAL_SRC[(p, lang)]).read_text(encoding="utf-8")
     for a, b in LEGAL_REWRITE:
         t = t.replace(a, b)
-    return t
+    other = "en" if lang == "ko" else "ko"
+    switch = '<p class="legal-switch" style="margin:0 0 1.5em;font-size:.9em"><a href="%s" lang="%s" hreflang="%s">%s</a></p>\n' % (
+        LEGAL_PATH[(p, other)], other, other, "English" if other == "en" else "한국어")
+    return t.replace('<main id="main">\n', '<main id="main">\n' + switch, 1)
 
 
 def sitemap_block(data):
@@ -239,7 +259,7 @@ def llms_block(data):
             "privacy": "applies to ipe.rest and all *.ipe.rest subdomains: Google Analytics, Google AdSense advertising, cookies and consent, language preference stored in the browser, email correspondence, how to request access or deletion",
             "terms": "terms of use for ipe.rest, its subdomains and the mobile apps (English and Korean): acceptable use, content ownership, AI-assisted writing, third-party ads and links, liability"}
     for p in PAGES:
-        lines.append("- %s (%s): %s — %s" % (p.capitalize(), "English and Korean" if p in EN_ONLY else "%d languages, one static page per language" % len(langs_of(data, p)), page_url(p, "en"), desc[p]))
+        lines.append("- %s (%s): %s — %s" % (p.capitalize(), "English and Korean" if p == "terms" else "%d languages, one static page per language" % len(langs_of(data, p)), page_url(p, "en"), desc[p]))
         lines += ["  - %s [%s]%s: %s" % (J.NATIVE[l], l, " (AI translation)" if l in TR else "", page_url(p, l)) for l in langs_of(data, p)]
     lines.append("<!-- pages:llms:end -->")
     return "\n".join(lines)
@@ -260,7 +280,9 @@ def build():
                 continue
             errors += check_data(p, l, data[p][l])
             writes[ROOT / l / p / "index.html"] = render(p, l, data, ui)
-        if p not in ("privacy", "terms"):
+        if p in ("privacy", "terms"):
+            writes[ROOT / "legal" / p / "index.html"] = render_legal_chooser(p, data, ui)
+        else:
             writes[ROOT / p / "index.html"] = render_chooser(p, data, ui)
     for path, lang, title, target in LEGAL_STUBS:
         writes[ROOT / path / "index.html"] = render_stub(title, lang, target)

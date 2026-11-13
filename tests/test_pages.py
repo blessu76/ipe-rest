@@ -11,8 +11,7 @@ import journal_i18n  # noqa: E402
 import pages_sync  # noqa: E402
 
 LANGS = pages_sync.LANGS
-PAGES = tuple(x for x in pages_sync.PAGES if x not in pages_sync.EN_ONLY)  # the info pages translated per language
-EN_ONLY = pages_sync.EN_ONLY
+PAGES = tuple(x for x in pages_sync.PAGES if x != "terms")  # terms exists only in en/ko: see EnglishOnlyPages
 PL = pages_sync.page_langs  # languages that really have /<lang>/<page>/ (privacy = ko/en originals + translated, not the new 4)
 NEW4 = ["zh-Hant", "th", "vi", "tr"]  # live languages without translated privacy (Davy 2026-11-12: legal text stays ko/en original)
 SM = "{http://www.sitemaps.org/schemas/sitemap/0.9}"
@@ -25,7 +24,7 @@ LEGAL = pages_sync.LEGAL_PATH  # (page, lang) -> fixed /legal/ address (current 
 
 
 def served(p, lang=None):
-    """File that serves the page: /legal/… for privacy en·ko and terms en, else /<lang>/<page>/."""
+    """File that serves the page: /<lang>/legal/<page>/ for privacy en·ko and terms en·ko, else /<lang>/<page>/."""
     if (p, lang) in LEGAL:
         return ROOT / LEGAL[(p, lang)].strip("/") / "index.html"
     return (ROOT / lang / p / "index.html") if lang else (ROOT / p / "index.html")
@@ -55,7 +54,7 @@ class InfoPages(unittest.TestCase):
             self.assertEqual(PL(p), LANGS)
 
     def test_privacy_is_not_translated_for_new_languages(self):
-        """Legal text stays the ko/en original: no /<new>/privacy/ page, no hreflang or sitemap entry, every link goes to /en/privacy/ (1-hop stub -> /legal/privacy/)."""
+        """Legal text stays the ko/en original: no /<new>/privacy/ page, no hreflang or sitemap entry, every link goes to /en/privacy/ (1-hop stub -> /en/legal/privacy/)."""
         self.assertEqual(PL("privacy"), [l for l in LANGS if l not in NEW4])
         self.assertEqual(len(PL("privacy")), 8)
         sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
@@ -102,8 +101,8 @@ class InfoPages(unittest.TestCase):
         for p in PAGES:
             src = read(p)
             self.assertIn('<link rel="canonical" href="%s">' % pages_sync.page_url(p, "en"), src)
-            if p == "privacy":  # the shell is a 1-hop stub to /legal/privacy/, not a chooser
-                self.assertIn('url=/legal/privacy/', src)
+            if p == "privacy":  # the shell is a 1-hop stub to /en/legal/privacy/, not a chooser
+                self.assertIn('url=/en/legal/privacy/', src)
                 continue
             for lang in PL(p):
                 self.assertIn('href="/%s/%s/"' % (lang, p), src)
@@ -136,11 +135,10 @@ class InfoPages(unittest.TestCase):
 
 
 class EnglishOnlyPages(unittest.TestCase):
-    """Terms of use: /legal/terms/ (en) and /ko/legal/terms/ (ko) are the pages; every old address is a 1-hop stub; nothing else is generated or listed."""
+    """Terms of use: /en/legal/terms/ and /ko/legal/terms/ are the pages; /legal/terms/ is a chooser; every old address is a 1-hop stub; nothing else is generated or listed."""
 
     def test_terms_page_and_redirect(self):
-        self.assertEqual(EN_ONLY, ("terms",))
-        en, ko = "https://ipe.rest/legal/terms/", "https://ipe.rest/ko/legal/terms/"
+        en, ko = "https://ipe.rest/en/legal/terms/", "https://ipe.rest/ko/legal/terms/"
         for lang, url in (("en", en), ("ko", ko)):
             src = read("terms", lang)
             self.assertIn('<link rel="canonical" href="%s">' % url, src)
@@ -152,7 +150,7 @@ class EnglishOnlyPages(unittest.TestCase):
         self.assertNotIn("http-equiv=\"refresh\"", ko_src)
         self.assertIn("<h2>1. 약관의 적용과 운영자</h2>", ko_src)
         self.assertIn("<h2>12. 문의</h2>", ko_src)
-        for old, target in (("terms", "/legal/terms/"), ("en/terms", "/legal/terms/"), ("ko/terms", "/ko/legal/terms/")):  # ONE hop to the body
+        for old, target in (("terms", "/en/legal/terms/"), ("en/terms", "/en/legal/terms/"), ("ko/terms", "/ko/legal/terms/")):  # ONE hop to the body
             stub = read_old(old)
             self.assertIn('<link rel="canonical" href="https://ipe.rest%s">' % target, stub, old)
             self.assertIn('<meta http-equiv="refresh" content="0; url=%s">' % target, stub, old)
@@ -169,12 +167,25 @@ class EnglishOnlyPages(unittest.TestCase):
             self.assertNotIn("<loc>https://ipe.rest/%s</loc>" % gone, sm)
 
     def test_privacy_old_addresses_are_one_hop_stubs(self):
-        for old, target in (("privacy", "/legal/privacy/"), ("en/privacy", "/legal/privacy/"), ("ko/privacy", "/ko/legal/privacy/")):
+        for old, target in (("privacy", "/en/legal/privacy/"), ("en/privacy", "/en/legal/privacy/"), ("ko/privacy", "/ko/legal/privacy/")):
             stub = read_old(old)
             self.assertIn('<link rel="canonical" href="https://ipe.rest%s">' % target, stub, old)
             self.assertIn('content="0; url=%s"' % target, stub, old)
             self.assertIn('location.replace("%s")' % target, stub, old)
             self.assertNotIn("<main", stub, old)
+
+    def test_legal_chooser_and_six_addresses(self):
+        for p in ("privacy", "terms"):
+            chooser = (ROOT / "legal" / p / "index.html").read_text(encoding="utf-8")
+            self.assertIn('href="/ko/legal/%s/"' % p, chooser, p)
+            self.assertIn('href="/en/legal/%s/"' % p, chooser, p)
+            self.assertIn(V1_EFFECTIVE, chooser, p)
+            for lang in ("en", "ko"):
+                out = read(p, lang)
+                self.assertIn('<html lang="%s"' % lang, out, (p, lang))
+                self.assertIn(V1_EFFECTIVE, out, (p, lang))
+                self.assertNotRegex(out, r"2FA|2단계", (p, lang))
+                self.assertIn('href="%s"' % pages_sync.LEGAL_PATH[(p, "ko" if lang == "en" else "en")], out, (p, lang))
 
     def test_legal_bodies_are_the_v1_text(self):
         """The /legal/ pages are scripts/legal_src/* (v1.0 text converted from the _ipe md) with only the address paths rewritten — never a template."""
@@ -183,6 +194,7 @@ class EnglishOnlyPages(unittest.TestCase):
             out = read(p, lang)
             for a, b in pages_sync.LEGAL_REWRITE:
                 src = src.replace(a, b)
+            out = re.sub(r'<p class="legal-switch".*?</p>\n', "", out, count=1, flags=re.S)
             self.assertEqual(out, src, (p, lang))
             self.assertNotRegex(out, r"\{시행일\}")
             for bad in ("후보", "candidate", "확인 필요", "[confirm", "Status: v1.0", "상태: v1.0"):
@@ -200,7 +212,7 @@ class EnglishOnlyPages(unittest.TestCase):
 
     def test_every_privacy_language_links_to_the_english_terms(self):
         for lang in PL("privacy"):
-            want = {"en": 'href="/legal/terms/"', "ko": 'href="/ko/legal/terms/"'}.get(lang, 'href="/en/terms/"')
+            want = {"en": 'href="/en/legal/terms/"', "ko": 'href="/ko/legal/terms/"'}.get(lang, 'href="/en/terms/"')
             self.assertIn(want, read("privacy", lang), lang)
             self.assertNotIn('href="/%s/terms/"' % lang if lang != "en" else "x\0", read("privacy", lang), lang)
 
@@ -243,7 +255,7 @@ class InfoPageShellSeo(unittest.TestCase):
             self.assertIn(pages_sync.page_url(p, "en"), locs, p)
         for gone in ("privacy/", "en/privacy/", "ko/privacy/", "terms/", "en/terms/", "ko/terms/"):  # stubs are not listed
             self.assertNotIn("%s/%s" % (self.SITE, gone), locs, gone)
-        for want in ("legal/privacy/", "legal/terms/", "ko/legal/privacy/", "ko/legal/terms/"):
+        for want in ("en/legal/privacy/", "en/legal/terms/", "ko/legal/privacy/", "ko/legal/terms/"):
             self.assertIn("%s/%s" % (self.SITE, want), locs, want)
         for u in root.findall(SM + "url"):
             if re.search(r"/(about|contact|privacy)/$", u.find(SM + "loc").text):
@@ -317,7 +329,7 @@ class XDefaultSeo(unittest.TestCase):
         n = 0
         for f in sorted(ROOT.glob("*/index.html")) + sorted(ROOT.glob("*/*/index.html")) + sorted(ROOT.glob("journal/*/*/index.html")):
             rel = f.relative_to(ROOT).as_posix()
-            if rel.split("/")[0] in ("scripts", "tests", "fonts", ".git") or rel in self.roots():
+            if rel.split("/")[0] in ("scripts", "tests", "fonts", ".git", "legal") or rel in self.roots():
                 continue
             h = f.read_text(encoding="utf-8")
             t = re.search(r"<title>(.*?)</title>", h)

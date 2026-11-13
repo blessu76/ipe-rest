@@ -50,8 +50,12 @@ LEGAL_REWRITE = (("/en/privacy/", "/en/legal/privacy/"), ("/ko/privacy/", "/ko/l
 LEGAL_STUBS = (("privacy", "en", "Privacy policy — ipe()", "/en/legal/privacy/"), ("en/privacy", "en", "Privacy policy — ipe()", "/en/legal/privacy/"),
                ("ko/privacy", "ko", "개인정보처리방침 — ipe()", "/ko/legal/privacy/"), ("terms", "en", "Terms of use — ipe()", "/en/legal/terms/"),
                ("en/terms", "en", "Terms of use — ipe()", "/en/legal/terms/"), ("ko/terms", "ko", "이용약관 — ipe()", "/ko/legal/terms/"))
-LEGAL_STUBS += tuple((l + "/privacy", "en", "Privacy policy — ipe()", "/en/legal/privacy/")
-                     for l in ("ja", "es", "pt-BR", "fr", "de", "id", "ar", "hi", "ru", "zh"))  # pre-v1.0 translations retired
+# every other language (live + retired): /<lang>/legal/<page>/ and the old /<lang>/<page>/ forward to the English text (noindex stubs, not in the sitemap)
+STUB_LANGS = [l for l in PAGE_LANGS if l not in ("en", "ko")]
+LEGAL_STUBS += tuple((pre + l + sub, "en", t, tg) for l in STUB_LANGS for sub in ("/privacy", "/terms")
+                     for pre in ("", ) for t, tg in [(("Privacy policy — ipe()", "/en/legal/privacy/") if sub == "/privacy" else ("Terms of use — ipe()", "/en/legal/terms/"))])
+LEGAL_STUBS += tuple((l + "/legal" + sub, "en", t, tg) for l in STUB_LANGS for sub in ("/privacy", "/terms")
+                     for t, tg in [(("Privacy policy — ipe()", "/en/legal/privacy/") if sub == "/privacy" else ("Terms of use — ipe()", "/en/legal/terms/"))])
 
 
 def page_url(page, lang=None):
@@ -217,12 +221,12 @@ def render_redirect(p, data):
         "</head>", "<body>", '<p><a href="/en/%s/">%s</a></p>' % (p, esc(en["title"])), "</body>", "</html>", ""])
 
 
-def render_stub(title, lang, target):
+def render_stub(title, lang, target, noindex=False):
     """Old legal address -> straight to the /legal/ page (meta refresh + JS replace, canonical = the target)."""
     return "\n".join([
         "<!DOCTYPE html>", '<html lang="%s" dir="ltr">' % lang, "<head>", '<meta charset="utf-8">',
         '<meta name="viewport" content="width=device-width, initial-scale=1">', "<title>%s</title>" % esc(title),
-        '<link rel="canonical" href="%s%s">' % (SITE, target), '<meta http-equiv="refresh" content="0; url=%s">' % target,
+        '<link rel="canonical" href="%s%s">' % (SITE, target), *(['<meta name="robots" content="noindex,follow">'] if noindex else []), '<meta http-equiv="refresh" content="0; url=%s">' % target,
         '<script>location.replace("%s");</script>' % target, "</head>", "<body>", '<p><a href="%s">%s</a></p>' % (target, esc(title)), "</body>", "</html>", ""])
 
 
@@ -286,7 +290,7 @@ def build():
         else:
             writes[ROOT / p / "index.html"] = render_chooser(p, data, ui)
     for path, lang, title, target in LEGAL_STUBS:
-        writes[ROOT / path / "index.html"] = render_stub(title, lang, target)
+        writes[ROOT / path / "index.html"] = render_stub(title, lang, target, noindex=path.split('/')[0] in STUB_LANGS)
     sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     if "<!-- pages:start -->" not in sm:  # first run: replace the three hand-written <url> entries
         sm = re.sub(r'  <url>\n    <loc>https://ipe\.rest/(?:about|contact|privacy)/</loc>.*?</url>\n', "", sm, flags=re.S)

@@ -168,8 +168,13 @@ class EnglishOnlyPages(unittest.TestCase):
             self.assertNotIn("<main", stub, old)
             self.assertNotRegex(stub, r"noindex")
         for lang in LANGS:
-            if lang not in ("en", "ko"):
-                self.assertFalse((ROOT / lang / "terms").exists(), lang)
+            if lang not in ("en", "ko"):  # other languages: noindex 1-hop stubs to the English text, old and /legal/ addresses
+                for sub in ("terms", "legal/terms"):
+                    stub = (ROOT / lang / sub / "index.html").read_text(encoding="utf-8")
+                    self.assertIn('<meta http-equiv="refresh" content="0; url=/en/legal/terms/">', stub, (lang, sub))
+                    self.assertIn('<link rel="canonical" href="https://ipe.rest/en/legal/terms/">', stub, (lang, sub))
+                    self.assertIn('<meta name="robots" content="noindex,follow">', stub, (lang, sub))
+                    self.assertNotIn("<main", stub, (lang, sub))
         sm = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
         for url in (en, ko):
             self.assertIn("<loc>%s</loc>" % url, sm)

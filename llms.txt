@@ -345,8 +345,9 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - Français [fr] (AI translation): https://ipe.rest/fr/privacy/
   - Deutsch [de] (AI translation): https://ipe.rest/de/privacy/
   - Bahasa Indonesia [id] (AI translation): https://ipe.rest/id/privacy/
-- Terms (English only): https://ipe.rest/legal/terms/ — terms of use for ipe.rest and its subdomains (English only): acceptable use, content ownership, AI-assisted writing, third-party ads and links, liability
+- Terms (English and Korean): https://ipe.rest/legal/terms/ — terms of use for ipe.rest, its subdomains and the mobile apps (English and Korean): acceptable use, content ownership, AI-assisted writing, third-party ads and links, liability
   - English [en]: https://ipe.rest/legal/terms/
+  - 한국어 [ko]: https://ipe.rest/ko/legal/terms/
 <!-- pages:llms:end -->
 
 ## Links

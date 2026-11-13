@@ -44,14 +44,13 @@ esc = J.esc
 
 # Legal pages live at fixed /legal/ addresses. Their bodies are the current live texts, kept verbatim in scripts/legal_src/ (copied from
 # the site before the move; edit the text THERE). Only the paths below are rewritten at build time — no placeholders, no template.
-LEGAL_PATH = {("privacy", "en"): "/legal/privacy/", ("privacy", "ko"): "/ko/legal/privacy/", ("terms", "en"): "/legal/terms/"}
-LEGAL_SRC = {("privacy", "en"): "privacy.en.html", ("privacy", "ko"): "privacy.ko.html", ("terms", "en"): "terms.en.html"}
-LEGAL_REWRITE = (("/en/privacy/", "/legal/privacy/"), ("/ko/privacy/", "/ko/legal/privacy/"), ("/en/terms/", "/legal/terms/"))
+LEGAL_PATH = {("privacy", "en"): "/legal/privacy/", ("privacy", "ko"): "/ko/legal/privacy/", ("terms", "en"): "/legal/terms/", ("terms", "ko"): "/ko/legal/terms/"}
+LEGAL_SRC = {("privacy", "en"): "privacy.en.html", ("privacy", "ko"): "privacy.ko.html", ("terms", "en"): "terms.en.html", ("terms", "ko"): "terms.ko.html"}
+LEGAL_REWRITE = (("/en/privacy/", "/legal/privacy/"), ("/ko/privacy/", "/ko/legal/privacy/"), ("/en/terms/", "/legal/terms/"), ("/ko/terms/", "/ko/legal/terms/"))
 # old addresses -> 1-hop stubs: (path, lang, title, target)
 LEGAL_STUBS = (("privacy", "en", "Privacy policy — ipe()", "/legal/privacy/"), ("en/privacy", "en", "Privacy policy — ipe()", "/legal/privacy/"),
                ("ko/privacy", "ko", "개인정보처리방침 — ipe()", "/ko/legal/privacy/"), ("terms", "en", "Terms of use — ipe()", "/legal/terms/"),
-               ("en/terms", "en", "Terms of use — ipe()", "/legal/terms/"), ("ko/terms", "ko", "이용약관 — ipe()", "/legal/terms/"),
-               ("ko/legal/terms", "ko", "이용약관 — ipe()", "/legal/terms/"))
+               ("en/terms", "en", "Terms of use — ipe()", "/legal/terms/"), ("ko/terms", "ko", "이용약관 — ipe()", "/ko/legal/terms/"))
 
 
 def page_url(page, lang=None):
@@ -88,6 +87,8 @@ def load():
         s = (ROOT / "scripts" / "pages_src" / (p + ".html")).read_text(encoding="utf-8")
         srcs[p] = s
         data[p] = {l: split_source(s, l) for l in (("en",) if p in EN_ONLY else J.ORIG_LANGS)}
+        if p == "terms":
+            data[p]["ko"] = {}  # /ko/legal/terms/ body comes from legal_src (no pages_src section); listed for sitemap/hreflang/llms
         for l in TR:
             f = ROOT / "scripts" / "pages_i18n" / p / (J.K.legacy_code(l) + ".json")
             if f.exists():
@@ -236,9 +237,9 @@ def llms_block(data):
     desc = {"about": "who runs ipe() (Davy Kim, ipe Studio, Seoul) and what the studio does",
             "contact": "ipe.haven@gmail.com (replies within 10 days)",
             "privacy": "applies to ipe.rest and all *.ipe.rest subdomains: Google Analytics, Google AdSense advertising, cookies and consent, language preference stored in the browser, email correspondence, how to request access or deletion",
-            "terms": "terms of use for ipe.rest and its subdomains (English only): acceptable use, content ownership, AI-assisted writing, third-party ads and links, liability"}
+            "terms": "terms of use for ipe.rest, its subdomains and the mobile apps (English and Korean): acceptable use, content ownership, AI-assisted writing, third-party ads and links, liability"}
     for p in PAGES:
-        lines.append("- %s (%s): %s — %s" % (p.capitalize(), "English only" if p in EN_ONLY else "%d languages, one static page per language" % len(langs_of(data, p)), page_url(p, "en"), desc[p]))
+        lines.append("- %s (%s): %s — %s" % (p.capitalize(), "English and Korean" if p in EN_ONLY else "%d languages, one static page per language" % len(langs_of(data, p)), page_url(p, "en"), desc[p]))
         lines += ["  - %s [%s]%s: %s" % (J.NATIVE[l], l, " (AI translation)" if l in TR else "", page_url(p, l)) for l in langs_of(data, p)]
     lines.append("<!-- pages:llms:end -->")
     return "\n".join(lines)

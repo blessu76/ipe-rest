@@ -3926,6 +3926,17 @@
     <priority>0.5</priority>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/legal/terms/"/>
     <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/legal/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/legal/terms/"/>
+    <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
+  </url>
+  <url>
+    <loc>https://ipe.rest/ko/legal/terms/</loc>
+    <lastmod>2026-11-06</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ipe.rest/legal/terms/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://ipe.rest/legal/terms/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://ipe.rest/ko/legal/terms/"/>
     <image:image><image:loc>https://ipe.rest/og-image.png</image:loc></image:image>
   </url>
   <!-- pages:end -->

@@ -157,14 +157,15 @@ class JournalGeo(unittest.TestCase):
             pages += [ROOT / "journal" / l / slug_of(f) / "index.html" for l in journal_sync.I18N.LANGS]
         for f in pages:
             src = f.read_text(encoding="utf-8")
-            m = re.search(r'<header class="topbar">.*?<select class="lang" data-lang-select[^>]*>(.*?)</select>.*?</header>', src, re.S)
+            m = re.search(r'<header class="topbar">.*?<select class="ipe-lang__select"[^>]*>(.*?)</select>.*?</header>', src, re.S)
             self.assertIsNotNone(m, f)
             opts = re.findall(r'<option value="([^"]*)"([^>]*)>', m.group(1))
             real = [v for v, _ in opts if v]
             self.assertEqual(len(real), len(journal_sync.I18N.LANGS), f)  # the picker lists all 12 (every one has a page)
             for v in real:  # every option is an existing static page (no 404 / empty page)
                 self.assertTrue((ROOT / v.lstrip("/") / "index.html").is_file(), (f, v))
-            selected = [v for v, a in opts if "selected" in a and "disabled" not in a]
+            self.assertNotIn("data-lang-select", src)
+            selected = [v for v, a in opts if "selected" in a and "disabled" not in a and v]
             if f.parent.name in journal_sync.I18N.LANGS or f.parent.parent.name in journal_sync.I18N.LANGS:
                 lang = f.parent.name if f.parent.name in journal_sync.I18N.LANGS else f.parent.parent.name
                 self.assertEqual(selected, [v for v in real if v.startswith("/journal/%s/" % lang)], f)
@@ -177,7 +178,7 @@ class JournalGeo(unittest.TestCase):
         i = js.index("hasAttribute('data-chooser')")
         block = js[i:js.index("// GA4")]
         self.assertIn("get('lang')", block)
-        self.assertLess(block.index("get('lang')"), block.index("localStorage.getItem('ipe_lang')"))  # ?lang= beats the stored choice
+        self.assertIn("localStorage.setItem('ipe_lang'", block)  # ?lang= is remembered; the redirect itself is the kit ipe-lang.js
         chooser = (ROOT / "journal" / "index.html").read_text(encoding="utf-8")
         self.assertIn("data-chooser", chooser)
         self.assertIn("journal.js?v=%s" % journal_sync.I18N.VER_JS, chooser)

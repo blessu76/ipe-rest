@@ -127,10 +127,11 @@ footer{padding:24px 0 40px;border-top:1px solid var(--line);color:var(--muted);f
 footer a{color:inherit}
 @font-face{font-family:"Inter";font-weight:400;font-display:swap;src:url("/fonts/inter-400.woff2?v=23") format("woff2")}
 @font-face{font-family:"JetBrains Mono";font-weight:400;font-display:swap;src:url("/fonts/jbmono-400.woff2?v=23") format("woff2")}
+header .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}header .tagline{margin-top:0}.ipe-lang{margin-inline-start:auto}.ipe-lang__label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}.ipe-lang__select{max-width:min(48vw,190px);min-height:44px;padding:0 10px;font:600 12px ui-monospace,Menlo,monospace;color:var(--cobalt);background:transparent;border:1px solid var(--line);border-radius:0;cursor:pointer}
 </style>
 </head>
 <body>
-<header><div class="wrap"><a class="logo" href="/" aria-label="ipe() home">ipe()</a><span class="tagline">when the process finally rests</span></div></header>
+<header><div class="wrap"><a class="logo" href="/" aria-label="ipe() home">ipe()</a><span class="tagline">when the process finally rests</span><div class="ipe-lang"><label class="ipe-lang__label" for="ipe-lang-select">Language</label><select class="ipe-lang__select" id="ipe-lang-select" aria-label="Language" onchange="var o=this.options[this.selectedIndex];try{localStorage.setItem(&#x27;ipe_lang&#x27;,o.lang)}catch(e){}if(o.value)location.href=o.value"><option value="" lang="" selected disabled>Language</option><option value="/en/" lang="en">English</option><option value="/ko/" lang="ko">한국어</option><option value="/ja/" lang="ja">日本語</option><option value="/zh-Hant/" lang="zh-Hant">繁體中文</option><option value="/es/" lang="es">Español</option><option value="/pt-BR/" lang="pt-BR">Português (Brasil)</option><option value="/fr/" lang="fr">Français</option><option value="/de/" lang="de">Deutsch</option><option value="/id/" lang="id">Bahasa Indonesia</option><option value="/th/" lang="th">ไทย</option><option value="/vi/" lang="vi">Tiếng Việt</option><option value="/tr/" lang="tr">Türkçe</option></select><noscript><nav class="ipe-lang__links" aria-label="Language"><a href="/en/" hreflang="en" aria-current="page">English</a><a href="/ko/" hreflang="ko">한국어</a><a href="/ja/" hreflang="ja">日本語</a><a href="/zh-Hant/" hreflang="zh-Hant">繁體中文</a><a href="/es/" hreflang="es">Español</a><a href="/pt-BR/" hreflang="pt-BR">Português (Brasil)</a><a href="/fr/" hreflang="fr">Français</a><a href="/de/" hreflang="de">Deutsch</a><a href="/id/" hreflang="id">Bahasa Indonesia</a><a href="/th/" hreflang="th">ไทย</a><a href="/vi/" hreflang="vi">Tiếng Việt</a><a href="/tr/" hreflang="tr">Türkçe</a></nav></noscript></div></div></header>
 <main class="wrap">
   <h1>Choose your language</h1>
   <p class="lede">ipe() — quiet things for busy minds. A small AI-native studio in Seoul. The home page is available in 12 languages.</p>
@@ -188,34 +189,20 @@ if ('serviceWorker' in navigator) {
   });
 }
 </script>
+<script src="/shared/ipe-lang.js?v=1-db7589a7" data-redirect defer></script>
 <script>
 (function () {
+  // the redirect (saved ipe_lang choice > browser language > en; crawlers stay) is the kit's ipe-lang.js above; this page only remembers
+  // a click on a language and an old ?lang=xx link (ipe-lang.js then sends the visitor there)
   var VALID = ["en", "ko", "ja", "zh-Hant", "es", "pt-BR", "fr", "de", "id", "th", "vi", "tr"];
-  var h = location.hash || '';
-  function norm(v) { return String(v || '').toLowerCase().split(/[-_]/)[0]; }  // ko-KR -> ko
-  function go(l) { location.replace('/' + l + '/' + h); }
   var links = document.querySelectorAll('.lg');
   for (var k = 0; k < links.length; k++) links[k].addEventListener('click', function () {
     try { localStorage.setItem('ipe_lang', this.getAttribute('hreflang')); } catch (e) {}
   });
-  // language order (common to every ipe site): 1 URL (?lang=xx) > 2 the user's saved choice > 3 browser language > 4 English.
-  // This page is the x-default chooser; it only stays on screen for crawlers and for visitors without JavaScript.
-  var q = '', stored = null;
-  try { q = norm(new URLSearchParams(location.search).get('lang')); } catch (e) {}
-  if (q && VALID.indexOf(q) !== -1) { try { localStorage.setItem('ipe_lang', q); } catch (e) {} go(q); return; }
-  try { stored = localStorage.getItem('ipe_lang'); } catch (e) {}
-  if (stored && VALID.indexOf(stored) !== -1) { go(stored); return; }
-  // search/preview bots are never sent away from the chooser (it is the indexed x-default page); the browser-language
-  // redirect below is a location.replace to a different URL, so it can neither loop nor change this page's canonical
-  if (/bot|crawl|spider|slurp|facebookexternalhit|lighthouse|preview/i.test(navigator.userAgent || '')) return;
   try {
-    var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
-    for (var i = 0; i < list.length; i++) {
-      var c = norm(list[i]);
-      if (VALID.indexOf(c) !== -1) { go(c); return; }
-    }
+    var q = String(new URLSearchParams(location.search).get('lang') || '').toLowerCase().split(/[-_]/)[0];
+    for (var i = 0; i < VALID.length; i++) if (VALID[i].toLowerCase().split('-')[0] === q) { localStorage.setItem('ipe_lang', VALID[i]); break; }
   } catch (e) {}
-  go('en');
 })();
 </script>
 </body>

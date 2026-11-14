@@ -627,6 +627,7 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
 .pn-head{margin:28px 0 8px}
 .pn-list li{margin:0;border-bottom:1px solid var(--hair);font:400 16px/1.5 var(--sans)}
 .pn-list a{display:block;padding:12px 0;min-height:var(--tap)}
+.ipe-lang{display:inline-flex;align-items:center;max-width:100%}.ipe-lang__label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.ipe-lang__select{max-width:min(48vw,190px);min-height:var(--tap);padding:0 10px;font:600 12px var(--mono);letter-spacing:.02em;color:var(--cobalt);background:transparent;border:1px solid var(--line);border-radius:0;cursor:pointer;text-overflow:ellipsis}.ipe-lang__select:hover{border-color:var(--cobalt)}.ipe-lang__select:focus-visible{border-color:var(--cobalt);outline:2px solid var(--cobalt);outline-offset:3px}.ipe-lang__links a{color:var(--cobalt)}
 </style>
 </head>
 <body>
@@ -635,20 +636,7 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
   <a class="logo ltr" href="/vi/" aria-label="trang chủ ipe()">ipe()</a>
   <div class="top-right">
     <nav aria-label="Primary"><a class="opt" href="/vi/">trang chủ</a><a href="/journal/vi/" aria-current="page">nhật ký</a></nav>
-    <label class="language"><span class="sr-only">Ngôn ngữ</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg><select class="lang" data-lang-select aria-label="Ngôn ngữ">
-      <option value="/journal/en/" lang="en">EN</option>
-      <option value="/journal/ko/" lang="ko">KO</option>
-      <option value="/journal/ja/" lang="ja">JA</option>
-      <option value="/journal/zh-Hant/" lang="zh-Hant">ZH-HANT</option>
-      <option value="/journal/es/" lang="es">ES</option>
-      <option value="/journal/pt-BR/" lang="pt-BR">PT-BR</option>
-      <option value="/journal/fr/" lang="fr">FR</option>
-      <option value="/journal/de/" lang="de">DE</option>
-      <option value="/journal/id/" lang="id">ID</option>
-      <option value="/journal/th/" lang="th">TH</option>
-      <option value="/journal/vi/" lang="vi" selected>VI</option>
-      <option value="/journal/tr/" lang="tr">TR</option>
-    </select></label>
+    <div class="ipe-lang"><label class="ipe-lang__label" for="ipe-lang-select">Ngôn ngữ</label><select class="ipe-lang__select" id="ipe-lang-select" aria-label="Ngôn ngữ" onchange="var o=this.options[this.selectedIndex];try{localStorage.setItem(&#x27;ipe_lang&#x27;,o.lang)}catch(e){}if(o.value)location.href=o.value"><option value="/journal/en/" lang="en">English</option><option value="/journal/ko/" lang="ko">한국어</option><option value="/journal/ja/" lang="ja">日本語</option><option value="/journal/zh-Hant/" lang="zh-Hant">繁體中文</option><option value="/journal/es/" lang="es">Español</option><option value="/journal/pt-BR/" lang="pt-BR">Português (Brasil)</option><option value="/journal/fr/" lang="fr">Français</option><option value="/journal/de/" lang="de">Deutsch</option><option value="/journal/id/" lang="id">Bahasa Indonesia</option><option value="/journal/th/" lang="th">ไทย</option><option value="/journal/vi/" lang="vi" selected>Tiếng Việt</option><option value="/journal/tr/" lang="tr">Türkçe</option></select><noscript><nav class="ipe-lang__links" aria-label="Ngôn ngữ"><a href="/journal/en/" hreflang="en">English</a><a href="/journal/ko/" hreflang="ko">한국어</a><a href="/journal/ja/" hreflang="ja">日本語</a><a href="/journal/zh-Hant/" hreflang="zh-Hant">繁體中文</a><a href="/journal/es/" hreflang="es">Español</a><a href="/journal/pt-BR/" hreflang="pt-BR">Português (Brasil)</a><a href="/journal/fr/" hreflang="fr">Français</a><a href="/journal/de/" hreflang="de">Deutsch</a><a href="/journal/id/" hreflang="id">Bahasa Indonesia</a><a href="/journal/th/" hreflang="th">ไทย</a><a href="/journal/vi/" hreflang="vi" aria-current="page">Tiếng Việt</a><a href="/journal/tr/" hreflang="tr">Türkçe</a></nav></noscript></div>
   </div>
 </header>
 
@@ -860,7 +848,8 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
     </nav>
   </div>
 </footer>
-<script src="/journal/journal.js?v=8" defer></script>
+<script src="/journal/journal.js?v=9" defer></script>
+<script src="/shared/ipe-lang.js?v=1-db7589a7" defer></script>
 <script>/* ipe-localtime v2 · 정본 ipe-rest/shared/ipe-localtime.js · 사본은 바이트 그대로 */
 /* time[data-ipe-time] 의 datetime(+09:00)을 보는 기기 시간대로 바꿔 보인다. 실패하면 정적 KST 글자를 그대로 둔다. */
 /* v2: 오프셋 없는/잘못된 datetime 은 건너뜀 · 그레고리력·라틴 숫자 고정 */

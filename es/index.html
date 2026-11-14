@@ -156,11 +156,6 @@ img,svg{max-width:100%}
 .nav a .num{font:12px var(--mono);color:var(--cobalt)}
 .nav a:after{content:"";position:absolute;inset-inline:12px;bottom:8px;height:1px;background:var(--cobalt);transform:scaleX(0);transform-origin:left;transition:transform .25s}
 .nav a:hover:after,.nav a:focus-visible:after{transform:scaleX(1)}
-.language{display:inline-flex;align-items:center;gap:6px;min-height:var(--tap);padding:0 12px;border:1px solid var(--line);color:var(--cobalt);font:600 12px var(--mono);cursor:pointer}
-.language:hover{border-color:var(--cobalt)}
-.language:focus-within{border-color:var(--cobalt);outline:2px solid var(--cobalt);outline-offset:3px}
-.language svg{width:14px;height:14px;flex:none}
-.language select{appearance:none;-webkit-appearance:none;border:0;background:transparent;color:var(--cobalt);outline:0;cursor:pointer;min-height:var(--tap);padding:0 2px;letter-spacing:.06em}
 .menu-btn{display:none;width:var(--tap);height:var(--tap);place-items:center;border:1px solid var(--line);background:var(--sheet);color:var(--ink);cursor:pointer;padding:0}
 .menu-btn svg{width:18px;height:18px}
 .site-head.is-open .menu-btn .i-open,.menu-btn .i-close{display:none}
@@ -344,14 +339,16 @@ img,svg{max-width:100%}
   .spec{grid-template-columns:minmax(0,1fr)}
   .band-left{flex-direction:column;align-items:flex-start;gap:16px}
   .band .slash{width:72px;height:44px}
-  .language{padding:0 8px}
-}
+  }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important;animation-duration:.01ms!important}}
 </style>
 
 <!-- Cloudflare Web Analytics -->
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token": "fc0a8475fd6c49299c632d6023a40a3a"}'></script>
 <!-- End Cloudflare Web Analytics -->
+<style>
+.ipe-lang{display:inline-flex;align-items:center;max-width:100%}.ipe-lang__label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.ipe-lang__select{max-width:min(48vw,190px);min-height:var(--tap);padding:0 10px;font:600 12px var(--mono);letter-spacing:.02em;color:var(--cobalt);background:transparent;border:1px solid var(--line);border-radius:0;cursor:pointer;text-overflow:ellipsis}.ipe-lang__select:hover{border-color:var(--cobalt)}.ipe-lang__select:focus-visible{border-color:var(--cobalt);outline:2px solid var(--cobalt);outline-offset:3px}.ipe-lang__links a{color:var(--cobalt)}
+</style>
 </head>
 <body>
 
@@ -366,24 +363,7 @@ img,svg{max-width:100%}
       <a href="#things"><span class="num ltr" aria-hidden="true">02</span><span data-i18n="nav_things">lo que hacemos</span></a>
       <a href="/journal/es/"><span class="num ltr" aria-hidden="true">03</span><span data-i18n="nav_journal">diario</span></a>
     </nav>
-    <label class="language" title="Language / 언어">
-      <span class="sr-only">Language</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>
-      <select class="lang" id="lang" aria-label="Language / 언어">
-        <option value="en">EN</option>
-        <option value="ko">KO</option>
-        <option value="ja">JA</option>
-        <option value="zh-Hant">ZH-HANT</option>
-        <option value="es" selected>ES</option>
-        <option value="pt-BR">PT-BR</option>
-        <option value="fr">FR</option>
-        <option value="de">DE</option>
-        <option value="id">ID</option>
-        <option value="th">TH</option>
-        <option value="vi">VI</option>
-        <option value="tr">TR</option>
-      </select>
-    </label>
+    <div class="ipe-lang"><label class="ipe-lang__label" for="ipe-lang-select">Idioma</label><select class="ipe-lang__select" id="ipe-lang-select" aria-label="Idioma" onchange="var o=this.options[this.selectedIndex];try{localStorage.setItem(&#x27;ipe_lang&#x27;,o.lang)}catch(e){}if(o.value)location.href=o.value"><option value="/en/" lang="en">English</option><option value="/ko/" lang="ko">한국어</option><option value="/ja/" lang="ja">日本語</option><option value="/zh-Hant/" lang="zh-Hant">繁體中文</option><option value="/es/" lang="es" selected>Español</option><option value="/pt-BR/" lang="pt-BR">Português (Brasil)</option><option value="/fr/" lang="fr">Français</option><option value="/de/" lang="de">Deutsch</option><option value="/id/" lang="id">Bahasa Indonesia</option><option value="/th/" lang="th">ไทย</option><option value="/vi/" lang="vi">Tiếng Việt</option><option value="/tr/" lang="tr">Türkçe</option></select><noscript><nav class="ipe-lang__links" aria-label="Idioma"><a href="/en/" hreflang="en">English</a><a href="/ko/" hreflang="ko">한국어</a><a href="/ja/" hreflang="ja">日本語</a><a href="/zh-Hant/" hreflang="zh-Hant">繁體中文</a><a href="/es/" hreflang="es" aria-current="page">Español</a><a href="/pt-BR/" hreflang="pt-BR">Português (Brasil)</a><a href="/fr/" hreflang="fr">Français</a><a href="/de/" hreflang="de">Deutsch</a><a href="/id/" hreflang="id">Bahasa Indonesia</a><a href="/th/" hreflang="th">ไทย</a><a href="/vi/" hreflang="vi">Tiếng Việt</a><a href="/tr/" hreflang="tr">Türkçe</a></nav></noscript></div>
     <button class="menu-btn" id="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">
       <span class="sr-only" data-i18n="menu">Menú</span>
       <svg class="i-open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M3 7h18M3 12h18M3 17h18"/></svg>
@@ -707,6 +687,7 @@ if ('serviceWorker' in navigator) {
   } catch (e) {}
 })();
 </script>
+<script src="/shared/ipe-lang.js?v=1-db7589a7" defer></script>
 <script>
 (function () {
   var LANG = 'es';
@@ -719,11 +700,6 @@ if ('serviceWorker' in navigator) {
       location.replace('/' + q + '/' + location.hash); return;
     }
   } catch (e) {}
-  var sel = document.getElementById('lang');
-  if (sel) sel.addEventListener('change', function () {
-    try { localStorage.setItem('ipe_lang', this.value); } catch (e) {}  // saved only on an explicit choice
-    location.href = '/' + this.value + '/';
-  });
   // mobile nav (<=760px): disclosure toggle, Esc / link click closes
   var head = document.querySelector('.site-head'), btn = document.getElementById('menu-btn');
   function setMenu(open) { if (!head || !btn) return; head.classList.toggle('is-open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }

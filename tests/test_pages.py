@@ -91,7 +91,8 @@ class InfoPages(unittest.TestCase):
                 got = dict(re.findall(r'<link rel="alternate" hreflang="([^"]+)" href="([^"]+)">', src))
                 self.assertEqual(got, want, (p, lang))
                 self.assertEqual('class="ai-note"' in src, lang in pages_sync.TR, (p, lang))
-                self.assertIn('<select class="lang" data-lang-select', src)
+                self.assertIn('<select class="ipe-lang__select"', src)
+                self.assertNotIn("data-lang-select", src)
                 sel = re.findall(r'<option value="([^"]*)"[^>]* selected>', src)
                 self.assertEqual(sel, [LEGAL.get((p, lang), "/%s/%s/" % (lang, p))])
                 self.assertEqual(len(re.findall(r'<option value="/', src)), len(PL(p)))
@@ -210,6 +211,13 @@ class EnglishOnlyPages(unittest.TestCase):
             for a, b in pages_sync.LEGAL_REWRITE:
                 src = src.replace(a, b)
             out = re.sub(r'<p class="legal-switch".*?</p>\n', "", out, count=1, flags=re.S)
+            # header select (kit langswitch), its style and script are the only generated additions
+            out = re.sub(r'<div class="ipe-lang">.*?</div>', "<LANG/>", out, count=1, flags=re.S)
+            src = re.sub(r'<label class="language">.*?</label>', "<LANG/>", src, count=1, flags=re.S)
+            out = re.sub(r'<style>\n\.ipe-lang\{.*?</style>\n(?=</head>)', "", out, count=1, flags=re.S)
+            out = re.sub(r'<script src="/shared/ipe-lang\.js[^>]*></script>\n', "", out, count=1)
+            src = re.sub(r'journal\.js\?v=\w+', "journal.js", src)
+            out = re.sub(r'journal\.js\?v=\w+', "journal.js", out)
             self.assertEqual(out, src, (p, lang))
             self.assertNotRegex(out, r"\{시행일\}")
             for bad in ("후보", "candidate", "확인 필요", "[confirm", "Status: v1.0", "상태: v1.0"):
@@ -456,3 +464,9 @@ class HeaderJournalNav(unittest.TestCase):
                 m = re.search(r'<nav[^>]*aria-label="Primary"[^>]*>(.*?)</nav>', f.read_text(encoding="utf-8"), re.S)
                 self.assertIsNotNone(m, "no primary nav in %s" % f)
                 self.assertIn('href="/journal/%s/"' % lang, m.group(1), "header journal link missing: %s" % f)
+
+
+class SharedLangAsset(unittest.TestCase):
+    def test_ipe_lang_js_is_the_vendored_kit_file(self):
+        kit = (ROOT / "vendor" / "ipe_web_kit" / "assets" / "ipe-lang.js").read_bytes()
+        self.assertEqual((ROOT / "shared" / "ipe-lang.js").read_bytes(), kit)

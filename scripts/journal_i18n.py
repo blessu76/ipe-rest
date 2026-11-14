@@ -26,11 +26,12 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "vendor"))
 from ipe_web_kit import localtime as kit_localtime  # noqa: E402
 from ipe_web_kit.seo import ORG_ID, esc  # noqa: E402,F401  (web kit, pinned in vendor/ipe_web_kit/KIT_VERSION)
 from ipe_web_kit import languages as K  # noqa: E402
+from ipe_web_kit import langswitch as KL  # noqa: E402
 
 SITE = "https://ipe.rest"
 OG_IMAGE_ALT = "ipe() — quiet things for busy minds"
 VER_CSS = "10"  # journal.css is inlined into the generated pages (css_inline); this version only labels the sw.js core cache entry — bump with it
-VER_JS = "8"
+VER_JS = "9"
 ASSET_VER = "23"
 
 SKELETON = "_skeleton"
@@ -139,22 +140,49 @@ def head_i18n(cluster, current):
     return "\n".join(lines)
 
 
-GLOBE = ('<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/>'
-         '<path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg>')
+# Header language select = the web kit's langswitch component (v0.7.2). The kit's ipe-lang.js lives at /shared/ipe-lang.js
+# (copied byte for byte from the vendored kit; tests/test_lang.py keeps it identical).
+LANG_JS = "/shared/ipe-lang.js"
+LANG_CSS = (".ipe-lang{display:inline-flex;align-items:center;max-width:100%}"
+            ".ipe-lang__label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}"
+            ".ipe-lang__select{max-width:min(48vw,190px);min-height:var(--tap);padding:0 10px;font:600 12px var(--mono);letter-spacing:.02em;"
+            "color:var(--cobalt);background:transparent;border:1px solid var(--line);border-radius:0;cursor:pointer;text-overflow:ellipsis}"
+            ".ipe-lang__select:hover{border-color:var(--cobalt)}"
+            ".ipe-lang__select:focus-visible{border-color:var(--cobalt);outline:2px solid var(--cobalt);outline-offset:3px}"
+            ".ipe-lang__links a{color:var(--cobalt)}")
+LANG_STYLE = "<style>\n%s\n</style>" % LANG_CSS
 
 
-def langselect(cluster, current, label):
-    """Header language select (same look/behaviour as the main page). Options are only the languages that exist for this
-    page (cluster), each a real URL; `current` None = x-default chooser (nothing selected yet). journal.js navigates on change."""
-    opts = []
+def lang_js_url():
+    return "%s?v=%s" % (LANG_JS, KL.asset_version())
+
+
+def lang_script(redirect=False):
+    """The kit's <script> for ipe-lang.js. redirect=True (x-default root/chooser pages only): ipe_lang choice > browser language > en."""
+    return KL.script({"js": lang_js_url()}, redirect=redirect)
+
+
+def kit_select(current, href, langs, placeholder=False):
+    """Kit langswitch select. `current` not in `langs` (a retired language such as zh/ru/ar/hi that still has real pages) is added
+    with an empty value so its own page stays selectable-looking but navigates nowhere. `current` None = chooser page: a
+    placeholder option is selected so ipe-lang.js redirects to the chosen/browser language (English included)."""
+    langs = list(langs)
     if current is None:
-        opts.append('<option value="" selected disabled>%s</option>' % esc(label))
-    for h, u in cluster:
-        if h == "x-default":
-            continue
-        opts.append('<option value="%s" lang="%s"%s>%s</option>' % (esc(u.replace(SITE, "")), h, " selected" if h == current else "", h.upper()))
-    return ('<label class="language"><span class="sr-only">%s</span>%s<select class="lang" data-lang-select aria-label="%s">\n      %s\n    </select></label>'
-            % (esc(label), GLOBE, esc(label), "\n      ".join(opts)))
+        base = langs[0] if "en" not in langs else "en"
+        out = KL.select_html(base, href, langs)
+        out = out.replace(" selected>", ">", 1)
+        return out.replace("<option ", '<option value="" lang="" selected disabled>%s</option><option ' % KL.esc(KL.LABEL["en"]), 1)
+    if current not in langs:
+        langs.append(current)
+        h = href
+        href = lambda l: "" if l == current else h(l)  # noqa: E731
+    return KL.select_html(current, href, langs)
+
+
+def langselect(cluster, current, label=None):
+    """Header language select. Options are only the languages that exist for this page (cluster), each a real URL."""
+    urls = {h: u.replace(SITE, "") for h, u in cluster if h != "x-default"}
+    return kit_select(current, lambda l: urls.get(l, ""), list(urls), placeholder=current is None)
 
 
 def load(root):
@@ -283,7 +311,7 @@ def css_inline():
         css = (Path(__file__).resolve().parent.parent / "journal" / "journal.css").read_text(encoding="utf-8")
         css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)
         css = "\n".join(l.strip() for l in css.splitlines() if l.strip())
-        _CSS_CACHE.append("<style>\n%s\n</style>" % css)
+        _CSS_CACHE.append("<style>\n%s\n%s\n</style>" % (css, LANG_CSS))
     return _CSS_CACHE[0]
 
 
@@ -457,6 +485,7 @@ def render_post(post, lang, ui, data, langs, nav=None):
         '',
         _footer(u, lang),
         '<script src="/journal/journal.js?v=%s" defer></script>' % VER_JS,
+        lang_script(),
         localtime_script(),
         '</body>',
         '</html>',
@@ -590,6 +619,7 @@ def render_list_page(lang, ui, items, list_langs):
         '',
         _footer(u, lang),
         '<script src="/journal/journal.js?v=%s" defer></script>' % VER_JS,
+        lang_script(),
         localtime_script(),
         '</body>',
         '</html>',
@@ -652,10 +682,11 @@ def _chooser_body(heading, lede, rows, ui_orig, lang, cluster, after=""):
 
 %s
 <script src="/journal/journal.js?v=%s" defer></script>
+%s
 </body>
 </html>
 """ % (esc(u["skip"]), esc(u["home_aria"]), esc(u["home"]), langselect(cluster, None, u["langs_label"]), esc(u["eyebrow"]), heading, esc(lede), items, after,
-       _footer(u, lang), VER_JS)
+       _footer(u, lang), VER_JS, lang_script(redirect=True))
 
 
 def render_chooser_post(post, ui, tr_all, langs):

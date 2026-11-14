@@ -149,11 +149,6 @@ SCRIPT = """<script>
       location.replace('/' + q + '/' + location.hash); return;
     }
   } catch (e) {}
-  var sel = document.getElementById('lang');
-  if (sel) sel.addEventListener('change', function () {
-    try { localStorage.setItem('ipe_lang', this.value); } catch (e) {}  // saved only on an explicit choice
-    location.href = '/' + this.value + '/';
-  });
   // mobile nav (<=760px): disclosure toggle, Esc / link click closes
   var head = document.querySelector('.site-head'), btn = document.getElementById('menu-btn');
   function setMenu(open) { if (!head || !btn) return; head.classList.toggle('is-open', open); btn.setAttribute('aria-expanded', open ? 'true' : 'false'); }
@@ -202,12 +197,12 @@ def render_lang(src, ui, lang, posts):
     for pg in ("about", "contact", "privacy"):
         out = out.replace('href="/%s/"' % pg, 'href="%s"' % (J.privacy_href(lang) if pg == "privacy" else "/%s/%s/" % (lang, pg)))
     out = out.replace('<a href="/en/legal/terms/" hreflang="en">', '<a href="%s"%s>' % (J.legal_href("terms", lang), J.legal_hreflang(lang)))
-    opts = "\n".join('        <option value="%s"%s>%s</option>' % (l, " selected" if l == lang else "", l.upper())
-                     for l in (LANGS if lang in LANGS else LANGS + [lang]))
-    out = sub1(out, r'<!-- home:options -->', opts)
+    sel = J.kit_select(lang, lambda l: "/%s/" % l, LANGS)
+    out = sub1(out, r'<!-- home:lang -->', sel)
+    out = sub1(out, r'</head>', J.LANG_STYLE + "\n</head>")
     out = sub1(out, r'<!-- home:journal -->\n', journal_section(posts, lang, jui_ai[lang], d))
     out = sub1(out, r'<!-- home:localtime -->', J.localtime_script() if "data-ipe-time" in out else "")
-    out = sub1(out, r'<!-- home:script -->', SCRIPT % {"lang": lang, "langs": json.dumps(LANGS)})
+    out = sub1(out, r'<!-- home:script -->', J.lang_script() + "\n" + SCRIPT % {"lang": lang, "langs": json.dumps(LANGS)})
     return J.localize_sibling_links(out, lang)
 
 
@@ -284,10 +279,11 @@ def render_chooser(src, ui):
 </script>
 <style>
 %(css)s
+%(lang_css)s
 </style>
 </head>
 <body>
-<header><div class="wrap"><a class="logo" href="/" aria-label="ipe() home">ipe()</a><span class="tagline">when the process finally rests</span></div></header>
+<header><div class="wrap"><a class="logo" href="/" aria-label="ipe() home">ipe()</a><span class="tagline">when the process finally rests</span>%(select)s</div></header>
 <main class="wrap">
   <h1>Choose your language</h1>
   <p class="lede">ipe() — quiet things for busy minds. A small AI-native studio in Seoul. The home page is available in %(n)s languages.</p>
@@ -299,41 +295,32 @@ def render_chooser(src, ui):
 
 %(ga)s
 %(sw)s
+%(lang_js)s
 <script>
 (function () {
+  // the redirect (saved ipe_lang choice > browser language > en; crawlers stay) is the kit's ipe-lang.js above; this page only remembers
+  // a click on a language and an old ?lang=xx link (ipe-lang.js then sends the visitor there)
   var VALID = %(langs)s;
-  var h = location.hash || '';
-  function norm(v) { return String(v || '').toLowerCase().split(/[-_]/)[0]; }  // ko-KR -> ko
-  function go(l) { location.replace('/' + l + '/' + h); }
   var links = document.querySelectorAll('.lg');
   for (var k = 0; k < links.length; k++) links[k].addEventListener('click', function () {
     try { localStorage.setItem('ipe_lang', this.getAttribute('hreflang')); } catch (e) {}
   });
-  // language order (common to every ipe site): 1 URL (?lang=xx) > 2 the user's saved choice > 3 browser language > 4 English.
-  // This page is the x-default chooser; it only stays on screen for crawlers and for visitors without JavaScript.
-  var q = '', stored = null;
-  try { q = norm(new URLSearchParams(location.search).get('lang')); } catch (e) {}
-  if (q && VALID.indexOf(q) !== -1) { try { localStorage.setItem('ipe_lang', q); } catch (e) {} go(q); return; }
-  try { stored = localStorage.getItem('ipe_lang'); } catch (e) {}
-  if (stored && VALID.indexOf(stored) !== -1) { go(stored); return; }
-  // search/preview bots are never sent away from the chooser (it is the indexed x-default page); the browser-language
-  // redirect below is a location.replace to a different URL, so it can neither loop nor change this page's canonical
-  if (/bot|crawl|spider|slurp|facebookexternalhit|lighthouse|preview/i.test(navigator.userAgent || '')) return;
   try {
-    var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language];
-    for (var i = 0; i < list.length; i++) {
-      var c = norm(list[i]);
-      if (VALID.indexOf(c) !== -1) { go(c); return; }
-    }
+    var q = String(new URLSearchParams(location.search).get('lang') || '').toLowerCase().split(/[-_]/)[0];
+    for (var i = 0; i < VALID.length; i++) if (VALID[i].toLowerCase().split('-')[0] === q) { localStorage.setItem('ipe_lang', VALID[i]); break; }
   } catch (e) {}
-  go('en');
 })();
 </script>
 </body>
 </html>
 """ % {"title": esc(title), "desc": esc(desc), "og_title": esc(title_plain), "og_desc": esc(en["meta_desc"]), "root": home_url(), "site": SITE, "img_alt": J.OG_IMAGE_ALT_ATTR, "hreflang": hreflang_block(), "alts": alts,
-       "org": org, "site_ld": site_ld, "css": CHOOSER_CSS, "items": items, "ga": ga.strip(), "sw": sw.strip(),
-       "langs": json.dumps(LANGS), "n": len(LANGS)}
+       "org": org, "site_ld": site_ld, "css": CHOOSER_CSS, "lang_css": CHOOSER_LANG_CSS, "items": items, "ga": ga.strip(), "sw": sw.strip(),
+       "langs": json.dumps(LANGS), "n": len(LANGS),
+       "select": J.kit_select(None, lambda l: "/%s/" % l, LANGS), "lang_js": J.lang_script(redirect=True)}
+
+
+CHOOSER_LANG_CSS = ("header .wrap{display:flex;flex-wrap:wrap;align-items:center;gap:8px 16px}header .tagline{margin-top:0}.ipe-lang{margin-inline-start:auto}.ipe-lang__label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}"
+                    ".ipe-lang__select{max-width:min(48vw,190px);min-height:44px;padding:0 10px;font:600 12px ui-monospace,Menlo,monospace;color:var(--cobalt);background:transparent;border:1px solid var(--line);border-radius:0;cursor:pointer}")
 
 
 def sitemap_block(lastmod=LASTMOD):

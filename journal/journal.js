@@ -1,4 +1,4 @@
-/* ipe() journal — language chooser/redirect for x-default pages (URL > saved > browser > en), EN/KO switch on the bilingual info pages (about/contact/privacy), GA4 (same property as the main page). */
+/* ipe() journal — x-default chooser (redirect = kit ipe-lang.js; here ?lang= is remembered), EN/KO switch on the bilingual info pages (about/contact/privacy), GA4 (same property as the main page). */
 (function () {
   // Translated pages (/journal/<lang>/…) are single-language static pages: no switch, <html lang> stays as served.
   if (document.querySelector('.langswitch')) {  // buttons (source template) or the header select (about/contact/privacy)
@@ -52,15 +52,6 @@
     }
   }
 
-  // Header language select (generated pages): options are real URLs of this page in each available language.
-  var picks = document.querySelectorAll('select[data-lang-select]');
-  for (var m = 0; m < picks.length; m++) picks[m].addEventListener('change', function () {
-    var o = this.options[this.selectedIndex];
-    if (!o || !o.value) return;
-    try { localStorage.setItem('ipe_lang', o.getAttribute('lang')); } catch (err) {}  // saved only on an explicit choice
-    location.href = o.value;
-  });
-
   // Journal pages: remember an explicit language choice (clicks on the language list).
   document.addEventListener('click', function (e) {
     var a = e.target.closest && e.target.closest('a.lg[hreflang]');
@@ -68,34 +59,16 @@
     try { localStorage.setItem('ipe_lang', a.getAttribute('hreflang')); } catch (err) {}
   });
 
-  // x-default chooser pages (/journal/, /about/, ... and /journal/<slug>/): the common ipe language order —
-  // 1 ?lang=xx > 2 the saved choice > 3 browser language (first match, ko-KR -> ko) > 4 English.
-  // Search/preview bots stay on the chooser (the indexed x-default page); the redirect is a location.replace to another URL,
-  // so it cannot loop.
+  // x-default chooser pages: the redirect itself is the web kit's /shared/ipe-lang.js (saved ipe_lang choice > browser language > en;
+  // crawlers never redirected). Here only `?lang=xx` (old links) is remembered, so ipe-lang.js then sends the visitor there.
   if (document.documentElement.hasAttribute('data-chooser')) {
-    var avail = {}, links = document.querySelectorAll('.choose-list a[hreflang]');
-    for (var q = 0; q < links.length; q++) avail[links[q].getAttribute('hreflang')] = links[q].getAttribute('href');
-    var norm = function (v) { return String(v || '').toLowerCase().split(/[-_]/)[0]; };
-    var want = null;
-    try {  // ?lang=xx wins over the stored choice and is remembered
-      var ql = norm(new URLSearchParams(location.search).get('lang'));
-      if (ql && avail[ql]) { want = ql; try { localStorage.setItem('ipe_lang', ql); } catch (err) {} }
-    } catch (err) {}
-    if (!want) { try { want = localStorage.getItem('ipe_lang'); } catch (err) {} }
-    if (!want || !avail[want]) {
-      want = null;
-      if (!/bot|crawl|spider|slurp|facebookexternalhit|lighthouse|preview/i.test(navigator.userAgent || '')) {
-        try {
-          var langs = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ''];
-          for (var n = 0; n < langs.length && !want; n++) {
-            var c = norm(langs[n]);
-            if (avail[c]) want = c;
-          }
-        } catch (err) {}
-        if (!want && avail.en) want = 'en';
+    try {
+      var ql = String(new URLSearchParams(location.search).get('lang') || '').toLowerCase().split(/[-_]/)[0];
+      if (ql && document.querySelector('.choose-list a[hreflang="' + ql + '"], .choose-list a[hreflang^="' + ql + '-"]')) {
+        var a0 = document.querySelector('.choose-list a[hreflang^="' + ql + '"]');
+        localStorage.setItem('ipe_lang', a0.getAttribute('hreflang'));
       }
-    }
-    if (want && avail[want]) location.replace(avail[want] + location.hash);
+    } catch (err) {}
   }
 
   if (/^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname)) return;

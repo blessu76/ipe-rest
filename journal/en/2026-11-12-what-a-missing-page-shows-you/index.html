@@ -353,6 +353,7 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
 .pn-head{margin:28px 0 8px}
 .pn-list li{margin:0;border-bottom:1px solid var(--hair);font:400 16px/1.5 var(--sans)}
 .pn-list a{display:block;padding:12px 0;min-height:var(--tap)}
+.ipe-lang{display:inline-flex;align-items:center;max-width:100%}.ipe-lang__label{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}.ipe-lang__select{max-width:min(48vw,190px);min-height:var(--tap);padding:0 10px;font:600 12px var(--mono);letter-spacing:.02em;color:var(--cobalt);background:transparent;border:1px solid var(--line);border-radius:0;cursor:pointer;text-overflow:ellipsis}.ipe-lang__select:hover{border-color:var(--cobalt)}.ipe-lang__select:focus-visible{border-color:var(--cobalt);outline:2px solid var(--cobalt);outline-offset:3px}.ipe-lang__links a{color:var(--cobalt)}
 </style>
 </head>
 <body>
@@ -361,20 +362,7 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
   <a class="logo ltr" href="/en/" aria-label="ipe() home">ipe()</a>
   <div class="top-right">
     <nav aria-label="Primary"><a class="opt" href="/en/">home</a><a href="/journal/en/">journal</a></nav>
-    <label class="language"><span class="sr-only">Languages</span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.8 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.8-3.8-9S9.5 5.5 12 3z"/></svg><select class="lang" data-lang-select aria-label="Languages">
-      <option value="/journal/en/2026-11-12-what-a-missing-page-shows-you/" lang="en" selected>EN</option>
-      <option value="/journal/ko/2026-11-12-what-a-missing-page-shows-you/" lang="ko">KO</option>
-      <option value="/journal/ja/2026-11-12-what-a-missing-page-shows-you/" lang="ja">JA</option>
-      <option value="/journal/zh-Hant/2026-11-12-what-a-missing-page-shows-you/" lang="zh-Hant">ZH-HANT</option>
-      <option value="/journal/es/2026-11-12-what-a-missing-page-shows-you/" lang="es">ES</option>
-      <option value="/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/" lang="pt-BR">PT-BR</option>
-      <option value="/journal/fr/2026-11-12-what-a-missing-page-shows-you/" lang="fr">FR</option>
-      <option value="/journal/de/2026-11-12-what-a-missing-page-shows-you/" lang="de">DE</option>
-      <option value="/journal/id/2026-11-12-what-a-missing-page-shows-you/" lang="id">ID</option>
-      <option value="/journal/th/2026-11-12-what-a-missing-page-shows-you/" lang="th">TH</option>
-      <option value="/journal/vi/2026-11-12-what-a-missing-page-shows-you/" lang="vi">VI</option>
-      <option value="/journal/tr/2026-11-12-what-a-missing-page-shows-you/" lang="tr">TR</option>
-    </select></label>
+    <div class="ipe-lang"><label class="ipe-lang__label" for="ipe-lang-select">Language</label><select class="ipe-lang__select" id="ipe-lang-select" aria-label="Language" onchange="var o=this.options[this.selectedIndex];try{localStorage.setItem(&#x27;ipe_lang&#x27;,o.lang)}catch(e){}if(o.value)location.href=o.value"><option value="/journal/en/2026-11-12-what-a-missing-page-shows-you/" lang="en" selected>English</option><option value="/journal/ko/2026-11-12-what-a-missing-page-shows-you/" lang="ko">한국어</option><option value="/journal/ja/2026-11-12-what-a-missing-page-shows-you/" lang="ja">日本語</option><option value="/journal/zh-Hant/2026-11-12-what-a-missing-page-shows-you/" lang="zh-Hant">繁體中文</option><option value="/journal/es/2026-11-12-what-a-missing-page-shows-you/" lang="es">Español</option><option value="/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/" lang="pt-BR">Português (Brasil)</option><option value="/journal/fr/2026-11-12-what-a-missing-page-shows-you/" lang="fr">Français</option><option value="/journal/de/2026-11-12-what-a-missing-page-shows-you/" lang="de">Deutsch</option><option value="/journal/id/2026-11-12-what-a-missing-page-shows-you/" lang="id">Bahasa Indonesia</option><option value="/journal/th/2026-11-12-what-a-missing-page-shows-you/" lang="th">ไทย</option><option value="/journal/vi/2026-11-12-what-a-missing-page-shows-you/" lang="vi">Tiếng Việt</option><option value="/journal/tr/2026-11-12-what-a-missing-page-shows-you/" lang="tr">Türkçe</option></select><noscript><nav class="ipe-lang__links" aria-label="Language"><a href="/journal/en/2026-11-12-what-a-missing-page-shows-you/" hreflang="en" aria-current="page">English</a><a href="/journal/ko/2026-11-12-what-a-missing-page-shows-you/" hreflang="ko">한국어</a><a href="/journal/ja/2026-11-12-what-a-missing-page-shows-you/" hreflang="ja">日本語</a><a href="/journal/zh-Hant/2026-11-12-what-a-missing-page-shows-you/" hreflang="zh-Hant">繁體中文</a><a href="/journal/es/2026-11-12-what-a-missing-page-shows-you/" hreflang="es">Español</a><a href="/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/" hreflang="pt-BR">Português (Brasil)</a><a href="/journal/fr/2026-11-12-what-a-missing-page-shows-you/" hreflang="fr">Français</a><a href="/journal/de/2026-11-12-what-a-missing-page-shows-you/" hreflang="de">Deutsch</a><a href="/journal/id/2026-11-12-what-a-missing-page-shows-you/" hreflang="id">Bahasa Indonesia</a><a href="/journal/th/2026-11-12-what-a-missing-page-shows-you/" hreflang="th">ไทย</a><a href="/journal/vi/2026-11-12-what-a-missing-page-shows-you/" hreflang="vi">Tiếng Việt</a><a href="/journal/tr/2026-11-12-what-a-missing-page-shows-you/" hreflang="tr">Türkçe</a></nav></noscript></div>
   </div>
 </header>
 
@@ -437,7 +425,8 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
     </nav>
   </div>
 </footer>
-<script src="/journal/journal.js?v=8" defer></script>
+<script src="/journal/journal.js?v=9" defer></script>
+<script src="/shared/ipe-lang.js?v=1-db7589a7" defer></script>
 <script>/* ipe-localtime v2 · 정본 ipe-rest/shared/ipe-localtime.js · 사본은 바이트 그대로 */
 /* time[data-ipe-time] 의 datetime(+09:00)을 보는 기기 시간대로 바꿔 보인다. 실패하면 정적 KST 글자를 그대로 둔다. */
 /* v2: 오프셋 없는/잘못된 datetime 은 건너뜀 · 그레고리력·라틴 숫자 고정 */

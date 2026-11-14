@@ -127,15 +127,10 @@ class HomePages(unittest.TestCase):
             self.assertIn('href="/%s/"' % lang, src)
         self.assertIn("URLSearchParams", src)
         self.assertNotIn("navigator.languages[0]", src)
-        # common ipe language order: 1 ?lang= > 2 saved choice > 3 browser language (region stripped) > 4 English
-        js = src[src.index("var VALID"):]
-        order = [js.index(x) for x in ("get('lang')", "localStorage.getItem('ipe_lang')", "navigator.languages", "go('en')")]
-        self.assertEqual(order, sorted(order))
-        self.assertIn("split(/[-_]/)[0]", js)  # ko-KR -> ko
-        self.assertIn("location.replace('/' + l + '/' + h)", js)
-        self.assertIn("localStorage.setItem('ipe_lang', q)", js)  # ?lang=xx is remembered
-        # crawlers are not sent away from the indexed chooser; the redirect only ever targets /xx/ (no loop)
-        self.assertLess(js.index("/bot|crawl|spider"), js.index("navigator.languages"))
+        # redirect = vendored kit ipe-lang.js (ipe_lang choice > browser language > en; crawlers stay); only the chooser opts in
+        self.assertRegex(src, r'<script src="/shared/ipe-lang\.js\?v=[^"]+" data-redirect defer>')
+        self.assertIn("localStorage.setItem('ipe_lang', VALID[i])", src)  # ?lang=xx is remembered
+        self.assertIn('value="" lang="" selected disabled', src)  # placeholder: every visitor (English too) is forwarded
         for lang in LANGS:  # language pages forward an old ?lang=xx too (and remember it)
             self.assertIn("URLSearchParams", page(lang))
             self.assertIn("localStorage.setItem('ipe_lang', q)", page(lang))
@@ -153,11 +148,11 @@ class HomePages(unittest.TestCase):
                 self.assertEqual(set(re.findall(r'<a [^>]*href="(https://idle\.ipe\.rest[^"]*)"', (ROOT / lang / h / "index.html").read_text(encoding="utf-8"))) - {want["idle.ipe.rest"][lang]}, set(), (lang, h))
 
     def test_x_default_shells_follow_the_same_order(self):
-        js = (ROOT / "journal" / "journal.js").read_text(encoding="utf-8")
-        block = js[js.index("hasAttribute('data-chooser')"):js.index("// GA4")]
-        order = [block.index(x) for x in ("get('lang')", "localStorage.getItem('ipe_lang')", "navigator.languages", "want = 'en'")]
-        self.assertEqual(order, sorted(order))
-        self.assertLess(block.index("/bot|crawl|spider"), block.index("navigator.languages"))
+        """Only root / journal chooser pages carry data-redirect; language pages never redirect."""
+        for f in (ROOT / "index.html", ROOT / "journal" / "index.html"):
+            self.assertIn("data-redirect", f.read_text(encoding="utf-8"), f)
+        for lang in LANGS:
+            self.assertNotIn("data-redirect", page(lang), lang)
 
     def test_sitemap_has_home_pages(self):
         root = ET.parse(ROOT / "sitemap.xml").getroot()

@@ -177,7 +177,7 @@ def render(p, lang, data, ui):
              '<meta name="twitter:image:alt" content="%s">' % J.OG_IMAGE_ALT_ATTR,
              J.ld_script(ld), J.css_inline(), '</head>', '<body>',
              J._header(u, lang, cl), '', '<main id="main">', '<div class="wrap">' + main, '</div>', '</main>', '',
-             J._footer(u, lang), '<script src="/journal/journal.js?v=%s" defer></script>' % J.VER_JS, '</body>', '</html>', '']
+             J._footer(u, lang), '<script src="/journal/journal.js?v=%s" defer></script>' % J.VER_JS, J.lang_script(), '</body>', '</html>', '']
     return "\n".join(parts)
 
 
@@ -239,10 +239,15 @@ def legal_body(p, lang):
     t = (ROOT / "scripts" / "legal_src" / LEGAL_SRC[(p, lang)]).read_text(encoding="utf-8")
     for a, b in LEGAL_REWRITE:
         t = t.replace(a, b)
+    t = re.sub(r'/journal/journal\.js\?v=\w+', '/journal/journal.js?v=' + J.VER_JS, t)
     other = "en" if lang == "ko" else "ko"
     switch = '<p class="legal-switch" style="margin:0 0 1.5em;font-size:.9em"><a href="%s" lang="%s" hreflang="%s">%s</a></p>\n' % (
         LEGAL_PATH[(p, other)], other, other, "English" if other == "en" else "한국어")
-    return t.replace('<main id="main">\n', '<main id="main">\n' + switch, 1)
+    t = t.replace('<main id="main">\n', '<main id="main">\n' + switch, 1)
+    # header language select = kit langswitch (en/ko are the only legal-text languages)
+    t, n = re.subn(r'<label class="language">.*?</label>', lambda m: J.kit_select(lang, lambda l: LEGAL_PATH[(p, l)], ["en", "ko"]), t, count=1, flags=re.S)
+    assert n == 1, "legal header select not found: %s/%s" % (p, lang)
+    return t.replace("</head>", J.LANG_STYLE + "\n</head>", 1).replace("</body>", J.lang_script() + "\n</body>", 1)
 
 
 def sitemap_block(data):

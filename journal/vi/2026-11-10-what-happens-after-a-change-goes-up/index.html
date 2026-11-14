@@ -3,30 +3,38 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What happens after a change goes up — nhật ký ipe()</title>
-<meta name="description" content="From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.">
+<title>Điều gì xảy ra sau khi một thay đổi được đưa lên — nhật ký ipe()</title>
+<meta name="description" content="Từ một thay đổi đã lưu đến trang chạy thật trên ipe.rest: các bước deploy, 329 tệp được đưa lên, và chuyện gì xảy ra khi một bước kiểm tra thất bại.">
 <meta name="author" content="ipe()">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#fbfcfe">
-<link rel="canonical" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/">
+<link rel="canonical" href="https://ipe.rest/journal/vi/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" type="application/rss+xml" title="ipe() Journal" href="https://ipe.rest/journal/feed.xml">
 <link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/">
+<link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/">
-<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/2026-11-10-what-happens-after-a-change-goes-up/">
+<link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/2026-11-10-what-happens-after-a-change-goes-up/">
+<link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/2026-11-10-what-happens-after-a-change-goes-up/">
+<meta property="og:locale" content="vi_VN">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_TW">
 <meta property="og:locale:alternate" content="es_ES">
 <meta property="og:locale:alternate" content="pt_BR">
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="de_DE">
 <meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="th_TH">
+<meta property="og:locale:alternate" content="tr_TR">
 <link rel="manifest" href="/manifest.webmanifest?v=23">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
 <link rel="apple-touch-icon" href="/icon-180.png?v=23">
@@ -34,9 +42,9 @@
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ipe()">
-<meta property="og:title" content="What happens after a change goes up">
-<meta property="og:description" content="From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.">
-<meta property="og:url" content="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/">
+<meta property="og:title" content="Điều gì xảy ra sau khi một thay đổi được đưa lên">
+<meta property="og:description" content="Từ một thay đổi đã lưu đến trang chạy thật trên ipe.rest: các bước deploy, 329 tệp được đưa lên, và chuyện gì xảy ra khi một bước kiểm tra thất bại.">
+<meta property="og:url" content="https://ipe.rest/journal/vi/2026-11-10-what-happens-after-a-change-goes-up/">
 <meta property="og:image" content="https://ipe.rest/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -46,8 +54,8 @@
 <meta property="article:section" content="studio">
 <meta property="article:author" content="ipe()">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What happens after a change goes up">
-<meta name="twitter:description" content="From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.">
+<meta name="twitter:title" content="Điều gì xảy ra sau khi một thay đổi được đưa lên">
+<meta name="twitter:description" content="Từ một thay đổi đã lưu đến trang chạy thật trên ipe.rest: các bước deploy, 329 tệp được đưa lên, và chuyện gì xảy ra khi một bước kiểm tra thất bại.">
 <meta name="twitter:image" content="https://ipe.rest/og-image.png">
 <meta name="twitter:image:alt" content="ipe() — quiet things for busy minds">
 
@@ -55,10 +63,10 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "@id": "https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/#article",
-  "headline": "What happens after a change goes up",
-  "description": "From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.",
-  "abstract": "ipe.rest is a static site on GitHub Pages. When a change reaches the main branch, a workflow copies 329 of the repository's 586 files into a site folder, runs 7 checks on that folder, uploads it, publishes it, and then tells search engines through IndexNow about pages changed today. If a check fails, nothing is published and the previous site stays up. Of the last eight runs, seven passed, and five of those took under 40 seconds. Figures were measured on 10 November 2026.",
+  "@id": "https://ipe.rest/journal/vi/2026-11-10-what-happens-after-a-change-goes-up/#article",
+  "headline": "Điều gì xảy ra sau khi một thay đổi được đưa lên",
+  "description": "Từ một thay đổi đã lưu đến trang chạy thật trên ipe.rest: các bước deploy, 329 tệp được đưa lên, và chuyện gì xảy ra khi một bước kiểm tra thất bại.",
+  "abstract": "ipe.rest là một trang web tĩnh trên GitHub Pages. Khi một thay đổi đến nhánh main, một workflow sao chép 329 trong tổng số 586 tệp của kho mã vào thư mục trang, chạy 7 bước kiểm tra trên thư mục đó, tải lên, phát hành, rồi báo cho các công cụ tìm kiếm qua IndexNow về những trang thay đổi trong ngày. Nếu một bước kiểm tra thất bại, không có gì được phát hành và trang cũ vẫn chạy. Trong tám lần chạy gần nhất, bảy lần thành công, và năm lần trong số đó mất chưa đến 40 giây. Số liệu được đo vào ngày 10 tháng 11 năm 2026.",
   "datePublished": "2026-11-10T10:50+09:00",
   "dateModified": "2026-11-10T10:50+09:00",
   "image": {
@@ -68,10 +76,10 @@
     "height": 630
   },
   "thumbnailUrl": "https://ipe.rest/og-image.png",
-  "url": "https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/",
+  "url": "https://ipe.rest/journal/vi/2026-11-10-what-happens-after-a-change-goes-up/",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"
+    "@id": "https://ipe.rest/journal/vi/2026-11-10-what-happens-after-a-change-goes-up/"
   },
   "articleSection": "studio",
   "keywords": "ipe(), deploy, GitHub Pages, GitHub Actions, IndexNow, static site, service worker, search engines",
@@ -117,56 +125,18 @@
   ],
   "isPartOf": {
     "@type": "Blog",
-    "@id": "https://ipe.rest/journal/en/#blog",
-    "name": "ipe() journal",
-    "url": "https://ipe.rest/journal/en/"
+    "@id": "https://ipe.rest/journal/vi/#blog",
+    "name": "nhật ký ipe()",
+    "url": "https://ipe.rest/journal/vi/"
   },
-  "inLanguage": "en",
-  "wordCount": 468,
-  "workTranslation": [
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "ko"
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "ja"
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "es"
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "pt-BR"
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "fr"
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "de"
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "id"
-    }
-  ]
+  "inLanguage": "vi",
+  "wordCount": 605,
+  "translationOfWork": {
+    "@type": "BlogPosting",
+    "@id": "https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/#article",
+    "url": "https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/",
+    "inLanguage": "en"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -189,7 +159,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "What happens after a change goes up"
+      "name": "Điều gì xảy ra sau khi một thay đổi được đưa lên"
     }
   ]
 }
@@ -350,41 +320,41 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
 <article class="wrap">
   <header class="post-head">
     <p class="eyebrow"><i></i><span>nhật ký · <time datetime="2026-11-10T10:50+09:00" data-ipe-time dir="ltr">2026-11-10 10:50 KST</time></span></p>
-    <h1 lang="en">What happens after a <em>change</em> goes up</h1>
+    <h1>Điều gì xảy ra sau khi một <em>thay đổi</em> được đưa lên</h1>
   </header>
 
+  <p class="ai-note" role="note"><strong>Bản dịch AI</strong> Trang này được AI dịch máy từ bản gốc tiếng Anh. <a href="/journal/en/2026-11-10-what-happens-after-a-change-goes-up/" hreflang="en">Đọc bản gốc tiếng Anh</a></p>
 
-  <p class="ai-note" role="note"><strong>Chưa có bản dịch</strong> Bài viết này chưa được dịch sang tiếng Việt; bản gốc tiếng Anh được hiển thị bên dưới. <a href="/journal/en/2026-11-10-what-happens-after-a-change-goes-up/" hreflang="en">Đọc bản gốc tiếng Anh</a></p>
 
-  <div class="prose" lang="en">
-<p class="lead">A change to ipe.rest reaches visitors through a short workflow on GitHub. It copies the site, checks it, publishes it and tells search engines what is new. Most runs finish in under 40 seconds.</p>
-    <p>The last entry described how the pages get built. This one starts where that ends, when a change reaches the main branch of our repository. The figures are from 10 November 2026: the workflow file, a local build of the site, and the last eight runs on GitHub.</p>
-    <h2>Copy</h2>
-    <p>The site is plain files, so the first step is a copy. The workflow checks out the repository and copies everything except what visitors do not need: the scripts, the tests, the workflow itself, version-control data and any Markdown files. Of the 586 files in the repository, 329 go into the site folder, about 10 MB.</p>
-    <h2>Check</h2>
-    <p>Then seven tests run against that folder, not against the repository. They look for the files a visitor needs, such as the robots file, the sitemap, the service worker and the home pages; for folders that must not be there, such as scripts and tests; and for the 404 page, which must be marked noindex and link home. A failure stops the workflow here. Nothing is published, and the previous version stays live.</p>
-    <h2>Publish</h2>
-    <p>Next the folder is uploaded and handed to GitHub Pages, which serves it. Only one deploy runs at a time: if a newer change arrives while one is running, the older run is cancelled. There is no server of ours in between and no database. When the service worker version changes, a visitor’s browser installs a fresh cache and deletes the old ones on a later visit.</p>
-    <h2>Tell</h2>
-    <p>After publishing, the workflow sends IndexNow, a protocol that Bing, Naver, Yandex and other search engines accept, the addresses of pages whose sitemap date is today in Korean time. The key it needs is a public text file in the site’s root. This step is allowed to fail: if it does, the deploy still counts as a success.</p>
-    <h2>How it has gone</h2>
-    <p>Of the last eight runs, seven succeeded and one failed; the next run, 22 seconds later, succeeded. Five of the seven successful runs took under 40 seconds, and the slowest took 2 minutes 18 seconds. We measured from the start of a run to its last update, so read the times as approximate.</p>
-    <h2>What a green run does not say</h2>
-    <p>A passing run says the files arrived and seven checks passed. It does not say a page looks right on a small phone screen, and IndexNow only informs search engines; it promises nothing about when, or whether, they list a page.</p>
+  <div class="prose">
+<p class="lead">Một thay đổi trên ipe.rest đến với người truy cập qua một workflow ngắn trên GitHub. Nó sao chép trang, kiểm tra, phát hành và báo cho các công cụ tìm kiếm biết có gì mới. Phần lớn các lần chạy xong trong chưa đầy 40 giây.</p>
+    <p>Bài trước mô tả cách các trang được dựng. Bài này bắt đầu từ chỗ bài kia dừng lại, khi một thay đổi đến nhánh main của kho mã chúng tôi. Số liệu lấy từ ngày 10 tháng 11 năm 2026: tệp workflow, bản dựng cục bộ của trang và tám lần chạy gần nhất trên GitHub.</p>
+    <h2>Sao chép</h2>
+    <p>Trang web chỉ là những tệp thông thường, nên bước đầu tiên là sao chép. Workflow lấy kho mã về và sao chép mọi thứ, trừ những gì người truy cập không cần: các script, các bài kiểm tra, chính workflow, dữ liệu quản lý phiên bản và mọi tệp Markdown. Trong 586 tệp của kho mã, 329 tệp vào thư mục trang, khoảng 10 MB.</p>
+    <h2>Kiểm tra</h2>
+    <p>Sau đó bảy bài kiểm tra chạy trên thư mục ấy, chứ không phải trên kho mã. Chúng tìm những tệp người truy cập cần, như tệp robots, sơ đồ trang, service worker và các trang chủ; tìm những thư mục không được phép có mặt, như scripts và tests; và tìm trang 404, vốn phải được đánh dấu noindex và có liên kết về trang chủ. Thất bại sẽ dừng workflow tại đây. Không có gì được phát hành, và phiên bản trước vẫn chạy.</p>
+    <h2>Phát hành</h2>
+    <p>Tiếp theo, thư mục được tải lên và giao cho GitHub Pages để phục vụ. Mỗi lúc chỉ có một lần deploy chạy: nếu một thay đổi mới hơn đến khi một lần đang chạy, lần cũ hơn sẽ bị hủy. Ở giữa không có máy chủ nào của chúng tôi và cũng không có cơ sở dữ liệu. Khi phiên bản service worker thay đổi, trình duyệt của người truy cập cài một bộ nhớ đệm mới và xóa các bộ cũ ở lần ghé sau.</p>
+    <h2>Báo tin</h2>
+    <p>Sau khi phát hành, workflow gửi cho IndexNow, một giao thức mà Bing, Naver, Yandex và các công cụ tìm kiếm khác chấp nhận, địa chỉ của những trang có ngày trong sơ đồ trang là hôm nay theo giờ Hàn Quốc. Khóa cần dùng là một tệp văn bản công khai ở thư mục gốc của trang. Bước này được phép thất bại: nếu có, lần deploy vẫn được tính là thành công.</p>
+    <h2>Mọi chuyện diễn ra thế nào</h2>
+    <p>Trong tám lần chạy gần nhất, bảy lần thành công và một lần thất bại; lần chạy kế tiếp, 22 giây sau, thành công. Năm trong bảy lần thành công mất chưa đến 40 giây, và lần chậm nhất mất 2 phút 18 giây. Chúng tôi đo từ lúc một lần chạy bắt đầu đến lần cập nhật cuối cùng của nó, nên hãy xem các con số thời gian là xấp xỉ.</p>
+    <h2>Điều một lần chạy xanh không nói</h2>
+    <p>Một lần chạy thành công cho biết các tệp đã đến nơi và bảy bước kiểm tra đã qua. Nó không cho biết một trang trông có đúng trên màn hình điện thoại nhỏ hay không, và IndexNow chỉ thông báo cho các công cụ tìm kiếm; nó không hứa gì về việc khi nào, hay liệu họ có lập chỉ mục một trang hay không.</p>
     <blockquote>ipe(); // copy, check, publish, tell</blockquote>
-    <p>The workflow is short on purpose. Fewer steps leave fewer places for a quiet site to break.</p>
+    <p>Workflow này được giữ ngắn có chủ ý. Càng ít bước, một trang web yên tĩnh càng có ít chỗ để hỏng.</p>
   </div>
 
   <nav class="post-nav" aria-label="Thêm từ nhật ký">
     <ul class="pn-step">
       <li class="pn-prev"><span>Trước</span> <a href="/journal/vi/2026-11-09-how-one-entry-becomes-thirteen-pages/">How one entry becomes thirteen pages</a></li>
-      <li class="pn-next"><span>Tiếp</span> <a href="/journal/vi/2026-11-11-the-time-on-an-entry-is-yours/">The time on an entry is yours</a></li>
+      <li class="pn-next"><span>Tiếp</span> <a href="/journal/vi/2026-11-11-the-time-on-an-entry-is-yours/">Giờ trên mỗi bài là giờ của bạn</a></li>
     </ul>
     <p class="pn-head">Bài mới nhất</p>
     <ul class="pn-list">
-      <li><a href="/journal/vi/2026-11-14-the-journal-list-newest-first-on-one-page/">The journal list, newest first, on one page</a></li>
-      <li><a href="/journal/vi/2026-11-13-one-scroll-down-the-home-page/">One scroll down the home page</a></li>
-      <li><a href="/journal/vi/2026-11-12-what-a-missing-page-shows-you/">What a missing page shows you</a></li>
+      <li><a href="/journal/vi/2026-11-14-the-journal-list-newest-first-on-one-page/">Danh sách nhật ký, mới nhất trước, trên một trang</a></li>
+      <li><a href="/journal/vi/2026-11-13-one-scroll-down-the-home-page/">Một lần cuộn xuống trang chủ</a></li>
+      <li><a href="/journal/vi/2026-11-12-what-a-missing-page-shows-you/">Một trang không tồn tại cho bạn thấy điều gì</a></li>
     </ul>
   </nav>
   <a class="back" href="/journal/vi/">← tất cả bài</a>

@@ -3,23 +3,28 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>What happens after a change goes up — ipe() 日誌</title>
-<meta name="description" content="From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.">
+<title>變更上線之後會發生什麼 — ipe() 日誌</title>
+<meta name="description" content="從儲存變更到 ipe.rest 上的頁面上線:部署步驟、會發佈的 329 個檔案,以及檢查失敗時的情形。">
 <meta name="author" content="ipe()">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#fbfcfe">
-<link rel="canonical" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/">
+<link rel="canonical" href="https://ipe.rest/journal/zh-Hant/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" type="application/rss+xml" title="ipe() Journal" href="https://ipe.rest/journal/feed.xml">
 <link rel="alternate" hreflang="x-default" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="en" href="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="ko" href="https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="ja" href="https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/">
+<link rel="alternate" hreflang="zh-Hant" href="https://ipe.rest/journal/zh-Hant/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="es" href="https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="pt-BR" href="https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="fr" href="https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="de" href="https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/">
 <link rel="alternate" hreflang="id" href="https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/">
-<meta property="og:locale" content="en_US">
+<link rel="alternate" hreflang="th" href="https://ipe.rest/journal/th/2026-11-10-what-happens-after-a-change-goes-up/">
+<link rel="alternate" hreflang="vi" href="https://ipe.rest/journal/vi/2026-11-10-what-happens-after-a-change-goes-up/">
+<link rel="alternate" hreflang="tr" href="https://ipe.rest/journal/tr/2026-11-10-what-happens-after-a-change-goes-up/">
+<meta property="og:locale" content="zh_TW">
+<meta property="og:locale:alternate" content="en_US">
 <meta property="og:locale:alternate" content="ko_KR">
 <meta property="og:locale:alternate" content="ja_JP">
 <meta property="og:locale:alternate" content="es_ES">
@@ -27,6 +32,9 @@
 <meta property="og:locale:alternate" content="fr_FR">
 <meta property="og:locale:alternate" content="de_DE">
 <meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="th_TH">
+<meta property="og:locale:alternate" content="vi_VN">
+<meta property="og:locale:alternate" content="tr_TR">
 <link rel="manifest" href="/manifest.webmanifest?v=23">
 <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
 <link rel="apple-touch-icon" href="/icon-180.png?v=23">
@@ -34,9 +42,9 @@
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ipe()">
-<meta property="og:title" content="What happens after a change goes up">
-<meta property="og:description" content="From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.">
-<meta property="og:url" content="https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/">
+<meta property="og:title" content="變更上線之後會發生什麼">
+<meta property="og:description" content="從儲存變更到 ipe.rest 上的頁面上線:部署步驟、會發佈的 329 個檔案,以及檢查失敗時的情形。">
+<meta property="og:url" content="https://ipe.rest/journal/zh-Hant/2026-11-10-what-happens-after-a-change-goes-up/">
 <meta property="og:image" content="https://ipe.rest/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -46,8 +54,8 @@
 <meta property="article:section" content="studio">
 <meta property="article:author" content="ipe()">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="What happens after a change goes up">
-<meta name="twitter:description" content="From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.">
+<meta name="twitter:title" content="變更上線之後會發生什麼">
+<meta name="twitter:description" content="從儲存變更到 ipe.rest 上的頁面上線:部署步驟、會發佈的 329 個檔案,以及檢查失敗時的情形。">
 <meta name="twitter:image" content="https://ipe.rest/og-image.png">
 <meta name="twitter:image:alt" content="ipe() — quiet things for busy minds">
 
@@ -55,10 +63,10 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "@id": "https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/#article",
-  "headline": "What happens after a change goes up",
-  "description": "From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.",
-  "abstract": "ipe.rest is a static site on GitHub Pages. When a change reaches the main branch, a workflow copies 329 of the repository's 586 files into a site folder, runs 7 checks on that folder, uploads it, publishes it, and then tells search engines through IndexNow about pages changed today. If a check fails, nothing is published and the previous site stays up. Of the last eight runs, seven passed, and five of those took under 40 seconds. Figures were measured on 10 November 2026.",
+  "@id": "https://ipe.rest/journal/zh-Hant/2026-11-10-what-happens-after-a-change-goes-up/#article",
+  "headline": "變更上線之後會發生什麼",
+  "description": "從儲存變更到 ipe.rest 上的頁面上線:部署步驟、會發佈的 329 個檔案,以及檢查失敗時的情形。",
+  "abstract": "ipe.rest 是架在 GitHub Pages 上的靜態網站。當變更進入 main 分支,工作流程會把儲存庫 586 個檔案中的 329 個複製到網站資料夾,對該資料夾執行 7 項檢查,上傳並發佈,最後透過 IndexNow 通知搜尋引擎今天有哪些頁面更動。只要有一項檢查失敗,就不會發佈任何東西,先前的網站仍維持上線。最近八次執行中有七次通過,其中五次在 40 秒內完成。數字於 2026 年 11 月 10 日量測。",
   "datePublished": "2026-11-10T10:50+09:00",
   "dateModified": "2026-11-10T10:50+09:00",
   "image": {
@@ -68,10 +76,10 @@
     "height": 630
   },
   "thumbnailUrl": "https://ipe.rest/og-image.png",
-  "url": "https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/",
+  "url": "https://ipe.rest/journal/zh-Hant/2026-11-10-what-happens-after-a-change-goes-up/",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/"
+    "@id": "https://ipe.rest/journal/zh-Hant/2026-11-10-what-happens-after-a-change-goes-up/"
   },
   "articleSection": "studio",
   "keywords": "ipe(), deploy, GitHub Pages, GitHub Actions, IndexNow, static site, service worker, search engines",
@@ -117,56 +125,18 @@
   ],
   "isPartOf": {
     "@type": "Blog",
-    "@id": "https://ipe.rest/journal/en/#blog",
-    "name": "ipe() journal",
-    "url": "https://ipe.rest/journal/en/"
+    "@id": "https://ipe.rest/journal/zh-Hant/#blog",
+    "name": "ipe() 日誌",
+    "url": "https://ipe.rest/journal/zh-Hant/"
   },
-  "inLanguage": "en",
-  "wordCount": 468,
-  "workTranslation": [
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "ko"
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "ja"
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "es"
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "pt-BR"
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "fr"
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "de"
-    },
-    {
-      "@type": "BlogPosting",
-      "@id": "https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/#article",
-      "url": "https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/",
-      "inLanguage": "id"
-    }
-  ]
+  "inLanguage": "zh-Hant",
+  "wordCount": 73,
+  "translationOfWork": {
+    "@type": "BlogPosting",
+    "@id": "https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/#article",
+    "url": "https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/",
+    "inLanguage": "en"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -189,7 +159,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "What happens after a change goes up"
+      "name": "變更上線之後會發生什麼"
     }
   ]
 }
@@ -350,41 +320,41 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
 <article class="wrap">
   <header class="post-head">
     <p class="eyebrow"><i></i><span>日誌 · <time datetime="2026-11-10T10:50+09:00" data-ipe-time dir="ltr">2026-11-10 10:50 KST</time></span></p>
-    <h1 lang="en">What happens after a <em>change</em> goes up</h1>
+    <h1><em>變更</em>上線之後會發生什麼</h1>
   </header>
 
+  <p class="ai-note" role="note"><strong>AI 翻譯</strong> 本頁由 AI 從英文原文機器翻譯而成。 <a href="/journal/en/2026-11-10-what-happens-after-a-change-goes-up/" hreflang="en">閱讀英文原文</a></p>
 
-  <p class="ai-note" role="note"><strong>尚未翻譯</strong> 這篇文章尚未翻譯成繁體中文,以下顯示英文原文。 <a href="/journal/en/2026-11-10-what-happens-after-a-change-goes-up/" hreflang="en">閱讀英文原文</a></p>
 
-  <div class="prose" lang="en">
-<p class="lead">A change to ipe.rest reaches visitors through a short workflow on GitHub. It copies the site, checks it, publishes it and tells search engines what is new. Most runs finish in under 40 seconds.</p>
-    <p>The last entry described how the pages get built. This one starts where that ends, when a change reaches the main branch of our repository. The figures are from 10 November 2026: the workflow file, a local build of the site, and the last eight runs on GitHub.</p>
-    <h2>Copy</h2>
-    <p>The site is plain files, so the first step is a copy. The workflow checks out the repository and copies everything except what visitors do not need: the scripts, the tests, the workflow itself, version-control data and any Markdown files. Of the 586 files in the repository, 329 go into the site folder, about 10 MB.</p>
-    <h2>Check</h2>
-    <p>Then seven tests run against that folder, not against the repository. They look for the files a visitor needs, such as the robots file, the sitemap, the service worker and the home pages; for folders that must not be there, such as scripts and tests; and for the 404 page, which must be marked noindex and link home. A failure stops the workflow here. Nothing is published, and the previous version stays live.</p>
-    <h2>Publish</h2>
-    <p>Next the folder is uploaded and handed to GitHub Pages, which serves it. Only one deploy runs at a time: if a newer change arrives while one is running, the older run is cancelled. There is no server of ours in between and no database. When the service worker version changes, a visitor’s browser installs a fresh cache and deletes the old ones on a later visit.</p>
-    <h2>Tell</h2>
-    <p>After publishing, the workflow sends IndexNow, a protocol that Bing, Naver, Yandex and other search engines accept, the addresses of pages whose sitemap date is today in Korean time. The key it needs is a public text file in the site’s root. This step is allowed to fail: if it does, the deploy still counts as a success.</p>
-    <h2>How it has gone</h2>
-    <p>Of the last eight runs, seven succeeded and one failed; the next run, 22 seconds later, succeeded. Five of the seven successful runs took under 40 seconds, and the slowest took 2 minutes 18 seconds. We measured from the start of a run to its last update, so read the times as approximate.</p>
-    <h2>What a green run does not say</h2>
-    <p>A passing run says the files arrived and seven checks passed. It does not say a page looks right on a small phone screen, and IndexNow only informs search engines; it promises nothing about when, or whether, they list a page.</p>
+  <div class="prose">
+<p class="lead">ipe.rest 的變更是透過 GitHub 上一條簡短的工作流程送到訪客面前的:複製網站、檢查、發佈,並告訴搜尋引擎有什麼新內容。多數執行都在 40 秒內完成。</p>
+    <p>上一篇談的是頁面如何建置。這一篇從那裡接續,從一項變更進入我們儲存庫的 main 分支開始。文中數字取自 2026 年 11 月 10 日:工作流程檔案、網站的本機建置,以及 GitHub 上最近八次執行。</p>
+    <h2>複製</h2>
+    <p>網站就是一堆普通檔案,所以第一步是複製。工作流程會取出儲存庫,並複製所有東西,只排除訪客用不到的部分:腳本、測試、工作流程本身、版本控制資料,以及所有 Markdown 檔案。儲存庫的 586 個檔案中,有 329 個進入網站資料夾,約 10 MB。</p>
+    <h2>檢查</h2>
+    <p>接著對那個資料夾(而不是對儲存庫)執行七項測試。測試會找訪客需要的檔案,例如 robots 檔案、網站地圖、service worker 與首頁;找不該出現的資料夾,例如 scripts 與 tests;還有 404 頁面,它必須標記 noindex 並連回首頁。一旦失敗,工作流程就在這裡停下,不發佈任何東西,先前的版本仍維持上線。</p>
+    <h2>發佈</h2>
+    <p>接下來,資料夾會被上傳並交給 GitHub Pages 提供服務。同一時間只會有一個部署在執行:若執行期間有更新的變更進來,較舊的那次就會被取消。中間沒有我們自己的伺服器,也沒有資料庫。當 service worker 版本改變,訪客的瀏覽器會在之後的造訪安裝新的快取,並刪除舊的快取。</p>
+    <h2>通知</h2>
+    <p>發佈之後,工作流程會把網站地圖日期為韓國時間今天的頁面網址,送給 IndexNow。這是 Bing、Naver、Yandex 等搜尋引擎都接受的協定,所需的金鑰是放在網站根目錄的一個公開文字檔。這一步允許失敗:即使失敗,這次部署仍算成功。</p>
+    <h2>實際表現</h2>
+    <p>最近八次執行中,七次成功、一次失敗;22 秒後的下一次執行就成功了。七次成功中有五次在 40 秒內完成,最慢的一次花了 2 分 18 秒。我們量的是從一次執行開始到它最後一次更新的時間,所以請把這些時間當成大約值。</p>
+    <h2>綠燈沒有說的事</h2>
+    <p>執行通過,代表檔案送到了、七項檢查都過了。它並不代表頁面在小手機螢幕上看起來正確;而 IndexNow 只是通知搜尋引擎,對於它們何時收錄、是否收錄某個頁面,不做任何承諾。</p>
     <blockquote>ipe(); // copy, check, publish, tell</blockquote>
-    <p>The workflow is short on purpose. Fewer steps leave fewer places for a quiet site to break.</p>
+    <p>這條工作流程刻意保持簡短。步驟愈少,安靜的網站能出錯的地方就愈少。</p>
   </div>
 
   <nav class="post-nav" aria-label="更多日誌文章">
     <ul class="pn-step">
       <li class="pn-prev"><span>上一篇</span> <a href="/journal/zh-Hant/2026-11-09-how-one-entry-becomes-thirteen-pages/">How one entry becomes thirteen pages</a></li>
-      <li class="pn-next"><span>下一篇</span> <a href="/journal/zh-Hant/2026-11-11-the-time-on-an-entry-is-yours/">The time on an entry is yours</a></li>
+      <li class="pn-next"><span>下一篇</span> <a href="/journal/zh-Hant/2026-11-11-the-time-on-an-entry-is-yours/">文章上的時間,是你的時間</a></li>
     </ul>
     <p class="pn-head">最新文章</p>
     <ul class="pn-list">
-      <li><a href="/journal/zh-Hant/2026-11-14-the-journal-list-newest-first-on-one-page/">The journal list, newest first, on one page</a></li>
-      <li><a href="/journal/zh-Hant/2026-11-13-one-scroll-down-the-home-page/">One scroll down the home page</a></li>
-      <li><a href="/journal/zh-Hant/2026-11-12-what-a-missing-page-shows-you/">What a missing page shows you</a></li>
+      <li><a href="/journal/zh-Hant/2026-11-14-the-journal-list-newest-first-on-one-page/">日誌列表:最新的在前,全在同一頁</a></li>
+      <li><a href="/journal/zh-Hant/2026-11-13-one-scroll-down-the-home-page/">沿著首頁往下滑一次</a></li>
+      <li><a href="/journal/zh-Hant/2026-11-12-what-a-missing-page-shows-you/">找不到頁面時,你會看到什麼</a></li>
     </ul>
   </nav>
   <a class="back" href="/journal/zh-Hant/">← 所有文章</a>

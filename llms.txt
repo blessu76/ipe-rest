@@ -91,51 +91,71 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - [en] The journal list, newest first, on one page: https://ipe.rest/journal/en/2026-11-14-the-journal-list-newest-first-on-one-page/
   - [ko] 저널 목록, 최신 글부터 한 페이지에: https://ipe.rest/journal/ko/2026-11-14-the-journal-list-newest-first-on-one-page/
   - [ja] ジャーナル一覧は、新しい順にひとつのページで (AI translation): https://ipe.rest/journal/ja/2026-11-14-the-journal-list-newest-first-on-one-page/
+  - [zh-Hant] 日誌列表:最新的在前,全在同一頁 (AI translation): https://ipe.rest/journal/zh-Hant/2026-11-14-the-journal-list-newest-first-on-one-page/
   - [es] La lista del diario: lo nuevo primero, en una página (AI translation): https://ipe.rest/journal/es/2026-11-14-the-journal-list-newest-first-on-one-page/
   - [pt-BR] A lista do diário: o mais novo primeiro, numa página (AI translation): https://ipe.rest/journal/pt-BR/2026-11-14-the-journal-list-newest-first-on-one-page/
   - [fr] La liste du journal : le plus récent d'abord, sur une page (AI translation): https://ipe.rest/journal/fr/2026-11-14-the-journal-list-newest-first-on-one-page/
   - [de] Die Journal-Liste: neueste zuerst, auf einer Seite (AI translation): https://ipe.rest/journal/de/2026-11-14-the-journal-list-newest-first-on-one-page/
   - [id] Daftar jurnal: terbaru dulu, dalam satu halaman (AI translation): https://ipe.rest/journal/id/2026-11-14-the-journal-list-newest-first-on-one-page/
+  - [th] รายการบันทึก เรียงจากใหม่สุด อยู่ในหน้าเดียว (AI translation): https://ipe.rest/journal/th/2026-11-14-the-journal-list-newest-first-on-one-page/
+  - [vi] Danh sách nhật ký, mới nhất trước, trên một trang (AI translation): https://ipe.rest/journal/vi/2026-11-14-the-journal-list-newest-first-on-one-page/
+  - [tr] Günlük listesi, en yeni önce, tek sayfada (AI translation): https://ipe.rest/journal/tr/2026-11-14-the-journal-list-newest-first-on-one-page/
 - One scroll down the home page (2026-11-13): https://ipe.rest/journal/en/2026-11-13-one-scroll-down-the-home-page/ - Four stops from top to bottom, and then the page tells you to stop scrolling.
   - original language: en
   - [en] One scroll down the home page: https://ipe.rest/journal/en/2026-11-13-one-scroll-down-the-home-page/
   - [ko] 홈페이지를 한 번 스크롤하면: https://ipe.rest/journal/ko/2026-11-13-one-scroll-down-the-home-page/
   - [ja] ホームページを一度スクロールする (AI translation): https://ipe.rest/journal/ja/2026-11-13-one-scroll-down-the-home-page/
+  - [zh-Hant] 沿著首頁往下滑一次 (AI translation): https://ipe.rest/journal/zh-Hant/2026-11-13-one-scroll-down-the-home-page/
   - [es] Un solo desplazamiento por la página de inicio (AI translation): https://ipe.rest/journal/es/2026-11-13-one-scroll-down-the-home-page/
   - [pt-BR] Uma rolagem pela página inicial (AI translation): https://ipe.rest/journal/pt-BR/2026-11-13-one-scroll-down-the-home-page/
   - [fr] Un seul défilement de la page d’accueil (AI translation): https://ipe.rest/journal/fr/2026-11-13-one-scroll-down-the-home-page/
   - [de] Einmal über die Startseite scrollen (AI translation): https://ipe.rest/journal/de/2026-11-13-one-scroll-down-the-home-page/
   - [id] Satu gulir di beranda (AI translation): https://ipe.rest/journal/id/2026-11-13-one-scroll-down-the-home-page/
+  - [th] เลื่อนหน้าแรกลงไปหนึ่งครั้ง (AI translation): https://ipe.rest/journal/th/2026-11-13-one-scroll-down-the-home-page/
+  - [vi] Một lần cuộn xuống trang chủ (AI translation): https://ipe.rest/journal/vi/2026-11-13-one-scroll-down-the-home-page/
+  - [tr] Ana sayfada tek kaydırma (AI translation): https://ipe.rest/journal/tr/2026-11-13-one-scroll-down-the-home-page/
 - What a missing page shows you (2026-11-12): https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/ - One 4,355-byte file, no script, and a way home in 12 languages.
   - original language: en
   - [en] What a missing page shows you: https://ipe.rest/journal/en/2026-11-12-what-a-missing-page-shows-you/
   - [ko] 없는 페이지가 보여 주는 것: https://ipe.rest/journal/ko/2026-11-12-what-a-missing-page-shows-you/
   - [ja] 存在しないページが見せるもの (AI translation): https://ipe.rest/journal/ja/2026-11-12-what-a-missing-page-shows-you/
+  - [zh-Hant] 找不到頁面時,你會看到什麼 (AI translation): https://ipe.rest/journal/zh-Hant/2026-11-12-what-a-missing-page-shows-you/
   - [es] Lo que te muestra una página que falta (AI translation): https://ipe.rest/journal/es/2026-11-12-what-a-missing-page-shows-you/
   - [pt-BR] O que uma página ausente mostra a você (AI translation): https://ipe.rest/journal/pt-BR/2026-11-12-what-a-missing-page-shows-you/
   - [fr] Ce que vous montre une page manquante (AI translation): https://ipe.rest/journal/fr/2026-11-12-what-a-missing-page-shows-you/
   - [de] Was eine fehlende Seite dir zeigt (AI translation): https://ipe.rest/journal/de/2026-11-12-what-a-missing-page-shows-you/
   - [id] Apa yang diperlihatkan halaman yang hilang (AI translation): https://ipe.rest/journal/id/2026-11-12-what-a-missing-page-shows-you/
+  - [th] หน้าที่หายไปแสดงอะไรให้คุณเห็น (AI translation): https://ipe.rest/journal/th/2026-11-12-what-a-missing-page-shows-you/
+  - [vi] Một trang không tồn tại cho bạn thấy điều gì (AI translation): https://ipe.rest/journal/vi/2026-11-12-what-a-missing-page-shows-you/
+  - [tr] Var olmayan bir sayfa size ne gösterir (AI translation): https://ipe.rest/journal/tr/2026-11-12-what-a-missing-page-shows-you/
 - The time on an entry is yours (2026-11-11): https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/ - Entries record Korean time; a 1,639-byte script shows it in your time zone.
   - original language: en
   - [en] The time on an entry is yours: https://ipe.rest/journal/en/2026-11-11-the-time-on-an-entry-is-yours/
   - [ko] 글에 적힌 시각은 당신의 시계로 보입니다: https://ipe.rest/journal/ko/2026-11-11-the-time-on-an-entry-is-yours/
   - [ja] 記事に載る時刻はあなたの時刻 (AI translation): https://ipe.rest/journal/ja/2026-11-11-the-time-on-an-entry-is-yours/
+  - [zh-Hant] 文章上的時間,是你的時間 (AI translation): https://ipe.rest/journal/zh-Hant/2026-11-11-the-time-on-an-entry-is-yours/
   - [es] La hora de una entrada es suya (AI translation): https://ipe.rest/journal/es/2026-11-11-the-time-on-an-entry-is-yours/
   - [pt-BR] A hora de uma entrada é sua (AI translation): https://ipe.rest/journal/pt-BR/2026-11-11-the-time-on-an-entry-is-yours/
   - [fr] L'heure d'une entrée est la vôtre (AI translation): https://ipe.rest/journal/fr/2026-11-11-the-time-on-an-entry-is-yours/
   - [de] Die Zeit an einem Eintrag gehört Ihnen (AI translation): https://ipe.rest/journal/de/2026-11-11-the-time-on-an-entry-is-yours/
   - [id] Waktu pada sebuah tulisan adalah milik Anda (AI translation): https://ipe.rest/journal/id/2026-11-11-the-time-on-an-entry-is-yours/
+  - [th] เวลาบนบันทึกคือเวลาของคุณ (AI translation): https://ipe.rest/journal/th/2026-11-11-the-time-on-an-entry-is-yours/
+  - [vi] Giờ trên mỗi bài là giờ của bạn (AI translation): https://ipe.rest/journal/vi/2026-11-11-the-time-on-an-entry-is-yours/
+  - [tr] Yazının üzerindeki saat sizin saatiniz (AI translation): https://ipe.rest/journal/tr/2026-11-11-the-time-on-an-entry-is-yours/
 - What happens after a change goes up (2026-11-10): https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/ - From a saved change to a live page on ipe.rest: the deploy steps, the 329 files that ship, and a failed check.
   - original language: en
   - [en] What happens after a change goes up: https://ipe.rest/journal/en/2026-11-10-what-happens-after-a-change-goes-up/
   - [ko] 변경이 올라간 뒤에 일어나는 일: https://ipe.rest/journal/ko/2026-11-10-what-happens-after-a-change-goes-up/
   - [ja] 変更が公開されたあとに起こること (AI translation): https://ipe.rest/journal/ja/2026-11-10-what-happens-after-a-change-goes-up/
+  - [zh-Hant] 變更上線之後會發生什麼 (AI translation): https://ipe.rest/journal/zh-Hant/2026-11-10-what-happens-after-a-change-goes-up/
   - [es] Qué ocurre después de subir un cambio (AI translation): https://ipe.rest/journal/es/2026-11-10-what-happens-after-a-change-goes-up/
   - [pt-BR] O que acontece depois que uma mudança sobe (AI translation): https://ipe.rest/journal/pt-BR/2026-11-10-what-happens-after-a-change-goes-up/
   - [fr] Ce qui se passe après la mise en ligne d’un changement (AI translation): https://ipe.rest/journal/fr/2026-11-10-what-happens-after-a-change-goes-up/
   - [de] Was nach dem Hochladen einer Änderung passiert (AI translation): https://ipe.rest/journal/de/2026-11-10-what-happens-after-a-change-goes-up/
   - [id] Apa yang terjadi setelah perubahan naik (AI translation): https://ipe.rest/journal/id/2026-11-10-what-happens-after-a-change-goes-up/
+  - [th] เกิดอะไรขึ้นหลังการเปลี่ยนแปลงขึ้นระบบ (AI translation): https://ipe.rest/journal/th/2026-11-10-what-happens-after-a-change-goes-up/
+  - [vi] Điều gì xảy ra sau khi một thay đổi được đưa lên (AI translation): https://ipe.rest/journal/vi/2026-11-10-what-happens-after-a-change-goes-up/
+  - [tr] Bir değişiklik yayına girdikten sonra ne olur (AI translation): https://ipe.rest/journal/tr/2026-11-10-what-happens-after-a-change-goes-up/
 - How one entry becomes thirteen pages (2026-11-09): https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/ - Eleven files written by hand, one script, thirteen pages: how a journal entry on ipe.rest is built.
   - original language: en
   - [en] How one entry becomes thirteen pages: https://ipe.rest/journal/en/2026-11-09-how-one-entry-becomes-thirteen-pages/

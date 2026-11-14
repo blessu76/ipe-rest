@@ -40,14 +40,21 @@ def slug_of(f):
     return f.stem
 
 
-def real_langs():
+def has_json(slug, lang):
+    """A NO_POST_TRANSLATION language is translated for exactly the posts that carry its JSON (per post, not per language)."""
+    code = journal_sync.I18N.K.legacy_code(lang)
+    return (ROOT / "scripts" / "journal_i18n" / slug / ("%s.json" % code)).exists()
+
+
+def real_langs(slug=None):
     """Live languages whose posts are really translated (hreflang, sitemap, llms.txt list only these)."""
-    return [l for l in journal_sync.I18N.LANGS if l not in journal_sync.I18N.NO_POST_TRANSLATION]
+    return [l for l in journal_sync.I18N.LANGS
+            if l not in journal_sync.I18N.NO_POST_TRANSLATION or (slug and has_json(slug, l))]
 
 
-def fallback_langs():
+def fallback_langs(slug=None):
     """Live languages that show the EN original under a localised "not translated yet" note."""
-    return [l for l in journal_sync.I18N.LANGS if l in journal_sync.I18N.NO_POST_TRANSLATION]
+    return [l for l in journal_sync.I18N.LANGS if l in journal_sync.I18N.NO_POST_TRANSLATION and not (slug and has_json(slug, l))]
 
 
 def clone_translations(root, old_slug, new_slug):
@@ -90,11 +97,11 @@ class JournalGeo(unittest.TestCase):
             orig = re.search(r'ipe:original" content="(\w+)"', f.read_text(encoding="utf-8")).group(1)
             self.assertIn(orig, ("en", "ko"))
             base = "https://ipe.rest/journal/%s/%s/"
-            for lang in real_langs():
+            for lang in real_langs(slug):
                 src = (ROOT / "journal" / lang / slug / "index.html").read_text(encoding="utf-8")
                 bp = next(json.loads(b) for b in LD.findall(src) if json.loads(b)["@type"] == "BlogPosting")
                 if lang == orig:
-                    self.assertEqual(len(bp["workTranslation"]), len(real_langs()) - 1)
+                    self.assertEqual(len(bp["workTranslation"]), len(real_langs(slug)) - 1)
                     self.assertNotIn("translationOfWork", bp)
                 else:
                     self.assertEqual(bp["translationOfWork"]["@id"], base % (orig, slug) + "#article")
@@ -102,7 +109,7 @@ class JournalGeo(unittest.TestCase):
                 # AI-translation note only on the 10 machine-translated languages (not on the reviewed EN/KO)
                 self.assertEqual('class="ai-note"' in src, lang in journal_sync.I18N.TR_LANGS, lang)
             # fallback languages: the EN original under a localised note — canonical -> /en/, no relation of its own
-            for lang in fallback_langs():
+            for lang in fallback_langs(slug):
                 src = (ROOT / "journal" / lang / slug / "index.html").read_text(encoding="utf-8")
                 self.assertIn('<link rel="canonical" href="%s">' % (base % ("en", slug)), src, lang)
                 self.assertIn('class="ai-note"', src, lang)
@@ -127,12 +134,12 @@ class JournalGeo(unittest.TestCase):
         urls = {u.find(SM + "loc").text: u for u in root.findall(SM + "url")}
         X = "{http://www.w3.org/1999/xhtml}link"
         for f in posts():
-            for lang in real_langs():  # the language-less shell /journal/<slug>/ is deliberately NOT in the sitemap
+            for lang in real_langs(slug_of(f)):  # the language-less shell /journal/<slug>/ is deliberately NOT in the sitemap
                 u = urls[journal_sync.I18N.post_url(slug_of(f), lang)]
                 self.assertTrue(u.find(SM + "lastmod").text)
-                self.assertEqual(len(u.findall(X)), len(real_langs()) + 1)
+                self.assertEqual(len(u.findall(X)), len(real_langs(slug_of(f))) + 1)
                 self.assertIsNotNone(u.find("{http://www.google.com/schemas/sitemap-image/1.1}image"))
-            for lang in fallback_langs():  # fallback pages canonicalise to /en/: not in the sitemap
+            for lang in fallback_langs(slug_of(f)):  # fallback pages canonicalise to /en/: not in the sitemap
                 self.assertNotIn(journal_sync.I18N.post_url(slug_of(f), lang), urls, lang)
         for lang in journal_sync.I18N.LANGS:
             self.assertEqual(len(urls[journal_sync.I18N.list_url(lang)].findall(X)), len(journal_sync.I18N.LANGS) + 1)
@@ -180,9 +187,9 @@ class JournalGeo(unittest.TestCase):
     def test_llms_and_robots(self):
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
         for f in posts():
-            for lang in real_langs():
+            for lang in real_langs(slug_of(f)):
                 self.assertIn(journal_sync.I18N.post_url(slug_of(f), lang), llms)
-            for lang in fallback_langs():  # fallback pages are not listed (canonical -> /en/)
+            for lang in fallback_langs(slug_of(f)):  # fallback pages are not listed (canonical -> /en/)
                 self.assertNotIn(journal_sync.I18N.post_url(slug_of(f), lang), llms)
             self.assertNotIn(journal_sync.I18N.post_url(slug_of(f)), llms)  # llms.txt points at the /en/ canonical, not the shell
         robots = (ROOT / "robots.txt").read_text()
@@ -350,8 +357,8 @@ class JournalI18n(unittest.TestCase):
             self.assertTrue(self.lds(src), url)
 
     def is_fallback(self, url):
-        m = re.search(r"/journal/([^/]+)/[^/]+/$", url)
-        return bool(m) and m.group(1) in self.I.NO_POST_TRANSLATION
+        m = re.search(r"/journal/([^/]+)/([^/]+)/$", url)
+        return bool(m) and m.group(1) in self.I.NO_POST_TRANSLATION and not has_json(m.group(2), m.group(1))
 
     def test_hreflang_clusters_are_reciprocal_and_self_referencing(self):
         for url, (_, src) in self.live.items():
@@ -375,12 +382,13 @@ class JournalI18n(unittest.TestCase):
                 self.assertEqual(self.hreflangs(other[1]), hl, "cluster of %s differs from %s" % (target, url))
 
     def test_hreflang_covers_all_twelve_languages(self):
-        real = set(self.I.LANGS) - set(self.I.NO_POST_TRANSLATION)
         for url, (_, src) in self.live.items():
             if self.is_fallback(url):
                 continue
+            m = re.search(r"/journal/(?:[^/]+/)?(2\d{3}-[^/]+)/$", url)
+            real = set(real_langs(m.group(1))) if m else set()
             # list pages and info pages carry all 12; post pages (and their shell) only the really translated languages
-            is_post = bool(re.search(r"/journal/(?:[^/]+/)?2\d{3}-", url))
+            is_post = bool(m)
             self.assertEqual(set(self.hreflangs(src)), (real if is_post else set(self.I.LANGS)) | {"x-default"}, url)
 
     def test_fallback_pages_follow_the_rule(self):
@@ -402,7 +410,7 @@ class JournalI18n(unittest.TestCase):
             self.assertNotIn("<loc>%s</loc>" % url, sm, url)
             for u, (_, other) in self.live.items():  # no other page lists it as an hreflang alternate (the language picker may link it)
                 self.assertNotIn(url, self.hreflangs(other).values(), u)
-        self.assertEqual(n, len(self.I.NO_POST_TRANSLATION) * len(posts()))
+        self.assertEqual(n, sum(len(fallback_langs(slug_of(f))) for f in posts()))
 
     def test_html_lang_dir_and_og_locale(self):
         for url, (_, src) in self.live.items():
@@ -416,8 +424,8 @@ class JournalI18n(unittest.TestCase):
                 continue
             self.assertIn('<meta property="og:locale" content="%s">' % self.I.OG_LOCALE[lang], src, url)
             alts = re.findall(r'og:locale:alternate" content="([^"]+)"', src)
-            is_post = bool(re.search(r"/journal/[^/]+/2\d{3}-", url))
-            pool = set(self.I.LANGS) - (set(self.I.NO_POST_TRANSLATION) if is_post else set())
+            ms = re.search(r"/journal/[^/]+/(2\d{3}-[^/]+)/$", url)
+            pool = set(real_langs(ms.group(1))) if ms else set(self.I.LANGS)
             self.assertEqual(set(alts), {self.I.OG_LOCALE[l] for l in pool} - {self.I.OG_LOCALE[lang]}, url)
 
     def test_translated_post_json_ld_and_ai_note(self):

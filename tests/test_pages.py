@@ -331,7 +331,9 @@ class XDefaultSeo(unittest.TestCase):
             self.assertLessEqual(len(d), 160, f)
             n = len(LANGS)
             if re.match(r"journal/2\d{3}-", f):  # post shells: only the really translated languages (the 4 no-translation ones fall back to /en/)
-                n = len(LANGS) - len(journal_i18n.NO_POST_TRANSLATION)
+                slug = f.split("/")[1]
+                n = len(LANGS) - len([l for l in journal_i18n.NO_POST_TRANSLATION
+                                      if not (ROOT / "scripts" / "journal_i18n" / slug / ("%s.json" % journal_i18n.K.legacy_code(l))).exists()])
             self.assertTrue(d.endswith("Available in %d languages." % n), f)
             self.assertNotIn("Choose your language", d, f)
             self.assertNotIn("…", d, f)  # no truncated description (#181)

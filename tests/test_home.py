@@ -204,13 +204,14 @@ class HomeJournalCards(unittest.TestCase):
             self.assertEqual(sec.count("data-ipe-time"), 3)
             for p, d in posts[:3]:
                 self.assertIn(d[lang]["title"].split("&")[0], sec)
-            if lang in J.NO_POST_TRANSLATION:  # fallback cards: EN original text marked lang="en", linking the language's own fallback page
-                self.assertEqual(sec.count('<p class="jcard-ex" lang="en">'), 3, lang)
-                self.assertEqual(sec.count('<h3 lang="en">'), 3, lang)
-                for p, d in posts[:3]:
+            # a NO_POST_TRANSLATION language is a fallback card only for posts without its JSON (EN original marked lang="en", linking the fallback page)
+            fb = [p for p, _d in posts[:3] if lang in J.NO_POST_TRANSLATION
+                  and not (ROOT / "scripts" / "journal_i18n" / p["slug"] / ("%s.json" % J.K.legacy_code(lang))).exists()]
+            self.assertEqual(sec.count('<p class="jcard-ex" lang="en">'), len(fb), lang)
+            self.assertEqual(sec.count('<h3 lang="en">'), len(fb), lang)
+            for p, d in posts[:3]:
+                if p in fb:
                     self.assertEqual(d[lang]["title"], d["en"]["title"])
-            else:
-                self.assertNotIn('lang="en"', sec, lang)
 
     def test_localtime_script_inlined_byte_for_byte(self):
         src = (ROOT / "shared" / "ipe-localtime.js").read_bytes().decode("utf-8")

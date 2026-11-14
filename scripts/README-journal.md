@@ -33,3 +33,13 @@
 ## RSS feed (💡#126)
 
 `journal_sync.py` also writes `journal/feed.xml` (RSS 2.0, English, posts with datePublished <= today KST, newest first; not in the sitemap). The slug `feed` is reserved. Every journal/home/info page carries `<link rel="alternate" type="application/rss+xml">`. A post dated in the future appears in the feed (and `--check` goes stale) on its day — rerun the sync then.
+
+## Draft queue (`scripts/journal_queue/<slug>/`) — undated drafts, never served
+
+`source.html` (EN+KO, still carrying `YYYY-MM-DD` / `HH:MM`, no `ipe:copy-review`) + `i18n/<lang>.json` for the other 10 live languages (ja zh-Hant es pt fr de id th vi tr — `pt.json` is pt-BR, the legacy file code). Nothing reads this folder: not the sync, sitemap, feed or home cards. `tests/test_journal_queue.py` checks every draft (EN original 400+ words, 12 editions, no date, no copy review).
+Publish a draft in 5 steps (the copy review is a gate — posts dated 2026-11-15 or later need `copy_review=iris`, set only after Iris has reviewed):
+1. Pick the date `D` (YYYY-MM-DD) and a KST time `T` (HH:MM) → `git mv scripts/journal_queue/<slug>/source.html scripts/journal_src/D-<slug>.html` and `git mv scripts/journal_queue/<slug>/i18n scripts/journal_i18n/D-<slug>`.
+2. In the moved source, replace `YYYY-MM-DDTHH:MM` with `DTT` first, then every `YYYY-MM-DD` with `D` (`sed -i '' -e "s/YYYY-MM-DDTHH:MM/DTT/" -e "s/YYYY-MM-DD/D/g"`), and add `<meta name="ipe:copy-review" content="iris">` plus `<meta name="ipe:copy-review-date" content="D">` after Iris's review.
+3. `python3 scripts/journal_sync.py && python3 scripts/home_sync.py && python3 scripts/pages_sync.py` (regenerates journal pages, list, sitemap, feed, llms.txt, home cards).
+4. `scripts/check.sh` must be green (journal_check enforces 12 editions + copy review).
+5. Bump `CACHE` in `sw.js`, commit; deploy per the checklist above.

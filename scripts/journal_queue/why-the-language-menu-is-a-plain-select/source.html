@@ -1,0 +1,216 @@
+<!-- QUEUED DRAFT (a source, not served; undated; ipe:copy-review not set yet). Publish steps: scripts/README-journal.md, section "Draft queue". -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Why the language menu is a plain select — ipe() journal</title>
+<meta name="ipe:title-en" content="Why the language menu is a plain select — ipe() journal">
+<meta name="ipe:title-ko" content="언어 메뉴가 평범한 select 인 까닭 — ipe() 저널">
+<meta name="description" content="Twelve languages in one small header menu: why it is a standard select, how it remembers your choice, and what happens when scripts are off.">
+<meta name="ipe:excerpt-en" content="The language menu in the header is the ordinary select element, not a custom widget. It lists twelve languages, remembers your pick in your browser and still works as plain links without scripts.">
+<meta name="ipe:excerpt-ko" content="헤더의 언어 메뉴는 맞춤 위젯이 아니라 평범한 select 요소입니다. 열두 언어가 있고, 고른 언어를 브라우저에 기억하며, 스크립트가 없어도 일반 링크로 동작합니다.">
+<meta name="ipe:published-at" content="YYYY-MM-DDTHH:MM+09:00">
+<meta name="ipe:category" content="studio">
+<meta name="ipe:original" content="en">
+<meta name="ipe:description-ko" content="작은 헤더 메뉴 하나에 열두 언어: 표준 select 인 이유, 선택을 기억하는 방법, 스크립트가 꺼져 있을 때 일어나는 일.">
+<meta name="ipe:abstract-ko" content="ipe.rest 의 언어 메뉴는 옵션이 열두 개인 표준 select 요소입니다. 옵션마다 같은 페이지의 다른 언어판이 각자의 주소로 있습니다. 하나를 고르면 브라우저에 ipe_lang 키로 언어를 저장하고 그 페이지를 엽니다. 스크립트가 꺼져 있으면 select 대신 일반 링크 목록이 나옵니다. 기본 제공 컨트롤을 고른 이유는 안정성, 접근성, 그리고 가벼운 페이지입니다.">
+<meta name="author" content="ipe()">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#fbfcfe">
+<link rel="canonical" href="https://ipe.rest/journal/YYYY-MM-DD-why-the-language-menu-is-a-plain-select/">
+<link rel="manifest" href="/manifest.webmanifest?v=23">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
+<link rel="apple-touch-icon" href="/icon-180.png?v=23">
+<link rel="preload" href="/fonts/inter-400.woff2?v=23" as="font" type="font/woff2" crossorigin>
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ipe()">
+<meta property="og:title" content="Why the language menu is a plain select">
+<meta property="og:description" content="The language menu in the header is the ordinary select element, not a custom widget. It lists twelve languages, remembers your pick in your browser and still works as plain links without scripts.">
+<meta property="og:url" content="https://ipe.rest/journal/YYYY-MM-DD-why-the-language-menu-is-a-plain-select/">
+<meta property="og:image" content="https://ipe.rest/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="YYYY-MM-DD">
+<meta property="article:modified_time" content="YYYY-MM-DD">
+<meta property="article:section" content="studio">
+<meta property="article:author" content="ipe()">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Why the language menu is a plain select">
+<meta name="twitter:description" content="The language menu in the header is the ordinary select element, not a custom widget. It lists twelve languages, remembers your pick in your browser and still works as plain links without scripts.">
+<meta name="twitter:image" content="https://ipe.rest/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://ipe.rest/journal/YYYY-MM-DD-why-the-language-menu-is-a-plain-select/#article",
+  "headline": "Why the language menu is a plain select",
+  "alternativeHeadline": "언어 메뉴가 평범한 select 인 까닭",
+  "description": "Twelve languages in one small header menu: why it is a standard select, how it remembers your choice, and what happens when scripts are off.",
+  "abstract": "The language menu on ipe.rest is a standard select element with twelve options. Each option is the same page in another language, at its own address. Choosing one saves the language under the key ipe_lang in the browser and opens the page. With scripts disabled, a list of plain links replaces the select. The reason for choosing a native control is reliability, accessibility and a small page.",
+  "datePublished": "YYYY-MM-DD",
+  "dateModified": "YYYY-MM-DD",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://ipe.rest/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "thumbnailUrl": "https://ipe.rest/og-image.png",
+  "url": "https://ipe.rest/journal/YYYY-MM-DD-why-the-language-menu-is-a-plain-select/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ipe.rest/journal/YYYY-MM-DD-why-the-language-menu-is-a-plain-select/"
+  },
+  "articleSection": "studio",
+  "keywords": "ipe(), language menu, select element, 12 languages, accessibility, no javascript, calm web",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ipe.rest/icon-512.png"
+    }
+  },
+  "about": [
+    {
+      "@type": "Organization",
+      "@id": "https://ipe.rest/#organization",
+      "name": "ipe()",
+      "alternateName": [
+        "ipe",
+        "idle process",
+        "아이프"
+      ],
+      "url": "https://ipe.rest/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "idle process",
+      "description": "The state a computer enters when it has no work left to do and simply rests; the origin of the name ipe()."
+    },
+    {
+      "@type": "MusicAlbum",
+      "name": "dear(you); vol.1",
+      "url": "https://idle.ipe.rest/",
+      "numTracks": 10,
+      "byArtist": {
+        "@type": "Organization",
+        "@id": "https://ipe.rest/#organization",
+        "name": "ipe()"
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "WebSite",
+      "name": "idle",
+      "url": "https://idle.ipe.rest/"
+    }
+  ],
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://ipe.rest/journal/#blog",
+    "name": "ipe() journal",
+    "url": "https://ipe.rest/journal/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ipe()", "item": "https://ipe.rest/" },
+    { "@type": "ListItem", "position": 2, "name": "journal", "item": "https://ipe.rest/journal/" },
+    { "@type": "ListItem", "position": 3, "name": "Why the language menu is a plain select" }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/journal/journal.css?v=10">
+</head>
+<body>
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ko">본문으로 건너뛰기</span></a>
+<header class="topbar">
+  <a class="logo ltr" href="/" aria-label="ipe() home">ipe()</a>
+  <div class="top-right">
+    <nav aria-label="Primary"><a class="opt" href="/">home</a><a href="/journal/" aria-current="page">journal</a></nav>
+    <div class="langswitch" role="group" aria-label="Language / 언어">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ko" aria-pressed="false">KO</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article class="wrap">
+  <header class="post-head">
+    <p class="eyebrow"><i></i><span>journal · <time datetime="YYYY-MM-DD">YYYY-MM-DD</time></span></p>
+    <h1 lang="en">Why the language menu is a <em>plain</em> select</h1>
+    <h1 lang="ko">언어 메뉴가 <em>평범한</em> select 인 까닭</h1>
+  </header>
+
+  <div class="prose" lang="en">
+    <p class="lead">The language menu in the header is the ordinary select element that every browser already knows how to draw, and that was a deliberate choice.</p>
+    <h2>Twelve languages, twelve addresses</h2>
+    <p>This site is written in twelve languages: English, Korean, Japanese, Traditional Chinese, Spanish, Brazilian Portuguese, French, German, Indonesian, Thai, Vietnamese and Turkish. None of them is a layer on top of another. Each language has its own pages at its own address, so a page in Japanese is a real page that can be linked to, bookmarked and found by a search engine. The menu is only a way to move between those addresses, and each option points at the same page in another language.</p>
+    <h2>Why not something fancier</h2>
+    <p>A menu with flags, animated panels and a search field can look impressive, but it has to be built from scripts and styles that are loaded every time, and every custom piece is a place where something can break for somebody. A native select has no such problem. On a phone it opens the system picker, which is large, familiar and easy to use with a thumb. With a keyboard it opens and closes the way people expect. A screen reader announces it as a list of choices with the current one selected. Nobody had to design any of that, and nobody has to maintain it.</p>
+    <h2>Names, not flags</h2>
+    <p>The options are the names of the languages, each written in that language, so a person who reads only Thai can find Thai without understanding the word for language in any other. We left the flags out because a language is not a country, and many people read more than one language.</p>
+    <h2>What it remembers</h2>
+    <p>When you choose a language, the page saves your choice in your browser under one name, ipe_lang, and opens the matching page. The next time you arrive at the front door, the site looks at that saved choice first, then at the language your browser reports, and falls back to English if it has nothing else to go on. Your choice always wins over a guess. The choice never leaves your device.</p>
+    <h2>Without scripts</h2>
+    <p>If scripts are turned off, a select that changes the page by itself cannot work. For that case the menu is replaced by a short list of plain links, one for each language. They are ordinary anchors, so they work in any browser, in a reader mode, and for any crawler that wants to see which languages exist. The page stays useful with nothing at all running.</p>
+    <blockquote>ipe(); // be still</blockquote>
+    <p>A small control that always works is worth more than a clever one that usually does. This one is small on purpose.</p>
+  </div>
+
+  <div class="prose" lang="ko">
+    <p class="lead">헤더의 언어 메뉴는 모든 브라우저가 이미 그릴 줄 아는 평범한 select 요소이고, 이것은 의도한 선택입니다.</p>
+    <h2>열두 언어, 열두 주소</h2>
+    <p>이 사이트는 열두 언어로 쓰여 있습니다. 영어, 한국어, 일본어, 중국어 번체, 스페인어, 브라질 포르투갈어, 프랑스어, 독일어, 인도네시아어, 태국어, 베트남어, 터키어입니다. 어느 것도 다른 언어 위에 덧씌운 층이 아닙니다. 언어마다 자기 주소에 자기 페이지가 있어서, 일본어 페이지는 링크하고 북마크하고 검색 엔진이 찾을 수 있는 진짜 페이지입니다. 메뉴는 그 주소들 사이를 오가는 길일 뿐이고, 옵션은 각각 같은 페이지의 다른 언어판을 가리킵니다.</p>
+    <h2>더 화려한 것을 쓰지 않은 이유</h2>
+    <p>깃발, 움직이는 패널, 검색 칸이 있는 메뉴는 근사해 보이지만, 매번 불러와야 하는 스크립트와 스타일로 만들어야 하고, 맞춤 부품 하나하나가 누군가에게는 고장 날 수 있는 자리입니다. 기본 제공 select 에는 그런 문제가 없습니다. 폰에서는 시스템 선택창이 열리는데, 크고 익숙하고 엄지로 쓰기 쉽습니다. 키보드에서는 사람들이 기대하는 대로 열리고 닫힙니다. 화면 낭독기는 현재 선택이 표시된 선택지 목록으로 읽어 줍니다. 그중 어느 것도 누가 설계할 필요가 없었고, 누가 관리할 필요도 없습니다.</p>
+    <h2>깃발이 아니라 이름</h2>
+    <p>옵션은 언어의 이름이고, 각각 그 언어로 적혀 있습니다. 그래서 태국어만 읽는 사람도 다른 언어로 쓰인 언어라는 낱말을 몰라도 태국어를 찾을 수 있습니다. 깃발을 뺀 것은 언어가 나라가 아니고, 많은 사람이 둘 이상의 언어를 읽기 때문입니다.</p>
+    <h2>기억하는 것</h2>
+    <p>언어를 고르면 페이지는 선택을 브라우저에 ipe_lang 라는 이름 하나로 저장하고 해당 페이지를 엽니다. 다음에 대문으로 들어오면 사이트는 저장된 선택을 먼저 보고, 그다음 브라우저가 알려 주는 언어를 보고, 더 단서가 없으면 영어로 갑니다. 추측보다 당신의 선택이 언제나 앞섭니다. 선택은 당신의 기기를 떠나지 않습니다.</p>
+    <h2>스크립트가 없을 때</h2>
+    <p>스크립트가 꺼져 있으면 스스로 페이지를 바꾸는 select 는 동작할 수 없습니다. 그 경우를 위해 메뉴는 언어마다 하나씩 있는 짧은 일반 링크 목록으로 바뀝니다. 평범한 앵커라서 어떤 브라우저에서도, 읽기 모드에서도, 어떤 언어가 있는지 보려는 크롤러에게도 동작합니다. 아무것도 실행되지 않아도 페이지는 쓸모가 있습니다.</p>
+    <blockquote>ipe(); // be still</blockquote>
+    <p>언제나 동작하는 작은 컨트롤이 대체로 동작하는 영리한 컨트롤보다 낫습니다. 이것은 일부러 작게 만들었습니다.</p>
+  </div>
+
+  <a class="back" href="/journal/"><span lang="en">← all entries</span><span lang="ko">← 전체 글</span></a>
+</article>
+</main>
+
+<footer>
+  <p class="sig ltr">ipe<span>()</span></p>
+  <div class="foot">
+    <p class="ltr">© 2026 ipe() · idle</p>
+    <nav aria-label="Footer">
+      <a class="ltr" href="/">ipe.rest</a>
+      <a href="/journal/">journal</a>
+      <a href="/about/"><span lang="en">about</span><span lang="ko">소개</span></a>
+      <a href="/contact/"><span lang="en">contact</span><span lang="ko">문의</span></a>
+      <a href="/privacy/"><span lang="en">privacy</span><span lang="ko">개인정보처리방침</span></a>
+      <a href="/en/terms/" hreflang="en"><span lang="en">terms</span><span lang="ko">이용약관 (영문)</span></a>
+    </nav>
+  </div>
+</footer>
+<script src="/journal/journal.js?v=10" defer></script>
+</body>
+</html>

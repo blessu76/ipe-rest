@@ -1,0 +1,216 @@
+<!-- QUEUED DRAFT (a source, not served; undated; ipe:copy-review not set yet). Publish steps: scripts/README-journal.md, section "Draft queue". -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dark mode follows your device until you choose — ipe() journal</title>
+<meta name="ipe:title-en" content="Dark mode follows your device until you choose — ipe() journal">
+<meta name="ipe:title-ko" content="다크 모드는 당신이 고르기 전까지 기기를 따릅니다 — ipe() 저널">
+<meta name="description" content="How the light and dark look of ipe.rest is decided: your device first, your own choice after that, and nothing stored anywhere but your browser.">
+<meta name="ipe:excerpt-en" content="Every page opens in the look your device asks for. A small button in the header lets you choose the other one, and the site remembers that choice in your browser only.">
+<meta name="ipe:excerpt-ko" content="모든 페이지는 기기가 원하는 모습으로 열립니다. 헤더의 작은 버튼으로 다른 쪽을 고를 수 있고, 사이트는 그 선택을 당신의 브라우저에만 기억합니다.">
+<meta name="ipe:published-at" content="YYYY-MM-DDTHH:MM+09:00">
+<meta name="ipe:category" content="studio">
+<meta name="ipe:original" content="en">
+<meta name="ipe:description-ko" content="ipe.rest 의 밝은 화면과 어두운 화면이 정해지는 방법: 먼저 기기, 그다음은 당신의 선택, 그리고 브라우저 밖에는 아무것도 저장하지 않습니다.">
+<meta name="ipe:abstract-ko" content="ipe.rest 는 기기 설정에 따라 밝게 또는 어둡게 열립니다. 헤더의 버튼으로 모습을 바꿀 수 있고, 선택은 브라우저 자체 저장소에 ipe_theme 라는 키 하나로 저장됩니다. 머리 부분의 짧은 스크립트가 페이지를 그리기 전에 모습을 적용하므로 엉뚱한 색이 번쩍이지 않습니다. 선택에 대한 어떤 것도 서버로 보내지 않습니다.">
+<meta name="author" content="ipe()">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#fbfcfe">
+<link rel="canonical" href="https://ipe.rest/journal/YYYY-MM-DD-dark-mode-follows-your-device-until-you-choose/">
+<link rel="manifest" href="/manifest.webmanifest?v=23">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
+<link rel="apple-touch-icon" href="/icon-180.png?v=23">
+<link rel="preload" href="/fonts/inter-400.woff2?v=23" as="font" type="font/woff2" crossorigin>
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ipe()">
+<meta property="og:title" content="Dark mode follows your device until you choose">
+<meta property="og:description" content="Every page opens in the look your device asks for. A small button in the header lets you choose the other one, and the site remembers that choice in your browser only.">
+<meta property="og:url" content="https://ipe.rest/journal/YYYY-MM-DD-dark-mode-follows-your-device-until-you-choose/">
+<meta property="og:image" content="https://ipe.rest/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="YYYY-MM-DD">
+<meta property="article:modified_time" content="YYYY-MM-DD">
+<meta property="article:section" content="studio">
+<meta property="article:author" content="ipe()">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Dark mode follows your device until you choose">
+<meta name="twitter:description" content="Every page opens in the look your device asks for. A small button in the header lets you choose the other one, and the site remembers that choice in your browser only.">
+<meta name="twitter:image" content="https://ipe.rest/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://ipe.rest/journal/YYYY-MM-DD-dark-mode-follows-your-device-until-you-choose/#article",
+  "headline": "Dark mode follows your device until you choose",
+  "alternativeHeadline": "다크 모드는 당신이 고르기 전까지 기기를 따릅니다",
+  "description": "How the light and dark look of ipe.rest is decided: your device first, your own choice after that, and nothing stored anywhere but your browser.",
+  "abstract": "ipe.rest opens in light or dark according to the device setting. A button in the header switches the look, and the choice is saved under one key, ipe_theme, in the browser's own storage. A short script in the head applies the look before the page is painted, so there is no flash of the wrong colours. Nothing about the choice is sent to a server.",
+  "datePublished": "YYYY-MM-DD",
+  "dateModified": "YYYY-MM-DD",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://ipe.rest/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "thumbnailUrl": "https://ipe.rest/og-image.png",
+  "url": "https://ipe.rest/journal/YYYY-MM-DD-dark-mode-follows-your-device-until-you-choose/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ipe.rest/journal/YYYY-MM-DD-dark-mode-follows-your-device-until-you-choose/"
+  },
+  "articleSection": "studio",
+  "keywords": "ipe(), dark mode, light mode, prefers-color-scheme, calm web, privacy, localStorage",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ipe.rest/icon-512.png"
+    }
+  },
+  "about": [
+    {
+      "@type": "Organization",
+      "@id": "https://ipe.rest/#organization",
+      "name": "ipe()",
+      "alternateName": [
+        "ipe",
+        "idle process",
+        "아이프"
+      ],
+      "url": "https://ipe.rest/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "idle process",
+      "description": "The state a computer enters when it has no work left to do and simply rests; the origin of the name ipe()."
+    },
+    {
+      "@type": "MusicAlbum",
+      "name": "dear(you); vol.1",
+      "url": "https://idle.ipe.rest/",
+      "numTracks": 10,
+      "byArtist": {
+        "@type": "Organization",
+        "@id": "https://ipe.rest/#organization",
+        "name": "ipe()"
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "WebSite",
+      "name": "idle",
+      "url": "https://idle.ipe.rest/"
+    }
+  ],
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://ipe.rest/journal/#blog",
+    "name": "ipe() journal",
+    "url": "https://ipe.rest/journal/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ipe()", "item": "https://ipe.rest/" },
+    { "@type": "ListItem", "position": 2, "name": "journal", "item": "https://ipe.rest/journal/" },
+    { "@type": "ListItem", "position": 3, "name": "Dark mode follows your device until you choose" }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/journal/journal.css?v=10">
+</head>
+<body>
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ko">본문으로 건너뛰기</span></a>
+<header class="topbar">
+  <a class="logo ltr" href="/" aria-label="ipe() home">ipe()</a>
+  <div class="top-right">
+    <nav aria-label="Primary"><a class="opt" href="/">home</a><a href="/journal/" aria-current="page">journal</a></nav>
+    <div class="langswitch" role="group" aria-label="Language / 언어">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ko" aria-pressed="false">KO</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article class="wrap">
+  <header class="post-head">
+    <p class="eyebrow"><i></i><span>journal · <time datetime="YYYY-MM-DD">YYYY-MM-DD</time></span></p>
+    <h1 lang="en">Dark mode follows your device <em>until</em> you choose</h1>
+    <h1 lang="ko">다크 모드는 당신이 <em>고르기</em> 전까지 기기를 따릅니다</h1>
+  </header>
+
+  <div class="prose" lang="en">
+    <p class="lead">Every page on this site opens in the look your device asks for, light or dark, and a small button in the header lets you choose the other one.</p>
+    <h2>The first visit</h2>
+    <p>The first time you open a page, we do not know anything about you, and we do not try to find out. Your browser already knows whether your phone or computer is set to a light or a dark appearance, and it tells the page when asked. The site simply follows that. If your device switches to dark at sunset, the site switches with it, as long as you have not chosen anything yourself.</p>
+    <h2>The button</h2>
+    <p>In the header, next to the language menu, there is a small button with a moon or a sun on it. Pressing it flips the page to the other look at once. The button is a real button with a label, so it can be reached with the keyboard and read out by a screen reader, and its state is announced as pressed when the dark look is on. It sits beside the language menu on a phone as well, and the header was checked at narrow widths so the two do not collide.</p>
+    <h2>What is remembered</h2>
+    <p>When you press the button, the page saves your choice in your browser under a single name, ipe_theme, with one of two values: light or dark. That is all. It is stored on your device, in the same kind of storage that remembers your language, and it is never sent to us. There is no account, no cookie that travels with each request, and no counter that records how many people prefer the dark. Clear your browser data and the choice is gone, and the site goes back to following your device.</p>
+    <h2>No flash</h2>
+    <p>A common annoyance with dark modes is the flash: the page loads white for a moment and then turns dark. To avoid it, a very short script runs at the top of every page, before anything is drawn. It reads your saved choice, or your device setting if there is no saved choice, and sets the look first. Then the page is painted once, in the right colours. If scripts are turned off, the page still follows your device setting through plain styles, you just do not get the button.</p>
+    <h2>Colours that stay readable</h2>
+    <p>The dark look is not the light look turned upside down. The page keeps the same blueprint feeling, with thin cobalt lines on a deep blue-grey sheet, and the text is a soft off-white rather than pure white, which is easier on tired eyes. Links, buttons and focus outlines keep enough contrast against the dark background, and the reading column is the same width in both looks, so nothing moves when you switch.</p>
+    <blockquote>ipe(); // be still</blockquote>
+    <p>A website should respect the room you are in. If it is late and the lights are low, the page can be quiet too. If you would rather have it bright, one press is enough, and we will not ask again.</p>
+  </div>
+
+  <div class="prose" lang="ko">
+    <p class="lead">이 사이트의 모든 페이지는 기기가 원하는 모습, 밝게 또는 어둡게 열리고, 헤더의 작은 버튼으로 다른 쪽을 고를 수 있습니다.</p>
+    <h2>처음 방문할 때</h2>
+    <p>처음 페이지를 열 때 우리는 당신에 대해 아무것도 모르고, 알아내려 하지도 않습니다. 브라우저는 폰이나 컴퓨터가 밝은 화면인지 어두운 화면인지 이미 알고 있고, 페이지가 물으면 알려 줍니다. 사이트는 그것을 그대로 따릅니다. 기기가 해 질 무렵 어두운 화면으로 바뀌면, 직접 고른 것이 없는 한 사이트도 함께 바뀝니다.</p>
+    <h2>버튼</h2>
+    <p>헤더의 언어 메뉴 옆에 달이나 해가 그려진 작은 버튼이 있습니다. 누르면 페이지가 곧바로 다른 모습으로 바뀝니다. 이 버튼은 이름표가 붙은 진짜 버튼이라서 키보드로 닿을 수 있고 화면 낭독기가 읽어 줄 수 있으며, 어두운 모습이 켜져 있으면 눌린 상태로 알려 줍니다. 폰에서도 언어 메뉴 옆에 놓이고, 좁은 너비에서 둘이 겹치지 않는지 확인했습니다.</p>
+    <h2>기억하는 것</h2>
+    <p>버튼을 누르면 페이지는 당신의 선택을 브라우저에 ipe_theme 라는 이름 하나로 저장합니다. 값은 light 와 dark 둘 중 하나입니다. 그것이 전부입니다. 선택은 당신의 기기, 언어를 기억하는 것과 같은 종류의 저장소에 있고, 우리에게 보내지지 않습니다. 계정도 없고, 요청마다 따라다니는 쿠키도 없고, 어두운 쪽을 좋아하는 사람이 몇 명인지 세는 숫자도 없습니다. 브라우저 데이터를 지우면 선택도 사라지고, 사이트는 다시 기기를 따릅니다.</p>
+    <h2>번쩍임 없이</h2>
+    <p>다크 모드의 흔한 불편은 번쩍임입니다. 페이지가 잠깐 하얗게 열렸다가 어두워지는 것입니다. 이를 피하려고 아주 짧은 스크립트가 모든 페이지의 맨 위에서, 아무것도 그려지기 전에 실행됩니다. 저장된 선택을, 없으면 기기 설정을 읽어 모습을 먼저 정합니다. 그다음 페이지가 맞는 색으로 한 번만 그려집니다. 스크립트를 꺼 두어도 페이지는 기본 스타일로 기기 설정을 따릅니다. 버튼만 없을 뿐입니다.</p>
+    <h2>읽기 편한 색</h2>
+    <p>어두운 모습은 밝은 모습을 뒤집은 것이 아닙니다. 설계도 같은 느낌은 그대로여서, 깊은 청회색 판 위에 코발트색 가는 선이 있고, 글자는 순백이 아니라 부드러운 흰색이라 지친 눈에 더 편합니다. 링크, 버튼, 포커스 윤곽선은 어두운 배경에서도 충분한 대비를 지키고, 읽는 칸의 너비는 두 모습에서 같아서 바꿀 때 아무것도 움직이지 않습니다.</p>
+    <blockquote>ipe(); // be still</blockquote>
+    <p>웹사이트는 당신이 있는 방을 존중해야 합니다. 밤이 깊어 불이 낮다면 페이지도 조용할 수 있습니다. 밝은 쪽이 좋다면 한 번 누르면 되고, 우리는 다시 묻지 않습니다.</p>
+  </div>
+
+  <a class="back" href="/journal/"><span lang="en">← all entries</span><span lang="ko">← 전체 글</span></a>
+</article>
+</main>
+
+<footer>
+  <p class="sig ltr">ipe<span>()</span></p>
+  <div class="foot">
+    <p class="ltr">© 2026 ipe() · idle</p>
+    <nav aria-label="Footer">
+      <a class="ltr" href="/">ipe.rest</a>
+      <a href="/journal/">journal</a>
+      <a href="/about/"><span lang="en">about</span><span lang="ko">소개</span></a>
+      <a href="/contact/"><span lang="en">contact</span><span lang="ko">문의</span></a>
+      <a href="/privacy/"><span lang="en">privacy</span><span lang="ko">개인정보처리방침</span></a>
+      <a href="/en/terms/" hreflang="en"><span lang="en">terms</span><span lang="ko">이용약관 (영문)</span></a>
+    </nav>
+  </div>
+</footer>
+<script src="/journal/journal.js?v=10" defer></script>
+</body>
+</html>

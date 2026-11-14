@@ -31,7 +31,7 @@ from ipe_web_kit import langswitch as KL  # noqa: E402
 SITE = "https://ipe.rest"
 OG_IMAGE_ALT = "ipe() — quiet things for busy minds"
 VER_CSS = "10"  # journal.css is inlined into the generated pages (css_inline); this version only labels the sw.js core cache entry — bump with it
-VER_JS = "9"
+VER_JS = "10"
 ASSET_VER = "23"
 
 SKELETON = "_skeleton"
@@ -151,6 +151,73 @@ LANG_CSS = (".ipe-lang{display:inline-flex;align-items:center;max-width:100%}"
             ".ipe-lang__select:focus-visible{border-color:var(--cobalt);outline:2px solid var(--cobalt);outline-offset:3px}"
             ".ipe-lang__links a{color:var(--cobalt)}")
 LANG_STYLE = "<style>\n%s\n</style>" % LANG_CSS
+
+
+# ---- Dark theme (ipe_theme) — one localStorage key 'ipe_theme' = 'light'|'dark'. First visit follows prefers-color-scheme; the header toggle wins.
+# theme_inject() is applied to every generated page that carries the header language select (home, journal, info/legal pages, choosers).
+# The pre-paint script sits right after <head> (no flash); the toggle is a button after the language select.
+THEME_KEY = "ipe_theme"
+THEME_LABEL = {"en": "Toggle dark mode", "ko": "다크 모드 전환", "ja": "ダークモードを切り替え", "zh-Hant": "切換深色模式", "es": "Cambiar modo oscuro",
+               "pt-BR": "Alternar modo escuro", "fr": "Basculer le mode sombre", "de": "Dunkelmodus umschalten", "id": "Ganti mode gelap",
+               "th": "สลับโหมดมืด", "vi": "Chuyển chế độ tối", "tr": "Karanlık modu değiştir"}
+THEME_JS = ("(function(){var d=document.documentElement,k='ipe_theme',t,m=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');"
+            "try{t=localStorage.getItem(k)}catch(e){}"
+            "function sys(){return m&&m.matches?'dark':'light'}"
+            "function set(v){d.setAttribute('data-theme',v);d.style.colorScheme=v;"
+            "var b=document.querySelectorAll('.ipe-theme');for(var i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',v==='dark'?'true':'false')}"
+            "set(t==='light'||t==='dark'?t:sys());"
+            "document.addEventListener('DOMContentLoaded',function(){set(d.getAttribute('data-theme'))});"
+            "document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.ipe-theme');if(!b)return;"
+            "var n=d.getAttribute('data-theme')==='dark'?'light':'dark';set(n);try{localStorage.setItem(k,n)}catch(x){}});"
+            "if(m&&m.addEventListener)m.addEventListener('change',function(){var s;try{s=localStorage.getItem(k)}catch(e){}if(s!=='light'&&s!=='dark')set(sys())})})();")
+_DARK_VARS = ("--paper:#0c111c;--sheet:#131a28;--tint:#182033;--ink:#e9eefb;--text:#c7d0e4;--muted:#9aa6c0;--cobalt:#8fb0ff;--cobalt-bright:#6f98ff;"
+              "--line:rgba(143,176,255,.30);--line-soft:rgba(143,176,255,.16);--hair:rgba(233,238,251,.12);"
+              "color-scheme:dark")
+_LIGHT_CHOOSER = "--bg:#fbfcfe;--ink:#0f1b33;--muted:#5b6784;--cobalt:#1f4fd8;--line:#d7deec;color-scheme:light"
+_DARK_CHOOSER = "--bg:#0d1424;--ink:#e8edf8;--muted:#9aa6c4;--cobalt:#8fb0ff;--line:#26314d;color-scheme:dark"
+THEME_CSS = (".ipe-theme{display:inline-flex;align-items:center;justify-content:center;flex:none;width:var(--tap,44px);height:var(--tap,44px);padding:0;"
+             "margin:0;color:var(--cobalt);background:transparent;border:1px solid var(--line);border-radius:0;cursor:pointer;font:inherit}"
+             ".ipe-theme:hover{border-color:var(--cobalt)}.ipe-theme:focus-visible{outline:2px solid var(--cobalt);outline-offset:3px}"
+             ".ipe-theme svg{width:18px;height:18px;display:block}.ipe-theme .i-sun{display:none}"
+             ":root[data-theme=\"dark\"] .ipe-theme .i-sun{display:block}:root[data-theme=\"dark\"] .ipe-theme .i-moon{display:none}"
+             "@media(max-width:420px){.ipe-theme{width:40px}.ipe-lang__select{max-width:min(36vw,150px)!important}}"
+             "@media(prefers-color-scheme:dark){:root:not([data-theme]){%(dv)s}}"
+             ":root[data-theme=\"dark\"]{%(dv)s}"
+             ":root[data-theme=\"dark\"] .skip{color:#0c111c}:root[data-theme=\"dark\"] ::selection{background:#2a3d6e;color:#fff}"
+             ":root[data-theme=\"dark\"] .hero-art{background:#182033}"
+             ":root[data-theme=\"dark\"] .art-note{background:rgba(19,26,40,.88);color:#c7d0e4}"
+             ":root[data-theme=\"dark\"] .langswitch button[aria-pressed=\"true\"]{color:#0c111c}"
+             ":root[data-theme=\"dark\"] .ipe-lang__select option{background:#131a28;color:#e9eefb}"
+             ":root[data-theme=\"dark\"] .nav{box-shadow:0 18px 40px rgba(0,0,0,.45)}") % {"dv": _DARK_VARS}
+# the language-less root chooser (home_sync CHOOSER_CSS) has its own --bg/--ink/... tokens and a media-query dark: make the stored choice win there
+THEME_CHOOSER_CSS = (":root[data-theme=\"dark\"]{%s}:root[data-theme=\"light\"]{%s}" % (_DARK_CHOOSER, _LIGHT_CHOOSER))
+THEME_ICON = ('<svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5z"/></svg>'
+              '<svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/>'
+              '<path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>')
+_LANG_ATTR = re.compile(r'<html lang="([^"]+)"')
+_SELECT_END = "</noscript></div>"
+
+
+def theme_button(lang):
+    label = esc(THEME_LABEL.get(lang, THEME_LABEL["en"]))
+    return '<button class="ipe-theme" type="button" aria-label="%s" title="%s" aria-pressed="false">%s</button>' % (label, label, THEME_ICON)
+
+
+def theme_inject(page):
+    """Add the dark theme to a generated page: pre-paint script after <head>, CSS before </head>, toggle after the language select.
+    Pages without the header select (redirect stubs, xml) are returned unchanged. Idempotent."""
+    if 'class="ipe-lang"' not in page or "ipe-theme" in page:
+        return page
+    m = _LANG_ATTR.search(page)
+    lang = m.group(1) if m and m.group(1) in THEME_LABEL else "en"
+    out = page.replace("<head>", "<head>\n<script>%s</script>" % THEME_JS, 1)
+    css = THEME_CSS + (THEME_CHOOSER_CSS if "--bg:#fbfcfe" in page else "") + ":root[data-theme=\"light\"]{color-scheme:light}"
+    out = out.replace("</head>", "<style>\n%s\n</style>\n</head>" % css, 1)
+    i = out.find(_SELECT_END, out.find('class="ipe-lang"'))
+    if i < 0 or "<script>" + THEME_JS not in out:
+        raise ValueError("theme_inject: header language select / <head> not found")
+    j = i + len(_SELECT_END)
+    return out[:j] + theme_button(lang) + out[j:]
 
 
 def lang_js_url():

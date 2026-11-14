@@ -305,6 +305,7 @@ def build():
     if "<!-- pages:llms:start -->" not in lt:
         lt = re.sub(r"- About: [^\n]*\n- Contact: [^\n]*\n- Privacy policy: [^\n]*\n", "<!-- pages:llms:start -->\n<!-- pages:llms:end -->\n", lt, count=1)
     writes[ROOT / "llms.txt"] = between_replace(lt, "<!-- pages:llms:start -->", "<!-- pages:llms:end -->", llms_block(data))
+    writes = {p: (J.theme_inject(t) if p.suffix == ".html" else t) for p, t in writes.items()}  # ipe_theme: dark toggle on every page with the header select
     return writes, errors
 
 

@@ -477,6 +477,7 @@ def build(root=ROOT):
                     json.loads(raw)
                 except ValueError as e:
                     errors.append("%s JSON-LD invalid: %s" % (path.relative_to(root), e))
+    writes = {p: (I18N.theme_inject(t) if p.suffix == ".html" else t) for p, t in writes.items()}  # ipe_theme: dark toggle on every page with the header select
     return writes, errors
 
 

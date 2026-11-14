@@ -395,6 +395,7 @@ def build(root=ROOT):
     if "<!-- home:llms:start -->" not in lt:
         lt = lt.replace("## Journal\n", "## Main page\n<!-- home:llms:start -->\n<!-- home:llms:end -->\n\n## Journal\n", 1)
     writes[root / "llms.txt"] = replace_between(lt, "<!-- home:llms:start -->", "<!-- home:llms:end -->", llms_block())
+    writes = {p: (J.theme_inject(t) if p.suffix == ".html" else t) for p, t in writes.items()}  # ipe_theme: dark toggle on every page with the header select
     return writes, errors
 
 

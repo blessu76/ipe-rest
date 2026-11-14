@@ -544,7 +544,7 @@ class JournalPublishTime(unittest.TestCase):
         for lang in journal_sync.I18N.LANGS:
             for rel in [Path("index.html")] + [Path(sl) / "index.html" for sl in slugs]:
                 page = (ROOT / "journal" / lang / rel).read_text(encoding="utf-8")
-                inline = [m for m in re.findall(r"<script>(.*?)</script>", page, re.S)]
+                inline = [m for m in re.findall(r"<script>(.*?)</script>", page, re.S) if "ipe_theme" not in m]  # the ipe_theme pre-paint script is separate
                 self.assertEqual(len(inline), 1, (lang, str(rel)))
                 self.assertEqual(hashlib.sha256(inline[0].encode("utf-8")).hexdigest(), want, (lang, str(rel)))
                 self.assertIn("</script>\n</body>", page)

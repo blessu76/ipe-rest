@@ -442,3 +442,17 @@ class FooterLinks(unittest.TestCase):
                         for a, b in pages_sync.LEGAL_REWRITE:
                             href = href.replace(a, b)
                     self.assertIn('href="%s"' % href, foot, "%s footer (%s) lacks %s" % (name, lang, href))
+
+
+class HeaderJournalNav(unittest.TestCase):
+    """Every live language's header nav links its own journal index, on the home, info and journal pages."""
+
+    def test_header_nav_links_same_language_journal(self):
+        for lang in LANGS:
+            files = [ROOT / lang / "index.html", ROOT / lang / "about" / "index.html",
+                     ROOT / lang / "contact" / "index.html", ROOT / "journal" / lang / "index.html"]
+            files += sorted((ROOT / "journal" / lang).glob("*/index.html"))
+            for f in files:
+                m = re.search(r'<nav[^>]*aria-label="Primary"[^>]*>(.*?)</nav>', f.read_text(encoding="utf-8"), re.S)
+                self.assertIsNotNone(m, "no primary nav in %s" % f)
+                self.assertIn('href="/journal/%s/"' % lang, m.group(1), "header journal link missing: %s" % f)

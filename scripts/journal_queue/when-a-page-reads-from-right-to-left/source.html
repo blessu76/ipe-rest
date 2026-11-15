@@ -1,0 +1,216 @@
+<!-- QUEUED DRAFT (a source, not served; undated; ipe:copy-review not set yet). Publish steps: scripts/README-journal.md, section "Draft queue". -->
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>When a page reads from right to left — ipe() journal</title>
+<meta name="ipe:title-en" content="When a page reads from right to left — ipe() journal">
+<meta name="ipe:title-ko" content="오른쪽에서 왼쪽으로 읽는 페이지 — ipe() 저널">
+<meta name="description" content="How the Arabic pages of ipe.rest are turned around: one direction attribute, start and end instead of left and right, and a few things that never flip.">
+<meta name="ipe:excerpt-en" content="Arabic is the one right-to-left language on this site. Its pages declare their direction once, use start and end instead of left and right, and keep the logo and code lines reading the usual way.">
+<meta name="ipe:excerpt-ko" content="아랍어는 이 사이트에서 오른쪽에서 왼쪽으로 읽는 유일한 언어입니다. 아랍어 페이지는 방향을 한 번 선언하고, 왼쪽·오른쪽 대신 시작과 끝으로 간격을 잡으며, 로고와 코드 줄은 평소 방향으로 읽히게 둡니다.">
+<meta name="ipe:published-at" content="YYYY-MM-DDTHH:MM+09:00">
+<meta name="ipe:category" content="studio">
+<meta name="ipe:original" content="en">
+<meta name="ipe:description-ko" content="ipe.rest 의 아랍어 페이지가 뒤집히는 방식: 방향 속성 하나, 왼쪽·오른쪽 대신 시작과 끝, 그리고 절대 뒤집히지 않는 몇 가지.">
+<meta name="ipe:abstract-ko" content="아랍어는 ipe.rest 의 열여섯 언어 가운데 오른쪽에서 왼쪽으로 읽는 유일한 언어입니다. 아랍어 페이지는 html 요소에 dir 속성을 한 번 선언하고, 스타일시트는 왼쪽·오른쪽 대신 시작과 끝으로 간격과 테두리를 잡아 별도 스타일시트 없이 방향이 따라 바뀝니다. 카드 위에 올렸을 때의 움직임은 읽는 방향을 따르도록 따로 규칙을 두었고, 로고와 코드 줄은 항상 왼쪽에서 오른쪽으로 읽힙니다.">
+<meta name="author" content="ipe()">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#fbfcfe">
+<link rel="canonical" href="https://ipe.rest/journal/YYYY-MM-DD-when-a-page-reads-from-right-to-left/">
+<link rel="manifest" href="/manifest.webmanifest?v=23">
+<link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png?v=23">
+<link rel="apple-touch-icon" href="/icon-180.png?v=23">
+<link rel="preload" href="/fonts/inter-400.woff2?v=23" as="font" type="font/woff2" crossorigin>
+
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="ipe()">
+<meta property="og:title" content="When a page reads from right to left">
+<meta property="og:description" content="Arabic is the one right-to-left language on this site. Its pages declare their direction once, use start and end instead of left and right, and keep the logo and code lines reading the usual way.">
+<meta property="og:url" content="https://ipe.rest/journal/YYYY-MM-DD-when-a-page-reads-from-right-to-left/">
+<meta property="og:image" content="https://ipe.rest/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="article:published_time" content="YYYY-MM-DD">
+<meta property="article:modified_time" content="YYYY-MM-DD">
+<meta property="article:section" content="studio">
+<meta property="article:author" content="ipe()">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="When a page reads from right to left">
+<meta name="twitter:description" content="Arabic is the one right-to-left language on this site. Its pages declare their direction once, use start and end instead of left and right, and keep the logo and code lines reading the usual way.">
+<meta name="twitter:image" content="https://ipe.rest/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "@id": "https://ipe.rest/journal/YYYY-MM-DD-when-a-page-reads-from-right-to-left/#article",
+  "headline": "When a page reads from right to left",
+  "alternativeHeadline": "오른쪽에서 왼쪽으로 읽는 페이지",
+  "description": "How the Arabic pages of ipe.rest are turned around: one direction attribute, start and end instead of left and right, and a few things that never flip.",
+  "abstract": "Arabic is the only right-to-left language among the sixteen on ipe.rest. Its pages declare the dir attribute once on the html element, and the stylesheet sets spacing and borders by start and end instead of left and right, so the direction follows without a second stylesheet. The nudge on a hovered card has its own rule so it follows the reading direction, and the logo and code lines always read left to right.",
+  "datePublished": "YYYY-MM-DD",
+  "dateModified": "YYYY-MM-DD",
+  "image": {
+    "@type": "ImageObject",
+    "url": "https://ipe.rest/og-image.png",
+    "width": 1200,
+    "height": 630
+  },
+  "thumbnailUrl": "https://ipe.rest/og-image.png",
+  "url": "https://ipe.rest/journal/YYYY-MM-DD-when-a-page-reads-from-right-to-left/",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ipe.rest/journal/YYYY-MM-DD-when-a-page-reads-from-right-to-left/"
+  },
+  "articleSection": "studio",
+  "keywords": "ipe(), right-to-left, Arabic, dir attribute, logical properties, 16 languages, calm web",
+  "isAccessibleForFree": true,
+  "author": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "@id": "https://ipe.rest/#organization",
+    "name": "ipe()",
+    "url": "https://ipe.rest/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ipe.rest/icon-512.png"
+    }
+  },
+  "about": [
+    {
+      "@type": "Organization",
+      "@id": "https://ipe.rest/#organization",
+      "name": "ipe()",
+      "alternateName": [
+        "ipe",
+        "idle process",
+        "아이프"
+      ],
+      "url": "https://ipe.rest/"
+    },
+    {
+      "@type": "DefinedTerm",
+      "name": "idle process",
+      "description": "The state a computer enters when it has no work left to do and simply rests; the origin of the name ipe()."
+    },
+    {
+      "@type": "MusicAlbum",
+      "name": "dear(you); vol.1",
+      "url": "https://idle.ipe.rest/",
+      "numTracks": 10,
+      "byArtist": {
+        "@type": "Organization",
+        "@id": "https://ipe.rest/#organization",
+        "name": "ipe()"
+      }
+    }
+  ],
+  "mentions": [
+    {
+      "@type": "WebSite",
+      "name": "idle",
+      "url": "https://idle.ipe.rest/"
+    }
+  ],
+  "isPartOf": {
+    "@type": "Blog",
+    "@id": "https://ipe.rest/journal/#blog",
+    "name": "ipe() journal",
+    "url": "https://ipe.rest/journal/"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "ipe()", "item": "https://ipe.rest/" },
+    { "@type": "ListItem", "position": 2, "name": "journal", "item": "https://ipe.rest/journal/" },
+    { "@type": "ListItem", "position": 3, "name": "When a page reads from right to left" }
+  ]
+}
+</script>
+<link rel="stylesheet" href="/journal/journal.css?v=10">
+</head>
+<body>
+<a class="skip" href="#main"><span lang="en">Skip to content</span><span lang="ko">본문으로 건너뛰기</span></a>
+<header class="topbar">
+  <a class="logo ltr" href="/" aria-label="ipe() home">ipe()</a>
+  <div class="top-right">
+    <nav aria-label="Primary"><a class="opt" href="/">home</a><a href="/journal/" aria-current="page">journal</a></nav>
+    <div class="langswitch" role="group" aria-label="Language / 언어">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ko" aria-pressed="false">KO</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+<article class="wrap">
+  <header class="post-head">
+    <p class="eyebrow"><i></i><span>journal · <time datetime="YYYY-MM-DD">YYYY-MM-DD</time></span></p>
+    <h1 lang="en">When a page reads from <em>right</em> to left</h1>
+    <h1 lang="ko"><em>오른쪽</em>에서 왼쪽으로 읽는 페이지</h1>
+  </header>
+
+  <div class="prose" lang="en">
+    <p class="lead">Arabic is read from right to left, so its pages are not only translated; they are turned around.</p>
+    <h2>One attribute at the top</h2>
+    <p>Of the sixteen languages on this site, Arabic is the only one that is read from right to left. Every Arabic page says so once, with a direction attribute on the page itself, and the browser does the rest of the work. Text starts at the right edge, lines wrap from the right, and punctuation lands where an Arabic reader expects it. Nobody has to place anything by hand.</p>
+    <h2>Start and end, not left and right</h2>
+    <p>A page only turns around cleanly if its spacing was never written in terms of left and right. In the stylesheet, the skip link at the top of the page sits at the start of the line. The vertical bar beside a quotation is a border on the start side of the block. The note that marks a machine translation carries its accent on the start side too. In an English page the start is the left edge, and in an Arabic page it is the right edge, so one stylesheet serves both and there is no second copy to keep in step.</p>
+    <h2>The things that move the other way</h2>
+    <p>Some details need a rule of their own. When you point at an entry in the list, the card slides a few pixels along the direction of reading, toward the end of the line. In English that is to the right, and in Arabic it would look wrong if it went the same way, so the Arabic pages slide it to the left. It is a small motion, and it is also switched off for anyone who asks their device for less movement.</p>
+    <h2>The things that never flip</h2>
+    <p>The ipe() logo and the signature in the footer always read left to right, because they are a name and not a sentence. So do lines of code, such as the key ipe_lang that appears in other entries. They are marked as isolated runs of left-to-right text, which keeps the surrounding Arabic from scrambling the order of their characters. Without that mark, a line that mixes two directions can end up with its brackets on the wrong side.</p>
+    <h2>Looking at it</h2>
+    <p>The Arabic pages are checked at phone widths like all the others, because that is where a forgotten left-aligned rule shows up first: a margin on the wrong edge, a button pushed against the wrong side. The aim is modest. A reader of Arabic should never feel that the page was built for someone else and then mirrored as an afterthought.</p>
+    <blockquote>ipe(); // be still</blockquote>
+    <p>Direction is part of how a language is read, and a page that respects it is quiet in the right way.</p>
+  </div>
+
+  <div class="prose" lang="ko">
+    <p class="lead">아랍어는 오른쪽에서 왼쪽으로 읽으므로, 아랍어 페이지는 번역만 된 것이 아니라 방향까지 뒤집혀 있습니다.</p>
+    <h2>맨 위의 속성 하나</h2>
+    <p>이 사이트의 열여섯 언어 가운데 오른쪽에서 왼쪽으로 읽는 언어는 아랍어뿐입니다. 아랍어 페이지는 모두 페이지 자체에 방향 속성을 한 번 선언하고, 나머지는 브라우저가 알아서 합니다. 글은 오른쪽 가장자리에서 시작하고, 줄은 오른쪽에서부터 넘어가고, 문장부호는 아랍어 독자가 기대하는 자리에 놓입니다. 손으로 배치할 것은 없습니다.</p>
+    <h2>왼쪽·오른쪽이 아니라 시작과 끝</h2>
+    <p>페이지는 간격을 왼쪽과 오른쪽으로 쓴 적이 없어야 깔끔하게 뒤집힙니다. 스타일시트에서 페이지 맨 위의 건너뛰기 링크는 줄의 시작 쪽에 놓입니다. 인용문 옆의 세로선은 블록의 시작 쪽 테두리입니다. 기계 번역이라고 알리는 안내문의 강조선도 시작 쪽에 있습니다. 영어 페이지에서 시작은 왼쪽 가장자리이고 아랍어 페이지에서는 오른쪽 가장자리라서, 스타일시트 하나로 둘을 다 맞추고 따로 맞춰 둘 사본이 없습니다.</p>
+    <h2>반대로 움직이는 것들</h2>
+    <p>몇몇 세부는 자기만의 규칙이 필요합니다. 목록에서 글 하나를 가리키면 카드가 읽는 방향을 따라, 줄의 끝 쪽으로 몇 픽셀 미끄러집니다. 영어에서는 오른쪽이고, 아랍어에서 같은 쪽으로 가면 어색하게 보이므로 아랍어 페이지는 왼쪽으로 미끄러뜨립니다. 작은 움직임이고, 기기에 움직임을 줄여 달라고 요청한 사람에게는 꺼집니다.</p>
+    <h2>절대 뒤집히지 않는 것들</h2>
+    <p>ipe() 로고와 푸터의 서명은 문장이 아니라 이름이라서 항상 왼쪽에서 오른쪽으로 읽힙니다. 다른 글에 나오는 ipe_lang 키 같은 코드 줄도 마찬가지입니다. 이런 것들은 왼쪽에서 오른쪽으로 읽는 독립된 덩어리로 표시되어서, 주변의 아랍어가 글자 순서를 뒤섞지 않게 합니다. 이 표시가 없으면 두 방향이 섞인 줄은 괄호가 엉뚱한 쪽에 붙기도 합니다.</p>
+    <h2>직접 보기</h2>
+    <p>아랍어 페이지도 다른 언어와 똑같이 폰 너비에서 확인합니다. 빠뜨린 왼쪽 정렬 규칙이 가장 먼저 드러나는 곳이 거기이기 때문입니다. 엉뚱한 가장자리에 붙은 여백, 반대쪽으로 밀린 버튼 같은 것들입니다. 목표는 소박합니다. 아랍어를 읽는 사람이, 누군가 다른 사람을 위해 만든 페이지를 나중에 뒤집어 놓았다고 느끼지 않게 하는 것입니다.</p>
+    <blockquote>ipe(); // be still</blockquote>
+    <p>방향은 언어를 읽는 방식의 일부이고, 그것을 존중하는 페이지는 알맞은 방식으로 조용합니다.</p>
+  </div>
+
+  <a class="back" href="/journal/"><span lang="en">← all entries</span><span lang="ko">← 전체 글</span></a>
+</article>
+</main>
+
+<footer>
+  <p class="sig ltr">ipe<span>()</span></p>
+  <div class="foot">
+    <p class="ltr">© 2026 ipe() · idle</p>
+    <nav aria-label="Footer">
+      <a class="ltr" href="/">ipe.rest</a>
+      <a href="/journal/">journal</a>
+      <a href="/about/"><span lang="en">about</span><span lang="ko">소개</span></a>
+      <a href="/contact/"><span lang="en">contact</span><span lang="ko">문의</span></a>
+      <a href="/privacy/"><span lang="en">privacy</span><span lang="ko">개인정보처리방침</span></a>
+      <a href="/en/terms/" hreflang="en"><span lang="en">terms</span><span lang="ko">이용약관 (영문)</span></a>
+    </nav>
+  </div>
+</footer>
+<script src="/journal/journal.js?v=10" defer></script>
+</body>
+</html>

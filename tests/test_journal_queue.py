@@ -6,8 +6,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 QUEUE = ROOT / "scripts" / "journal_queue"
-FILES = ["ja", "zh-Hant", "es", "pt", "fr", "de", "id", "th", "vi", "tr"]  # + en/ko in source.html (pt.json = pt-BR)
-EXTRA = ["ar", "hi", "ru", "zh"]  # optional editions: all four or none
+FILES = ["ja", "zh-Hant", "es", "pt", "fr", "de", "id", "th", "vi", "tr", "ar", "hi", "ru", "zh"]  # + en/ko in source.html = all 16 languages (pt.json = pt-BR)
 KEYS = {"title", "h1_html", "description", "abstract", "excerpt", "body"}
 
 
@@ -40,13 +39,8 @@ class JournalQueue(unittest.TestCase):
                 self.assertEqual(set(data), KEYS, "%s/%s" % (d.name, code))
                 self.assertTrue(all(isinstance(v, str) and v.strip() for v in data.values()), "%s/%s" % (d.name, code))
                 self.assertGreater(len(data["body"]), 600, "%s/%s" % (d.name, code))
-            have = [c for c in EXTRA if (d / "i18n" / ("%s.json" % c)).exists()]
-            self.assertIn(len(have), (0, len(EXTRA)), d.name)
-            for code in have:
-                data = json.loads((d / "i18n" / ("%s.json" % code)).read_text(encoding="utf-8"))
-                self.assertEqual(set(data), KEYS, "%s/%s" % (d.name, code))
                 self.assertLessEqual(len(data["title"]), 60, "%s/%s" % (d.name, code))
-            self.assertEqual(len(list((d / "i18n").glob("*.json"))), len(FILES) + len(have), d.name)
+            self.assertEqual(len(list((d / "i18n").glob("*.json"))), len(FILES), d.name)
 
     def test_drafts_are_not_served_anywhere(self):
         served = "".join((ROOT / f).read_text(encoding="utf-8") for f in ("sitemap.xml", "llms.txt", "journal/feed.xml"))

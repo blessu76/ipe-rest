@@ -1,5 +1,5 @@
 {
-  "title": "Le mode sombre suit votre appareil, sauf si vous choisissez",
+  "title": "Le mode sombre suit votre appareil jusqu'à votre choix",
   "h1_html": "Le mode sombre suit votre appareil <em>jusqu'à ce que</em> vous choisissiez",
   "description": "Comment l'apparence claire ou sombre d'ipe.rest est décidée : d'abord votre appareil, ensuite votre propre choix, et rien de conservé ailleurs que dans votre navigateur.",
   "abstract": "ipe.rest s'ouvre en clair ou en sombre selon le réglage de l'appareil. Un bouton dans l'en-tête change l'apparence, et le choix est enregistré sous une seule clé, ipe_theme, dans le stockage propre au navigateur. Un court script dans le head applique l'apparence avant que la page ne soit dessinée, il n'y a donc aucun éclair de mauvaises couleurs. Rien de ce choix n'est envoyé à un serveur.",

@@ -164,13 +164,13 @@
   <div class="prose" lang="en">
     <p class="lead">Every page on this site opens in the look your device asks for, light or dark, and a small button in the header lets you choose the other one.</p>
     <h2>The first visit</h2>
-    <p>The first time you open a page, we do not know anything about you, and we do not try to find out. Your browser already knows whether your phone or computer is set to a light or a dark appearance, and it tells the page when asked. The site simply follows that. If your device switches to dark at sunset, the site switches with it, as long as you have not chosen anything yourself.</p>
+    <p>Choosing the look needs nothing from you. Your browser already knows whether your phone or computer is set to a light or a dark appearance, and it tells the page when asked. The site simply follows that. If your device switches to dark at sunset, the site switches with it, as long as you have not chosen anything yourself.</p>
     <h2>The button</h2>
-    <p>In the header, next to the language menu, there is a small button with a moon or a sun on it. Pressing it flips the page to the other look at once. The button is a real button with a label, so it can be reached with the keyboard and read out by a screen reader, and its state is announced as pressed when the dark look is on. It sits beside the language menu on a phone as well, and the header was checked at narrow widths so the two do not collide.</p>
+    <p>In the header, next to the language menu, there is a small button with a moon or a sun on it. Pressing it flips the page to the other look at once. The button is a real button with a label, so it can be reached with the keyboard and read out by a screen reader, and its state is announced as pressed when the dark look is on. It sits beside the language menu on a phone as well.</p>
     <h2>What is remembered</h2>
-    <p>When you press the button, the page saves your choice in your browser under a single name, ipe_theme, with one of two values: light or dark. That is all. It is stored on your device, in the same kind of storage that remembers your language, and it is never sent to us. There is no account, no cookie that travels with each request, and no counter that records how many people prefer the dark. Clear your browser data and the choice is gone, and the site goes back to following your device.</p>
+    <p>When you press the button, the page saves your choice in your browser under a single name, ipe_theme, with one of two values: light or dark. That is all. It is stored on your device, in the same kind of storage that remembers your language, and it is never sent to us. There is no account, and the choice is not a cookie: it is not sent with any request, and no counter records how many people prefer the dark. Clear your browser data and the choice is gone, and the site goes back to following your device.</p>
     <h2>No flash</h2>
-    <p>A common annoyance with dark modes is the flash: the page loads white for a moment and then turns dark. To avoid it, a very short script runs at the top of every page, before anything is drawn. It reads your saved choice, or your device setting if there is no saved choice, and sets the look first. Then the page is painted once, in the right colours. If scripts are turned off, the page still follows your device setting through plain styles, you just do not get the button.</p>
+    <p>A common annoyance with dark modes is the flash: the page loads white for a moment and then turns dark. To avoid it, a very short script runs at the top of every page, before anything is drawn. It reads your saved choice, or your device setting if there is no saved choice, and sets the look first. Then the page is painted once, in the right colours. If scripts are turned off, the page still follows your device setting through plain styles; the button just does nothing without scripts.</p>
     <h2>Colours that stay readable</h2>
     <p>The dark look is not the light look turned upside down. The page keeps the same blueprint feeling, with thin cobalt lines on a deep blue-grey sheet, and the text is a soft off-white rather than pure white, which is easier on tired eyes. Links, buttons and focus outlines keep enough contrast against the dark background, and the reading column is the same width in both looks, so nothing moves when you switch.</p>
     <blockquote>ipe(); // be still</blockquote>
@@ -180,13 +180,13 @@
   <div class="prose" lang="ko">
     <p class="lead">이 사이트의 모든 페이지는 기기가 원하는 모습, 밝게 또는 어둡게 열리고, 헤더의 작은 버튼으로 다른 쪽을 고를 수 있습니다.</p>
     <h2>처음 방문할 때</h2>
-    <p>처음 페이지를 열 때 우리는 당신에 대해 아무것도 모르고, 알아내려 하지도 않습니다. 브라우저는 폰이나 컴퓨터가 밝은 화면인지 어두운 화면인지 이미 알고 있고, 페이지가 물으면 알려 줍니다. 사이트는 그것을 그대로 따릅니다. 기기가 해 질 무렵 어두운 화면으로 바뀌면, 직접 고른 것이 없는 한 사이트도 함께 바뀝니다.</p>
+    <p>어떤 모습으로 열지 정하는 데는 당신에 대한 정보가 필요하지 않습니다. 브라우저는 폰이나 컴퓨터가 밝은 화면인지 어두운 화면인지 이미 알고 있고, 페이지가 물으면 알려 줍니다. 사이트는 그것을 그대로 따릅니다. 기기가 해 질 무렵 어두운 화면으로 바뀌면, 직접 고른 것이 없는 한 사이트도 함께 바뀝니다.</p>
     <h2>버튼</h2>
-    <p>헤더의 언어 메뉴 옆에 달이나 해가 그려진 작은 버튼이 있습니다. 누르면 페이지가 곧바로 다른 모습으로 바뀝니다. 이 버튼은 이름표가 붙은 진짜 버튼이라서 키보드로 닿을 수 있고 화면 낭독기가 읽어 줄 수 있으며, 어두운 모습이 켜져 있으면 눌린 상태로 알려 줍니다. 폰에서도 언어 메뉴 옆에 놓이고, 좁은 너비에서 둘이 겹치지 않는지 확인했습니다.</p>
+    <p>헤더의 언어 메뉴 옆에 달이나 해가 그려진 작은 버튼이 있습니다. 누르면 페이지가 곧바로 다른 모습으로 바뀝니다. 이 버튼은 이름표가 붙은 진짜 버튼이라서 키보드로 닿을 수 있고 화면 낭독기가 읽어 줄 수 있으며, 어두운 모습이 켜져 있으면 눌린 상태로 알려 줍니다. 폰에서도 언어 메뉴 옆에 놓입니다.</p>
     <h2>기억하는 것</h2>
-    <p>버튼을 누르면 페이지는 당신의 선택을 브라우저에 ipe_theme 라는 이름 하나로 저장합니다. 값은 light 와 dark 둘 중 하나입니다. 그것이 전부입니다. 선택은 당신의 기기, 언어를 기억하는 것과 같은 종류의 저장소에 있고, 우리에게 보내지지 않습니다. 계정도 없고, 요청마다 따라다니는 쿠키도 없고, 어두운 쪽을 좋아하는 사람이 몇 명인지 세는 숫자도 없습니다. 브라우저 데이터를 지우면 선택도 사라지고, 사이트는 다시 기기를 따릅니다.</p>
+    <p>버튼을 누르면 페이지는 당신의 선택을 브라우저에 ipe_theme 라는 이름 하나로 저장합니다. 값은 light 와 dark 둘 중 하나입니다. 그것이 전부입니다. 선택은 당신의 기기, 언어를 기억하는 것과 같은 종류의 저장소에 있고, 우리에게 보내지지 않습니다. 계정은 없고, 이 선택은 쿠키가 아니라서 어떤 요청에도 실려 가지 않으며, 어두운 쪽을 좋아하는 사람이 몇 명인지 세는 숫자도 없습니다. 브라우저 데이터를 지우면 선택도 사라지고, 사이트는 다시 기기를 따릅니다.</p>
     <h2>번쩍임 없이</h2>
-    <p>다크 모드의 흔한 불편은 번쩍임입니다. 페이지가 잠깐 하얗게 열렸다가 어두워지는 것입니다. 이를 피하려고 아주 짧은 스크립트가 모든 페이지의 맨 위에서, 아무것도 그려지기 전에 실행됩니다. 저장된 선택을, 없으면 기기 설정을 읽어 모습을 먼저 정합니다. 그다음 페이지가 맞는 색으로 한 번만 그려집니다. 스크립트를 꺼 두어도 페이지는 기본 스타일로 기기 설정을 따릅니다. 버튼만 없을 뿐입니다.</p>
+    <p>다크 모드의 흔한 불편은 번쩍임입니다. 페이지가 잠깐 하얗게 열렸다가 어두워지는 것입니다. 이를 피하려고 아주 짧은 스크립트가 모든 페이지의 맨 위에서, 아무것도 그려지기 전에 실행됩니다. 저장된 선택을, 없으면 기기 설정을 읽어 모습을 먼저 정합니다. 그다음 페이지가 맞는 색으로 한 번만 그려집니다. 스크립트를 꺼 두어도 페이지는 기본 스타일로 기기 설정을 따릅니다. 다만 버튼은 스크립트 없이는 동작하지 않습니다.</p>
     <h2>읽기 편한 색</h2>
     <p>어두운 모습은 밝은 모습을 뒤집은 것이 아닙니다. 설계도 같은 느낌은 그대로여서, 깊은 청회색 판 위에 코발트색 가는 선이 있고, 글자는 순백이 아니라 부드러운 흰색이라 지친 눈에 더 편합니다. 링크, 버튼, 포커스 윤곽선은 어두운 배경에서도 충분한 대비를 지키고, 읽는 칸의 너비는 두 모습에서 같아서 바꿀 때 아무것도 움직이지 않습니다.</p>
     <blockquote>ipe(); // be still</blockquote>

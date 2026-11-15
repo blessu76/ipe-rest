@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - ไทย [th] (AI translation): https://ipe.rest/journal/th/
   - Tiếng Việt [vi] (AI translation): https://ipe.rest/journal/vi/
   - Türkçe [tr] (AI translation): https://ipe.rest/journal/tr/
+- How an entry waits before it is published (2026-11-15): https://ipe.rest/journal/en/2026-11-15-how-an-entry-waits-before-it-is-published/ - Where unpublished journal entries wait, why they carry no date yet, and the checks every entry passes before it appears.
+  - original language: en
+  - [en] How an entry waits before it is published: https://ipe.rest/journal/en/2026-11-15-how-an-entry-waits-before-it-is-published/
+  - [ko] 글이 발행되기 전에 기다리는 방법: https://ipe.rest/journal/ko/2026-11-15-how-an-entry-waits-before-it-is-published/
+  - [ja] 記事が公開される前に、どう待つか (AI translation): https://ipe.rest/journal/ja/2026-11-15-how-an-entry-waits-before-it-is-published/
+  - [zh-Hant] 文章在發布之前，如何等待 (AI translation): https://ipe.rest/journal/zh-Hant/2026-11-15-how-an-entry-waits-before-it-is-published/
+  - [es] Cómo espera una entrada antes de publicarse (AI translation): https://ipe.rest/journal/es/2026-11-15-how-an-entry-waits-before-it-is-published/
+  - [pt-BR] Como uma entrada espera antes de ser publicada (AI translation): https://ipe.rest/journal/pt-BR/2026-11-15-how-an-entry-waits-before-it-is-published/
+  - [fr] Comment une entrée attend avant d’être publiée (AI translation): https://ipe.rest/journal/fr/2026-11-15-how-an-entry-waits-before-it-is-published/
+  - [de] Wie ein Eintrag wartet, bevor er veröffentlicht wird (AI translation): https://ipe.rest/journal/de/2026-11-15-how-an-entry-waits-before-it-is-published/
+  - [id] Bagaimana sebuah tulisan menunggu sebelum diterbitkan (AI translation): https://ipe.rest/journal/id/2026-11-15-how-an-entry-waits-before-it-is-published/
+  - [th] บทความรอคอยอย่างไรก่อนจะได้เผยแพร่ (AI translation): https://ipe.rest/journal/th/2026-11-15-how-an-entry-waits-before-it-is-published/
+  - [vi] Một bài viết chờ đợi thế nào trước khi được đăng (AI translation): https://ipe.rest/journal/vi/2026-11-15-how-an-entry-waits-before-it-is-published/
+  - [tr] Bir yazı yayımlanmadan önce nasıl bekler (AI translation): https://ipe.rest/journal/tr/2026-11-15-how-an-entry-waits-before-it-is-published/
 - The journal list, newest first, on one page (2026-11-14): https://ipe.rest/journal/en/2026-11-14-the-journal-list-newest-first-on-one-page/ - One list, newest first, every entry on the same page: what each card shows and what the list leaves out.
   - original language: en
   - [en] The journal list, newest first, on one page: https://ipe.rest/journal/en/2026-11-14-the-journal-list-newest-first-on-one-page/

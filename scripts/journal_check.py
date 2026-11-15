@@ -42,7 +42,7 @@ def problems(src_dir=None, i18n_dir=None):
         rdate = meta(src, "ipe:copy-review-date")
         editions = {}
         for l in languages.SUPPORTED:
-            if l in ("en", "ko") or (i18n_dir / slug / ("%s.json" % l)).is_file():
+            if l in ("en", "ko") or (i18n_dir / slug / ("%s.json" % languages.legacy_code(l))).is_file():
                 editions[l] = {"url": "/journal/%s/%s/" % (l, slug), "copy_review": review, "copy_review_date": rdate}
         new[slug] = editions
     for slug, ed in new.items():

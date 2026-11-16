@@ -139,11 +139,29 @@ TBL_CSS = (".prose hr{border:0;border-top:1px solid var(--line);margin:48px 0}\n
            ".prose td{min-width:8em}\n")
 
 
+def make_stamp(lang, effective, version, first_effective=None, first_version="v1.0"):
+    """The <p class="stamp"> line. With first_effective: first effective date + current version/date."""
+    t = '<time datetime="%s">%s</time>'
+    if not first_effective:
+        return '<p class="stamp"><span>%s %s · %s %s</span></p>' % (
+            "시행일" if lang == "ko" else "Effective", t % (effective, effective), "버전" if lang == "ko" else "Version", version)
+    if lang == "ko":
+        return '<p class="stamp"><span>최초 시행 %s (%s) · 현행 %s (%s 시행)</span></p>' % (
+            t % (first_effective, first_effective), first_version, version, t % (effective, effective))
+    return '<p class="stamp"><span>First effective %s (%s) · Current %s (effective %s)</span></p>' % (
+        t % (first_effective, first_effective), first_version, version, t % (effective, effective))
+
+
+STAMP_PREFIXES = ("<p>시행일: ", "<p>Effective date: ", "<p>최초 시행 ", "<p>First effective ")
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--src", default=str(DEFAULT_SRC))
     ap.add_argument("--effective", required=True, help="effective date YYYY-MM-DD, as decided by the owner")
     ap.add_argument("--version", default="v1.0")
+    ap.add_argument("--first-effective", help="first effective date YYYY-MM-DD; with --first-version gives the two-date stamp")
+    ap.add_argument("--first-version", default="v1.0")
     a = ap.parse_args()
     src = Path(a.src)
     for page, lang in (("privacy", "en"), ("privacy", "ko"), ("terms", "en"), ("terms", "ko")):
@@ -177,10 +195,8 @@ def main():
 
         def stamp(body, lang=lang):
             for k, b in enumerate(body):
-                if (b.startswith("<p>시행일: ") or b.startswith("<p>Effective date: ")):
-                    label = "시행일" if lang == "ko" else "Effective"
-                    body[k] = '<p class="stamp"><span>%s <time datetime="%s">%s</time> · %s %s</span></p>' % (
-                        label, a.effective, a.effective, "버전" if lang == "ko" else "Version", a.version)
+                if b.startswith(STAMP_PREFIXES):
+                    body[k] = make_stamp(lang, a.effective, a.version, a.first_effective, a.first_version)
             return body
         # blank-line-less notice lines that are "kept" (they are real text) go through unchanged
         (OUT / ("%s.%s.html" % (page, lang))).write_text(head + render_main(page, lang, md, stamp, drop) + tail, encoding="utf-8")

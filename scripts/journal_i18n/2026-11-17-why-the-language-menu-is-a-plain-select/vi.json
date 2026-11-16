@@ -1,5 +1,5 @@
 {
-  "title": "Vì sao menu ngôn ngữ chỉ là một select bình thường",
+  "title": "Vì sao menu ngôn ngữ là một select",
   "h1_html": "Vì sao menu ngôn ngữ chỉ là một select <em>bình thường</em>",
   "description": "Mười sáu ngôn ngữ trong một menu nhỏ ở đầu trang: vì sao nó là select chuẩn, nó ghi nhớ lựa chọn của bạn thế nào, và chuyện gì xảy ra khi tắt script.",
   "abstract": "Menu ngôn ngữ trên ipe.rest là một phần tử select chuẩn với mười sáu tùy chọn. Mỗi tùy chọn là cùng một trang ở một ngôn ngữ khác, với địa chỉ riêng. Chọn một ngôn ngữ sẽ lưu nó trong trình duyệt dưới khóa ipe_lang và mở trang đó. Khi tắt script, một danh sách liên kết thường cũng sẽ hiện ra cùng select. Lý do chọn một điều khiển gốc là sự đáng tin cậy, khả năng truy cập và một trang nhẹ.",

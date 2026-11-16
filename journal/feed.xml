@@ -6,7 +6,15 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Mon, 16 Nov 2026 16:38:00 +0900</lastBuildDate>
+    <lastBuildDate>Tue, 17 Nov 2026 08:33:00 +0900</lastBuildDate>
+    <item>
+      <title>Why the language menu is a plain select</title>
+      <link>https://ipe.rest/journal/en/2026-11-17-why-the-language-menu-is-a-plain-select/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-17-why-the-language-menu-is-a-plain-select/</guid>
+      <pubDate>Tue, 17 Nov 2026 08:33:00 +0900</pubDate>
+      <category>studio</category>
+      <description>Sixteen languages in one small header menu: why it is a plain select, how it remembers your choice, and what happens without scripts.</description>
+    </item>
     <item>
       <title>Dark mode follows your device until you choose</title>
       <link>https://ipe.rest/journal/en/2026-11-16-dark-mode-follows-your-device-until-you-choose/</link>

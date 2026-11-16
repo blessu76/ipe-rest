@@ -1,5 +1,5 @@
 {
-  "title": "Warum das Sprachmenü ein schlichtes select ist",
+  "title": "Warum das Sprachmenü ein select ist",
   "h1_html": "Warum das Sprachmenü ein <em>schlichtes</em> select ist",
   "description": "Sechzehn Sprachen in einem kleinen Menü der Kopfzeile: warum es ein Standard-select ist, wie es sich Ihre Wahl merkt und was passiert, wenn Skripte aus sind.",
   "abstract": "Das Sprachmenü auf ipe.rest ist ein Standard-select-Element mit sechzehn Optionen. Jede Option ist dieselbe Seite in einer anderen Sprache, unter einer eigenen Adresse. Wer eine auswählt, speichert die Sprache unter dem Schlüssel ipe_lang im Browser und öffnet die Seite. Sind Skripte deaktiviert, kommt zusätzlich eine Liste einfacher Links hinzu. Für ein natives Steuerelement sprechen Zuverlässigkeit, Barrierefreiheit und eine schlanke Seite.",

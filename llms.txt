@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - ไทย [th] (AI translation): https://ipe.rest/journal/th/
   - Tiếng Việt [vi] (AI translation): https://ipe.rest/journal/vi/
   - Türkçe [tr] (AI translation): https://ipe.rest/journal/tr/
+- Why the language menu is a plain select (2026-11-17): https://ipe.rest/journal/en/2026-11-17-why-the-language-menu-is-a-plain-select/ - Sixteen languages in one small header menu: why it is a plain select, how it remembers your choice, and what happens without scripts.
+  - original language: en
+  - [en] Why the language menu is a plain select: https://ipe.rest/journal/en/2026-11-17-why-the-language-menu-is-a-plain-select/
+  - [ko] 언어 메뉴가 평범한 select 인 까닭: https://ipe.rest/journal/ko/2026-11-17-why-the-language-menu-is-a-plain-select/
+  - [ja] 言語メニューが、ただの select である理由 (AI translation): https://ipe.rest/journal/ja/2026-11-17-why-the-language-menu-is-a-plain-select/
+  - [zh-Hant] 語言選單為什麼只是一個普通的 select (AI translation): https://ipe.rest/journal/zh-Hant/2026-11-17-why-the-language-menu-is-a-plain-select/
+  - [es] Por qué el menú de idiomas es un select (AI translation): https://ipe.rest/journal/es/2026-11-17-why-the-language-menu-is-a-plain-select/
+  - [pt-BR] Por que o menu de idiomas é um select (AI translation): https://ipe.rest/journal/pt-BR/2026-11-17-why-the-language-menu-is-a-plain-select/
+  - [fr] Pourquoi le menu des langues est un select (AI translation): https://ipe.rest/journal/fr/2026-11-17-why-the-language-menu-is-a-plain-select/
+  - [de] Warum das Sprachmenü ein select ist (AI translation): https://ipe.rest/journal/de/2026-11-17-why-the-language-menu-is-a-plain-select/
+  - [id] Mengapa menu bahasa hanyalah select biasa (AI translation): https://ipe.rest/journal/id/2026-11-17-why-the-language-menu-is-a-plain-select/
+  - [th] ทำไมเมนูภาษาจึงเป็นแค่ select ธรรมดา (AI translation): https://ipe.rest/journal/th/2026-11-17-why-the-language-menu-is-a-plain-select/
+  - [vi] Vì sao menu ngôn ngữ là một select (AI translation): https://ipe.rest/journal/vi/2026-11-17-why-the-language-menu-is-a-plain-select/
+  - [tr] Dil menüsü neden sade bir select (AI translation): https://ipe.rest/journal/tr/2026-11-17-why-the-language-menu-is-a-plain-select/
 - Dark mode follows your device until you choose (2026-11-16): https://ipe.rest/journal/en/2026-11-16-dark-mode-follows-your-device-until-you-choose/ - How ipe.rest picks light or dark: your device first, your choice next, and nothing stored outside your browser.
   - original language: en
   - [en] Dark mode follows your device until you choose: https://ipe.rest/journal/en/2026-11-16-dark-mode-follows-your-device-until-you-choose/

@@ -202,7 +202,7 @@ def render_legal_chooser(p, data, ui):
     cl = [("x-default", en_url), ("en", en_url), ("ko", ko_url)]
     rows = [("ko", ko_url, ko["title"]), ("en", en_url, en["title"])]
     head = J._chooser_head(en["title"], en["description"], en_url, cl, "website", "en_US", [page])
-    body = J._chooser_body(en["title"], "ipe() — 한국어 / English · 시행일 2026-07-26 · Effective 2026-07-26", rows, dict(ui["en"], eyebrow=ui["en"].get(p, p)), "en", cl)
+    body = J._chooser_body(en["title"], "ipe() — 한국어 / English · 최초 시행 2026-07-26 (v1.0) · 현행 v1.2 (2026-11-11 시행) / First effective 2026-07-26 (v1.0) · Current v1.2 (effective 2026-11-11)", rows, dict(ui["en"], eyebrow=ui["en"].get(p, p)), "en", cl)
     return "\n".join(head) + "\n" + body
 
 

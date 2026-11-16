@@ -20,7 +20,10 @@ X = "{http://www.w3.org/1999/xhtml}link"
 LD = re.compile(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', re.S)
 
 
-V1_EFFECTIVE = "2026-07-26"  # v1.0 effective date (owner decision); version string is "v1.2"
+V1_EFFECTIVE = "2026-07-26"  # first effective date (v1.0, owner decision)
+CUR_EFFECTIVE = "2026-11-11"  # current version v1.2 effective date (owner decision 2026-11-17)
+STAMP = {"ko": "최초 시행 <time datetime=\"2026-07-26\">2026-07-26</time> (v1.0) · 현행 v1.2 (<time datetime=\"2026-11-11\">2026-11-11</time> 시행)",
+         "en": "First effective <time datetime=\"2026-07-26\">2026-07-26</time> (v1.0) · Current v1.2 (effective <time datetime=\"2026-11-11\">2026-11-11</time>)"}
 LEGAL = pages_sync.LEGAL_PATH  # (page, lang) -> fixed /legal/ address (current live text, scripts/legal_src); the old paths are 1-hop stubs
 
 
@@ -195,7 +198,8 @@ class EnglishOnlyPages(unittest.TestCase):
             chooser = (ROOT / "legal" / p / "index.html").read_text(encoding="utf-8")
             self.assertIn('href="/ko/legal/%s/"' % p, chooser, p)
             self.assertIn('href="/en/legal/%s/"' % p, chooser, p)
-            self.assertIn(V1_EFFECTIVE, chooser, p)
+            self.assertIn("최초 시행 %s (v1.0) · 현행 v1.2 (%s 시행)" % (V1_EFFECTIVE, CUR_EFFECTIVE), chooser, p)
+            self.assertIn("First effective %s (v1.0) · Current v1.2 (effective %s)" % (V1_EFFECTIVE, CUR_EFFECTIVE), chooser, p)
             for lang in ("en", "ko"):
                 out = read(p, lang)
                 self.assertIn('<html lang="%s"' % lang, out, (p, lang))
@@ -228,8 +232,8 @@ class EnglishOnlyPages(unittest.TestCase):
                 self.assertNotIn(bad, out, (p, lang, bad))
             self.assertIn("privacy@ipe.rest", out)
             self.assertIn("pawstcard", out)  # explicitly excluded from the common text
-            self.assertIn("<time datetime=\"%s\">%s</time>" % (V1_EFFECTIVE, V1_EFFECTIVE), out, (p, lang))
-            self.assertRegex(out, r"(?:Version|버전) v1\.2</span>")
+            self.assertIn('<p class="stamp"><span>%s</span></p>' % STAMP[lang], out, (p, lang))
+            self.assertNotRegex(out, r"(?:Version|버전) v1\.2</span>")
             self.assertNotIn("ipe.haven@gmail.com", out, (p, lang))  # old live contact is gone
         ko = read("privacy", "ko")
         self.assertIn("<h2>부록 B — 앱별 차이", ko)

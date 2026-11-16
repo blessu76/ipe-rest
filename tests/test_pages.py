@@ -20,7 +20,7 @@ X = "{http://www.w3.org/1999/xhtml}link"
 LD = re.compile(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', re.S)
 
 
-V1_EFFECTIVE = "2026-07-26"  # v1.0 effective date (owner decision); version string is "v1.0"
+V1_EFFECTIVE = "2026-07-26"  # v1.0 effective date (owner decision); version string is "v1.2"
 LEGAL = pages_sync.LEGAL_PATH  # (page, lang) -> fixed /legal/ address (current live text, scripts/legal_src); the old paths are 1-hop stubs
 
 
@@ -229,7 +229,7 @@ class EnglishOnlyPages(unittest.TestCase):
             self.assertIn("privacy@ipe.rest", out)
             self.assertIn("pawstcard", out)  # explicitly excluded from the common text
             self.assertIn("<time datetime=\"%s\">%s</time>" % (V1_EFFECTIVE, V1_EFFECTIVE), out, (p, lang))
-            self.assertRegex(out, r"(?:Version|버전) v1\.0</span>")
+            self.assertRegex(out, r"(?:Version|버전) v1\.2</span>")
             self.assertNotIn("ipe.haven@gmail.com", out, (p, lang))  # old live contact is gone
         ko = read("privacy", "ko")
         self.assertIn("<h2>부록 B — 앱별 차이", ko)

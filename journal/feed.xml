@@ -6,7 +6,15 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Sun, 15 Nov 2026 13:05:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 16 Nov 2026 16:38:00 +0900</lastBuildDate>
+    <item>
+      <title>Dark mode follows your device until you choose</title>
+      <link>https://ipe.rest/journal/en/2026-11-16-dark-mode-follows-your-device-until-you-choose/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-16-dark-mode-follows-your-device-until-you-choose/</guid>
+      <pubDate>Mon, 16 Nov 2026 16:38:00 +0900</pubDate>
+      <category>studio</category>
+      <description>How ipe.rest picks light or dark: your device first, your choice next, and nothing stored outside your browser.</description>
+    </item>
     <item>
       <title>How an entry waits before it is published</title>
       <link>https://ipe.rest/journal/en/2026-11-15-how-an-entry-waits-before-it-is-published/</link>

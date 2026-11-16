@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - ไทย [th] (AI translation): https://ipe.rest/journal/th/
   - Tiếng Việt [vi] (AI translation): https://ipe.rest/journal/vi/
   - Türkçe [tr] (AI translation): https://ipe.rest/journal/tr/
+- Dark mode follows your device until you choose (2026-11-16): https://ipe.rest/journal/en/2026-11-16-dark-mode-follows-your-device-until-you-choose/ - How ipe.rest picks light or dark: your device first, your choice next, and nothing stored outside your browser.
+  - original language: en
+  - [en] Dark mode follows your device until you choose: https://ipe.rest/journal/en/2026-11-16-dark-mode-follows-your-device-until-you-choose/
+  - [ko] 다크 모드는 당신이 고르기 전까지 기기를 따릅니다: https://ipe.rest/journal/ko/2026-11-16-dark-mode-follows-your-device-until-you-choose/
+  - [ja] ダークモードは、あなたが選ぶまで端末に従います (AI translation): https://ipe.rest/journal/ja/2026-11-16-dark-mode-follows-your-device-until-you-choose/
+  - [zh-Hant] 深色模式會跟著你的裝置,直到你自己選擇 (AI translation): https://ipe.rest/journal/zh-Hant/2026-11-16-dark-mode-follows-your-device-until-you-choose/
+  - [es] El modo oscuro sigue a tu dispositivo hasta que tú elijas (AI translation): https://ipe.rest/journal/es/2026-11-16-dark-mode-follows-your-device-until-you-choose/
+  - [pt-BR] O modo escuro segue o seu dispositivo até você escolher (AI translation): https://ipe.rest/journal/pt-BR/2026-11-16-dark-mode-follows-your-device-until-you-choose/
+  - [fr] Le mode sombre suit votre appareil jusqu'à votre choix (AI translation): https://ipe.rest/journal/fr/2026-11-16-dark-mode-follows-your-device-until-you-choose/
+  - [de] Der Dunkelmodus folgt deinem Gerät, bis du dich entscheidest (AI translation): https://ipe.rest/journal/de/2026-11-16-dark-mode-follows-your-device-until-you-choose/
+  - [id] Mode gelap mengikuti perangkatmu sampai kamu memilih (AI translation): https://ipe.rest/journal/id/2026-11-16-dark-mode-follows-your-device-until-you-choose/
+  - [th] โหมดมืดจะตามอุปกรณ์ของคุณ จนกว่าคุณจะเลือกเอง (AI translation): https://ipe.rest/journal/th/2026-11-16-dark-mode-follows-your-device-until-you-choose/
+  - [vi] Chế độ tối đi theo thiết bị của bạn cho đến khi bạn chọn (AI translation): https://ipe.rest/journal/vi/2026-11-16-dark-mode-follows-your-device-until-you-choose/
+  - [tr] Karanlık mod, sen seçene kadar cihazını takip eder (AI translation): https://ipe.rest/journal/tr/2026-11-16-dark-mode-follows-your-device-until-you-choose/
 - How an entry waits before it is published (2026-11-15): https://ipe.rest/journal/en/2026-11-15-how-an-entry-waits-before-it-is-published/ - Where unpublished journal entries wait, why they carry no date yet, and the checks every entry passes before it appears.
   - original language: en
   - [en] How an entry waits before it is published: https://ipe.rest/journal/en/2026-11-15-how-an-entry-waits-before-it-is-published/

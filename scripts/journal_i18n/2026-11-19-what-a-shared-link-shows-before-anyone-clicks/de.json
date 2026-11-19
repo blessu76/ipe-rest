@@ -1,5 +1,5 @@
 {
-  "title": "Was ein geteilter Link zeigt, bevor jemand klickt",
+  "title": "Was ein geteilter Link vor dem Klick zeigt",
   "h1_html": "Was ein geteilter Link zeigt, <em>bevor</em> jemand klickt",
   "description": "Was erscheint, wenn eine Adresse von ipe.rest in einen Chat eingefügt wird: der Titel, eine kurze Beschreibung und ein Bild, in der Sprache der Seite.",
   "abstract": "Wird eine Adresse von ipe.rest in einen Chat oder einen Beitrag eingefügt, liest die empfangende App den Kopf der Seite und erstellt eine Karte. Der Titel ist der des Eintrags selbst, die Beschreibung ist ein für jeden Eintrag geschriebener Auszug, und das Bild ist standardmäßig dasselbe mit 1200 mal 630 Pixeln. Jede Sprachseite hat ihren eigenen Titel und ihre eigene Beschreibung und verweist auf ihre eigene Adresse. Es gibt keinen Teilen-Button und keinen Zähler, und die Seite kann nicht erkennen, dass sie geteilt wurde.",

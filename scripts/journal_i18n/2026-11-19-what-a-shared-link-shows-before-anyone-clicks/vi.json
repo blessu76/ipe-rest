@@ -1,5 +1,5 @@
 {
-  "title": "Một liên kết được chia sẻ hiển thị gì trước khi ai đó bấm",
+  "title": "Liên kết được chia sẻ hiện gì trước khi bấm",
   "h1_html": "Một liên kết được chia sẻ hiển thị gì <em>trước</em> khi ai đó bấm",
   "description": "Điều xuất hiện khi dán một địa chỉ ipe.rest vào cuộc trò chuyện: tiêu đề, mô tả ngắn và một hình ảnh, bằng ngôn ngữ của trang.",
   "abstract": "Khi một địa chỉ ipe.rest được dán vào cuộc trò chuyện hay bài đăng, ứng dụng nhận sẽ đọc phần head của trang và dựng một thẻ. Tiêu đề là chính tiêu đề của bài, mô tả là đoạn trích được viết riêng cho từng bài, và hình ảnh mặc định là cùng một ảnh 1200×630 điểm ảnh. Mỗi trang ngôn ngữ có tiêu đề và mô tả riêng, và trỏ tới địa chỉ riêng của nó. Không có nút chia sẻ, không có bộ đếm, và trang không thể biết mình đã được chia sẻ.",

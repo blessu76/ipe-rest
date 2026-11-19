@@ -1,5 +1,5 @@
 {
-  "title": "Wenn eine Seite von rechts nach links gelesen wird",
+  "title": "Seite von rechts nach links gelesen",
   "h1_html": "Wenn eine Seite von <em>rechts</em> nach links gelesen wird",
   "description": "Wie die arabischen Seiten von ipe.rest umgedreht werden: ein Richtungsattribut, Anfang und Ende statt links und rechts und was nie gespiegelt wird.",
   "abstract": "Arabisch ist unter den sechzehn Sprachen von ipe.rest die einzige, die von rechts nach links gelesen wird. Die arabischen Seiten deklarieren das Attribut dir einmal am html-Element, und das Stylesheet legt Abstände und Rahmen nach Anfang und Ende statt nach links und rechts fest, sodass die Richtung ohne zweites Stylesheet folgt. Das leichte Verschieben einer Karte beim Darüberfahren hat eine eigene Regel, damit es der Leserichtung folgt, und Logo wie Codezeilen werden immer von links nach rechts gelesen.",

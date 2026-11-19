@@ -4,7 +4,7 @@
 <script>(function(){var d=document.documentElement,k='ipe_theme',t,m=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');try{t=localStorage.getItem(k)}catch(e){}function sys(){return m&&m.matches?'dark':'light'}function set(v){d.setAttribute('data-theme',v);d.style.colorScheme=v;var b=document.querySelectorAll('.ipe-theme');for(var i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',v==='dark'?'true':'false')}set(t==='light'||t==='dark'?t:sys());document.addEventListener('DOMContentLoaded',function(){set(d.getAttribute('data-theme'))});document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.ipe-theme');if(!b)return;var n=d.getAttribute('data-theme')==='dark'?'light':'dark';set(n);try{localStorage.setItem(k,n)}catch(x){}});if(m&&m.addEventListener)m.addEventListener('change',function(){var s;try{s=localStorage.getItem(k)}catch(e){}if(s!=='light'&&s!=='dark')set(sys())})})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Paylaşılan bağlantı, tıklanmadan önce ne gösterir — ipe() günlüğü</title>
+<title>Bağlantı tıklanmadan önce ne gösterir — ipe() günlüğü</title>
 <meta name="description" content="ipe.rest adresi bir sohbete yapıştırıldığında ne görünür: başlık, kısa bir açıklama ve bir resim, sayfanın diliyle.">
 <meta name="author" content="ipe()">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -43,7 +43,7 @@
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ipe()">
-<meta property="og:title" content="Paylaşılan bağlantı, tıklanmadan önce ne gösterir">
+<meta property="og:title" content="Bağlantı tıklanmadan önce ne gösterir">
 <meta property="og:description" content="ipe.rest adresi bir sohbete yapıştırıldığında ne görünür: başlık, kısa bir açıklama ve bir resim, sayfanın diliyle.">
 <meta property="og:url" content="https://ipe.rest/journal/tr/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/">
 <meta property="og:image" content="https://ipe.rest/og-image.png">
@@ -55,7 +55,7 @@
 <meta property="article:section" content="studio">
 <meta property="article:author" content="ipe()">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Paylaşılan bağlantı, tıklanmadan önce ne gösterir">
+<meta name="twitter:title" content="Bağlantı tıklanmadan önce ne gösterir">
 <meta name="twitter:description" content="ipe.rest adresi bir sohbete yapıştırıldığında ne görünür: başlık, kısa bir açıklama ve bir resim, sayfanın diliyle.">
 <meta name="twitter:image" content="https://ipe.rest/og-image.png">
 <meta name="twitter:image:alt" content="ipe() — quiet things for busy minds">
@@ -65,7 +65,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "@id": "https://ipe.rest/journal/tr/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/#article",
-  "headline": "Paylaşılan bağlantı, tıklanmadan önce ne gösterir",
+  "headline": "Bağlantı tıklanmadan önce ne gösterir",
   "description": "ipe.rest adresi bir sohbete yapıştırıldığında ne görünür: başlık, kısa bir açıklama ve bir resim, sayfanın diliyle.",
   "abstract": "ipe.rest'ten bir adres sohbete ya da gönderiye yapıştırıldığında, alıcı uygulama sayfanın başlık bölümünü okur ve bir kart oluşturur. Başlık girdinin kendi başlığıdır, açıklama her girdi için yazılmış bir özettir ve resim varsayılan olarak aynı 1200 × 630 piksellik görseldir. Her dil sayfasının kendi başlığı ve açıklaması vardır ve kendi adresine işaret eder. Paylaş düğmesi de sayaç da yoktur, sayfa da paylaşıldığını anlayamaz.",
   "datePublished": "2026-11-19T19:30+09:00",
@@ -173,7 +173,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Paylaşılan bağlantı, tıklanmadan önce ne gösterir"
+      "name": "Bağlantı tıklanmadan önce ne gösterir"
     }
   ]
 }

@@ -1,5 +1,5 @@
 {
-  "title": "Apa yang ditampilkan tautan yang dibagikan sebelum diklik",
+  "title": "Apa yang ditampilkan tautan sebelum diklik",
   "h1_html": "Apa yang ditampilkan tautan yang dibagikan <em>sebelum</em> diklik",
   "description": "Apa yang muncul saat alamat ipe.rest ditempel ke obrolan: judul, deskripsi singkat, dan gambar, dalam bahasa halaman tersebut.",
   "abstract": "Saat alamat ipe.rest ditempel ke obrolan atau unggahan, aplikasi penerima membaca bagian kepala halaman dan membuat sebuah kartu. Judulnya adalah judul entri itu sendiri, deskripsinya adalah kutipan yang ditulis untuk setiap entri, dan gambarnya secara bawaan sama, berukuran 1200 kali 630 piksel. Setiap halaman bahasa memiliki judul dan deskripsinya sendiri serta menunjuk ke alamatnya sendiri. Tidak ada tombol bagikan maupun penghitung, dan halaman tidak bisa tahu bahwa dirinya dibagikan.",

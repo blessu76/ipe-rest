@@ -1,5 +1,5 @@
 {
-  "title": "Quando uma página se lê da direita para a esquerda",
+  "title": "Página lida da direita para a esquerda",
   "h1_html": "Quando uma página se lê da <em>direita</em> para a esquerda",
   "description": "Como as páginas em árabe do ipe.rest são viradas: um atributo de direção, início e fim em vez de esquerda e direita, e algumas coisas que nunca se invertem.",
   "abstract": "O árabe é o único idioma da direita para a esquerda entre os dezesseis do ipe.rest. Suas páginas declaram o atributo dir uma única vez no elemento html, e a folha de estilos define espaçamentos e bordas por início e fim em vez de esquerda e direita, de modo que a direção acompanha sem uma segunda folha de estilos. O deslocamento de um cartão ao passar o cursor tem regra própria para seguir o sentido da leitura, e o logotipo e as linhas de código são sempre lidos da esquerda para a direita.",

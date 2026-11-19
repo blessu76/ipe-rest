@@ -1,5 +1,5 @@
 {
-  "title": "Paylaşılan bağlantı, tıklanmadan önce ne gösterir",
+  "title": "Bağlantı tıklanmadan önce ne gösterir",
   "h1_html": "Paylaşılan bağlantı, <em>tıklanmadan</em> önce ne gösterir",
   "description": "ipe.rest adresi bir sohbete yapıştırıldığında ne görünür: başlık, kısa bir açıklama ve bir resim, sayfanın diliyle.",
   "abstract": "ipe.rest'ten bir adres sohbete ya da gönderiye yapıştırıldığında, alıcı uygulama sayfanın başlık bölümünü okur ve bir kart oluşturur. Başlık girdinin kendi başlığıdır, açıklama her girdi için yazılmış bir özettir ve resim varsayılan olarak aynı 1200 × 630 piksellik görseldir. Her dil sayfasının kendi başlığı ve açıklaması vardır ve kendi adresine işaret eder. Paylaş düğmesi de sayaç da yoktur, sayfa da paylaşıldığını anlayamaz.",

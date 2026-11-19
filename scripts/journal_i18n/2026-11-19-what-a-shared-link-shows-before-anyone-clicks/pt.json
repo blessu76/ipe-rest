@@ -1,5 +1,5 @@
 {
-  "title": "O que um link compartilhado mostra antes do clique",
+  "title": "O que um link mostra antes do clique",
   "h1_html": "O que um link compartilhado mostra <em>antes</em> do clique",
   "description": "O que aparece quando um endereço do ipe.rest é colado em um chat: o título, uma breve descrição e uma imagem, no idioma da página.",
   "abstract": "Quando um endereço do ipe.rest é colado em um chat ou em uma publicação, o aplicativo que o recebe lê o cabeçalho da página e monta um cartão. O título é o da própria entrada, a descrição é um resumo escrito para cada entrada e a imagem é, por padrão, a mesma de 1200 por 630 pixels. Cada página de idioma tem seu próprio título e descrição e aponta para o seu próprio endereço. Não há botão de compartilhar nem contador, e a página não consegue saber que foi compartilhada.",

@@ -1,5 +1,5 @@
 {
-  "title": "Lo que muestra un enlace compartido antes de hacer clic",
+  "title": "Lo que muestra un enlace antes del clic",
   "h1_html": "Lo que muestra un enlace compartido <em>antes</em> de hacer clic",
   "description": "Qué aparece cuando se pega una dirección de ipe.rest en un chat: el título, una breve descripción y una imagen, en el idioma de la página.",
   "abstract": "Cuando se pega una dirección de ipe.rest en un chat o en una publicación, la aplicación receptora lee la cabecera de la página y crea una tarjeta. El título es el de la propia entrada, la descripción es un extracto escrito para cada entrada y la imagen es, por defecto, la misma de 1200 por 630 píxeles. Cada página de idioma tiene su propio título y descripción y apunta a su propia dirección. No hay botón de compartir ni contador, y la página no puede saber que se compartió.",

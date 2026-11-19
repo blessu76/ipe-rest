@@ -1,5 +1,5 @@
 {
-  "title": "Ce que montre un lien partagé avant tout clic",
+  "title": "Ce que montre un lien partagé, sans clic",
   "h1_html": "Ce que montre un lien partagé <em>avant</em> tout clic",
   "description": "Ce qui s'affiche lorsqu'une adresse d'ipe.rest est collée dans une discussion : le titre, une courte description et une image, dans la langue de la page.",
   "abstract": "Lorsqu'une adresse d'ipe.rest est collée dans une discussion ou une publication, l'application qui la reçoit lit l'en-tête de la page et construit une carte. Le titre est celui de l'entrée, la description est un extrait rédigé pour chaque entrée, et l'image est par défaut la même, de 1200 par 630 pixels. Chaque page de langue a son propre titre et sa propre description, et pointe vers sa propre adresse. Il n'y a ni bouton de partage ni compteur, et la page ne peut pas savoir qu'elle a été partagée.",

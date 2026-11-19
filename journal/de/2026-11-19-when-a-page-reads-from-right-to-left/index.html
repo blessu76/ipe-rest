@@ -4,7 +4,7 @@
 <script>(function(){var d=document.documentElement,k='ipe_theme',t,m=window.matchMedia&&matchMedia('(prefers-color-scheme: dark)');try{t=localStorage.getItem(k)}catch(e){}function sys(){return m&&m.matches?'dark':'light'}function set(v){d.setAttribute('data-theme',v);d.style.colorScheme=v;var b=document.querySelectorAll('.ipe-theme');for(var i=0;i<b.length;i++)b[i].setAttribute('aria-pressed',v==='dark'?'true':'false')}set(t==='light'||t==='dark'?t:sys());document.addEventListener('DOMContentLoaded',function(){set(d.getAttribute('data-theme'))});document.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.ipe-theme');if(!b)return;var n=d.getAttribute('data-theme')==='dark'?'light':'dark';set(n);try{localStorage.setItem(k,n)}catch(x){}});if(m&&m.addEventListener)m.addEventListener('change',function(){var s;try{s=localStorage.getItem(k)}catch(e){}if(s!=='light'&&s!=='dark')set(sys())})})();</script>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Wenn eine Seite von rechts nach links gelesen wird — ipe() Journal</title>
+<title>Seite von rechts nach links gelesen — ipe() Journal</title>
 <meta name="description" content="Wie die arabischen Seiten von ipe.rest umgedreht werden: ein Richtungsattribut, Anfang und Ende statt links und rechts und was nie gespiegelt wird.">
 <meta name="author" content="ipe()">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
@@ -43,7 +43,7 @@
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="ipe()">
-<meta property="og:title" content="Wenn eine Seite von rechts nach links gelesen wird">
+<meta property="og:title" content="Seite von rechts nach links gelesen">
 <meta property="og:description" content="Wie die arabischen Seiten von ipe.rest umgedreht werden: ein Richtungsattribut, Anfang und Ende statt links und rechts und was nie gespiegelt wird.">
 <meta property="og:url" content="https://ipe.rest/journal/de/2026-11-19-when-a-page-reads-from-right-to-left/">
 <meta property="og:image" content="https://ipe.rest/og-image.png">
@@ -55,7 +55,7 @@
 <meta property="article:section" content="studio">
 <meta property="article:author" content="ipe()">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Wenn eine Seite von rechts nach links gelesen wird">
+<meta name="twitter:title" content="Seite von rechts nach links gelesen">
 <meta name="twitter:description" content="Wie die arabischen Seiten von ipe.rest umgedreht werden: ein Richtungsattribut, Anfang und Ende statt links und rechts und was nie gespiegelt wird.">
 <meta name="twitter:image" content="https://ipe.rest/og-image.png">
 <meta name="twitter:image:alt" content="ipe() — quiet things for busy minds">
@@ -65,7 +65,7 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "@id": "https://ipe.rest/journal/de/2026-11-19-when-a-page-reads-from-right-to-left/#article",
-  "headline": "Wenn eine Seite von rechts nach links gelesen wird",
+  "headline": "Seite von rechts nach links gelesen",
   "description": "Wie die arabischen Seiten von ipe.rest umgedreht werden: ein Richtungsattribut, Anfang und Ende statt links und rechts und was nie gespiegelt wird.",
   "abstract": "Arabisch ist unter den sechzehn Sprachen von ipe.rest die einzige, die von rechts nach links gelesen wird. Die arabischen Seiten deklarieren das Attribut dir einmal am html-Element, und das Stylesheet legt Abstände und Rahmen nach Anfang und Ende statt nach links und rechts fest, sodass die Richtung ohne zweites Stylesheet folgt. Das leichte Verschieben einer Karte beim Darüberfahren hat eine eigene Regel, damit es der Leserichtung folgt, und Logo wie Codezeilen werden immer von links nach rechts gelesen.",
   "datePublished": "2026-11-19T15:12+09:00",
@@ -173,7 +173,7 @@
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Wenn eine Seite von rechts nach links gelesen wird"
+      "name": "Seite von rechts nach links gelesen"
     }
   ]
 }
@@ -350,11 +350,11 @@ html[dir="rtl"] .ai-note strong{margin-inline-end:4px}
   <nav class="post-nav" aria-label="Mehr aus dem Journal">
     <ul class="pn-step">
       <li class="pn-prev"><span>Zurück</span> <a href="/journal/de/2026-11-17-why-the-language-menu-is-a-plain-select/">Warum das Sprachmenü ein select ist</a></li>
-      <li class="pn-next"><span>Weiter</span> <a href="/journal/de/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/">Was ein geteilter Link zeigt, bevor jemand klickt</a></li>
+      <li class="pn-next"><span>Weiter</span> <a href="/journal/de/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/">Was ein geteilter Link vor dem Klick zeigt</a></li>
     </ul>
     <p class="pn-head">Neueste Einträge</p>
     <ul class="pn-list">
-      <li><a href="/journal/de/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/">Was ein geteilter Link zeigt, bevor jemand klickt</a></li>
+      <li><a href="/journal/de/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/">Was ein geteilter Link vor dem Klick zeigt</a></li>
       <li><a href="/journal/de/2026-11-17-why-the-language-menu-is-a-plain-select/">Warum das Sprachmenü ein select ist</a></li>
       <li><a href="/journal/de/2026-11-16-dark-mode-follows-your-device-until-you-choose/">Der Dunkelmodus folgt deinem Gerät, bis du dich entscheidest</a></li>
     </ul>

@@ -92,28 +92,28 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - [ko] 오른쪽에서 왼쪽으로 읽는 페이지: https://ipe.rest/journal/ko/2026-11-19-when-a-page-reads-from-right-to-left/
   - [ja] ページが右から左へ読まれるとき (AI translation): https://ipe.rest/journal/ja/2026-11-19-when-a-page-reads-from-right-to-left/
   - [zh-Hant] 當頁面由右向左閱讀 (AI translation): https://ipe.rest/journal/zh-Hant/2026-11-19-when-a-page-reads-from-right-to-left/
-  - [es] Cuando una página se lee de derecha a izquierda (AI translation): https://ipe.rest/journal/es/2026-11-19-when-a-page-reads-from-right-to-left/
-  - [pt-BR] Quando uma página se lê da direita para a esquerda (AI translation): https://ipe.rest/journal/pt-BR/2026-11-19-when-a-page-reads-from-right-to-left/
+  - [es] Página que se lee de derecha a izquierda (AI translation): https://ipe.rest/journal/es/2026-11-19-when-a-page-reads-from-right-to-left/
+  - [pt-BR] Página lida da direita para a esquerda (AI translation): https://ipe.rest/journal/pt-BR/2026-11-19-when-a-page-reads-from-right-to-left/
   - [fr] Quand une page se lit de droite à gauche (AI translation): https://ipe.rest/journal/fr/2026-11-19-when-a-page-reads-from-right-to-left/
-  - [de] Wenn eine Seite von rechts nach links gelesen wird (AI translation): https://ipe.rest/journal/de/2026-11-19-when-a-page-reads-from-right-to-left/
+  - [de] Seite von rechts nach links gelesen (AI translation): https://ipe.rest/journal/de/2026-11-19-when-a-page-reads-from-right-to-left/
   - [id] Saat halaman dibaca dari kanan ke kiri (AI translation): https://ipe.rest/journal/id/2026-11-19-when-a-page-reads-from-right-to-left/
   - [th] เมื่อหน้าเว็บอ่านจากขวาไปซ้าย (AI translation): https://ipe.rest/journal/th/2026-11-19-when-a-page-reads-from-right-to-left/
   - [vi] Khi một trang được đọc từ phải sang trái (AI translation): https://ipe.rest/journal/vi/2026-11-19-when-a-page-reads-from-right-to-left/
   - [tr] Bir sayfa sağdan sola okunduğunda (AI translation): https://ipe.rest/journal/tr/2026-11-19-when-a-page-reads-from-right-to-left/
-- What a shared link shows before anyone clicks (2026-11-19): https://ipe.rest/journal/en/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/ - What appears when an ipe.rest address is pasted into a chat: a title, a short description and a picture.
+- What a shared link shows before a click (2026-11-19): https://ipe.rest/journal/en/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/ - What appears when an ipe.rest address is pasted into a chat: a title, a short description and a picture.
   - original language: en
-  - [en] What a shared link shows before anyone clicks: https://ipe.rest/journal/en/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
+  - [en] What a shared link shows before a click: https://ipe.rest/journal/en/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
   - [ko] 링크를 공유하면 누르기 전에 보이는 것: https://ipe.rest/journal/ko/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
   - [ja] 共有されたリンクが、クリックの前に見せるもの (AI translation): https://ipe.rest/journal/ja/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
   - [zh-Hant] 分享的連結在被點開之前會呈現什麼 (AI translation): https://ipe.rest/journal/zh-Hant/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
-  - [es] Lo que muestra un enlace compartido antes de hacer clic (AI translation): https://ipe.rest/journal/es/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
-  - [pt-BR] O que um link compartilhado mostra antes do clique (AI translation): https://ipe.rest/journal/pt-BR/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
-  - [fr] Ce que montre un lien partagé avant tout clic (AI translation): https://ipe.rest/journal/fr/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
-  - [de] Was ein geteilter Link zeigt, bevor jemand klickt (AI translation): https://ipe.rest/journal/de/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
-  - [id] Apa yang ditampilkan tautan yang dibagikan sebelum diklik (AI translation): https://ipe.rest/journal/id/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
+  - [es] Lo que muestra un enlace antes del clic (AI translation): https://ipe.rest/journal/es/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
+  - [pt-BR] O que um link mostra antes do clique (AI translation): https://ipe.rest/journal/pt-BR/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
+  - [fr] Ce que montre un lien partagé, sans clic (AI translation): https://ipe.rest/journal/fr/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
+  - [de] Was ein geteilter Link vor dem Klick zeigt (AI translation): https://ipe.rest/journal/de/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
+  - [id] Apa yang ditampilkan tautan sebelum diklik (AI translation): https://ipe.rest/journal/id/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
   - [th] ลิงก์ที่แชร์แสดงอะไรก่อนมีใครคลิก (AI translation): https://ipe.rest/journal/th/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
-  - [vi] Một liên kết được chia sẻ hiển thị gì trước khi ai đó bấm (AI translation): https://ipe.rest/journal/vi/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
-  - [tr] Paylaşılan bağlantı, tıklanmadan önce ne gösterir (AI translation): https://ipe.rest/journal/tr/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
+  - [vi] Liên kết được chia sẻ hiện gì trước khi bấm (AI translation): https://ipe.rest/journal/vi/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
+  - [tr] Bağlantı tıklanmadan önce ne gösterir (AI translation): https://ipe.rest/journal/tr/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/
 - Why the language menu is a plain select (2026-11-17): https://ipe.rest/journal/en/2026-11-17-why-the-language-menu-is-a-plain-select/ - Sixteen languages in one small header menu: why it is a plain select, how it remembers your choice, and what happens without scripts.
   - original language: en
   - [en] Why the language menu is a plain select: https://ipe.rest/journal/en/2026-11-17-why-the-language-menu-is-a-plain-select/

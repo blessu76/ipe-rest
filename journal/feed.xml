@@ -6,7 +6,15 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Nov 2026 15:12:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 19:30:00 +0900</lastBuildDate>
+    <item>
+      <title>What a shared link shows before anyone clicks</title>
+      <link>https://ipe.rest/journal/en/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/</guid>
+      <pubDate>Thu, 19 Nov 2026 19:30:00 +0900</pubDate>
+      <category>studio</category>
+      <description>What appears when an ipe.rest address is pasted into a chat: a title, a short description and a picture.</description>
+    </item>
     <item>
       <title>When a page reads from right to left</title>
       <link>https://ipe.rest/journal/en/2026-11-19-when-a-page-reads-from-right-to-left/</link>

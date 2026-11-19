@@ -582,7 +582,7 @@ class JournalFeed(unittest.TestCase):
         self.assertEqual(len(items), len(want))
         self.assertGreaterEqual(len(items), 5)
         links = [i.findtext("link") for i in items]
-        self.assertEqual(links, ["https://ipe.rest/journal/en/%s/" % p["slug"] for p in sorted(want, key=lambda p: p["slug"], reverse=True)])
+        self.assertEqual(links, ["https://ipe.rest/journal/en/%s/" % p["slug"] for p in sorted(want, key=lambda p: (p["published"], p.get("published_at") or "", p["slug"]), reverse=True)])
         for i in items:
             self.assertEqual(i.findtext("guid"), i.findtext("link"))
             self.assertRegex(i.findtext("pubDate"), r"^[A-Z][a-z]{2}, \d\d [A-Z][a-z]{2} \d{4} \d\d:\d\d:\d\d \+0900$")
@@ -619,7 +619,8 @@ class JournalPostNav(unittest.TestCase):
     """Every post page ends with prev/next + the 3 newest other posts of the same language (internal links, SEO)."""
 
     def test_nav_in_every_language_links_same_language_only(self):
-        slugs = sorted(slug_of(f) for f in posts())
+        _p = {q["slug"]: q for q in (journal_sync.load_post(f)[0] for f in posts())}
+        slugs = sorted(_p, key=lambda s: (_p[s]["published"], _p[s].get("published_at") or "", s))  # same-day posts order by time, then slug
         for lang in journal_sync.I18N.LANGS:
             for i, slug in enumerate(slugs):
                 src = (ROOT / "journal" / lang / slug / "index.html").read_text(encoding="utf-8")

@@ -6,7 +6,15 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Tue, 17 Nov 2026 08:33:00 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 19 Nov 2026 15:12:00 +0900</lastBuildDate>
+    <item>
+      <title>When a page reads from right to left</title>
+      <link>https://ipe.rest/journal/en/2026-11-19-when-a-page-reads-from-right-to-left/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-19-when-a-page-reads-from-right-to-left/</guid>
+      <pubDate>Thu, 19 Nov 2026 15:12:00 +0900</pubDate>
+      <category>studio</category>
+      <description>How ipe.rest turns its Arabic pages around: one direction attribute, start and end instead of left and right, and what never flips.</description>
+    </item>
     <item>
       <title>Why the language menu is a plain select</title>
       <link>https://ipe.rest/journal/en/2026-11-17-why-the-language-menu-is-a-plain-select/</link>

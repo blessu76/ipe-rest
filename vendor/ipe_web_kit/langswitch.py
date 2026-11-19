@@ -54,8 +54,10 @@ def select_html(lang, href, langs=None):
                    for l in langs)
     links = "".join('<a href="%s" hreflang="%s"%s>%s</a>' % (esc(href(l)), l, ' aria-current="page"' if l == lang else "", esc(_name(l)))
                     for l in langs)
-    onchange = ("var o=this.options[this.selectedIndex];try{localStorage.setItem('%s',o.lang)}catch(e){}"
-                "if(o.value)location.href=o.value" % KEY)
+    # 이동 주소에 현재 ?query#hash 를 이어 붙인다(ipe-lang.js 의 withTail 과 같은 규칙 — 시험이 둘을 대조)
+    onchange = ("var o=this.options[this.selectedIndex],l=location,u=o.value,i=u.indexOf('#'),t=i<0?'':u.slice(i),"
+                "b=i<0?u:u.slice(0,i),q=l.search.slice(1);try{localStorage.setItem('%s',o.lang)}catch(e){}"
+                "if(u){if(q)b+=(b.indexOf('?')<0?'?':'&')+q;l.href=b+(l.hash||t)}" % KEY)
     return ('<div class="ipe-lang"><label class="ipe-lang__label" for="%s">%s</label>'
             '<select class="ipe-lang__select" id="%s" aria-label="%s" onchange="%s">%s</select>'
             '<noscript><nav class="ipe-lang__links" aria-label="%s">%s</nav></noscript></div>'
@@ -100,6 +102,12 @@ def js_text():
             "    }\n"
             "    return DEFAULT;\n"
             "  }\n"
+            "  function withTail(url) {\n"
+            "    var loc = root.location, i = url.indexOf('#'), tail = i < 0 ? '' : url.slice(i), base = i < 0 ? url : url.slice(0, i);\n"
+            "    var q = String(loc.search || '').replace(/^\\?/, '');\n"
+            "    if (q) base += (base.indexOf('?') < 0 ? '?' : '&') + q;\n"
+            "    return base + (loc.hash || tail);\n"
+            "  }\n"
             "  function stored() {\n"
             "    try { var v = root.localStorage.getItem(KEY); return v ? resolve(v) : null; } catch (e) { return null; }\n"
             "  }\n"
@@ -114,10 +122,10 @@ def js_text():
             "    var cur = sel.options[sel.selectedIndex], i;\n"
             "    if (cur && cur.lang === want) return;\n"
             "    for (i = 0; i < sel.options.length; i++) {\n"
-            "      if (sel.options[i].lang === want && sel.options[i].value) { root.location.replace(sel.options[i].value); return; }\n"
+            "      if (sel.options[i].lang === want && sel.options[i].value) { root.location.replace(withTail(sel.options[i].value)); return; }\n"
             "    }\n"
             "  }\n"
-            "  root.IpeLang = { resolve: resolve, pick: pick, stored: stored, SUPPORTED: SUPPORTED };\n"
+            "  root.IpeLang = { resolve: resolve, pick: pick, stored: stored, withTail: withTail, SUPPORTED: SUPPORTED };\n"
             "  run();\n"
             "})(typeof window !== 'undefined' ? window : this);\n"
             % (json.dumps(list(languages.SUPPORTED)), json.dumps(languages.DEFAULT), json.dumps(languages._ALIASES, sort_keys=True),

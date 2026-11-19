@@ -140,7 +140,7 @@ def head_i18n(cluster, current):
     return "\n".join(lines)
 
 
-# Header language select = the web kit's langswitch component (v0.7.2). The kit's ipe-lang.js lives at /shared/ipe-lang.js
+# Header language select = the web kit's langswitch component (v0.7.3). The kit's ipe-lang.js lives at /shared/ipe-lang.js
 # (copied byte for byte from the vendored kit; tests/test_lang.py keeps it identical).
 LANG_JS = "/shared/ipe-lang.js"
 LANG_CSS = (".ipe-lang{display:inline-flex;align-items:center;max-width:100%}"

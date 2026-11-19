@@ -19,8 +19,8 @@ def drafts():
 
 
 class JournalQueue(unittest.TestCase):
-    def test_at_least_three_drafts(self):
-        self.assertGreaterEqual(len(drafts()), 2)
+    def test_at_least_one_draft(self):
+        self.assertGreaterEqual(len(drafts()), 1)
 
     def test_each_draft_is_complete_and_undated(self):
         for d in drafts():

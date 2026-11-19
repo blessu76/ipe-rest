@@ -21,9 +21,9 @@ LD = re.compile(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', re.
 
 
 V1_EFFECTIVE = "2026-07-26"  # first effective date (v1.0, owner decision)
-CUR_EFFECTIVE = "2026-11-11"  # current version v1.2 effective date (owner decision 2026-11-17)
-STAMP = {"ko": "최초 시행 <time datetime=\"2026-07-26\">2026-07-26</time> (v1.0) · 현행 v1.2 (<time datetime=\"2026-11-11\">2026-11-11</time> 시행)",
-         "en": "First effective <time datetime=\"2026-07-26\">2026-07-26</time> (v1.0) · Current v1.2 (effective <time datetime=\"2026-11-11\">2026-11-11</time>)"}
+CUR_EFFECTIVE = "2026-11-16"  # current version v1.3 effective date (owner decision 2026-11-19)
+STAMP = {"ko": "최초 시행 <time datetime=\"2026-07-26\">2026-07-26</time> (v1.0) · 현행 v1.3 (<time datetime=\"2026-11-16\">2026-11-16</time> 시행)",
+         "en": "First effective <time datetime=\"2026-07-26\">2026-07-26</time> (v1.0) · Current v1.3 (effective <time datetime=\"2026-11-16\">2026-11-16</time>)"}
 LEGAL = pages_sync.LEGAL_PATH  # (page, lang) -> fixed /legal/ address (current live text, scripts/legal_src); the old paths are 1-hop stubs
 
 
@@ -198,8 +198,8 @@ class EnglishOnlyPages(unittest.TestCase):
             chooser = (ROOT / "legal" / p / "index.html").read_text(encoding="utf-8")
             self.assertIn('href="/ko/legal/%s/"' % p, chooser, p)
             self.assertIn('href="/en/legal/%s/"' % p, chooser, p)
-            self.assertIn("최초 시행 %s (v1.0) · 현행 v1.2 (%s 시행)" % (V1_EFFECTIVE, CUR_EFFECTIVE), chooser, p)
-            self.assertIn("First effective %s (v1.0) · Current v1.2 (effective %s)" % (V1_EFFECTIVE, CUR_EFFECTIVE), chooser, p)
+            self.assertIn("최초 시행 %s (v1.0) · 현행 v1.3 (%s 시행)" % (V1_EFFECTIVE, CUR_EFFECTIVE), chooser, p)
+            self.assertIn("First effective %s (v1.0) · Current v1.3 (effective %s)" % (V1_EFFECTIVE, CUR_EFFECTIVE), chooser, p)
             for lang in ("en", "ko"):
                 out = read(p, lang)
                 self.assertIn('<html lang="%s"' % lang, out, (p, lang))

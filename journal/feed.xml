@@ -6,7 +6,15 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Thu, 19 Nov 2026 19:30:00 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 20 Nov 2026 08:31:00 +0900</lastBuildDate>
+    <item>
+      <title>Ask for less motion and the page holds still</title>
+      <link>https://ipe.rest/journal/en/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/</guid>
+      <pubDate>Fri, 20 Nov 2026 08:31:00 +0900</pubDate>
+      <category>studio</category>
+      <description>What moves on an ipe.rest journal page, and how the page holds still when a device is set to reduce motion.</description>
+    </item>
     <item>
       <title>What a shared link shows before a click</title>
       <link>https://ipe.rest/journal/en/2026-11-19-what-a-shared-link-shows-before-anyone-clicks/</link>

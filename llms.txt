@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - ไทย [th] (AI translation): https://ipe.rest/journal/th/
   - Tiếng Việt [vi] (AI translation): https://ipe.rest/journal/vi/
   - Türkçe [tr] (AI translation): https://ipe.rest/journal/tr/
+- Ask for less motion and the page holds still (2026-11-20): https://ipe.rest/journal/en/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/ - What moves on an ipe.rest journal page, and how the page holds still when a device is set to reduce motion.
+  - original language: en
+  - [en] Ask for less motion and the page holds still: https://ipe.rest/journal/en/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/
+  - [ko] 움직임을 줄여 달라고 하면 페이지가 가만히 있습니다: https://ipe.rest/journal/ko/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/
+  - [ja] 動きを減らすよう頼むと、ページは静かにしています (AI translation): https://ipe.rest/journal/ja/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/
+  - [zh-Hant] 當你要求減少動態，頁面就靜止不動 (AI translation): https://ipe.rest/journal/zh-Hant/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/
+  - [es] Si pides menos movimiento, la página se queda quieta (AI translation): https://ipe.rest/journal/es/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/
+  - [pt-BR] Se você pede menos movimento, a página fica parada (AI translation): https://ipe.rest/journal/pt-BR/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/
+  - [fr] Moins de mouvement demandé, la page reste immobile (AI translation): https://ipe.rest/journal/fr/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/
+  - [de] Wer weniger Bewegung wünscht, bekommt eine ruhige Seite (AI translation): https://ipe.rest/journal/de/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/
+  - [id] Saat Anda minta gerak dikurangi, halaman diam (AI translation): https://ipe.rest/journal/id/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/
+  - [th] เมื่อคุณขอให้ลดการเคลื่อนไหว หน้าเว็บจะนิ่งสงบ (AI translation): https://ipe.rest/journal/th/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/
+  - [vi] Khi bạn xin giảm chuyển động, trang đứng yên (AI translation): https://ipe.rest/journal/vi/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/
+  - [tr] Daha az hareket istediğinizde sayfa kıpırdamaz (AI translation): https://ipe.rest/journal/tr/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/
 - When a page reads from right to left (2026-11-19): https://ipe.rest/journal/en/2026-11-19-when-a-page-reads-from-right-to-left/ - How ipe.rest turns its Arabic pages around: one direction attribute, start and end instead of left and right, and what never flips.
   - original language: en
   - [en] When a page reads from right to left: https://ipe.rest/journal/en/2026-11-19-when-a-page-reads-from-right-to-left/

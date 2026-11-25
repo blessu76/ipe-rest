@@ -86,6 +86,20 @@ ipe()'s debut concept album: ten ambient lo-fi tracks, "ten letters to the you w
   - ไทย [th] (AI translation): https://ipe.rest/journal/th/
   - Tiếng Việt [vi] (AI translation): https://ipe.rest/journal/vi/
   - Türkçe [tr] (AI translation): https://ipe.rest/journal/tr/
+- A journal address you can read aloud (2026-11-25): https://ipe.rest/journal/en/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/ - Read the language, publication date and short name in the official address of an ipe.rest journal entry.
+  - original language: en
+  - [en] A journal address you can read aloud: https://ipe.rest/journal/en/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/
+  - [ko] 소리 내어 읽을 수 있는 저널 주소: https://ipe.rest/journal/ko/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/
+  - [ja] 声に出して読める記事のアドレス (AI translation): https://ipe.rest/journal/ja/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/
+  - [zh-Hant] 可以唸出來的日誌網址 (AI translation): https://ipe.rest/journal/zh-Hant/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/
+  - [es] Una dirección para leer en voz alta (AI translation): https://ipe.rest/journal/es/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/
+  - [pt-BR] Um endereço para ler em voz alta (AI translation): https://ipe.rest/journal/pt-BR/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/
+  - [fr] Une adresse du journal à lire à voix haute (AI translation): https://ipe.rest/journal/fr/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/
+  - [de] Eine Journaladresse zum Vorlesen (AI translation): https://ipe.rest/journal/de/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/
+  - [id] Alamat jurnal yang bisa dibaca lantang (AI translation): https://ipe.rest/journal/id/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/
+  - [th] ที่อยู่บทความที่อ่านออกเสียงได้ (AI translation): https://ipe.rest/journal/th/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/
+  - [vi] Một địa chỉ nhật ký có thể đọc thành tiếng (AI translation): https://ipe.rest/journal/vi/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/
+  - [tr] Sesli okunabilen bir günlük adresi (AI translation): https://ipe.rest/journal/tr/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/
 - Ask for less motion and the page holds still (2026-11-20): https://ipe.rest/journal/en/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/ - What moves on an ipe.rest journal page, and how the page holds still when a device is set to reduce motion.
   - original language: en
   - [en] Ask for less motion and the page holds still: https://ipe.rest/journal/en/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/

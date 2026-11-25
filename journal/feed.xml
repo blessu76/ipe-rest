@@ -6,7 +6,15 @@
     <atom:link href="https://ipe.rest/journal/feed.xml" rel="self" type="application/rss+xml"/>
     <description>Notes from ipe(): music, design and how a small studio works. Written in English and Korean.</description>
     <language>en</language>
-    <lastBuildDate>Fri, 20 Nov 2026 08:31:00 +0900</lastBuildDate>
+    <lastBuildDate>Wed, 25 Nov 2026 14:12:00 +0900</lastBuildDate>
+    <item>
+      <title>A journal address you can read aloud</title>
+      <link>https://ipe.rest/journal/en/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/</link>
+      <guid isPermaLink="true">https://ipe.rest/journal/en/2026-11-25-why-every-page-has-an-address-you-can-read-aloud/</guid>
+      <pubDate>Wed, 25 Nov 2026 14:12:00 +0900</pubDate>
+      <category>studio</category>
+      <description>Read the language, publication date and short name in the official address of an ipe.rest journal entry.</description>
+    </item>
     <item>
       <title>Ask for less motion and the page holds still</title>
       <link>https://ipe.rest/journal/en/2026-11-20-when-you-ask-for-less-motion-the-page-holds-still/</link>

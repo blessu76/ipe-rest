@@ -1,7 +1,8 @@
 """Journal translations for ipe.rest — stdlib only. Used by journal_sync.py.
 
 Languages: LANGS = kit languages.SUPPORTED tags that are live (scripts/home_i18n/<file>.json exists and is not a skeleton).
-RETIRED (zh ru ar hi) keep their generated pages but are not listed anywhere. Translation files use legacy codes (pt.json = pt-BR).
+PAGE_LANGS also includes the four legacy paths (zh ru ar hi) for journal pages and their hreflang clusters.
+Translation files use legacy codes (pt.json = pt-BR).
 
 URL rule (static, never ?lang=):
     post         /journal/<lang>/<slug>/     lang = a LANGS tag (en ko ja es pt-BR fr de id ...)
@@ -120,12 +121,12 @@ def list_url(lang=None):
 
 
 def post_cluster(slug, langs):
-    """[(hreflang, url)] for a post: x-default (= the /en/ page, never the language-less shell) + each available language (LANGS order)."""
-    return [("x-default", post_url(slug, "en"))] + [(l, post_url(slug, l)) for l in LANGS if l in langs]
+    """Alternate links to the English default and all real translations of a post, in PAGE_LANGS order."""
+    return [("x-default", post_url(slug, "en"))] + [(l, post_url(slug, l)) for l in PAGE_LANGS if l in langs]
 
 
 def list_cluster(langs):
-    return [("x-default", list_url("en"))] + [(l, list_url(l)) for l in LANGS if l in langs]
+    return [("x-default", list_url("en"))] + [(l, list_url(l)) for l in PAGE_LANGS if l in langs]
 
 
 def head_i18n(cluster, current):
@@ -247,8 +248,8 @@ def kit_select(current, href, langs, placeholder=False):
 
 
 def langselect(cluster, current, label=None):
-    """Header language select. Options are only the languages that exist for this page (cluster), each a real URL."""
-    urls = {h: u.replace(SITE, "") for h, u in cluster if h != "x-default"}
+    """Header language select with links for live languages that have pages."""
+    urls = {h: u.replace(SITE, "") for h, u in cluster if h in LANGS}
     return kit_select(current, lambda l: urls.get(l, ""), list(urls), placeholder=current is None)
 
 
@@ -699,7 +700,7 @@ def _chooser_head(title, desc, canon, cluster, og_type, og_locale, ld_objs, og_t
     # <title>/<meta description> carry the x-default marker (distinct from /en/); og/twitter keep the plain title and description
     og_title = og_title or title
     meta_title = chooser_title(title)
-    meta_desc = chooser_desc(desc, len([h for h, _ in cluster if h != "x-default"]))
+    meta_desc = chooser_desc(desc, sum(h in LANGS for h, _ in cluster))
     return [
         '<!DOCTYPE html>', '<html lang="%s" dir="ltr" data-chooser>' % og_locale[:2], '<head>',
         _common_head("en", meta_title, meta_desc, canon),

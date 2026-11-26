@@ -5,11 +5,11 @@ Posts are hand-written bilingual sources (scripts/journal_src/<YYYY-MM-DD-slug>.
 scripts/journal-post-template.html). Not served. 10 more languages come from scripts/journal_i18n/<slug>/<lang>.json.
 This script READS them and WRITES (see journal_i18n.py for the URL rules):
 
-    journal/<lang>/<slug>/index.html   12 languages, single-language static pages (en/ko from the source)
-    journal/<lang>/index.html          12 language lists (Blog + ItemList)
+    journal/<lang>/<slug>/index.html   single-language static pages (en/ko from the source)
+    journal/<lang>/index.html          language lists (Blog + ItemList)
     journal/<slug>/index.html, journal/index.html   language-chooser shells (canonical + x-default -> /en/, not in the sitemap)
     journal/feed.xml                   RSS 2.0, English, published posts only (date <= today KST), newest first; not in sitemap
-    sitemap.xml  <!-- journal:start/end -->        every page above, lastmod + 13 hreflang + image
+    sitemap.xml  <!-- journal:start/end -->        language lists and translated posts with lastmod + hreflang + image
     llms.txt     <!-- journal:llms:start/end -->   lists + posts per language
 
 Usage:
@@ -310,31 +310,32 @@ def _xlinks(cluster):
 
 
 def render_sitemap(posts, tr, list_langs=None):
-    """tr = {slug: {lang: data}} (real translations only — fallback pages are not listed) — every language page (and the x-default
-    chooser) gets its own <url> with the full hreflang cluster. list_langs = languages with a list page (default: those in tr)."""
+    """Render canonical journal URLs with the same hreflang clusters as their HTML pages.
+
+    tr contains real translations by slug and language. list_langs defaults to the languages in tr.
+    """
     list_langs = set(list_langs) if list_langs is not None else {l for v in tr.values() for l in v}
     newest = max(p["modified"] for p in posts)
-    lcl = _xlinks(I18N.list_cluster(list_langs))
+    list_cluster = I18N.list_cluster(list_langs)
+    lcl = _xlinks(list_cluster)
     out = []
-    # the language-less shells (/journal/ and /journal/<slug>/) are NOT listed: they canonicalise to /en/ and x-default points there
-    for loc in [I18N.list_url(l) for l in I18N.LANGS if l in list_langs]:
+    for lang, loc in list_cluster[1:]:  # x-default shares the English URL
         out.append("""  <url>
     <loc>%s</loc>
     <lastmod>%s</lastmod>
     <changefreq>weekly</changefreq>
     <priority>%s</priority>
 %s
-  </url>""" % (loc, newest, "0.8" if loc == I18N.list_url("en") else "0.7", lcl))
+  </url>""" % (loc, newest, "0.8" if lang == "en" else "0.7", lcl))
     for p in posts:
-        langs = set(tr[p["slug"]])
-        cl = _xlinks(I18N.post_cluster(p["slug"], langs))
+        translations = tr[p["slug"]]
+        post_cluster = I18N.post_cluster(p["slug"], translations)
+        cl = _xlinks(post_cluster)
         img = ""
         if p["image"].get("url"):
             img = "\n    <image:image><image:loc>%s</image:loc></image:image>" % html.escape(p["image"]["url"])
-        for h, loc in I18N.post_cluster(p["slug"], langs):
-            if h == "x-default":  # = the /en/ URL, already emitted as its own language entry
-                continue
-            lm = tr[p["slug"]].get(h, {}).get("dateModified") or p["modified"]
+        for h, loc in post_cluster[1:]:  # x-default shares the English URL
+            lm = translations[h].get("dateModified") or p["modified"]
             out.append(f"""  <url>
     <loc>{loc}</loc>
     <lastmod>{lm}</lastmod>

@@ -496,6 +496,31 @@ class JournalI18n(unittest.TestCase):
             self.assertTrue(u.find(SM + "lastmod").text, loc)
         self.assertEqual(seen, len([1 for u, (_, src) in self.pages.items() if "data-chooser" not in src and not self.is_fallback(u)]))
 
+    def test_sitemap_lists_every_canonical_post_edition(self):
+        canonical_editions = {}
+        for url, (path, src) in self.pages.items():
+            parts = path.relative_to(ROOT / "journal").parts
+            if len(parts) != 3:
+                continue
+            _, slug, _ = parts
+            urls = canonical_editions.setdefault(slug, set())
+            if '<link rel="canonical" href="%s">' % url in src:
+                urls.add(url)
+
+        sitemap_editions = {}
+        for loc in ET.parse(ROOT / "sitemap.xml").findall(SM + "url/" + SM + "loc"):
+            post = re.fullmatch(r"https://ipe\.rest/journal/[^/]+/([^/]+)/", loc.text)
+            if post:
+                sitemap_editions.setdefault(post[1], []).append(loc.text)
+
+        self.assertEqual(set(sitemap_editions), set(canonical_editions))
+        for slug, urls in canonical_editions.items():
+            with self.subTest(slug=slug):
+                self.assertCountEqual(sitemap_editions[slug], urls)
+                for url in sorted(urls):
+                    alternates = self.hreflangs(self.pages[url][1])
+                    self.assertEqual({href for lang, href in alternates.items() if lang != "x-default"}, urls, url)
+
     def test_llms_lists_every_translation(self):
         llms = (ROOT / "llms.txt").read_text(encoding="utf-8")
         for url, (_, src) in self.live.items():
